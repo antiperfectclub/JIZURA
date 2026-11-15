@@ -23,14 +23,14 @@ J.defaultProject = () => ({
   kinetic: true,                  // キネティック parts
   extra2: false,                  // 追加分2: the parts added in v0.12 (themed ones also need their own set's switch)
   lang: 'auto',                   // 歌詞の言語: 'auto' | 'ja' | 'zh-Hant' | 'zh-Hans' | 'ko' — picks the faces each font key is drawn with
-  keyBg: 'off',                   // 合成用の背景: 'off' | 'green' (グリーンバック) | 'black' (ブラックバック)
+  keyBg: 'off',                   // 合成用の背景: 'off' | 'green' (グリーンバック) | 'black' (ブラックバック) | 'transparent' (透明背景)
   unify: false,                   // 統一感: part palettes, repeats shown the same way, キメ, モーフ, 太さ
   typeset: false,                 // 文字整列: kana tracking, small particles / big first character, Latin sizing, 0.2 s lead, restraint
   centerDir: 'tb',                // 中央を空ける on tall frames: 'tb' = top / bottom, 'lr' = left / right
   centerFree: false,              // 中央を空ける: lay the cuts out in side bands (left / right or top / bottom) around a character
   seed: 20260922,
   aspect: '16:9', res: 1080, fps: 24,
-  fx: { motion: 0.7, glitch: 0.55, chroma: 0.7, decor: 0.5, density: 0.55, texture: 0.6, flash: true, onTwos: true, koma: 12, hud: 'auto', bgSwitch: 0.35, hideNo: false, hideTime: false },
+  fx: { motion: 0.7, glitch: 0.55, chroma: 0.7, decor: 0.5, density: 0.55, texture: 0.6, flash: true, onTwos: true, koma: 12, hud: 'auto', bgSwitch: 0.35, hideNo: false, hideTime: false, hideHud: false },
   enabled: Object.fromEntries(J.GROUP_KEYS.map(g => [g, Object.fromEntries(J.order(g).map(k => [k, true]))])),
   timing: { bpm: 0, offset: 0.4, snap: true, tail: 0.9, lineTimes: {}, lineScale: 1 },
   overrides: {},
@@ -313,8 +313,8 @@ J.plan = (project, audio) => {
     version: 1, generator: 'JIZURA', appVersion: '@VERSION@', title, artist, W, H, fps: project.fps || 24,
     duration: tm.duration, styleKey: project.style, style: st, fx, seed: project.seed,
     lines: [], cuts: [], events: [], beats: audio && audio.beats ? audio.beats.slice() : [],
-    hud: fx.hud === 'on' ? true : fx.hud === 'off' ? false : !!st.hud,
-    keyBg: J.keyMode ? J.keyMode(project) : null,   // 'green' | 'black' | null — 合成用の背景
+    hud: fx.hideHud ? false : (fx.hud === 'on' ? true : fx.hud === 'off' ? false : !!st.hud),
+    keyBg: J.keyMode ? J.keyMode(project) : null,   // 'green' | 'black' | 'transparent' | null — 合成用の背景
     centerFree: !!zones, zones,
     typeset: !!project.typeset, unify: !!project.unify,
     lang: J.resolveLang ? J.resolveLang(project) : 'ja',   // 歌詞の言語 (auto → detected)

@@ -175,18 +175,12 @@ J.resolveStyle = (project) => {
   if (J.keyMode(project)) keyStyle(st);
   return st;
 };
-/* ---- 合成用の背景（グリーンバック / ブラックバック） ----
-   Every scheme becomes white-on-black (so every part behaves as on a dark background), textures go away,
-   and the renderer turns the finished frame monochrome and — for green — screens it onto pure green.
-   Black stays the "empty" colour, so a keyer (green) or a screen / luma blend (black) gives the same result. */
-J.KEY_BG = { green: '#00FF00', black: '#000000' };
+/* ---- 合成用の背景（グリーンバック / ブラックバック / 透明背景） ----
+   Keep all style / user font and decoration colours intact; only strip textures and mark st.key = true
+   so the renderer skips the style background and composites over green / black / transparent alpha. */
+J.KEY_BG = { green: '#00FF00', black: '#000000', transparent: 'transparent' };
 J.keyMode = project => (project && J.KEY_BG[project.keyBg] ? project.keyBg : null);
 function keyStyle(st) {
-  st.schemes = st.schemes.map(s => {
-    const o = { bg: '#000000', fg: '#FFFFFF', sub: '#D2D2D2', accent: '#FFFFFF', accent2: '#BDBDBD', ink: '#FFFFFF', dim: '#1E1E1E', ghostA: '#9A9A9A', ghostB: '#5E5E5E' };
-    if (s.grad) o.grad = ['#FFFFFF', '#A8A8A8'];
-    return o;
-  });
   st.texture = { grain: 0, paper: 0, scan: 0 };
   st.key = true;
 }

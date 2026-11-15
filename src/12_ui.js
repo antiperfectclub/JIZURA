@@ -125,6 +125,7 @@ function mergeProject(p) {
     .map(uf => ({ key: uf.key, label: String(uf.label || uf.key).slice(0, 80), family: J.safeFamily(uf.family || uf.key.slice(5)), weight: J.clamp(parseInt(uf.weight, 10) || 400, 100, 900) }));
   for (const uf of o.userFonts) if (!J.FONTS[uf.key]) J.addUserFont(uf.key, uf.label, uf.family, uf.weight);
   migrateOrder(o, p);
+  o.keyBg = ['off', 'green', 'black', 'transparent'].includes(o.keyBg) ? o.keyBg : 'off';
   o.themeId = p && typeof p.themeId === 'string' && J.THEMES && J.THEMES[p.themeId] ? p.themeId : null;
   o.fonts = {};
   for (const [role, k] of Object.entries((p && p.fonts) || {})) if (typeof k === 'string' && J.FONTS[k] && /^[\w-]+$/.test(role)) o.fonts[role] = k;
@@ -1243,6 +1244,7 @@ function renderFx() {
   $('fxKoma').value = String(J.komaOf(S.project.fx));
   $('fxHud').value = S.project.fx.hud || 'auto';
   $('fxHideNo').checked = !!S.project.fx.hideNo; $('fxHideTime').checked = !!S.project.fx.hideTime;
+  if ($('fxHideHud')) $('fxHideHud').checked = !!S.project.fx.hideHud;
   $('seed').value = S.project.seed;
 }
 
@@ -1395,37 +1397,62 @@ function syncOut() {
   $('outQuality').value = S.project.quality || 'high'; $('outAudio').checked = S.project.includeAudio !== false;
   const k = J.keyMode(S.project) || 'off';
   $('outKey').value = k; $('eKey').value = k;
+  if ($('transparentBg')) $('transparentBg').checked = k === 'transparent';
+  const vp = $('viewport'); if (vp) vp.classList.toggle('is-transparent', k === 'transparent');
+  $('btnMP4').textContent = k === 'transparent' ? 'WebM（透過）を書き出す' : 'MP4 を書き出す';
+  $('eMP4').textContent = k === 'transparent' ? 'WebM（透過）を書き出す' : 'MP4 を書き出す';
+  $('btnMP4File').textContent = k === 'transparent' ? 'WebM（大きな動画用・ファイルに直接保存）' : 'MP4（大きな動画用・ファイルに直接保存）';
   $('outCenter').checked = $('eCenter').checked = !!S.project.centerFree;
   const tall = J.designSize(S.project.aspect)[1] > J.designSize(S.project.aspect)[0] * 1.1;
   document.querySelectorAll('.center-dir').forEach(el => { el.hidden = !(S.project.centerFree && tall); });
   document.querySelectorAll('.centerDirSel').forEach(el => { el.value = S.project.centerDir === 'lr' ? 'lr' : 'tb'; });
   const kb = $('keyBadge');
   kb.hidden = k === 'off';
-  if (k !== 'off') kb.innerHTML = `<i style="background:${J.KEY_BG[k]}"></i>${k === 'green' ? 'グリーンバック' : 'ブラックバック'}`;
+  if (k !== 'off') {
+    const icon = k === 'transparent' ? '<i class="alpha"></i>' : `<i style="background:${J.KEY_BG[k]}"></i>`;
+    const label = k === 'green' ? 'グリーンバック' : k === 'black' ? 'ブラックバック' : '透明背景';
+    kb.innerHTML = icon + label;
+  }
 }
 // the codec check is slow in some browsers: at start-up, let the first preview frames paint before asking
 function codecNoteSoon() { (window.requestIdleCallback || (f => setTimeout(f, 400)))(() => codecNote(), { timeout: 1500 }); }
 async function codecNote() {
   const [w, h] = J.outputSize(S.project);
-  const vc = await J.pickVideoCodec(w, h, S.project.fps, 12e6);
+  const alpha = J.keyMode(S.project) === 'transparent';
+  const vc = alpha
+    ? (J.pickAlphaVideoCodec ? await J.pickAlphaVideoCodec(w, h, S.project.fps, 12e6) : null)
+    : await J.pickVideoCodec(w, h, S.project.fps, 12e6);
+  if (alpha) {
+    $('codecNote').textContent = vc
+      ? `このブラウザでは ${vc.label} + Alpha（WebM 透過）で書き出します（${w}×${h} / ${S.project.fps}fps）。書き出し中はタブを開いたままにしてください。`
+      : 'このブラウザは透過動画エンコード（VP9 / VP8）に対応していません。Chrome / Edge の最新版で開くか、透過PNG（ZIP）を使ってください。';
+    $('btnMP4').disabled = !vc; $('eMP4').disabled = !vc;
+    ['btnMP4File', 'eMP4File'].forEach(id => { $(id).hidden = !vc || !canPickFile(); });
+    $('eMP4').title = vc ? '' : 'このブラウザは透過 WebM 書き出しに対応していません（Chrome / Edge 推奨）';
+    return;
+  }
   $('codecNote').textContent = vc ? `このブラウザでは ${vc.label} で書き出します（${w}×${h} / ${S.project.fps}fps）。書き出し中はタブを開いたままにしてください。` : 'このブラウザは動画エンコード（WebCodecs）に対応していません。Chrome / Edge の最新版で開くか、連番PNGを使ってください。';
   $('btnMP4').disabled = !vc; $('eMP4').disabled = !vc;
   ['btnMP4File', 'eMP4File'].forEach(id => { $(id).hidden = !vc || !canPickFile(); });
-  if (!vc) $('eMP4').title = 'このブラウザは MP4 書き出しに対応していません（Chrome / Edge 推奨）';
+  $('eMP4').title = vc ? '' : 'このブラウザは MP4 書き出しに対応していません（Chrome / Edge 推奨）';
 }
 const EXP_BTNS = ['btnMP4', 'btnPNG', 'btnPNGA', 'btnPNGL', 'eMP4', 'btnMP4File', 'eMP4File', 'ePNG', 'ePNGA', 'ePNGL'];
 function baseName() {
   const k = J.keyMode(S.project);
-  return ((S.project.title || 'jizura').replace(/[\\/:*?"<>|]+/g, '_').slice(0, 60) || 'jizura') + (k ? (k === 'green' ? '_greenback' : '_blackback') : '');
+  const sfx = k === 'green' ? '_greenback' : k === 'black' ? '_blackback' : k === 'transparent' ? '_transparent' : '';
+  return ((S.project.title || 'jizura').replace(/[\\/:*?"<>|]+/g, '_').slice(0, 60) || 'jizura') + sfx;
 }
 const canPickFile = () => typeof window.showSaveFilePicker === 'function' && !document.documentElement.classList.contains('cep') && typeof VideoEncoder !== 'undefined';
 async function runExport(kind) {
   if (S.exporting) return;
+  const alphaOut = J.keyMode(S.project) === 'transparent';
   // 大きな動画用: the save dialog must open straight from the click (before anything is awaited)
   let file = null, fileName = '';
   if (kind === 'mp4file') {
     try {
-      const hnd = await window.showSaveFilePicker({ suggestedName: baseName() + rangeSuffix() + '.mp4', types: [{ description: 'MP4', accept: { 'video/mp4': ['.mp4'] } }] });
+      const hnd = alphaOut
+        ? await window.showSaveFilePicker({ suggestedName: baseName() + rangeSuffix() + '.webm', types: [{ description: 'WebM (Alpha)', accept: { 'video/webm': ['.webm'] } }] })
+        : await window.showSaveFilePicker({ suggestedName: baseName() + rangeSuffix() + '.mp4', types: [{ description: 'MP4', accept: { 'video/mp4': ['.mp4'] } }] });
       file = await hnd.createWritable(); fileName = hnd.name;
     } catch (e) { if (e && e.name === 'AbortError') return; toast('保存先を開けませんでした: ' + (e && e.message ? e.message : e)); return; }
   }
@@ -1451,23 +1478,27 @@ async function runExport(kind) {
     if (lost.length) throw new Error(`読み込んだ書体（${[...new Set(lost)].join('・')}）がこのブラウザにないため、書き出しを止めました。「フォント」から同じファイルを読み込み直すか、別の書体を選んでください`);
     if (kind === 'mp4' || kind === 'mp4file') {
       const plan = S.plan, range = exportRange(), span = J.exportSpan(plan, range);
-      const r = await J.exportMP4({ plan, project: proj, audio: S.project.includeAudio !== false ? S.audio : null, quality: S.project.quality || 'high', onProgress, signal: ac.signal, range, file });
+      const isAlpha = J.keyMode(proj) === 'transparent';
+      const r = isAlpha
+        ? await J.exportWebMAlpha({ plan, project: proj, audio: S.project.includeAudio !== false ? S.audio : null, quality: S.project.quality || 'high', onProgress, signal: ac.signal, range, file })
+        : await J.exportMP4({ plan, project: proj, audio: S.project.includeAudio !== false ? S.audio : null, quality: S.project.quality || 'high', onProgress, signal: ac.signal, range, file });
       file = null;
       txt.textContent = `完成 ${r.blob ? (r.blob.size / 1048576).toFixed(1) + 'MB・' : ''}${r.codec}${r.audio ? ' + ' + r.audio.toUpperCase() : ''}・${((performance.now() - t0) / 1000).toFixed(0)}秒`;
       if (r.blob) {
-        const name = baseName() + rangeSuffix() + '.mp4';
+        const name = baseName() + rangeSuffix() + (r.format === 'webm' ? '.webm' : '.mp4');
         const res = await J.saveFile(name, r.blob);
         if (res === 'declined') txt.textContent += '（保存はキャンセルされました）';
         offerShare(boxes, r.blob, name);
       } else txt.textContent += `・「${fileName}」に保存しました`;
       if (r.tried && r.tried.length) txt.textContent += '（最初の方法では失敗したため、別のエンコーダーで書き出しました）';
-      // audio that some players cannot play (Opus), or none at all: save the soundtrack as WAV next to it
-      if (r.audioWanted && r.audio !== 'aac') {
+      // audio that some players cannot play (Opus in MP4), or none at all: save the soundtrack as WAV next to it
+      if (r.audioWanted && (r.format === 'webm' ? !r.audio : r.audio !== 'aac')) {
         await J.saveFile(baseName() + rangeSuffix() + '_audio.wav', J.audioWav(S.audio.buffer, span.dur, span.t0));
         txt.textContent += r.audio ? '。このブラウザでは音声が Opus になり、iPhone・QuickTime などでは音が出ないことがあるため、音声を WAV でも保存しました' : '。このブラウザは音声を書き出せないため、音声を WAV で別に保存しました（動画編集ソフトで重ねてください）';
       } else if (S.project.includeAudio !== false && !S.audio && S.project.audioName) txt.textContent += '。曲が読み込まれていないため音声なしです（「曲を読み込む」から読み込み直してください）';
     } else {
-      const blob = await J.exportPNGZip({ plan: S.plan, project: proj, transparent: kind === 'pnga', layers: kind === 'pngl', onProgress, signal: ac.signal, range: exportRange() });
+      const isAlpha = kind === 'pnga' || (kind === 'png' && J.keyMode(proj) === 'transparent');
+      const blob = await J.exportPNGZip({ plan: S.plan, project: proj, transparent: isAlpha, layers: kind === 'pngl', onProgress, signal: ac.signal, range: exportRange() });
       txt.textContent = `完成 ${(blob.size / 1048576).toFixed(1)}MB`;
       await J.saveFile(baseName() + rangeSuffix() + (kind === 'pnga' ? '_alpha' : kind === 'pngl' ? '_layers' : '') + '_png.zip', blob);
     }
@@ -1703,9 +1734,26 @@ function bind() {
   setSwitch('unify-toggle', 'unify', true, '統一感：オン（パートごとにそろえ、キメ・モーフ・太さも使います）', '統一感：オフ');
   setSwitch('typeset-toggle', 'typeset', true, '文字整列：オン（字間・助詞・英字・0.2秒先・効果控えめ）', '文字整列：オフ');
   $('fxKoma').addEventListener('change', e => { const k = +e.target.value; S.project.fx.koma = k; S.project.fx.onTwos = k > 0; S.project.mood = null; replan(); });
-  $('fxHud').addEventListener('change', e => { S.project.fx.hud = e.target.value; replan(); });
+  $('fxHud').addEventListener('change', e => {
+    remember();
+    S.project.fx.hud = e.target.value;
+    if (e.target.value !== 'off' && S.project.fx.hideHud) {
+      S.project.fx.hideHud = false;
+      if ($('fxHideHud')) $('fxHideHud').checked = false;
+    }
+    replan(); commit();
+  });
   $('fxHideNo').addEventListener('change', e => { remember(); S.project.fx.hideNo = e.target.checked; replan(); commit(); });
   $('fxHideTime').addEventListener('change', e => { remember(); S.project.fx.hideTime = e.target.checked; replan(); commit(); });
+  if ($('fxHideHud')) $('fxHideHud').addEventListener('change', e => {
+    remember();
+    S.project.fx.hideHud = e.target.checked;
+    if (!e.target.checked && S.project.fx.hud === 'off') {
+      S.project.fx.hud = 'auto';
+      $('fxHud').value = 'auto';
+    }
+    replan(); commit();
+  });
   $('seed').addEventListener('change', e => { S.project.seed = parseInt(e.target.value, 10) || 0; replan(); });
   $('btnSeed').addEventListener('click', () => { S.project.seed = (Math.random() * 1e9) | 0; $('seed').value = S.project.seed; replan(); });
   const colorToggle = (flag, keys) => e => {
@@ -1739,11 +1787,14 @@ function bind() {
   ['outRes', 'eRes'].forEach(id => $(id).addEventListener('change', e => { S.project.res = +e.target.value; syncOut(); autosave(); codecNote(); }));
   ['outFps', 'eFps'].forEach(id => $(id).addEventListener('change', e => { S.project.fps = +e.target.value; syncOut(); replan(); codecNote(); }));
   $('outQuality').addEventListener('change', e => { S.project.quality = e.target.value; autosave(); });
-  ['outKey', 'eKey'].forEach(id => $(id).addEventListener('change', e => {
-    S.project.keyBg = e.target.value; syncOut(); replan(); flushSave();
+  const applyKeyBg = val => {
+    S.project.keyBg = ['off', 'green', 'black', 'transparent'].includes(val) ? val : 'off';
+    syncOut(); replan(); flushSave(); codecNote();
     const k = J.keyMode(S.project);
-    toast(k ? `背景：${k === 'green' ? 'グリーンバック' : 'ブラックバック'}（白い文字と演出だけ）` : '背景：通常（スタイルの配色）');
-  }));
+    toast(k === 'green' ? '背景：グリーンバック' : k === 'black' ? '背景：ブラックバック' : k === 'transparent' ? '背景：透明背景' : '背景：通常（スタイルの配色）');
+  };
+  if ($('transparentBg')) $('transparentBg').addEventListener('change', e => applyKeyBg(e.target.checked ? 'transparent' : 'off'));
+  ['outKey', 'eKey'].forEach(id => $(id).addEventListener('change', e => applyKeyBg(e.target.value)));
   $('outAudio').addEventListener('change', e => { S.project.includeAudio = e.target.checked; autosave(); });
   document.querySelectorAll('.centerDirSel').forEach(el => el.addEventListener('change', e => {
     S.project.centerDir = e.target.value; syncOut(); replan(); flushSave();

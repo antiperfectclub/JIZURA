@@ -74,9 +74,9 @@ class Renderer {
     ctx.clearRect(0, 0, cw, ch);
     ctx.setTransform(scale, 0, 0, scale, 0, 0);
     // ---------- background ----------
-    const key = plan.keyBg && J.KEY_BG && J.KEY_BG[plan.keyBg] ? plan.keyBg : null;   // 合成用: white-on-black, finished in keyFinish()
-    if (key && !opt.transparent) { ctx.fillStyle = '#000000'; ctx.fillRect(0, 0, W, H); }
-    else if (!opt.transparent) {
+    const key = plan.keyBg && J.KEY_BG && J.KEY_BG[plan.keyBg] ? plan.keyBg : null;   // 合成用: keep style colours, finished in keyFinish()
+    const transparent = !!opt.transparent || key === 'transparent';
+    if (!key && !transparent) {
       ctx.fillStyle = sc.bg; ctx.fillRect(0, 0, W, H);
       const g = ctx.createRadialGradient(W / 2, H * 0.45, 0, W / 2, H / 2, Math.hypot(W, H) * 0.6);
       const lift = J.lum(sc.bg) < 0.5 ? 'rgba(255,255,255,0.045)' : 'rgba(255,255,255,0.10)';
@@ -111,8 +111,8 @@ class Renderer {
     const energy = plan.energy ? plan.energy[Math.min(plan.energy.length - 1, Math.max(0, Math.floor(t * plan.energyRate)))] : null;
     // ---------- background graphic (per line) ----------
     // 透過PNG 前景／後景 (opt.layer): 'back' = background graphic + the decorations behind the lyrics, 'front' = the rest
-    const layer = opt.transparent ? opt.layer || null : null;
-    if ((!opt.transparent || layer === 'back') && !key && mainCut && mainCut.bg && mainCut.bg !== 'none' && J.BG[mainCut.bg]) {
+    const layer = transparent ? opt.layer || null : null;
+    if ((!transparent || layer === 'back') && !key && mainCut && mainCut.bg && mainCut.bg !== 'none' && J.BG[mainCut.bg]) {
       const env = this.makeEnv(ctx, plan, mainCut, sc, { pass: 'main', t: tq, lt: tq - mainCut.start, ltb: tq - mainCut.start, step, scale, allowFilter, energy, beat: beatInfo, bgOnly: true });
       ctx.save();
       try { J.BG[mainCut.bg].draw(env, mainCut.bgP || {}); } catch (e) { console.warn('bg', mainCut.bg, e); }
@@ -178,7 +178,7 @@ class Renderer {
       if (cam.rot) X.rotate(cam.rot * J.DEG);
       if (cam.skx) X.transform(1, 0, Math.tan(cam.skx * J.DEG), 1, 0, 0);
       X.scale(cs * (cam.sx ?? 1), cs * (cam.sy ?? 1)); X.translate(-W / 2, -H / 2);
-      if (P.pass !== 'main') X.globalCompositeOperation = J.lum(csc.bg) > 0.55 ? 'multiply' : 'source-over';
+      if (P.pass !== 'main') X.globalCompositeOperation = !key && !transparent && J.lum(csc.bg) > 0.55 ? 'multiply' : 'source-over';
       this.drawCut(env);
       X.restore();
       if (P.pass === 'main' && cut === cut0) { mainEnv = env; }
@@ -203,8 +203,13 @@ class Renderer {
         this.frame(A.getContext('2d'), plan, Math.max(prev.start, prev.end - 1e-3), Object.assign({}, opt, { noTrans: true, noPost: true, noHud: true }));
         const psc = st.schemes[prev.scheme % st.schemes.length] || st.schemes[0];
         ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none';
-        try { J.TRANS[mainCut.trans].draw(ctx, A, B, J.clamp(lt / dur), { cw, ch, sc, scPrev: psc, st, P: mainCut.transP || {}, step, t, scale, allowFilter, seed: mainCut.seed | 0, tmp: (w, h) => this.ensure(this.transC || (this.transC = mk(2, 2)), w, h) }); }
+        const fenced = transparent || !!key;
+        if (fenced) ctx.clearRect(0, 0, cw, ch);
+        const tg = fenced ? this.alphaGuard(ctx, [A, B], sc, psc, () => this.transC) : null;
+        if (tg) tg.begin();
+        try { J.TRANS[mainCut.trans].draw(ctx, A, B, J.clamp(lt / dur), { cw, ch, sc, scPrev: psc, st, P: mainCut.transP || {}, step, t, scale, allowFilter, seed: mainCut.seed | 0, tmp: (w, h) => { const c = this.ensure(this.transC || (this.transC = mk(2, 2)), w, h); if (fenced) this.guardTmp(c, sc, psc); return c; } }); }
         catch (e) { console.warn('trans', mainCut.trans, e); }
+        if (tg) tg.end();
         ctx.restore();
       }
     }
@@ -216,32 +221,18 @@ class Renderer {
     ctx.restore();
     // ---------- post ----------
     if (!opt.noPost) this.post(ctx, plan, t, tq, step, sc, scale, opt, allowFilter);
-    if (key && !opt.noPost) this.keyFinish(ctx, key, opt);
+    if (key && !opt.noPost && !transparent) this.keyFinish(ctx, key);
   }
 
-  /* 合成用の背景: make the finished frame monochrome (white text + effects only) and put it on the key colour.
-     black: as rendered (black = empty).  green: screened onto #00FF00, so black → green, white stays white and
-     the soft greys (ghosts, glow, fades) turn into partial transparency when keyed — the same result as
-     screen-blending the black version. */
-  keyFinish(ctx, key, opt) {
+  /* 合成用の背景: composite the solid key colour (green / black) behind the full-colour frame without
+     converting text or decorations to white / monochrome. */
+  keyFinish(ctx, key) {
+    if (!J.KEY_BG[key] || key === 'transparent') return;
     const cw = ctx.canvas.width, ch = ctx.canvas.height;
     ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.filter = 'none';
-    if (opt.transparent) {
-      // keep the alpha: desaturate through a copy
-      const S = this.ensure(this.scratch, cw, ch), sx = S.getContext('2d');
-      sx.setTransform(1, 0, 0, 1, 0, 0); sx.globalAlpha = 1; sx.globalCompositeOperation = 'copy';
-      if (this.filterOK) { sx.filter = 'grayscale(1)'; sx.drawImage(ctx.canvas, 0, 0); sx.filter = 'none'; }
-      else {
-        sx.drawImage(ctx.canvas, 0, 0); sx.globalCompositeOperation = 'saturation'; sx.fillStyle = '#808080'; sx.fillRect(0, 0, cw, ch);
-        sx.globalCompositeOperation = 'destination-in'; sx.drawImage(ctx.canvas, 0, 0);
-      }
-      sx.globalCompositeOperation = 'source-over';
-      ctx.globalCompositeOperation = 'copy'; ctx.drawImage(S, 0, 0);
-    } else {
-      // opaque frame: the 'saturation' blend with any grey keeps luminosity and drops colour
-      ctx.globalCompositeOperation = 'saturation'; ctx.fillStyle = '#808080'; ctx.fillRect(0, 0, cw, ch);
-      if (key === 'green') { ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = J.KEY_BG.green; ctx.fillRect(0, 0, cw, ch); }
-    }
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillStyle = J.KEY_BG[key];
+    ctx.fillRect(0, 0, cw, ch);
     ctx.restore();
   }
 
@@ -384,17 +375,37 @@ class Renderer {
        - afterwards, alpha is limited to where content was (before the effect) plus where the effect drew the
          content again (shifted / scaled / mirrored copies of the scratch copy), so washes, flashes and strobes
          tint the lyrics and the graphics but never turn the empty background opaque                            */
-  alphaGuard(ctx, S, sc) {
-    const cw = ctx.canvas.width, ch = ctx.canvas.height, R = this;
+  guardTmp(c, sc, psc) {
+    const x = c.getContext('2d'), cw = c.width, ch = c.height, proto = Object.getPrototypeOf(x);
+    if (x._jzGuarded) delete x.fillRect;
+    const norm = col => { const fs0 = x.fillStyle; x.fillStyle = col; const r = x.fillStyle; x.fillStyle = fs0; return r; };
+    const bgN = norm(sc.bg), bgP = psc ? norm(psc.bg) : bgN;
+    x._jzGuarded = true;
+    x.fillRect = function (rx, ry, rw, rh) {
+      const T = this.getTransform(), full = this.globalCompositeOperation === 'source-over' && this.globalAlpha >= 0.999 && typeof this.fillStyle === 'string' &&
+        /^#[0-9a-f]{6}$/i.test(this.fillStyle) && T.b === 0 && T.c === 0 && T.e + rx * T.a <= 1 && T.f + ry * T.d <= 1 && T.e + (rx + rw) * T.a >= cw - 1 && T.f + (ry + rh) * T.d >= ch - 1;
+      if (full || (this.globalCompositeOperation === 'source-over' && typeof this.fillStyle === 'string' && this.globalAlpha >= 0.999 && (this.fillStyle === bgN || this.fillStyle === bgP))) {
+        return proto.clearRect.call(this, rx, ry, rw, rh);
+      }
+      return proto.fillRect.call(this, rx, ry, rw, rh);
+    };
+    return c;
+  }
+
+  alphaGuard(ctx, S, sc, psc, extraFn) {
+    const cw = ctx.canvas.width, ch = ctx.canvas.height;
     const P = this.ensure(this.guardP || (this.guardP = mk(2, 2)), cw, ch), px = P.getContext('2d');
     const M = this.ensure(this.guardM || (this.guardM = mk(2, 2)), cw, ch), mx = M.getContext('2d');
-    let cleared = false, bgN = null;
-    const content = img => img === S;                  // the scratch copy of the frame (temp canvases may carry an opaque background)
+    let cleared = false, bgN = null, bgP = null;
+    const list = Array.isArray(S) ? S : [S];
+    const content = img => list.includes(img) || (extraFn && img === extraFn());
     const own = ['fillRect', 'drawImage'];
     return {
       begin() {
         cleared = false;
-        const fs0 = ctx.fillStyle; ctx.fillStyle = sc.bg; bgN = ctx.fillStyle; ctx.fillStyle = fs0;   // the background colour, normalised
+        const fs0 = ctx.fillStyle; ctx.fillStyle = sc.bg; bgN = ctx.fillStyle;
+        if (psc) { ctx.fillStyle = psc.bg; bgP = ctx.fillStyle; } else bgP = bgN;
+        ctx.fillStyle = fs0;   // the background colour, normalised
         px.setTransform(1, 0, 0, 1, 0, 0); px.globalAlpha = 1; px.globalCompositeOperation = 'copy'; px.filter = 'none'; px.drawImage(ctx.canvas, 0, 0);
         mx.setTransform(1, 0, 0, 1, 0, 0); mx.globalAlpha = 1; mx.globalCompositeOperation = 'source-over'; mx.filter = 'none'; mx.clearRect(0, 0, cw, ch);
         const proto = Object.getPrototypeOf(ctx);
@@ -402,7 +413,7 @@ class Renderer {
           const T = this.getTransform(), full = this.globalCompositeOperation === 'source-over' && this.globalAlpha >= 0.999 && typeof this.fillStyle === 'string' &&
             /^#[0-9a-f]{6}$/i.test(this.fillStyle) && T.b === 0 && T.c === 0 && T.e + x * T.a <= 1 && T.f + y * T.d <= 1 && T.e + (x + w) * T.a >= cw - 1 && T.f + (y + h) * T.d >= ch - 1;
           if (full) { cleared = true; mx.clearRect(0, 0, cw, ch); return proto.clearRect.call(this, x, y, w, h); }
-          if (this.globalCompositeOperation === 'source-over' && typeof this.fillStyle === 'string' && /^#[0-9a-f]{6}$/i.test(this.fillStyle) && this.globalAlpha >= 0.999 && this.fillStyle === bgN) return proto.clearRect.call(this, x, y, w, h);
+          if (this.globalCompositeOperation === 'source-over' && typeof this.fillStyle === 'string' && /^#[0-9a-f]{6}$/i.test(this.fillStyle) && this.globalAlpha >= 0.999 && (this.fillStyle === bgN || this.fillStyle === bgP)) return proto.clearRect.call(this, x, y, w, h);
           return proto.fillRect.call(this, x, y, w, h);
         };
         ctx.drawImage = function (img, ...a) {
@@ -424,13 +435,15 @@ class Renderer {
   post(ctx, plan, t, tq, step, sc, scale, opt, allowFilter) {
     const cw = ctx.canvas.width, ch = ctx.canvas.height;
     const fx = plan.fx, st = plan.style;
+    const key = plan.keyBg && J.KEY_BG && J.KEY_BG[plan.keyBg] ? plan.keyBg : null;
+    const transparent = !!opt.transparent || key === 'transparent';
     const active = plan.events.filter(ev => t >= ev.t && t < ev.t + Math.max(ev.dur, 1 / plan.fps));
     const needScratch = active.some(ev => ['slice', 'block', 'zoom', 'mosaic'].includes(ev.type) || (J.FXE[ev.type] && J.FXE[ev.type].scratch)) || (!opt.fast && (st.glow || 0) > 0);
     const S = needScratch ? this.ensure(this.scratch, cw, ch) : null;
     ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
     const copy = () => { const sx = S.getContext('2d'); sx.globalCompositeOperation = 'copy'; sx.drawImage(ctx.canvas, 0, 0); sx.globalCompositeOperation = 'source-over'; };
     const clock24 = Math.floor(t * 24);           // glitch randomness changes at most 24 times a second at any output fps
-    const guard = opt.transparent ? this.alphaGuard(ctx, S, sc) : null;   // 透過: effects must not fill the empty background
+    const guard = (transparent || key) ? this.alphaGuard(ctx, S, sc) : null;   // 透過/合成: effects must not fill the empty background
     for (const ev of active) {
       // progress clamped to 0..1 (an event shorter than one output frame is still shown for that frame — k would pass 1)
       const k0 = (t - ev.t) / Math.max(ev.dur, 1e-3), k = Number.isFinite(k0) ? J.clamp(k0, 0, 1) : 0;
@@ -440,7 +453,7 @@ class Renderer {
       if (D && D.draw) {
         if (D.scratch) copy();
         try {
-          D.draw(ctx, ev, k, { cw, ch, S, sc, st: plan.style, step: st2, t, scale, renderer: this, allowFilter, opt, transparent: !!opt.transparent, tmp: (w, h) => this.ensure(this.tiny, w, h), tmp2: (w, h) => this.ensure(this.small2 || (this.small2 = mk(2, 2)), w, h) });
+          D.draw(ctx, ev, k, { cw, ch, S, sc, st: plan.style, step: st2, t, scale, renderer: this, allowFilter, opt, transparent: !!(transparent || key), tmp: (w, h) => this.ensure(this.tiny, w, h), tmp2: (w, h) => this.ensure(this.small2 || (this.small2 = mk(2, 2)), w, h) });
         } catch (e) { console.warn('fx', ev.type, e); }
         ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none'; ctx.imageSmoothingEnabled = true;
         if (guard) guard.end();
@@ -488,13 +501,13 @@ class Renderer {
     }
     // bloom
     const glow = (st.glow || 0.6) * 0.5 * (fx.texture ?? 0.6);
-    if (!opt.fast && allowFilter && glow > 0.05 && !opt.transparent) {
+    if (!opt.fast && allowFilter && glow > 0.05 && !transparent) {
       const sw = Math.round(cw / 4), sh = Math.round(ch / 4);
       const Sm = this.ensure(this.small, sw, sh), sx = Sm.getContext('2d');
       sx.filter = `blur(${Math.max(2, Math.round(sw / 160))}px)`; sx.globalCompositeOperation = 'copy'; sx.drawImage(ctx.canvas, 0, 0, sw, sh); sx.filter = 'none'; sx.globalCompositeOperation = 'source-over';
       ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = glow * 0.55; ctx.drawImage(Sm, 0, 0, cw, ch); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
     }
-    if (!opt.transparent && !plan.keyBg) {
+    if (!transparent && !plan.keyBg) {
       // scanlines
       const scan = (st.texture.scan || 0) * (fx.texture ?? 0.6);
       if (scan > 0.03) {

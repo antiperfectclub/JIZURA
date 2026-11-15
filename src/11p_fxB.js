@@ -234,7 +234,7 @@ fx('halftone', { name: '網点', tags: ['pop', 'graphic', 'editorial'], w: 0.9, 
     const pat = ctx.createPattern(dotTile(c, r), 'repeat');
     try { const q = 45 * DEG; pat.setTransform(new DOMMatrix([Math.cos(q), Math.sin(q), -Math.sin(q), Math.cos(q), cw / 2, ch / 2])); } catch (e) { /* unrotated screen */ }
     ctx.globalCompositeOperation = 'destination-in'; ctx.fillStyle = pat; ctx.fillRect(0, 0, cw, ch);
-    if (I.opt && I.opt.transparent) return;
+    if (I.transparent || (I.opt && I.opt.transparent)) return;
     ctx.globalCompositeOperation = 'destination-over'; ctx.fillStyle = J.mix(sc.bg, sc.fg, 0.16); ctx.fillRect(0, 0, cw, ch);
   } });
 

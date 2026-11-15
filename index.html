@@ -155,12 +155,14 @@ button.tap { font: 700 18px/1 var(--mono); letter-spacing: 0.2em; padding: 16px;
 /* ---------- stage ---------- */
 .col-stage { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; min-width: 0; }
 .viewport { position: relative; width: 100%; background: #000; border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; }
+.viewport.is-transparent { background-color: #1c1c22; background-image: linear-gradient(45deg, #2b2b33 25%, transparent 25%), linear-gradient(-45deg, #2b2b33 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #2b2b33 75%), linear-gradient(-45deg, transparent 75%, #2b2b33 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0; }
 .viewport canvas { display: block; width: 100%; height: auto; max-height: 68vh; object-fit: contain; }
 .field-wide { grid-column: span 2; }
 .lang-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 6px; font-size: 11px; color: var(--muted); }
 .lang-row select { width: auto; }
 .key-badge { position: absolute; right: 10px; top: 10px; background: rgba(12,12,14,0.78); border: 1px solid var(--line2); color: #fff; padding: 3px 8px; border-radius: var(--r); font-size: 11px; pointer-events: none; letter-spacing: .04em; }
 .key-badge i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; border: 1px solid rgba(255,255,255,.5); }
+.key-badge i.alpha { background-color: #555; background-image: linear-gradient(45deg, #bbb 25%, transparent 25%), linear-gradient(-45deg, #bbb 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #bbb 75%), linear-gradient(-45deg, transparent 75%, #bbb 75%); background-size: 6px 6px; background-position: 0 0, 0 3px, 3px -3px, -3px 0; }
 .overlay-msg { position: absolute; left: 12px; bottom: 12px; background: rgba(12,12,14,0.85); border: 1px solid var(--line2); padding: 6px 10px; border-radius: var(--r); font-size: 12px; }
 .transport { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .transport .vol { display: inline-flex; align-items: center; gap: 4px; }
@@ -645,7 +647,7 @@ button.small.primary { padding: 4px 12px; }
             <label class="field">画面比<select id="eAspect"><option value="16:9">16:9</option><option value="9:16">9:16 縦</option><option value="4:3">4:3</option><option value="3:4">3:4 縦</option><option value="1:1">1:1</option><option value="4:5">4:5 縦</option><option value="21:9">21:9</option></select></label>
             <label class="field">解像度<select id="eRes"><option value="720">720p</option><option value="1080">1080p</option><option value="1440">1440p</option><option value="2160">4K</option></select></label>
             <label class="field">fps<select id="eFps"><option>24</option><option>30</option><option>60</option></select></label>
-            <label class="field field-wide">背景<select id="eKey"><option value="off">通常（スタイルの背景）</option><option value="green">グリーンバック（合成用）</option><option value="black">ブラックバック（合成用）</option></select></label>
+            <label class="field field-wide">背景<select id="eKey"><option value="off">通常（スタイルの背景）</option><option value="green">グリーンバック（合成用）</option><option value="black">ブラックバック（合成用）</option><option value="transparent">透明背景（透過・アルファ）</option></select></label>
           </div>
           <label class="check center-free"><input id="eCenter" class="center-toggle" type="checkbox"><span>中央を空ける（キャラクター用）<small>中央にキャラクターなどを重ねる前提で、文字と演出を横長の画面では左右、縦長の画面では上下に、行ごとに交互に置きます。背景と画面効果は全体のままです（プレビューには空ける範囲を点線で表示）</small></span></label>
           <label class="row center-dir" hidden>縦長のとき<select class="centerDirSel" aria-label="縦長の画面での分け方"><option value="tb">上下に分ける</option><option value="lr">左右に分ける</option></select></label>
@@ -678,6 +680,7 @@ button.small.primary { padding: 4px 12px; }
         <div class="row" style="margin-top:8px"><label class="file">フォントファイル（.ttf/.otf）<input id="fontFile" type="file" accept=".ttf,.otf,.woff,.woff2"></label></div>
         <h3>アクセント・ズレ色</h3>
         <label class="check"><input id="accentOn" type="checkbox"><span>自分の色で上書き<small>全シーンに適用。背景に合わせて明るさを自動調整します</small></span></label>
+        <label class="check"><input id="transparentBg" type="checkbox"><span>背景を透明にする<small>スタイルの背景を使わず、透明背景（透過・アルファ）にします</small></span></label>
         <div class="color-row" id="colorRowAccent"></div>
         <div class="row" style="margin-top:10px">
           <button id="btnRandPalette" class="accent">ランダムに配色</button>
@@ -701,6 +704,7 @@ button.small.primary { padding: 4px 12px; }
         <div class="row" style="margin-top:6px">
           <label class="row" style="gap:6px" title="レイアウトや装飾が添える「No.01」「#03」のような数字を描きません（歌詞に含まれる数字はそのまま）"><input id="fxHideNo" type="checkbox"> 飾りの数字を消す</label>
           <label class="row" style="gap:6px" title="レイアウトや装飾が添える「00:12.34」のような時刻を描きません（歌詞に含まれる時刻はそのまま）"><input id="fxHideTime" type="checkbox"> 飾りの時刻を消す</label>
+          <label class="row" style="gap:6px" title="画面四隅の外枠フレーム・REC・タイムコードなどのカメラ風 HUD 表示を隠します"><input id="fxHideHud" type="checkbox"> 外枠カメラビューを隠す</label>
         </div>
         <div class="fields" style="margin-top:12px">
           <label class="field">HUD<select id="fxHud"><option value="auto">スタイル次第</option><option value="on">常に表示</option><option value="off">表示しない</option></select></label>
@@ -730,9 +734,9 @@ button.small.primary { padding: 4px 12px; }
           <label class="field">解像度<select id="outRes"><option value="720">720p</option><option value="1080">1080p</option><option value="1440">1440p</option><option value="2160">4K</option></select></label>
           <label class="field">fps<select id="outFps"><option>24</option><option>30</option><option>60</option></select></label>
           <label class="field">画質<select id="outQuality"><option value="standard">標準</option><option value="high">高</option><option value="max">最高</option></select></label>
-          <label class="field field-wide">背景<select id="outKey"><option value="off">通常（スタイルの背景）</option><option value="green">グリーンバック（合成用）</option><option value="black">ブラックバック（合成用）</option></select></label>
+          <label class="field field-wide">背景<select id="outKey"><option value="off">通常（スタイルの背景）</option><option value="green">グリーンバック（合成用）</option><option value="black">ブラックバック（合成用）</option><option value="transparent">透明背景（透過・アルファ）</option></select></label>
         </div>
-        <p class="note key-note">グリーンバック／ブラックバックにすると、白い文字と演出だけを単色の背景の上に描きます（背景の模様・紙の質感・粒子・周辺減光は入りません）。プレビューにもそのまま反映されます。グリーンバックは動画編集ソフトのクロマキーで、ブラックバックは「スクリーン」合成や輝度キーで抜いて、別の映像の上に重ねられます。</p>
+        <p class="note key-note">通常以外の背景を選ぶと、文字や装飾の色・スタイルはそのままに、背景の模様・紙の質感・粒子・周辺減光を省いて描きます（プレビューにも反映されます）。グリーンバック／ブラックバックはクロマキーや「スクリーン」合成で抜け、透明背景ではアルファチャンネル付きの WebM（または連番PNG）として透過のまま書き出せます。</p>
         <label class="check center-free"><input id="outCenter" class="center-toggle" type="checkbox"><span>中央を空ける（キャラクター用）<small>中央にキャラクターなどを重ねる前提で、文字と演出を横長の画面では左右、縦長の画面では上下に、行ごとに交互に置きます。背景と画面効果は全体のままです（プレビューには空ける範囲を点線で表示）</small></span></label>
           <label class="row center-dir" hidden>縦長のとき<select class="centerDirSel" aria-label="縦長の画面での分け方"><option value="tb">上下に分ける</option><option value="lr">左右に分ける</option></select></label>
         <label class="row" style="gap:6px;margin-top:10px"><input id="outAudio" type="checkbox" checked> 曲を動画に含める</label>
@@ -2012,18 +2016,12 @@ J.resolveStyle = (project) => {
   if (J.keyMode(project)) keyStyle(st);
   return st;
 };
-/* ---- 合成用の背景（グリーンバック / ブラックバック） ----
-   Every scheme becomes white-on-black (so every part behaves as on a dark background), textures go away,
-   and the renderer turns the finished frame monochrome and — for green — screens it onto pure green.
-   Black stays the "empty" colour, so a keyer (green) or a screen / luma blend (black) gives the same result. */
-J.KEY_BG = { green: '#00FF00', black: '#000000' };
+/* ---- 合成用の背景（グリーンバック / ブラックバック / 透明背景） ----
+   Keep all style / user font and decoration colours intact; only strip textures and mark st.key = true
+   so the renderer skips the style background and composites over green / black / transparent alpha. */
+J.KEY_BG = { green: '#00FF00', black: '#000000', transparent: 'transparent' };
 J.keyMode = project => (project && J.KEY_BG[project.keyBg] ? project.keyBg : null);
 function keyStyle(st) {
-  st.schemes = st.schemes.map(s => {
-    const o = { bg: '#000000', fg: '#FFFFFF', sub: '#D2D2D2', accent: '#FFFFFF', accent2: '#BDBDBD', ink: '#FFFFFF', dim: '#1E1E1E', ghostA: '#9A9A9A', ghostB: '#5E5E5E' };
-    if (s.grad) o.grad = ['#FFFFFF', '#A8A8A8'];
-    return o;
-  });
   st.texture = { grain: 0, paper: 0, scan: 0 };
   st.key = true;
 }
@@ -3450,6 +3448,7 @@ J.DECOR_ORDER = ['brackets', 'rings', 'dots', 'arrows', 'slash', 'sparks', 'lead
 
 /* global HUD overlay (frame, title, timecode, rec, counter) */
 J.drawHUD = (env, plan) => {
+  if (plan.fx && plan.fx.hideHud) return;
   const { W, H, sc, ctx } = env;
   const m = Math.round(H * 0.045), L = H * 0.035, c = sc.sub, fs = J.clamp(H * 0.016, 10, 18), mono = monoF(env);
   const lw = 1.4;
@@ -3496,14 +3495,14 @@ J.defaultProject = () => ({
   kinetic: true,                  // キネティック parts
   extra2: false,                  // 追加分2: the parts added in v0.12 (themed ones also need their own set's switch)
   lang: 'auto',                   // 歌詞の言語: 'auto' | 'ja' | 'zh-Hant' | 'zh-Hans' | 'ko' — picks the faces each font key is drawn with
-  keyBg: 'off',                   // 合成用の背景: 'off' | 'green' (グリーンバック) | 'black' (ブラックバック)
+  keyBg: 'off',                   // 合成用の背景: 'off' | 'green' (グリーンバック) | 'black' (ブラックバック) | 'transparent' (透明背景)
   unify: false,                   // 統一感: part palettes, repeats shown the same way, キメ, モーフ, 太さ
   typeset: false,                 // 文字整列: kana tracking, small particles / big first character, Latin sizing, 0.2 s lead, restraint
   centerDir: 'tb',                // 中央を空ける on tall frames: 'tb' = top / bottom, 'lr' = left / right
   centerFree: false,              // 中央を空ける: lay the cuts out in side bands (left / right or top / bottom) around a character
   seed: 20260922,
   aspect: '16:9', res: 1080, fps: 24,
-  fx: { motion: 0.7, glitch: 0.55, chroma: 0.7, decor: 0.5, density: 0.55, texture: 0.6, flash: true, onTwos: true, koma: 12, hud: 'auto', bgSwitch: 0.35, hideNo: false, hideTime: false },
+  fx: { motion: 0.7, glitch: 0.55, chroma: 0.7, decor: 0.5, density: 0.55, texture: 0.6, flash: true, onTwos: true, koma: 12, hud: 'auto', bgSwitch: 0.35, hideNo: false, hideTime: false, hideHud: false },
   enabled: Object.fromEntries(J.GROUP_KEYS.map(g => [g, Object.fromEntries(J.order(g).map(k => [k, true]))])),
   timing: { bpm: 0, offset: 0.4, snap: true, tail: 0.9, lineTimes: {}, lineScale: 1 },
   overrides: {},
@@ -3786,8 +3785,8 @@ J.plan = (project, audio) => {
     version: 1, generator: 'JIZURA', appVersion: '0.13.0', title, artist, W, H, fps: project.fps || 24,
     duration: tm.duration, styleKey: project.style, style: st, fx, seed: project.seed,
     lines: [], cuts: [], events: [], beats: audio && audio.beats ? audio.beats.slice() : [],
-    hud: fx.hud === 'on' ? true : fx.hud === 'off' ? false : !!st.hud,
-    keyBg: J.keyMode ? J.keyMode(project) : null,   // 'green' | 'black' | null — 合成用の背景
+    hud: fx.hideHud ? false : (fx.hud === 'on' ? true : fx.hud === 'off' ? false : !!st.hud),
+    keyBg: J.keyMode ? J.keyMode(project) : null,   // 'green' | 'black' | 'transparent' | null — 合成用の背景
     centerFree: !!zones, zones,
     typeset: !!project.typeset, unify: !!project.unify,
     lang: J.resolveLang ? J.resolveLang(project) : 'ja',   // 歌詞の言語 (auto → detected)
@@ -4742,9 +4741,9 @@ class Renderer {
     ctx.clearRect(0, 0, cw, ch);
     ctx.setTransform(scale, 0, 0, scale, 0, 0);
     // ---------- background ----------
-    const key = plan.keyBg && J.KEY_BG && J.KEY_BG[plan.keyBg] ? plan.keyBg : null;   // 合成用: white-on-black, finished in keyFinish()
-    if (key && !opt.transparent) { ctx.fillStyle = '#000000'; ctx.fillRect(0, 0, W, H); }
-    else if (!opt.transparent) {
+    const key = plan.keyBg && J.KEY_BG && J.KEY_BG[plan.keyBg] ? plan.keyBg : null;   // 合成用: keep style colours, finished in keyFinish()
+    const transparent = !!opt.transparent || key === 'transparent';
+    if (!key && !transparent) {
       ctx.fillStyle = sc.bg; ctx.fillRect(0, 0, W, H);
       const g = ctx.createRadialGradient(W / 2, H * 0.45, 0, W / 2, H / 2, Math.hypot(W, H) * 0.6);
       const lift = J.lum(sc.bg) < 0.5 ? 'rgba(255,255,255,0.045)' : 'rgba(255,255,255,0.10)';
@@ -4779,8 +4778,8 @@ class Renderer {
     const energy = plan.energy ? plan.energy[Math.min(plan.energy.length - 1, Math.max(0, Math.floor(t * plan.energyRate)))] : null;
     // ---------- background graphic (per line) ----------
     // 透過PNG 前景／後景 (opt.layer): 'back' = background graphic + the decorations behind the lyrics, 'front' = the rest
-    const layer = opt.transparent ? opt.layer || null : null;
-    if ((!opt.transparent || layer === 'back') && !key && mainCut && mainCut.bg && mainCut.bg !== 'none' && J.BG[mainCut.bg]) {
+    const layer = transparent ? opt.layer || null : null;
+    if ((!transparent || layer === 'back') && !key && mainCut && mainCut.bg && mainCut.bg !== 'none' && J.BG[mainCut.bg]) {
       const env = this.makeEnv(ctx, plan, mainCut, sc, { pass: 'main', t: tq, lt: tq - mainCut.start, ltb: tq - mainCut.start, step, scale, allowFilter, energy, beat: beatInfo, bgOnly: true });
       ctx.save();
       try { J.BG[mainCut.bg].draw(env, mainCut.bgP || {}); } catch (e) { console.warn('bg', mainCut.bg, e); }
@@ -4846,7 +4845,7 @@ class Renderer {
       if (cam.rot) X.rotate(cam.rot * J.DEG);
       if (cam.skx) X.transform(1, 0, Math.tan(cam.skx * J.DEG), 1, 0, 0);
       X.scale(cs * (cam.sx ?? 1), cs * (cam.sy ?? 1)); X.translate(-W / 2, -H / 2);
-      if (P.pass !== 'main') X.globalCompositeOperation = J.lum(csc.bg) > 0.55 ? 'multiply' : 'source-over';
+      if (P.pass !== 'main') X.globalCompositeOperation = !key && !transparent && J.lum(csc.bg) > 0.55 ? 'multiply' : 'source-over';
       this.drawCut(env);
       X.restore();
       if (P.pass === 'main' && cut === cut0) { mainEnv = env; }
@@ -4871,8 +4870,13 @@ class Renderer {
         this.frame(A.getContext('2d'), plan, Math.max(prev.start, prev.end - 1e-3), Object.assign({}, opt, { noTrans: true, noPost: true, noHud: true }));
         const psc = st.schemes[prev.scheme % st.schemes.length] || st.schemes[0];
         ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none';
-        try { J.TRANS[mainCut.trans].draw(ctx, A, B, J.clamp(lt / dur), { cw, ch, sc, scPrev: psc, st, P: mainCut.transP || {}, step, t, scale, allowFilter, seed: mainCut.seed | 0, tmp: (w, h) => this.ensure(this.transC || (this.transC = mk(2, 2)), w, h) }); }
+        const fenced = transparent || !!key;
+        if (fenced) ctx.clearRect(0, 0, cw, ch);
+        const tg = fenced ? this.alphaGuard(ctx, [A, B], sc, psc, () => this.transC) : null;
+        if (tg) tg.begin();
+        try { J.TRANS[mainCut.trans].draw(ctx, A, B, J.clamp(lt / dur), { cw, ch, sc, scPrev: psc, st, P: mainCut.transP || {}, step, t, scale, allowFilter, seed: mainCut.seed | 0, tmp: (w, h) => { const c = this.ensure(this.transC || (this.transC = mk(2, 2)), w, h); if (fenced) this.guardTmp(c, sc, psc); return c; } }); }
         catch (e) { console.warn('trans', mainCut.trans, e); }
+        if (tg) tg.end();
         ctx.restore();
       }
     }
@@ -4884,32 +4888,18 @@ class Renderer {
     ctx.restore();
     // ---------- post ----------
     if (!opt.noPost) this.post(ctx, plan, t, tq, step, sc, scale, opt, allowFilter);
-    if (key && !opt.noPost) this.keyFinish(ctx, key, opt);
+    if (key && !opt.noPost && !transparent) this.keyFinish(ctx, key);
   }
 
-  /* 合成用の背景: make the finished frame monochrome (white text + effects only) and put it on the key colour.
-     black: as rendered (black = empty).  green: screened onto #00FF00, so black → green, white stays white and
-     the soft greys (ghosts, glow, fades) turn into partial transparency when keyed — the same result as
-     screen-blending the black version. */
-  keyFinish(ctx, key, opt) {
+  /* 合成用の背景: composite the solid key colour (green / black) behind the full-colour frame without
+     converting text or decorations to white / monochrome. */
+  keyFinish(ctx, key) {
+    if (!J.KEY_BG[key] || key === 'transparent') return;
     const cw = ctx.canvas.width, ch = ctx.canvas.height;
     ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.filter = 'none';
-    if (opt.transparent) {
-      // keep the alpha: desaturate through a copy
-      const S = this.ensure(this.scratch, cw, ch), sx = S.getContext('2d');
-      sx.setTransform(1, 0, 0, 1, 0, 0); sx.globalAlpha = 1; sx.globalCompositeOperation = 'copy';
-      if (this.filterOK) { sx.filter = 'grayscale(1)'; sx.drawImage(ctx.canvas, 0, 0); sx.filter = 'none'; }
-      else {
-        sx.drawImage(ctx.canvas, 0, 0); sx.globalCompositeOperation = 'saturation'; sx.fillStyle = '#808080'; sx.fillRect(0, 0, cw, ch);
-        sx.globalCompositeOperation = 'destination-in'; sx.drawImage(ctx.canvas, 0, 0);
-      }
-      sx.globalCompositeOperation = 'source-over';
-      ctx.globalCompositeOperation = 'copy'; ctx.drawImage(S, 0, 0);
-    } else {
-      // opaque frame: the 'saturation' blend with any grey keeps luminosity and drops colour
-      ctx.globalCompositeOperation = 'saturation'; ctx.fillStyle = '#808080'; ctx.fillRect(0, 0, cw, ch);
-      if (key === 'green') { ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = J.KEY_BG.green; ctx.fillRect(0, 0, cw, ch); }
-    }
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillStyle = J.KEY_BG[key];
+    ctx.fillRect(0, 0, cw, ch);
     ctx.restore();
   }
 
@@ -5052,17 +5042,37 @@ class Renderer {
        - afterwards, alpha is limited to where content was (before the effect) plus where the effect drew the
          content again (shifted / scaled / mirrored copies of the scratch copy), so washes, flashes and strobes
          tint the lyrics and the graphics but never turn the empty background opaque                            */
-  alphaGuard(ctx, S, sc) {
-    const cw = ctx.canvas.width, ch = ctx.canvas.height, R = this;
+  guardTmp(c, sc, psc) {
+    const x = c.getContext('2d'), cw = c.width, ch = c.height, proto = Object.getPrototypeOf(x);
+    if (x._jzGuarded) delete x.fillRect;
+    const norm = col => { const fs0 = x.fillStyle; x.fillStyle = col; const r = x.fillStyle; x.fillStyle = fs0; return r; };
+    const bgN = norm(sc.bg), bgP = psc ? norm(psc.bg) : bgN;
+    x._jzGuarded = true;
+    x.fillRect = function (rx, ry, rw, rh) {
+      const T = this.getTransform(), full = this.globalCompositeOperation === 'source-over' && this.globalAlpha >= 0.999 && typeof this.fillStyle === 'string' &&
+        /^#[0-9a-f]{6}$/i.test(this.fillStyle) && T.b === 0 && T.c === 0 && T.e + rx * T.a <= 1 && T.f + ry * T.d <= 1 && T.e + (rx + rw) * T.a >= cw - 1 && T.f + (ry + rh) * T.d >= ch - 1;
+      if (full || (this.globalCompositeOperation === 'source-over' && typeof this.fillStyle === 'string' && this.globalAlpha >= 0.999 && (this.fillStyle === bgN || this.fillStyle === bgP))) {
+        return proto.clearRect.call(this, rx, ry, rw, rh);
+      }
+      return proto.fillRect.call(this, rx, ry, rw, rh);
+    };
+    return c;
+  }
+
+  alphaGuard(ctx, S, sc, psc, extraFn) {
+    const cw = ctx.canvas.width, ch = ctx.canvas.height;
     const P = this.ensure(this.guardP || (this.guardP = mk(2, 2)), cw, ch), px = P.getContext('2d');
     const M = this.ensure(this.guardM || (this.guardM = mk(2, 2)), cw, ch), mx = M.getContext('2d');
-    let cleared = false, bgN = null;
-    const content = img => img === S;                  // the scratch copy of the frame (temp canvases may carry an opaque background)
+    let cleared = false, bgN = null, bgP = null;
+    const list = Array.isArray(S) ? S : [S];
+    const content = img => list.includes(img) || (extraFn && img === extraFn());
     const own = ['fillRect', 'drawImage'];
     return {
       begin() {
         cleared = false;
-        const fs0 = ctx.fillStyle; ctx.fillStyle = sc.bg; bgN = ctx.fillStyle; ctx.fillStyle = fs0;   // the background colour, normalised
+        const fs0 = ctx.fillStyle; ctx.fillStyle = sc.bg; bgN = ctx.fillStyle;
+        if (psc) { ctx.fillStyle = psc.bg; bgP = ctx.fillStyle; } else bgP = bgN;
+        ctx.fillStyle = fs0;   // the background colour, normalised
         px.setTransform(1, 0, 0, 1, 0, 0); px.globalAlpha = 1; px.globalCompositeOperation = 'copy'; px.filter = 'none'; px.drawImage(ctx.canvas, 0, 0);
         mx.setTransform(1, 0, 0, 1, 0, 0); mx.globalAlpha = 1; mx.globalCompositeOperation = 'source-over'; mx.filter = 'none'; mx.clearRect(0, 0, cw, ch);
         const proto = Object.getPrototypeOf(ctx);
@@ -5070,7 +5080,7 @@ class Renderer {
           const T = this.getTransform(), full = this.globalCompositeOperation === 'source-over' && this.globalAlpha >= 0.999 && typeof this.fillStyle === 'string' &&
             /^#[0-9a-f]{6}$/i.test(this.fillStyle) && T.b === 0 && T.c === 0 && T.e + x * T.a <= 1 && T.f + y * T.d <= 1 && T.e + (x + w) * T.a >= cw - 1 && T.f + (y + h) * T.d >= ch - 1;
           if (full) { cleared = true; mx.clearRect(0, 0, cw, ch); return proto.clearRect.call(this, x, y, w, h); }
-          if (this.globalCompositeOperation === 'source-over' && typeof this.fillStyle === 'string' && /^#[0-9a-f]{6}$/i.test(this.fillStyle) && this.globalAlpha >= 0.999 && this.fillStyle === bgN) return proto.clearRect.call(this, x, y, w, h);
+          if (this.globalCompositeOperation === 'source-over' && typeof this.fillStyle === 'string' && /^#[0-9a-f]{6}$/i.test(this.fillStyle) && this.globalAlpha >= 0.999 && (this.fillStyle === bgN || this.fillStyle === bgP)) return proto.clearRect.call(this, x, y, w, h);
           return proto.fillRect.call(this, x, y, w, h);
         };
         ctx.drawImage = function (img, ...a) {
@@ -5092,13 +5102,15 @@ class Renderer {
   post(ctx, plan, t, tq, step, sc, scale, opt, allowFilter) {
     const cw = ctx.canvas.width, ch = ctx.canvas.height;
     const fx = plan.fx, st = plan.style;
+    const key = plan.keyBg && J.KEY_BG && J.KEY_BG[plan.keyBg] ? plan.keyBg : null;
+    const transparent = !!opt.transparent || key === 'transparent';
     const active = plan.events.filter(ev => t >= ev.t && t < ev.t + Math.max(ev.dur, 1 / plan.fps));
     const needScratch = active.some(ev => ['slice', 'block', 'zoom', 'mosaic'].includes(ev.type) || (J.FXE[ev.type] && J.FXE[ev.type].scratch)) || (!opt.fast && (st.glow || 0) > 0);
     const S = needScratch ? this.ensure(this.scratch, cw, ch) : null;
     ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
     const copy = () => { const sx = S.getContext('2d'); sx.globalCompositeOperation = 'copy'; sx.drawImage(ctx.canvas, 0, 0); sx.globalCompositeOperation = 'source-over'; };
     const clock24 = Math.floor(t * 24);           // glitch randomness changes at most 24 times a second at any output fps
-    const guard = opt.transparent ? this.alphaGuard(ctx, S, sc) : null;   // 透過: effects must not fill the empty background
+    const guard = (transparent || key) ? this.alphaGuard(ctx, S, sc) : null;   // 透過/合成: effects must not fill the empty background
     for (const ev of active) {
       // progress clamped to 0..1 (an event shorter than one output frame is still shown for that frame — k would pass 1)
       const k0 = (t - ev.t) / Math.max(ev.dur, 1e-3), k = Number.isFinite(k0) ? J.clamp(k0, 0, 1) : 0;
@@ -5108,7 +5120,7 @@ class Renderer {
       if (D && D.draw) {
         if (D.scratch) copy();
         try {
-          D.draw(ctx, ev, k, { cw, ch, S, sc, st: plan.style, step: st2, t, scale, renderer: this, allowFilter, opt, transparent: !!opt.transparent, tmp: (w, h) => this.ensure(this.tiny, w, h), tmp2: (w, h) => this.ensure(this.small2 || (this.small2 = mk(2, 2)), w, h) });
+          D.draw(ctx, ev, k, { cw, ch, S, sc, st: plan.style, step: st2, t, scale, renderer: this, allowFilter, opt, transparent: !!(transparent || key), tmp: (w, h) => this.ensure(this.tiny, w, h), tmp2: (w, h) => this.ensure(this.small2 || (this.small2 = mk(2, 2)), w, h) });
         } catch (e) { console.warn('fx', ev.type, e); }
         ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none'; ctx.imageSmoothingEnabled = true;
         if (guard) guard.end();
@@ -5156,13 +5168,13 @@ class Renderer {
     }
     // bloom
     const glow = (st.glow || 0.6) * 0.5 * (fx.texture ?? 0.6);
-    if (!opt.fast && allowFilter && glow > 0.05 && !opt.transparent) {
+    if (!opt.fast && allowFilter && glow > 0.05 && !transparent) {
       const sw = Math.round(cw / 4), sh = Math.round(ch / 4);
       const Sm = this.ensure(this.small, sw, sh), sx = Sm.getContext('2d');
       sx.filter = `blur(${Math.max(2, Math.round(sw / 160))}px)`; sx.globalCompositeOperation = 'copy'; sx.drawImage(ctx.canvas, 0, 0, sw, sh); sx.filter = 'none'; sx.globalCompositeOperation = 'source-over';
       ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = glow * 0.55; ctx.drawImage(Sm, 0, 0, cw, ch); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
     }
-    if (!opt.transparent && !plan.keyBg) {
+    if (!transparent && !plan.keyBg) {
       // scanlines
       const scan = (st.texture.scan || 0) * (fx.texture ?? 0.6);
       if (scan > 0.03) {
@@ -5425,6 +5437,42 @@ J.pickAudioCodec = async (sr, chn) => {
   }
   return null;
 };
+const ALPHA_VIDEO_CANDS = [
+  { codec: 'vp09.00.51.08', webm: 'V_VP9', label: 'VP9' },
+  { codec: 'vp09.00.41.08', webm: 'V_VP9', label: 'VP9' },
+  { codec: 'vp09.00.31.08', webm: 'V_VP9', label: 'VP9' },
+  { codec: 'vp8', webm: 'V_VP8', label: 'VP8' },
+];
+const alphaMemo = new Map();
+J.pickAlphaVideoCodec = (w, h, fps, bitrate) => {
+  const key = [w, h, fps, bitrate].join('/');
+  if (!alphaMemo.has(key)) alphaMemo.set(key, (async () => {
+    if (typeof VideoEncoder === 'undefined') return null;
+    for (const c of ALPHA_VIDEO_CANDS) { const cfg = vcfg(c, w, h, fps, bitrate); if (await supported(cfg)) return Object.assign({}, c, { cfg }); }
+    return null;
+  })());
+  return alphaMemo.get(key).then(vc => vc && Object.assign({}, vc, { cfg: Object.assign({}, vc.cfg) }));
+};
+J.alphaVideoAttempts = async (w, h, fps, bitrate) => {
+  if (typeof VideoEncoder === 'undefined') return [];
+  const out = [], seen = new Set();
+  const add = async (c, hw, br) => {
+    const key = c.codec + '|' + (hw || '') + '|' + br;
+    if (seen.has(key) || out.length >= 5) return;
+    const cfg = vcfg(c, w, h, fps, br, hw);
+    if (await supported(cfg)) { seen.add(key); out.push(Object.assign({}, c, { cfg, hw: hw || 'auto' })); }
+  };
+  let first = null;
+  for (const c of ALPHA_VIDEO_CANDS) { const cfg = vcfg(c, w, h, fps, bitrate); if (await supported(cfg)) { first = c; break; } }
+  if (first) { await add(first, null, bitrate); await add(first, 'prefer-software', bitrate); }
+  for (const c of ALPHA_VIDEO_CANDS.filter(x => x !== first)) await add(c, 'prefer-software', Math.round(bitrate * 0.75));
+  return out;
+};
+J.pickAlphaAudioCodec = async (sr, chn) => {
+  if (typeof AudioEncoder === 'undefined') return null;
+  try { const s = await AudioEncoder.isConfigSupported({ codec: 'opus', sampleRate: 48000, numberOfChannels: chn, bitrate: 192000 }); if (s.supported) return { codec: 'opus', mux: 'opus', sr: 48000 }; } catch (e) {}
+  return null;
+};
 
 async function resample(buffer, sr, duration, offset = 0) {
   const chn = Math.min(2, buffer.numberOfChannels);
@@ -5606,6 +5654,324 @@ async function encodeMP4({ plan, project, audio, onProgress, signal, range, file
   onProgress && onProgress(1, '完了');
   const size = file ? null : store.end;
   return { blob: file ? null : store.blob('video/mp4'), size, codec: vc.label + (vc.hw === 'prefer-software' ? '（ソフトウェア）' : ''), audio: ac ? ac.mux : null, audioWanted: !!(audio && audio.buffer && project.includeAudio !== false), width: w, height: h, toFile: !!file };
+}
+
+/* ---------- WebM with alpha channel (VP9/VP8 color + VP9/VP8 alpha via BlockAdditions, optional Opus audio) ---------- */
+function ebmlVint(n) {
+  if (n < 0x7f) return new Uint8Array([0x80 | n]);
+  if (n < 0x3fff) return new Uint8Array([0x40 | (n >>> 8), n & 0xff]);
+  if (n < 0x1fffff) return new Uint8Array([0x20 | (n >>> 16), (n >>> 8) & 0xff, n & 0xff]);
+  if (n < 0x0fffffff) return new Uint8Array([0x10 | (n >>> 24), (n >>> 16) & 0xff, (n >>> 8) & 0xff, n & 0xff]);
+  return ebmlVint8(n);
+}
+function ebmlVint8(n) {
+  const out = new Uint8Array(8);
+  out[0] = 0x01;
+  const hi = Math.floor(n / 0x100000000), lo = n >>> 0;
+  out[1] = (hi >>> 16) & 0xff; out[2] = (hi >>> 8) & 0xff; out[3] = hi & 0xff;
+  out[4] = (lo >>> 24) & 0xff; out[5] = (lo >>> 16) & 0xff; out[6] = (lo >>> 8) & 0xff; out[7] = lo & 0xff;
+  return out;
+}
+function ebmlConcat(parts) {
+  let len = 0; for (const p of parts) len += p.length;
+  const out = new Uint8Array(len);
+  let off = 0; for (const p of parts) { out.set(p, off); off += p.length; }
+  return out;
+}
+function ebmlEl(id, payload) {
+  const i = id instanceof Uint8Array ? id : new Uint8Array(id);
+  const p = payload instanceof Uint8Array ? payload : new Uint8Array(payload);
+  return ebmlConcat([i, ebmlVint(p.length), p]);
+}
+function ebmlUintBytes(v) {
+  if (v === 0) return new Uint8Array([0]);
+  const a = [];
+  let x = v;
+  while (x > 0) { a.unshift(x % 256); x = Math.floor(x / 256); }
+  return new Uint8Array(a);
+}
+function ebmlIntBytes(v) {
+  if (v >= -128 && v <= 127) return new Uint8Array([v & 0xff]);
+  if (v >= -32768 && v <= 32767) return new Uint8Array([(v >> 8) & 0xff, v & 0xff]);
+  return new Uint8Array([(v >> 24) & 0xff, (v >> 16) & 0xff, (v >> 8) & 0xff, v & 0xff]);
+}
+function ebmlFloat64(v) {
+  const b = new Uint8Array(8); new DataView(b.buffer).setFloat64(0, v, false); return b;
+}
+function ebmlStr(s) { return new TextEncoder().encode(s); }
+function opusHead(chn, sr = 48000) {
+  const b = new Uint8Array(19), dv = new DataView(b.buffer);
+  b.set([0x4f, 0x70, 0x75, 0x73, 0x48, 0x65, 0x61, 0x64], 0);
+  b[8] = 1; b[9] = chn; dv.setUint16(10, 312, true); dv.setUint32(12, sr, true); dv.setInt16(16, 0, true); b[18] = 0;
+  return b;
+}
+class WebMAlphaMuxer {
+  constructor({ store, file, width, height, codecId, audio }) {
+    this.store = store; this.file = file; this.pos = 0;
+    this.cluster = []; this.clusterTs = -1; this.clusterStartPos = 0; this.clusterHasKey = false;
+    this.prevVideoTs = 0; this.maxTs = 0; this.cues = [];
+    this.width = width; this.height = height; this.codecId = codecId; this.audio = audio;
+  }
+  async writeSeq(u8) {
+    if (this.file) await this.file.write(u8);
+    else this.store.write(u8, this.pos);
+    this.pos += u8.length;
+  }
+  async writeAt(pos, u8) {
+    if (this.file) await this.file.write({ type: 'write', position: pos, data: u8 });
+    else this.store.write(u8, pos);
+  }
+  async init() {
+    const hdr = ebmlEl([0x1a, 0x45, 0xdf, 0xa3], ebmlConcat([
+      ebmlEl([0x42, 0x86], [1]), ebmlEl([0x42, 0xf7], [1]), ebmlEl([0x42, 0xf2], [4]), ebmlEl([0x42, 0xf3], [8]),
+      ebmlEl([0x42, 0x82], ebmlStr('webm')), ebmlEl([0x42, 0x87], [4]), ebmlEl([0x42, 0x85], [2]),
+    ]));
+    await this.writeSeq(hdr);
+    await this.writeSeq(new Uint8Array([0x18, 0x53, 0x80, 0x67])); // Segment ID
+    this.segSizePos = this.pos;
+    await this.writeSeq(new Uint8Array([0x01, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff])); // patched on finalize
+    this.segDataStart = this.pos;
+    const info = ebmlEl([0x15, 0x49, 0xa9, 0x66], ebmlConcat([
+      ebmlEl([0x2a, 0xd7, 0xb1], ebmlUintBytes(1000000)),
+      ebmlEl([0x4d, 0x80], ebmlStr('JIZURA')),
+      ebmlEl([0x57, 0x41], ebmlStr('JIZURA')),
+      ebmlEl([0x44, 0x89], ebmlFloat64(0)),
+    ]));
+    this.durValPos = this.pos + info.length - 8;
+    await this.writeSeq(info);
+    const vTrack = ebmlEl([0xae], ebmlConcat([
+      ebmlEl([0xd7], [1]), ebmlEl([0x73, 0xc5], [1]), ebmlEl([0x83], [1]), ebmlEl([0x9c], [0]),
+      ebmlEl([0x86], ebmlStr(this.codecId)),
+      ebmlEl([0xe0], ebmlConcat([
+        ebmlEl([0xb0], ebmlUintBytes(this.width)),
+        ebmlEl([0xba], ebmlUintBytes(this.height)),
+        ebmlEl([0x53, 0xc0], [1]), // AlphaMode = 1
+      ])),
+    ]));
+    const trackParts = [vTrack];
+    if (this.audio) {
+      const a = this.audio;
+      trackParts.push(ebmlEl([0xae], ebmlConcat([
+        ebmlEl([0xd7], [2]), ebmlEl([0x73, 0xc5], [2]), ebmlEl([0x83], [2]), ebmlEl([0x9c], [0]),
+        ebmlEl([0x86], ebmlStr('A_OPUS')),
+        ebmlEl([0x63, 0xa2], a.desc || opusHead(a.chn, a.sr)),
+        ebmlEl([0x56, 0xaa], ebmlUintBytes(6500000)),
+        ebmlEl([0x56, 0xbb], ebmlUintBytes(80000000)),
+        ebmlEl([0xe1], ebmlConcat([ebmlEl([0xb5], ebmlFloat64(a.sr)), ebmlEl([0x9f], [a.chn])])),
+      ])));
+    }
+    await this.writeSeq(ebmlEl([0x16, 0x54, 0xae, 0x6b], ebmlConcat(trackParts)));
+  }
+  async flushCluster() {
+    if (!this.cluster.length) return;
+    if (this.clusterHasKey) this.cues.push({ ts: this.clusterTs, pos: this.pos - this.segDataStart });
+    await this.writeSeq(ebmlEl([0x1f, 0x43, 0xb6, 0x75], ebmlConcat(this.cluster)));
+    this.cluster = [];
+  }
+  async ensureCluster(tsMs, forceNew) {
+    if (this.clusterTs < 0 || forceNew || tsMs - this.clusterTs >= 30000) {
+      await this.flushCluster();
+      this.clusterTs = tsMs;
+      this.clusterHasKey = false;
+      this.cluster.push(ebmlEl([0xe7], ebmlUintBytes(tsMs)));
+    }
+  }
+  async addVideo(tsMs, isKey, colorU8, alphaU8) {
+    await this.ensureCluster(tsMs, isKey && this.clusterTs >= 0);
+    if (isKey) this.clusterHasKey = true;
+    const rel = Math.max(-32768, Math.min(32767, tsMs - this.clusterTs));
+    const blk = ebmlEl([0xa1], ebmlConcat([new Uint8Array([0x81, (rel >> 8) & 0xff, rel & 0xff, 0x00]), colorU8]));
+    const add = ebmlEl([0x75, 0xa1], ebmlEl([0xa6], ebmlConcat([ebmlEl([0xee], [1]), ebmlEl([0xa5], alphaU8)])));
+    const kids = isKey ? [blk, add] : [blk, add, ebmlEl([0xfb], ebmlIntBytes(-(Math.max(1, tsMs - this.prevVideoTs))))];
+    this.cluster.push(ebmlEl([0xa0], ebmlConcat(kids)));
+    this.prevVideoTs = tsMs;
+    if (tsMs > this.maxTs) this.maxTs = tsMs;
+  }
+  async addAudio(tsMs, opusU8) {
+    await this.ensureCluster(tsMs, false);
+    const rel = Math.max(-32768, Math.min(32767, tsMs - this.clusterTs));
+    const hdr = new Uint8Array([0x82, (rel >> 8) & 0xff, rel & 0xff, 0x80]);
+    this.cluster.push(ebmlEl([0xa3], ebmlConcat([hdr, opusU8])));
+    if (tsMs > this.maxTs) this.maxTs = tsMs;
+  }
+  async finalize(durMs) {
+    await this.flushCluster();
+    if (this.cues.length) {
+      const pts = this.cues.map(c => ebmlEl([0xbb], ebmlConcat([
+        ebmlEl([0xb3], ebmlUintBytes(c.ts)),
+        ebmlEl([0xb7], ebmlConcat([ebmlEl([0xf7], [1]), ebmlEl([0xf1], ebmlUintBytes(c.pos))])),
+      ])));
+      await this.writeSeq(ebmlEl([0x1c, 0x53, 0xbb, 0x6b], ebmlConcat(pts)));
+    }
+    const totalDur = Math.max(this.maxTs, durMs || 0);
+    await this.writeAt(this.durValPos, ebmlFloat64(totalDur));
+    await this.writeAt(this.segSizePos, ebmlVint8(this.pos - this.segDataStart));
+  }
+}
+
+J.exportWebMAlpha = async (o) => {
+  const { plan, project, audio, quality = 'high', onProgress, signal, range, file = null } = o;
+  const [w, h] = J.outputSize(project);
+  const fps = plan.fps, bitrate = J.videoBitrate(w, h, fps, quality);
+  const attempts = await J.alphaVideoAttempts(w, h, fps, bitrate);
+  if (!attempts.length) throw new Error('このブラウザは動画エンコード（WebCodecs）に対応していません。Chrome か Edge の最新版で開いてください。');
+  const tried = [];
+  for (let k = 0; k < attempts.length; k++) {
+    const vc = attempts[k];
+    try {
+      if (file && k > 0) { await file.seek(0); await file.truncate(0); }
+      const r = await encodeWebMAlpha(Object.assign({}, o, { w, h, vc, note: k > 0 ? `（${vc.label}・ソフトウェアで再試行 ${k}）` : '' }));
+      r.tried = tried; return r;
+    } catch (e) {
+      if (signal && signal.aborted) throw new Error('キャンセルしました');
+      if (e && e.jzFatal) throw e;
+      tried.push(`${vc.label}/${vc.hw}: ${e && e.message ? e.message : e}`);
+      console.warn('WebM alpha export attempt failed', vc.codec, vc.hw, e);
+    }
+  }
+  const err = new Error('WebM を書き出せませんでした。' + (file ? '' : '「大きな動画用（ファイルに直接保存）」か、') + '解像度・fps・画質を下げて試してください。詳細：' + tried.join(' ／ '));
+  err.detail = tried; throw err;
+};
+
+async function encodeWebMAlpha({ plan, project, audio, onProgress, signal, range, file, w, h, vc, note }) {
+  const span = J.exportSpan(plan, range);
+  const fps = plan.fps;
+  let ac = null, audioPackets = [], opusDesc = null, audioChn = 0;
+  if (audio && audio.buffer && project.includeAudio !== false) ac = await J.pickAlphaAudioCodec(48000, Math.min(2, audio.buffer.numberOfChannels));
+  if (ac) {
+    onProgress && onProgress(0.01, '音声をエンコード中');
+    const rs = await resample(audio.buffer, ac.sr, span.dur, span.t0);
+    audioChn = rs.numberOfChannels;
+    let aEnd = 0, aErr = null;
+    const aenc = new AudioEncoder({
+      output: (chunk, meta) => {
+        if (!opusDesc && meta && meta.decoderConfig && meta.decoderConfig.description) {
+          opusDesc = new Uint8Array(meta.decoderConfig.description);
+        }
+        const u8 = new Uint8Array(chunk.byteLength); chunk.copyTo(u8);
+        audioPackets.push({ tsMs: Math.round(chunk.timestamp / 1000), u8 });
+        aEnd = Math.max(aEnd, chunk.timestamp + (chunk.duration || 0));
+      },
+      error: e => { aErr = e; },
+    });
+    aenc.configure({ codec: ac.codec, sampleRate: ac.sr, numberOfChannels: audioChn, bitrate: 192000 });
+    const frames = rs.length, block = 4800;
+    for (let off = 0; off < frames; off += block) {
+      if (aErr) break;
+      const n = Math.min(block, frames - off);
+      const data = new Float32Array(n * audioChn);
+      for (let c = 0; c < audioChn; c++) data.set(rs.getChannelData(c).subarray(off, off + n), c * n);
+      const ad = new AudioData({ format: 'f32-planar', sampleRate: ac.sr, numberOfFrames: n, numberOfChannels: audioChn, timestamp: Math.round(off * 1e6 / ac.sr), data });
+      aenc.encode(ad); ad.close();
+      if (aenc.encodeQueueSize > 16) await new Promise(r => setTimeout(r, 1));
+    }
+    await aenc.flush(); aenc.close();
+    const fatal = m => { const e = new Error(m); e.jzFatal = true; return e; };
+    if (aErr) throw fatal('音声のエンコードに失敗しました: ' + (aErr.message || aErr));
+    if (!audioPackets.length || aEnd < (Math.min(span.dur, audio.buffer.duration - span.t0) - 0.5) * 1e6) {
+      const aChunks = audioPackets.length;
+      throw fatal('音声のエンコードが途中で止まりました（' + aChunks + '）。もう一度書き出してください');
+    }
+  }
+  const store = file ? null : new BlockStore();
+  const muxer = new WebMAlphaMuxer({
+    store, file, width: w, height: h, codecId: vc.webm,
+    audio: ac ? { chn: audioChn, sr: ac.sr, desc: opusDesc } : null,
+  });
+  await muxer.init();
+  let err = null, outColor = 0, outAlpha = 0, aIdx = 0;
+  const cMap = new Map(), aMap = new Map(), tsQueue = [];
+  const vencColor = new VideoEncoder({
+    output: chunk => {
+      outColor++;
+      const u8 = new Uint8Array(chunk.byteLength); chunk.copyTo(u8);
+      cMap.set(chunk.timestamp, { u8, key: chunk.type === 'key' });
+    },
+    error: e => { err = e; },
+  });
+  const vencAlpha = new VideoEncoder({
+    output: chunk => {
+      outAlpha++;
+      const u8 = new Uint8Array(chunk.byteLength); chunk.copyTo(u8);
+      aMap.set(chunk.timestamp, u8);
+    },
+    error: e => { err = e; },
+  });
+  const cfgColor = Object.assign({}, vc.cfg, { latencyMode: 'quality' });
+  const cfgAlpha = Object.assign({}, vc.cfg, { bitrate: Math.max(500000, Math.round(vc.cfg.bitrate * 0.4)), latencyMode: 'quality' });
+  vencColor.configure(cfgColor);
+  vencAlpha.configure(cfgAlpha);
+  const drain = async () => {
+    while (tsQueue.length && cMap.has(tsQueue[0]) && aMap.has(tsQueue[0])) {
+      const ts = tsQueue.shift();
+      const c = cMap.get(ts), a = aMap.get(ts);
+      cMap.delete(ts); aMap.delete(ts);
+      const tsMs = Math.round(ts / 1000);
+      while (aIdx < audioPackets.length && audioPackets[aIdx].tsMs <= tsMs) {
+        await muxer.addAudio(audioPackets[aIdx].tsMs, audioPackets[aIdx].u8);
+        aIdx++;
+      }
+      await muxer.addVideo(tsMs, c.key, c.u8, a);
+    }
+  };
+  const canvas = document.createElement('canvas'); canvas.width = w; canvas.height = h;
+  const ctx = canvas.getContext('2d', { alpha: true, willReadFrequently: true });
+  const R = new J.Renderer();
+  const total = Math.max(1, Math.round(span.dur * fps));
+  const scale = w / plan.W;
+  const ySize = w * h, uvSize = (w >> 1) * (h >> 1);
+  const alphaI420 = new Uint8Array(ySize + 2 * uvSize);
+  alphaI420.fill(128, ySize);
+  const prevRes = J.glyphs.maxRes; J.glyphs.maxRes = h >= 1000 ? 768 : 512;
+  const closeEnc = () => {
+    try { if (vencColor.state !== 'closed') vencColor.close(); } catch (e) {}
+    try { if (vencAlpha.state !== 'closed') vencAlpha.close(); } catch (e) {}
+  };
+  try {
+    for (let i = 0; i < total; i++) {
+      if (signal && signal.aborted) { closeEnc(); throw new Error('キャンセルしました'); }
+      if (err) throw err;
+      if (vencColor.state === 'closed' || vencAlpha.state === 'closed') throw new Error('エンコーダーが停止しました');
+      R.frame(ctx, plan, span.t0 + i / fps, { scale, transparent: true });
+      const rgba = ctx.getImageData(0, 0, w, h).data;
+      for (let p = 0; p < ySize; p++) alphaI420[p] = rgba[p * 4 + 3];
+      const ts = Math.round(i * 1e6 / fps), dur = Math.round(1e6 / fps);
+      const isKey = i % (fps * 2) === 0;
+      tsQueue.push(ts);
+      const vfC = new VideoFrame(rgba, { format: 'RGBA', codedWidth: w, codedHeight: h, timestamp: ts, duration: dur });
+      const vfA = new VideoFrame(alphaI420, { format: 'I420', codedWidth: w, codedHeight: h, timestamp: ts, duration: dur });
+      try { vencColor.encode(vfC, { keyFrame: isKey }); vencAlpha.encode(vfA, { keyFrame: isKey }); }
+      finally { vfC.close(); vfA.close(); }
+      await drain();
+      let spins = 0;
+      while ((vencColor.encodeQueueSize > 4 || vencAlpha.encodeQueueSize > 4) && !err) {
+        await new Promise(r => setTimeout(r, 2));
+        if (!document.hidden && ++spins > 15000) throw new Error('エンコーダーが応答しません');
+      }
+      if (i === Math.min(total - 1, fps * 3) && (outColor === 0 || outAlpha === 0)) {
+        await Promise.all([vencColor.flush(), vencAlpha.flush()]);
+        if (!outColor || !outAlpha) throw new Error('エンコーダーが出力を返しません');
+      }
+      if (i % 3 === 0) { onProgress && onProgress(i / total, `フレーム ${i + 1}/${total}${note || ''}`); await new Promise(r => setTimeout(r, 0)); }
+    }
+    await Promise.all([vencColor.flush(), vencAlpha.flush()]);
+    if (err) throw err;
+    await drain();
+    while (aIdx < audioPackets.length) {
+      await muxer.addAudio(audioPackets[aIdx].tsMs, audioPackets[aIdx].u8);
+      aIdx++;
+    }
+  } catch (e) { closeEnc(); throw e; }
+  finally { J.glyphs.maxRes = prevRes; }
+  closeEnc();
+  const outFrames = Math.min(outColor, outAlpha);
+  if (outFrames < total * 0.98) throw new Error(`動画のフレームが足りません（${outFrames}/${total}）`);
+  onProgress && onProgress(0.995, 'ファイルを仕上げ中');
+  await muxer.finalize(Math.round(span.dur * 1000));
+  if (file) await file.close();
+  onProgress && onProgress(1, '完了');
+  const size = file ? null : store.end;
+  return { blob: file ? null : store.blob('video/webm'), size, codec: vc.label + ' + Alpha' + (vc.hw === 'prefer-software' ? '（ソフトウェア）' : ''), audio: ac ? ac.mux : null, audioWanted: !!(audio && audio.buffer && project.includeAudio !== false), width: w, height: h, toFile: !!file, format: 'webm' };
 }
 
 /* ---------- PNG sequence as ZIP (store, no compression) ---------- */
@@ -16699,7 +17065,7 @@ fx('halftone', { name: '網点', tags: ['pop', 'graphic', 'editorial'], w: 0.9, 
     const pat = ctx.createPattern(dotTile(c, r), 'repeat');
     try { const q = 45 * DEG; pat.setTransform(new DOMMatrix([Math.cos(q), Math.sin(q), -Math.sin(q), Math.cos(q), cw / 2, ch / 2])); } catch (e) { /* unrotated screen */ }
     ctx.globalCompositeOperation = 'destination-in'; ctx.fillStyle = pat; ctx.fillRect(0, 0, cw, ch);
-    if (I.opt && I.opt.transparent) return;
+    if (I.transparent || (I.opt && I.opt.transparent)) return;
     ctx.globalCompositeOperation = 'destination-over'; ctx.fillStyle = J.mix(sc.bg, sc.fg, 0.16); ctx.fillRect(0, 0, cw, ch);
   } });
 
@@ -58540,6 +58906,7 @@ function mergeProject(p) {
     .map(uf => ({ key: uf.key, label: String(uf.label || uf.key).slice(0, 80), family: J.safeFamily(uf.family || uf.key.slice(5)), weight: J.clamp(parseInt(uf.weight, 10) || 400, 100, 900) }));
   for (const uf of o.userFonts) if (!J.FONTS[uf.key]) J.addUserFont(uf.key, uf.label, uf.family, uf.weight);
   migrateOrder(o, p);
+  o.keyBg = ['off', 'green', 'black', 'transparent'].includes(o.keyBg) ? o.keyBg : 'off';
   o.themeId = p && typeof p.themeId === 'string' && J.THEMES && J.THEMES[p.themeId] ? p.themeId : null;
   o.fonts = {};
   for (const [role, k] of Object.entries((p && p.fonts) || {})) if (typeof k === 'string' && J.FONTS[k] && /^[\w-]+$/.test(role)) o.fonts[role] = k;
@@ -59658,6 +60025,7 @@ function renderFx() {
   $('fxKoma').value = String(J.komaOf(S.project.fx));
   $('fxHud').value = S.project.fx.hud || 'auto';
   $('fxHideNo').checked = !!S.project.fx.hideNo; $('fxHideTime').checked = !!S.project.fx.hideTime;
+  if ($('fxHideHud')) $('fxHideHud').checked = !!S.project.fx.hideHud;
   $('seed').value = S.project.seed;
 }
 
@@ -59810,37 +60178,62 @@ function syncOut() {
   $('outQuality').value = S.project.quality || 'high'; $('outAudio').checked = S.project.includeAudio !== false;
   const k = J.keyMode(S.project) || 'off';
   $('outKey').value = k; $('eKey').value = k;
+  if ($('transparentBg')) $('transparentBg').checked = k === 'transparent';
+  const vp = $('viewport'); if (vp) vp.classList.toggle('is-transparent', k === 'transparent');
+  $('btnMP4').textContent = k === 'transparent' ? 'WebM（透過）を書き出す' : 'MP4 を書き出す';
+  $('eMP4').textContent = k === 'transparent' ? 'WebM（透過）を書き出す' : 'MP4 を書き出す';
+  $('btnMP4File').textContent = k === 'transparent' ? 'WebM（大きな動画用・ファイルに直接保存）' : 'MP4（大きな動画用・ファイルに直接保存）';
   $('outCenter').checked = $('eCenter').checked = !!S.project.centerFree;
   const tall = J.designSize(S.project.aspect)[1] > J.designSize(S.project.aspect)[0] * 1.1;
   document.querySelectorAll('.center-dir').forEach(el => { el.hidden = !(S.project.centerFree && tall); });
   document.querySelectorAll('.centerDirSel').forEach(el => { el.value = S.project.centerDir === 'lr' ? 'lr' : 'tb'; });
   const kb = $('keyBadge');
   kb.hidden = k === 'off';
-  if (k !== 'off') kb.innerHTML = `<i style="background:${J.KEY_BG[k]}"></i>${k === 'green' ? 'グリーンバック' : 'ブラックバック'}`;
+  if (k !== 'off') {
+    const icon = k === 'transparent' ? '<i class="alpha"></i>' : `<i style="background:${J.KEY_BG[k]}"></i>`;
+    const label = k === 'green' ? 'グリーンバック' : k === 'black' ? 'ブラックバック' : '透明背景';
+    kb.innerHTML = icon + label;
+  }
 }
 // the codec check is slow in some browsers: at start-up, let the first preview frames paint before asking
 function codecNoteSoon() { (window.requestIdleCallback || (f => setTimeout(f, 400)))(() => codecNote(), { timeout: 1500 }); }
 async function codecNote() {
   const [w, h] = J.outputSize(S.project);
-  const vc = await J.pickVideoCodec(w, h, S.project.fps, 12e6);
+  const alpha = J.keyMode(S.project) === 'transparent';
+  const vc = alpha
+    ? (J.pickAlphaVideoCodec ? await J.pickAlphaVideoCodec(w, h, S.project.fps, 12e6) : null)
+    : await J.pickVideoCodec(w, h, S.project.fps, 12e6);
+  if (alpha) {
+    $('codecNote').textContent = vc
+      ? `このブラウザでは ${vc.label} + Alpha（WebM 透過）で書き出します（${w}×${h} / ${S.project.fps}fps）。書き出し中はタブを開いたままにしてください。`
+      : 'このブラウザは透過動画エンコード（VP9 / VP8）に対応していません。Chrome / Edge の最新版で開くか、透過PNG（ZIP）を使ってください。';
+    $('btnMP4').disabled = !vc; $('eMP4').disabled = !vc;
+    ['btnMP4File', 'eMP4File'].forEach(id => { $(id).hidden = !vc || !canPickFile(); });
+    $('eMP4').title = vc ? '' : 'このブラウザは透過 WebM 書き出しに対応していません（Chrome / Edge 推奨）';
+    return;
+  }
   $('codecNote').textContent = vc ? `このブラウザでは ${vc.label} で書き出します（${w}×${h} / ${S.project.fps}fps）。書き出し中はタブを開いたままにしてください。` : 'このブラウザは動画エンコード（WebCodecs）に対応していません。Chrome / Edge の最新版で開くか、連番PNGを使ってください。';
   $('btnMP4').disabled = !vc; $('eMP4').disabled = !vc;
   ['btnMP4File', 'eMP4File'].forEach(id => { $(id).hidden = !vc || !canPickFile(); });
-  if (!vc) $('eMP4').title = 'このブラウザは MP4 書き出しに対応していません（Chrome / Edge 推奨）';
+  $('eMP4').title = vc ? '' : 'このブラウザは MP4 書き出しに対応していません（Chrome / Edge 推奨）';
 }
 const EXP_BTNS = ['btnMP4', 'btnPNG', 'btnPNGA', 'btnPNGL', 'eMP4', 'btnMP4File', 'eMP4File', 'ePNG', 'ePNGA', 'ePNGL'];
 function baseName() {
   const k = J.keyMode(S.project);
-  return ((S.project.title || 'jizura').replace(/[\\/:*?"<>|]+/g, '_').slice(0, 60) || 'jizura') + (k ? (k === 'green' ? '_greenback' : '_blackback') : '');
+  const sfx = k === 'green' ? '_greenback' : k === 'black' ? '_blackback' : k === 'transparent' ? '_transparent' : '';
+  return ((S.project.title || 'jizura').replace(/[\\/:*?"<>|]+/g, '_').slice(0, 60) || 'jizura') + sfx;
 }
 const canPickFile = () => typeof window.showSaveFilePicker === 'function' && !document.documentElement.classList.contains('cep') && typeof VideoEncoder !== 'undefined';
 async function runExport(kind) {
   if (S.exporting) return;
+  const alphaOut = J.keyMode(S.project) === 'transparent';
   // 大きな動画用: the save dialog must open straight from the click (before anything is awaited)
   let file = null, fileName = '';
   if (kind === 'mp4file') {
     try {
-      const hnd = await window.showSaveFilePicker({ suggestedName: baseName() + rangeSuffix() + '.mp4', types: [{ description: 'MP4', accept: { 'video/mp4': ['.mp4'] } }] });
+      const hnd = alphaOut
+        ? await window.showSaveFilePicker({ suggestedName: baseName() + rangeSuffix() + '.webm', types: [{ description: 'WebM (Alpha)', accept: { 'video/webm': ['.webm'] } }] })
+        : await window.showSaveFilePicker({ suggestedName: baseName() + rangeSuffix() + '.mp4', types: [{ description: 'MP4', accept: { 'video/mp4': ['.mp4'] } }] });
       file = await hnd.createWritable(); fileName = hnd.name;
     } catch (e) { if (e && e.name === 'AbortError') return; toast('保存先を開けませんでした: ' + (e && e.message ? e.message : e)); return; }
   }
@@ -59866,23 +60259,27 @@ async function runExport(kind) {
     if (lost.length) throw new Error(`読み込んだ書体（${[...new Set(lost)].join('・')}）がこのブラウザにないため、書き出しを止めました。「フォント」から同じファイルを読み込み直すか、別の書体を選んでください`);
     if (kind === 'mp4' || kind === 'mp4file') {
       const plan = S.plan, range = exportRange(), span = J.exportSpan(plan, range);
-      const r = await J.exportMP4({ plan, project: proj, audio: S.project.includeAudio !== false ? S.audio : null, quality: S.project.quality || 'high', onProgress, signal: ac.signal, range, file });
+      const isAlpha = J.keyMode(proj) === 'transparent';
+      const r = isAlpha
+        ? await J.exportWebMAlpha({ plan, project: proj, audio: S.project.includeAudio !== false ? S.audio : null, quality: S.project.quality || 'high', onProgress, signal: ac.signal, range, file })
+        : await J.exportMP4({ plan, project: proj, audio: S.project.includeAudio !== false ? S.audio : null, quality: S.project.quality || 'high', onProgress, signal: ac.signal, range, file });
       file = null;
       txt.textContent = `完成 ${r.blob ? (r.blob.size / 1048576).toFixed(1) + 'MB・' : ''}${r.codec}${r.audio ? ' + ' + r.audio.toUpperCase() : ''}・${((performance.now() - t0) / 1000).toFixed(0)}秒`;
       if (r.blob) {
-        const name = baseName() + rangeSuffix() + '.mp4';
+        const name = baseName() + rangeSuffix() + (r.format === 'webm' ? '.webm' : '.mp4');
         const res = await J.saveFile(name, r.blob);
         if (res === 'declined') txt.textContent += '（保存はキャンセルされました）';
         offerShare(boxes, r.blob, name);
       } else txt.textContent += `・「${fileName}」に保存しました`;
       if (r.tried && r.tried.length) txt.textContent += '（最初の方法では失敗したため、別のエンコーダーで書き出しました）';
-      // audio that some players cannot play (Opus), or none at all: save the soundtrack as WAV next to it
-      if (r.audioWanted && r.audio !== 'aac') {
+      // audio that some players cannot play (Opus in MP4), or none at all: save the soundtrack as WAV next to it
+      if (r.audioWanted && (r.format === 'webm' ? !r.audio : r.audio !== 'aac')) {
         await J.saveFile(baseName() + rangeSuffix() + '_audio.wav', J.audioWav(S.audio.buffer, span.dur, span.t0));
         txt.textContent += r.audio ? '。このブラウザでは音声が Opus になり、iPhone・QuickTime などでは音が出ないことがあるため、音声を WAV でも保存しました' : '。このブラウザは音声を書き出せないため、音声を WAV で別に保存しました（動画編集ソフトで重ねてください）';
       } else if (S.project.includeAudio !== false && !S.audio && S.project.audioName) txt.textContent += '。曲が読み込まれていないため音声なしです（「曲を読み込む」から読み込み直してください）';
     } else {
-      const blob = await J.exportPNGZip({ plan: S.plan, project: proj, transparent: kind === 'pnga', layers: kind === 'pngl', onProgress, signal: ac.signal, range: exportRange() });
+      const isAlpha = kind === 'pnga' || (kind === 'png' && J.keyMode(proj) === 'transparent');
+      const blob = await J.exportPNGZip({ plan: S.plan, project: proj, transparent: isAlpha, layers: kind === 'pngl', onProgress, signal: ac.signal, range: exportRange() });
       txt.textContent = `完成 ${(blob.size / 1048576).toFixed(1)}MB`;
       await J.saveFile(baseName() + rangeSuffix() + (kind === 'pnga' ? '_alpha' : kind === 'pngl' ? '_layers' : '') + '_png.zip', blob);
     }
@@ -60118,9 +60515,26 @@ function bind() {
   setSwitch('unify-toggle', 'unify', true, '統一感：オン（パートごとにそろえ、キメ・モーフ・太さも使います）', '統一感：オフ');
   setSwitch('typeset-toggle', 'typeset', true, '文字整列：オン（字間・助詞・英字・0.2秒先・効果控えめ）', '文字整列：オフ');
   $('fxKoma').addEventListener('change', e => { const k = +e.target.value; S.project.fx.koma = k; S.project.fx.onTwos = k > 0; S.project.mood = null; replan(); });
-  $('fxHud').addEventListener('change', e => { S.project.fx.hud = e.target.value; replan(); });
+  $('fxHud').addEventListener('change', e => {
+    remember();
+    S.project.fx.hud = e.target.value;
+    if (e.target.value !== 'off' && S.project.fx.hideHud) {
+      S.project.fx.hideHud = false;
+      if ($('fxHideHud')) $('fxHideHud').checked = false;
+    }
+    replan(); commit();
+  });
   $('fxHideNo').addEventListener('change', e => { remember(); S.project.fx.hideNo = e.target.checked; replan(); commit(); });
   $('fxHideTime').addEventListener('change', e => { remember(); S.project.fx.hideTime = e.target.checked; replan(); commit(); });
+  if ($('fxHideHud')) $('fxHideHud').addEventListener('change', e => {
+    remember();
+    S.project.fx.hideHud = e.target.checked;
+    if (!e.target.checked && S.project.fx.hud === 'off') {
+      S.project.fx.hud = 'auto';
+      $('fxHud').value = 'auto';
+    }
+    replan(); commit();
+  });
   $('seed').addEventListener('change', e => { S.project.seed = parseInt(e.target.value, 10) || 0; replan(); });
   $('btnSeed').addEventListener('click', () => { S.project.seed = (Math.random() * 1e9) | 0; $('seed').value = S.project.seed; replan(); });
   const colorToggle = (flag, keys) => e => {
@@ -60154,11 +60568,14 @@ function bind() {
   ['outRes', 'eRes'].forEach(id => $(id).addEventListener('change', e => { S.project.res = +e.target.value; syncOut(); autosave(); codecNote(); }));
   ['outFps', 'eFps'].forEach(id => $(id).addEventListener('change', e => { S.project.fps = +e.target.value; syncOut(); replan(); codecNote(); }));
   $('outQuality').addEventListener('change', e => { S.project.quality = e.target.value; autosave(); });
-  ['outKey', 'eKey'].forEach(id => $(id).addEventListener('change', e => {
-    S.project.keyBg = e.target.value; syncOut(); replan(); flushSave();
+  const applyKeyBg = val => {
+    S.project.keyBg = ['off', 'green', 'black', 'transparent'].includes(val) ? val : 'off';
+    syncOut(); replan(); flushSave(); codecNote();
     const k = J.keyMode(S.project);
-    toast(k ? `背景：${k === 'green' ? 'グリーンバック' : 'ブラックバック'}（白い文字と演出だけ）` : '背景：通常（スタイルの配色）');
-  }));
+    toast(k === 'green' ? '背景：グリーンバック' : k === 'black' ? '背景：ブラックバック' : k === 'transparent' ? '背景：透明背景' : '背景：通常（スタイルの配色）');
+  };
+  if ($('transparentBg')) $('transparentBg').addEventListener('change', e => applyKeyBg(e.target.checked ? 'transparent' : 'off'));
+  ['outKey', 'eKey'].forEach(id => $(id).addEventListener('change', e => applyKeyBg(e.target.value)));
   $('outAudio').addEventListener('change', e => { S.project.includeAudio = e.target.checked; autosave(); });
   document.querySelectorAll('.centerDirSel').forEach(el => el.addEventListener('change', e => {
     S.project.centerDir = e.target.value; syncOut(); replan(); flushSave();

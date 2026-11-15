@@ -238,6 +238,7 @@ J.DECOR_ORDER = ['brackets', 'rings', 'dots', 'arrows', 'slash', 'sparks', 'lead
 
 /* global HUD overlay (frame, title, timecode, rec, counter) */
 J.drawHUD = (env, plan) => {
+  if (plan.fx && plan.fx.hideHud) return;
   const { W, H, sc, ctx } = env;
   const m = Math.round(H * 0.045), L = H * 0.035, c = sc.sub, fs = J.clamp(H * 0.016, 10, 18), mono = monoF(env);
   const lw = 1.4;
