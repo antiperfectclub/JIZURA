@@ -1838,32 +1838,46 @@ function bind() {
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close ? dlg.close() : dlg.removeAttribute('open'); });   // click on the backdrop
   $('btnSave').addEventListener('click', () => J.saveFile(baseName() + '.jizura.json', JSON.stringify(Object.assign({}, S.project, { appVersion: '@VERSION@' }), null, 1)));
   $('btnAE').addEventListener('click', () => J.saveFile(baseName() + rangeSuffix() + '_ae.json', JSON.stringify(J.planForAE(S.plan, S.project, exportRange()), null, 1)));
-  let cavalryAssembly = null, cavalryName = '';
-  const cavalryDialog = $('cavalryDlg'), cavalryButton = $('btnCavalry');
-  cavalryButton.addEventListener('click', () => {
-    if (!S.plan || S.exporting || S.tap) return;
-    try {
-      clearTimeout(replanTimer); replan();
-      cavalryAssembly = J.Cavalry.assemble({ plan: S.plan, project: S.project, range: exportRange() });
-      cavalryName = baseName() + rangeSuffix();
-      $('cavalryWarnings').replaceChildren(...cavalryAssembly.warnings.map(w => {
-        const li = document.createElement('li'); li.textContent = w; return li;
-      }));
-      $('cavalryStrict').checked = false; $('cavalryDownload').disabled = false;
-      cavalryDialog.returnValue = ''; cavalryDialog.showModal();
-    } catch (error) { alert('Cavalry export failed:\n' + error.message); }
-  });
-  $('cavalryStrict').addEventListener('change', () => {
-    $('cavalryDownload').disabled = $('cavalryStrict').checked && !!cavalryAssembly?.warnings.length;
-  });
-  cavalryDialog.addEventListener('close', async () => {
-    const assembly = cavalryAssembly; cavalryAssembly = null;
-    if (cavalryDialog.returnValue !== 'export' || !assembly || ($('cavalryStrict').checked && assembly.warnings.length)) return;
-    cavalryButton.disabled = true;
-    try { await J.Cavalry.download(assembly, cavalryName); }
-    catch (error) { alert('Cavalry export failed:\n' + error.message); }
-    finally { cavalryButton.disabled = false; }
-  });
+  // Cavalry: independent exporter, no AE code path involved
+  const cavalryButton = $('btnCavalry');
+  if (cavalryButton) {
+    let cavalryAssembly = null, cavalryName = '';
+    const cavalryDialog = $('cavalryDlg');
+    const cavalryGate = () => ['cavalryDownload', 'cavalryPanel', 'cavalryScript'].forEach(id => {
+      const button = $(id); if (button) button.disabled = $('cavalryStrict').checked && !!cavalryAssembly?.blockingWarnings.length;
+    });
+    cavalryButton.addEventListener('click', () => {
+      if (!S.plan || S.exporting || S.tap) return;
+      try {
+        clearTimeout(replanTimer); replan();     // confirm pending edits first
+        cavalryAssembly = J.Cavalry.assemble({ plan: S.plan, project: S.project, range: exportRange() });
+        cavalryName = baseName() + rangeSuffix();
+        $('cavalrySummary').textContent = 'カット ' + cavalryAssembly.cuts.length + '・テキスト ' +
+          cavalryAssembly.nodeCount + ' 項目（うち未対応 ' + cavalryAssembly.blockingWarnings.length + ' 件）';
+        $('cavalryWarnings').replaceChildren(...[...cavalryAssembly.blockingWarnings, ...cavalryAssembly.hostChecks].map(w => {
+          const li = document.createElement('li'), blocked = cavalryAssembly.blockingWarnings.includes(w);
+          li.className = 'cavalry-warn ' + (blocked ? 'blocking' : 'host');
+          li.textContent = (blocked ? '⚠ ' : '') + w;
+          return li;
+        }));
+        $('cavalryStrict').checked = false; cavalryGate();
+        cavalryDialog.returnValue = ''; cavalryDialog.showModal();
+      } catch (error) { alert('Cavalry書き出しに失敗しました:\n' + error.message); }
+    });
+    $('cavalryStrict').addEventListener('change', cavalryGate);
+    cavalryDialog.addEventListener('close', async () => {
+      const assembly = cavalryAssembly, action = cavalryDialog.returnValue; cavalryAssembly = null;
+      if (!assembly || !['json', 'panel', 'script'].includes(action) ||
+          ($('cavalryStrict').checked && assembly.blockingWarnings.length)) return;
+      cavalryButton.disabled = true;
+      try {
+        if (action === 'json') await J.Cavalry.downloadJson(assembly, cavalryName);
+        else if (action === 'panel') await J.Cavalry.downloadPanel('JIZURA_Cavalry');
+        else await J.Cavalry.download(assembly, cavalryName);
+      } catch (error) { alert('Cavalry書き出しに失敗しました:\n' + error.message); }
+      finally { cavalryButton.disabled = false; }
+    });
+  }
   audioNameDefault = $('audioName').textContent;
   $('btnClearLyrics').addEventListener('click', clearLyrics);
   document.querySelectorAll('.themeSel').forEach(el => el.addEventListener('change', () => {

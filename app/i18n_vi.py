@@ -238,6 +238,17 @@ BODY = {
     '保存': 'Lưu',
     'AE用に書き出し': 'Xuất cho AE',
     '利用について': 'Giới thiệu & quyền sử dụng',
+    'Cavalry 用の編集可能なスクリプトを書き出す（実験的）': 'Xuất tập lệnh Cavalry có thể chỉnh sửa (thử nghiệm)',
+    'Cavalry用に書き出し': 'Xuất cho Cavalry',
+    '<h2 id="cavalryTitle">Cavalry用に書き出し</h2>': '<h2 id="cavalryTitle">Xuất cho Cavalry</h2>',
+    '今の内容を Cavalry で編集できるデータ（.jizura.cavalry.json）にします。Cavalry に読み込みパネルを一度入れておけば、JSON を選ぶだけでコンポジションができます。パネルを使わないときは「スクリプト」で .cavalry.js を書き出し、JavaScript Editor で実行してください。FPS とフレーム範囲は、実行後に Composition Settings で指定します。': 'Chuyển nội dung hiện tại thành dữ liệu có thể chỉnh sửa trong Cavalry (.jizura.cavalry.json). Cài bảng nạp một lần trong Cavalry, sau đó chỉ cần chọn JSON là dựng được composition. Không dùng bảng nạp thì dùng「Script」để xuất .cavalry.js rồi chạy trong JavaScript Editor. Đặt FPS và phạm vi khung hình trong Composition Settings sau khi chạy.',
+    'aria-label="書き出しの注意"': 'aria-label="Lưu ý khi xuất"',
+    '対応できる項目だけで書き出す（未対応の機能があれば中止）': 'Chỉ xuất các mục được hỗ trợ (dừng nếu có tính năng chưa hỗ trợ)',
+    'フォントの字形・字間・行間は Cavalry 側の設定に従うため、ブラウザのプレビューと完全には一致しません。': 'Hình dạng chữ, khoảng cách chữ và dòng theo thiết lập của Cavalry nên không hoàn toàn giống bản xem trước trong trình duyệt.',
+    '<button value="cancel" class="ghost" autofocus>やめる</button>': '<button value="cancel" class="ghost" autofocus>Hủy</button>',
+    '<button id="cavalryPanel" value="panel" class="ghost">パネル（初回のみ）</button>': '<button id="cavalryPanel" value="panel" class="ghost">Bảng nạp (lần đầu)</button>',
+    '<button id="cavalryScript" value="script" class="ghost">スクリプト</button>': '<button id="cavalryScript" value="script" class="ghost">Script</button>',
+    '<button id="cavalryDownload" value="json">JSONを書き出す</button>': '<button id="cavalryDownload" value="json">Xuất JSON</button>',
     '記法': 'Cú pháp',
     'プレビュー': 'Xem trước',
     '再生': 'Phát',
@@ -271,6 +282,9 @@ BODY = {
 }
 
 UI = {
+    "'Cavalry書き出しに失敗しました:\\n'": "'Xuất Cavalry thất bại:\\n'",
+    "'カット '": "'cảnh '", 
+    "'・テキスト '": "'、chữ '", "' 項目（うち未対応 '": "' mục (chưa hỗ trợ '", "' 件）'": "')'",
     "'追加分2の演出：使う'": "'Hiệu ứng mới 2: bật'",
     "'追加分2の演出：使わない'": "'Hiệu ứng mới 2: tắt'",
     "{ name: '追加分2', badge: '追2' }": "{ name: 'Mới 2', badge: 'E2' }",

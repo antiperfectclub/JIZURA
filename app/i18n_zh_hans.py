@@ -192,6 +192,17 @@ BODY = {
     'フォント：': '字体：', '配布の各書体': '提供的各款字体', '閉じる': '关闭',
     'かんたん': '简易', '詳細': '详细', '開く': '打开', '保存': '保存',
     'AE用に書き出し': '导出到 AE', '利用について': '使用说明',
+    'Cavalry 用の編集可能なスクリプトを書き出す（実験的）': '导出可在 Cavalry 编辑的脚本（实验性）',
+    'Cavalry用に書き出し': '导出到 Cavalry',
+    '<h2 id="cavalryTitle">Cavalry用に書き出し</h2>': '<h2 id="cavalryTitle">导出到 Cavalry</h2>',
+    '今の内容を Cavalry で編集できるデータ（.jizura.cavalry.json）にします。Cavalry に読み込みパネルを一度入れておけば、JSON を選ぶだけでコンポジションができます。パネルを使わないときは「スクリプト」で .cavalry.js を書き出し、JavaScript Editor で実行してください。FPS とフレーム範囲は、実行後に Composition Settings で指定します。': '把当前内容转成 Cavalry 可编辑的数据（.jizura.cavalry.json）。在 Cavalry 安装一次读取面板后，只要选择 JSON 就能建立合成。不使用面板时，请用「脚本」导出 .cavalry.js，并在 JavaScript Editor 中运行。FPS 与帧范围请在运行后于 Composition Settings 中设置。',
+    'aria-label="書き出しの注意"': 'aria-label="导出注意事项"',
+    '対応できる項目だけで書き出す（未対応の機能があれば中止）': '只导出受支持的条目（有未支持功能时中止）',
+    'フォントの字形・字間・行間は Cavalry 側の設定に従うため、ブラウザのプレビューと完全には一致しません。': '字形、字距与行距会遵循 Cavalry 的设置，因此不会与浏览器预览完全一致。',
+    '<button value="cancel" class="ghost" autofocus>やめる</button>': '<button value="cancel" class="ghost" autofocus>取消</button>',
+    '<button id="cavalryPanel" value="panel" class="ghost">パネル（初回のみ）</button>': '<button id="cavalryPanel" value="panel" class="ghost">面板（仅首次）</button>',
+    '<button id="cavalryScript" value="script" class="ghost">スクリプト</button>': '<button id="cavalryScript" value="script" class="ghost">脚本</button>',
+    '<button id="cavalryDownload" value="json">JSONを書き出す</button>': '<button id="cavalryDownload" value="json">导出 JSON</button>',
     '記法': '语法', 'プレビュー': '预览', '再生': '播放', 'ループ': '循环',
     '前の案': '上一个', '次の案': '下一个', 'シャッフル': '随机编排', 'おまかせで作る': '一键生成',
     'おまかせ': '一键随机', 'いまの案': '当前方案', 'ここだけ変える': '只换这一项',
@@ -220,6 +231,9 @@ BODY = {
 }
 
 UI = {
+    "'Cavalry書き出しに失敗しました:\\n'": "'Cavalry 导出失败：\\n'",
+    "'カット '": "' 镜头 '", 
+    "'・テキスト '": "'、文本 '", "' 項目（うち未対応 '": "' 项（其中未支持 '", "' 件）'": "' 项）'",
     "'追加分2の演出：使う'": "'新增特效 2：使用'",
     "'追加分2の演出：使わない'": "'新增特效 2：不使用'",
     "{ name: '追加分2', badge: '追2' }": "{ name: '新增 2', badge: '追2' }",

@@ -152,6 +152,17 @@ BODY = {
     'フォント：': 'Fonts: ', '配布の各書体': 'typefaces', '閉じる': 'Close',
     'かんたん': 'Simple', '詳細': 'Advanced', '開く': 'Open', '保存': 'Save',
     'AE用に書き出し': 'Export for AE', '利用について': 'About / rights',
+    'Cavalry 用の編集可能なスクリプトを書き出す（実験的）': 'Export an editable Cavalry script (experimental)',
+    'Cavalry用に書き出し': 'Cavalry export',
+    '<h2 id="cavalryTitle">Cavalry用に書き出し</h2>': '<h2 id="cavalryTitle">Export for Cavalry</h2>',
+    '今の内容を Cavalry で編集できるデータ（.jizura.cavalry.json）にします。Cavalry に読み込みパネルを一度入れておけば、JSON を選ぶだけでコンポジションができます。パネルを使わないときは「スクリプト」で .cavalry.js を書き出し、JavaScript Editor で実行してください。FPS とフレーム範囲は、実行後に Composition Settings で指定します。': 'Turn the current piece into data Cavalry can edit (.jizura.cavalry.json). Install the loader panel in Cavalry once, then pick the JSON to build the composition. Without the panel, use Script to write a .cavalry.js and run it in the JavaScript Editor. Set the frame rate and frame range in Composition Settings afterwards.',
+    'aria-label="書き出しの注意"': 'aria-label="Export notes"',
+    '対応できる項目だけで書き出す（未対応の機能があれば中止）': 'Exact support only (stop if a feature is not supported)',
+    'フォントの字形・字間・行間は Cavalry 側の設定に従うため、ブラウザのプレビューと完全には一致しません。': 'Glyph shapes, spacing and leading follow the settings in Cavalry, so the result is not identical to the browser preview.',
+    '<button value="cancel" class="ghost" autofocus>やめる</button>': '<button value="cancel" class="ghost" autofocus>Cancel</button>',
+    '<button id="cavalryPanel" value="panel" class="ghost">パネル（初回のみ）</button>': '<button id="cavalryPanel" value="panel" class="ghost">Panel (once)</button>',
+    '<button id="cavalryScript" value="script" class="ghost">スクリプト</button>': '<button id="cavalryScript" value="script" class="ghost">Script</button>',
+    '<button id="cavalryDownload" value="json">JSONを書き出す</button>': '<button id="cavalryDownload" value="json">Export JSON</button>',
     '記法': 'Syntax', 'プレビュー': 'Preview', '再生': 'Play', 'ループ': 'Loop',
     '前の案': 'Previous', '次の案': 'Next', 'シャッフル': 'Shuffle', 'おまかせで作る': 'Create a variation',
     'おまかせ': 'Randomize', 'いまの案': 'Current variation', 'ここだけ変える': 'Change one thing',
@@ -181,6 +192,9 @@ BODY = {
 }
 
 UI = {
+    "'Cavalry書き出しに失敗しました:\\n'": "'Cavalry export failed:\\n'",
+    "'カット '": "'Cuts: '", "'・テキスト '": "', text items: '",
+    "' 項目（うち未対応 '": "' (unsupported: '", "' 件）'": "')'",
     "'追加分2の演出：使う'": "'Extra effects 2: on'",
     "'追加分2の演出：使わない'": "'Extra effects 2: off'",
     "{ name: '追加分2', badge: '追2' }": "{ name: 'Extra 2', badge: 'E2' }",

@@ -187,6 +187,17 @@ BODY = {
     'フォント：': 'Font: ', '配布の各書体': 'font yang didistribusikan', '閉じる': 'Tutup',
     'かんたん': 'Sederhana', '詳細': 'Lanjutan', '開く': 'Buka', '保存': 'Simpan',
     'AE用に書き出し': 'Ekspor untuk AE', '利用について': 'Tentang dan hak',
+    'Cavalry 用の編集可能なスクリプトを書き出す（実験的）': 'Ekspor skrip Cavalry yang bisa diedit (eksperimental)',
+    'Cavalry用に書き出し': 'Ekspor untuk Cavalry',
+    '<h2 id="cavalryTitle">Cavalry用に書き出し</h2>': '<h2 id="cavalryTitle">Ekspor untuk Cavalry</h2>',
+    '今の内容を Cavalry で編集できるデータ（.jizura.cavalry.json）にします。Cavalry に読み込みパネルを一度入れておけば、JSON を選ぶだけでコンポジションができます。パネルを使わないときは「スクリプト」で .cavalry.js を書き出し、JavaScript Editor で実行してください。FPS とフレーム範囲は、実行後に Composition Settings で指定します。': 'Ubah isi saat ini menjadi data yang bisa diedit di Cavalry (.jizura.cavalry.json). Pasang panel pemuat sekali di Cavalry, lalu cukup pilih JSON untuk membangun komposisi. Tanpa panel, gunakan「Skrip」untuk mengekspor .cavalry.js lalu jalankan di JavaScript Editor. FPS dan rentang frame diatur di Composition Settings setelah dijalankan.',
+    'aria-label="書き出しの注意"': 'aria-label="Catatan ekspor"',
+    '対応できる項目だけで書き出す（未対応の機能があれば中止）': 'Ekspor hanya item yang didukung (berhenti bila ada fitur yang belum didukung)',
+    'フォントの字形・字間・行間は Cavalry 側の設定に従うため、ブラウザのプレビューと完全には一致しません。': 'Bentuk huruf, jarak huruf dan jarak baris mengikuti pengaturan Cavalry, jadi tidak sepenuhnya sama dengan pratinjau di browser.',
+    '<button value="cancel" class="ghost" autofocus>やめる</button>': '<button value="cancel" class="ghost" autofocus>Batal</button>',
+    '<button id="cavalryPanel" value="panel" class="ghost">パネル（初回のみ）</button>': '<button id="cavalryPanel" value="panel" class="ghost">Panel (sekali)</button>',
+    '<button id="cavalryScript" value="script" class="ghost">スクリプト</button>': '<button id="cavalryScript" value="script" class="ghost">Skrip</button>',
+    '<button id="cavalryDownload" value="json">JSONを書き出す</button>': '<button id="cavalryDownload" value="json">Ekspor JSON</button>',
     '記法': 'Sintaks', 'プレビュー': 'Pratinjau', '再生': 'Putar', 'ループ': 'Loop',
     '前の案': 'Sebelumnya', '次の案': 'Berikutnya', 'シャッフル': 'Acak susunan', 'おまかせで作る': 'Buat variasi',
     'おまかせ': 'Buat variasi', 'いまの案': 'Variasi saat ini', 'ここだけ変える': 'Ubah satu hal',
@@ -213,6 +224,9 @@ BODY = {
 }
 
 UI = {
+    "'Cavalry書き出しに失敗しました:\\n'": "'Ekspor Cavalry gagal:\\n'",
+    "'カット '": "'cut '", 
+    "'・テキスト '": "'、teks '", "' 項目（うち未対応 '": "' item (tidak didukung '", "' 件）'": "')'",
     "'追加分2の演出：使う'": "'Efek baru 2: aktif'",
     "'追加分2の演出：使わない'": "'Efek baru 2: nonaktif'",
     "{ name: '追加分2', badge: '追2' }": "{ name: 'Baru 2', badge: 'E2' }",

@@ -24,6 +24,15 @@ function background(comp, cut, parent) {
 }
 var clamp01 = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
 
+/* What this runtime builds today, per preset kind. Names outside the list are exported in the JSON but
+   not built, so they are reported instead of disappearing. */
+var BUILT = { enter: { cut: 1, fade: 1 }, exit: { cut: 1, fade: 1 }, bg: {}, cam: {}, trans: {}, treat: {}, decor: {} };
+var NOT_BUILT = {};
+function note(kind, name) {
+  if (typeof name !== 'string' || !name || BUILT[kind][name]) return;
+  NOT_BUILT[kind + ':' + name] = 1;
+}
+
 /* Opacity envelope of a node: linear in, hold, linear out.
    Keys are sparse (4 per node) unless in/out overlap — the product of two ramps is not linear. */
 function envelopeFrames(cut, appear) {
@@ -91,15 +100,33 @@ function buildText(comp, cut, node, parent, options) {
 function run(assembly, options) {
   options = options || {};
   options.fontOverrides = options.fontOverrides || {};
-  if (!assembly || assembly.format !== 'jizura.cavalry.assembly' || assembly.version !== 1) throw new Error('Unsupported JIZURA Cavalry assembly');
+  NOT_BUILT = {};
+  if (!assembly || assembly.format !== 'jizura.cavalry.assembly' || [1, 2].indexOf(assembly.version) < 0) throw new Error('Unsupported JIZURA Cavalry assembly');
   var comp = assembly.composition;
   if (!comp || ![comp.width, comp.height, comp.fps, comp.frameCount].every(function (v) { return typeof v === 'number' && isFinite(v) && v > 0; }) ||
       Math.floor(comp.frameCount) !== comp.frameCount || !Array.isArray(assembly.cuts)) throw new Error('Invalid composition');
   assembly.cuts.forEach(function (cut) {
     if (!Number.isInteger(cut.start) || !Number.isInteger(cut.end) || cut.start < 0 || cut.end <= cut.start || cut.end > comp.frameCount ||
         !Number.isInteger(cut.origin) || !Number.isInteger(cut.sourceEnd) || !(cut.inFrames > 0) || !(cut.outFrames > 0) || !Array.isArray(cut.nodes)) throw new Error('Invalid cut');
+    var presets = cut.presets;
+    if (presets != null && (typeof presets !== 'object' || Array.isArray(presets))) throw new Error('Invalid cut presets');
+    if (presets) {
+      ['enter', 'exit', 'bg', 'cam', 'trans', 'treat'].forEach(function (k) {
+        var p = presets[k];
+        if (p != null && (typeof p !== 'object' || typeof p.name !== 'string')) throw new Error('Invalid cut preset: ' + k);
+        if (p) note(k, p.name);
+      });
+      if (presets.decor != null && !Array.isArray(presets.decor)) throw new Error('Invalid cut preset: decor');
+      (presets.decor || []).forEach(function (d) {
+        if (!d || typeof d.name !== 'string') throw new Error('Invalid cut preset: decor');
+        note('decor', d.name);
+      });
+    }
     cut.nodes.forEach(function (node) {
       if (!node.font || typeof node.text !== 'string' || ![node.x, node.y, node.size, node.sx, node.rotation, node.delayFrames].every(function (v) { return typeof v === 'number' && isFinite(v); }) || node.size <= 0) throw new Error('Invalid text node');
+      if (node.kind && node.kind !== 'text') throw new Error('Unsupported node kind: ' + node.kind);
+      if (node.animationBackend && node.animationBackend !== 'individual-layers') throw new Error('Unsupported animation backend: ' + node.animationBackend);
+      if (node.align && ['left', 'center', 'right'].indexOf(node.align) < 0) throw new Error('Unsupported text alignment: ' + node.align);
     });
   });
   var compId = api.createComp(assembly.title);
@@ -130,7 +157,9 @@ function run(assembly, options) {
   console.log('JIZURA: set Composition Settings to ' + comp.fps + ' fps, frame range 0–' + (comp.frameCount - 1) + '.');
   console.log('Checks before rendering:\n' + (assembly.hostChecks || []).join('\n'));
   if (assembly.blockingWarnings && assembly.blockingWarnings.length) console.warn('Approximations:\n' + assembly.blockingWarnings.join('\n'));
-  return { compositionId: compId, rootId: root, layerIds: ids };
+  var missing = Object.keys(NOT_BUILT).sort();
+  NOT_BUILT = {};
+  if (missing.length) console.warn('JIZURA: presets kept in the JSON but not built by this runtime:\n' + missing.join('\n'));  return { compositionId: compId, rootId: root, layerIds: ids };
 }
 return { run: run };
 })();

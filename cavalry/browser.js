@@ -6,6 +6,10 @@
 const C = J.Cavalry = {};
 const STYLES = { 100: 'Thin', 200: 'ExtraLight', 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold', 900: 'Black' };
 
+/* Assembly schema. v2 carries the design presets (names + planner params) next to the geometry, so the
+   runtime can grow into them without changing the JSON again. */
+C.SCHEMA = 2;
+
 /* Host the runtime can build today. Kept small on purpose: every entry here is exercised by a test. */
 C.CAPABILITIES = Object.freeze({
   layouts: 'captured',
@@ -16,6 +20,8 @@ C.CAPABILITIES = Object.freeze({
   exit: ['cut', 'fade'],
   align: ['left', 'center', 'right'],
   text: ['multiline'],
+  /* preset names are always exported; only the listed ones are built */
+  presets: Object.freeze({ enter: ['cut', 'fade'], exit: ['cut', 'fade'], bg: [], cam: [], trans: [], treat: [], decor: [] }),
   shapes: false, decoration: false, treatments: false, backgroundGraphics: false,
   camera: false, transitions: false, effects: false, hud: false, audio: false, timing: 'manual'
 });
@@ -135,9 +141,19 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
   const warn = message => blocking.push(message);
   const frame = seconds => Math.round(seconds * fps), frameCount = Math.max(1, frame(t1 - t0));
   const out = {
-    format: 'jizura.cavalry.assembly', version: 1, title: p.title || project.title || 'JIZURA',
+    format: 'jizura.cavalry.assembly', version: C.SCHEMA, title: p.title || project.title || 'JIZURA',
     composition: { width: p.W, height: p.H, fps, frameCount },
-    audioOffset: t0, capabilities: C.CAPABILITIES,
+    audioOffset: t0, lang: p.lang || 'ja', keyBg: p.keyBg || null,
+    /* the design language stays in the file even where the runtime cannot build it yet */
+    style: {
+      schemes: (p.style.schemes || []).map(s => Object.assign({}, s)),
+      glow: p.style.glow ?? 0, ghost: p.style.ghost ?? 0,
+      texture: p.style.texture || {},
+      fonts: p.style.fonts ? JSON.parse(JSON.stringify(p.style.fonts)) : null,
+      fx: { motion: p.fx?.motion ?? 0, glitch: p.fx?.glitch ?? 0, decor: p.fx?.decor ?? 0,
+        texture: p.fx?.texture ?? 0, chroma: p.fx?.chroma ?? 0 }
+    },
+    capabilities: C.CAPABILITIES,
     cuts: [], warnings: [], hostChecks: [], blockingWarnings: [], nodeCount: 0
   };
 
@@ -147,7 +163,7 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
   host('Audio is not embedded. Import the song and offset it by ' + t0 + ' seconds.');
   if (p.events?.length) warn('Global event FX are not ported.');
   if (p.hud) warn('HUD is not ported.');
-  if (p.fx && J.komaOf(p.fx) > 0) warn('Koma/on-twos sampling is not ported.');
+  if (p.fx && J.komaOf(p.fx) > 0) host('On-twos (koma) sampling is not reproduced; fades are frame-accurate.');
   if ((p.fx?.chroma ?? 0.7) > 0 || (p.fx?.texture ?? 0.6) > 0 || (p.fx?.glitch ?? 0.5) > 0) {
     warn('Ghosts, glow, texture, vignette and screen FX are not ported.');
   }
@@ -161,7 +177,8 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
       const start = Math.max(0, frame(Math.max(cut.start, t0) - t0));
       const end = Math.min(frameCount, frame(Math.min(cut.end, t1) - t0));
       if (end <= start) continue;
-      const sc = p.style.schemes[(cut.scheme || 0) % p.style.schemes.length] || p.style.schemes[0];
+      const schemeIndex = (cut.scheme || 0) % p.style.schemes.length;
+      const sc = p.style.schemes[schemeIndex] || p.style.schemes[0];
       const label = 'cut ' + i + ': ';
       let nodes = [], moving = false, fallback = false;
       if (cut.layout !== 'interlude') {
@@ -188,10 +205,10 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
       const tracks = nodes.filter(n => Math.abs(n.track) > 1e-6).length;
       const leads = nodes.filter(n => n.lead && Math.abs(n.lead - 1.3) > 1e-6).length;
       const verticals = nodes.filter(n => n.vertical).length;
-      if (tracks) warn(label + tracks + ' item(s) use letter tracking, not ported.');
-      if (leads) warn(label + leads + ' item(s) use custom line leading, not ported.');
+      if (tracks) host(label + tracks + ' item(s) use letter tracking; Cavalry spacing depends on the installed font.');
+      if (leads) host(label + leads + ' item(s) use custom line leading; Cavalry spacing depends on the installed font.');
       if (verticals) warn(label + verticals + ' item(s) are vertical text, not ported.');
-      if (nodes.some(n => n.align !== 'center')) warn(label + 'left/right anchored text uses a measured bbox offset.');
+      if (nodes.some(n => n.align !== 'center')) host(label + 'left/right anchored text uses a measured bbox offset.');
 
       const enter = ['cut', 'fade'].includes(cut.enter) ? cut.enter : 'fade';
       const exit = ['cut', 'fade'].includes(cut.exit) ? cut.exit : 'fade';
@@ -209,6 +226,21 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
         origin: frame(cut.start - t0), sourceEnd: frame(cut.end - t0),
         inFrames: Math.max(1, frame(cut.inDur ?? 0.25)), outFrames: Math.max(1, frame(cut.outDur ?? 0.25)),
         enter: cut.inDur === 0 ? 'cut' : enter, exit: cut.outDur === 0 ? 'cut' : exit,
+        /* the names the planner asked for; `enter`/`exit` above are what this runtime can actually build */
+        presets: {
+          enter: { name: cut.enter || 'fade', inDur: cut.inDur ?? 0.25 },
+          exit: { name: cut.exit || 'fade', outDur: cut.outDur ?? 0.25 },
+          bg: cut.bg && cut.bg !== 'none' ? { name: cut.bg, params: cut.bgP || {} } : null,
+          cam: cut.cam ? { name: cut.cam, params: cut.camP || {} } : null,
+          trans: cut.trans ? { name: cut.trans, params: cut.transP || {}, frames: Math.max(0, frame(cut.transDur || 0)) } : null,
+          treat: cut.treat && cut.treat !== 'none' ? { name: cut.treat, params: cut.treatP || {} } : null,
+          decor: (Array.isArray(cut.decor) ? cut.decor : []).map(d => {
+            const item = typeof d === 'string' ? { id: d } : (d || {});
+            const params = {}; Object.keys(item).forEach(k => { if (k !== 'id') params[k] = item[k]; });
+            return { name: item.id || item.name || 'unknown', params };
+          }),
+          hold: cut.hold || 'still', scheme: schemeIndex, seed: cut.seed ?? null, morph: !!cut.morph
+        },
         background: p.keyBg === 'transparent' ? null : p.keyBg === 'green' ? '#00ff00' : p.keyBg === 'black' ? '#000000' : sc.bg,
         nodes: nodes.map((node, n) => ({
           ...node, id: 'cut-' + i + '-text-' + n, kind: 'text',
@@ -230,11 +262,27 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
   return out;
 };
 
+const safeName = (filename, assembly) =>
+  (String(filename || (assembly && assembly.title) || 'JIZURA').replace(/[\\/:*?"<>|\x00-\x1f]/g, '_') || 'JIZURA');
+
+/* Data first: the JSON is what the installed panel reads, and what a later runtime can grow into. */
+C.downloadJson = function (assembly, filename) {
+  return J.saveFile(safeName(filename, assembly) + '.jizura.cavalry.json',
+    new Blob([JSON.stringify(assembly)], { type: 'application/json;charset=utf-8' }));
+};
+
+/* One-time install: Help > Show Scripts Folder, save as JIZURA.js, then Window > Scripts > JIZURA. */
+C.downloadPanel = function (filename) {
+  if (!C.panelSource) throw new Error('Cavalry panel source is missing; run build_cavalry.py.');
+  const script = '/* Generated by JIZURA. Save in Cavalry\'s Scripts folder (Help > Show Scripts Folder), then Window > Scripts. */\n'
+    + C.runtimeSource + '\n' + C.panelSource + '\n';
+  return J.saveFile(safeName(filename) + '.js', new Blob([script], { type: 'text/javascript;charset=utf-8' }));
+};
+
 C.download = function (assembly, filename) {
   const payload = JSON.stringify(assembly).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
   const script = '/* Generated by JIZURA. Run in Cavalry JavaScript Editor. */\n' + C.runtimeSource
     + '\nJZCavalry.run(' + payload + ', { componentPath: null, fontOverrides: {}, timingPaths: null });\n';
-  const safe = String(filename || assembly.title).replace(/[\\/:*?"<>|\x00-\x1f]/g, '_') || 'JIZURA';
-  return J.saveFile(safe + '.cavalry.js', new Blob([script], { type: 'text/javascript;charset=utf-8' }));
+  return J.saveFile(safeName(filename, assembly) + '.cavalry.js', new Blob([script], { type: 'text/javascript;charset=utf-8' }));
 };
 })();

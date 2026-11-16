@@ -151,6 +151,17 @@ BODY = {
     '（MIT License）': ' (MIT License)', '配布の各書体（SIL Open Font License 1.1）': '배포 서체 (SIL Open Font License 1.1)',
     'かんたん': '간단', '詳細': '상세', '開く': '열기', '保存': '저장',
     'AE用に書き出し': 'AE용 내보내기', '利用について': '이용 안내',
+    'Cavalry 用の編集可能なスクリプトを書き出す（実験的）': 'Cavalry에서 편집할 수 있는 스크립트 내보내기(실험적)',
+    'Cavalry用に書き出し': 'Cavalry용 내보내기',
+    '<h2 id="cavalryTitle">Cavalry用に書き出し</h2>': '<h2 id="cavalryTitle">Cavalry용 내보내기</h2>',
+    '今の内容を Cavalry で編集できるデータ（.jizura.cavalry.json）にします。Cavalry に読み込みパネルを一度入れておけば、JSON を選ぶだけでコンポジションができます。パネルを使わないときは「スクリプト」で .cavalry.js を書き出し、JavaScript Editor で実行してください。FPS とフレーム範囲は、実行後に Composition Settings で指定します。': '지금 내용을 Cavalry에서 편집할 수 있는 데이터(.jizura.cavalry.json)로 만듭니다. Cavalry에 로더 패널을 한 번 설치해 두면 JSON만 고르면 컴포지션이 만들어집니다. 패널을 쓰지 않을 때는 \'스크립트\'로 .cavalry.js를 내보내 JavaScript Editor에서 실행하세요. FPS와 프레임 범위는 실행 후 Composition Settings에서 지정합니다.',
+    'aria-label="書き出しの注意"': 'aria-label="내보내기 주의"',
+    '対応できる項目だけで書き出す（未対応の機能があれば中止）': '지원되는 항목만 내보내기(미지원 기능이 있으면 중지)',
+    'フォントの字形・字間・行間は Cavalry 側の設定に従うため、ブラウザのプレビューと完全には一致しません。': '글꼴 모양·자간·행간은 Cavalry 설정을 따르므로 브라우저 미리보기와 완전히 일치하지는 않습니다.',
+    '<button value="cancel" class="ghost" autofocus>やめる</button>': '<button value="cancel" class="ghost" autofocus>취소</button>',
+    '<button id="cavalryPanel" value="panel" class="ghost">パネル（初回のみ）</button>': '<button id="cavalryPanel" value="panel" class="ghost">패널(최초 1회)</button>',
+    '<button id="cavalryScript" value="script" class="ghost">スクリプト</button>': '<button id="cavalryScript" value="script" class="ghost">스크립트</button>',
+    '<button id="cavalryDownload" value="json">JSONを書き出す</button>': '<button id="cavalryDownload" value="json">JSON 내보내기</button>',
     '記法': '문법', 'プレビュー': '미리보기', '再生': '재생', 'ループ': '반복',
     '前の案': '이전 안', '次の案': '다음 안', 'シャッフル': '셔플', 'おまかせで作る': '자동으로 만들기',
     'おまかせ': '자동 생성', 'いまの案': '현재 안', 'ここだけ変える': '이것만 바꾸기',
@@ -177,6 +188,9 @@ BODY = {
 }
 
 UI = {
+    "'Cavalry書き出しに失敗しました:\\n'": "'Cavalry 내보내기에 실패했습니다:\\n'",
+    "'カット '": "'컷 '", "'・テキスト '": "', 텍스트 '",
+    "' 項目（うち未対応 '": "'개 (미지원 '", "' 件）'": "'개)'",
     "'追加分2の演出：使う'": "'추가 연출 2: 사용'",
     "'追加分2の演出：使わない'": "'추가 연출 2: 사용 안 함'",
     "{ name: '追加分2', badge: '追2' }": "{ name: '추가 2', badge: 'E2' }",
