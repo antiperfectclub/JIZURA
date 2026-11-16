@@ -1838,6 +1838,32 @@ function bind() {
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close ? dlg.close() : dlg.removeAttribute('open'); });   // click on the backdrop
   $('btnSave').addEventListener('click', () => J.saveFile(baseName() + '.jizura.json', JSON.stringify(Object.assign({}, S.project, { appVersion: '@VERSION@' }), null, 1)));
   $('btnAE').addEventListener('click', () => J.saveFile(baseName() + rangeSuffix() + '_ae.json', JSON.stringify(J.planForAE(S.plan, S.project, exportRange()), null, 1)));
+  let cavalryAssembly = null, cavalryName = '';
+  const cavalryDialog = $('cavalryDlg'), cavalryButton = $('btnCavalry');
+  cavalryButton.addEventListener('click', () => {
+    if (!S.plan || S.exporting || S.tap) return;
+    try {
+      clearTimeout(replanTimer); replan();
+      cavalryAssembly = J.Cavalry.assemble({ plan: S.plan, project: S.project, range: exportRange() });
+      cavalryName = baseName() + rangeSuffix();
+      $('cavalryWarnings').replaceChildren(...cavalryAssembly.warnings.map(w => {
+        const li = document.createElement('li'); li.textContent = w; return li;
+      }));
+      $('cavalryStrict').checked = false; $('cavalryDownload').disabled = false;
+      cavalryDialog.returnValue = ''; cavalryDialog.showModal();
+    } catch (error) { alert('Cavalry export failed:\n' + error.message); }
+  });
+  $('cavalryStrict').addEventListener('change', () => {
+    $('cavalryDownload').disabled = $('cavalryStrict').checked && !!cavalryAssembly?.warnings.length;
+  });
+  cavalryDialog.addEventListener('close', async () => {
+    const assembly = cavalryAssembly; cavalryAssembly = null;
+    if (cavalryDialog.returnValue !== 'export' || !assembly || ($('cavalryStrict').checked && assembly.warnings.length)) return;
+    cavalryButton.disabled = true;
+    try { await J.Cavalry.download(assembly, cavalryName); }
+    catch (error) { alert('Cavalry export failed:\n' + error.message); }
+    finally { cavalryButton.disabled = false; }
+  });
   audioNameDefault = $('audioName').textContent;
   $('btnClearLyrics').addEventListener('click', clearLyrics);
   document.querySelectorAll('.themeSel').forEach(el => el.addEventListener('change', () => {

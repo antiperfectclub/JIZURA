@@ -26,6 +26,7 @@
       <label class="file" title="保存したプロジェクト(.json)を開く">開く<input id="fileProject" type="file" accept=".json,application/json"></label>
       <button id="btnSave" title="プロジェクトを .json で保存">保存</button>
       <button id="btnAE" title="After Effects パネル用の構成データを書き出す">AE用に書き出し</button>
+      <button id="btnCavalry" title="Export an editable Cavalry script">Cavalry Export</button>
       <button id="btnReset" class="ghost" title="歌詞・曲・設定・履歴をすべて消して、最初の状態に戻します">初期化</button>
       <button id="btnTerms" class="ghost terms-open" title="出力物の権利とライセンス">利用について</button>
     </div>
@@ -279,6 +280,15 @@
   </main>
 </div>
 
+<dialog id="cavalryDlg" class="terms" aria-labelledby="cavalryTitle">
+  <form method="dialog">
+    <h2 id="cavalryTitle">Cavalry Export</h2>
+    <p>Experimental approximate export. Open the downloaded .cavalry.js in Cavalry's JavaScript Editor and run it. Set FPS and frame range manually as listed below.</p>
+    <ul id="cavalryWarnings" class="reset-list" tabindex="0" aria-label="Export warnings"></ul>
+    <p><label><input id="cavalryStrict" type="checkbox"> Exact support only (blocks export if any warnings remain)</label> Host verification is pending, so this version always has warnings.</p>
+    <div class="terms-foot"><span></span><span class="row"><button value="cancel" class="ghost" autofocus>Cancel</button><button id="cavalryDownload" value="export">Export approximation</button></span></div>
+  </form>
+</dialog>
 <dialog id="resetDlg" class="terms" aria-labelledby="resetTitle">
   <form method="dialog">
     <h2 id="resetTitle">初期化</h2>
