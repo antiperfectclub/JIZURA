@@ -1,6 +1,7 @@
-/* Runs only in Cavalry's JavaScript Editor, never in the browser. */
+/* Runs only in Cavalry's JavaScript Editor, never in the browser. Needs presets.js (JZPresets) concatenated before it. */
 var JZCavalry = (function () {
 'use strict';
+var Z = typeof JZPresets !== 'undefined' ? JZPresets : null;
 function clip(id, start, end) {
   api.setInFrame(id, start);
   api.setOutFrame(id, end - 1);
@@ -24,17 +25,22 @@ function background(comp, cut, parent) {
 }
 var clamp01 = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
 
-/* What this runtime builds today, per preset kind. Names outside the list are exported in the JSON but
-   not built, so they are reported instead of disappearing. */
-var BUILT = { enter: { cut: 1, fade: 1 }, exit: { cut: 1, fade: 1 }, bg: {}, cam: {}, trans: {}, treat: {}, decor: {} };
+/* Preset names the registry can build; others stay in the JSON and are reported instead of disappearing. */
 var NOT_BUILT = {};
+function has(kind, name) {
+  if (name === 'cut' || name === 'fade') return true;
+  return !!(Z && Z.has(kind, name));
+}
 function note(kind, name) {
-  if (typeof name !== 'string' || !name || BUILT[kind][name]) return;
+  if (typeof name !== 'string' || !name || has(kind, name)) return;
   NOT_BUILT[kind + ':' + name] = 1;
+}
+function safe(label, fn) {
+  try { fn(); } catch (e) { console.warn('JIZURA ' + label + ': ' + (e && e.message || e)); }
 }
 
 /* Opacity envelope of a node: linear in, hold, linear out.
-   Keys are sparse (4 per node) unless in/out overlap — the product of two ramps is not linear. */
+   Keys are sparse (4 per node) unless in/out overlap - the product of two ramps is not linear. */
 function envelopeFrames(cut, appear) {
   var start = Math.max(cut.start, appear), end = cut.end;
   if (start >= end) return null;
@@ -95,13 +101,24 @@ function buildText(comp, cut, node, parent, options) {
     api.keyframe(motion, f, { opacity: full * alphaAt(cut, appear, f) });
     api.modifyKeyframe(motion, { opacity: { frame: f, type: 1 } });
   }
+  // Named enter/exit presets add transform motion on top of the opacity envelope.
+  var P = cut.presets || {}, base = { motion: motion, text: id, comp: comp, cut: cut, node: node };
+  function applyIO(kind, from, to, dir) {
+    var pr = P[kind];
+    if (!Z || !pr || pr.name === 'cut' || pr.name === 'fade') return;
+    var fn = Z.resolve(kind, pr.name);
+    if (!fn) return;
+    safe(kind + ' ' + pr.name, function () { fn(Object.assign({}, base, { from: from, to: to, dir: dir })); });
+  }
+  applyIO('enter', appear, appear + cut.inFrames, 1);
+  applyIO('exit', cut.sourceEnd - cut.outFrames, cut.sourceEnd, -1);
   return { text: id, motion: motion };
 }
 function run(assembly, options) {
   options = options || {};
   options.fontOverrides = options.fontOverrides || {};
   NOT_BUILT = {};
-  if (!assembly || assembly.format !== 'jizura.cavalry.assembly' || [1, 2].indexOf(assembly.version) < 0) throw new Error('Unsupported JIZURA Cavalry assembly');
+  if (!assembly || assembly.format !== 'jizura.cavalry.assembly' || [1, 2, 3].indexOf(assembly.version) < 0) throw new Error('Unsupported JIZURA Cavalry assembly');
   var comp = assembly.composition;
   if (!comp || ![comp.width, comp.height, comp.fps, comp.frameCount].every(function (v) { return typeof v === 'number' && isFinite(v) && v > 0; }) ||
       Math.floor(comp.frameCount) !== comp.frameCount || !Array.isArray(assembly.cuts)) throw new Error('Invalid composition');
@@ -147,19 +164,33 @@ function run(assembly, options) {
     api.parent(group, root); clip(group, cut.start, cut.end); ids.push(group);
     var bg = background(comp, cut, group);
     if (bg) ids.push(bg);
+    var rig = api.create('null', cut.id + ' / Camera');
+    api.parent(rig, group); clip(rig, cut.start, cut.end); ids.push(rig);
+    var pz = cut.presets || {}, ctx0 = { cut: cut, comp: comp, assembly: assembly, parent: rig, rig: rig, texts: [] };
+    var runPreset = function (kind, pr) {
+      if (!Z || !pr) return;
+      var fn = Z.resolve(kind, pr.name);
+      if (!fn) return;
+      safe(kind + ' ' + pr.name, function () { fn(Object.assign({}, ctx0, { preset: pr })); });
+    };
+    runPreset('bg', pz.bg);
     for (var n = 0; n < cut.nodes.length; n++) {
-      var built = buildText(comp, cut, cut.nodes[n], group, options);
-      if (built) { ids.push(built.text); ids.push(built.motion); }
+      var built = buildText(comp, cut, cut.nodes[n], rig, options);
+      if (built) { ids.push(built.text); ids.push(built.motion); ctx0.texts.push(built.text); }
     }
+    runPreset('treat', pz.treat);
+    (pz.decor || []).forEach(function (d) { runPreset('decor', d); });
+    runPreset('cam', pz.cam);
   }
   api.setFrame(0); api.select([root]);
   if (options.componentPath && !api.writeToFile(options.componentPath, api.serialise(ids, true), false)) throw new Error('Failed to write Cavalry component');
-  console.log('JIZURA: set Composition Settings to ' + comp.fps + ' fps, frame range 0–' + (comp.frameCount - 1) + '.');
+  console.log('JIZURA: set Composition Settings to ' + comp.fps + ' fps, frame range 0\u2013' + (comp.frameCount - 1) + '.');
   console.log('Checks before rendering:\n' + (assembly.hostChecks || []).join('\n'));
   if (assembly.blockingWarnings && assembly.blockingWarnings.length) console.warn('Approximations:\n' + assembly.blockingWarnings.join('\n'));
   var missing = Object.keys(NOT_BUILT).sort();
   NOT_BUILT = {};
-  if (missing.length) console.warn('JIZURA: presets kept in the JSON but not built by this runtime:\n' + missing.join('\n'));  return { compositionId: compId, rootId: root, layerIds: ids };
+  if (missing.length) console.warn('JIZURA: presets kept in the JSON but not built by this runtime:\n' + missing.join('\n'));
+  return { compositionId: compId, rootId: root, layerIds: ids };
 }
 return { run: run };
 })();

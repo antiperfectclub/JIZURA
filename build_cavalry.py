@@ -4,7 +4,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 browser = (ROOT / 'cavalry/browser.js').read_text(encoding='utf-8')
-runtime = (ROOT / 'cavalry/runtime.js').read_text(encoding='utf-8')
+# presets.js must come first: runtime.js reads the JZPresets global.
+presets = (ROOT / 'cavalry/presets.js').read_text(encoding='utf-8')
+runtime = presets + '\n' + (ROOT / 'cavalry/runtime.js').read_text(encoding='utf-8')
 panel = (ROOT / 'cavalry/panel.js').read_text(encoding='utf-8')
 
 
