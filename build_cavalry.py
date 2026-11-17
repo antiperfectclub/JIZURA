@@ -52,6 +52,42 @@ def run_node(node,source,label,check=False):
     if p.returncode: raise ValueError(label+'\n'+p.stderr)
     return p.stdout
 
+def catalog_summary(root):
+    path=root/'cavalry/catalog/ae-presets.json'
+    if not path.is_file(): return None
+    data=json.loads(path.read_text(encoding='utf-8'))
+    if data.get('format')!='jizura.cavalry.ae-source-catalog' or not isinstance(data.get('entries'),list):
+        raise ValueError('Invalid AE catalog')
+    groups={}
+    for entry in data['entries']:
+        group,name=entry.get('group'),entry.get('name')
+        if group not in GROUPS or not isinstance(name,str) or not name: raise ValueError('Invalid AE catalog entry')
+        groups.setdefault(group,set()).add(name)
+    return {'source':'cavalry/catalog/ae-presets.json','total':len(data['entries']),
+            'counts':data.get('counts') or {g:len(v) for g,v in groups.items()},
+            'groups':{g:sorted(groups.get(g,[])) for g in GROUPS},
+            'implementationStatus':'not-ported'}
+
+def coverage(manifest,refs,catalog):
+    out={}
+    for g in GROUPS:
+        registered=sorted(manifest[g])
+        missing=sorted(set(refs[g])-set(registered))
+        # Layout is not a name-per-recipe port: the real renderer is executed and its text + paths are
+        # captured, so a layout name never needs its own native builder.
+        method='capture' if g=='layout' else 'native'
+        row={'registered':registered,'referenceCount':len(refs[g]),'missing':missing,
+             'additional':sorted(set(registered)-set(refs[g])),'method':method,
+             'blockingMissing':[] if method=='capture' else missing}
+        if method=='capture':
+            row['note']='Reference names are captured by running the real layout renderer; only the graphics recipe is registered.'
+        if catalog:
+            names=set(catalog['groups'][g])
+            row['catalog']={'count':len(names),'registeredInCatalog':len(names&set(registered)),
+                            'notPorted':sorted(names-set(registered)),'registeredNotInCatalog':sorted(set(registered)-names)}
+        out[g]=row
+    return out
+
 def assemble(root,release=False):
     root=root.resolve(); before=protected(root); node=shutil.which('node')
     if not node: raise ValueError('Node.js is required')
@@ -73,24 +109,39 @@ def assemble(root,release=False):
     manifest=json.loads(run_node(node,body+'process.stdout.write(JSON.stringify(JZNative.manifest()));','Native registration'))
     refs=json.loads(text['ae/data.json']).get('names')
     if not isinstance(refs,dict) or any(g not in refs for g in GROUPS): raise ValueError('Invalid reference vocabulary')
-    coverage={g:{'registered':sorted(manifest[g]),'referenceCount':len(refs[g]),'missing':sorted(set(refs[g])-set(manifest[g])),'additional':sorted(set(manifest[g])-set(refs[g]))} for g in GROUPS}
-    missing=sum(len(v['missing']) for v in coverage.values())
-    if release and missing: raise ValueError('Release refused: '+str(missing)+' recipes still lack native implementations')
+    catalog=catalog_summary(root)
+    cov=coverage(manifest,refs,catalog)
+    blocking=sum(len(v['blockingMissing']) for v in cov.values())
+    if release and blocking: raise ValueError('Release refused: '+str(blocking)+' recipes still lack native implementations')
     hashes={n:sha(b) for n,b in sorted(raw.items())}
-    info={'format':'jizura.cavalry.native-build','version':text['VERSION'].strip(),'buildId':sha(literal(hashes).encode()),'sourceHashes':hashes,'moduleOrder':modules,'recipes':manifest,'coverage':coverage,'status':'preview' if missing else 'implementation-coverage-only','hostVerified':False,'renderVerified':False,'inventoryBasis':'ae/data.json names snapshot; source files hashed, dynamic registrations not independently audited'}
+    info={'format':'jizura.cavalry.native-build','version':text['VERSION'].strip(),'buildId':sha(literal(hashes).encode()),'sourceHashes':hashes,'moduleOrder':modules,'recipes':manifest,'coverage':cov,
+          'catalog':None if not catalog else {'source':catalog['source'],'total':catalog['total'],'counts':catalog['counts'],
+            'groups':{g:{k:v for k,v in cov[g]['catalog'].items() if k!='notPorted' and k!='registeredNotInCatalog'} for g in GROUPS}},
+          'blockingMissing':blocking,'status':'preview' if blocking else 'implementation-coverage-only','hostVerified':False,'renderVerified':False,
+          'inventoryBasis':'ae/data.json names snapshot; cavalry/catalog/ae-presets.json when present; source files hashed, dynamic registrations not independently audited'}
     runtime='/* GENERATED: host/render verification pending. */\nvar JZCavalryBuild='+literal(info)+';\n'+body
     panel=text.get('cavalry/bridge.js','')+'\n'+text['cavalry/panel.js']
     standalone=runtime+'\n'+panel+'\n'
     browser='var JZFamilies=(function(M){return {built:function(g){return Object.keys(M[g]||{}).sort();},resolve:function(g,k){return {state:M[g]&&M[g][k]?"exact":"missing",as:M[g]&&M[g][k]?k:null};}};})('+literal(manifest)+');\n'+text['cavalry/browser.js']+'\n;\n'
-    for key,value in [('runtimeSource',runtime),('panelSource',panel),('buildInfo',info),('loaderSource',text.get('cavalry/loader.js',''))]:
+    loader=text.get('cavalry/bridge.js','')+'\n'+text.get('cavalry/loader.js','')
+    for key,value in [('runtimeSource',runtime),('panelSource',panel),('buildInfo',info),('loaderSource',loader)]:
         browser+='J.Cavalry.'+key+'='+literal(value)+';\n'
     browser+=body+'\n'+text['cavalry/native/browser_adapter.js']+'\n'
     browser+='J.Cavalry.standaloneSource=J.Cavalry.runtimeSource+"\\n"+J.Cavalry.panelSource+"\\n";\nJ.Cavalry.downloadPanel=function(name){return J.saveFile(String(name||"JIZURA_CV").replace(/[\\\\/:*?"<>|]/g,"_")+".js",new Blob([J.Cavalry.standaloneSource],{type:"text/javascript;charset=utf-8"}));};\n'
     outputs={n:standalone for n in ('JIZURA_CV.js','dist/cavalry/JIZURA_CV.js','dist/cavalry/JIZURA_Cavalry.js')}
+    loader_out=runtime+'\n'+loader+'\n'
+    outputs['JIZURA_CV_Loader.js']=loader_out
+    outputs['dist/cavalry/JIZURA_CV_Loader.js']=loader_out
     outputs['src/11r_cavalry.js']=browser
+    build_manifest={'format':'jizura.cavalry.build-manifest','version':info['version'],'buildId':info['buildId'],
+        'modules':modules,'recipes':manifest,'coverage':{g:{k:cov[g][k] for k in ('registered','referenceCount','method','blockingMissing')} for g in GROUPS},
+        'catalog':None if not catalog else {'total':catalog['total'],'counts':catalog['counts'],
+            'groups':{g:cov[g]['catalog'] for g in GROUPS}},
+        'blockingMissing':blocking,'status':info['status'],'hostVerified':False,'renderVerified':False}
     for n,s in outputs.items(): run_node(node,s,n,check=True)
     report=dict(info,protectedHashes=before,syntaxCheck='passed',outputHashes={n:sha(s.encode()) for n,s in outputs.items()})
     outputs['dist/cavalry/build-report.json']=json.dumps(report,ensure_ascii=True,sort_keys=True,indent=2)+'\n'
+    outputs['dist/cavalry/build-manifest.json']=json.dumps(build_manifest,ensure_ascii=True,sort_keys=True,indent=2)+'\n'
     if protected(root)!=before or any((root/n).read_bytes()!=b for n,b in raw.items()): raise ValueError('Build inputs changed')
     return outputs,before
 

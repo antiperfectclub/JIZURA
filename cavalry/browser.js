@@ -27,7 +27,7 @@ C.CAPABILITIES = Object.freeze({
   align: ['left', 'center', 'right'],
   text: ['multiline'],
   /* preset names are always exported; only the listed ones are built (exactly or by family) */
-  presets: Object.freeze({ enter: PRESETS('enter'), exit: PRESETS('exit'), bg: PRESETS('bg'),
+  presets: Object.freeze({ enter: PRESETS('enter'), exit: PRESETS('exit'), hold: PRESETS('hold'), bg: PRESETS('bg'),
     cam: PRESETS('cam'), trans: [], treat: PRESETS('treat'), decor: PRESETS('decor') }),
   shapes: true, decoration: PRESETS('decor').length > 0, treatments: PRESETS('treat').length > 0,
   backgroundGraphics: PRESETS('bg').length > 0, camera: PRESETS('cam').length > 0,
@@ -265,7 +265,7 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
   const host = message => hostChecks.push(message);
   const warn = message => blocking.push(message);
   /* preset names are classified once per name, then written as one line with the number of cuts that use it */
-  const KIND_LABEL = { enter: 'enter', exit: 'exit', bg: 'background graphic', cam: 'camera',
+  const KIND_LABEL = { enter: 'enter', exit: 'exit', hold: 'hold', bg: 'background graphic', cam: 'camera',
     treat: 'treatment', decor: 'decoration', trans: 'transition' };
   const presetRows = new Map();
   const hit = (kind, name) => {
@@ -306,8 +306,6 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
   }
 
   const oldLang = J.lang;
-  /* per-cut repetition is bad in a warning list: count the names instead */
-  const holdRows = new Map();
   let verticalItems = 0;
   try {
     if (J.setLang) J.setLang(p.lang || 'ja');
@@ -356,9 +354,11 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
 
       const enter = ['cut', 'fade'].includes(cut.enter) ? cut.enter : 'fade';
       const exit = ['cut', 'fade'].includes(cut.exit) ? cut.exit : 'fade';
-      /* the runtime resolves the *requested* names (cut.presets below), so the report predicts those */
-      if (nodes.length) { hit('enter', cut.enter || 'fade'); hit('exit', cut.exit || 'fade'); }
-      if (cut.hold && cut.hold !== 'still') holdRows.set(cut.hold, (holdRows.get(cut.hold) || 0) + 1);
+      /* the runtime resolves the *requested* names (cut.presets below), so the report predicts those.
+         Every kind, hold included, goes through the same exact/missing classification. */
+      if (nodes.length) {
+        hit('enter', cut.enter || 'fade'); hit('exit', cut.exit || 'fade'); hit('hold', cut.hold || 'still');
+      }
       (cut.decor || []).forEach(d => hit('decor', typeof d === 'string' ? d : d && (d.id || d.name)));
       if (cut.treat && cut.treat !== 'none') hit('treat', cut.treat);
       if (cut.bg && cut.bg !== 'none') hit('bg', cut.bg);
@@ -409,9 +409,6 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
   /* one line per preset name: exact builds are silent, approximations carry ≈, drops stop strict mode */
   const approx = [], missing = [];
   const presetReport = { built: {}, fallback: {}, missing: {} };
-  [...holdRows.entries()].sort((a, b) => a[0].localeCompare(b[0])).forEach(([name, n]) => {
-    blocking.push('hold "' + name + '" is not ported' + (n > 1 ? ' (' + n + ' cuts)' : ''));
-  });
   if (verticalItems) host(verticalItems + ' item(s) are vertical text: built per glyph. Glyph rotation and punctuation offsets need one visual check.');
   [...presetRows.values()]
     .sort((a, b) => (a.kind + ':' + a.name).localeCompare(b.kind + ':' + b.name))

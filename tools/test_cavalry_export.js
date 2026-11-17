@@ -1,235 +1,365 @@
 #!/usr/bin/env node
-/* Contract tests; the API mock does not certify host rendering. */
+/* Contract tests for the native Cavalry export. The API mock proves the emitted graph, never that Cavalry
+   renders it; hostVerified/renderVerified stay false everywhere. */
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 const root = path.join(__dirname, '..');
-const J = { FONTS: { test: { family: '"Test Font"', weight: 900 } }, lang: 'ja',
-  setLang(lang) { this.lang = lang; }, faceOf() { return { family: '"한국어 Font"', weight: 500 }; },
-  fitSize: () => 80, komaOf: () => 0 };
+
+/* ---- page globals the exporter and the layout renderers read ---- */
+const J = {
+  FONTS: { test: { family: '"Test Font"', weight: 500 } },
+  lang: 'ja',
+  setLang(lang) { this.lang = lang; },
+  faceOf() { return { family: '"한국어 Font"', weight: 500 }; },
+  fitSize: () => 80,
+  komaOf: () => 0,
+  measure: it => ({ w: [...String(it.text)].length * 20, h: 40 }),
+  layoutText: it => {
+    const chars = [...String(it.text).replace(/\n/g, '')];
+    return chars.map((ch, i) => ({ ch, i, li: 0, ci: i, n: chars.length,
+      x: (i - (chars.length - 1) / 2) * 30, y: 0, w: 30, h: 40, r90: false, vx: 0, vy: 0, fs: 1 }));
+  }
+};
 const ctx = vm.createContext({ J, Blob, console });
+ctx.window = { J };
 for (const file of ['src/01_util.js', 'src/06_layouts.js']) {
-  if (file.includes('01_util')) ctx.window = { J };
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), ctx);
 }
-vm.runInContext(fs.readFileSync(path.join(root, 'src/11r_cavalry.js'), 'utf8'), ctx);
+J.measure = J.measure || (it => ({ w: [...String(it.text)].length * 20, h: 40 }));
+J.layoutText = J.layoutText;
+J.hideDecoText = () => false;
+const bundle = fs.readFileSync(path.join(root, 'src', '11r_cavalry.js'), 'utf8');
+vm.runInContext(bundle, ctx);
+
 const read = name => fs.readFileSync(path.join(root, 'cavalry', name), 'utf8');
-const bundle = fs.readFileSync(path.join(root, 'src/11r_cavalry.js'), 'utf8');
-assert(bundle.includes(read('browser.js')), 'browser bundle must be current');
-assert(bundle.includes(read('families.js')), 'the shared preset vocabulary must ship with the page');
-for (const name of ['families.js', 'presets.js', 'runtime.js']) {
-  assert(J.Cavalry.runtimeSource.includes(read(name)), 'host bundle must carry ' + name);
+const manifest = JSON.parse(fs.readFileSync(path.join(root, 'dist/cavalry/build-manifest.json'), 'utf8'));
+const report = JSON.parse(fs.readFileSync(path.join(root, 'dist/cavalry/build-report.json'), 'utf8'));
+
+/* ---- 1. bundle freshness: the page ships the native engine, not the removed alias runtime ---- */
+assert(bundle.includes(read('browser.js')), 'browser bundle must carry cavalry/browser.js');
+assert(bundle.includes(read('native/browser_adapter.js')), 'browser bundle must carry the native adapter');
+for (const module of manifest.modules) {
+  assert(bundle.includes(read(module)), 'browser bundle is stale: missing ' + module);
+  assert(J.Cavalry.runtimeSource.includes(read(module)), 'host runtime is stale: missing ' + module);
 }
-for (const name of ['bridge.js', 'panel.js']) assert(J.Cavalry.panelSource.includes(read(name)), 'panel bundle must carry ' + name);
-for (const name of ['bridge.js', 'loader.js']) assert(J.Cavalry.loaderSource.includes(read(name)), 'loader bundle must carry ' + name);
+for (const gone of ['var JZPack', '})(JZPack)', 'var JZPresets', 'var JZFamilies', 'JZPresets.resolve']) {
+  assert(!J.Cavalry.runtimeSource.includes(gone), 'removed alias runtime still present: ' + gone);
+}
+for (const name of ['bridge.js', 'panel.js']) assert(J.Cavalry.panelSource.includes(read(name)));
+for (const name of ['bridge.js', 'loader.js']) assert(J.Cavalry.loaderSource.includes(read(name)));
+assert.equal(J.Cavalry.buildInfo.buildId, manifest.buildId, 'page build id must match the host build');
+assert.equal(J.Cavalry.buildInfo.hostVerified, false);
+assert.equal(J.Cavalry.buildInfo.renderVerified, false);
 
-const baseCut = { index: 0, layout: 'center', text: '가사', start: 0, end: 2, seed: 42, inDur: 0.5, outDur: 0.5,
-  enter: 'fade', exit: 'fade', hold: 'still', params: { font: 'test', sx: 1.2, ox: 0.1, oy: -0.2, track: 0, lead: 1.2 } };
+/* ---- 2. build report: layout is captured, every other group is a native port ---- */
+assert.equal(report.coverage.layout.method, 'capture');
+assert.equal(report.coverage.layout.blockingMissing.length, 0, 'layout names are captured, not ported one by one');
+for (const [group, row] of Object.entries(report.coverage)) {
+  if (group === 'layout') continue;
+  assert.equal(row.method, 'native', group + ' must be a native port');
+  assert.deepEqual(row.blockingMissing, row.missing, group + ' blocking list must equal the missing names');
+}
+assert.equal(report.blockingMissing, Object.values(report.coverage).reduce((n, r) => n + r.blockingMissing.length, 0));
+assert.equal(report.status, 'preview');
+assert.equal(manifest.status, 'preview');
+assert(manifest.coverage.cam.registered.includes('panL'));
+assert(!manifest.coverage.cam.registered.includes('push'), 'aliases are not registered');
+assert(manifest.modules[manifest.modules.length - 1] === 'native/30_assembly.js');
+for (const row of Object.values(report.recipes)) for (const def of Object.values(row)) {
+  assert.equal(def.hostVerified, false, 'no recipe may claim host verification');
+  assert(typeof def.source === 'string' && def.scope);
+}
+
+/* ---- 3. the AE catalog, when extracted, is evidence and not a claim of porting ---- */
+const catalogPath = path.join(root, 'cavalry', 'catalog', 'ae-presets.json');
+if (fs.existsSync(catalogPath)) {
+  const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+  assert.equal(catalog.format, 'jizura.cavalry.ae-source-catalog');
+  assert.equal(catalog.version, 1);
+  assert.equal(catalog.total, 1717, 'the AE core registers 1,717 names');
+  assert.equal(catalog.counts.layout, 366);
+  assert.equal(catalog.counts.enter, 251);
+  assert.equal(catalog.counts.hold, 102);
+  const keys = new Set();
+  for (const entry of catalog.entries) {
+    assert(entry.sourceFile && entry.sourceFile.startsWith('ae/'), 'every entry needs a real source file');
+    assert.equal(entry.implementationStatus, 'not-ported');
+    assert(entry.methods && Object.keys(entry.methods).length > 0, 'catalog must carry the recipe body');
+    const key = entry.group + ':' + entry.name;
+    assert(!keys.has(key), 'duplicate catalog entry ' + key);
+    keys.add(key);
+  }
+  assert.equal(manifest.catalog.total, catalog.total);
+  assert.equal(manifest.catalog.groups.layout.count, 366);
+  console.log('AE catalog: ' + catalog.total + ' extracted registrations checked.');
+} else {
+  console.log('AE catalog absent; run node cavalry/tools/extract_ae_catalog.js to audit the source registry.');
+}
+
+/* ---- 4. assembly: real layout renderers are executed and their text kept ---- */
+const style = {
+  fonts: { display: ['test'], body: ['test'], mono: ['test'] },
+  schemes: [{ fg: '#ffffff', bg: '#112233', accent: '#ff0000', sub: '#cccccc' }]
+};
+const unit = { render(env) {
+  J.mainDraw(env, { text: env.cut.text, font: 'test', size: 40, x: env.W / 2, y: env.H / 2, color: '#ffffff' });
+} };
+const geom = { render(env) {
+  env.rect(100, 100, 50, 40, '#ffffff', 1);
+  env.rect(150, 100, 50, 40, '#ffffff', 1);
+  env.line([[0, 0], [100, 100]], '#ff0000', 2, 1);
+  env.circle(400, 300, 20, '#00ff00', null, 1, 1);
+  env.arc(400, 300, 30, 0, 90, '#0000ff', 1, 1);
+  env.rect(0, 0, 10, 10, { gradient: 'x' }, 1);
+  J.mainDraw(env, { text: 'A', font: 'test', size: 30, x: 400, y: 300, color: '#ffffff' });
+} };
+const moving = { render(env) {
+  J.mainDraw(env, { text: 'A', font: 'test', size: 40, x: env.W / 2 + env.lt * 50, y: 300, color: '#ffffff' });
+} };
+const lefty = { render(env) {
+  J.mainDraw(env, { text: 'AB', font: 'test', size: 40, x: 100, y: 100, color: '#ffffff', align: 'left' });
+} };
+J.LAYOUTS.unit = unit;
+J.LAYOUTS.geom = geom;
+J.LAYOUTS.moving = moving;
+J.LAYOUTS.lefty = lefty;
+
+const cut = { index: 0, layout: 'unit', text: '漢가', start: 0, end: 2, seed: 42, inDur: 0.5, outDur: 0.5,
+  enter: 'fade', exit: 'fade', hold: 'still', params: { font: 'test' } };
 const plan = { W: 800, H: 600, fps: 10, duration: 2, lang: 'ko', title: '</script>가사',
-  style: { fonts: { display: ['test'] }, schemes: [{ fg: '#ffffff', bg: '#112233', accent: '#ff0000' }] },
-  cuts: [baseCut], fx: { chroma: 0, texture: 0, glitch: 0 } };
+  style, fx: { chroma: 0, texture: 0, glitch: 0 }, cuts: [cut] };
+const fresh = patch => ({ ...plan, cuts: [{ ...cut, ...patch }] });
 
-/* ---- assembly ---- */
 const before = JSON.stringify(plan);
 const a = J.Cavalry.assemble({ plan, range: { t0: 0.2, t1: 1.5 } });
 assert.equal(JSON.stringify(plan), before, 'the plan must not be mutated');
 assert.equal(J.lang, 'ja', 'language state restored');
 assert.equal(a.audioOffset, 0.2);
-assert.equal(a.version, 2, 'assembly schema v2');
+assert.equal(a.version, 3, 'the native adapter stamps schema v3');
+assert.equal(a.buildId, manifest.buildId);
 assert.equal(a.composition.frameCount, 13);
 assert.equal(a.cuts[0].origin, -2);
 assert.equal(a.cuts[0].sourceEnd, 18);
+assert.equal(a.cuts[0].layoutInstruction.name, 'graphics');
 assert.equal(a.cuts[0].nodes[0].font.style, 'Medium');
-assert.equal(a.cuts[0].nodes[0].kind, 'text');
 assert.equal(a.cuts[0].nodes[0].granularity, 'whole-text');
-assert.equal(a.cuts[0].nodes[0].animationBackend, 'individual-layers');
+assert.equal(a.cuts[0].nodes[0].glyphs.map(g => g.ch).join(''), '漢가');
 assert.equal(a.nodeCount, 1);
-assert.deepEqual(Array.from(a.capabilities.enter), ['cut', 'fade', 'slide', 'rise', 'drop', 'pop', 'flip', 'type']);
-/* v2 carries the design presets beside the geometry: names are exported even when not built */
-assert.equal(a.cuts[0].presets.enter.name, 'fade');
-assert.equal(a.cuts[0].presets.enter.inDur, 0.5);
-assert.equal(a.cuts[0].presets.exit.name, 'fade');
-assert.equal(a.cuts[0].presets.cam, null);
-assert.equal(a.cuts[0].presets.hold, 'still');
+assert.equal(a.capabilities.shapes, true);
+assert(a.capabilities.presets.cam.includes('panL'));
+assert(!a.capabilities.presets.cam.includes('push'), 'exact-only: no family alias is advertised');
+assert(a.capabilities.presets.hold.includes('breathe'));
+assert.deepEqual(Array.from(a.cuts[0].presets.enter && [a.cuts[0].presets.enter.name]), ['fade']);
 assert.equal(a.cuts[0].presets.scheme, 0);
 assert.equal(a.cuts[0].presets.seed, 42);
-assert.equal(a.style.schemes.length, 1, 'palette travels with the assembly');
-assert.equal(a.style.fx.chroma, 0);
 assert.equal(a.keyBg, null);
 assert.equal(a.lang, 'ko');
-assert.equal(a.blockingWarnings.length, 0, 'center with no extras is exact: ' + a.blockingWarnings.join(' | '));
-assert(a.hostChecks.some(w => /Composition Settings/.test(w)), 'manual FPS is a host check, not an approximation');
+assert.equal(a.blockingWarnings.length, 0, 'basic exact export: ' + a.blockingWarnings.join(' | '));
+assert(a.hostChecks.some(w => /Composition Settings/.test(w)));
+assert.equal(a.presetReport.built['enter:fade'], 1);
+assert.equal(a.presetReport.built['hold:still'], 1);
+assert.equal(a.nativeReport.missing.length, 0);
 assert.doesNotThrow(() => J.Cavalry.assemble({ plan, strict: true }), 'strict allows host checks');
-/* a family approximation is built and named, so it is not a reason to stop; a missing preset is */
-assert.doesNotThrow(() => J.Cavalry.assemble({ plan: { ...plan, cuts: [{ ...baseCut, cam: 'push' }] }, strict: true }),
-  'strict allows named approximations');
-assert.equal(J.Cavalry.assemble({ plan: { ...plan, cuts: [{ ...baseCut, cam: 'push' }] } }).presetReport.fallback['cam:push'], 'zoom');
-assert.throws(() => J.Cavalry.assemble({ plan: { ...plan, centerFree: true } }), /clipping/);
-assert.throws(() => J.Cavalry.assemble({ plan, range: { t0: 2, t1: 1 } }), /Invalid/);
-assert.throws(() => J.Cavalry.assemble({ plan: { ...plan, fps: Infinity } }), /Invalid/);
-const decorated = { ...baseCut, decor: [{ id: 'zodiacWheel' }] };
-assert.throws(() => J.Cavalry.assemble({ plan: { ...plan, cuts: [decorated] }, strict: true }), /decoration/,
-  'a decoration with no family blocks exact-only export');
 
-/* preset names and planner params are exported verbatim (AE naming, no reinterpretation) */
-const extras = J.Cavalry.assemble({ plan: { ...plan, cuts: [{ ...baseCut, decor: [{ id: 'crosshair', n: 2 }],
-  bg: 'grain', bgP: { a: 1 }, cam: 'push', camP: { z: 1.2 }, trans: 'wipe', transP: { dir: 1 }, transDur: 0.4,
-  treat: 'grain', treatP: { k: 2 }, morph: true }] } });
-const pr = extras.cuts[0].presets;
-assert.equal(pr.decor[0].name, 'crosshair');
-assert.equal(pr.decor[0].params.n, 2, 'decor params keep the planner shape');
-assert.equal(pr.bg.name, 'grain');
-assert.equal(pr.cam.params.z, 1.2);
-assert.equal(pr.trans.name, 'wipe');
-assert.equal(pr.trans.frames, 4, 'transition duration is exported in frames');
-assert.equal(pr.treat.name, 'grain');
-assert.equal(pr.morph, true);
-assert.equal(extras.cuts[0].enter, 'fade', 'what will be built is separate from what was asked');
+/* ---- 5. shape capture: geometry, merging, paint drops and the z-order caveat ---- */
+const g = J.Cavalry.assemble({ plan: fresh({ layout: 'geom' }) });
+const gc = g.cuts[0];
+assert.equal(gc.nodes.length, 1, 'text is still captured next to the graphics');
+assert.equal(gc.graphics.length, 4, 'two rects merge, line/circle/arc stay separate');
+const merged = gc.graphics[0];
+assert.equal(merged.parts, 2);
+assert.equal(merged.path.length, 10, 'one path carries both rectangles');
+assert.equal(merged.path[0][0], 'M');
+assert.equal(merged.path[0][1], 100, 'captured coordinates stay in web space');
+assert.equal(merged.path[0][2], 100);
+assert.equal(merged.fill, '#ffffff');
+assert.equal(merged.stroke, null);
+assert.equal(gc.graphics[1].stroke, '#ff0000');
+assert.equal(gc.graphics[1].width, 2);
+assert.equal(gc.graphics[1].path.length, 2, 'a line has two points');
+assert.equal(gc.graphics[2].fill, '#00ff00');
+assert(gc.graphics[3].path.length > 6, 'arc strokes are polylines');
+assert.equal(g.shapeCount, 4);
+assert.equal(g.graphicPrimitives, 5, 'merged rects count as two primitives');
+assert(g.hostChecks.some(w => /stacked behind all text/.test(w)));
+assert(g.hostChecks.some(w => /4°/.test(w)));
+assert(g.blockingWarnings.some(w => /use a paint that is not a solid colour/.test(w)));
 
-/* the same name resolves to the same builder on both sides; families are marked as approximations */
-assert.deepEqual(Array.from(extras.capabilities.presets.cam), ['pan', 'zoom', 'roll', 'handheld']);
-assert.equal(extras.presetReport.fallback['cam:push'], 'zoom', 'push is built as the zoom family');
-assert.equal(extras.presetReport.fallback['decor:crosshair'], 'cropMarks');
-assert.equal(extras.presetReport.missing['bg:grain'], 1);
-assert.equal(extras.presetReport.missing['trans:wipe'], 1, 'transitions stay unbuilt');
-assert.equal(extras.presetReport.missing['treat:grain'], 1);
-assert.equal(extras.presetReport.built['enter:fade'], 1, 'the envelope presets are exact');
-assert(extras.approxWarnings.some(w => /camera "push" ≈ zoom/.test(w)), 'approximations are named, not hidden');
-assert(extras.blockingWarnings.some(w => /background graphic "grain" is not built/.test(w)));
-assert(extras.warnings.length >= extras.approxWarnings.length + extras.blockingWarnings.length);
+const separated = J.Cavalry.assemble({ plan: fresh({ layout: 'geom' }), strict: false });
+assert(separated.cuts[0].graphics.every(s => Array.isArray(s.path) && s.path.length >= 2));
 
-/* the two modules must advertise the same vocabulary, or a warning would lie about the host */
-{
-  const vocab = vm.createContext({ console: { warn() {} } });
-  vm.runInContext(read('families.js') + '\n' + read('presets.js'), vocab);
-  for (const kind of vocab.JZFamilies.kinds()) {
-    assert.deepEqual(vocab.JZPresets.built(kind), vocab.JZFamilies.built(kind).sort(),
-      'families.js and presets.js disagree on the ' + kind + ' presets');
-  }
+/* ---- 6. exact-name preflight: a missing recipe stops strict mode, never silently aliases ---- */
+const strictMissing = J.Cavalry.assemble({ plan: fresh({ cam: 'push' }) });
+assert.equal(strictMissing.presetReport.missing['cam:push'], 1);
+assert(strictMissing.blockingWarnings.some(w => /camera "push" is not built/.test(w)));
+assert.equal(strictMissing.presetReport.fallback['cam:push'], undefined);
+assert.throws(() => J.Cavalry.assemble({ plan: fresh({ cam: 'push' }), strict: true }), /camera "push" is not built/);
+assert.equal(J.Cavalry.assemble({ plan: fresh({ cam: 'panL' }) }).presetReport.built['cam:panL'], 1);
+assert.equal(J.Cavalry.assemble({ plan: fresh({ hold: 'breathe' }) }).presetReport.built['hold:breathe'], 1);
+assert.equal(J.Cavalry.assemble({ plan: fresh({ enter: 'slide' }) }).presetReport.built['enter:slide'], 1);
+assert.equal(J.Cavalry.assemble({ plan: fresh({ decor: [{ id: 'cropMarks' }] }) }).presetReport.built['decor:cropMarks'], 1);
+const dropped = J.Cavalry.assemble({ plan: fresh({ hold: 'nope', enter: 'alsonope', decor: [{ id: 'crosshair' }], bg: 'grain', treat: 'grain', trans: 'wipe' }) });
+for (const key of ['hold', 'enter', 'decor', 'bg', 'treat', 'trans']) {
+  assert(Object.keys(dropped.presetReport.missing).some(k => k.startsWith(key + ':')), key + ' miss must be reported');
 }
+assert(dropped.warnings.length >= dropped.blockingWarnings.length);
+assert.equal(dropped.presetReport.built['exit:fade'], 1);
 
-/* layout capture: the real scatter renderer is the source of truth */
-const sc = { ...baseCut, layout: 'scatter', text: '漢가 A', stagger: 0.2, params: { font: 'test', fontB: 'test' } };
-const scatter = J.Cavalry.assemble({ plan: { ...plan, cuts: [sc] } });
-const drawn = [];
-J.mainDraw = (_, it) => { drawn.push(it); return null; };
-J.LAYOUTS.scatter.render({ W: 800, H: 600, sc: plan.style.schemes[0], cut: sc, lt: 1, pIn: 1, pOut: 0, step: 0,
-  draw() {}, line() {}, rect() {}, circle() {}, arc() {}, rrect() {}, poly() {}, blob() {}, polyPartial() {}, st: plan.style, fx: plan.fx });
-scatter.cuts[0].nodes.forEach((node, i) => {
-  for (const k of ['text', 'size', 'x', 'y', 'color']) assert.equal(node[k], drawn[i][k], 'scatter ' + k);
-  assert.equal(node.rotation, drawn[i].rot);
-  assert.equal(node.granularity, 'per-character');
-  assert.equal(node.delayFrames, i * 2);
-});
-
-/* unregistered / throwing layouts fall back with a warning; params are not reinterpreted */
+/* ---- 7. capture honesty: fallbacks and moving layouts are named ---- */
 J.LAYOUTS.broken = { render() { throw new Error('boom'); } };
-const broken = J.Cavalry.assemble({ plan: { ...plan, cuts: [{ ...baseCut, layout: 'broken', params: { fontBig: 'test', ox: 99 } }] } });
+const broken = J.Cavalry.assemble({ plan: fresh({ layout: 'broken', params: { fontBig: 'test', ox: 99 } }) });
 assert.equal(broken.cuts[0].nodes[0].x, 400, 'fallback must not reinterpret layout params');
 assert(broken.blockingWarnings.some(w => w.includes('center fallback')));
 assert(broken.blockingWarnings.some(w => w.includes('boom')));
-/* a layout that reads env.lt is reported as a still */
-J.LAYOUTS.moving = { render(env) {
-  J.mainDraw(env, { text: 'A', font: 'test', size: 40, x: env.W / 2 + env.lt * 50, y: 300, color: '#fff' });
-} };
-const moving = J.Cavalry.assemble({ plan: { ...plan, cuts: [{ ...baseCut, layout: 'moving' }] } });
-assert(moving.blockingWarnings.some(w => /keeps moving/.test(w)));
-/* left anchored text carries the anchor and is exported as such */
-J.LAYOUTS.lefty = { render: env => J.mainDraw(env, { text: 'AB', font: 'test', size: 40, x: 100, y: 100, color: '#fff', align: 'left' }) };
-const lefty = J.Cavalry.assemble({ plan: { ...plan, cuts: [{ ...baseCut, layout: 'lefty' }] } });
-assert.equal(lefty.cuts[0].nodes[0].align, 'left');
+const still = J.Cavalry.assemble({ plan: fresh({ layout: 'moving' }) });
+assert(still.blockingWarnings.some(w => /keeps moving/.test(w)));
+const left = J.Cavalry.assemble({ plan: fresh({ layout: 'lefty' }) });
+assert.equal(left.cuts[0].nodes[0].align, 'left');
 
-/* ---- installed-runtime stand-in ---- */
-const layers = new Map(), keys = [], writes = [];
-let counter = 0;
-const create = (type, name) => { const id = type + '#' + counter++; layers.set(id, { type, name }); return id; };
-const api = {
-  create, createComp: name => create('composition', name), setActiveComp() {},
-  set(id, values) { Object.assign(layers.get(id), values); },
-  parent(id, parent) { layers.get(id).parent = parent; },
-  setInFrame(id, f) { layers.get(id).start = f; }, setOutFrame(id, f) { layers.get(id).end = f; },
-  setFill() {}, setStroke() {}, select() {}, moveToBack() {}, setFrame() {},
-  createEditable: (_, name) => create('editableShape', name),
-  getBoundingBox: () => ({ centre: { x: 10, y: -5 }, width: 100, height: 20 }), get: () => 100,
-  keyframe(id, frame, value) { keys.push({ id, frame, value }); },
-  modifyKeyframe(_, data) { assert.equal(data.opacity.type, 1); },
-  serialise(ids, connections) { assert.equal(connections, true); assert(!ids.includes('unrelated')); return JSON.stringify(ids); },
-  writeToFile(file, data, overwrite) { writes.push({ file, data, overwrite }); return true; }
-};
-class Path { moveTo() {} lineTo() {} close() {} append() {} cubicTo() {} }
-const warnings = [];
-const host = vm.createContext({ api, cavalry: { Path }, console: { log() {}, warn: m => warnings.push(String(m)) } });
-vm.runInContext(J.Cavalry.runtimeSource, host);
-const result = host.JZCavalry.run(a, { componentPath: '/tmp/song.cvc' });
-assert.equal(result.report.built['enter:fade'], 1, 'the opacity envelope is an exact preset');
-assert.equal(result.report.missing['cam:push'], undefined, 'no camera asked for, none reported');
-assert.equal(layers.get(result.rootId).end, 12, 'exclusive end -> inclusive clip');
-const text = [...layers.values()].find(l => l.type === 'textShape');
-assert.deepEqual(Array.from(text.position), [68, 125], 'asymmetric position and bbox correction');
-assert.equal(keys[0].value.opacity, 40, 'range starts partway through original fade');
-assert.equal(keys.at(-1).value.opacity, 100, 'range end must not cause premature exit');
-assert.deepEqual(keys.map(k => k.frame), [0, 3, 12], 'sparse keys describe the same linear envelope');
-assert.equal(new Set(keys.map(k => k.id + '/' + k.frame)).size, keys.length);
-assert.equal(writes[0].overwrite, false);
-
-/* left anchor: bbox width is added to the position before rotation */
-const leftRun = host.JZCavalry.run(lefty);
-const leftText = [...layers.values()].filter(l => l.type === 'textShape').at(-1);
-assert.deepEqual(Array.from(leftText.position), [-260, 205], 'left anchor uses the measured bbox');
-assert.equal(leftRun.layerIds.length, leftRun.layerIds.length);
-
-/* overlapping in/out: the product of two ramps is baked, not approximated */
-const overlap = JSON.parse(JSON.stringify(a));
-Object.assign(overlap.cuts[0], { start: 0, end: 1, origin: 0, sourceEnd: 1, inFrames: 5, outFrames: 5 });
-const keyCount = keys.length;
-host.JZCavalry.run(overlap);
-assert.equal(keys.length - keyCount, 1, 'one-frame overlapping fades produce one key');
-assert.equal(keys.at(-1).value.opacity, 0);
-
+assert.throws(() => J.Cavalry.assemble({ plan: { ...plan, centerFree: true } }), /clipping/);
+assert.throws(() => J.Cavalry.assemble({ plan, range: { t0: 2, t1: 1 } }), /Invalid/);
+assert.throws(() => J.Cavalry.assemble({ plan: { ...plan, fps: Infinity } }), /Invalid/);
 for (const [keyBg, color] of [['transparent', null], ['green', '#00ff00'], ['black', '#000000']]) {
   assert.equal(J.Cavalry.assemble({ plan: { ...plan, keyBg } }).cuts[0].background, color);
 }
-const count = layers.size;
-const v2 = host.JZCavalry.run(extras);
-assert(layers.size > count, 'v2 assemblies build');
-assert.equal(v2.report.fallback['cam:push'], 'zoom', 'runtime resolves the family the page predicted');
-assert.equal(v2.report.fallback['decor:crosshair'], 'cropMarks');
-assert.equal(v2.report.missing['bg:grain'], 1);
-assert.equal(v2.report.missing['trans:wipe'], 1);
-/* the host must not surprise the dialog: every approximation or drop it reports was predicted */
-for (const [key, as] of Object.entries(v2.report.fallback)) {
-  assert.equal(extras.presetReport.fallback[key], as, 'runtime approximated ' + key + ' without predicting it');
-}
-for (const key of Object.keys(v2.report.missing)) {
-  assert.equal(extras.presetReport.missing[key], 1, 'runtime dropped ' + key + ' without predicting it');
-}
-assert(warnings.some(w => /family approximation/.test(w) && /cam:push as zoom/.test(w)), 'approximations are printed');
-assert(warnings.some(w => /not built by this runtime/.test(w) && /bg:grain/.test(w)));
-const afterV2 = layers.size;
-assert.throws(() => host.JZCavalry.run({ ...a, version: 4 }), /Unsupported/);
-assert.equal(layers.size, afterV2, 'reject before mutating host');
-const badBackend = JSON.parse(JSON.stringify(a));
-badBackend.cuts[0].nodes[0].animationBackend = 'submesh';
-assert.throws(() => host.JZCavalry.run(badBackend), /animation backend/);
-assert.equal(layers.size, afterV2, 'unknown backend is rejected before creating layers');
-const late = JSON.parse(JSON.stringify(scatter));
-late.cuts[0].nodes.forEach(n => n.delayFrames = 100);
-const textsBefore = [...layers.values()].filter(l => l.type === 'textShape').length;
-assert.equal(host.JZCavalry.run(late).layerIds.length, 4, 'root + cut group + background + camera rig');
-assert.equal([...layers.values()].filter(l => l.type === 'textShape').length, textsBefore, 'late stagger produces no text layers');
 
-/* ---- bridge: optional, feature-detected, never required ---- */
+/* ---- 8. mock Cavalry host ---- */
+class Path {
+  constructor() { this.used = 0; }
+  moveTo() { this.used++; } lineTo() { this.used++; } quadTo() { this.used++; } cubicTo() { this.used++; }
+  close() {} append() {} empty() { return this.used === 0; }
+}
+function hostEnv(options = {}) {
+  const layers = new Map(), keys = [], connects = [], deletes = [];
+  let n = 0, active = null;
+  const mk = (type, name) => { const id = type + '#' + n++; layers.set(id, { type, name, attrs: {}, parent: null }); return id; };
+  const api = {
+    createComp(name) { active = mk('composition', name); return active; },
+    getActiveComp() { return active; }, setActiveComp(id) { active = id; },
+    getFrame() { return 0; }, setFrame() {},
+    create: mk,
+    createEditable(p, name) { const id = mk('editableShape', name); layers.get(id).path = p; return id; },
+    parent(id, parent) { layers.get(id).parent = parent; },
+    set(id, values) { Object.assign(layers.get(id).attrs, values); },
+    get(id, attr) {
+      const layer = layers.get(id);
+      if (attr === 'opacity') return options.opacity == null ? 100 : options.opacity;
+      if (attr === 'text') return options.badText ? 'XX' : layer.attrs.text;
+      return layer.attrs[attr];
+    },
+    setInFrame(id, f) { layers.get(id).start = f; }, setOutFrame(id, f) { layers.get(id).end = f; },
+    setFill(id, v) { layers.get(id).fill = v; }, setStroke(id, v) { layers.get(id).stroke = v; },
+    keyframe(id, frame, data) { keys.push({ id, frame, data }); }, modifyKeyframe() {},
+    connect(from, output, to, input) { connects.push([from, output, to, input]); },
+    serialise() { return '[]'; }, writeToFile() { return true; }, select() {},
+    deleteLayer(id) { deletes.push(id); layers.delete(id); }
+  };
+  const warnings = [];
+  const sandbox = {
+    api, cavalry: {
+      Path,
+      fontExists: () => true,
+      measureText: () => ({ width: 20 })
+    },
+    console: { log() {}, warn: m => warnings.push(String(m)) }
+  };
+  vm.runInContext(J.Cavalry.runtimeSource, vm.createContext(sandbox));
+  return { run: sandbox.JZCavalry.run, preflight: sandbox.JZCavalry.preflight,
+    layers, keys, connects, deletes, warnings, api };
+}
+
+const host = hostEnv();
+const p = host.preflight(a);
+assert.equal(p.missing.length, 0, 'preflight agrees with the page: ' + JSON.stringify(p.missing));
+assert.equal(p.hostVerified, false);
+const pushAssembly = JSON.parse(JSON.stringify(a));
+pushAssembly.cuts[0].presets.cam = { name: 'push', params: {} };
+const pushReport = host.preflight(pushAssembly);
+assert.deepEqual(Array.from(pushReport.missing, r => r.group + ':' + r.name + '@' + r.cut), ['cam:push@cut-0']);
+
+const result = host.run(a);
+assert.equal(result.report.built['layout:graphics'], 1);
+assert.equal(result.report.built['enter:fade'], 1);
+assert.equal(result.report.built['hold:still'], 1);
+assert.equal(result.report.missing.length, 0);
+assert.equal(result.report.errors.length, 0);
+const rootLayer = host.layers.get(result.rootId);
+assert.equal(rootLayer.name, 'JIZURA / </script>가사');
+assert.equal(rootLayer.end, 12, 'exclusive end -> inclusive clip');
+const comp = [...host.layers.values()].find(l => l.type === 'composition');
+assert.equal(comp.attrs['resolution.x'], 800);
+const text = [...host.layers.values()].filter(l => l.type === 'textShape');
+assert.equal(text.length, 2, 'one editable layer per glyph');
+assert.deepEqual(text.map(l => l.attrs.text), ['漢', '가']);
+assert(text.every(l => l.parent), 'glyph layers are parented to the placement null');
+const bg = [...host.layers.values()].find(l => l.name === 'cut-0 / Background');
+assert.equal(bg.type, 'editableShape');
+assert.equal(bg.path.used, 4, 'background path has four corners');
+
+/* camera rig: rotation -> stretch -> camera, with real per-frame keys */
+const withCam = JSON.parse(JSON.stringify(a));
+withCam.style.fx.motion = 0.8;
+withCam.cuts[0].presets.cam = { name: 'tzItalicSet', params: { dir: 1, a: 6.5 } };
+const camRun = hostEnv();
+const camResult = camRun.run(withCam);
+const byName = name => [...camRun.layers.values()].find(l => l.name === name);
+const outer = byName('cut-0 / Camera Rotation'), stretch = byName('cut-0 / Camera Stretch'), rig = byName('cut-0 / Camera');
+const idOf = layer => [...camRun.layers.entries()].find(([, l]) => l === layer)[0];
+assert(outer && stretch && rig, 'three-node camera rig is created');
+assert.equal(stretch.parent, idOf(outer), 'stretch hangs under rotation');
+assert.equal(rig.parent, idOf(stretch), 'camera hangs under stretch');
+assert(camRun.keys.filter(k => k.id === idOf(outer)).length >= 13 * 3, 'rotation keys are sampled per frame');
+const stretchId = idOf(stretch);
+const sx = camRun.keys.filter(k => k.id === stretchId && 'scale.x' in k.data);
+const sy = camRun.keys.filter(k => k.id === stretchId && 'scale.y' in k.data);
+assert(sx.length && sy.length);
+for (let i = 0; i < sx.length; i++) {
+  assert(Math.abs(sx[i].data['scale.x'] * sy[i].data['scale.y'] - 1) < 1e-6, 'shear SVD keeps determinant 1');
+}
+assert(sx.some(k => Math.abs(k.data['scale.x'] - 1) > 1e-4), 'tzItalicSet actually shears');
+assert.equal(camResult.report.built['cam:tzItalicSet'], 1);
+
+/* rollback: a corrupt Unicode read-back must remove everything this build created */
+const failing = hostEnv({ badText: true });
+const beforeFail = failing.layers.size;
+assert.throws(() => failing.run(a), /Unicode readback mismatch/);
+assert(failing.deletes.length > 0, 'created layers are deleted on failure');
+assert.equal(failing.layers.size, beforeFail, 'rollback returns the scene to its previous state');
+const invisible = hostEnv({ opacity: 0 });
+assert.throws(() => invisible.run(a), /Invalid native opacity range/);
+
+/* empty / unpainted geometry is an error, never an empty layer */
+const badPath = JSON.parse(JSON.stringify(a));
+badPath.cuts[0].nodes = [];
+badPath.cuts[0].graphics = [{ name: 'bad', path: [['M', 0, 0]], fill: '#ffffff', alpha: 1 }];
+assert.throws(() => hostEnv().run(badPath), /Missing geometry|Empty\/invalid path/);
+const badPaint = JSON.parse(JSON.stringify(a));
+badPaint.cuts[0].nodes = [];
+badPaint.cuts[0].graphics = [{ name: 'bad', path: [['M', 0, 0], ['L', 10, 10]], fill: null, stroke: null, alpha: 1 }];
+assert.throws(() => hostEnv().run(badPaint), /no paint/);
+
+/* the adapter's host report may not invent a miss the page did not predict, nor print it twice */
+const adapterMiss = J.Cavalry.assemble({ plan: fresh({ cam: 'push' }) });
+const missLines = adapterMiss.blockingWarnings.filter(w => /camera "push"/.test(w));
+assert.equal(missLines.length, 1, 'one line per miss, predicted by the page');
+assert.equal(adapterMiss.blockingWarnings.filter(w => /cam:push/.test(w)).length, 0, 'no duplicate host line');
+const holdMiss = J.Cavalry.assemble({ plan: fresh({ hold: 'nope' }) });
+assert.equal(holdMiss.blockingWarnings.filter(w => /hold "nope"/.test(w)).length, 1);
+assert.equal(holdMiss.blockingWarnings.filter(w => /hold:nope/.test(w)).length, 0, 'no duplicate host line');
+
+/* ---- 9. bridge: optional, feature-detected, never required ---- */
 const bridgeSrc = read('bridge.js');
 const bridgeHost = api2 => {
-  const c = vm.createContext({ api: api2, console: { log() {}, warn() {} } });
+  const c = vm.createContext({ api: api2, console: { log() {}, warn() {}, error() {} } });
   vm.runInContext(bridgeSrc, c);
   return c.JZBridge;
 };
 const plain = bridgeHost({});
-assert.equal(plain.server(), false, 'no WebServer in this host');
-assert.equal(plain.start(() => { throw new Error('must not run'); }), false, 'panel builds from a picked file instead');
-assert.equal(plain.handoff('/tmp/x.json'), false, 'loader builds locally instead');
+assert.equal(plain.server(), false);
+assert.equal(plain.start(() => { throw new Error('must not run'); }), false);
+assert.equal(plain.handoff('/tmp/x.json'), false);
 
 const serverCalls = [];
 let serverInstance = null;
@@ -253,23 +383,22 @@ assert.deepEqual(serverCalls.find(c => c[0] === 'listen').slice(1), ['localhost'
 assert.equal(serverCalls.find(c => c[0] === 'result')[1], 'JIZURA_CV/1');
 serverInstance.postCount_ = 1;
 serverInstance.callbacks.onPost();
-serverInstance.postCount_ = 1;
-assert.equal(delivered.length, 1, 'a posted path is read and handed to the panel');
+assert.equal(delivered.length, 1);
 assert.equal(delivered[0].format, 'jizura.cavalry.assembly');
-assert.equal(serverBridge.start(() => {}), true, 'a second start reuses the bound server');
-assert.equal(serverCalls.filter(c => c[0] === 'listen').length, 1, 'the port is bound once');
+assert.equal(serverBridge.start(() => {}), true);
+assert.equal(serverCalls.filter(c => c[0] === 'listen').length, 1);
 
 const throwing = bridgeHost({ WebServer: class { constructor() { throw new Error('no port'); } } });
-assert.equal(throwing.start(() => {}), false, 'a host without a usable port still exports');
+assert.equal(throwing.start(() => {}), false);
 
 let clientStatus = 200, clientBody = 'JIZURA_CV/1';
 const clientCalls = [];
 class MockClient {
   constructor(base) { clientCalls.push(['new', base]); }
-  get(path) { clientCalls.push(['get', path]); }
+  get(p) { clientCalls.push(['get', p]); }
   status() { return clientStatus; }
   body() { return clientBody; }
-  post(path, body, type) { clientCalls.push(['post', path, body, type]); }
+  post(p, body, type) { clientCalls.push(['post', p, body, type]); }
 }
 const clientBridge = bridgeHost({ WebClient: MockClient });
 assert.equal(clientBridge.handoff('/tmp/song.json'), true);
@@ -277,14 +406,14 @@ assert.deepEqual(clientCalls[0], ['new', 'http://localhost:41234']);
 assert.deepEqual(clientCalls[1], ['get', '/get']);
 assert.deepEqual(JSON.parse(clientCalls[2][2]), { type: 'path', path: '/tmp/song.json' });
 clientCalls.length = 0; clientStatus = 404;
-assert.equal(clientBridge.handoff('/tmp/song.json'), false, 'no panel answering -> loader builds');
+assert.equal(clientBridge.handoff('/tmp/song.json'), false);
 clientCalls.length = 0; clientStatus = 200; clientBody = 'something else';
-assert.equal(clientBridge.handoff('/tmp/song.json'), false, 'another server on the port is not ours');
-assert(!clientCalls.some(c => c[0] === 'post'), 'nothing is posted to a stranger');
+assert.equal(clientBridge.handoff('/tmp/song.json'), false);
+assert(!clientCalls.some(c => c[0] === 'post'));
 new vm.Script(J.Cavalry.panelSource);
 new vm.Script(J.Cavalry.loaderSource);
 
-/* ---- panel and loader UIs (Cavalry is closed, so the widgets are mocked) ---- */
+/* ---- 10. panel and loader UIs (Cavalry is closed, so the widgets are mocked) ---- */
 function uiHarness(source, opts) {
   const labels = [], buttons = [], calls = { run: 0 };
   const ui = {
@@ -298,42 +427,42 @@ function uiHarness(source, opts) {
   };
   if (opts.webClient) {
     api2.WebClient = class {
-      constructor(base) { this.base = base; }
       get() {}
       status() { return opts.webClient.status; }
       body() { return opts.webClient.body; }
-      post(path, body) { opts.webClient.posted = body; }
+      post(p, body) { opts.webClient.posted = body; }
     };
   }
-  const JZCavalry = { run: () => { calls.run += 1; return { layerIds: ['a', 'b'], report: { built: {}, fallback: { 'cam:push': 'zoom' }, missing: {}, errors: [] } }; } };
-  const sandbox = { ui, api: api2, JZCavalry, console: { log() {}, warn() {} } };
-  const c = vm.createContext(sandbox);
+  const JZCavalry = { run: () => { calls.run += 1;
+    return { layerIds: ['a', 'b'], report: { built: { 'enter:fade': 1 }, fallback: {}, missing: { 'cam:push': 1 }, errors: [] } }; } };
+  const c = vm.createContext({ ui, api: api2, JZCavalry, console: { log() {}, warn() {}, error() {} } });
   vm.runInContext(source, c);
   return { labels, buttons, calls };
 }
-const assemblyJson = JSON.stringify({ format: 'jizura.cavalry.assembly', version: 2, nodeCount: 4 });
+const assemblyJson = JSON.stringify({ format: 'jizura.cavalry.assembly', version: 3, nodeCount: 4 });
 const panelRun = uiHarness(J.Cavalry.panelSource, { file: '/tmp/a.json', json: assemblyJson });
-assert.equal(panelRun.buttons.length, 1, 'the panel shows one button');
+assert.equal(panelRun.buttons.length, 1);
 panelRun.buttons[0].onClick();
-assert.equal(panelRun.calls.run, 1, 'the panel builds the picked file');
+assert.equal(panelRun.calls.run, 1);
 assert.match(panelRun.labels[0].text, /完了/);
-assert.match(panelRun.labels[0].text, /近似 1/, 'the panel shows the fallback count');
+assert.match(panelRun.labels[0].text, /正確 1/);
+assert.match(panelRun.labels[0].text, /未対応 1/);
 
 const loaderLocal = uiHarness(J.Cavalry.loaderSource, { file: '/tmp/a.json', json: assemblyJson });
 loaderLocal.buttons[0].onClick();
-assert.equal(loaderLocal.calls.run, 1, 'without a panel the loader builds locally');
+assert.equal(loaderLocal.calls.run, 1);
 assert.match(loaderLocal.labels[0].text, /パネルは未接続/);
 
 const client = { status: 200, body: 'JIZURA_CV/1', posted: null };
 const loaderBridge = uiHarness(J.Cavalry.loaderSource, { file: '/tmp/a.json', json: assemblyJson, webClient: client });
 loaderBridge.buttons[0].onClick();
-assert.equal(JSON.parse(client.posted).path, '/tmp/a.json', 'the loader hands the path to the open panel');
-assert.equal(loaderBridge.calls.run, 0, 'the loader does not rebuild what the panel accepted');
+assert.equal(JSON.parse(client.posted).path, '/tmp/a.json');
+assert.equal(loaderBridge.calls.run, 0);
 assert.match(loaderBridge.labels[0].text, /送信/);
 
 const loaderBad = uiHarness(J.Cavalry.loaderSource, { file: '/tmp/a.json', json: '{"format":"other"}' });
 loaderBad.buttons[0].onClick();
-assert.equal(loaderBad.calls.run, 0, 'a foreign JSON is refused before building');
+assert.equal(loaderBad.calls.run, 0);
 assert.match(loaderBad.labels[0].text, /JIZURA の JSON ではありません/);
 
 (async () => {
@@ -345,16 +474,15 @@ assert.match(loaderBad.labels[0].text, /JIZURA の JSON ではありません/);
   assert(saved.script.includes('timingPaths: null'));
   assert(saved.name.endsWith('.cavalry.js'));
   new vm.Script(saved.script);
+  assert(saved.script.includes('JZCavalry.run('));
 
-  /* JSON is the primary artefact: it is what the installed panel reads */
   assert.equal(await J.Cavalry.downloadJson(a, 'song/01'), 'saved');
   assert.equal(saved.name, 'song_01.jizura.cavalry.json');
   const parsed = JSON.parse(saved.script);
-  assert.equal(parsed.version, 2);
+  assert.equal(parsed.version, 3);
   assert.equal(parsed.format, 'jizura.cavalry.assembly');
   assert.equal(parsed.cuts.length, a.cuts.length);
 
-  /* panel install file: host code + UI, runnable from Cavalry's Scripts folder */
   assert.equal(await J.Cavalry.downloadPanel(), 'saved');
   assert.equal(saved.name, 'JIZURA_CV.js');
   assert(saved.script.includes('JZCavalry'));
@@ -363,37 +491,38 @@ assert.match(loaderBad.labels[0].text, /JIZURA の JSON ではありません/);
   const dist = path.join(root, 'dist', 'cavalry', 'JIZURA_CV.js');
   assert(fs.existsSync(dist), 'build_cavalry.py must emit the panel install file');
   const distSource = fs.readFileSync(dist, 'utf8');
-  assert(distSource.includes('JZCavalry'), 'dist file carries the runtime');
   assert(distSource.includes(read('panel.js').trim()), 'dist panel is current');
+  assert(distSource.includes('var JZCavalryBuild='));
 
-  /* loader: same host code, a file picker instead of a resident panel */
   assert.equal(await J.Cavalry.downloadLoader(), 'saved');
   assert.equal(saved.name, 'JIZURA_CV_Loader.js');
   assert(saved.script.includes('JZBridge.handoff'));
   new vm.Script(saved.script);
   const loaderDist = path.join(root, 'dist', 'cavalry', 'JIZURA_CV_Loader.js');
   assert(fs.existsSync(loaderDist), 'build_cavalry.py must emit the loader');
-  assert(fs.readFileSync(loaderDist, 'utf8').includes(read('loader.js').trim()), 'dist loader is current');
+  assert(fs.readFileSync(loaderDist, 'utf8').includes(read('loader.js').trim()));
 
-  /* ---- the shipped file, not a bundle of its parts: run it against a mock Cavalry and press the button ---- */
+  /* ---- the shipped file, not a bundle of its parts ---- */
   function runDist(distPath, options) {
-    const files = new Map(), made = [], labels = [], buttons = [];
-    let n = 0;
-    const mk = (type, name) => { const id = type + '#' + n++; files.set(id, { type, name }); return id; };
+    const files = new Map(), labels = [], buttons = [];
+    let n = 0, active = null;
+    const mk = (type, name) => { const id = type + '#' + n++; files.set(id, { type, name, attrs: {} }); return id; };
     const hostApi = {
-      create: mk, createComp: name => mk('composition', name), setActiveComp() {},
-      set(id, values) { Object.assign(files.get(id), values); }, parent() {},
-      setInFrame() {}, setOutFrame() {}, setFill() {}, setStroke() {}, select() {}, moveToBack() {}, setFrame() {},
+      create: mk,
+      createComp(name) { active = mk('composition', name); return active; },
+      getActiveComp: () => active, setActiveComp(id) { active = id; }, getFrame: () => 0, setFrame() {},
+      set(id, values) { Object.assign(files.get(id).attrs, values); }, parent() {},
+      setInFrame() {}, setOutFrame() {}, setFill() {}, setStroke() {}, select() {}, deleteLayer() {},
       createEditable: (_, name) => mk('editableShape', name),
-      getBoundingBox: () => ({ centre: { x: 0, y: 0 }, width: 100, height: 20 }), get: () => 100,
-      keyframe() {}, modifyKeyframe() {}, serialise() { return '[]'; }, writeToFile() { return true; },
+      get(id, attr) { const l = files.get(id); return attr === 'opacity' ? 100 : attr === 'text' ? l.attrs.text : l.attrs[attr]; },
+      keyframe() {}, modifyKeyframe() {}, connect() {}, serialise() { return '[]'; }, writeToFile() { return true; },
       presentOpenFile: () => options.file, readFromFile: () => options.json,
       getFolderFromPath: () => '', getSceneFilePath: () => ''
     };
     if (options.webClient) {
       hostApi.WebClient = class {
         get() {} status() { return options.webClient.status; } body() { return options.webClient.body; }
-        post(path, body) { options.webClient.posted = body; }
+        post(p, body) { options.webClient.posted = body; }
       };
     }
     const ui = {
@@ -401,25 +530,28 @@ assert.match(loaderBad.labels[0].text, /JIZURA の JSON ではありません/);
       Label: class { constructor(text) { this.text = text; labels.push(this); } setText(text) { this.text = text; } },
       Button: class { constructor(text) { this.text = text; buttons.push(this); } }
     };
-    const sandbox = { api: hostApi, ui, cavalry: { Path }, console: { log() {}, warn() {} } };
+    const sandbox = { api: hostApi, ui,
+      cavalry: { Path, fontExists: () => true, measureText: () => ({ width: 20 }) },
+      console: { log() {}, warn() {}, error() {} } };
     vm.runInContext(fs.readFileSync(distPath, 'utf8'), vm.createContext(sandbox));
-    return { files, made, labels, buttons };
+    return { files, labels, buttons };
   }
 
   const panelDist = runDist(path.join(root, 'dist', 'cavalry', 'JIZURA_CV.js'),
     { file: '/tmp/song.json', json: JSON.stringify(a) });
-  assert.equal(panelDist.buttons.length, 1, 'the installed panel exposes one button');
+  assert.equal(panelDist.buttons.length, 1);
   panelDist.buttons[0].onClick();
   assert([...panelDist.files.values()].some(l => l.type === 'textShape'), 'the panel file builds text layers from the JSON');
-  assert([...panelDist.files.values()].some(l => l.type === 'composition'), 'it creates a composition');
-  assert.match(panelDist.labels[0].text, /完了/, 'the panel reports the result');
-  assert.match(panelDist.labels[0].text, /正確 [1-9]/, 'the report counts exact builds');
+  assert([...panelDist.files.values()].some(l => l.type === 'editableShape'), 'the panel file builds the background path');
+  assert([...panelDist.files.values()].some(l => l.type === 'composition'));
+  assert.match(panelDist.labels[0].text, /完了/);
+  assert.match(panelDist.labels[0].text, /正確 [1-9]/);
 
   const loaderDistRun = runDist(path.join(root, 'dist', 'cavalry', 'JIZURA_CV_Loader.js'),
     { file: '/tmp/song.json', json: JSON.stringify(a) });
   loaderDistRun.buttons[0].onClick();
-  assert([...loaderDistRun.files.values()].some(l => l.type === 'textShape'), 'the loader file builds without a panel');
+  assert([...loaderDistRun.files.values()].some(l => l.type === 'textShape'), 'loader dist: ' + loaderDistRun.labels[0].text);
   assert.match(loaderDistRun.labels[0].text, /パネルは未接続/);
 
-  console.log('Cavalry assembly/runtime/JSON/panel/loader contracts passed.');
+  console.log('Cavalry native graph / capture / catalog / panel / loader contracts passed.');
 })().catch(e => { console.error(e); process.exitCode = 1; });

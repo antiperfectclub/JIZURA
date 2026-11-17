@@ -26,9 +26,15 @@ C.assemble=function(input){
   } finally {if(J.setLang)J.setLang(oldLang);if(J.setTypeset)J.setTypeset(oldTypeset);}
   var report=JZCavalry.preflight(out);
   out.nativeReport=report;
-  out.blockingWarnings=out.blockingWarnings.filter(function(w){return !/^hold "/.test(w)||!/is not ported/.test(w)||report.missing.some(function(r){return r.group==='hold'&&w.indexOf('"'+r.name+'"')>=0;});});
-  out.approxWarnings=out.approxWarnings.filter(function(w){return w.indexOf('vertical text, built horizontally')<0;});
-  report.missing.forEach(function(r){out.blockingWarnings.push(r.group+':'+r.name+' ['+r.cut+'] has no native builder');});
+  /* The page classifies every requested preset name; the host lists it per cut. Only a name the page did
+     not predict is news, so the same miss is not printed twice. */
+  var predicted=out.presetReport&&out.presetReport.missing||{};
+  report.missing.forEach(function(r){
+    var key=r.group+':'+r.name;
+    if(!predicted[key])out.blockingWarnings.push(key+' ['+r.cut+'] has no native builder');
+  });
+  out.blockingWarnings=[].concat.apply([],out.blockingWarnings.map(function(w){return String(w).split('\n');}));
+  out.blockingWarnings=out.blockingWarnings.filter(function(w,i,a){return a.indexOf(w)===i;});
   out.warnings=out.hostChecks.concat(out.approxWarnings,out.blockingWarnings);
   if(input.strict&&out.blockingWarnings.length)throw new Error(out.blockingWarnings.join('\n'));
   return out;
