@@ -37,9 +37,8 @@ function compile(a,options){
     var out=d.build(Object.assign({},c,{preset:typeof p==='string'?{name:p}:p}));built[group+':'+k]=1;return out;}
   a.cuts.forEach(function(cut){
     var P=cut.presets||{},group=graph.add('null',cut.id,root,cut.start,cut.end,{}),sc=a.style.schemes[P.scheme||0]||a.style.schemes[0];
-    /* outer (position + roll) -> stretch (shear decomposition) -> camera (scale + counter-rotation).
-       Separate nulls keep every camera model expressible with documented transform attributes. */
-    var outer=graph.add('null',cut.id+' / Camera Outer',group,cut.start,cut.end,{});
+    /* three-node camera rig so shear can be decomposed into rotation > scale > rotation/scale (see packs/p_camera.js) */
+    var outer=graph.add('null',cut.id+' / Camera Rotation',group,cut.start,cut.end,{});
     var stretch=graph.add('null',cut.id+' / Camera Stretch',outer,cut.start,cut.end,{});
     var cam=graph.add('null',cut.id+' / Camera',stretch,cut.start,cut.end,{});
     var ctx={graph:graph,assembly:a,cut:cut,comp:a.composition,parent:cam,rig:cam,camOuter:outer,camStretch:stretch,sc:sc,options:options,texts:[]};

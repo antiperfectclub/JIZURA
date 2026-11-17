@@ -1,30 +1,12 @@
-/* Native hold recipes that are not already in p_motion.js. A hold is a glyph sampler, never a host
-   read-modify-write pass: the glyph transform track already exists, so the hold only adds to it.
-   Source math: ae/p_x2_hold.jsx: xkTallBreath. */
-(function (N) {
+/* Hold recipes as glyph samplers. xkTallBreath: the line grows taller about its baseline (columns: about the centre) on a 3.8 s breath,
+   ported from the earlier Cavalry hold pack that followed ae/p_x2_hold.jsx. The pivot is the glyph bounds, not a host bbox. */
+(function (R) {
 'use strict';
-var cl=N.clamp;
-N.register('hold','xkTallBreath',{
-  source:'ae/p_x2_hold.jsx: xkTallBreath',
-  scope:'glyph',
-  differences:['The web recipe pivots on a measured text bbox; this port pivots on each glyph box.',
-    'Vertical text scales around the glyph centre, horizontal text around the glyph baseline.'],
-  hostVerified:false,
-  build:function(c){
-    var motion=c.assembly.style.fx&&c.assembly.style.fx.motion;
-    motion=motion==null?.7:motion;
-    return function(s,g,gs,f){
-      var ct=c.cut,node=c.node,appear=ct.origin+(node.delayFrames||0);
-      if(f<appear)return;
-      var t=(f-ct.origin)/c.comp.fps;
-      var po=cl((f-(ct.sourceEnd-ct.outFrames))/ct.outFrames);
-      var amt=cl((f-appear-ct.inFrames*.85)/(.25*c.comp.fps))*(1-po);
-      var u=(((t/3.8)%1)+1)%1;
-      var w=u<.62?-(Math.cos(Math.PI*u/.62)-1)/2:1+(Math.cos(Math.PI*(u-.62)/.38)-1)/2;
-      var k=1+.1*w*amt*Math.max(0,Math.min(1.6,motion/.7));
-      if(node.vertical){s.sx*=k;}
-      else{s.sy*=k;s.dy+=(k-1)*g.h/2;}
-    };
-  }
+R.motion('hold', 'xkTallBreath', 'ae/p_x2_hold.jsx: xkTallBreath', function (a, g, gs, e) {
+  var b = R.bounds(gs), V = !!e.node.vertical, px = (b.x0 + b.x1) / 2, pyUp = V ? -(b.y0 + b.y1) / 2 : -b.y1;
+  var u = ((e.t / 3.8) % 1 + 1) % 1, w = u < .62 ? -(Math.cos(Math.PI * u / .62) - 1) / 2 : 1 + (Math.cos(Math.PI * (u - .62) / .38) - 1) / 2;
+  var k = 1 + .1 * w * a * Math.max(0, Math.min(1.6, e.M / .7)), sx = V ? k : 1, sy = V ? 1 : k;
+  var gx = g.x + (g.vx || 0), gyUp = -(g.y + (g.vy || 0));
+  return { dx: (1 - sx) * (px - gx), dy: -((1 - sy) * (pyUp - gyUp)), sx: g.r90 ? sy : sx, sy: g.r90 ? sx : sy };
 });
-})(JZNative);
+})(JZRecipeTools);
