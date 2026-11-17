@@ -4,6 +4,7 @@
   'use strict';
   const titles = {
     layout: {
+      none: '없음',
       vcols: '세로쓰기', marquee: '흐르는 배너', tile: '타일 텍스트',
       huge: '초대형 텍스트', gloss: '주석', diag: '대각선 띠',
       stack: '잔상 스택', lowerThird: '로어 서드', corners: '양쪽 모서리',
@@ -154,6 +155,7 @@
       letterbox: '시네마 레터박스', noiseField: '움직이는 노이즈'
     },
     cam: {
+      none: '없음',
       push: '천천히 줌 인', rackFocus: '포커스 이동',
       floatNoise: '부유 카메라', vertigo: '돌리 줌',
       spiralIn: '나선 줌', jelly: '탄성 흔들림',
@@ -216,10 +218,12 @@
     .replace(/_/g, ' ').split(' ').map(part => acronym[part.toLowerCase()] || words[part.toLowerCase()] || part).join(' ');
 
   for (const group of J.GROUP_KEYS) {
+    const tbl = J.registry(group), t = titles[group] || {};
     for (const key of J.order(group)) {
-      const item = J.registry(group)[key];
-      if (item) item.name = (titles[group] || {})[key] || label(key);
+      const item = tbl[key];
+      if (item) item.name = t[key] || label(key);
     }
+    if (tbl.none && t.none) tbl.none.name = t.none;
   }
 
   const styles = {

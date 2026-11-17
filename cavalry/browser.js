@@ -10,21 +10,30 @@ const STYLES = { 100: 'Thin', 200: 'ExtraLight', 300: 'Light', 400: 'Regular', 5
    runtime can grow into them without changing the JSON again. */
 C.SCHEMA = 2;
 
+/* The preset vocabulary is shared with the host runtime (cavalry/families.js), so the warnings here predict
+   exactly what Cavalry will build, approximate or drop. */
+const FAM = typeof JZFamilies !== 'undefined' ? JZFamilies : null;
+if (!FAM) throw new Error('Cavalry preset vocabulary is missing; rebuild with build_cavalry.py.');
+const PRESETS = kind => FAM.built(kind);
+
 /* Host the runtime can build today. Kept small on purpose: every entry here is exercised by a test. */
 C.CAPABILITIES = Object.freeze({
   layouts: 'captured',
   nodes: ['text'],
   granularity: ['whole-text', 'per-character'],
   animationBackend: ['individual-layers'],
-  enter: ['cut', 'fade'],
-  exit: ['cut', 'fade'],
+  enter: PRESETS('enter'),
+  exit: PRESETS('exit'),
   align: ['left', 'center', 'right'],
   text: ['multiline'],
-  /* preset names are always exported; only the listed ones are built */
-  presets: Object.freeze({ enter: ['cut', 'fade'], exit: ['cut', 'fade'], bg: [], cam: [], trans: [], treat: [], decor: [] }),
-  shapes: false, decoration: false, treatments: false, backgroundGraphics: false,
-  camera: false, transitions: false, effects: false, hud: false, audio: false, timing: 'manual'
+  /* preset names are always exported; only the listed ones are built (exactly or by family) */
+  presets: Object.freeze({ enter: PRESETS('enter'), exit: PRESETS('exit'), bg: PRESETS('bg'),
+    cam: PRESETS('cam'), trans: [], treat: PRESETS('treat'), decor: PRESETS('decor') }),
+  shapes: false, decoration: PRESETS('decor').length > 0, treatments: PRESETS('treat').length > 0,
+  backgroundGraphics: PRESETS('bg').length > 0, camera: PRESETS('cam').length > 0,
+  transitions: false, effects: false, hud: false, audio: false, timing: 'manual'
 });
+C.families = FAM;
 
 function familyOf(key) {
   if (!J.FONTS[key]) throw new Error('Unknown font key: ' + key);
@@ -139,6 +148,18 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
   const hostChecks = [], blocking = [];
   const host = message => hostChecks.push(message);
   const warn = message => blocking.push(message);
+  /* preset names are classified once per name, then written as one line with the number of cuts that use it */
+  const KIND_LABEL = { enter: 'enter', exit: 'exit', bg: 'background graphic', cam: 'camera',
+    treat: 'treatment', decor: 'decoration', trans: 'transition' };
+  const presetRows = new Map();
+  const hit = (kind, name) => {
+    if (!name) return;
+    const r = FAM ? FAM.resolve(kind, name) : { state: 'missing', as: null };
+    const key = kind + ':' + name;
+    const row = presetRows.get(key);
+    if (row) { row.cuts += 1; return; }
+    presetRows.set(key, { kind, name, state: r.state, as: r.as, cuts: 1 });
+  };
   const frame = seconds => Math.round(seconds * fps), frameCount = Math.max(1, frame(t1 - t0));
   const out = {
     format: 'jizura.cavalry.assembly', version: C.SCHEMA, title: p.title || project.title || 'JIZURA',
@@ -169,6 +190,9 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
   }
 
   const oldLang = J.lang;
+  /* per-cut repetition is bad in a warning list: count the names instead */
+  const holdRows = new Map();
+  let verticalItems = 0;
   try {
     if (J.setLang) J.setLang(p.lang || 'ja');
     for (const [i, cut] of p.cuts.entries()) {
@@ -181,7 +205,7 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
       const sc = p.style.schemes[schemeIndex] || p.style.schemes[0];
       const label = 'cut ' + i + ': ';
       let nodes = [], moving = false, fallback = false;
-      if (cut.layout !== 'interlude') {
+      if (cut.layout !== 'interlude' && cut.layout !== 'none') {
         const def = J.LAYOUTS[cut.layout];
         if (def && typeof def.render === 'function') {
           try {
@@ -207,19 +231,20 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
       const verticals = nodes.filter(n => n.vertical).length;
       if (tracks) host(label + tracks + ' item(s) use letter tracking; Cavalry spacing depends on the installed font.');
       if (leads) host(label + leads + ' item(s) use custom line leading; Cavalry spacing depends on the installed font.');
-      if (verticals) warn(label + verticals + ' item(s) are vertical text, not ported.');
+      if (verticals) { verticalItems += verticals; }
       if (nodes.some(n => n.align !== 'center')) host(label + 'left/right anchored text uses a measured bbox offset.');
 
       const enter = ['cut', 'fade'].includes(cut.enter) ? cut.enter : 'fade';
       const exit = ['cut', 'fade'].includes(cut.exit) ? cut.exit : 'fade';
-      if (nodes.length && enter !== cut.enter) warn(label + 'enter "' + cut.enter + '" → fade fallback');
-      if (nodes.length && exit !== cut.exit) warn(label + 'exit "' + cut.exit + '" → fade fallback');
-      if (cut.hold && cut.hold !== 'still') warn(label + 'hold "' + cut.hold + '" is not ported.');
-      if (cut.decor?.length) warn(label + 'decoration is not ported.');
-      if (cut.treat && cut.treat !== 'none') warn(label + 'treatment "' + cut.treat + '" is not ported.');
-      if (cut.bg && cut.bg !== 'none') warn(label + 'background graphic "' + cut.bg + '" is not ported.');
-      if (cut.cam) warn(label + 'camera is not ported.');
-      if (cut.trans || cut.morph) warn(label + 'transition/morph → hard cut');
+      /* the runtime resolves the *requested* names (cut.presets below), so the report predicts those */
+      if (nodes.length) { hit('enter', cut.enter || 'fade'); hit('exit', cut.exit || 'fade'); }
+      if (cut.hold && cut.hold !== 'still') holdRows.set(cut.hold, (holdRows.get(cut.hold) || 0) + 1);
+      (cut.decor || []).forEach(d => hit('decor', typeof d === 'string' ? d : d && (d.id || d.name)));
+      if (cut.treat && cut.treat !== 'none') hit('treat', cut.treat);
+      if (cut.bg && cut.bg !== 'none') hit('bg', cut.bg);
+      if (cut.cam && cut.cam !== 'none') hit('cam', cut.cam);
+      if (cut.trans) hit('trans', cut.trans);
+      if (cut.morph) warn(label + 'morph → hard cut');
 
       out.cuts.push({
         id: 'cut-' + i, source: { layout: cut.layout, params: cut.params, seed: cut.seed }, start, end,
@@ -231,7 +256,7 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
           enter: { name: cut.enter || 'fade', inDur: cut.inDur ?? 0.25 },
           exit: { name: cut.exit || 'fade', outDur: cut.outDur ?? 0.25 },
           bg: cut.bg && cut.bg !== 'none' ? { name: cut.bg, params: cut.bgP || {} } : null,
-          cam: cut.cam ? { name: cut.cam, params: cut.camP || {} } : null,
+          cam: cut.cam && cut.cam !== 'none' ? { name: cut.cam, params: cut.camP || {} } : null,
           trans: cut.trans ? { name: cut.trans, params: cut.transP || {}, frames: Math.max(0, frame(cut.transDur || 0)) } : null,
           treat: cut.treat && cut.treat !== 'none' ? { name: cut.treat, params: cut.treatP || {} } : null,
           decor: (Array.isArray(cut.decor) ? cut.decor : []).map(d => {
@@ -255,9 +280,31 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
     if (J.setLang) J.setLang(oldLang);
   }
 
+  /* one line per preset name: exact builds are silent, approximations carry ≈, drops stop strict mode */
+  const approx = [], missing = [];
+  const presetReport = { built: {}, fallback: {}, missing: {} };
+  [...holdRows.entries()].sort((a, b) => a[0].localeCompare(b[0])).forEach(([name, n]) => {
+    blocking.push('hold "' + name + '" is not ported' + (n > 1 ? ' (' + n + ' cuts)' : ''));
+  });
+  if (verticalItems) approx.push(verticalItems + ' item(s) are vertical text, built horizontally');
+  [...presetRows.values()]
+    .sort((a, b) => (a.kind + ':' + a.name).localeCompare(b.kind + ':' + b.name))
+    .forEach(row => {
+      const key = row.kind + ':' + row.name, many = row.cuts > 1 ? ' (' + row.cuts + ' cuts)' : '';
+      if (row.state === 'exact') { presetReport.built[key] = 1; return; }
+      if (row.state === 'fallback') {
+        presetReport.fallback[key] = row.as;
+        approx.push(KIND_LABEL[row.kind] + ' "' + row.name + '" ≈ ' + row.as + many);
+        return;
+      }
+      presetReport.missing[key] = 1;
+      missing.push(KIND_LABEL[row.kind] + ' "' + row.name + '" is not built' + many);
+    });
+  out.presetReport = presetReport;
+  out.approxWarnings = [...new Set(approx)];
+  out.blockingWarnings = [...new Set([...blocking, ...missing])];
   out.hostChecks = [...new Set(hostChecks)];
-  out.blockingWarnings = [...new Set(blocking)];
-  out.warnings = [...out.hostChecks, ...out.blockingWarnings];
+  out.warnings = [...out.hostChecks, ...out.approxWarnings, ...out.blockingWarnings];
   if (strict && out.blockingWarnings.length) throw new Error(out.blockingWarnings.join('\n'));
   return out;
 };
@@ -271,12 +318,20 @@ C.downloadJson = function (assembly, filename) {
     new Blob([JSON.stringify(assembly)], { type: 'application/json;charset=utf-8' }));
 };
 
-/* One-time install: Help > Show Scripts Folder, save as JIZURA.js, then Window > Scripts > JIZURA. */
+/* One-time install: Help > Show Scripts Folder, save as JIZURA_CV.js, then Window > Scripts > JIZURA CV. */
 C.downloadPanel = function (filename) {
   if (!C.panelSource) throw new Error('Cavalry panel source is missing; run build_cavalry.py.');
   const script = '/* Generated by JIZURA. Save in Cavalry\'s Scripts folder (Help > Show Scripts Folder), then Window > Scripts. */\n'
     + C.runtimeSource + '\n' + C.panelSource + '\n';
-  return J.saveFile(safeName(filename) + '.js', new Blob([script], { type: 'text/javascript;charset=utf-8' }));
+  return J.saveFile(safeName(filename || 'JIZURA_CV') + '.js', new Blob([script], { type: 'text/javascript;charset=utf-8' }));
+};
+
+/* Optional companion: pick a JSON and hand it to the open panel, or build it here when no panel answers. */
+C.downloadLoader = function (filename) {
+  if (!C.loaderSource) throw new Error('Cavalry loader source is missing; run build_cavalry.py.');
+  const script = '/* Generated by JIZURA. Loader for an installed JIZURA CV panel; it also builds on its own. */\n'
+    + C.runtimeSource + '\n' + C.loaderSource + '\n';
+  return J.saveFile(safeName(filename || 'JIZURA_CV_Loader') + '.js', new Blob([script], { type: 'text/javascript;charset=utf-8' }));
 };
 
 C.download = function (assembly, filename) {

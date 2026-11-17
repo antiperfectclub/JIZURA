@@ -196,6 +196,7 @@ BODY = {
     'フォントの字形・字間・行間は Cavalry 側の設定に従うため、ブラウザのプレビューと完全には一致しません。': 'Bentuk huruf, jarak huruf dan jarak baris mengikuti pengaturan Cavalry, jadi tidak sepenuhnya sama dengan pratinjau di browser.',
     '<button value="cancel" class="ghost" autofocus>やめる</button>': '<button value="cancel" class="ghost" autofocus>Batal</button>',
     '<button id="cavalryPanel" value="panel" class="ghost">パネル（初回のみ）</button>': '<button id="cavalryPanel" value="panel" class="ghost">Panel (sekali)</button>',
+    '<button id="cavalryLoader" value="loader" class="ghost">ローダー</button>': '<button id="cavalryLoader" value="loader" class="ghost">Pemuat</button>',
     '<button id="cavalryScript" value="script" class="ghost">スクリプト</button>': '<button id="cavalryScript" value="script" class="ghost">Skrip</button>',
     '<button id="cavalryDownload" value="json">JSONを書き出す</button>': '<button id="cavalryDownload" value="json">Ekspor JSON</button>',
     '記法': 'Sintaks', 'プレビュー': 'Pratinjau', '再生': 'Putar', 'ループ': 'Loop',
@@ -226,7 +227,7 @@ BODY = {
 UI = {
     "'Cavalry書き出しに失敗しました:\\n'": "'Ekspor Cavalry gagal:\\n'",
     "'カット '": "'cut '", 
-    "'・テキスト '": "'、teks '", "' 項目（うち未対応 '": "' item (tidak didukung '", "' 件）'": "')'",
+    "'・テキスト '": "'、teks '", "' 項目（近似 '": "' item (perkiraan '", "'・未対応 '": "' · tidak didukung '", "' 件）'": "')'",
     "'追加分2の演出：使う'": "'Efek baru 2: aktif'",
     "'追加分2の演出：使わない'": "'Efek baru 2: nonaktif'",
     "{ name: '追加分2', badge: '追2' }": "{ name: 'Baru 2', badge: 'E2' }",

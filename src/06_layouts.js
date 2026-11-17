@@ -682,6 +682,13 @@ J.LAYOUTS = {
       return { x0: W * 0.35, x1: W * 0.65, y0: H * 0.3, y1: H * 0.7, cx: W / 2, cy: H / 2, boxes: [] };
     },
   },
+
+  /* ------------------------------------------------ none: no lyric layout drawn */
+  none: {
+    name: 'なし', fits: () => false,
+    plan: () => ({}),
+    render() { return null; },
+  },
 };
 J.LAYOUT_ORDER = ['center', 'mixed', 'vcols', 'marquee', 'tile', 'scatter', 'ring', 'wave', 'huge', 'labels', 'condensed', 'gloss', 'type', 'diag', 'circle', 'stack', 'pill'];
 J.ENTER_ORDER = ['cut', 'assemble', 'slice', 'type', 'pop', 'drop', 'stretch', 'wipe', 'blur', 'spin', 'flicker', 'scramble', 'zoom'];

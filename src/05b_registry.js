@@ -26,6 +26,7 @@ J.TREAT_ORDER = ['none'];
 J.BG = { none: { name: '無地', draw() {} } };
 J.BG_ORDER = ['none'];
 J.CAMERA = {
+  none: { name: 'なし', get: () => ({}) },
   push: { name: 'ゆっくり寄る', tags: ['calm', 'editorial', 'emotional', 'graphic', 'pop', 'glitch'], w: 5,
     get: (env) => ({ s: 1 + 0.03 * (env.fx.motion ?? 0.7) * J.clamp(env.lt / Math.max(0.3, env.cut.dur)) }) },
 };

@@ -1,4 +1,5 @@
-/* Runs only in Cavalry's JavaScript Editor, never in the browser. Needs presets.js (JZPresets) concatenated before it. */
+/* Runs only in Cavalry's JavaScript Editor or a Scripts-folder panel, never in the browser.
+   Needs families.js and presets.js concatenated before it (build_cavalry.py does that). */
 var JZCavalry = (function () {
 'use strict';
 var Z = typeof JZPresets !== 'undefined' ? JZPresets : null;
@@ -25,18 +26,28 @@ function background(comp, cut, parent) {
 }
 var clamp01 = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
 
-/* Preset names the registry can build; others stay in the JSON and are reported instead of disappearing. */
-var NOT_BUILT = {};
-function has(kind, name) {
-  if (name === 'cut' || name === 'fade') return true;
-  return !!(Z && Z.has(kind, name));
+/* One report per run: what this host built exactly, what it approximated, what it dropped, and any builder
+   that threw. Everything here is printed at the end so a preset never disappears silently. */
+var REPORT = { built: {}, fallback: {}, missing: {}, errors: [] };
+function resetReport() { REPORT = { built: {}, fallback: {}, missing: {}, errors: [] }; }
+function snapshot() {
+  return { built: Object.assign({}, REPORT.built), fallback: Object.assign({}, REPORT.fallback),
+    missing: Object.assign({}, REPORT.missing), errors: REPORT.errors.slice() };
 }
-function note(kind, name) {
-  if (typeof name !== 'string' || !name || has(kind, name)) return;
-  NOT_BUILT[kind + ':' + name] = 1;
-}
-function safe(label, fn) {
-  try { fn(); } catch (e) { console.warn('JIZURA ' + label + ': ' + (e && e.message || e)); }
+function runPreset(kind, preset, ctx) {
+  if (!preset) return null;
+  if (typeof preset.name !== 'string' || !preset.name) { REPORT.missing[kind + ':?'] = 1; return null; }
+  var key = kind + ':' + preset.name;
+  /* 'none' is an explicit "no preset"; the two envelope presets are built by the opacity keys in buildText */
+  if (preset.name === 'none' || ((kind === 'enter' || kind === 'exit') && (preset.name === 'cut' || preset.name === 'fade'))) {
+    REPORT.built[key] = 1; return null;
+  }
+  var r = Z && Z.resolve(kind, preset.name);
+  if (!r) { REPORT.missing[key] = 1; return null; }
+  try { r.fn(Object.assign({}, ctx, { preset: preset })); }
+  catch (e) { REPORT.errors.push(key + ': ' + (e && e.message || e)); return null; }
+  if (r.exact) REPORT.built[key] = 1; else REPORT.fallback[key] = r.as;
+  return r;
 }
 
 /* Opacity envelope of a node: linear in, hold, linear out.
@@ -103,13 +114,10 @@ function buildText(comp, cut, node, parent, options) {
   }
   // Named enter/exit presets add transform motion on top of the opacity envelope.
   var P = cut.presets || {}, base = { motion: motion, text: id, comp: comp, cut: cut, node: node };
-  function applyIO(kind, from, to, dir) {
-    var pr = P[kind];
-    if (!Z || !pr || pr.name === 'cut' || pr.name === 'fade') return;
-    var fn = Z.resolve(kind, pr.name);
-    if (!fn) return;
-    safe(kind + ' ' + pr.name, function () { fn(Object.assign({}, base, { from: from, to: to, dir: dir })); });
-  }
+  var applyIO = function (kind, from, to, dir) {
+    if (!P[kind]) return;
+    runPreset(kind, P[kind], Object.assign({}, base, { from: from, to: to, dir: dir }));
+  };
   applyIO('enter', appear, appear + cut.inFrames, 1);
   applyIO('exit', cut.sourceEnd - cut.outFrames, cut.sourceEnd, -1);
   return { text: id, motion: motion };
@@ -117,7 +125,7 @@ function buildText(comp, cut, node, parent, options) {
 function run(assembly, options) {
   options = options || {};
   options.fontOverrides = options.fontOverrides || {};
-  NOT_BUILT = {};
+  resetReport();
   if (!assembly || assembly.format !== 'jizura.cavalry.assembly' || [1, 2, 3].indexOf(assembly.version) < 0) throw new Error('Unsupported JIZURA Cavalry assembly');
   var comp = assembly.composition;
   if (!comp || ![comp.width, comp.height, comp.fps, comp.frameCount].every(function (v) { return typeof v === 'number' && isFinite(v) && v > 0; }) ||
@@ -131,12 +139,10 @@ function run(assembly, options) {
       ['enter', 'exit', 'bg', 'cam', 'trans', 'treat'].forEach(function (k) {
         var p = presets[k];
         if (p != null && (typeof p !== 'object' || typeof p.name !== 'string')) throw new Error('Invalid cut preset: ' + k);
-        if (p) note(k, p.name);
       });
       if (presets.decor != null && !Array.isArray(presets.decor)) throw new Error('Invalid cut preset: decor');
       (presets.decor || []).forEach(function (d) {
         if (!d || typeof d.name !== 'string') throw new Error('Invalid cut preset: decor');
-        note('decor', d.name);
       });
     }
     cut.nodes.forEach(function (node) {
@@ -167,30 +173,30 @@ function run(assembly, options) {
     var rig = api.create('null', cut.id + ' / Camera');
     api.parent(rig, group); clip(rig, cut.start, cut.end); ids.push(rig);
     var pz = cut.presets || {}, ctx0 = { cut: cut, comp: comp, assembly: assembly, parent: rig, rig: rig, texts: [] };
-    var runPreset = function (kind, pr) {
-      if (!Z || !pr) return;
-      var fn = Z.resolve(kind, pr.name);
-      if (!fn) return;
-      safe(kind + ' ' + pr.name, function () { fn(Object.assign({}, ctx0, { preset: pr })); });
-    };
-    runPreset('bg', pz.bg);
+    var runCutPreset = function (kind, pr) { runPreset(kind, pr, ctx0); };
+    runCutPreset('bg', pz.bg);
     for (var n = 0; n < cut.nodes.length; n++) {
       var built = buildText(comp, cut, cut.nodes[n], rig, options);
       if (built) { ids.push(built.text); ids.push(built.motion); ctx0.texts.push(built.text); }
     }
-    runPreset('treat', pz.treat);
-    (pz.decor || []).forEach(function (d) { runPreset('decor', d); });
-    runPreset('cam', pz.cam);
+    runCutPreset('treat', pz.treat);
+    (pz.decor || []).forEach(function (d) { runCutPreset('decor', d); });
+    runCutPreset('cam', pz.cam);
+    /* transitions composite two cuts in the planner; this runtime builds one cut at a time */
+    if (pz.trans) REPORT.missing['trans:' + pz.trans.name] = 1;
   }
   api.setFrame(0); api.select([root]);
   if (options.componentPath && !api.writeToFile(options.componentPath, api.serialise(ids, true), false)) throw new Error('Failed to write Cavalry component');
   console.log('JIZURA: set Composition Settings to ' + comp.fps + ' fps, frame range 0\u2013' + (comp.frameCount - 1) + '.');
   console.log('Checks before rendering:\n' + (assembly.hostChecks || []).join('\n'));
   if (assembly.blockingWarnings && assembly.blockingWarnings.length) console.warn('Approximations:\n' + assembly.blockingWarnings.join('\n'));
-  var missing = Object.keys(NOT_BUILT).sort();
-  NOT_BUILT = {};
+  var missing = Object.keys(REPORT.missing).sort();
+  var fallback = Object.keys(REPORT.fallback).sort();
   if (missing.length) console.warn('JIZURA: presets kept in the JSON but not built by this runtime:\n' + missing.join('\n'));
-  return { compositionId: compId, rootId: root, layerIds: ids };
+  if (fallback.length) console.warn('JIZURA: presets built as a family approximation:\n' +
+    fallback.map(function (k) { return k + ' as ' + REPORT.fallback[k]; }).join('\n'));
+  if (REPORT.errors.length) console.warn('JIZURA: preset builders that threw:\n' + REPORT.errors.join('\n'));
+  return { compositionId: compId, rootId: root, layerIds: ids, report: snapshot() };
 }
 return { run: run };
 })();

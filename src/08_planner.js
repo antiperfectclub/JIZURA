@@ -523,9 +523,9 @@ J.plan = (project, audio) => {
       const canTrans = prevCut && Math.abs(prevCut.end - cs) < 0.06 && prevCut.layout !== 'interlude' && dur > 0.5 && !prevLockedOther;
       // 統一感: モーフ — the next part of the same line grows out of this one (shared characters glide, the rest melts)
       if (LS) {                                       // locked: the same join as before, when the cuts still touch
-        if (canTrans && LS.morph) { morph = { dur: LS.morph.dur }; prevCut.exit = 'cut'; prevCut.outDur = 0; }
+        if (canTrans && LS.morph && layout !== 'none' && prevCut.layout !== 'none') { morph = { dur: LS.morph.dur }; prevCut.exit = 'cut'; prevCut.outDur = 0; }
         else if (canTrans && LS.trans && J.TRANS[LS.trans]) { trans = LS.trans; transP = LS.transP || {}; transDur = LS.transDur; prevCut.exit = 'cut'; prevCut.outDur = 0; }
-      } else if (canTrans && UU && k > 0 && !kime && (again ? again.morph : rng.chance(u.recap ? 0.85 : 0.4))) {
+      } else if (canTrans && UU && k > 0 && !kime && layout !== 'none' && prevCut.layout !== 'none' && (again ? again.morph : rng.chance(u.recap ? 0.85 : 0.4))) {
         morph = { dur: J.clamp(dur * 0.45, 0.28, 0.6) };
         enter = 'cut'; inDur = 0.12; prevCut.exit = 'cut'; prevCut.outDur = 0;
       } else if (canTrans && again && !ov.trans) {    // 統一感: a repeated line joins its cuts the same way as the first time
@@ -555,6 +555,7 @@ J.plan = (project, audio) => {
         transDur = J.clamp(TD.dur || 0.35, 0.12, Math.min(0.6, dur * 0.45));
         transP = TD.plan ? TD.plan(J.rng(J.h(lineSeed, k, 96)), st) : {};
       }
+      if (layout === 'none') morph = null;
       if (trans && canTrans) {
         enter = 'cut'; inDur = 0.12;
         prevCut.exit = 'cut'; prevCut.outDur = 0;

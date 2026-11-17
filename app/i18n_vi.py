@@ -247,6 +247,7 @@ BODY = {
     'フォントの字形・字間・行間は Cavalry 側の設定に従うため、ブラウザのプレビューと完全には一致しません。': 'Hình dạng chữ, khoảng cách chữ và dòng theo thiết lập của Cavalry nên không hoàn toàn giống bản xem trước trong trình duyệt.',
     '<button value="cancel" class="ghost" autofocus>やめる</button>': '<button value="cancel" class="ghost" autofocus>Hủy</button>',
     '<button id="cavalryPanel" value="panel" class="ghost">パネル（初回のみ）</button>': '<button id="cavalryPanel" value="panel" class="ghost">Bảng nạp (lần đầu)</button>',
+    '<button id="cavalryLoader" value="loader" class="ghost">ローダー</button>': '<button id="cavalryLoader" value="loader" class="ghost">Bộ nạp</button>',
     '<button id="cavalryScript" value="script" class="ghost">スクリプト</button>': '<button id="cavalryScript" value="script" class="ghost">Script</button>',
     '<button id="cavalryDownload" value="json">JSONを書き出す</button>': '<button id="cavalryDownload" value="json">Xuất JSON</button>',
     '記法': 'Cú pháp',
@@ -284,7 +285,7 @@ BODY = {
 UI = {
     "'Cavalry書き出しに失敗しました:\\n'": "'Xuất Cavalry thất bại:\\n'",
     "'カット '": "'cảnh '", 
-    "'・テキスト '": "'、chữ '", "' 項目（うち未対応 '": "' mục (chưa hỗ trợ '", "' 件）'": "')'",
+    "'・テキスト '": "'、chữ '", "' 項目（近似 '": "' mục (gần đúng '", "'・未対応 '": "' · chưa hỗ trợ '", "' 件）'": "')'",
     "'追加分2の演出：使う'": "'Hiệu ứng mới 2: bật'",
     "'追加分2の演出：使わない'": "'Hiệu ứng mới 2: tắt'",
     "{ name: '追加分2', badge: '追2' }": "{ name: 'Mới 2', badge: 'E2' }",

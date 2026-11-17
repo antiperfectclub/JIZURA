@@ -4,6 +4,7 @@
   'use strict';
   const titles = {
     layout: {
+      none: 'None',
       vcols: 'Vertical text', marquee: 'Scrolling banner', tile: 'Tiled text',
       huge: 'Oversized text', gloss: 'Annotation', diag: 'Diagonal band',
       stack: 'Echo stack', lowerThird: 'Lower third', corners: 'Opposite corners',
@@ -154,6 +155,7 @@
       letterbox: 'Cinema letterbox', noiseField: 'Moving noise'
     },
     cam: {
+      none: 'None',
       push: 'Slow push in', rackFocus: 'Rack focus',
       floatNoise: 'Floating camera', vertigo: 'Dolly zoom',
       spiralIn: 'Spiral zoom', jelly: 'Elastic wobble',
@@ -193,10 +195,12 @@
     .replace(/([0-9])([A-Za-z])/g, '$1 $2')
     .replace(/_/g, ' ').split(' ').map((part, i) => acronym[part.toLowerCase()] || (i ? part.toLowerCase() : part.charAt(0).toUpperCase() + part.slice(1))).join(' ');
   for (const group of J.GROUP_KEYS) {
+    const tbl = J.registry(group), t = titles[group] || {};
     for (const key of J.order(group)) {
-      const item = J.registry(group)[key];
-      if (item) item.name = (titles[group] || {})[key] || label(key);
+      const item = tbl[key];
+      if (item) item.name = t[key] || label(key);
     }
+    if (tbl.none && t.none) tbl.none.name = t.none;
   }
   const styles = {
     noir: ['Noir Chroma', 'Black and white with cyan and amber color offsets'],

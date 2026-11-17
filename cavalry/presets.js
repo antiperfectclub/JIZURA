@@ -4,27 +4,16 @@
    with Copy Scripting Path in Cavalry. */
 var JZPresets = (function () {
 'use strict';
-var R = { enter: {}, exit: {}, bg: {}, cam: {}, treat: {}, decor: {} };
-var FAMILY = {
-  enter: [[/wip|slide|sweep|push|shutter/i, 'slide'], [/flip|spin|roll/i, 'flip'],
-          [/bounce|drop|pour|fall/i, 'drop'], [/pop|stamp|zoom|scale/i, 'pop'],
-          [/rise|mask|up/i, 'rise'], [/type|cursor/i, 'type']],
-  exit:  [[/wip|sweep|cover|slide|finder/i, 'slide'], [/sink|fall|drop/i, 'drop'],
-          [/pop|spin|zoom/i, 'pop'], [/redact|focus|blind|split/i, 'fade']],
-  cam:   [[/pan/i, 'pan'], [/zoom|wind|step/i, 'zoom'], [/roll|tilt|italic/i, 'roll'],
-          [/hand|shake|rock|arc|sweep/i, 'handheld']],
-  bg:    [[/dot|halftone|plexus|grid/i, 'dots'], [/frame|border/i, 'frame'], [/big|char/i, 'bigChar'], [/split/i, 'split']],
-  treat: [[/under|toc|leader/i, 'underline'], [/box|outline/i, 'boxed'], [/marker|high|scale|dots/i, 'marker']],
-  decor: [[/crop|track/i, 'cropMarks'], [/ruler|ladder|slider/i, 'ruler'], [/index|timecode|num/i, 'indexNum']]
-};
+var R = { enter: {}, exit: {}, bg: {}, cam: {}, treat: {}, decor: {}, trans: {}, fx: {} };
 function reg(kind, name, fn) { R[kind][name] = fn; }
+/* Name resolution lives in families.js so the export dialog predicts the same builder the host runs. */
 function resolve(kind, name) {
-  if (R[kind][name]) return R[kind][name];
-  var list = FAMILY[kind] || [];
-  for (var i = 0; i < list.length; i++) if (list[i][0].test(name) && R[kind][list[i][1]]) return R[kind][list[i][1]];
-  return null;
+  var r = (typeof JZFamilies !== 'undefined' ? JZFamilies.resolve(kind, name) : { state: 'missing', as: null });
+  if (r.state === 'missing' || !r.as || !R[kind][r.as]) return null;
+  return { fn: R[kind][r.as], exact: r.state === 'exact', as: r.as };
 }
 function has(kind, name) { return !!(name && (name === 'cut' || name === 'fade' || resolve(kind, name))); }
+function built(kind) { return Object.keys(R[kind]).sort(); }
 
 function rng(seed) { var a = (seed >>> 0) || 1; return function () { a |= 0; a = a + 0x6D2B79F5 | 0;
   var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
@@ -56,7 +45,15 @@ function unionBox(c) {
   return x0 > x1 ? null : { x0: x0, x1: x1, y0: y0, y1: y1 };
 }
 
-/* ENTER / EXIT: ctx = { motion, text, from, to, dir (+1 enter, -1 exit), comp, cut, node } */
+/* ENTER / EXIT: ctx = { motion, text, from, to, dir (+1 enter, -1 exit), comp, cut, node }
+
+   `cut` and `fade` are the opacity envelope: the runtime writes their keys in buildText, so their builders
+   are deliberately empty. Registering them keeps this vocabulary identical to families.js — a name the page
+   advertises as exact is always a name this module knows. */
+reg('enter', 'cut', function () {});
+reg('exit',  'cut', function () {});
+reg('enter', 'fade', function () {});
+reg('exit',  'fade', function () {});
 function pose(c, attr, rest, off, easing) {
   var a = c.dir > 0 ? off : rest, b = c.dir > 0 ? rest : off;
   tween(c.motion, attr, c.from, c.to, a, b, easing);
@@ -173,5 +170,5 @@ reg('decor', 'indexNum', function (c) {
   api.setInFrame(id, c.cut.start); api.setOutFrame(id, c.cut.end - 1);
 });
 
-return { has: has, resolve: resolve };
+return { has: has, resolve: resolve, built: built };
 })();

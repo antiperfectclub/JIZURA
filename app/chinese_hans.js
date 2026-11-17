@@ -4,6 +4,7 @@
   'use strict';
   const titles = {
     layout: {
+      none: '无',
       center: '居中', mixed: '大小混排', vcols: '竖排', marquee: '流动横幅', tile: '满版平铺',
       scatter: '散落', ring: '环形', wave: '波浪轨迹', huge: '超出画面', labels: '标签贴',
       condensed: '瘦长压缩', gloss: '注解', type: '打字', diag: '斜带', circle: '圆窗',
@@ -140,6 +141,7 @@
       letterbox: '电影黑边', noiseField: '噪点扰动'
     },
     cam: {
+      none: '无',
       push: '缓慢推近', orbitDrift: '环绕', barrelRoll: '桶滚', pendulumSway: '钟摆', focusIn: '对焦',
       rackFocus: '失焦', earthquake: '地震', floatNoise: '漂浮', vertigo: '晕眩变焦', tiltDown: '镜头下摇',
       spiralIn: '漩涡变焦', snapPan: '快速横摇', jelly: '果冻晃动', pullOut: '拉远', panL: '向左横摇',

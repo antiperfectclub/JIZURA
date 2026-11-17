@@ -310,7 +310,7 @@ function seek(t) {
 
 /* ---------------- timeline ---------------- */
 // zoomable view: [TL.off, TL.off + D / TL.z] seconds; line starts are draggable handles in the top band
-const layoutHue = k => (J.LAYOUT_ORDER.indexOf(k) * 37 + 30) % 360;
+const layoutHue = k => { const i = J.LAYOUT_ORDER.indexOf(k); return i < 0 ? 0 : (i * 37 + 30) % 360; };
 const TL = { z: 1, off: 0, hover: -1, drag: -1 };
 function tlView() {
   const D = Math.max(0.001, S.plan.duration), vd = D / TL.z;
@@ -493,11 +493,11 @@ function pickEnabledTech(g, opts) {
   const en = (S.project.enabled || {})[g] || {};
   let keys = J.order(g).filter(key => {
     const def = tbl[key];
-    if (!def || def.special) return false;
+    if (!def || def.special || (key === 'none' && !opts.allowNone)) return false;
     if (en[key] === false) return false;
     return !J.randomOk || J.randomOk(S.project, g, key);
   });
-  if (!keys.length) keys = J.order(g).filter(key => tbl[key] && !tbl[key].special && en[key] !== false);
+  if (!keys.length) keys = J.order(g).filter(key => tbl[key] && !tbl[key].special && (key !== 'none' || opts.allowNone) && en[key] !== false);
   if (g === 'layout' && opts.n != null) {
     const fit = keys.filter(key => !J.LAYOUTS[key].fits || J.LAYOUTS[key].fits(opts.n));
     if (fit.length) keys = fit;
@@ -552,7 +552,7 @@ function updateCutInfo() {
       cut.decor && cut.decor.length ? chip('', '装飾', cut.decor.map(d => n(J.DECOR, d.id)).join('・')) : '',
       cut.treat && cut.treat !== 'none' ? chip('t', '加工', n(J.TREAT, cut.treat)) : '',
       cut.bg && cut.bg !== 'none' ? chip('b', '背景', n(J.BG, cut.bg)) : '',
-      cut.cam && cut.cam !== 'push' ? chip('c', 'カメラ', n(J.CAMERA, cut.cam)) : '',
+      cut.cam && cut.cam !== 'push' && cut.cam !== 'none' ? chip('c', 'カメラ', n(J.CAMERA, cut.cam)) : '',
       cut.trans ? chip('c', 'つなぎ', n(J.TRANS, cut.trans)) : '',
     ].join('');
     return;
@@ -610,11 +610,12 @@ function fillCutPick() {
   const forced = cutTechSlot(cutPick.line, cutPick.k)[g];
   const onKey = forced || cur;
   grid.innerHTML = '';
-  if (g === 'decor' || g === 'trans') {
+  if (g === 'layout' || g === 'decor' || g === 'cam' || g === 'trans') {
+    const noneDef = (J.registry(g) || {}).none;
     const none = document.createElement('button');
     none.type = 'button';
-    none.className = 'tcard' + (forced === 'none' ? ' is-on' : '');
-    none.innerHTML = '<span class="tcard-name" style="padding:16px 6px"><span>なし</span></span>';
+    none.className = 'tcard' + (onKey === 'none' ? ' is-on' : '');
+    none.innerHTML = `<span class="tcard-name" style="padding:16px 6px"><span>${escapeHtml((noneDef && noneDef.name) || 'なし')}</span></span>`;
     none.addEventListener('click', () => { setCutTech(cutPick.line, cutPick.k, g, 'none'); replan(); });
     grid.appendChild(none);
   }
@@ -641,7 +642,9 @@ function fillCutPick() {
 function renderLines() {
   const ol = $('lineList'); ol.innerHTML = ''; S.lineEls = []; S.curLine = -2;
   const ov = S.project.overrides, R = exportRangeLines();
-  const layoutOpts = '<option value="">自動</option>' + J.LAYOUT_ORDER.map(k => `<option value="${k}">${J.LAYOUTS[k].name}</option>`).join('');
+  const layoutOpts = '<option value="">自動</option>'
+    + (J.LAYOUTS.none ? `<option value="none">${escapeHtml(J.LAYOUTS.none.name)}</option>` : '')
+    + J.LAYOUT_ORDER.map(k => `<option value="${k}">${J.LAYOUTS[k].name}</option>`).join('');
   // layout menus hold only their current choice until they are used: a long song has hundreds of them
   // (with ~180 options each, building them all made every replan slow)
   const lazyLay = (sel, v) => {
@@ -1181,7 +1184,7 @@ function showNow() {
     + row('配色', `<span class="swatches">${swatchHTML([sc.bg, sc.fg, sc.accent, sc.ghostA, sc.ghostB])}</span>${P.colors.accentOn ? '<span class="tagl">ランダム</span>' : ''}`)
     + row('見出し書体', escapeHtml(fontName))
     + row('構成', `${cuts.length} カット・レイアウト ${kinds} 種`)
-    + row('演出', `加工 ${cuts.filter(c => c.treat && c.treat !== 'none').length}・背景 ${new Set(cuts.map(c => c.bg).filter(b => b && b !== 'none')).size}種・カメラ ${cuts.filter(c => c.cam && c.cam !== 'push').length}`);
+    + row('演出', `加工 ${cuts.filter(c => c.treat && c.treat !== 'none').length}・背景 ${new Set(cuts.map(c => c.bg).filter(b => b && b !== 'none')).size}種・カメラ ${cuts.filter(c => c.cam && c.cam !== 'push' && c.cam !== 'none').length}`);
 }
 let toastTimer = 0;
 function toast(m, cols) {
@@ -1843,7 +1846,7 @@ function bind() {
   if (cavalryButton) {
     let cavalryAssembly = null, cavalryName = '';
     const cavalryDialog = $('cavalryDlg');
-    const cavalryGate = () => ['cavalryDownload', 'cavalryPanel', 'cavalryScript'].forEach(id => {
+    const cavalryGate = () => ['cavalryDownload', 'cavalryPanel', 'cavalryLoader', 'cavalryScript'].forEach(id => {
       const button = $(id); if (button) button.disabled = $('cavalryStrict').checked && !!cavalryAssembly?.blockingWarnings.length;
     });
     cavalryButton.addEventListener('click', () => {
@@ -1853,11 +1856,16 @@ function bind() {
         cavalryAssembly = J.Cavalry.assemble({ plan: S.plan, project: S.project, range: exportRange() });
         cavalryName = baseName() + rangeSuffix();
         $('cavalrySummary').textContent = 'カット ' + cavalryAssembly.cuts.length + '・テキスト ' +
-          cavalryAssembly.nodeCount + ' 項目（うち未対応 ' + cavalryAssembly.blockingWarnings.length + ' 件）';
-        $('cavalryWarnings').replaceChildren(...[...cavalryAssembly.blockingWarnings, ...cavalryAssembly.hostChecks].map(w => {
-          const li = document.createElement('li'), blocked = cavalryAssembly.blockingWarnings.includes(w);
-          li.className = 'cavalry-warn ' + (blocked ? 'blocking' : 'host');
-          li.textContent = (blocked ? '⚠ ' : '') + w;
+          cavalryAssembly.nodeCount + ' 項目（近似 ' + cavalryAssembly.approxWarnings.length +
+          '・未対応 ' + cavalryAssembly.blockingWarnings.length + ' 件）';
+        $('cavalryWarnings').replaceChildren(...[
+          (cavalryAssembly.approxWarnings || []).map(w => [w, 'approx']),
+          cavalryAssembly.blockingWarnings.map(w => [w, 'blocking']),
+          cavalryAssembly.hostChecks.map(w => [w, 'host'])
+        ].flat().map(([w, kind]) => {
+          const li = document.createElement('li');
+          li.className = 'cavalry-warn ' + kind;
+          li.textContent = (kind === 'host' ? '' : '⚠ ') + w;
           return li;
         }));
         $('cavalryStrict').checked = false; cavalryGate();
@@ -1867,12 +1875,13 @@ function bind() {
     $('cavalryStrict').addEventListener('change', cavalryGate);
     cavalryDialog.addEventListener('close', async () => {
       const assembly = cavalryAssembly, action = cavalryDialog.returnValue; cavalryAssembly = null;
-      if (!assembly || !['json', 'panel', 'script'].includes(action) ||
+      if (!assembly || !['json', 'panel', 'loader', 'script'].includes(action) ||
           ($('cavalryStrict').checked && assembly.blockingWarnings.length)) return;
       cavalryButton.disabled = true;
       try {
         if (action === 'json') await J.Cavalry.downloadJson(assembly, cavalryName);
-        else if (action === 'panel') await J.Cavalry.downloadPanel('JIZURA_Cavalry');
+        else if (action === 'panel') await J.Cavalry.downloadPanel('JIZURA_CV');
+        else if (action === 'loader') await J.Cavalry.downloadLoader('JIZURA_CV_Loader');
         else await J.Cavalry.download(assembly, cavalryName);
       } catch (error) { alert('Cavalry書き出しに失敗しました:\n' + error.message); }
       finally { cavalryButton.disabled = false; }

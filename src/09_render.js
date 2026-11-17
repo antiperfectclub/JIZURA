@@ -130,12 +130,12 @@ class Renderer {
     // モーフ (統一感): during the first moments of a morph cut its lyric is drawn by drawMorph (glyphs glide / melt)
     const MC = !opt.noTrans && !opt.glyphLog && mainCut && mainCut.morph && mainCut.index > 0 ? mainCut : null;
     const mPrev = MC ? plan.cuts[MC.index - 1] : null, mlt = MC ? tq - MC.start : 0;
-    const morphOn = !!(MC && mPrev && mlt < MC.morph.dur && Math.abs(mPrev.end - MC.start) < 0.06);
+    const morphOn = !!(MC && mPrev && mainCut.layout !== 'none' && mPrev.layout !== 'none' && mlt < MC.morph.dur && Math.abs(mPrev.end - MC.start) < 0.06);
     let mainBB = null, mainEnv = null;
     // camera blur (focus pulls etc.) is applied ONCE to the whole content layer — a blur filter on every
     // individual draw call is extremely slow when a layout draws many text rows
     let layerBlur = 0, LX = null;
-    if (allowFilter && mainCut && J.CAMERA[mainCut.cam] && mainCut.cam !== 'push') {
+    if (allowFilter && mainCut && J.CAMERA[mainCut.cam] && mainCut.cam !== 'push' && mainCut.cam !== 'none') {
       try {
         const e0 = this.makeEnv(ctx, plan, mainCut, sc, { pass: 'main', t: tq, lt: tq - mainCut.start, ltb: tq - mainCut.start, step, scale, allowFilter, energy, beat: beatInfo });
         const c0 = J.CAMERA[mainCut.cam].get(e0, mainCut.camP || {});
@@ -168,10 +168,10 @@ class Renderer {
       // 中央を空ける: the cut (text, decorations, its camera) is drawn in its band and clipped to it
       if (Z) { X.beginPath(); X.rect(Z.x, Z.y, Z.w, Z.h); X.clip(); X.translate(Z.x, Z.y); }
       const W = env.W, H = env.H;
-      // camera move for this cut (default: slow push-in)
+      // camera move for this cut (default: slow push-in; 'none': completely static)
       let cam = null;
-      const CD = J.CAMERA[cut.cam] || J.CAMERA.push;
-      try { cam = CD.get(env, cut.camP || {}); } catch (e) { cam = null; }
+      const CD = cut.cam === 'none' ? null : (J.CAMERA[cut.cam] || J.CAMERA.push);
+      try { cam = CD ? CD.get(env, cut.camP || {}) : null; } catch (e) { cam = null; }
       cam = cam || {};
       const cs = cam.s ?? 1;
       X.translate(W / 2 + shx + P.off[0] + (cam.x || 0), H / 2 + shy + P.off[1] + (cam.y || 0));

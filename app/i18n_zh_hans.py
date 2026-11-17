@@ -201,6 +201,7 @@ BODY = {
     'フォントの字形・字間・行間は Cavalry 側の設定に従うため、ブラウザのプレビューと完全には一致しません。': '字形、字距与行距会遵循 Cavalry 的设置，因此不会与浏览器预览完全一致。',
     '<button value="cancel" class="ghost" autofocus>やめる</button>': '<button value="cancel" class="ghost" autofocus>取消</button>',
     '<button id="cavalryPanel" value="panel" class="ghost">パネル（初回のみ）</button>': '<button id="cavalryPanel" value="panel" class="ghost">面板（仅首次）</button>',
+    '<button id="cavalryLoader" value="loader" class="ghost">ローダー</button>': '<button id="cavalryLoader" value="loader" class="ghost">加载器</button>',
     '<button id="cavalryScript" value="script" class="ghost">スクリプト</button>': '<button id="cavalryScript" value="script" class="ghost">脚本</button>',
     '<button id="cavalryDownload" value="json">JSONを書き出す</button>': '<button id="cavalryDownload" value="json">导出 JSON</button>',
     '記法': '语法', 'プレビュー': '预览', '再生': '播放', 'ループ': '循环',
@@ -233,7 +234,7 @@ BODY = {
 UI = {
     "'Cavalry書き出しに失敗しました:\\n'": "'Cavalry 导出失败：\\n'",
     "'カット '": "' 镜头 '", 
-    "'・テキスト '": "'、文本 '", "' 項目（うち未対応 '": "' 项（其中未支持 '", "' 件）'": "' 项）'",
+    "'・テキスト '": "'、文本 '", "' 項目（近似 '": "' 项（近似 '", "'・未対応 '": "'、未支持 '", "' 件）'": "' 项）'",
     "'追加分2の演出：使う'": "'新增特效 2：使用'",
     "'追加分2の演出：使わない'": "'新增特效 2：不使用'",
     "{ name: '追加分2', badge: '追2' }": "{ name: '新增 2', badge: '追2' }",
