@@ -69,8 +69,12 @@ Graph.prototype.emit=function(options) {
         api.setFill(id,n.attrs.fill!==false); api.setStroke(id,!!n.attrs.stroke);
       }
       api.set(id,attrs);
-      var full=api.get(id,'opacity'); N.finite(full,'native opacity'); if(!(full>0))throw new Error('Invalid native opacity range');
-      if(n.attrs.alpha!=null)api.set(id,{opacity:full*n.attrs.alpha});
+      /* Deformers and filters have no opacity channel; reading it would fail after creating them. */
+      if(n.type==='path'||n.type==='textShape'||n.type==='null') {
+        var full=api.get(id,'opacity'); N.finite(full,'native opacity');
+        if(!(full>0))throw new Error('Invalid native opacity range');
+        if(n.attrs.alpha!=null)api.set(id,{opacity:full*n.attrs.alpha});
+      }
       if(n.type==='textShape'&&api.get(id,'text')!==n.attrs.text) throw new Error('Unicode readback mismatch '+n.name+' expected '+codepoints(n.attrs.text)+' got '+codepoints(api.get(id,'text')));
       Object.keys(n.keys).forEach(function(attr){
         Object.keys(n.keys[attr]).map(Number).sort(function(a,b){return a-b;}).forEach(function(f){

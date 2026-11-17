@@ -20,8 +20,8 @@ def protected(root):
     return {p.relative_to(root).as_posix():sha(p.read_bytes()) for p in sorted(paths)}
 def module_order(root):
     base=root/'cavalry'
-    core=['native/00_registry.js','native/10_graph.js','native/20_components.js']
-    extensions=sorted(p.relative_to(base).as_posix() for p in (base/'native').glob('*.js') if p.name not in ('00_registry.js','10_graph.js','20_components.js','30_assembly.js','browser_adapter.js'))
+    core=['native/00_registry.js','native/10_graph.js','native/20_components.js','native/25_recipe_tools.js','native/26_recipe_components.js']
+    extensions=sorted(p.relative_to(base).as_posix() for p in (base/'native').glob('*.js') if p.name not in ('00_registry.js','10_graph.js','20_components.js','25_recipe_tools.js','26_recipe_components.js','30_assembly.js','browser_adapter.js'))
     packs=sorted(p.relative_to(base).as_posix() for p in (base/'packs').glob('p_*.js'))
     if not packs: raise ValueError('No native recipe packs found')
     names=core+extensions+packs+['native/30_assembly.js']
@@ -106,7 +106,14 @@ def assemble(root,release=False):
     for n in runtime_names+['cavalry/browser.js','cavalry/native/browser_adapter.js','cavalry/panel.js']:
         run_node(node,text[n],n,check=True)
     body='\n;\n'.join(text[n] for n in runtime_names)+'\n;\n'
-    manifest=json.loads(run_node(node,body+'process.stdout.write(JSON.stringify(JZNative.manifest()));','Native registration'))
+    required={'layout':['center','vcols','dictionary','xbTwistFrames'],
+              'enter':['xgComet','tyKeyFirst'],'exit':['xjFocusPull','xiPlateCarry','knCloseGap'],
+              'hold':['tzKernNudge','tzCounterRules'],'bg':['skyline','xpRingDots'],
+              'treat':['inline','outlineOffset','xoDoublePrint']}
+    probe=body+'\n(function(){var R='+literal(required)+';Object.keys(R).forEach(function(g){R[g].forEach(function(k){var d=JZNative.get(g,k);if(!d||typeof d.build!=="function")throw new Error("Missing executable recipe: "+g+":"+k);});});process.stdout.write(JSON.stringify(JZNative.manifest()));})();'
+    manifest=json.loads(run_node(node,probe,'Native registration'))
+    absent=['%s:%s'%(g,k) for g,names in required.items() for k in names if k not in manifest[g]]
+    if absent: raise ValueError('Requested native recipes missing: '+', '.join(absent))
     refs=json.loads(text['ae/data.json']).get('names')
     if not isinstance(refs,dict) or any(g not in refs for g in GROUPS): raise ValueError('Invalid reference vocabulary')
     catalog=catalog_summary(root)

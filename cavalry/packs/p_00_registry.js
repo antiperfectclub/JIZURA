@@ -1,11 +1,10 @@
-/* JZNative <- JZPresets integration. Legacy cavalry/presets.js recipes without a native counterpart are re-implemented here as
-   native graph recipes; JZPresets/JZFamilies become exact-name views of the JZNative registry (no aliases, no family
-   substitution, no host access while loading). Source: cavalry/presets.js (legacy builders). */
+/* Native ports of the recipes that used to live in the removed alias runtime. They are ordinary JZNative
+   recipes: exact names only, no family substitution, no host access while loading. */
 (function (N, R, C, G) {
 'use strict';
 var E = R.E, cl = R.clamp;
-function fixLegacy(group, key) { var d = N.get(group, key); d.differences.push('Legacy presets.js recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit).'); }
-function legacy(group, key, fn) { R.motion(group, key, 'cavalry/presets.js (legacy port)', fn); fixLegacy(group, key); }
+function fixLegacy(group, key) { var d = N.get(group, key); d.differences.push('Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit).'); }
+function legacy(group, key, fn) { R.motion(group, key, 'legacy Cavalry preset (native port)', fn); fixLegacy(group, key); }
 function left(e) { return e.node.x < e.W / 2 ? 1 : -1; }
 legacy('enter', 'slide', function (p, g, gs, e) { return { dx: -e.W * 0.12 * left(e) * (1 - E.outExpo(p)), a: cl(p * 4) }; });
 legacy('exit', 'slide', function (p, g, gs, e) { return { dx: e.W * 0.12 * -left(e) * p, a: 1 - p }; });
@@ -22,7 +21,7 @@ function firstFont(c) {
   if (!f.family || !f.style || !cavalry.fontExists(f.family, f.style)) throw new Error('Missing font ' + f.family + ' / ' + f.style);
   return { node: n0, font: f };
 }
-N.register('bg', 'dots', { source: 'cavalry/presets.js bg:dots (halftone)', scope: 'cut', differences: [], build: function (c) {
+N.register('bg', 'dots', { source: 'legacy Cavalry preset bg:dots (halftone)', scope: 'cut', differences: [], build: function (c) {
   var P = (c.preset && c.preset.params) || {}, r = rng(P.seed || (c.cut.source || {}).seed || 1), W = c.comp.width, H = c.comp.height;
   var cell = Math.max(24, (P.cell || 0.04) * W), dir = (P.dir || 135) * Math.PI / 180, dx = Math.cos(dir), dy = Math.sin(dir), cmds = [];
   for (var y = -H / 2; y <= H / 2; y += cell) for (var x = -W / 2; x <= W / 2; x += cell) {
@@ -32,13 +31,13 @@ N.register('bg', 'dots', { source: 'cavalry/presets.js bg:dots (halftone)', scop
   if (!cmds.length) throw new Error('bg:dots produced no dots');
   C.shape(c.graph, c.cut, c.cut.id + ' / Halftone', c.parent, cmds, c.sc.dim || c.sc.sub, 0, 0.55);
 } });
-N.register('bg', 'bigChar', { source: 'cavalry/presets.js bg:bigChar', scope: 'cut', differences: [], build: function (c) {
+N.register('bg', 'bigChar', { source: 'legacy Cavalry preset bg:bigChar', scope: 'cut', differences: [], build: function (c) {
   var f = firstFont(c), ch = Array.from(String(f.node.text).replace(/\n/g, ''))[0];
   if (!ch) throw new Error('bg:bigChar needs a character');
   c.graph.add('textShape', c.cut.id + ' / Big Char', c.parent, c.cut.start, c.cut.end, { text: ch, font: { font: f.font.family, style: f.font.style }, fontSize: c.comp.height * 1.1,
     autoWidth: true, autoHeight: true, horizontalAlignment: 1, verticalAlignment: 1, position: [0, 0], fill: true, stroke: false, 'material.materialColor': c.sc.dim || c.sc.sub, alpha: 0.5 });
 } });
-N.register('decor', 'indexNum', { source: 'cavalry/presets.js decor:indexNum', scope: 'cut', differences: [], build: function (c) {
+N.register('decor', 'indexNum', { source: 'legacy Cavalry preset decor:indexNum', scope: 'cut', differences: [], build: function (c) {
   var f = firstFont(c), num = parseInt(String(c.cut.id).replace(/\D/g, ''), 10);
   if (!isFinite(num)) throw new Error('decor:indexNum needs a numeric cut id: ' + c.cut.id);
   c.graph.add('textShape', c.cut.id + ' / Index', c.parent, c.cut.start, c.cut.end, { text: 'No.' + ('0' + (num + 1)).slice(-2), font: { font: f.font.family, style: f.font.style }, fontSize: 28,

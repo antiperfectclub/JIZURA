@@ -245,7 +245,12 @@ function hostEnv(options = {}) {
     set(id, values) { Object.assign(layers.get(id).attrs, values); },
     get(id, attr) {
       const layer = layers.get(id);
-      if (attr === 'opacity') return options.opacity == null ? 100 : options.opacity;
+      if (attr === 'opacity') {
+        if (['textShape', 'editableShape', 'null'].indexOf(layer.type) < 0) {
+          throw new Error('opacity read on ' + layer.type);
+        }
+        return options.opacity == null ? 100 : options.opacity;
+      }
       if (attr === 'text') return options.badText ? 'XX' : layer.attrs.text;
       return layer.attrs[attr];
     },

@@ -13,9 +13,12 @@ C.assemble=function(input){
     out.cuts.forEach(function(c){
       var index=Number(c.id.slice(4)),original=plan.cuts[index];
       c.source.text=original.text;c.source.lineText=original.lineText;c.source.note=original.note;
-      /* Text nodes already carry final glyph geometry, and auxiliary rules/plates travel as cut.graphics.
-         One layout recipe therefore resolves the whole layout: 'graphics'. */
-      c.layoutInstruction={name:'graphics'};
+      c.source.words=JSON.parse(JSON.stringify(original.words||[]));
+      /* Captured text already carries final glyph geometry and cut.graphics carries the layout's auxiliary
+         paths, so the whole browser export resolves through one `graphics` recipe. Hand-authored or
+         AE-derived assemblies keep their real layout name in layoutInstruction and use the native recipes. */
+      c.captured=true;
+      c.layoutInstruction={name:'graphics',params:JSON.parse(JSON.stringify(c.source.params||{}))};
       if(!Array.isArray(c.graphics))c.graphics=[];
       ['enter','hold','exit'].forEach(function(k){var old=c.presets[k];c.presets[k]={name:typeof old==='string'?old:old&&old.name,params:original[k+'P']||{}};});
       c.nodes.forEach(function(n,i){

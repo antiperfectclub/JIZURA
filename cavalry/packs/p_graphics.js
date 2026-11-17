@@ -1,7 +1,7 @@
 /* Geometry recipes, built in the unanimated cut's design space. */
 (function(N,G,C){
 'use strict';
-function reg(g,k,fn){N.register(g,k,{source:'cavalry/presets.js (native geometry port)',scope:'cut',build:fn,differences:[]});}
+function reg(g,k,fn){N.register(g,k,{source:'legacy Cavalry preset (native geometry port)',scope:'cut',build:fn,differences:[]});}
 function shape(c,name,commands,color,width,alpha){return C.shape(c.graph,c.cut,c.cut.id+' / '+name,c.parent,commands,color,width,alpha);}
 function bb(c){var xs=[],ys=[];c.cut.nodes.forEach(function(n){var f=(c.options.fontOverrides||{})[n.font.key]||n.font;C.glyphs(n,f).forEach(function(g){
   var r=-(n.rotation||0)*Math.PI/180,cs=Math.cos(r),sn=Math.sin(r),sx=n.sx==null?1:n.sx;
