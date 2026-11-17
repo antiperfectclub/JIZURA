@@ -68,6 +68,7 @@ assert(manifest.coverage.cam.registered.includes('panL'));
 assert(!manifest.coverage.cam.registered.includes('push'), 'aliases are not registered');
 assert(manifest.modules[manifest.modules.length - 1] === 'native/30_assembly.js');
 for (const row of Object.values(report.recipes)) for (const def of Object.values(row)) {
+  assert.equal(def.exact, false, 'a native port is never a pixel-identical claim');
   assert.equal(def.hostVerified, false, 'no recipe may claim host verification');
   assert(typeof def.source === 'string' && def.scope);
 }
@@ -199,6 +200,12 @@ assert.throws(() => J.Cavalry.assemble({ plan: fresh({ cam: 'push' }), strict: t
 assert.equal(J.Cavalry.assemble({ plan: fresh({ cam: 'panL' }) }).presetReport.built['cam:panL'], 1);
 assert.equal(J.Cavalry.assemble({ plan: fresh({ hold: 'breathe' }) }).presetReport.built['hold:breathe'], 1);
 assert.equal(J.Cavalry.assemble({ plan: fresh({ enter: 'slide' }) }).presetReport.built['enter:slide'], 1);
+const clipWarning = J.Cavalry.assemble({ plan: fresh({ exit: 'xiPlateCarry' }) });
+assert.equal(clipWarning.presetReport.built['exit:xiPlateCarry'], 1);
+assert(clipWarning.hostChecks.some(w => /hostProfile\.javaScriptDeformer/.test(w)));
+const blurWarning = J.Cavalry.assemble({ plan: fresh({ exit: 'xjFocusPull' }) });
+assert.equal(blurWarning.presetReport.built['exit:xjFocusPull'], 1);
+assert(blurWarning.hostChecks.some(w => /hostProfile\.gaussianBlur/.test(w)));
 assert.equal(J.Cavalry.assemble({ plan: fresh({ decor: [{ id: 'cropMarks' }] }) }).presetReport.built['decor:cropMarks'], 1);
 const dropped = J.Cavalry.assemble({ plan: fresh({ hold: 'nope', enter: 'alsonope', decor: [{ id: 'crosshair' }], bg: 'grain', treat: 'grain', trans: 'wipe' }) });
 for (const key of ['hold', 'enter', 'decor', 'bg', 'treat', 'trans']) {

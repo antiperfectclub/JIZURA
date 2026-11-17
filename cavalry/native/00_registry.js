@@ -14,7 +14,7 @@ function get(group, name) { return recipes[group] && recipes[group][name] || nul
 function manifest() {
   var out = {};
   groups.forEach(function (g) { out[g] = {}; Object.keys(recipes[g]).sort().forEach(function (k) {
-    var d = recipes[g][k]; out[g][k] = {source:d.source,scope:d.scope,hostVerified:false,differences:d.differences || []};
+    var d = recipes[g][k]; out[g][k] = {source:d.source,scope:d.scope,exact:false,hostVerified:false,differences:d.differences || []};
   }); });
   return out;
 }

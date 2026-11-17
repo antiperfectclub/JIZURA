@@ -10,8 +10,8 @@ const STYLES = { 100: 'Thin', 200: 'ExtraLight', 300: 'Light', 400: 'Regular', 5
    runtime can grow into them without changing the JSON again. */
 C.SCHEMA = 2;
 
-/* The preset vocabulary is shared with the host runtime (cavalry/families.js), so the warnings here predict
-   exactly what Cavalry will build, approximate or drop. */
+/* The preset vocabulary is the native manifest injected by build_cavalry.py, so the warnings here predict
+   exactly what Cavalry will build: exact names only, no family substitution. */
 const FAM = typeof JZFamilies !== 'undefined' ? JZFamilies : null;
 if (!FAM) throw new Error('Cavalry preset vocabulary is missing; rebuild with build_cavalry.py.');
 const PRESETS = kind => FAM.built(kind);
@@ -26,7 +26,7 @@ C.CAPABILITIES = Object.freeze({
   exit: PRESETS('exit'),
   align: ['left', 'center', 'right'],
   text: ['multiline'],
-  /* preset names are always exported; only the listed ones are built (exactly or by family) */
+  /* preset names are always exported; only exact native names are built */
   presets: Object.freeze({ enter: PRESETS('enter'), exit: PRESETS('exit'), hold: PRESETS('hold'), bg: PRESETS('bg'),
     cam: PRESETS('cam'), trans: [], treat: PRESETS('treat'), decor: PRESETS('decor') }),
   shapes: true, decoration: PRESETS('decor').length > 0, treatments: PRESETS('treat').length > 0,
@@ -359,6 +359,10 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
       if (nodes.length) {
         hit('enter', cut.enter || 'fade'); hit('exit', cut.exit || 'fade'); hit('hold', cut.hold || 'still');
       }
+      /* These ports are exact, but their host layer type is not verified yet. Say so at export time,
+         not only when the build stops. */
+      if (cut.exit === 'xiPlateCarry') host(label + 'exit "xiPlateCarry" needs hostProfile.javaScriptDeformer {verified:true}; the build stops without it.');
+      if (cut.exit === 'xjFocusPull') host(label + 'exit "xjFocusPull" needs hostProfile.gaussianBlur {verified:true}; the build stops without it.');
       (cut.decor || []).forEach(d => hit('decor', typeof d === 'string' ? d : d && (d.id || d.name)));
       if (cut.treat && cut.treat !== 'none') hit('treat', cut.treat);
       if (cut.bg && cut.bg !== 'none') hit('bg', cut.bg);

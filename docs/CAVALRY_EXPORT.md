@@ -121,6 +121,8 @@ deterministic seed is carried; no new random values are drawn.
 
 `skyline` omits the source's feathered horizon glow. `xoDoublePrint` rotates per glyph rather than around the
 whole line. `xiPlateCarry` clips through a Java-Script Deformer; `xjFocusPull` emits a semantic blur node.
+Treatments clone the exported glyph layers, so a clip or blur deformer created by another recipe is not copied
+onto those clones.
 
 ### Host profiles for the two unverified APIs
 
@@ -208,7 +210,7 @@ and `dist/cavalry/build-manifest.json`. Each dist file is self-contained.
   "format": "jizura.cavalry.build-manifest",
   "buildId": "…",
   "modules": ["native/00_registry.js", "…", "native/30_assembly.js"],
-  "recipes": { "cam": { "panL": { "hostVerified": false, "source": "…", "scope": "cut-camera" } } },
+  "recipes": { "cam": { "panL": { "exact": false, "hostVerified": false, "source": "…", "scope": "cut-camera" } } },
   "coverage": { "layout": { "method": "capture", "registered": ["graphics"], "blockingMissing": [] } },
   "catalog": { "total": 1717, "groups": { "layout": { "count": 366, "notPorted": 366 } } },
   "blockingMissing": 1257,
