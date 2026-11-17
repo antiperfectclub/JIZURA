@@ -46,10 +46,3 @@ N.register('decor', 'indexNum', { source: 'cavalry/presets.js decor:indexNum', s
 } });
 })(JZNative, JZRecipeTools, JZComponents, JZGraph);
 
-/* Compatibility views for legacy callers (panel/bridge/loader). Exact names only. */
-var JZPresets = (function (N) {
-  function built(kind) { var m = N.manifest()[kind]; return m ? Object.keys(m).sort() : []; }
-  function resolve(kind, name) { var d = name ? N.get(kind, name) : null; return d ? { fn: d.build, exact: true, as: name } : null; }
-  return { has: function (kind, name) { return !!resolve(kind, name); }, resolve: resolve, built: built };
-})(JZNative);
-var JZFamilies = { built: JZPresets.built, resolve: function (g, k) { var ok = !!JZPresets.resolve(g, k); return { state: ok ? 'exact' : 'missing', as: ok ? k : null }; } };

@@ -13,6 +13,10 @@ C.assemble=function(input){
     out.cuts.forEach(function(c){
       var index=Number(c.id.slice(4)),original=plan.cuts[index];
       c.source.text=original.text;c.source.lineText=original.lineText;c.source.note=original.note;
+      /* Text nodes already carry final glyph geometry, and auxiliary rules/plates travel as cut.graphics.
+         One layout recipe therefore resolves the whole layout: 'graphics'. */
+      c.layoutInstruction={name:'graphics'};
+      if(!Array.isArray(c.graphics))c.graphics=[];
       ['enter','hold','exit'].forEach(function(k){var old=c.presets[k];c.presets[k]={name:typeof old==='string'?old:old&&old.name,params:original[k+'P']||{}};});
       c.nodes.forEach(function(n,i){
         n.seed=(original.seed|0)+i*101;

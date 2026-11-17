@@ -1,7 +1,9 @@
 /* Native camera models. Reference: ae/p_cam.jsx, ae/p_x2_camtr.jsx,
    ae/p_x2_typoB.jsx (read-only), via the user's v0.13.0 reference core.
-   No AE API, expression evaluation, name-family substitutions, or JSON execution. */
-var JZCameraModels=(function(Pack){
+   No AE API, expression evaluation, name-family substitutions, or JSON execution.
+   Formulas are sampled once per frame onto real transform keys (outer roll / stretch shear / camera scale),
+   so this does not depend on JavaScript Utility nodes or on an easing-name table. */
+var JZCameraModels=(function(N,Pack){
 'use strict';
 var M={}, pi=Math.PI, D=pi/180, p=Pack.param;
 function cl(x,a,b){a=a==null?0:a;b=b==null?1:b;return Math.max(a,Math.min(b,x));}
@@ -13,6 +15,7 @@ function ioc(x){x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}
 function ob(x,s){x=cl(x);return 1+(s+1)*Math.pow(x-1,3)+s*Math.pow(x-1,2);}
 function hh(n){var x=Math.sin(n*127.1+311.7)*43758.5453;return x-Math.floor(x);}
 function vn(x,s){var i=Math.floor(x),f=x-i,u=f*f*(3-2*f),a=hh(i*1.731+s*7.117)*2-1,b=hh(i*1.731+1.731+s*7.117)*2-1;return a+(b-a)*u;}
+/* x, y (design coords), scale, scaleX, scaleY, rotation (degrees), shear (degrees) */
 function out(x,y,s,sx,sy,r,k){return [x||0,y||0,s*(sx==null?1:sx),s*(sy==null?1:sy),r||0,k||0];}
 function model(k,fn){M[k]=fn;}
 model('pullOut',function(e,P){return out(0,0,1+p(P,'a',.07)*e.K*(1-oc(e.u)));});
@@ -58,16 +61,21 @@ function environment(c,f){var dur=(c.cut.sourceEnd-c.cut.origin)/c.comp.fps,t=Ma
 /* SVD of native-coordinate shear: R(u) * diag(s,1/s) * R(-v).
    Only documented rotation/scale/position attributes are used. */
 function decompose(k){if(Math.abs(k)<1e-12)return [0,1,1,0];var v=.5*Math.atan2(2*k,-k*k),a=Math.cos(v)+k*Math.sin(v),b=Math.sin(v),s=Math.hypot(a,b);return [Math.atan2(b,a)/D,s,1/s,-v/D];}
+function put(graph,id,f,attrs){Object.keys(attrs).forEach(function(attr){graph.key(id,attr,f,N.finite(attrs[attr],'camera '+attr));});}
 function build(name,c){var samples=[],P=c.preset.params||{};
- Object.keys(P).forEach(function(k){var v=P[k];if(typeof v==='number'){Pack.finite(v);if(Math.abs(v)>10000)throw new Error('Camera parameter exceeds safety limit: '+k);}else if(typeof v!=='boolean'&&typeof v!=='string')throw new Error('Invalid camera parameter '+k);});
- for(var f=c.cut.start;f<c.cut.end;f++){var v=M[name](environment(c,f),P);v.forEach(Pack.finite);if(v[2]<=0||v[3]<=0)throw new Error('Invalid camera scale');samples.push(v);}
- var parent=api.getParent(c.rig),outer=Pack.nullLayer(c.cut.id+' / '+name+' Rotation',parent,c.cut),stretch=Pack.nullLayer(c.cut.id+' / '+name+' Stretch',outer,c.cut);
- api.parent(c.rig,stretch);
+ Object.keys(P).forEach(function(k){var v=P[k];if(typeof v==='number'){N.finite(v,'camera parameter '+k);if(Math.abs(v)>10000)throw new Error('Camera parameter exceeds safety limit: '+k);}else if(typeof v!=='boolean'&&typeof v!=='string')throw new Error('Invalid camera parameter '+k);});
+ for(var f=c.cut.start;f<c.cut.end;f++){var v=M[name](environment(c,f),P);v.forEach(function(x){N.finite(x,'camera sample');});if(v[2]<=0||v[3]<=0)throw new Error('Invalid camera scale');samples.push(v);}
+ var outer=c.camOuter,stretch=c.camStretch;
+ if(!outer||!stretch||!c.rig)throw new Error('Camera rig hierarchy is missing');
  samples.forEach(function(v,i){var f=c.cut.start+i,k=-Math.tan(v[5]*D),d=decompose(k);
-   Pack.key(outer,f,{'position.x':v[0],'position.y':-v[1],rotation:-v[4]+d[0]});
-   Pack.key(stretch,f,{'scale.x':d[1],'scale.y':d[2]});Pack.key(c.rig,f,{rotation:d[3],'scale.x':v[2],'scale.y':v[3]});
+   put(c.graph,outer,f,{'position.x':v[0],'position.y':-v[1],rotation:-v[4]+d[0]});
+   put(c.graph,stretch,f,{'scale.x':d[1],'scale.y':d[2]});
+   put(c.graph,c.rig,f,{rotation:d[3],'scale.x':v[2],'scale.y':v[3]});
  });
 }
-Object.keys(M).forEach(function(name){Pack.register('cam',name,function(c){build(name,c);},{source:'AE camera numeric models; native Cavalry transform implementation',differences:['Ghost-pass lag is not implemented by the existing scene runtime.'],hostVerified:false});});
+Object.keys(M).forEach(function(name){N.register('cam',name,{source:'AE camera numeric models; native Cavalry transform implementation',scope:'cut',
+  differences:['Ghost-pass lag is not implemented by the existing scene runtime.',
+    'Formula sampled onto per-frame keys; no live JavaScript Utility connection.'],
+  hostVerified:false,build:function(c){build(name,c);}});});
 return {models:M,environment:environment,decompose:decompose};
-})(JZPack);
+})(JZNative,JZRecipeTools);

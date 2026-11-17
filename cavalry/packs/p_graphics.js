@@ -8,8 +8,11 @@ function bb(c){var xs=[],ys=[];c.cut.nodes.forEach(function(n){var f=(c.options.
   [[-1,-1],[-1,1],[1,-1],[1,1]].forEach(function(z){var x=(g.x+(g.vx||0)+z[0]*g.w/2)*sx,y=-g.y-(g.vy||0)+z[1]*g.h/2;
     xs.push(n.x-c.comp.width/2+x*cs-y*sn);ys.push(c.comp.height/2-n.y+x*sn+y*cs);});
 });});if(!xs.length)throw new Error('No rest geometry');return {x0:Math.min.apply(null,xs),x1:Math.max.apply(null,xs),y0:Math.min.apply(null,ys),y1:Math.max.apply(null,ys)};}
-reg('layout','center',function(c){var P=c.cut.source.params||{};if(P.under||P.accent||P.sub)throw new Error('center auxiliary furniture requires a layout command payload');});
-reg('layout','commands',function(c){(c.cut.graphics||[]).forEach(function(s){var commands=s.commands.map(function(p){var q=p.slice();for(var i=1;i<q.length;i+=2){q[i]-=c.comp.width/2;q[i+1]=c.comp.height/2-q[i+1];}return q;});shape(c,s.name||'Layout shape',commands,s.color,s.width,s.alpha);});});
+reg('layout','graphics',function(c){(c.cut.graphics||[]).forEach(function(s,i){
+  if(!s||!Array.isArray(s.path))throw new Error('Malformed layout graphic '+i);
+  var commands=s.path.map(function(cmd){var q=cmd.slice();for(var k=1;k<q.length;k+=2){q[k]-=c.comp.width/2;q[k+1]=c.comp.height/2-q[k+1];}return q;});
+  shape(c,s.name||('Graphic '+(i+1)),commands,{fill:s.fill,stroke:s.stroke,width:s.width,alpha:s.alpha==null?1:s.alpha});
+});});
 reg('treat','underline',function(c){var b=bb(c),h=Math.max(4,c.comp.height*.006);shape(c,'Underline',G.rect(b.x0,b.y0-h*3,b.x1-b.x0,h),c.sc.accent);});
 reg('treat','boxed',function(c){var b=bb(c),m=14;shape(c,'Box',G.rect(b.x0-m,b.y0-m,b.x1-b.x0+2*m,b.y1-b.y0+2*m),c.sc.accent,5);});
 reg('treat','marker',function(c){var b=bb(c);shape(c,'Marker',G.rect(b.x0,b.y0,b.x1-b.x0,(b.y1-b.y0)*.45),c.sc.accent2||c.sc.accent,0,.45);});

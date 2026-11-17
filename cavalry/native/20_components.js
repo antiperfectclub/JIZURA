@@ -62,9 +62,20 @@ function text(graph,cut,node,parent,options,animate) {
     }); ids.push(id);
   }); return ids;
 }
-function shape(graph,cut,name,parent,commands,color,width,alpha) {
-  return graph.add('path',name,parent,cut.start,cut.end,{position:[0,0],fill:!width,stroke:!!width,
-    'material.materialColor':color,'stroke.strokeColor':color,'stroke.width':width||1,alpha:alpha==null?1:alpha},commands);
+/* One editable path. `paint` is either an object {fill, stroke, width, alpha} or the legacy
+   (color, width, alpha) arguments. A shape with no paint is an error, never an empty layer. */
+function shape(graph,cut,name,parent,commands,paint,width,alpha) {
+  var fill=null, stroke=null, w=null, a=1;
+  if (paint && typeof paint==='object') {
+    fill=paint.fill||null; stroke=paint.stroke||null; w=paint.width; a=paint.alpha==null?1:paint.alpha;
+  } else if (width>0) { stroke=paint||null; w=width; a=alpha==null?1:alpha; }
+  else { fill=paint||null; a=alpha==null?1:alpha; }
+  if (!fill&&!stroke) throw new Error('Shape has no paint: '+name);
+  if (stroke&&!(N.finite(w,'stroke width')>0)) throw new Error('Stroke without a positive width: '+name);
+  N.finite(a,'shape alpha');
+  if (!(a>0)) throw new Error('Invisible shape: '+name);
+  return graph.add('path',name,parent,cut.start,cut.end,{position:[0,0],fill:!!fill,stroke:!!stroke,
+    'material.materialColor':fill||stroke,'stroke.strokeColor':stroke||fill,alpha:a,'stroke.width':stroke?w:1},commands);
 }
 return {text:text,glyphs:glyphs,sample:sample,shape:shape};
 })(JZNative,JZGraph);

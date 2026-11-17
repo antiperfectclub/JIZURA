@@ -29,7 +29,7 @@ C.CAPABILITIES = Object.freeze({
   /* preset names are always exported; only the listed ones are built (exactly or by family) */
   presets: Object.freeze({ enter: PRESETS('enter'), exit: PRESETS('exit'), bg: PRESETS('bg'),
     cam: PRESETS('cam'), trans: [], treat: PRESETS('treat'), decor: PRESETS('decor') }),
-  shapes: false, decoration: PRESETS('decor').length > 0, treatments: PRESETS('treat').length > 0,
+  shapes: true, decoration: PRESETS('decor').length > 0, treatments: PRESETS('treat').length > 0,
   backgroundGraphics: PRESETS('bg').length > 0, camera: PRESETS('cam').length > 0,
   transitions: false, effects: false, hud: false, audio: false, timing: 'manual'
 });
@@ -47,7 +47,8 @@ function fontOf(key) {
   return { key, family: familyOf(key), style: STYLES[weight] || 'Regular' };
 }
 
-/* --- capture env: layout renderers only need geometry, so every drawing helper is inert --- */
+/* --- capture env: the layout renderers are run for real, but every paint call is recorded as path
+   commands instead of being drawn. Coordinates stay in web space (x right, y down); the host flips them. --- */
 function stubCtx() {
   const base = { canvas: { width: 1, height: 1 } };
   return new Proxy(base, {
@@ -61,13 +62,123 @@ function stubCtx() {
     set(target, key, value) { target[key] = value; return true; }
   });
 }
-const noop = () => {};
-function makeEnv(plan, cut, sc, lt, onText) {
+const KAPPA = 0.5522847498307936;
+const isNum = v => typeof v === 'number' && isFinite(v);
+const pathPoints = pts => Array.isArray(pts) && pts.length >= 2 && pts.every(p => Array.isArray(p) && isNum(p[0]) && isNum(p[1]));
+
+/* Each primitive mirrors the signature and the early-outs of src/09_render.js, so the captured geometry is
+   the geometry the browser would have drawn at that instant. */
+function rectPath(x, y, w, h) {
+  return [['M', x, y], ['L', x + w, y], ['L', x + w, y + h], ['L', x, y + h], ['Z']];
+}
+function circlePath(cx, cy, r) {
+  const k = KAPPA * r;
+  return [['M', cx + r, cy],
+    ['C', cx + r, cy + k, cx + k, cy + r, cx, cy + r],
+    ['C', cx - k, cy + r, cx - r, cy + k, cx - r, cy],
+    ['C', cx - r, cy - k, cx - k, cy - r, cx, cy - r],
+    ['C', cx + k, cy - r, cx + r, cy - k, cx + r, cy], ['Z']];
+}
+function arcPath(cx, cy, r, a0, a1) {
+  const steps = Math.max(6, Math.ceil(Math.abs(a1 - a0) / 4)), out = [];
+  for (let i = 0; i <= steps; i++) {
+    const a = (a0 + (a1 - a0) * (i / steps)) * J.DEG;
+    out.push([i ? 'L' : 'M', cx + Math.cos(a) * r, cy + Math.sin(a) * r]);
+  }
+  return out;
+}
+function rrectPath(x, y, w, h, r) {
+  r = Math.min(Math.max(0, r), w / 2, h / 2);
+  if (!(r > 0)) return rectPath(x, y, w, h);
+  const k = KAPPA * r;
+  return [['M', x + r, y], ['L', x + w - r, y],
+    ['C', x + w - r + k, y, x + w, y + r - k, x + w, y + r], ['L', x + w, y + h - r],
+    ['C', x + w, y + h - r + k, x + w - r + k, y + h, x + w - r, y + h], ['L', x + r, y + h],
+    ['C', x + r - k, y + h, x, y + h - r + k, x, y + h - r], ['L', x, y + r],
+    ['C', x, y + r - k, x + r - k, y, x + r, y], ['Z']];
+}
+function polyPath(pts) {
+  return pts.map((p, i) => [i ? 'L' : 'M', p[0], p[1]]).concat([['Z']]);
+}
+function linePath(pts) { return pts.map((p, i) => [i ? 'L' : 'M', p[0], p[1]]); }
+function blobPath(pts) {
+  const n = pts.length, mid = i => [(pts[i % n][0] + pts[(i + 1) % n][0]) / 2, (pts[i % n][1] + pts[(i + 1) % n][1]) / 2];
+  const m0 = mid(0), out = [['M', m0[0], m0[1]]];
+  for (let i = 1; i <= n; i++) { const p = pts[i % n], m = mid(i); out.push(['Q', p[0], p[1], m[0], m[1]]); }
+  out.push(['Z']);
+  return out;
+}
+
+function makeEnv(plan, cut, sc, lt, onText, shapes, gauge) {
   const env = {
     ctx: stubCtx(), W: plan.W, H: plan.H, sc, st: plan.style, fx: plan.fx, fps: plan.fps, plan,
     cut, lt, ltb: lt - (cut.inDur || 0), pIn: 1, pOut: 0, pass: 'main', scale: 1,
-    step: Math.round(lt * (plan.fps || 30)), beat: 0, energy: 0, t: lt,
-    line: noop, rect: noop, circle: noop, arc: noop, rrect: noop, poly: noop, blob: noop, polyPartial: noop
+    step: Math.round(lt * (plan.fps || 30)), beat: 0, energy: 0, t: lt
+  };
+  const push = (commands, paint) => {
+    if (!commands || commands.length < 2) return;
+    const fill = typeof paint.fill === 'string' ? paint.fill : null;
+    const stroke = typeof paint.stroke === 'string' ? paint.stroke : null;
+    if (!fill && !stroke) { gauge.unsupported += 1; return; }
+    const width = isNum(paint.width) && paint.width > 0 ? paint.width : 1;
+    const alpha = isNum(paint.alpha) ? J.clamp(paint.alpha) : 1;
+    if (!(alpha > 0)) return;
+    /* adjacent primitives with the same paint become one editable path: a hatch is one layer, not 800 */
+    const last = shapes[shapes.length - 1];
+    if (last && last.fill === fill && last.stroke === stroke && last.width === (stroke ? width : null) && Math.abs(last.alpha - alpha) < 1e-9) {
+      last.path.push(...commands); last.parts += 1; return;
+    }
+    shapes.push({ path: commands, fill, stroke, width: stroke ? width : null, alpha, parts: 1 });
+  };
+  env.rect = (x, y, w, h, c, a = 1, g = true) => {
+    if (typeof c !== 'string' || !isNum(x) || !isNum(y) || !isNum(w) || !isNum(h) || !(w > 0) || !(h > 0)) { gauge.unsupported += 1; return; }
+    if (a <= 0) return;
+    push(rectPath(x, y, w, h), { fill: c, alpha: a });
+  };
+  env.line = (pts, c, lw = 1, a = 1, g = true) => {
+    if (!(a > 0) || !pathPoints(pts)) return;
+    if (typeof c !== 'string') { gauge.unsupported += 1; return; }
+    push(linePath(pts), { stroke: c, width: lw, alpha: a });
+  };
+  env.polyPartial = (pts, e, c, lw = 1, a = 1, g = true) => {
+    if (!(e > 0) || !pathPoints(pts)) return;
+    let total = 0; const seg = [];
+    for (let i = 1; i < pts.length; i++) { const d = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); seg.push(d); total += d; }
+    let rem = total * J.clamp(e); const out = [pts[0]];
+    for (let i = 1; i < pts.length && rem > 0; i++) {
+      const d = seg[i - 1];
+      if (rem >= d) { out.push(pts[i]); rem -= d; }
+      else { const k = rem / d; out.push([J.lerp(pts[i - 1][0], pts[i][0], k), J.lerp(pts[i - 1][1], pts[i][1], k)]); rem = 0; }
+    }
+    env.line(out, c, lw, a, g);
+  };
+  env.circle = (cx, cy, r, fill, stroke, lw = 1, a = 1, g = true) => {
+    if (!(r > 0) || !(a > 0) || !isNum(cx) || !isNum(cy)) return;
+    if ((fill && typeof fill !== 'string') || (stroke && typeof stroke !== 'string')) { gauge.unsupported += 1; return; }
+    if (!fill && !stroke) return;
+    push(circlePath(cx, cy, r), { fill, stroke, width: lw, alpha: a });
+  };
+  env.arc = (cx, cy, r, a0, a1, c, lw = 1, a = 1, g = true) => {
+    if (!(a > 0) || !(r > 0) || !isNum(cx) || !isNum(cy) || !isNum(a0) || !isNum(a1)) return;
+    if (typeof c !== 'string') { gauge.unsupported += 1; return; }
+    gauge.facets.push('arc');
+    push(arcPath(cx, cy, r, a0, a1), { stroke: c, width: lw, alpha: a });
+  };
+  env.rrect = (x, y, w, h, r, fill, a = 1, g = true, stroke, lw = 1) => {
+    if (!(a > 0) || !(w > 0) || !(h > 0) || !isNum(x) || !isNum(y) || !isNum(r)) return;
+    if ((fill && typeof fill !== 'string') || (stroke && typeof stroke !== 'string')) { gauge.unsupported += 1; return; }
+    if (!fill && !stroke) return;
+    push(rrectPath(x, y, w, h, r), { fill, stroke, width: lw, alpha: a });
+  };
+  env.poly = (pts, c, a = 1, g = true) => {
+    if (!(a > 0) || !pathPoints(pts)) return;
+    if (typeof c !== 'string') { gauge.unsupported += 1; return; }
+    push(polyPath(pts), { fill: c, alpha: a });
+  };
+  env.blob = (pts, c, a = 1, g = true) => {
+    if (!(a > 0) || !pathPoints(pts)) return;
+    if (typeof c !== 'string') { gauge.unsupported += 1; return; }
+    push(blobPath(pts), { fill: c, alpha: a });
   };
   env.draw = item => { if (item) onText(item, 'supplement'); };
   return env;
@@ -81,9 +192,9 @@ function syntheticBB(it) {
   return { x0, x1: x0 + w, y0: it.y - h / 2, y1: it.y + h / 2, cx: x0 + w / 2, cy: it.y, boxes: [] };
 }
 
-/* run the real layout renderer and keep every text item it asks for */
+/* run the real layout renderer and keep every text item and every graphic it asks for */
 function captureLayout(plan, cut, sc, lt) {
-  const items = [];
+  const items = [], shapes = [], gauge = { unsupported: 0, facets: [] };
   const push = (it, role) => {
     if (typeof it.text !== 'string' || !it.text || !(it.size > 0.5)) return;
     if (![it.x, it.y, it.size].every(Number.isFinite)) return;
@@ -97,7 +208,7 @@ function captureLayout(plan, cut, sc, lt) {
       delay: (it.mi | 0) * (cut.stagger || 0), role
     });
   };
-  const env = makeEnv(plan, cut, sc, lt, push);
+  const env = makeEnv(plan, cut, sc, lt, push, shapes, gauge);
   const origMain = J.mainDraw;
   J.mainDraw = (innerEnv, it) => { push(it, 'lyric'); return syntheticBB(it); };
   try {
@@ -105,7 +216,7 @@ function captureLayout(plan, cut, sc, lt) {
   } finally {
     J.mainDraw = origMain;
   }
-  return items;
+  return { items, shapes, gauge };
 }
 const sameGeometry = (a, b) => a.length === b.length && a.every((x, i) => {
   const y = b[i];
@@ -120,9 +231,14 @@ const layoutItems = (plan, cut, sc) => {
   const early = at(late * 0.6);
   const a = captureLayout(plan, cut, sc, late);
   let moving = false;
-  try { moving = a.length && !sameGeometry(a, captureLayout(plan, cut, sc, early)); } catch (e) { moving = false; }
-  return { items: a, moving, at: late };
+  try {
+    const b = captureLayout(plan, cut, sc, early);
+    moving = (a.items.length > 0 && !sameGeometry(a.items, b.items)) ||
+      JSON.stringify(a.shapes) !== JSON.stringify(b.shapes);
+  } catch (e) { moving = false; }
+  return { items: a.items, shapes: a.shapes, gauge: a.gauge, moving, at: late };
 };
+
 
 const CENTER_DEFAULTS = {
   sx: 1, track: 0, lead: 1.2, ox: 0, oy: 0, accent: false, sub: false, under: false
@@ -175,7 +291,7 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
         texture: p.fx?.texture ?? 0, chroma: p.fx?.chroma ?? 0 }
     },
     capabilities: C.CAPABILITIES,
-    cuts: [], warnings: [], hostChecks: [], blockingWarnings: [], nodeCount: 0
+    cuts: [], warnings: [], hostChecks: [], blockingWarnings: [], nodeCount: 0, shapeCount: 0, graphicPrimitives: 0
   };
 
   host('Set Composition Settings manually: ' + fps + ' fps, frame range 0–' + (frameCount - 1) + '.');
@@ -204,13 +320,14 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
       const schemeIndex = (cut.scheme || 0) % p.style.schemes.length;
       const sc = p.style.schemes[schemeIndex] || p.style.schemes[0];
       const label = 'cut ' + i + ': ';
-      let nodes = [], moving = false, fallback = false;
+      let nodes = [], graphics = [], dropped = 0, moving = false, fallback = false;
       if (cut.layout !== 'interlude' && cut.layout !== 'none') {
         const def = J.LAYOUTS[cut.layout];
         if (def && typeof def.render === 'function') {
           try {
             const cap = layoutItems(p, cut, sc);
-            nodes = cap.items; moving = cap.moving;
+            nodes = cap.items; graphics = cap.shapes; dropped = cap.gauge.unsupported; moving = cap.moving;
+            if (cap.gauge.facets.includes('arc')) host(label + 'arc strokes are exported as 4° polylines.');
           } catch (e) {
             warn(label + 'layout "' + cut.layout + '" could not be captured (' + e.message + ') → center fallback');
             fallback = true;
@@ -225,6 +342,9 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
         }
         if (moving) warn(label + 'layout "' + cut.layout + '" keeps moving; exported as a still near its end.');
       }
+      if (fallback) graphics = [];
+      if (dropped) warn(label + dropped + ' graphic(s) use a paint that is not a solid colour → dropped');
+      if (graphics.length) host(label + graphics.length + ' graphic(s) are stacked behind all text; the web renderer interleaves them.');
 
       const tracks = nodes.filter(n => Math.abs(n.track) > 1e-6).length;
       const leads = nodes.filter(n => n.lead && Math.abs(n.lead - 1.3) > 1e-6).length;
@@ -267,6 +387,10 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
           hold: cut.hold || 'still', scheme: schemeIndex, seed: cut.seed ?? null, morph: !!cut.morph
         },
         background: p.keyBg === 'transparent' ? null : p.keyBg === 'green' ? '#00ff00' : p.keyBg === 'black' ? '#000000' : sc.bg,
+        graphics: graphics.map((s, gi) => ({
+          name: 'cut-' + i + '-graphic-' + gi, source: 'layout', path: s.path,
+          fill: s.fill, stroke: s.stroke, width: s.width, alpha: s.alpha, parts: s.parts
+        })),
         nodes: nodes.map((node, n) => ({
           ...node, id: 'cut-' + i + '-text-' + n, kind: 'text',
           granularity: !node.text.includes('\n') && [...node.text].length === 1 ? 'per-character' : 'whole-text',
@@ -275,6 +399,8 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
         }))
       });
       out.nodeCount += nodes.length;
+      out.shapeCount += graphics.length;
+      out.graphicPrimitives = (out.graphicPrimitives || 0) + graphics.reduce((n, s) => n + (s.parts || 1), 0);
     }
   } finally {
     if (J.setLang) J.setLang(oldLang);
@@ -286,7 +412,7 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
   [...holdRows.entries()].sort((a, b) => a[0].localeCompare(b[0])).forEach(([name, n]) => {
     blocking.push('hold "' + name + '" is not ported' + (n > 1 ? ' (' + n + ' cuts)' : ''));
   });
-  if (verticalItems) approx.push(verticalItems + ' item(s) are vertical text, built horizontally');
+  if (verticalItems) host(verticalItems + ' item(s) are vertical text: built per glyph. Glyph rotation and punctuation offsets need one visual check.');
   [...presetRows.values()]
     .sort((a, b) => (a.kind + ':' + a.name).localeCompare(b.kind + ':' + b.name))
     .forEach(row => {

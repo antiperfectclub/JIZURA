@@ -3,6 +3,8 @@
    same names to the same builders, so the two cannot drift apart.
    `built` lists canonical builders registered in presets.js; the two envelope presets `cut` and `fade`
    are listed for enter/exit because the runtime handles them without a builder.
+   `native` lists names that have their own Cavalry port (not a family stand-in). A native port is still
+   `exact: false`: it is a port, not a pixel-identical copy of the web renderer.
    `map` is a family rule: an approximation, never an exact port. `resolve` always says which it is. */
 var JZFamilies = (function () {
 'use strict';
@@ -10,6 +12,7 @@ var JZFamilies = (function () {
 var KINDS = {
   enter: {
     built: ['cut', 'fade', 'slide', 'rise', 'drop', 'pop', 'flip', 'type'],
+    native: [],
     map: [
       [/type|typing|scramble|matrix|odometer|count|dither|hatch|brush|ink|stroke|draw|print|register|echo/i, 'type'],
       [/flip|spin|roll|fold|card|cylinder|spiral|tilt|skew|rotate|unroll|fan|zipper/i, 'flip'],
