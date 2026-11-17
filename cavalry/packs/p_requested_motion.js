@@ -247,7 +247,11 @@ reg('hold', 'tzKernNudge', function (c) {
   return function (s, g, all, frame) {
     var q = choice(frame);
     if (!q.row) return;
-    var index = q.row.glyphs.indexOf(g);
+    /* C.text and the sampler may hold different objects for the same glyph; match by stable indices. */
+    var index = -1;
+    for (var gi = 0; gi < q.row.glyphs.length; gi++) {
+      if (q.row.glyphs[gi].i === g.i && q.row.glyphs[gi].li === g.li) { index = gi; break; }
+    }
     if (index < 0) return;
     var delta = (index >= q.gap ? 0.5 : -0.5) * q.amount;
     if (node.vertical) s.dy += delta; else s.dx += delta;

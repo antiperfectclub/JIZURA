@@ -114,35 +114,39 @@ deterministic seed is carried; no new random values are drawn.
 | --- | --- | --- |
 | layout | `center`, `vcols`, `dictionary`, `xbTwistFrames` | for hand-authored/AE assemblies; browser exports use captured `graphics` |
 | enter | `xgComet`, `tyKeyFirst` | comet trails are eight real delayed glyph copies |
-| exit | `xjFocusPull`, `xiPlateCarry`, `knCloseGap` | blur/clip need a verified host profile (below) |
+| exit | `xjFocusPull`, `xiPlateCarry`, `knCloseGap` | clip uses the documented deformer; blur needs a host profile (below) |
 | hold | `tzKernNudge`, `tzCounterRules` | kerning ticks and counter rules are real paths |
 | bg | `skyline`, `xpRingDots` | two parallax city planes with windows; concentric dot rings |
 | treat | `inline`, `outlineOffset`, `xoDoublePrint` | real glyph copies, not underline/box aliases |
+| decor | `romajiLine`, `xlLadder`, `tyGlyphBody` | reading line, ladder rails/rungs/cursor, glyph em boxes/baselines/indices |
+| trans | `xqPolyIris` | incoming-cut polygon iris with real deformer clipping |
 
 `skyline` omits the source's feathered horizon glow. `xoDoublePrint` rotates per glyph rather than around the
-whole line. `xiPlateCarry` clips through a Java-Script Deformer; `xjFocusPull` emits a semantic blur node.
-Treatments clone the exported glyph layers, so a clip or blur deformer created by another recipe is not copied
-onto those clones.
+whole line. `xiPlateCarry` and `xqPolyIris` clip through the documented JavaScript Deformer; `xjFocusPull`
+emits a semantic blur node. Treatments clone the exported glyph layers, so a clip or blur deformer created by
+another recipe is not copied onto those clones. `romajiLine` rejects kanji without `source.romaji` or
+`params.text` instead of inventing a reading. `xlLadder` and `tyGlyphBody` are native reconstructions whose
+parameter conformance with the AE formulas is still pending.
 
-### Host profiles for the two unverified APIs
+### Host profile for the unverified blur layer
 
-The JavaScript Deformer expression globals (`n0`, `def`) and the Gaussian-blur layer type have not been checked
-against a running Cavalry in this build. Both are opt-in and fail with a named error when absent; no faded or
-unclipped substitute is drawn:
+Clip deformers use the documented `javaScriptDeformer` layer type by default and write a data-only
+`Path.intersect()` expression. The expression globals (`n0`, `def`) still have not been exercised against a
+running Cavalry in this build. A different verified deformer type can be supplied, and the Gaussian-blur layer
+type remains opt-in; without it the build fails instead of drawing an unblurred substitute:
 
 ```js
 JZCavalry.run(assembly, {
   hostProfile: {
-    javaScriptDeformer: { verified: true, layerType: 'JavaScript Deformer' },
+    javaScriptDeformer: { layerType: 'javascriptDeformer' }, // optional override
     gaussianBlur: { verified: true, layerType: 'Blur', radius: 'radius', input: 'input' }
   }
 });
 ```
 
-Without the matching profile:
+Without the blur profile:
 
 ```
-Clip deformer requires hostProfile.javaScriptDeformer {verified:true, layerType}. No substitute was applied.
 Gaussian blur requires hostProfile.gaussianBlur {verified:true, layerType, radius, input}. No substitute was applied.
 ```
 
@@ -156,10 +160,10 @@ The dialog lists every known difference before download:
 - **Approximations / port notes (amber)** — a native port that differs from the AE recipe (glyph-bounds pivot,
   frame-sampled formulas, per-glyph print pivot). Supported, but not pixel-identical.
 - **Not built (red)** — a preset with no native recipe, HUD, global event FX, ghosts/glow/texture, screen FX,
-  transitions and `fx`. These stay in the JSON and block exact-only export.
+  transitions other than `xqPolyIris`, and `fx`. These stay in the JSON and block exact-only export.
 - **Host checks (muted)** — manual Composition Settings, installed font style names, Y axis / rotation
   direction / glyph bounds, letter tracking, line leading, left/right bbox anchoring, vertical glyph rotation,
-  on-twos (koma) sampling, audio, and the graphics z-order.
+  on-twos (koma) sampling, audio, the graphics z-order, and deformer render appearance.
 
 Layouts that keep moving over the cut are exported as a still near the end and reported. Layouts that throw
 during capture fall back to a centred block with the original error in `blockingWarnings`.
@@ -186,16 +190,18 @@ can be called verified.
 | `cavalry/native/10_graph.js` | graph nodes, path validation, text round-trip, rollback, emit |
 | `cavalry/native/20_components.js` | glyph placement and editable-path components |
 | `cavalry/native/25_recipe_tools.js` | shared math, camera helpers, sampler registration |
-| `cavalry/native/26_recipe_components.js` | requested-package helpers; clip/blur extensions (profile-gated) |
-| `cavalry/native/30_assembly.js` | preflight, cut assembly, dispatch, camera rig, report |
+| `cavalry/native/26_recipe_components.js` | requested-package helpers; clip/blur extensions |
+| `cavalry/native/27_registry_bridge.js` | `JZPresets` view over `JZNative`; scene-space transform and clip tools |
+| `cavalry/native/30_assembly.js` | preflight, cut assembly, deferred cut-pair transitions, camera rig, report |
 | `cavalry/native/browser_adapter.js` | browser assembly → v3 native payload + glyphs + words |
-| `cavalry/packs/*.js` | native recipes: geometry, motion, hold, camera, x2 packs, requested packs |
+| `cavalry/packs/*.js` | native recipes: geometry, motion, hold, camera, x2 packs, requested packs (motion/backgrounds/treatments/layouts/decor/transitions) |
 | `cavalry/bridge.js` | optional `WebServer`/`WebClient` handoff |
 | `cavalry/panel.js`, `cavalry/loader.js` | dockable panel and one-shot loader UI |
 
-The removed `presets.js`, `runtime.js`, `families.js`, `host-values.js` and `procedural.js` are superseded:
-`10_graph.js` validates finite host values, empty paths and Unicode round-trips, and `25_recipe_tools.js` owns
-deterministic seeded math. Keeping a second, unexercised copy would make the two drift.
+The old `presets.js`, `runtime.js`, `families.js`, `host-values.js` and `procedural.js` files are removed.
+`JZPresets` is now a thin view over `JZNative` (same definition object, no copy), so a second registry cannot
+drift. `10_graph.js` validates finite host values, empty paths and Unicode round-trips, and
+`25_recipe_tools.js` owns deterministic seeded math.
 
 `build_cavalry.py` writes `src/11r_cavalry.js` (page bundle), `JIZURA_CV.js` / `dist/cavalry/JIZURA_CV.js`
 (panel), `JIZURA_CV_Loader.js` / `dist/cavalry/JIZURA_CV_Loader.js` (loader), `dist/cavalry/build-report.json`
@@ -211,18 +217,18 @@ and `dist/cavalry/build-manifest.json`. Each dist file is self-contained.
   "buildId": "…",
   "modules": ["native/00_registry.js", "…", "native/30_assembly.js"],
   "recipes": { "cam": { "panL": { "exact": false, "hostVerified": false, "source": "…", "scope": "cut-camera" } } },
-  "coverage": { "layout": { "method": "capture", "registered": ["graphics"], "blockingMissing": [] } },
+  "coverage": { "layout": { "method": "native", "registered": ["graphics", "center", "…"], "blockingMissing": ["accordion", "…"] } },
   "catalog": { "total": 1717, "groups": { "layout": { "count": 366, "notPorted": 366 } } },
-  "blockingMissing": 1257,
+  "blockingMissing": 1613,
   "status": "preview",
   "hostVerified": false,
   "renderVerified": false
 }
 ```
 
-- `method: "capture"` for layout: the real renderer runs, so a layout name never needs its own builder. Its
-  `missing` list is reported for inventory but is not blocking.
-- `method: "native"` for every other group: `blockingMissing` equals `missing`.
+- Every group uses `method: "native"`; `blockingMissing` equals `missing`.
+- Browser cuts resolve through the captured `graphics` recipe, but that is an export path, not a native
+  implementation of each layout name. An unregistered layout name still counts as unported in the inventory.
 - `release` refuses to build while `blockingMissing > 0`.
 
 ### AE catalog
@@ -243,21 +249,23 @@ does, not a claim that Cavalry implements it. Outputs `cavalry/catalog/ae-preset
 python3 build_cavalry.py          # bundles + build-report.json + build-manifest.json
 python3 build_cavalry.py --check  # fail if any generated file is stale
 node tools/test_cavalry_export.js # contracts: capture, graph, packs, catalog, panel, loader
+node cavalry/tools/test_requested_native.js # registry identity, 46 recipe/graph checks
 python3 build.py --dev            # page HTML with the regenerated src/11r_cavalry.js
 ```
 
-The build also proves every requested recipe is executable and present in the manifest before writing outputs.
-The tests run each new recipe at least once against a mock host. They do not replace rendering the file in
-Cavalry: `hostVerified` and `renderVerified` stay false.
+The build also proves every requested recipe is executable, present in the manifest, and the same definition
+via `JZPresets` before writing outputs. The tests run each new recipe at least once against a mock host. They do
+not replace rendering the file in Cavalry: `hostVerified` and `renderVerified` stay false.
 
 ## Deliberately not built yet
 
-1. The remaining AE names (from the catalog): enter 227, exit 208, hold 94, bg 127, cam 33, treat 116, decor 258,
-   trans 56, fx 138. `trans` and `fx` have no native recipe at all.
+1. The remaining AE names (from the catalog): layout 360, enter 227, exit 208, hold 94, bg 127, cam 33,
+   treat 116, decor 255, trans 55, fx 138. `fx` still has no native recipe.
 2. Real host verification of attribute paths, `api.getBoundingBox`, text metrics, `WebServer`/`WebClient`, the
    JavaScript Deformer globals and the blur layer type.
 3. The source's feathered horizon glow (`skyline`), whole-line print pivot (`xoDoublePrint`), and AE Echo's exact
-   sampling (`xgComet` uses frame-based delayed copies).
+   sampling (`xgComet` uses frame-based delayed copies). `xlLadder` and `tyGlyphBody` are reconstructions whose
+   original formula conformance is pending.
 4. Global events, HUD, audio embedding, ghosts/glow/texture and screen FX. They are reported, never faked.
 5. A negotiated `fallback` mode. The data shape keeps the slot, but the current registry is exact-only.
 

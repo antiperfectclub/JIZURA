@@ -44,20 +44,20 @@ for (const module of manifest.modules) {
   assert(bundle.includes(read(module)), 'browser bundle is stale: missing ' + module);
   assert(J.Cavalry.runtimeSource.includes(read(module)), 'host runtime is stale: missing ' + module);
 }
-for (const gone of ['var JZPack', '})(JZPack)', 'var JZPresets', 'var JZFamilies', 'JZPresets.resolve']) {
-  assert(!J.Cavalry.runtimeSource.includes(gone), 'removed alias runtime still present: ' + gone);
-}
+assert(!J.Cavalry.runtimeSource.includes('var JZPack'), 'the removed JZPack runtime must not return');
+assert(J.Cavalry.runtimeSource.includes('var JZPresets'), 'JZPresets must be the compatibility view');
+assert(J.Cavalry.runtimeSource.includes('var JZSceneTools'), 'scene clipping tools must ship');
 for (const name of ['bridge.js', 'panel.js']) assert(J.Cavalry.panelSource.includes(read(name)));
 for (const name of ['bridge.js', 'loader.js']) assert(J.Cavalry.loaderSource.includes(read(name)));
 assert.equal(J.Cavalry.buildInfo.buildId, manifest.buildId, 'page build id must match the host build');
 assert.equal(J.Cavalry.buildInfo.hostVerified, false);
 assert.equal(J.Cavalry.buildInfo.renderVerified, false);
 
-/* ---- 2. build report: layout is captured, every other group is a native port ---- */
-assert.equal(report.coverage.layout.method, 'capture');
-assert.equal(report.coverage.layout.blockingMissing.length, 0, 'layout names are captured, not ported one by one');
+/* ---- 2. build report: every group is a native port; layout capture is a separate export path ---- */
+assert.equal(report.coverage.layout.method, 'native');
+assert.equal(report.coverage.layout.blockingMissing.length, report.coverage.layout.missing.length,
+  'an unregistered layout name is still an unported native recipe');
 for (const [group, row] of Object.entries(report.coverage)) {
-  if (group === 'layout') continue;
   assert.equal(row.method, 'native', group + ' must be a native port');
   assert.deepEqual(row.blockingMissing, row.missing, group + ' blocking list must equal the missing names');
 }
@@ -152,6 +152,8 @@ assert.equal(a.capabilities.shapes, true);
 assert(a.capabilities.presets.cam.includes('panL'));
 assert(!a.capabilities.presets.cam.includes('push'), 'exact-only: no family alias is advertised');
 assert(a.capabilities.presets.hold.includes('breathe'));
+assert.equal(a.capabilities.transitions, true);
+assert(a.capabilities.presets.trans.includes('xqPolyIris'));
 assert.deepEqual(Array.from(a.cuts[0].presets.enter && [a.cuts[0].presets.enter.name]), ['fade']);
 assert.equal(a.cuts[0].presets.scheme, 0);
 assert.equal(a.cuts[0].presets.seed, 42);
@@ -202,17 +204,19 @@ assert.equal(J.Cavalry.assemble({ plan: fresh({ hold: 'breathe' }) }).presetRepo
 assert.equal(J.Cavalry.assemble({ plan: fresh({ enter: 'slide' }) }).presetReport.built['enter:slide'], 1);
 const clipWarning = J.Cavalry.assemble({ plan: fresh({ exit: 'xiPlateCarry' }) });
 assert.equal(clipWarning.presetReport.built['exit:xiPlateCarry'], 1);
-assert(clipWarning.hostChecks.some(w => /hostProfile\.javaScriptDeformer/.test(w)));
+assert(clipWarning.hostChecks.some(w => /documented JavaScript Deformer/.test(w)));
 const blurWarning = J.Cavalry.assemble({ plan: fresh({ exit: 'xjFocusPull' }) });
 assert.equal(blurWarning.presetReport.built['exit:xjFocusPull'], 1);
 assert(blurWarning.hostChecks.some(w => /hostProfile\.gaussianBlur/.test(w)));
 assert.equal(J.Cavalry.assemble({ plan: fresh({ decor: [{ id: 'cropMarks' }] }) }).presetReport.built['decor:cropMarks'], 1);
-const dropped = J.Cavalry.assemble({ plan: fresh({ hold: 'nope', enter: 'alsonope', decor: [{ id: 'crosshair' }], bg: 'grain', treat: 'grain', trans: 'wipe' }) });
-for (const key of ['hold', 'enter', 'decor', 'bg', 'treat', 'trans']) {
+const dropped = J.Cavalry.assemble({ plan: fresh({ hold: 'nope', enter: 'alsonope', decor: [{ id: 'crosshair' }], bg: 'grain', treat: 'grain', trans: 'wipe' }) });for (const key of ['hold', 'enter', 'decor', 'bg', 'treat', 'trans']) {
   assert(Object.keys(dropped.presetReport.missing).some(k => k.startsWith(key + ':')), key + ' miss must be reported');
 }
 assert(dropped.warnings.length >= dropped.blockingWarnings.length);
 assert.equal(dropped.presetReport.built['exit:fade'], 1);
+const romajiCheck = J.Cavalry.assemble({ plan: fresh({ decor: [{ id: 'romajiLine' }] }) });
+assert(romajiCheck.hostChecks.some(w => /kanji needs an explicit reading/.test(w)));
+assert.equal(romajiCheck.presetReport.built['decor:romajiLine'], 1);
 
 /* ---- 7. capture honesty: fallbacks and moving layouts are named ---- */
 J.LAYOUTS.broken = { render() { throw new Error('boom'); } };
@@ -347,6 +351,7 @@ function nativeAssembly(patch = {}) {
   out.cuts[0].presets.hold = { name: patch.hold || 'still', params: {} };
   out.cuts[0].presets.bg = patch.bg ? { name: patch.bg, params: patch.params || {} } : null;
   out.cuts[0].presets.treat = patch.treat ? { name: patch.treat, params: patch.params || {} } : null;
+  out.cuts[0].presets.decor = (patch.decor || []).map(name => ({ name, params: patch.params || {} }));
   return out;
 }
 const count = (hostRun, type) => [...hostRun.layers.values()].filter(l => l.type === type).length;
@@ -376,14 +381,17 @@ for (const [patch, key] of [[{ enter: 'tyKeyFirst' }, 'enter:tyKeyFirst'], [{ ex
 }
 
 /* clip and blur refuse to guess a host layer type, then build when a verified profile is supplied */
-const clipNoProfile = hostEnv();
-assert.throws(() => clipNoProfile.run(nativeAssembly({ exit: 'xiPlateCarry' })), /Clip deformer requires hostProfile\.javaScriptDeformer/);
-const clipProfile = { javaScriptDeformer: { verified: true, layerType: 'javaScriptDeformer' } };
+const clipDefault = hostEnv();
+const clipDefaultResult = clipDefault.run(nativeAssembly({ exit: 'xiPlateCarry' }));
+assert.equal(clipDefaultResult.report.built['exit:xiPlateCarry'], 1);
+const defaultDeformer = [...clipDefault.layers.values()].find(l => l.type === 'javaScriptDeformer');
+assert(defaultDeformer && defaultDeformer.attrs.expression.includes('intersect'),
+  'the documented JavaScript Deformer is used by default');
+const clipProfile = { javaScriptDeformer: { layerType: 'customDeformer' } };
 const clipped = hostEnv();
 const clippedResult = clipped.run(nativeAssembly({ exit: 'xiPlateCarry' }), { hostProfile: clipProfile });
 assert.equal(clippedResult.report.built['exit:xiPlateCarry'], 1);
-const deformer = [...clipped.layers.values()].find(l => l.type === 'javaScriptDeformer');
-assert(deformer && deformer.attrs.expression.includes('intersect'), 'clip expression is emitted, not a cover shape');
+assert([...clipped.layers.values()].some(l => l.type === 'customDeformer'), 'an explicit host profile overrides the layer type');
 
 const blurNoProfile = hostEnv();
 assert.throws(() => blurNoProfile.run(nativeAssembly({ exit: 'xjFocusPull' })), /Gaussian blur requires hostProfile\.gaussianBlur/);
@@ -421,6 +429,41 @@ assert.equal([...outline.layers.values()].filter(l => l.type === 'textShape' && 
 const doublePrint = hostEnv();
 doublePrint.run(nativeAssembly({ treat: 'xoDoublePrint' }));
 assert.equal(count(doublePrint, 'textShape'), 4, 'one second impression per glyph');
+
+const ladder = hostEnv();
+assert.equal(ladder.run(nativeAssembly({ decor: ['xlLadder'], params: { steps: 4 } })).report.built['decor:xlLadder'], 1);
+assert.equal(graphics(ladder).length, 2 + 5 + 1, 'two rails, five rungs and the cursor');
+const romajiRun = hostEnv();
+romajiRun.run(nativeAssembly({ decor: ['romajiLine'], params: { text: 'toumei na mama' } }));
+assert(named(romajiRun, 'cut-0/Romaji annotation / Placement').length === 1, 'annotation placement is created');
+assert(count(romajiRun, 'textShape') > 2, 'romaji annotation adds text layers');
+const bodyRun = hostEnv();
+bodyRun.run(nativeAssembly({ decor: ['tyGlyphBody'] }));
+assert(graphics(bodyRun).length >= 4, 'one box and one baseline per glyph');
+assert(count(bodyRun, 'textShape') >= 4, 'glyph indices are real text layers');
+
+/* transition: a two-cut assembly clips the incoming cut and extends the outgoing one */
+const transAsm = JSON.parse(JSON.stringify(fullBase));
+transAsm.composition.frameCount = 40;
+const firstCut = transAsm.cuts[0];
+firstCut.end = 20;
+firstCut.sourceEnd = 20;
+const secondCut = JSON.parse(JSON.stringify(firstCut));
+secondCut.id = 'cut-1';
+secondCut.start = 20;
+secondCut.end = 40;
+secondCut.origin = 20;
+secondCut.sourceEnd = 40;
+secondCut.nodes.forEach((n, i) => { n.id = 'cut-1-text-' + i; });
+secondCut.presets.trans = { name: 'xqPolyIris', params: { n: 5 }, frames: 6 };
+transAsm.cuts = [firstCut, secondCut];
+const transHost = hostEnv();
+const transResult = transHost.run(transAsm);
+assert.equal(transResult.report.built['trans:xqPolyIris'], 1);
+assert([...transHost.layers.values()].filter(l => l.type === 'javaScriptDeformer').length > 0, 'iris clipping is real');
+const firstGroup = [...transHost.layers.values()].find(l => l.name === 'cut-0');
+assert(firstGroup.end >= 25, 'the outgoing cut is held under the iris (end=' + firstGroup.end + ')');
+assert(named(transHost, 'Iris edge').length === 2, 'iris edge paths are emitted');
 
 
 /* rollback: a corrupt Unicode read-back must remove everything this build created */

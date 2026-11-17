@@ -1,9 +1,9 @@
 /* Native recipe components shared by the requested packs.
  * Loaded after 25_recipe_tools.js and before every pack.
  *
- * Two host APIs cannot be guessed: the JavaScript Deformer expression globals and the Gaussian-blur
- * layer type. Both are opt-in through `hostProfile`; without a verified profile the build fails with a
- * named error instead of drawing an unclipped/unblurred substitute.
+ * The JavaScript Deformer uses its documented native layer type; a different verified type can be supplied
+ * through `hostProfile`. The Gaussian-blur layer type remains opt-in through `hostProfile`; without it the
+ * build fails instead of drawing an unblurred substitute.
  */
 var JZRecipeComponents = (function (N, G, C, R) {
 'use strict';
@@ -161,13 +161,13 @@ function glyphClip(points, g, s) {
 }
 
 /* The deformer expression is data, not arbitrary assembly-supplied JavaScript. Its globals (`n0`, `def`)
- * follow the documented JavaScript Deformer module, but have not been checked against a running Cavalry
- * in this build, so it is emitted only with an explicit verified host profile. */
+ * follow the documented JavaScript Deformer module. The documented layer type is the default; a different
+ * verified type can be supplied through hostProfile. Actual host/render verification is still pending. */
 function clipDeformer(graph, target, frames, difference, label, options) {
-  var profile = options && options.hostProfile && options.hostProfile.javaScriptDeformer;
-  if (!profile || profile.verified !== true || !profile.layerType) {
-    throw new Error('Clip deformer requires hostProfile.javaScriptDeformer {verified:true, layerType}. ' +
-      'No substitute was applied.');
+  var profile = options && options.hostProfile && options.hostProfile.javaScriptDeformer ||
+    { layerType: 'javaScriptDeformer' };
+  if (!profile || typeof profile.layerType !== 'string' || !profile.layerType) {
+    throw new Error('Invalid JavaScript Deformer layer profile');
   }
   var n = graph.byId[target], data = JSON.stringify(frames);
   var method = difference ? 'difference' : 'intersect';

@@ -28,10 +28,10 @@ C.CAPABILITIES = Object.freeze({
   text: ['multiline'],
   /* preset names are always exported; only exact native names are built */
   presets: Object.freeze({ enter: PRESETS('enter'), exit: PRESETS('exit'), hold: PRESETS('hold'), bg: PRESETS('bg'),
-    cam: PRESETS('cam'), trans: [], treat: PRESETS('treat'), decor: PRESETS('decor') }),
+    cam: PRESETS('cam'), trans: PRESETS('trans'), treat: PRESETS('treat'), decor: PRESETS('decor') }),
   shapes: true, decoration: PRESETS('decor').length > 0, treatments: PRESETS('treat').length > 0,
   backgroundGraphics: PRESETS('bg').length > 0, camera: PRESETS('cam').length > 0,
-  transitions: false, effects: false, hud: false, audio: false, timing: 'manual'
+  transitions: PRESETS('trans').length > 0, effects: false, hud: false, audio: false, timing: 'manual'
 });
 C.families = FAM;
 
@@ -361,13 +361,21 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
       }
       /* These ports are exact, but their host layer type is not verified yet. Say so at export time,
          not only when the build stops. */
-      if (cut.exit === 'xiPlateCarry') host(label + 'exit "xiPlateCarry" needs hostProfile.javaScriptDeformer {verified:true}; the build stops without it.');
+      if (cut.exit === 'xiPlateCarry') host(label + 'exit "xiPlateCarry" uses the documented JavaScript Deformer; its render appearance is not verified yet.');
       if (cut.exit === 'xjFocusPull') host(label + 'exit "xjFocusPull" needs hostProfile.gaussianBlur {verified:true}; the build stops without it.');
-      (cut.decor || []).forEach(d => hit('decor', typeof d === 'string' ? d : d && (d.id || d.name)));
+      (cut.decor || []).forEach(d => {
+        const name = typeof d === 'string' ? d : d && (d.id || d.name);
+        hit('decor', name);
+        if (name === 'romajiLine') host(label + 'romajiLine: kana is converted; kanji needs an explicit reading (params.text or source.romaji).');
+      });
       if (cut.treat && cut.treat !== 'none') hit('treat', cut.treat);
       if (cut.bg && cut.bg !== 'none') hit('bg', cut.bg);
       if (cut.cam && cut.cam !== 'none') hit('cam', cut.cam);
       if (cut.trans) hit('trans', cut.trans);
+      if (cut.trans && i === 0) warn(label + 'transition "' + cut.trans + '" needs a preceding cut; the build will stop.');
+      if (cut.trans && i > 0 && p.cuts[i - 1].end < cut.start) {
+        warn(label + 'transition "' + cut.trans + '" cannot bridge a timeline gap; the build will stop.');
+      }
       if (cut.morph) warn(label + 'morph → hard cut');
 
       out.cuts.push({

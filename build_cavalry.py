@@ -20,8 +20,8 @@ def protected(root):
     return {p.relative_to(root).as_posix():sha(p.read_bytes()) for p in sorted(paths)}
 def module_order(root):
     base=root/'cavalry'
-    core=['native/00_registry.js','native/10_graph.js','native/20_components.js','native/25_recipe_tools.js','native/26_recipe_components.js']
-    extensions=sorted(p.relative_to(base).as_posix() for p in (base/'native').glob('*.js') if p.name not in ('00_registry.js','10_graph.js','20_components.js','25_recipe_tools.js','26_recipe_components.js','30_assembly.js','browser_adapter.js'))
+    core=['native/00_registry.js','native/10_graph.js','native/20_components.js','native/25_recipe_tools.js','native/26_recipe_components.js','native/27_registry_bridge.js']
+    extensions=sorted(p.relative_to(base).as_posix() for p in (base/'native').glob('*.js') if p.name not in ('00_registry.js','10_graph.js','20_components.js','25_recipe_tools.js','26_recipe_components.js','27_registry_bridge.js','30_assembly.js','browser_adapter.js'))
     packs=sorted(p.relative_to(base).as_posix() for p in (base/'packs').glob('p_*.js'))
     if not packs: raise ValueError('No native recipe packs found')
     names=core+extensions+packs+['native/30_assembly.js']
@@ -73,14 +73,11 @@ def coverage(manifest,refs,catalog):
     for g in GROUPS:
         registered=sorted(manifest[g])
         missing=sorted(set(refs[g])-set(registered))
-        # Layout is not a name-per-recipe port: the real renderer is executed and its text + paths are
-        # captured, so a layout name never needs its own native builder.
-        method='capture' if g=='layout' else 'native'
         row={'registered':registered,'referenceCount':len(refs[g]),'missing':missing,
-             'additional':sorted(set(registered)-set(refs[g])),'method':method,
-             'blockingMissing':[] if method=='capture' else missing}
-        if method=='capture':
-            row['note']='Reference names are captured by running the real layout renderer; only the graphics recipe is registered.'
+             'additional':sorted(set(registered)-set(refs[g])),
+             # A layout is still an unported native recipe unless its own name is registered; the
+             # browser's graphics capture is a separate export path, not a native implementation.
+             'method':'native','blockingMissing':missing}
         if catalog:
             names=set(catalog['groups'][g])
             row['catalog']={'count':len(names),'registeredInCatalog':len(names&set(registered)),
@@ -109,8 +106,9 @@ def assemble(root,release=False):
     required={'layout':['center','vcols','dictionary','xbTwistFrames'],
               'enter':['xgComet','tyKeyFirst'],'exit':['xjFocusPull','xiPlateCarry','knCloseGap'],
               'hold':['tzKernNudge','tzCounterRules'],'bg':['skyline','xpRingDots'],
-              'treat':['inline','outlineOffset','xoDoublePrint']}
-    probe=body+'\n(function(){var R='+literal(required)+';Object.keys(R).forEach(function(g){R[g].forEach(function(k){var d=JZNative.get(g,k);if(!d||typeof d.build!=="function")throw new Error("Missing executable recipe: "+g+":"+k);});});process.stdout.write(JSON.stringify(JZNative.manifest()));})();'
+              'treat':['inline','outlineOffset','xoDoublePrint'],
+              'decor':['xlLadder','romajiLine','tyGlyphBody'],'trans':['xqPolyIris']}
+    probe=body+'\n(function(){var R='+literal(required)+';Object.keys(R).forEach(function(g){R[g].forEach(function(k){var d=JZNative.get(g,k);if(!d||typeof d.build!=="function")throw new Error("Missing executable recipe: "+g+":"+k);if(JZPresets.get(g,k)!==d)throw new Error("Registry divergence: "+g+":"+k);});});process.stdout.write(JSON.stringify(JZNative.manifest()));})();'
     manifest=json.loads(run_node(node,probe,'Native registration'))
     absent=['%s:%s'%(g,k) for g,names in required.items() for k in names if k not in manifest[g]]
     if absent: raise ValueError('Requested native recipes missing: '+', '.join(absent))

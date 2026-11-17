@@ -27,21 +27,24 @@ function preflight(a){
   return {required:rows,missing:missing,manifest:N.manifest(),hostVerified:false,renderVerified:false};
 }
 function compile(a,options){
-  options=options||{};var report=preflight(a);if(report.missing.length){var e=new Error('Unimplemented native recipes: '+report.missing.map(function(r){return r.group+':'+r.name+' ['+r.cut+']';}).join(', '));e.report=report;throw e;}
+  options=options||{};
+  /* Recipes can extend clips or add transition layers; never mutate the caller's assembly. */
+  a=JSON.parse(JSON.stringify(a));
+  var report=preflight(a);if(report.missing.length){var e=new Error('Unimplemented native recipes: '+report.missing.map(function(r){return r.group+':'+r.name+' ['+r.cut+']';}).join(', '));e.report=report;throw e;}
   if(a.events&&a.events.length&&!N.get('fx',(a.events[0].type||a.events[0].name)))throw new Error('Unsupported events');
   if(a.style.glow||a.style.ghost||Object.keys(a.style.texture||{}).some(function(k){return a.style.texture[k];}))throw new Error('Native style effects are not implemented');
   if(a.style.fx&&['glitch','texture','chroma'].some(function(k){return a.style.fx[k]>0;}))throw new Error('Native screen FX are not implemented');
   var graph=new G.Graph(a.composition), root=graph.add('null','JIZURA / '+(a.title||''),null,0,a.composition.frameCount,{});
-  var built={}, notices=[];
-  function dispatch(group,p,c){var k=name(p);if(!k||k==='none')return null;var d=N.get(group,k);if(!d)throw new Error('No native builder '+group+':'+k);
-    var out=d.build(Object.assign({},c,{preset:typeof p==='string'?{name:p}:p}));built[group+':'+k]=1;return out;}
+  var built={}, notices=[], contexts=[];
+  function dispatch(group,p,c){var k=name(p);if(!k||k==='none')return null;var out=JZPresets.build(group,p,c);if(out===null)return null;built[group+':'+k]=1;return out;}
   a.cuts.forEach(function(cut){
+    var firstLayer=graph.layers.length;
     var P=cut.presets||{},group=graph.add('null',cut.id,root,cut.start,cut.end,{}),sc=a.style.schemes[P.scheme||0]||a.style.schemes[0];
     /* three-node camera rig so shear can be decomposed into rotation > scale > rotation/scale (see packs/p_camera.js) */
     var outer=graph.add('null',cut.id+' / Camera Rotation',group,cut.start,cut.end,{});
     var stretch=graph.add('null',cut.id+' / Camera Stretch',outer,cut.start,cut.end,{});
     var cam=graph.add('null',cut.id+' / Camera',stretch,cut.start,cut.end,{});
-    var ctx={graph:graph,assembly:a,cut:cut,comp:a.composition,parent:cam,rig:cam,camOuter:outer,camStretch:stretch,sc:sc,options:options,texts:[]};
+    var ctx={graph:graph,assembly:a,cut:cut,comp:a.composition,parent:cam,rig:cam,camOuter:outer,camStretch:stretch,sc:sc,options:options,texts:[],sceneRoot:root};
     if(cut.background)C.shape(graph,cut,cut.id+' / Background',group,G.rect(-a.composition.width/2,-a.composition.height/2,a.composition.width,a.composition.height),cut.background);
     dispatch('bg',P.bg,ctx);
     dispatch('layout',cut.layoutInstruction||{name:cut.source.layout},ctx);
@@ -53,7 +56,14 @@ function compile(a,options){
       if(!node.glyphs)notices.push(node.id+': host ink metrics used; web advance metrics absent');
     });
     dispatch('treat',P.treat,ctx);(P.decor||[]).forEach(function(p){dispatch('decor',p,ctx);});dispatch('cam',P.cam,ctx);
-    if(P.trans)dispatch('trans',P.trans,ctx);
+    /* Transitions are cut-pair recipes: they need the next cut assembled and must not be built in cut order. */
+    ctx.layerIds=graph.layers.slice(firstLayer).map(function(n){return n.id;});
+    contexts.push(ctx);
+  });
+  contexts.forEach(function(ctx,index){
+    ctx.previous=index?contexts[index-1]:null;
+    var transition=(ctx.cut.presets||{}).trans;
+    if(transition)dispatch('trans',transition,ctx);
   });
   (a.events||[]).forEach(function(e){dispatch('fx',{name:e.type||e.name,params:e},{graph:graph,assembly:a,comp:a.composition,parent:root,options:options});});
   graph.validate();report.built=built;report.fallback={};report.errors=[];report.notices=notices;report.createdLayers=graph.layers.length;report.connections=graph.edges.length;
