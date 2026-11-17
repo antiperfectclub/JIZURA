@@ -37,8 +37,11 @@ function compile(a,options){
     var out=d.build(Object.assign({},c,{preset:typeof p==='string'?{name:p}:p}));built[group+':'+k]=1;return out;}
   a.cuts.forEach(function(cut){
     var P=cut.presets||{},group=graph.add('null',cut.id,root,cut.start,cut.end,{}),sc=a.style.schemes[P.scheme||0]||a.style.schemes[0];
-    var cam=graph.add('null',cut.id+' / Camera',group,cut.start,cut.end,{});
-    var ctx={graph:graph,assembly:a,cut:cut,comp:a.composition,parent:cam,rig:cam,sc:sc,options:options,texts:[]};
+    /* three-node camera rig so shear can be decomposed into rotation > scale > rotation/scale (see packs/p_camera.js) */
+    var outer=graph.add('null',cut.id+' / Camera Rotation',group,cut.start,cut.end,{});
+    var stretch=graph.add('null',cut.id+' / Camera Stretch',outer,cut.start,cut.end,{});
+    var cam=graph.add('null',cut.id+' / Camera',stretch,cut.start,cut.end,{});
+    var ctx={graph:graph,assembly:a,cut:cut,comp:a.composition,parent:cam,rig:cam,camOuter:outer,camStretch:stretch,sc:sc,options:options,texts:[]};
     if(cut.background)C.shape(graph,cut,cut.id+' / Background',group,G.rect(-a.composition.width/2,-a.composition.height/2,a.composition.width,a.composition.height),cut.background);
     dispatch('bg',P.bg,ctx);
     dispatch('layout',cut.layoutInstruction||{name:cut.source.layout},ctx);
