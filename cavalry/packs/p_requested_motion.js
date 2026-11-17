@@ -7,6 +7,7 @@
 var E = R.E;
 var cl = R.clamp;
 var mix = R.mix;
+function motionAmount(c){var fx=c.assembly.style.fx||{};return fx.motion==null?.7:N.finite(fx.motion,'motion');}
 
 function reg(group, key, build, differences) {
   N.register(group, key, {
@@ -68,7 +69,7 @@ function keyIndex(gs) {
 motion('enter', 'xgComet', function (c) {
   c.node._jzComet = true;
   var vertical = !!c.node.vertical;
-  var distance = c.node.size * 3 * (0.7 + 0.5 * R.motion(c));
+  var distance = c.node.size * 3 * (0.7 + 0.5 * motionAmount(c));
   var dir = vertical ? (N.random(c.node.seed || 0, 49, 5) < 0.5 ? -1 : 1) : -1;
   return function (p) {
     var offset = distance * (1 - E.outExpo(p / 0.35));
@@ -218,7 +219,7 @@ motion('exit', 'xiPlateCarry', function (c) {
 
 reg('hold', 'tzKernNudge', function (c) {
   var node = c.node, gs = V.glyphs(c, node), rows = V.spans(gs, !!node.vertical);
-  var mk = Math.min(1.3, R.motion(c) / 0.7);
+  var mk = Math.min(1.3, motionAmount(c) / 0.7);
   var amplitude = node.size * 0.09 * mk, seed = node.seed || 0;
   function choice(frame) {
     var e = V.envelope(c, node, frame), tt = e.t / 1.3;
@@ -256,7 +257,7 @@ reg('hold', 'tzKernNudge', function (c) {
 reg('hold', 'tzCounterRules', function (c) {
   var node = c.node, rows = V.spans(V.glyphs(c, node), !!node.vertical).slice(0, 4);
   var parent = V.local(c, node, 'Counter rules');
-  var mk = Math.min(1.3, R.motion(c) / 0.7), seed = Math.abs(node.seed || 0) % 7;
+  var mk = Math.min(1.3, motionAmount(c) / 0.7), seed = Math.abs(node.seed || 0) % 7;
   rows.forEach(function (row, index) {
     [-1, 1].forEach(function (side) {
       var length = row.a1 - row.a0, segment = length * 0.3, cross = row.c + side * node.size * 0.64;

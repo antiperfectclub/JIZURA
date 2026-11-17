@@ -326,6 +326,96 @@ for (let i = 0; i < sx.length; i++) {
 assert(sx.some(k => Math.abs(k.data['scale.x'] - 1) > 1e-4), 'tzItalicSet actually shears');
 assert.equal(camResult.report.built['cam:tzItalicSet'], 1);
 
+/* ---- 8b. requested packs: run every added recipe once, never only check its name ---- */
+const fullBase = J.Cavalry.assemble({ plan });
+function nativeAssembly(patch = {}) {
+  const out = JSON.parse(JSON.stringify(fullBase));
+  out.style.fx.motion = 0.8;
+  out.cuts[0].graphics = [];
+  out.cuts[0].nodes = [JSON.parse(JSON.stringify(fullBase.cuts[0].nodes[0]))];
+  delete out.cuts[0].nodes[0].glyphs;
+  out.cuts[0].layoutInstruction = { name: patch.layout || 'center', params: patch.params || {} };
+  out.cuts[0].presets.enter = { name: patch.enter || 'fade', params: {} };
+  out.cuts[0].presets.exit = { name: patch.exit || 'fade', params: {} };
+  out.cuts[0].presets.hold = { name: patch.hold || 'still', params: {} };
+  out.cuts[0].presets.bg = patch.bg ? { name: patch.bg, params: patch.params || {} } : null;
+  out.cuts[0].presets.treat = patch.treat ? { name: patch.treat, params: patch.params || {} } : null;
+  return out;
+}
+const count = (hostRun, type) => [...hostRun.layers.values()].filter(l => l.type === type).length;
+const graphics = hostRun => [...hostRun.layers.values()].filter(l => l.type === 'editableShape' && !/\/ Background$/.test(l.name));
+const named = (hostRun, part) => [...hostRun.layers.values()].filter(l => String(l.name).includes(part));
+
+for (const layout of ['center', 'vcols', 'dictionary', 'xbTwistFrames']) {
+  const run = hostEnv();
+  assert.doesNotThrow(() => run.run(nativeAssembly({ layout, params: { n: 2, cols: 2, tabY: 0.5 } })), layout + ' must build');
+  assert(count(run, 'textShape') > 0, layout + ' must keep the exported text');
+  if (layout === 'dictionary' || layout === 'xbTwistFrames') assert(graphics(run).length > 0, layout + ' must emit its real graphics');
+}
+const twisted = hostEnv();
+twisted.run(nativeAssembly({ layout: 'xbTwistFrames', params: { n: 2 } }));
+assert.equal(named(twisted, 'Twisted frame').length, 3);
+
+const comet = hostEnv();
+const cometResult = comet.run(nativeAssembly({ enter: 'xgComet' }));
+assert.equal(cometResult.report.built['enter:xgComet'], 1);
+assert.equal(count(comet, 'textShape'), 18, 'two glyphs plus eight trails each');
+assert(named(comet, 'Comet trail 8').length > 0);
+
+for (const [patch, key] of [[{ enter: 'tyKeyFirst' }, 'enter:tyKeyFirst'], [{ exit: 'knCloseGap' }, 'exit:knCloseGap']]) {
+  const run = hostEnv();
+  const result = run.run(nativeAssembly(patch));
+  assert.equal(result.report.built[key], 1, key + ' must execute');
+}
+
+/* clip and blur refuse to guess a host layer type, then build when a verified profile is supplied */
+const clipNoProfile = hostEnv();
+assert.throws(() => clipNoProfile.run(nativeAssembly({ exit: 'xiPlateCarry' })), /Clip deformer requires hostProfile\.javaScriptDeformer/);
+const clipProfile = { javaScriptDeformer: { verified: true, layerType: 'javaScriptDeformer' } };
+const clipped = hostEnv();
+const clippedResult = clipped.run(nativeAssembly({ exit: 'xiPlateCarry' }), { hostProfile: clipProfile });
+assert.equal(clippedResult.report.built['exit:xiPlateCarry'], 1);
+const deformer = [...clipped.layers.values()].find(l => l.type === 'javaScriptDeformer');
+assert(deformer && deformer.attrs.expression.includes('intersect'), 'clip expression is emitted, not a cover shape');
+
+const blurNoProfile = hostEnv();
+assert.throws(() => blurNoProfile.run(nativeAssembly({ exit: 'xjFocusPull' })), /Gaussian blur requires hostProfile\.gaussianBlur/);
+const blurProfile = { gaussianBlur: { verified: true, layerType: 'blur', radius: 'radius', input: 'input' } };
+const blurred = hostEnv();
+const blurredResult = blurred.run(nativeAssembly({ exit: 'xjFocusPull' }), { hostProfile: blurProfile });
+assert.equal(blurredResult.report.built['exit:xjFocusPull'], 1);
+assert([...blurred.layers.values()].some(l => l.type === 'blur'), 'blur is a real host layer with keys');
+assert(blurred.keys.some(k => 'radius' in k.data));
+assert(blurred.connects.some(c => c[1] === 'id' && c[3] === 'input'));
+
+const kern = hostEnv();
+assert.equal(kern.run(nativeAssembly({ hold: 'tzKernNudge' })).report.built['hold:tzKernNudge'], 1);
+assert(graphics(kern).length >= 1, 'kerning tick is a real line');
+const rules = hostEnv();
+assert.equal(rules.run(nativeAssembly({ hold: 'tzCounterRules' })).report.built['hold:tzCounterRules'], 1);
+assert.equal(graphics(rules).length, 2, 'one counter rule per side of the line');
+
+const rings = hostEnv();
+assert.equal(rings.run(nativeAssembly({ bg: 'xpRingDots' })).report.built['bg:xpRingDots'], 1);
+assert.equal(graphics(rings).length, 7, 'the 4:3 composition fits seven concentric dot rings');
+const sky = hostEnv();
+assert.equal(sky.run(nativeAssembly({ bg: 'skyline' })).report.built['bg:skyline'], 1);
+const skyShapes = [...sky.layers.values()].filter(l => l.type === 'editableShape');
+assert(skyShapes.length >= 2, 'two parallax planes with windows');
+assert(skyShapes.some(l => l.path && l.path.used > 100), 'buildings are one real multi-rect path');
+
+const inline = hostEnv();
+inline.run(nativeAssembly({ treat: 'inline' }));
+assert.equal(count(inline, 'textShape'), 6, 'two stroke copies per glyph');
+const outline = hostEnv();
+outline.run(nativeAssembly({ treat: 'outlineOffset' }));
+assert.equal(count(outline, 'textShape'), 4, 'one offset fill per glyph');
+assert.equal([...outline.layers.values()].filter(l => l.type === 'textShape' && l.fill === false).length, 2, 'source glyphs become outlines');
+const doublePrint = hostEnv();
+doublePrint.run(nativeAssembly({ treat: 'xoDoublePrint' }));
+assert.equal(count(doublePrint, 'textShape'), 4, 'one second impression per glyph');
+
+
 /* rollback: a corrupt Unicode read-back must remove everything this build created */
 const failing = hostEnv({ badText: true });
 const beforeFail = failing.layers.size;
