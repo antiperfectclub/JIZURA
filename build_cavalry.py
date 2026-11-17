@@ -1,186 +1,117 @@
-"""Build the Cavalry script and browser payload without touching the AE pipeline."""
+"""Assemble Cavalry components, explicit native packs, engine and Script UI. AE is read-only."""
 from __future__ import annotations
-
-import argparse
-import hashlib
-import json
-import os
+import argparse, hashlib, json, os
 from pathlib import Path
-import shutil
-import subprocess
-import sys
-import tempfile
+import shutil, subprocess, sys, tempfile
 
-GROUPS = ("layout", "enter", "hold", "exit", "decor", "treat", "bg", "cam", "fx", "trans")
-
-
-def literal(value):
-    return json.dumps(value, ensure_ascii=True, sort_keys=True, separators=(",", ":")).replace("<", "\\u003c")
-
-
-def digest(data):
-    return hashlib.sha256(data).hexdigest()
-
-
+GROUPS = ('layout','enter','hold','exit','decor','treat','bg','cam','fx','trans')
+def literal(v):
+    return json.dumps(v, ensure_ascii=True, sort_keys=True, separators=(',',':')).replace('<', '\\u003c')
+def sha(b):
+    return hashlib.sha256(b).hexdigest()
 def protected(root):
-    paths = set()
-    for pattern in ("ae/**/*", "cep/**/*", "JIZURA_AE*", "JIZURA_CEP*", "build_ae.py", "build_cep.py"):
-        paths.update(p for p in root.glob(pattern) if p.is_file())
-    return {p.relative_to(root).as_posix(): digest(p.read_bytes()) for p in sorted(paths)}
-
-
+    patterns=('ae/**/*','cep/**/*','JIZURA_AE*','JIZURA_CEP*','build_ae.py','build_cep.py')
+    paths={p for pattern in patterns for p in root.glob(pattern) if p.is_file()}
+    return {p.relative_to(root).as_posix():sha(p.read_bytes()) for p in sorted(paths)}
 def module_order(root):
-    base = root / "cavalry"
-    packs = sorted(p.relative_to(base).as_posix() for p in (base / "packs").rglob("*.js"))
-    runtime_modules = ["presets.js"] + packs + ["runtime.js"]
-    allowed = set(runtime_modules)
-    deps = {name: set() for name in runtime_modules}
-    for pack in packs:
-        deps[pack].add("presets.js")
-    deps["runtime.js"].update(["presets.js"] + packs)
-    config = base / "build.json"
+    fixed=['native/00_registry.js','native/10_graph.js','native/20_components.js']
+    packs=sorted(p.relative_to(root/'cavalry').as_posix() for p in (root/'cavalry/packs').glob('p_*.js'))
+    if not packs: raise ValueError('No native recipe packs found')
+    names=fixed+packs+['native/30_assembly.js']; deps={n:set() for n in names}
+    for i,n in enumerate(fixed): deps[n].update(fixed[:i])
+    for n in packs: deps[n].update(fixed)
+    deps[names[-1]].update(names[:-1])
+    config=root/'cavalry/build.json'
     if config.exists():
-        spec = json.loads(config.read_text(encoding="utf-8-sig"))
-        if not isinstance(spec, dict) or set(spec) - {"dependencies"}:
-            raise ValueError("cavalry/build.json supports only a dependencies object")
-        extra = spec.get("dependencies", {})
-        if not isinstance(extra, dict):
-            raise ValueError("dependencies must be an object")
-        for name, required in extra.items():
-            if name not in allowed or not isinstance(required, list) or any(not isinstance(x, str) or x not in allowed for x in required):
-                raise ValueError("Unknown module/dependency: " + str(name))
-            deps[name].update(required)
-    ordered = []
+        cfg=json.loads(config.read_text(encoding='utf-8-sig'))
+        if set(cfg)-{'dependencies'}: raise ValueError('Unknown build configuration field')
+        for n,req in cfg.get('dependencies',{}).items():
+            if n not in deps or not isinstance(req,list) or any(x not in deps for x in req): raise ValueError('Unknown module dependency')
+            deps[n].update(req)
+    ordered=[]
     while deps:
-        ready = sorted(name for name, required in deps.items() if not required)
-        if not ready:
-            raise ValueError("Cyclic Cavalry module dependencies: " + ", ".join(sorted(deps)))
-        for name in ready:
-            ordered.append(name)
-            del deps[name]
-        for required in deps.values():
-            required.difference_update(ready)
+        ready=sorted(n for n,req in deps.items() if not req)
+        if not ready: raise ValueError('Cyclic native module dependencies')
+        ordered+=ready
+        for n in ready: del deps[n]
+        for req in deps.values(): req.difference_update(ready)
     return ordered
 
+def assemble(root, release=False):
+    before=protected(root); node=shutil.which('node')
+    if not node: raise ValueError('Node.js required for syntax and registration checks')
+    modules=module_order(root)
+    names=['cavalry/'+p for p in modules]+['cavalry/browser.js','cavalry/native/browser_adapter.js','cavalry/panel.js','VERSION','build_cavalry.py','ae/data.json']
+    for optional in ('cavalry/build.json','cavalry/bridge.js','cavalry/loader.js'):
+        if (root/optional).exists(): names.append(optional)
+    raw={}
+    for name in names:
+        p=root/name
+        if not p.resolve().is_relative_to(root) or not p.is_file(): raise ValueError('Invalid input '+name)
+        raw[name]=p.read_bytes()
+    text={n:b.decode('utf-8-sig').replace('\r\n','\n') for n,b in raw.items()}
+    for n,source in text.items():
+        if n.endswith('.js'):
+            p=subprocess.run([node,'--check'],input=source,text=True,capture_output=True)
+            if p.returncode: raise ValueError(n+'\n'+p.stderr)
+    body='\n;\n'.join(text['cavalry/'+p] for p in modules)+'\n;\n'
+    p=subprocess.run([node,'-e',body+'process.stdout.write(JSON.stringify(JZNative.manifest()));'],text=True,capture_output=True)
+    if p.returncode: raise ValueError('Native registration failure: '+p.stderr)
+    manifest=json.loads(p.stdout)
+    data=json.loads(text['ae/data.json']); refs=data.get('names')
+    if not isinstance(refs,dict) or any(g not in refs for g in GROUPS): raise ValueError('Invalid reference vocabulary')
+    coverage={g:{'registered':sorted(manifest[g]),'referenceCount':len(refs[g]),'missing':sorted(set(refs[g])-set(manifest[g])),'additional':sorted(set(manifest[g])-set(refs[g]))} for g in GROUPS}
+    missing=sum(len(v['missing']) for v in coverage.values())
+    if release and missing: raise ValueError('Release refused: '+str(missing)+' reference recipes have no native implementation')
+    hashes={n:sha(b) for n,b in sorted(raw.items())}
+    info={'format':'jizura.cavalry.native-build','version':text['VERSION'].strip(),'buildId':sha(literal(hashes).encode()),'sourceHashes':hashes,'moduleOrder':modules,
+          'recipes':manifest,'coverage':coverage,'status':'preview' if missing else 'implementation-coverage-only','hostVerified':False,'renderVerified':False,
+          'inventoryBasis':'ae/data.json names snapshot; dynamic source registrations are not independently audited'}
+    header='/* GENERATED native Cavalry engine; host/render verification pending. */\nvar JZCavalryBuild='+literal(info)+';\n'
+    runtime=header+body
+    bridge=text.get('cavalry/bridge.js',''); panel=bridge+'\n'+text['cavalry/panel.js']; standalone=runtime+'\n'+panel+'\n'
+    vocabulary='var JZFamilies=(function(M){return {built:function(g){return Object.keys(M[g]||{}).sort();},resolve:function(g,k){return {state:M[g]&&M[g][k]?"exact":"missing",as:M[g]&&M[g][k]?k:null};}};})('+literal(manifest)+');\n'
+    browser=vocabulary+text['cavalry/browser.js']+'\n;\n'
+    browser+='J.Cavalry.runtimeSource='+literal(runtime)+';\nJ.Cavalry.panelSource='+literal(panel)+';\nJ.Cavalry.buildInfo='+literal(info)+';\n'
+    browser+='J.Cavalry.loaderSource='+literal(text.get('cavalry/loader.js',''))+';\n'
+    browser+=body+'\n'+text['cavalry/native/browser_adapter.js']+'\n'
+    browser+='J.Cavalry.standaloneSource=J.Cavalry.runtimeSource+"\\n"+J.Cavalry.panelSource+"\\n";\nJ.Cavalry.downloadPanel=function(name){return J.saveFile(String(name||"JIZURA_CV").replace(/[\\\\/:*?"<>|]/g,"_")+".js",new Blob([J.Cavalry.standaloneSource],{type:"text/javascript;charset=utf-8"}));};\n'
+    outputs={n:standalone for n in ('JIZURA_CV.js','dist/cavalry/JIZURA_CV.js','dist/cavalry/JIZURA_Cavalry.js')}
+    outputs['src/11r_cavalry.js']=browser
+    for n,s in outputs.items():
+        p=subprocess.run([node,'--check'],input=s,text=True,capture_output=True)
+        if p.returncode: raise ValueError(n+'\n'+p.stderr)
+    report=dict(info,protectedHashes=before,syntaxCheck='passed',outputHashes={n:sha(s.encode()) for n,s in outputs.items()})
+    outputs['dist/cavalry/build-report.json']=json.dumps(report,ensure_ascii=True,sort_keys=True,indent=2)+'\n'
+    if protected(root)!=before or any((root/n).read_bytes()!=b for n,b in raw.items()): raise ValueError('Build input/protected file changed')
+    return outputs,before
 
-def validate_js(node, sources):
-    for name, source in sources.items():
-        result = subprocess.run([node, "--check"], input=source, text=True, encoding="utf-8", capture_output=True)
-        if result.returncode:
-            raise ValueError("Invalid JavaScript in " + name + ":\n" + result.stderr)
-
-
-def assemble(root, skip_js_check=False):
-    before = protected(root)
-    modules = module_order(root)
-    inputs = ["cavalry/" + name for name in modules] + ["cavalry/panel.js", "cavalry/browser.js", "VERSION", "build_cavalry.py"]
-    if (root / "cavalry/build.json").exists():
-        inputs.append("cavalry/build.json")
-    raw = {}
-    for name in inputs:
-        path = root / name
-        if not path.is_file() or not path.resolve().is_relative_to(root):
-            raise ValueError("Missing or out-of-tree build input: " + name)
-        raw[name] = path.read_bytes()
-    text = {name: data.decode("utf-8-sig").replace("\r\n", "\n") for name, data in raw.items()}
-    for name, source in text.items():
-        if name.endswith(".js") and (not source.strip() or "\x00" in source):
-            raise ValueError("Empty or NUL-containing JavaScript: " + name)
-    version = text["VERSION"].strip()
-    if not version:
-        raise ValueError("VERSION is empty")
-    hashes = {name: digest(data) for name, data in sorted(raw.items())}
-    build_id = digest(literal(hashes).encode("ascii"))
-    info = {"format": "jizura.cavalry.build", "version": version, "buildId": build_id,
-            "moduleOrder": ["cavalry/" + name for name in modules] + ["cavalry/panel.js"],
-            "sourceHashes": hashes, "recipeCoverage": "not-measured", "hostVerified": False}
-    header = "/* GENERATED by build_cavalry.py. Cavalry host/render validation is separate. */\n"
-    runtime = header + "var JZCavalryBuild = " + literal(info) + ";\n"
-    for name in modules:
-        runtime += "\n/* module: cavalry/" + name + " */\n;\n" + text["cavalry/" + name] + "\n;\n"
-    panel = text["cavalry/panel.js"]
-    standalone = runtime + "\n" + panel + "\n"
-    browser = header + text["cavalry/browser.js"] + "\n;\n"
-    browser += "J.Cavalry.runtimeSource = " + literal(runtime) + ";\n"
-    browser += "J.Cavalry.panelSource = " + literal(panel) + ";\n"
-    browser += "J.Cavalry.buildInfo = " + literal(info) + ";\n"
-    browser += r"""(function (C) {
-  C.standaloneSource = C.runtimeSource + '\n' + C.panelSource + '\n';
-  C.downloadPanel = function (filename) {
-    var name = String(filename || 'JIZURA_CV').replace(/[\\/:*?"<>|\x00-\x1f]/g, '_') || 'JIZURA_CV';
-    return J.saveFile(name + '.js', new Blob([C.standaloneSource], { type: 'text/javascript;charset=utf-8' }));
-  };
-})(J.Cavalry);
-"""
-    node = shutil.which("node")
-    if not skip_js_check and not node:
-        raise ValueError("Node.js is required for syntax checks; --skip-js-check explicitly disables them")
-    if not skip_js_check:
-        sources = {name: source for name, source in text.items() if name.endswith(".js")}
-        sources.update({"standalone bundle": standalone, "browser bundle": browser})
-        validate_js(node, sources)
-    report = dict(info, javascriptSyntax="skipped" if skip_js_check else "passed",
-                  protectedFileHashes=before, groups=list(GROUPS),
-                  note="Bundling is not recipe implementation or Cavalry/render verification.")
-    outputs = {name: standalone for name in ("JIZURA_CV.js", "dist/cavalry/JIZURA_CV.js", "dist/cavalry/JIZURA_Cavalry.js")}
-    outputs["src/11r_cavalry.js"] = browser
-    report["outputHashes"] = {name: digest(source.encode("utf-8")) for name, source in sorted(outputs.items())}
-    outputs["dist/cavalry/build-report.json"] = json.dumps(report, ensure_ascii=True, sort_keys=True, indent=2) + "\n"
-    if protected(root) != before:
-        raise ValueError("Protected AE/CEP files changed during build")
-    for name, data in raw.items():
-        if (root / name).read_bytes() != data:
-            raise ValueError("Input changed during build: " + name)
-    return outputs, before
-
-
-def write_outputs(root, outputs, check=False):
-    stale = []
-    for name, source in outputs.items():
-        path = root / name
-        if not path.resolve().is_relative_to(root):
-            raise ValueError("Output escapes repository: " + name)
-        if not path.is_file() or path.read_bytes() != source.encode("utf-8"):
-            stale.append(name)
+def write_outputs(root,outputs,check=False):
+    stale=[n for n,s in outputs.items() if not (root/n).is_file() or (root/n).read_bytes()!=s.encode()]
     if check:
-        if stale:
-            raise ValueError("Missing/stale Cavalry outputs:\n" + "\n".join(stale))
+        if stale: raise ValueError('Stale outputs: '+', '.join(stale))
         return []
-    staged = []
-    try:
-        for name in stale:
-            path = root / name
-            path.parent.mkdir(parents=True, exist_ok=True)
-            with tempfile.NamedTemporaryFile(mode="wb", dir=path.parent, delete=False) as stream:
-                stream.write(outputs[name].encode("utf-8"))
-                staged.append((Path(stream.name), path))
-        for temporary, path in staged:
-            os.replace(temporary, path)
-    finally:
-        for temporary, _ in staged:
-            temporary.unlink(missing_ok=True)
+    for n in stale:
+        p=root/n
+        if not p.resolve().is_relative_to(root): raise ValueError('Output escapes root')
+        p.parent.mkdir(parents=True,exist_ok=True)
+        tmp=None
+        try:
+            with tempfile.NamedTemporaryFile(dir=p.parent,delete=False) as f:
+                tmp=Path(f.name);f.write(outputs[n].encode())
+            os.replace(tmp,p)
+        finally:
+            if tmp: tmp.unlink(missing_ok=True)
     return stale
 
-
 def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent)
-    parser.add_argument("--check", action="store_true", help="Verify output freshness without writing")
-    parser.add_argument("--skip-js-check", action="store_true", help="Explicitly skip Node syntax validation")
-    args = parser.parse_args(argv)
-    root = args.root.resolve()
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--root',type=Path,default=Path(__file__).resolve().parent)
+    ap.add_argument('--check',action='store_true');ap.add_argument('--release',action='store_true');a=ap.parse_args(argv);root=a.root.resolve()
     try:
-        outputs, before = assemble(root, args.skip_js_check)
-        changed = write_outputs(root, outputs, args.check)
-        if protected(root) != before:
-            raise ValueError("Protected AE/CEP files changed")
-    except (OSError, ValueError, UnicodeError, subprocess.SubprocessError) as error:
-        print("Cavalry build failed: " + str(error), file=sys.stderr)
-        return 1
-    print("Cavalry outputs verified" if args.check else "Cavalry outputs updated: " + str(len(changed)))
-    print("Recipe coverage: not measured; Cavalry host/render verification: pending")
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+        outputs,before=assemble(root,a.release);changed=write_outputs(root,outputs,a.check)
+        if protected(root)!=before: raise ValueError('Protected files changed')
+    except (OSError,ValueError,UnicodeError,subprocess.SubprocessError) as e:
+        print('Cavalry build failed: '+str(e),file=sys.stderr);return 1
+    print('Cavalry outputs verified' if a.check else 'Cavalry outputs updated: '+str(len(changed)))
+    print('Native implementation coverage: see build-report.json; host/render verification pending');return 0
+if __name__=='__main__': raise SystemExit(main())
