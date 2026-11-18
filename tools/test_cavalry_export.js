@@ -209,7 +209,7 @@ const blurWarning = J.Cavalry.assemble({ plan: fresh({ exit: 'xjFocusPull' }) })
 assert.equal(blurWarning.presetReport.built['exit:xjFocusPull'], 1);
 assert(blurWarning.hostChecks.some(w => /hostProfile\.gaussianBlur/.test(w)));
 assert.equal(J.Cavalry.assemble({ plan: fresh({ decor: [{ id: 'cropMarks' }] }) }).presetReport.built['decor:cropMarks'], 1);
-const dropped = J.Cavalry.assemble({ plan: fresh({ hold: 'nope', enter: 'alsonope', decor: [{ id: 'crosshair' }], bg: 'grain', treat: 'grain', trans: 'noSuchTransition' }) });for (const key of ['hold', 'enter', 'decor', 'bg', 'treat', 'trans']) {
+const dropped = J.Cavalry.assemble({ plan: fresh({ hold: 'nope', enter: 'alsonope', decor: [{ id: '__missing_decor__' }], bg: '__missing_bg__', treat: '__missing_treat__', trans: 'noSuchTransition' }) });for (const key of ['hold', 'enter', 'decor', 'bg', 'treat', 'trans']) {
   assert(Object.keys(dropped.presetReport.missing).some(k => k.startsWith(key + ':')), key + ' miss must be reported');
 }
 assert(dropped.warnings.length >= dropped.blockingWarnings.length);

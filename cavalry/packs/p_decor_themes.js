@@ -735,8 +735,9 @@ reg('hzDoorAjar', 'src/11p_x2_horrorA.js', function (c) {
     var env = R.env(c, f0), op = opAt(env), st = Math.floor(env.lt * 12), lv = 0.85 + 0.15 * R.hash01(s, st, 2);
     return { 'scale.x': Math.max(0.005, op), alpha: op > 0.003 ? 0.85 * lv : 0 };
   });
-  var spill = C.shape(c.graph, c.cut, c.cut.id + ' / hzDoorAjar spill', c.parent, [], { fill: Lg, alpha: 0.14 });
-  spill.commands = H.polyCmds(c, [[[hinge, gy], [hinge + dir * dw * 0.3, gy], [hinge + dir * (dw * 0.72 + dw * 0.5), gy + u * 0.045], [hinge + dir * dw * 0.2, gy + u * 0.045]]], true);
+  var spill = C.shape(c.graph, c.cut, c.cut.id + ' / hzDoorAjar spill', c.parent,
+    H.polyCmds(c, [[[hinge, gy], [hinge + dir * dw * 0.3, gy], [hinge + dir * (dw * 0.72 + dw * 0.5), gy + u * 0.045], [hinge + dir * dw * 0.2, gy + u * 0.045]]], true),
+    { fill: Lg, alpha: 0.14 });
   var knob = H.circle(c, 'hzDoorAjar knob', hinge + dir * (dw * 0.2), y + dh * 0.55, Math.max(1.5, dw * 0.035), Math.max(1.5, dw * 0.035), { fill: col });
   [frId, flId, spill, knob].forEach(function (id, idx) {
     C.sample(c.graph, id, c.cut.start, c.cut.end, function (f0) {
@@ -946,7 +947,7 @@ reg('kzImpactTicks', 'src/11p_x2_kineticA.js', function (c) {
       var pt = A.at((jj + 0.5) / n, u * 0.02), scP = H.toScene(c, pt[0], pt[1]);
       var bar = C.shape(c.graph, c.cut, c.cut.id + ' / kzImpactTicks b' + jj, c.parent, [
         ['M', -A.dirv[0] * u * 0.07, A.dirv[1] * u * 0.07], ['L', A.dirv[0] * u * 0.07, -A.dirv[1] * u * 0.07]
-      ], { stroke: col, width: lw, position: scP, alpha: 0 });
+      ], { stroke: col, width: lw, position: scP, alpha: 1 });
       C.sample(c.graph, bar, c.cut.start, c.cut.end, function (f0) {
         var env = R.env(c, f0), tau = env.lt - ts[jj] - 0.04, o = H.io(c, f0, 0.1);
         if (tau < 0 || tau > 0.5) return { alpha: 0 };
@@ -959,7 +960,7 @@ reg('kzImpactTicks', 'src/11p_x2_kineticA.js', function (c) {
           var rMax = u * (0.065 + 0.04 * R.hash01(s, mm, jj + 2)), len = u * 0.05 * (0.6 + 0.6 * R.hash01(s, mm, jj + 3));
           var tk = C.shape(c.graph, c.cut, c.cut.id + ' / kzImpactTicks t' + jj + '_' + mm, c.parent, [
             ['M', 0, 0], ['L', Math.cos(a) * len, -Math.sin(a) * len]
-          ], { stroke: col, width: lw, position: scP, alpha: 0 });
+          ], { stroke: col, width: lw, position: scP, alpha: 1 });
           C.sample(c.graph, tk, c.cut.start, c.cut.end, function (f0) {
             var env = R.env(c, f0), tau = env.lt - ts[jj] - 0.04, o = H.io(c, f0, 0.1);
             if (tau < 0 || tau > 0.5) return { alpha: 0 };
@@ -983,7 +984,7 @@ reg('kzBounceDot', 'src/11p_x2_kineticA.js', function (c) {
       var pt = A.at((jj + 0.5) / n, gap * 0.45), scP = H.toScene(c, pt[0], pt[1]), hw = u * 0.016;
       var mId = C.shape(c.graph, c.cut, c.cut.id + ' / kzBounceDot m' + jj, c.parent, [
         ['M', -A.dirv[0] * hw, A.dirv[1] * hw], ['L', A.dirv[0] * hw, -A.dirv[1] * hw]
-      ], { stroke: jj === 0 ? col : sb, width: Math.max(2, u * 0.004), position: scP, alpha: 0 });
+      ], { stroke: jj === 0 ? col : sb, width: Math.max(2, u * 0.004), position: scP, alpha: 1 });
       C.sample(c.graph, mId, c.cut.start, c.cut.end, function (f0) {
         var env = R.env(c, f0), o = H.io(c, f0, 0.15), tj = env.lt - ts[jj];
         if (tj < 0) return { alpha: 0 };
@@ -1226,7 +1227,7 @@ reg('kzChevronRun', 'src/11p_x2_kineticA.js', function (c) {
         stroke: sb, width: lw, alpha: 0.3
       });
       var idHot = C.shape(c.graph, c.cut, c.cut.id + ' / kzChevronRun h' + mm, c.parent, chPts.map(function (p, i) { return [i ? 'L' : 'M', p[0], p[1]]; }), {
-        stroke: col, width: lw, alpha: 0
+        stroke: col, width: lw, alpha: 1
       });
       function evalM(f0) {
         var env = R.env(c, f0), lt = env.ltb, k = Math.max(0, curIdx(ts, lt)), o = H.io(c, f0, 0.3);
@@ -1265,7 +1266,7 @@ reg('kzWhooshCurls', 'src/11p_x2_kineticA.js', function (c) {
     }
     var scO = H.toScene(c, oPt[0], oPt[1]);
     var sh = C.shape(c.graph, c.cut, c.cut.id + ' / kzWhooshCurls ' + j, c.parent, pts.map(function (p, i) { return [i ? 'L' : 'M', p[0], p[1]]; }), {
-      stroke: col, width: lw, position: scO, alpha: 0
+      stroke: col, width: lw, position: scO, alpha: 1
     });
     C.sample(c.graph, sh, c.cut.start, c.cut.end, function (f0) {
       var env = R.env(c, f0), tau = env.lt - t0 - 0.03, o = H.io(c, f0, 0.1);

@@ -418,7 +418,7 @@ reg('hrRedact', 'src/11p_horror2.js', function (c) {
     }
     var subGs = items.slice(s0, s1 + 1).map(function (it) { return it.g; });
     var b = V.bounds(subGs), s = ng.node.size, pd = s * 0.06, col = nodeCol(c, ng);
-    var x0 = b.x - pd, x1 = b.x + b.w + pd, y0 = b.y - pd * 0.5, y1 = b.y + b.h + pd * 0.5;
+    var x0 = b.x0 - pd, x1 = b.x1 + pd, y0 = b.y0 - pd * 0.5, y1 = b.y1 + pd * 0.5;
     var w = Math.max(2, x1 - x0), h = Math.max(2, y1 - y0), yc = (y0 + y1) / 2;
     var bid = addLocalShape(c, ng, 'Redact bar', G.rect(-w, -h / 2, w, h), { fill: col, alpha: 1 }, [x1, yc], function (f) {
       var cp = cutProgress(c, ng, f), t0 = cp.inDur + Math.max(0.1, cp.dur - cp.inDur - cp.outDur) * at;

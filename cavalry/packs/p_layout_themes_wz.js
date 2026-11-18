@@ -235,4 +235,4 @@ reg('wzSudare', function (c) {
   }
 });
 
-})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZPackHelpers);
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);

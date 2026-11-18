@@ -153,10 +153,8 @@ reg('proofread', function (c) {
   var x1 = x0 + pw, y1 = y0 + ph, lw = Math.max(1.5, u * 0.002), g = u * 0.015, L = u * 0.032;
   H.layPaper(c, 'Proof sheet', x0, y0, pw, ph, 2, C0.fill, C0.edge, 0.009, envAlpha(c, 0, 0.3));
   [[x0, y0, -1, -1], [x1, y0, 1, -1], [x0, y1, -1, 1], [x1, y1, 1, 1]].forEach(function (q, idx) {
-    H.line(c, 'Tombo ' + idx, [
-      [[q[0] + q[2] * g, q[1]], [q[0] + q[2] * (g + L), q[1]]],
-      [[q[0], q[1] + q[3] * g], [q[0], q[1] + q[3] * (g + L)]]
-    ].reduce(function (a, b) { return a.concat([b]); }, []), sc.sub, lw, 0.7);
+    H.line(c, 'Tombo H ' + idx, [[q[0] + q[2] * g, q[1]], [q[0] + q[2] * (g + L), q[1]]], sc.sub, lw, 0.7);
+    H.line(c, 'Tombo V ' + idx, [[q[0], q[1] + q[3] * g], [q[0], q[1] + q[3] * (g + L)]], sc.sub, lw, 0.7);
   });
   var txt = H.laySplitLines(H.layText(c), port ? 6 : 10);
   var size = Math.min(H.layFitSize(c, txt, pw * 0.76, ph * 0.48, { font: serifFont(c), lead: 1.25 }), u * 0.14);
@@ -670,4 +668,4 @@ reg('karuta', function (c) {
   H.laySetNodes(c, [{ text: disp, font: serifFont(c), size: size, x: xL, y: cy, vertical: vert, color: C0.text }]);
 });
 
-})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZPackHelpers);
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);

@@ -363,4 +363,4 @@ reg('xbTriangleSet', function (c) {
   H.laySetNodes(c, [{ text: txt, size: sz, x: W / 2, y: Hh / 2 + r * 0.2, color: sc.fg }]);
 });
 
-})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZPackHelpers);
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);

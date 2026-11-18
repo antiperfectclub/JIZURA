@@ -409,4 +409,4 @@ reg('xaSwatchFan', function (c) {
   H.laySetNodes(c, [{ text: txt, size: sz, x: W / 2 + Math.sin(18 * DEG) * sh * 0.3, y: pivY - sh * 0.35, rot: 18, color: H.textOn(sc.accent, sc.bg, sc) }]);
 });
 
-})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZPackHelpers);
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);

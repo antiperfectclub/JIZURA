@@ -429,4 +429,4 @@ reg('src/11p_x2_typoA.js', 'tzPath', function (c) {
   H.laySetNodes(c, specs);
 });
 
-})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZPackHelpers);
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);

@@ -119,16 +119,30 @@ function glyphs(node,f) {
   }); return out;
 }
 function sample(g,id,start,end,fn) {
-  var previous={}, pending={}, last={};
-  function put(attr,f,v){g.key(id,attr,f,v,1);last[attr]=f;}
+  var previous={}, pending={}, last={}, buf={};
+  function put(attr,f,v,tp){(buf[attr]=buf[attr]||[]).push({f:f,v:v,tp:tp||1});last[attr]=f;}
   for(var frame=start;frame<end;frame++) {
     var state=fn(frame); Object.keys(state).forEach(function(attr){
-      var v=state[attr];N.finite(v,attr);
-      if(!(attr in previous)){put(attr,frame,v);previous[attr]=v;pending[attr]=frame;return;}
-      if(Math.abs(previous[attr]-v)>1e-9){if(pending[attr]>last[attr])put(attr,pending[attr],previous[attr]);put(attr,frame,v);previous[attr]=v;pending[attr]=frame;}
+      var v=state[attr];
+      if (typeof v==='string') {
+        if (!(attr in previous) || previous[attr]!==v) { put(attr,frame,v,2); previous[attr]=v; }
+        pending[attr]=frame; return;
+      }
+      N.finite(v,attr);
+      if(!(attr in previous)){put(attr,frame,v,1);previous[attr]=v;pending[attr]=frame;return;}
+      if(Math.abs(previous[attr]-v)>1e-9){if(pending[attr]>last[attr])put(attr,pending[attr],previous[attr],1);put(attr,frame,v,1);previous[attr]=v;pending[attr]=frame;}
       else pending[attr]=frame;
     });
   }
+  var layer=g.byId[id];
+  Object.keys(buf).forEach(function(attr){
+    if(layer&&layer.keys&&layer.keys[attr]){
+      Object.keys(layer.keys[attr]).forEach(function(k){
+        var kf=+k; if(kf>=start&&kf<end) delete layer.keys[attr][k];
+      });
+    }
+    buf[attr].forEach(function(k){g.key(id,attr,k.f,k.v,k.tp);});
+  });
 }
 function text(graph,cut,node,parent,options,animate) {
   var f=font(node,options), gs=glyphs(node,f), start=Math.max(cut.start,cut.origin+(node.delayFrames||0));

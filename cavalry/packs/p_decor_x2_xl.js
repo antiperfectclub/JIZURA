@@ -389,9 +389,9 @@ reg('xlFocusHunt', function (c) {
     cmds.push(['M', s[0], -s[1]], ['L', s[2], -s[3]]);
   });
   var mainId = C.shape(c.graph, c.cut, c.cut.id + ' / xlFocusHunt corners', rig, cmds, { stroke: sc.fg, width: Math.max(1, 2.8 * u), alpha: 1 });
-  var accId = C.shape(c.graph, c.cut, c.cut.id + ' / xlFocusHunt locked', rig, cmds, { stroke: acc(c), width: Math.max(1, 2.8 * u), alpha: 0 });
+  var accId = C.shape(c.graph, c.cut, c.cut.id + ' / xlFocusHunt locked', rig, cmds, { stroke: acc(c), width: Math.max(1, 2.8 * u), alpha: 1 });
   var dx = (P.right ? hw + 14 * u : -hw - 14 * u), dy = (P.low ? 1 : -1) * (hh - rr * 0.4);
-  var dotId = C.shape(c.graph, c.cut, c.cut.id + ' / xlFocusHunt dot', rig, G.ellipse(dx, -dy, 5.5 * u, 5.5 * u), { fill: acc(c), alpha: 0 });
+  var dotId = C.shape(c.graph, c.cut, c.cut.id + ' / xlFocusHunt dot', rig, G.ellipse(dx, -dy, 5.5 * u, 5.5 * u), { fill: acc(c), alpha: 1 });
   C.sample(c.graph, rig, c.cut.start, c.cut.end, function (f0) {
     var q = phaseOf(c, f0); if (!q.ok) return { 'scale.x': 1, 'scale.y': 1 };
     var hunt = 1 + (0.2 * Math.exp(-q.t * 4.5) * Math.cos(q.t * 15) + 0.3 * (1 - ein(q.t, 0.3))) * (0.35 + 0.65 * H.motionAmt(c));

@@ -409,4 +409,4 @@ reg('xcAwning', function (c) {
   H.laySetNodes(c, [{ text: txt, size: sz, x: W / 2, y: Hh * 0.58, color: sc.fg }]);
 });
 
-})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZPackHelpers);
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);

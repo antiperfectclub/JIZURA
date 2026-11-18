@@ -820,7 +820,7 @@ register('nightMoon', function (c) {
 register('sunsetSun', function (c) {
   var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
   var clk = H.bgClock(c, 'sunsetSun'), seed = H.p(P, 'seed', 1), k = H.p(P, 'k', 0.35);
-  var hz = Hh * H.p(P, 'hz', 0.72) * (W < Hh ? 0.97 : 1), R = U * H.p(P, 'R', 0.14);
+  var hz = Hh * H.p(P, 'hz', 0.72) * (W < Hh ? 0.97 : 1), rad = U * H.p(P, 'R', 0.14);
   var cxFrac = H.p(P, 'cx', 0.3), cx = W * (W < Hh ? 0.5 + (cxFrac - 0.5) * 0.6 : cxFrac);
   var sunBase = dk ? glowOf(c.sc) : c.sc.accent, sunC = H.mixHex(c.sc.bg, sunBase, k * (dk ? 1 : 0.7));
   for (var sb = 0; sb < 5; sb++) {
@@ -828,14 +828,14 @@ register('sunsetSun', function (c) {
     var skyId = H.rect(c, 'Sunset sky ' + sb, 0, hz - bh, W, bh, { fill: sunBase, alpha: a });
     V.animate(c, skyId, function (e, f) { return { alpha: a * clk.enter(f, 1.2) }; });
   }
-  softGlow(c, 'Sunset halo', cx, hz, R * 3, sunC, [[0.55, 0.28], [0.8, 0.14], [1.0, 0.06]], function (e, f, ba) {
-    var q = clk.enter(f, 1.2), cy = hz - R * 0.5 + R * 0.35 * cl(clk.time(f) / 14) + (1 - q) * R * 0.9;
+  softGlow(c, 'Sunset halo', cx, hz, rad * 3, sunC, [[0.55, 0.28], [0.8, 0.14], [1.0, 0.06]], function (e, f, ba) {
+    var q = clk.enter(f, 1.2), cy = hz - rad * 0.5 + rad * 0.35 * cl(clk.time(f) / 14) + (1 - q) * rad * 0.9;
     var pos = H.toScene(c, cx, cy);
     return { 'position.x': pos[0], 'position.y': pos[1], alpha: ba * q };
   });
-  var sunId = C.shape(c.graph, c.cut, c.cut.id + ' / Sunset disc', c.parent, G.ellipse(0, 0, R, R), { fill: sunC, alpha: 1 });
+  var sunId = C.shape(c.graph, c.cut, c.cut.id + ' / Sunset disc', c.parent, G.ellipse(0, 0, rad, rad), { fill: sunC, alpha: 1 });
   V.animate(c, sunId, function (e, f) {
-    var q = clk.enter(f, 1.2), cy = hz - R * 0.5 + R * 0.35 * cl(clk.time(f) / 14) + (1 - q) * R * 0.9;
+    var q = clk.enter(f, 1.2), cy = hz - rad * 0.5 + rad * 0.35 * cl(clk.time(f) / 14) + (1 - q) * rad * 0.9;
     var pos = H.toScene(c, cx, cy);
     return { 'position.x': pos[0], 'position.y': pos[1], alpha: q };
   });
@@ -846,12 +846,12 @@ register('sunsetSun', function (c) {
     (function (idx) {
       var y = hz + U * 0.015 * Math.pow(idx + 1, 1.32);
       if (y > Hh) return;
-      var q = idx / 14, hh = Math.max(1.5, U * 0.0038 * (1 + idx * 0.1)), wBase = R * (1.25 - q * 0.6);
+      var q = idx / 14, hh = Math.max(1.5, U * 0.0038 * (1 + idx * 0.1)), wBase = rad * (1.25 - q * 0.6);
       var refl = C.shape(c.graph, c.cut, c.cut.id + ' / Sun glint ' + idx, c.parent,
         G.rect(-wBase, -hh / 2, wBase * 2, hh), { fill: sunC, alpha: 0.75 * (1 - q) });
       V.animate(c, refl, function (e, f) {
         var t = clk.absTime(f), q0 = clk.enter(f, 1.2);
-        var wv = 0.55 + 0.45 * R.noise(t * 1.3 + idx * 1.9, seed), xo = R * 0.18 * R.noise(t * 0.9 + idx * 2.7, seed + 3);
+        var wv = 0.55 + 0.45 * R.noise(t * 1.3 + idx * 1.9, seed), xo = rad * 0.18 * R.noise(t * 0.9 + idx * 2.7, seed + 3);
         var pos = H.toScene(c, cx + xo, y);
         return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': wv, alpha: 0.75 * (1 - q) * q0 * (0.6 + 0.4 * R.noise(t * 2 + idx, seed + 5)) };
       });

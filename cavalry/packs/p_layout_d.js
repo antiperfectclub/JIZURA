@@ -20,6 +20,14 @@ function monoFont(c) { return H.layFontObj(c, 'mono'); }
 function serifFont(c) { return H.layFontObj(c, 'serif'); }
 function lightOf(sc) { return H.lum(sc.fg) > H.lum(sc.bg) ? sc.fg : sc.bg; }
 function darkOf(sc) { return H.lum(sc.fg) > H.lum(sc.bg) ? sc.bg : sc.fg; }
+function cardPal(sc) {
+  var fill = lightOf(sc), dk = darkOf(sc);
+  var text = H.textOn(fill, sc.bg, sc);
+  var acc = H.layPlateCol(sc, [sc.accent, sc.accent2, sc.ink], fill, 1.8);
+  var line = H.mixHex(fill, text, 0.32);
+  var edge = H.contrast(fill, sc.bg) < 1.4 ? line : null;
+  return { fill: fill, dk: dk, text: text, acc: acc, line: line, edge: edge };
+}
 function envAlpha(c, d, len, mul) {
   var m = mul == null ? 1 : mul;
   return function (env, f) {
@@ -633,4 +641,4 @@ reg('stencil', function (c) {
   H.laySetNodes(c, [{ text: txt, font: monoFont(c), size: size, x: W / 2, y: Hh / 2, color: tc }]);
 });
 
-})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZPackHelpers);
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);
