@@ -510,7 +510,7 @@ axa_reg('xaThumbIndex', {
     build: function (ctx) {
         var B = axa_base(ctx), W = B.W, H = B.H, sc = B.sc, M = B.M, port = B.port, lw = B.lw, ls = B.ls, font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display'));
         var nT = jzP(ctx, 'nT', 7), act = jzP(ctx, 'act', 0) % nT, right = jzP(ctx, 'side', 'r') === 'r', th = H * 0.84 / nT, tw = M * 0.1, y0 = H * 0.08;
-        var set = jzChars(jzIsLatinText(B.txt) ? 'ABCDEFGH' : 'あかさたなはまや'), dim = axa_dimOf(sc), plate = axa_pickPlate(sc, jzP(ctx, 'col', 'accent')), pon = axa_onCol(sc, plate);
+        var set = jzChars(jzIsLatinText(B.txt) ? 'ABCDEFGH' : '가나다라마바사아'), dim = axa_dimOf(sc), plate = axa_pickPlate(sc, jzP(ctx, 'col', 'accent')), pon = axa_onCol(sc, plate);
         var sl = axa_slots(B.txt), first = '・', i, S = axa_sheet(ctx, 'thumb index');
         for (i = 0; i < sl.length; i++) if (!axa_isSp(sl[i]) && !jzIsPunct(sl[i])) { first = sl[i]; break; }
         var ay = 0, aw = 0, tS = [], tP = [], tD = [];
@@ -745,14 +745,14 @@ axa_reg('xaErrata', {
     plan: function (rng, cut, st) { return { font: rng.pick(jzFontsOf(st, ['serif', 'display'])), strike: rng.pick(['line', 'double', 'wave']), pg: rng.int(3, 240), ln: rng.int(1, 24) }; },
     build: function (ctx) {
         var B = axa_base(ctx), W = B.W, H = B.H, sc = B.sc, M = B.M, port = B.port, lw = B.lw, ls = B.ls, font = jzP(ctx, 'font', jzSerifF(ctx)), strike = jzP(ctx, 'strike', 'line');
-        var latin = jzIsLatinText(B.txt), labs = latin ? ['FOR', 'READ'] : ['誤', '正'], bf = jzBodyF(ctx);
+        var latin = jzIsLatinText(B.txt), labs = latin ? ['FOR', 'READ'] : ['오', '정'], bf = jzBodyF(ctx);
         var tw = W * 0.86, x0 = W * 0.07, lc = M * (latin ? 0.15 : 0.12), hh = ls * 2.4, h1 = H * (port ? 0.2 : 0.25), h2 = H * (port ? 0.38 : 0.44), th = hh + h1 + h2, y0 = (H - th) / 2;
         var acc = axa_accentOn(sc), pad = M * 0.035, o = { lead: 1.2, track: 0.03 }, e = axa_iE(0.6, 0) + '*K', la = axa_iC(0.3, 0.2) + '*K', S = axa_sheet(ctx, 'errata table'), k, i;
         axa_R(S, x0, y0 + hh - M * 0.005, tw, M * 0.005, sc.fg, 1, { sc: '[' + e + ',1]', piv: [x0, y0 + hh], n: 'top rule' });
         axa_L(S, [[[x0, y0 + hh + h1], [x0 + tw, y0 + hh + h1]], [[x0 + lc, y0 + hh], [x0 + lc, y0 + hh + h1 + h2]]], sc.sub, lw, 0.8, { trim: e, n: 'cells' });
         axa_R(S, x0, y0 + th, tw, M * 0.005, sc.fg, 1, { sc: '[' + e + ',1]', piv: [x0 + tw, y0 + th], n: 'foot rule' });
         axa_flush(S, true);
-        axa_label(ctx, latin ? 'ERRATA' : '正誤表', x0, y0 + hh * 0.42, { font: bf, size: ls * 1.25, color: sc.fg, op: la, track: 0.3 });
+        axa_label(ctx, latin ? 'ERRATA' : '정오표', x0, y0 + hh * 0.42, { font: bf, size: ls * 1.25, color: sc.fg, op: la, track: 0.3 });
         axa_label(ctx, 'p.' + jzP(ctx, 'pg', 3) + '  l.' + jzP(ctx, 'ln', 1), x0 + tw, y0 + hh * 0.42, { align: 'right', op: la });
         var lsz2 = latin ? lc * 0.24 : lc * 0.44;
         axa_label(ctx, labs[0], x0 + lc / 2, y0 + hh + h1 / 2, { align: 'center', font: bf, size: lsz2, color: sc.sub, op: la, track: 0.05 });

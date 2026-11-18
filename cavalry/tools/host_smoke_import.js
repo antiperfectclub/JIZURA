@@ -28,8 +28,8 @@ var sample = {
     layoutInstruction: { name: 'center', params: {} },
     graphics: [],
     nodes: [{
-      id: 'smoke-text-0', kind: 'text', text: '夜明けの色を覚えてる',
-      font: { key: 'mincho', family: 'Hiragino Mincho ProN', style: 'W6' },
+      id: 'smoke-text-0', kind: 'text', text: '새벽의 색을 기억하고 있어',
+      font: { key: 'mincho', family: 'Noto Serif KR', style: 'Medium' },
       x: 960, y: 540, size: 72, sx: 1, rotation: 0, delayFrames: 0,
       track: 0.08, lead: 1.3, align: 'center', color: '#111111'
     }],

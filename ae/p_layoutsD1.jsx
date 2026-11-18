@@ -1834,7 +1834,7 @@ ld1_reg('crossword', {
         if (clue) {
             var fs = fsC, cxl = below ? gx : gx + gw + W * 0.035, cyl = below ? gy + gh + fs * 1.6 : gy + fs;
             var n1 = num[key(rowsW[0], c0[0])] || 1, rom = jzRomajiOf(ctx);
-            var lines = [['\u30E8\u30B3\u306E\u30AB\u30AE', sc.accent, jzMonoF(ctx)], [n1 + '  ' + (c.note || rom || '(' + n + ')'), sc.fg, jzBodyF(ctx)], ['\u30BF\u30C6\u306E\u30AB\u30AE', sc.accent, jzMonoF(ctx)], [(numCount > 3 ? 3 : 2) + '  \u2500', sc.sub, jzBodyF(ctx)]];
+            var lines = [['가로열쇠', sc.accent, jzMonoF(ctx)], [n1 + '  ' + (c.note || rom || '(' + n + ')'), sc.fg, jzBodyF(ctx)], ['세로열쇠', sc.accent, jzMonoF(ctx)], [(numCount > 3 ? 3 : 2) + '  \u2500', sc.sub, jzBodyF(ctx)]];
             for (i = 0; i < lines.length; i++) {
                 var tt = jzChars(lines[i][0]).length > 22 ? jzChars(lines[i][0]).slice(0, 21).join('') + '\u2026' : lines[i][0];
                 var yy = below ? cyl + (i % 2) * fs * 1.7 : cyl + i * fs * 1.9 + (i >= 2 ? fs * 0.8 : 0), xx = below && i >= 2 ? cxl + gw * 0.55 : cxl;

@@ -139,8 +139,9 @@ def assemble(root,release=False):
     for key,value in [('runtimeSource',runtime),('panelSource',panel),('buildInfo',info),('loaderSource',loader)]:
         browser+='J.Cavalry.'+key+'='+literal(value)+';\n'
     browser+=body+'\n'+text['cavalry/native/browser_adapter.js']+'\n'
-    browser+='J.Cavalry.standaloneSource=J.Cavalry.runtimeSource+"\\n"+J.Cavalry.panelSource+"\\n";\nJ.Cavalry.downloadPanel=function(name){return J.saveFile(String(name||"JIZURA_CV").replace(/[\\\\/:*?"<>|]/g,"_")+".js",new Blob([J.Cavalry.standaloneSource],{type:"text/javascript;charset=utf-8"}));};\n'
+    browser+='J.Cavalry.standaloneSource=J.Cavalry.runtimeSource+"\\n"+J.Cavalry.panelSource+"\\n";\nJ.Cavalry.downloadPanel=function(name){return J.saveFile(String(name||"JIZURA_CV").replace(/[\\\\/:*?"<>|]/g,"_")+".js",new Blob([J.Cavalry.standaloneSource],{type:"text/javascript;charset=utf-8"}));};\nJ.Cavalry.downloadLoader=function(name){return J.saveFile(String(name||"JIZURA_CV_Loader").replace(/[\\\\/:*?"<>|]/g,"_")+".js",new Blob([J.Cavalry.loaderSource],{type:"text/javascript;charset=utf-8"}));};\n'
     outputs={n:standalone for n in ('JIZURA_CV.js','dist/cavalry/JIZURA_CV.js')}
+    outputs['dist/cavalry/JIZURA_CV_Loader.js']=runtime+'\n'+loader+'\n'
     outputs['src/11r_cavalry.js']=browser
     build_manifest={'format':'jizura.cavalry.build-manifest','version':info['version'],'buildId':info['buildId'],
         'modules':modules,'recipes':manifest,'coverage':{g:{k:cov[g][k] for k in ('registered','referenceCount','method','blockingMissing')} for g in GROUPS},

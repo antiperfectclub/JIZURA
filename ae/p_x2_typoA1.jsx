@@ -829,7 +829,7 @@ jzReg('layout', 'tzWideOne', {
                 atza_grp(G, 'tick b', [[[0, -t], [0, t]]], sc.sub, { width: lw, alpha: 0.8, gpos: hd + E + '[' + jzN(xa + kw) + '+' + jzN(dk) + '*e,' + jzN(yd) + ']' });
                 atza_op(ctx, G, a);
                 if (li === L - 1 || size * (leadK - 1) > ls * 2.4) {
-                    var word = latin ? 'WIDTH' : '平体';
+                    var word = latin ? 'WIDTH' : '가로비';
                     var R = atza_label(ctx, word + ' 100%', xa + kw / 2, yd + ls * 1.1, { size: ls, align: 'center', font: latin ? jzMonoF(ctx) : jzBodyF(ctx), op: a, name: 'width readout' });
                     atza_srcText(R, hd + E + atza_str(word + ' ') + '+Math.round((1+' + jzN(sxT - 1) + '*e)*100)+"%"');
                     jzSetExpr(jzXf(R, 'ADBE Position'), hd + E + '[value[0]+' + jzN(dk / 2) + '*e,value[1]]');

@@ -43,6 +43,7 @@ function jzChars(s) {
     return out;
 }
 function jzCode(ch) { return ch.charCodeAt(0); }
+function jzIsHangul(ch) { var c = jzCode(ch); return (c >= 0xAC00 && c <= 0xD7AF) || (c >= 0x1100 && c <= 0x11FF) || (c >= 0x3130 && c <= 0x318F); }
 function jzIsKanji(ch) { var c = jzCode(ch); return (c >= 0x3400 && c <= 0x9FFF) || (c >= 0xF900 && c <= 0xFAFF) || ch === '\u3005' || ch === '\u3006'; }
 function jzIsHira(ch) { var c = jzCode(ch); return c >= 0x3041 && c <= 0x309F; }
 function jzIsKata(ch) { var c = jzCode(ch); return (c >= 0x30A0 && c <= 0x30FF) || (c >= 0x31F0 && c <= 0x31FF); }
@@ -320,43 +321,13 @@ function jzRoleOf(key) {
 var JZ_FONT_MISSING = {}, JZ_FONT_NOAPI = false;
 // ---- lyric language (plan.lang from the browser): Chinese / Korean lyrics are drawn with faces that have their glyphs.
 // Per language: key \u2192 PostScript candidates (the browser's Google Font first, then OS fonts that always cover the script).
-var JZ_LANG = 'ja';
+var JZ_LANG = 'ko';
 var JZ_LANG_SYS = {
-    'zh-Hant': { sansB: ['PingFangTC-Semibold', 'MicrosoftJhengHeiBold', 'NotoSansCJKtc-Bold', 'SourceHanSansTC-Bold'], sans: ['PingFangTC-Regular', 'MicrosoftJhengHeiRegular', 'NotoSansCJKtc-Regular', 'SourceHanSansTC-Regular'],
-                 serifB: ['STSongti-TC-Bold', 'NotoSerifCJKtc-Bold', 'SourceHanSerifTC-Bold', 'PMingLiU'], serif: ['STSongti-TC-Regular', 'NotoSerifCJKtc-Regular', 'SourceHanSerifTC-Regular', 'PMingLiU'] },
-    'zh-Hans': { sansB: ['PingFangSC-Semibold', 'MicrosoftYaHei-Bold', 'NotoSansCJKsc-Bold', 'SourceHanSansSC-Bold'], sans: ['PingFangSC-Regular', 'MicrosoftYaHei', 'NotoSansCJKsc-Regular', 'SourceHanSansSC-Regular'],
-                 serifB: ['STSongti-SC-Bold', 'NotoSerifCJKsc-Bold', 'SourceHanSerifSC-Bold', 'SimSun'], serif: ['STSongti-SC-Regular', 'NotoSerifCJKsc-Regular', 'SourceHanSerifSC-Regular', 'SimSun'] },
     ko: { sansB: ['AppleSDGothicNeo-Bold', 'MalgunGothicBold', 'NotoSansCJKkr-Bold', 'SourceHanSansKR-Bold'], sans: ['AppleSDGothicNeo-Regular', 'MalgunGothic', 'NotoSansCJKkr-Regular', 'SourceHanSansKR-Regular'],
           serifB: ['AppleMyungjo', 'NotoSerifCJKkr-Bold', 'SourceHanSerifKR-Bold', 'Batang'], serif: ['AppleMyungjo', 'NotoSerifCJKkr-Regular', 'SourceHanSerifKR-Regular', 'Batang'] }
 };
 // [family (for messages), own PostScript names\u2026, system group]
 var JZ_LANG_FONTS = {
-    'zh-Hant': {
-        gothic_black: ['Noto Sans TC', 'NotoSansTC-Black', 'NotoSansTCThin-Black', 'sansB'], gothic_bold: ['Noto Sans TC', 'NotoSansTC-Bold', 'NotoSansTCThin-Bold', 'sansB'],
-        gothic_med: ['Noto Sans TC', 'NotoSansTC-Medium', 'NotoSansTCThin-Medium', 'sans'], gothic_light: ['Noto Sans TC', 'NotoSansTC-Light', 'NotoSansTCThin-Light', 'sans'],
-        zenkaku: ['Noto Sans TC', 'NotoSansTC-Black', 'NotoSansTCThin-Black', 'sansB'], sansui: ['Noto Sans TC', 'NotoSansTC-Medium', 'NotoSansTCThin-Medium', 'sans'],
-        dot: ['Noto Sans TC', 'NotoSansTC-Medium', 'NotoSansTCThin-Medium', 'sans'],
-        mincho_black: ['Noto Serif TC', 'NotoSerifTC-Black', 'NotoSerifTCExtraLight-Black', 'serifB'], mincho_bold: ['Noto Serif TC', 'NotoSerifTC-Bold', 'NotoSerifTCExtraLight-Bold', 'serifB'],
-        mincho: ['Noto Serif TC', 'NotoSerifTC-Medium', 'NotoSerifTCExtraLight-Medium', 'serif'], mincho_light: ['Noto Serif TC', 'NotoSerifTC-Light', 'NotoSerifTCExtraLight-Light', 'serif'],
-        tokumin: ['Noto Serif TC', 'NotoSerifTC-ExtraBold', 'NotoSerifTCExtraLight-ExtraBold', 'serifB'], shippori: ['Noto Serif TC', 'NotoSerifTC-ExtraBold', 'NotoSerifTCExtraLight-ExtraBold', 'serifB'],
-        dela: ['WDXL Lubrifont TC', 'WDXLLubrifontTC-Regular', 'NotoSansTC-Black', 'sansB'], round: ['Chiron GoRound TC', 'ChironGoRoundTC-ExtraBold', 'ChironGoRoundTCExtraLight-ExtraBold', 'sansB'],
-        pop: ['Huninn', 'Huninn-Regular', 'sansB'], kiwi: ['Huninn', 'Huninn-Regular', 'sans'],
-        klee: ['LXGW WenKai TC', 'LXGWWenKaiTC-Bold', 'serifB'], brush: ['LXGW WenKai TC', 'LXGWWenKaiTC-Bold', 'serifB'],
-        reggae: ['LXGW Marker Gothic', 'LXGWMarkerGothic-Regular', 'sansB'], rampart: ['LXGW Marker Gothic', 'LXGWMarkerGothic-Regular', 'sansB'], potta: ['LXGW Marker Gothic', 'LXGWMarkerGothic-Regular', 'sansB']
-    },
-    'zh-Hans': {
-        gothic_black: ['Noto Sans SC', 'NotoSansSC-Black', 'NotoSansSCThin-Black', 'sansB'], gothic_bold: ['Noto Sans SC', 'NotoSansSC-Bold', 'NotoSansSCThin-Bold', 'sansB'],
-        gothic_med: ['Noto Sans SC', 'NotoSansSC-Medium', 'NotoSansSCThin-Medium', 'sans'], gothic_light: ['Noto Sans SC', 'NotoSansSC-Light', 'NotoSansSCThin-Light', 'sans'],
-        zenkaku: ['Noto Sans SC', 'NotoSansSC-Black', 'NotoSansSCThin-Black', 'sansB'], sansui: ['Noto Sans SC', 'NotoSansSC-Medium', 'NotoSansSCThin-Medium', 'sans'],
-        dot: ['Noto Sans SC', 'NotoSansSC-Medium', 'NotoSansSCThin-Medium', 'sans'],
-        mincho_black: ['Noto Serif SC', 'NotoSerifSC-Black', 'NotoSerifSCExtraLight-Black', 'serifB'], mincho_bold: ['Noto Serif SC', 'NotoSerifSC-Bold', 'NotoSerifSCExtraLight-Bold', 'serifB'],
-        mincho: ['Noto Serif SC', 'NotoSerifSC-Medium', 'NotoSerifSCExtraLight-Medium', 'serif'], mincho_light: ['Noto Serif SC', 'NotoSerifSC-Light', 'NotoSerifSCExtraLight-Light', 'serif'],
-        tokumin: ['Noto Serif SC', 'NotoSerifSC-ExtraBold', 'NotoSerifSCExtraLight-ExtraBold', 'serifB'], shippori: ['Noto Serif SC', 'NotoSerifSC-ExtraBold', 'NotoSerifSCExtraLight-ExtraBold', 'serifB'],
-        dela: ['ZCOOL QingKe HuangYou', 'ZCOOLQingKeHuangYou-Regular', 'sansB'], round: ['ZCOOL KuaiLe', 'ZCOOLKuaiLe-Regular', 'sansB'],
-        pop: ['ZCOOL KuaiLe', 'ZCOOLKuaiLe-Regular', 'sansB'], kiwi: ['ZCOOL KuaiLe', 'ZCOOLKuaiLe-Regular', 'sans'],
-        klee: ['ZCOOL XiaoWei', 'ZCOOLXiaoWei-Regular', 'serif'], brush: ['Ma Shan Zheng', 'MaShanZheng-Regular', 'serifB'],
-        reggae: ['ZCOOL QingKe HuangYou', 'ZCOOLQingKeHuangYou-Regular', 'sansB'], rampart: ['ZCOOL QingKe HuangYou', 'ZCOOLQingKeHuangYou-Regular', 'sansB'], potta: ['Ma Shan Zheng', 'MaShanZheng-Regular', 'sansB']
-    },
     ko: {
         gothic_black: ['Noto Sans KR', 'NotoSansKR-Black', 'NotoSansKRThin-Black', 'sansB'], gothic_bold: ['Noto Sans KR', 'NotoSansKR-Bold', 'NotoSansKRThin-Bold', 'sansB'],
         gothic_med: ['Noto Sans KR', 'NotoSansKR-Medium', 'NotoSansKRThin-Medium', 'sans'], gothic_light: ['Noto Sans KR', 'NotoSansKR-Light', 'NotoSansKRThin-Light', 'sans'],
@@ -371,17 +342,14 @@ var JZ_LANG_FONTS = {
         reggae: ['Black Han Sans', 'BlackHanSans-Regular', 'sansB'], rampart: ['Black Han Sans', 'BlackHanSans-Regular', 'sansB'], potta: ['Nanum Brush Script', 'NanumBrush', 'NanumBrushScript-Regular', 'sansB']
     }
 };
-// random characters in the lyric's own writing system (same sets as the browser's J.pool \u2014 issue #16)
+// random characters in the lyric's own writing system (same sets as the browser's J.pool)
 var JZ_POOLS = {
-    ja: { kana: '\u30A2\u30A4\u30A6\u30A8\u30AA\u30AB\u30AD\u30AF\u30B1\u30B3\u30B5\u30B7\u30B9\u30BB\u30BD\u30BF\u30C1\u30C4\u30C6\u30C8\u30CA\u30CB\u30CC\u30CD\u30CE\u30CF\u30D2\u30D5\u30D8\u30DB\u30DE\u30DF\u30E0\u30E1\u30E2\u30E4\u30E6\u30E8\u30E9\u30EA\u30EB\u30EC\u30ED\u30EF\u30F2\u30F3', hira: '\u3042\u3044\u3046\u3048\u304A\u304B\u304D\u304F\u3051\u3053\u3055\u3057\u3059\u305B\u305D\u305F\u3061\u3064\u3066\u3068\u306A\u306B\u306C\u306D\u306E\u306F\u3072\u3075\u3078\u307B\u307E\u307F\u3080\u3081\u3082\u3084\u3086\u3088\u3089\u308A\u308B\u308C\u308D\u308F\u3092\u3093' },
-    'zh-Hant': { kana: '\u7684\u4E00\u662F\u4E0D\u4E86\u4EBA\u6211\u5728\u6709\u4ED6\u9019\u4E2D\u5927\u4F86\u4E0A\u570B\u500B\u5230\u8AAA\u5011\u70BA\u5B50\u548C\u4F60\u5730\u51FA\u9053\u4E5F\u6642\u5E74\u5F97\u5C31\u90A3\u8981\u4E0B\u4EE5\u751F\u6703\u81EA\u8457\u53BB\u4E4B\u904E\u5BB6\u5B78\u5C0D\u53EF\u5979\u88E1\u5F8C\u5C0F\u9EBC\u5FC3\u591A\u5929\u800C\u80FD\u597D\u90FD\u7136\u6C92\u65E5\u65BC\u8D77\u9084\u767C\u6210\u4E8B\u53EA\u4F5C\u7576\u60F3\u770B\u6587\u7121\u958B\u624B\u5341\u7528\u4E3B\u884C\u65B9\u53C8\u5982\u524D\u6240\u672C\u898B\u7D93\u982D\u9762\u516C\u540C\u4E09\u5DF2\u8001\u5F9E\u52D5\u5169\u9577\u77E5\u6C11\u6A23\u73FE\u5206\u5C07\u5916\u4F46\u8EAB\u4E9B\u8207\u9AD8\u610F\u9032\u628A\u6CD5\u6B64\u5BE6\u56DE\u4E8C\u7406\u7F8E\u9EDE\u6708\u660E\u5176\u7A2E\u8072\u5168\u5DE5\u5DF1\u8A71\u5152\u8005\u5411\u60C5\u90E8\u6B63\u540D\u5B9A\u5973\u554F\u529B\u6A5F\u7D66\u7B49\u5E7E\u5F88\u6700\u9593\u65B0\u4EC0\u6253\u4FBF\u4F4D\u56E0\u91CD\u88AB\u8D70\u96FB\u56DB\u7B2C\u9580\u76F8\u6B21\u6771\u6D77\u53E3\u4F7F\u897F\u518D\u5E73\u771F\u807D\u4E16\u6C23\u4FE1\u5317\u5C11\u95DC\u611B\u5922\u5149\u5F71\u7A7A\u591C\u661F\u96E8\u6DDA\u6200\u82B1\u98A8', hira: '\u7684\u4E00\u662F\u4E0D\u4E86\u4EBA\u6211\u5728\u6709\u4ED6\u9019\u4E2D\u5927\u4F86\u4E0A\u570B\u500B\u5230\u8AAA\u5011\u70BA\u5B50\u548C\u4F60\u5730\u51FA\u9053\u4E5F\u6642\u5E74\u5F97\u5C31\u90A3\u8981\u4E0B\u4EE5\u751F\u6703\u81EA\u8457\u53BB\u4E4B\u904E\u5BB6\u5B78\u5C0D\u53EF\u5979\u88E1\u5F8C\u5C0F\u9EBC\u5FC3\u591A\u5929\u800C\u80FD\u597D\u90FD\u7136\u6C92\u65E5\u65BC\u8D77\u9084\u767C\u6210\u4E8B\u53EA\u4F5C\u7576\u60F3\u770B\u6587\u7121\u958B\u624B\u5341\u7528\u4E3B\u884C\u65B9\u53C8\u5982\u524D\u6240\u672C\u898B\u7D93\u982D\u9762\u516C\u540C\u4E09\u5DF2\u8001\u5F9E\u52D5\u5169\u9577\u77E5\u6C11\u6A23\u73FE\u5206\u5C07\u5916\u4F46\u8EAB\u4E9B\u8207\u9AD8\u610F\u9032\u628A\u6CD5\u6B64\u5BE6\u56DE\u4E8C\u7406\u7F8E\u9EDE\u6708\u660E\u5176\u7A2E\u8072\u5168\u5DE5\u5DF1\u8A71\u5152\u8005\u5411\u60C5\u90E8\u6B63\u540D\u5B9A\u5973\u554F\u529B\u6A5F\u7D66\u7B49\u5E7E\u5F88\u6700\u9593\u65B0\u4EC0\u6253\u4FBF\u4F4D\u56E0\u91CD\u88AB\u8D70\u96FB\u56DB\u7B2C\u9580\u76F8\u6B21\u6771\u6D77\u53E3\u4F7F\u897F\u518D\u5E73\u771F\u807D\u4E16\u6C23\u4FE1\u5317\u5C11\u95DC\u611B\u5922\u5149\u5F71\u7A7A\u591C\u661F\u96E8\u6DDA\u6200\u82B1\u98A8' },
-    'zh-Hans': { kana: '\u7684\u4E00\u662F\u4E0D\u4E86\u4EBA\u6211\u5728\u6709\u4ED6\u8FD9\u4E2D\u5927\u6765\u4E0A\u56FD\u4E2A\u5230\u8BF4\u4EEC\u4E3A\u5B50\u548C\u4F60\u5730\u51FA\u9053\u4E5F\u65F6\u5E74\u5F97\u5C31\u90A3\u8981\u4E0B\u4EE5\u751F\u4F1A\u81EA\u7740\u53BB\u4E4B\u8FC7\u5BB6\u5B66\u5BF9\u53EF\u5979\u91CC\u540E\u5C0F\u4E48\u5FC3\u591A\u5929\u800C\u80FD\u597D\u90FD\u7136\u6CA1\u65E5\u4E8E\u8D77\u8FD8\u53D1\u6210\u4E8B\u53EA\u4F5C\u5F53\u60F3\u770B\u6587\u65E0\u5F00\u624B\u5341\u7528\u4E3B\u884C\u65B9\u53C8\u5982\u524D\u6240\u672C\u89C1\u7ECF\u5934\u9762\u516C\u540C\u4E09\u5DF2\u8001\u4ECE\u52A8\u4E24\u957F\u77E5\u6C11\u6837\u73B0\u5206\u5C06\u5916\u4F46\u8EAB\u4E9B\u4E0E\u9AD8\u610F\u8FDB\u628A\u6CD5\u6B64\u5B9E\u56DE\u4E8C\u7406\u7F8E\u70B9\u6708\u660E\u5176\u79CD\u58F0\u5168\u5DE5\u5DF1\u8BDD\u513F\u8005\u5411\u60C5\u90E8\u6B63\u540D\u5B9A\u5973\u95EE\u529B\u673A\u7ED9\u7B49\u51E0\u5F88\u6700\u95F4\u65B0\u4EC0\u6253\u4FBF\u4F4D\u56E0\u91CD\u88AB\u8D70\u7535\u56DB\u7B2C\u95E8\u76F8\u6B21\u4E1C\u6D77\u53E3\u4F7F\u897F\u518D\u5E73\u771F\u542C\u4E16\u6C14\u4FE1\u5317\u5C11\u5173\u7231\u68A6\u5149\u5F71\u7A7A\u591C\u661F\u96E8\u6CEA\u604B\u82B1\u98CE', hira: '\u7684\u4E00\u662F\u4E0D\u4E86\u4EBA\u6211\u5728\u6709\u4ED6\u8FD9\u4E2D\u5927\u6765\u4E0A\u56FD\u4E2A\u5230\u8BF4\u4EEC\u4E3A\u5B50\u548C\u4F60\u5730\u51FA\u9053\u4E5F\u65F6\u5E74\u5F97\u5C31\u90A3\u8981\u4E0B\u4EE5\u751F\u4F1A\u81EA\u7740\u53BB\u4E4B\u8FC7\u5BB6\u5B66\u5BF9\u53EF\u5979\u91CC\u540E\u5C0F\u4E48\u5FC3\u591A\u5929\u800C\u80FD\u597D\u90FD\u7136\u6CA1\u65E5\u4E8E\u8D77\u8FD8\u53D1\u6210\u4E8B\u53EA\u4F5C\u5F53\u60F3\u770B\u6587\u65E0\u5F00\u624B\u5341\u7528\u4E3B\u884C\u65B9\u53C8\u5982\u524D\u6240\u672C\u89C1\u7ECF\u5934\u9762\u516C\u540C\u4E09\u5DF2\u8001\u4ECE\u52A8\u4E24\u957F\u77E5\u6C11\u6837\u73B0\u5206\u5C06\u5916\u4F46\u8EAB\u4E9B\u4E0E\u9AD8\u610F\u8FDB\u628A\u6CD5\u6B64\u5B9E\u56DE\u4E8C\u7406\u7F8E\u70B9\u6708\u660E\u5176\u79CD\u58F0\u5168\u5DE5\u5DF1\u8BDD\u513F\u8005\u5411\u60C5\u90E8\u6B63\u540D\u5B9A\u5973\u95EE\u529B\u673A\u7ED9\u7B49\u51E0\u5F88\u6700\u95F4\u65B0\u4EC0\u6253\u4FBF\u4F4D\u56E0\u91CD\u88AB\u8D70\u7535\u56DB\u7B2C\u95E8\u76F8\u6B21\u4E1C\u6D77\u53E3\u4F7F\u897F\u518D\u5E73\u771F\u542C\u4E16\u6C14\u4FE1\u5317\u5C11\u5173\u7231\u68A6\u5149\u5F71\u7A7A\u591C\u661F\u96E8\u6CEA\u604B\u82B1\u98CE' },
-    ko: { kana: '\uAC00\uB098\uB2E4\uB77C\uB9C8\uBC14\uC0AC\uC544\uC790\uCC28\uCE74\uD0C0\uD30C\uD558\uAC70\uB108\uB354\uB7EC\uBA38\uBC84\uC11C\uC5B4\uC800\uCC98\uCEE4\uD130\uD37C\uD5C8\uACE0\uB178\uB3C4\uB85C\uBAA8\uBCF4\uC18C\uC624\uC870\uCD08\uCF54\uD1A0\uD3EC\uD638\uAD6C\uB204\uB450\uB8E8\uBB34\uBD80\uC218\uC6B0\uC8FC\uCD94\uCFE0\uD22C\uD478\uD6C4\uADF8\uB290\uB4DC\uB974\uBBC0\uBE0C\uC2A4\uC73C\uC988\uCE20\uD06C\uD2B8\uD504\uD750\uAE30\uB2C8\uB514\uB9AC\uBBF8\uBE44\uC2DC\uC774\uC9C0\uCE58\uD0A4\uD2F0\uD53C\uD788\uC0AC\uB791\uBCC4\uBE5B\uB9C8\uC74C\uB178\uB798\uD558\uB298\uBC14\uB78C\uAFC8\uB208\uBB3C\uB108\uB098\uC6B0\uB9AC', hira: '\uAC00\uB098\uB2E4\uB77C\uB9C8\uBC14\uC0AC\uC544\uC790\uCC28\uCE74\uD0C0\uD30C\uD558\uAC70\uB108\uB354\uB7EC\uBA38\uBC84\uC11C\uC5B4\uC800\uCC98\uCEE4\uD130\uD37C\uD5C8\uACE0\uB178\uB3C4\uB85C\uBAA8\uBCF4\uC18C\uC624\uC870\uCD08\uCF54\uD1A0\uD3EC\uD638\uAD6C\uB204\uB450\uB8E8\uBB34\uBD80\uC218\uC6B0\uC8FC\uCD94\uCFE0\uD22C\uD478\uD6C4\uADF8\uB290\uB4DC\uB974\uBBC0\uBE0C\uC2A4\uC73C\uC988\uCE20\uD06C\uD2B8\uD504\uD750\uAE30\uB2C8\uB514\uB9AC\uBBF8\uBE44\uC2DC\uC774\uC9C0\uCE58\uD0A4\uD2F0\uD53C\uD788\uC0AC\uB791\uBCC4\uBE5B\uB9C8\uC74C\uB178\uB798\uD558\uB298\uBC14\uB78C\uAFC8\uB208\uBB3C\uB108\uB098\uC6B0\uB9AC' },
+    ko: { kana: '\uAC00\uB098\uB2E4\uB77C\uB9C8\uBC14\uC0AC\uC544\uC790\uCC28\uCE74\uD0C0\uD30C\uD558\uAC70\uB108\uB354\uB7EC\uBA38\uBC84\uC11C\uC5B4\uC800\uCC98\uCEE4\uD130\uD37C\uD558\uACE0\uB178\uB3C4\uB85C\uBAA8\uBCF4\uC18C\uC624\uC870\uCD08\uCF54\uD1A0\uD3EC\uD638\uAD6C\uB204\uB450\uB8E8\uBB34\uBD80\uC218\uC6B0\uC8FC\uCD94\uCFE0\uD22C\uD478\uD6C4\uADF8\uB290\uB4DC\uB974\uBBC0\uBE0C\uC2A4\uC73C\uC988\uCE20\uD06C\uD2B8\uD504\uD750\uAE30\uB2C8\uB514\uB9AC\uBBF8\uBE44\uC2DC\uC774\uC9C0\uCE58\uD0A4\uD2F0\uD53C\uD788\uC0AC\uB791\uBCC4\uBE5B\uB9C8\uC74C\uB178\uB798\uD558\uB298\uBC14\uB78C\uAFC8\uB208\uBB3C\uB108\uB098\uC6B0\uB9AC', hira: '\uAC00\uB098\uB2E4\uB77C\uB9C8\uBC14\uC0AC\uC544\uC790\uCC28\uCE74\uD0C0\uD30C\uD558\uAC70\uB108\uB354\uB7EC\uBA38\uBC84\uC11C\uC5B4\uC800\uCC98\uCEE4\uD130\uD37C\uD558\uACE0\uB178\uB3C4\uB85C\uBAA8\uBCF4\uC18C\uC624\uC870\uCD08\uCF54\uD1A0\uD3EC\uD638\uAD6C\uB204\uB450\uB8E8\uBB34\uBD80\uC218\uC6B0\uC8FC\uCD94\uCFE0\uD22C\uD478\uD6C4\uADF8\uB290\uB4DC\uB974\uBBC0\uBE0C\uC2A4\uC73C\uC988\uCE20\uD06C\uD2B8\uD504\uD750\uAE30\uB2C8\uB514\uB9AC\uBBF8\uBE44\uC2DC\uC774\uC9C0\uCE58\uD0A4\uD2F0\uD53C\uD788\uC0AC\uB791\uBCC4\uBE5B\uB9C8\uC74C\uB178\uB798\uD558\uB298\uBC14\uB78C\uAFC8\uB208\uBB3C\uB108\uB098\uC6B0\uB9AC' },
     en: { kana: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', hira: 'abcdefghijklmnopqrstuvwxyz' }
 };
-function jzPool(kind) { var P = JZ_POOLS[JZ_POOL_LANG] || JZ_POOLS.ja; return P[kind] || JZ_POOLS.ja[kind]; }
-var JZ_POOL_LANG = 'ja';
-function jzSetLang(l) { JZ_LANG = (l && JZ_LANG_FONTS.hasOwnProperty(l)) ? l : 'ja'; JZ_POOL_LANG = (l && JZ_POOLS.hasOwnProperty(l)) ? l : 'ja'; }
+function jzPool(kind) { var P = JZ_POOLS[JZ_POOL_LANG] || JZ_POOLS.ko; return P[kind] || JZ_POOLS.en[kind]; }
+var JZ_POOL_LANG = 'ko';
+function jzSetLang(l) { JZ_LANG = (l === 'en') ? 'en' : 'ko'; JZ_POOL_LANG = (l === 'en') ? 'en' : 'ko'; }
 // the language's own candidates for a key (null = Japanese faces); JZ_FONT_MISSING gets the family name when its own face is missing
 function jzLangFont(key) {
     var T = JZ_LANG_FONTS[JZ_LANG], e = T && T[key], i, ex, sys;
@@ -895,24 +863,14 @@ function jzPickFx(rng, st, en, fx, emph, fxHist, kind) {
 }
 function jzPlanOf(g, k, rng, st, extra) { var D = JZ_REG[g][k]; if (!D || !D.plan) return {}; try { return (g === 'layout' ? D.plan(rng, extra || {}, st) : D.plan(rng, st)) || {}; } catch (e) { jzWarn(g + ' ' + k + ' plan: ' + e.toString()); return {}; } }
 
-// ---- lyric language (same rule as the browser, src/02b_lang.js): Latin only \u2192 en, kana \u2192 ja, hangul \u2192 ko, Han only \u2192 Traditional / Simplified
-var JZ_TC = '\u5011\u500B\u8AAA\u9019\u6703\u5C0D\u6642\u4F86\u9084\u5F8C\u904E\u570B\u958B\u95DC\u8207\u70BA\u5F9E\u554F\u9593\u898B\u9577\u6771\u8ECA\u9580\u611B\u807D\u5B78\u8B93\u8A71\u865F\u767C\u9EDE\u7121\u73FE\u9AD4\u7D93\u96FB\u5BE6\u6A23\u8072\u8B8A\u96E2\u6C23\u5922\u7D66\u89BA\u7576\u6B61\u967D\u6200\u908A\u982D\u6DDA\u8AB0\u6B72\u9060\u55CE\u842C\u96E3\u5BEB\u61C9\u8B80\u61B6\u6A02\u9EBC\u9E97\u50B7\u5C07\u7E3D\u7D50\u7D42\u7D05\u7DA0\u7DDA\u984F\u98A8\u98DB\u9CE5\u8B1D\u8A9E\u8ACB\u8A8D\u8B58\u71B1\u71C8\u9858\u7368\u5920\u7D00\u5E36\u6EFF\u975C\u8F15\u5225\u8166\u81C9\u61F7\u8B0A\u932F\u9846\u9663\u5834\u8B9A\u6DFA\u6EAB\u8A18\u6191\u8B77\u58DE\u6B78\u5ABD\u96A8\u9280\u805E\u614B\u865B\u9059';
-var JZ_SC = '\u4EEC\u4E2A\u8BF4\u8FD9\u4F1A\u5BF9\u65F6\u6765\u8FD8\u540E\u8FC7\u56FD\u5F00\u5173\u4E0E\u4E3A\u4ECE\u95EE\u95F4\u89C1\u957F\u4E1C\u8F66\u95E8\u7231\u542C\u5B66\u8BA9\u8BDD\u53F7\u53D1\u70B9\u65E0\u73B0\u4F53\u7ECF\u7535\u5B9E\u6837\u58F0\u53D8\u79BB\u6C14\u68A6\u7ED9\u89C9\u5F53\u6B22\u9633\u604B\u8FB9\u5934\u6CEA\u8C01\u5C81\u8FDC\u5417\u4E07\u96BE\u5199\u5E94\u8BFB\u5FC6\u4E50\u4E48\u4E3D\u4F24\u5C06\u603B\u7ED3\u7EC8\u7EA2\u7EFF\u7EBF\u989C\u98CE\u98DE\u9E1F\u8C22\u8BED\u8BF7\u8BA4\u8BC6\u70ED\u706F\u613F\u72EC\u591F\u7EAA\u5E26\u6EE1\u9759\u8F7B\u522B\u8111\u8138\u6000\u8C0E\u9519\u9897\u9635\u573A\u8D5E\u6D45\u6E29\u8BB0\u51ED\u62A4\u574F\u5F52\u5988\u968F\u94F6\u95FB\u6001\u865A\u9065';
+// ---- lyric language: hangul -> ko, latin -> en (default 'ko')
 function jzDetectLangText(text) {
-    var kana = 0, hangul = 0, han = 0, tc = 0, sc = 0, latin = 0, i, u, c;
-    text = String(text || '');
-    for (i = 0; i < text.length; i++) {
-        u = text.charCodeAt(i); c = text.charAt(i);
-        if ((u >= 0x41 && u <= 0x5a) || (u >= 0x61 && u <= 0x7a) || (u >= 0xc0 && u <= 0x24f && u !== 0xd7 && u !== 0xf7) || (u >= 0xff21 && u <= 0xff3a) || (u >= 0xff41 && u <= 0xff5a)) latin++;
-        else if ((u >= 0x3041 && u <= 0x30ff && u !== 0x30fb && u !== 0x30fc) || (u >= 0xff66 && u <= 0xff9d)) kana++;
-        else if ((u >= 0xac00 && u <= 0xd7a3) || (u >= 0x1100 && u <= 0x11ff) || (u >= 0x3130 && u <= 0x318f)) hangul++;
-        else if ((u >= 0x4e00 && u <= 0x9fff) || (u >= 0x3400 && u <= 0x4dbf)) { han++; if (JZ_TC.indexOf(c) >= 0) tc++; if (JZ_SC.indexOf(c) >= 0) sc++; }
-    }
-    if (latin >= 6 && latin >= (latin + (kana + hangul + han) * 3) * 0.9) return 'en';   // almost only Latin letters (English / romaji)
-    if (hangul >= 2 && hangul > kana) return 'ko';
-    if (kana >= 2 || (kana > 0 && kana >= han * 0.03)) return 'ja';
-    if (han >= 2 && (tc || sc)) return tc >= sc ? 'zh-Hant' : 'zh-Hans';
-    return 'ja';
+    var s = String(text || '');
+    var hangul = (s.match(/[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/g) || []).length;
+    var latin = (s.match(/[A-Za-z\u00C0-\u024F]/g) || []).length;
+    if (hangul >= 2) return 'ko';
+    if (latin >= 4) return 'en';
+    return hangul > 0 ? 'ko' : 'en';
 }
 // English lyrics: cut by short phrases (2\u20133 words), not word by word \u2014 same as the browser (J.phraseChunks)
 function jzPhraseChunks(words) {
@@ -17283,7 +17241,7 @@ jzReg('layout', 'hrCctv', {
 });
 
 /* ================================================================ 5. hrOuija \u2014 \u964D\u970A\u76E4 */
-var AHR_KANA = '\u3042\u3044\u3046\u3048\u304A\u304B\u304D\u304F\u3051\u3053\u3055\u3057\u3059\u305B\u305D\u305F\u3061\u3064\u3066\u3068\u306A\u306B\u306C\u306D\u306E\u306F\u3072\u3075\u3078\u307B\u307E\u307F\u3080\u3081\u3082\u3084\u3086\u3088\u3089\u308A\u308B\u308C\u308D\u308F\u3092\u3093';
+var AHR_HANGUL = '\u3131\u3134\u3137\u3139\u3141\u3142\u3145\u3147\u3148\u314A\u314B\u314C\u314D\u314E\u314F\u3151\u3153\u3155\u3157\u315B\u315C\u3160\u3161\u3163';
 var AHR_ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 // one text layer holding several glyph rows, each glyph moved to its own place: items [{ch, x, y, rot}] (one glyph per line)
 function ahr_glyphCloud(ctx, items, o) {
@@ -17313,7 +17271,7 @@ jzReg('layout', 'hrOuija', {
         var plate = jzMixHex(sc.bg, sc.fg, ahr_dark(sc.bg) ? 0.07 : 0.06), col = jzMixHex(plate, sc.fg, 0.55);
         var Bd = jzRectLayer(ctx, 'hr board', bx, by, bw, bh, plate, { round: bh * 0.14, stroke: jzMixHex(sc.bg, sc.sub, 0.6), strokeW: lw });
         ahr_fade(ctx, Bd, 0, 0.35); jzNoGhost(Bd);
-        var rowsSrc = latin ? [AHR_ABC.substr(0, 13), AHR_ABC.substr(13), '1234567890'] : [AHR_KANA.substr(0, 16), AHR_KANA.substr(16, 16), AHR_KANA.substr(32)];
+        var rowsSrc = latin ? [AHR_ABC.substr(0, 13), AHR_ABC.substr(13), '1234567890'] : [AHR_HANGUL.substr(0, 14), AHR_HANGUL.substr(14, 10), '1234567890'];
         var cells = [], bf = bh * (latin ? 0.1 : 0.085);
         for (r = 0; r < 3; r++) {
             var arr = jzChars(rowsSrc[r]), n = arr.length, R = bw * (0.64 - r * 0.17), cy = by + bh * (0.52 + r * 0.04), span = (r ? 96 : 112) * (port ? 0.95 : 1), row = [];
@@ -25053,7 +25011,7 @@ jzReg('layout', 'headlineDeck', {
     plan: function (rng, cut, st) {
         var port = cut.H > cut.W * 1.08;
         return { font: rng.pick(jzFontsOf(st, ['display', 'display', 'serif'])), variant: port ? rng.pick(['top', 'bottom']) : rng.pick(['top', 'bottom', 'split']),
-            kicker: rng.pick(['\u7279\u96C6', 'FEATURE', 'COVER STORY', 'ESSAY', '\u9023\u8F09', 'REPORT']), mark: rng.pick(['none', 'bar', 'none', 'dot']), dbl: rng.chance(0.5) };
+            kicker: rng.pick(['\uD2B9\uC9D1', 'FEATURE', 'COVER STORY', 'ESSAY', '\uC5F0\uC7AC', 'REPORT']), mark: rng.pick(['none', 'bar', 'none', 'dot']), dbl: rng.chance(0.5) };
     },
     build: function (ctx) {
         var W = ctx.W, H = ctx.H, sc = ctx.sc, c = ctx.cut, u = jzU(ctx), k = lc1_k(ctx), port = jzPortrait(ctx), i;
@@ -25122,14 +25080,14 @@ jzReg('layout', 'contents', {
         var chunks = lc1_chunks(ctx), nk = chunks.length, font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display')), page0 = jzP(ctx, 'page0', 12), step = jzP(ctx, 'step', 12), mark = jzP(ctx, 'mark', 'bar');
         var ls = lc1_ls(ctx), lw = Math.max(1.2 * k, u * 0.0016), mono = jzMonoF(ctx), serif = jzSerifF(ctx), bb = null, pages = [];
         for (i = 0; i < nk; i++) pages.push(lc1_pad3(page0 + i * step));
-        var ctxRows = jzP(ctx, 'ctx', true) ? [['\u5E8F', '000'], ['\u7D42', lc1_pad3(page0 + nk * step + 14)]] : null;
+        var ctxRows = jzP(ctx, 'ctx', true) ? [['\uC2DC\uC791', '000'], ['\uB05D', lc1_pad3(page0 + nk * step + 14)]] : null;
         var CH = 'var NK=' + nk + ',CUR=Math.min(NK-1,Math.floor(cl(time/Math.max(0.3,DUR*0.92))*NK));';
         var L, T, a;
         if (jzP(ctx, 'variant', 'rows') === 'tate' && !jzHasLatin(c.text)) {
             var cols = nk + (ctxRows ? 2 : 0), colW = Math.min(W * 0.86 / (cols + 1), u * 0.22), hTop = H * 0.14, hBot = H * 0.86, x0 = W / 2 + (cols + 1.2) * colW / 2;
             var size = colW * 0.7;
             for (i = 0; i < nk; i++) size = Math.min(size, (hBot - hTop) * 0.62 / Math.max(1, jzCount(chunks[i])) / 1.03);
-            var TT = lc1_vcols(ctx, ['\u76EE\u6B21'], { font: serif, size: colW * 0.5, x: x0 - colW * 0.45, top: hTop, track: 0.6, color: sc.fg, name: 'title' });
+            var TT = lc1_vcols(ctx, ['\uBAA9\uCC28'], { font: serif, size: colW * 0.5, x: x0 - colW * 0.45, top: hTop, track: 0.6, color: sc.fg, name: 'title' });
             lc1_fade(ctx, TT.L, 0, 0.4);
             lc1_line(ctx, 'title rule', [[x0 - colW * 1.05, hTop], [x0 - colW * 1.05, hBot]], sc.fg, lw, null, lc1_e(0.05, 0.6, 'ioc') + '*K');
             var ci = 0;
@@ -25165,14 +25123,14 @@ jzReg('layout', 'contents', {
         var rowH0 = Math.min((H * 0.66 - (ctxRows ? cxH * 2 : 0)) / nk, u * 0.26), sz = rowH0 * 0.64;
         for (i = 0; i < nk; i++) sz = Math.min(sz, lc1_fitSize(ctx, chunks[i], font, tw * 0.92, rowH0 * 0.7, { track: 0.03 }));
         var rowH = Math.max(sz * 1.62, ls * 2.4), blockH = nk * rowH + (ctxRows ? cxH * 2 : 0), y0 = H / 2 - blockH / 2 + ls * 1.8, hy = y0 - ls * 2.8;
-        T = lc1_T(ctx, '\u76EE\u6B21', { font: serif, size: ls * 2.1, track: 0.5, align: 'left', x: bx, y: hy - ls * 0.2, color: sc.fg, name: 'title' }); lc1_fade(ctx, T, 0, 0.4);
+        T = lc1_T(ctx, '\uBAA9\uCC28', { font: serif, size: ls * 2.1, track: 0.5, align: 'left', x: bx, y: hy - ls * 0.2, color: sc.fg, name: 'title' }); lc1_fade(ctx, T, 0, 0.4);
         T = lc1_T(ctx, 'CONTENTS', { font: mono, size: ls * 0.85, track: 0.3, align: 'right', x: bx + bw, y: hy, color: sc.sub, name: 'CONTENTS' }); lc1_fade(ctx, T, 0, 0.4);
         var le = lc1_e(0.05, 0.6, 'ioc') + '*K';
         lc1_line(ctx, 'head rule', [[bx, hy + ls * 1.4], [bx + bw, hy + ls * 1.4]], sc.fg, lw * 1.6, null, le);
         lc1_line(ctx, 'foot rule', [[bx + bw, y0 + blockH + ls * 0.2], [bx, y0 + blockH + ls * 0.2]], sc.fg, lw, 0.7, le);
         var off0 = ctxRows ? cxH : 0;
         var drawCtx = function (lab, pg, y, d) {
-            var A = lc1_e(d, 0.4, 'oc') + '*K', T1 = lc1_T(ctx, lab + '\u7AE0', { font: serif, size: ls * 1.1, align: 'left', x: bx + numW, y: y, color: sc.sub, name: lab });
+            var A = lc1_e(d, 0.4, 'oc') + '*K', T1 = lc1_T(ctx, lab + '\uC7A5', { font: serif, size: ls * 1.1, align: 'left', x: bx + numW, y: y, color: sc.sub, name: lab });
             lc1_op(ctx, T1, A, 0.45);
             var LD = lc1_leader(ctx, 'leader ' + lab, [bx + numW + ls * 3.4, y + ls * 0.3], [bx + bw - pgW, y + ls * 0.3], sc.sub, null, ls * 0.55, Math.max(1 * k, ls * 0.07), null);
             lc1_op(ctx, LD, A, 0.45);
@@ -25253,7 +25211,7 @@ jzReg('layout', 'footnote', {
 });
 
 /* ================================================================== 5 proofread \u2014 \u6821\u6B63\u5237\u308A */
-var LC1_PROOF = { circle: '\u30DE\u30DE', wave: '\u5F37\u8ABF', box: '\u592A\u5B57', dots: '\u30A4\u30AD' };
+var LC1_PROOF = { circle: '\uADF8\uB300\uB85C', wave: '\uAC15\uC870', box: '\uAD75\uAC8C', dots: '\uC0B4\uB9BC' };
 jzReg('layout', 'proofread', {
     plan: function (rng, cut, st) {
         var all = ['circle', 'wave', 'box', 'dots'], first = rng.pick(['circle', 'circle', 'box']), rest = [];
@@ -25346,7 +25304,7 @@ jzReg('layout', 'proofread', {
             var LE = HE + 'var LE=oc(cl(E*1.4-0.4));';
             var LL = lc1_line(ctx, 'pen leader ' + mk, [anchor, mxp, [nx - ns * 0.2, ny]], pen, pw * 0.7, null, 'LE', { head: LE, cap: 2, join: 2 });
             lc1_op(ctx, LL, 'OP', 1, HP);
-            var NT = lc1_T(ctx, LC1_PROOF[mk] || '\u30DE\u30DE', { font: penF, size: ns, align: 'left', x: nx, y: ny, rot: -4, color: pen, name: 'note ' + mk });
+            var NT = lc1_T(ctx, LC1_PROOF[mk] || '\uADF8\uB300\uB85C', { font: penF, size: ns, align: 'left', x: nx, y: ny, rot: -4, color: pen, name: 'note ' + mk });
             lc1_op(ctx, NT, 'cl((LE-0.6)/0.4)*OP', 1, LE);
         }
         // \u6821\u4E86 stamp
@@ -25360,7 +25318,7 @@ jzReg('layout', 'proofread', {
             jzXf(ST, 'ADBE Rotate Z').setValue(jzP(ctx, 'rot', 0));
             jzSetExpr(jzXf(ST, 'ADBE Scale'), lc1_H(ctx) + HS + 'var s=1.5+(1-1.5)*ob(cl(X),1.4);[value[0]*s,value[1]*s]');
             lc1_op(ctx, ST, 'SA', 1, HS);
-            var S1 = lc1_T(ctx, '\u6821\u4E86', { font: jzSerifF(ctx), size: S * 0.36, track: 0.2, color: pen, name: 'stamp text' }); lc1_parent(S1, ST, 0, -S * 0.06); lc1_op(ctx, S1, 'SA', 1, HS);
+            var S1 = lc1_T(ctx, '\uAD50\uC5F4\uC644\uB8CC', { font: jzSerifF(ctx), size: S * 0.36, track: 0.2, color: pen, name: 'stamp text' }); lc1_parent(S1, ST, 0, -S * 0.06); lc1_op(ctx, S1, 'SA', 1, HS);
             var S2 = lc1_T(ctx, jzFmtTime(c.start), { font: jzMonoF(ctx), size: S * 0.12, color: pen, name: 'stamp time' }); lc1_parent(S2, ST, 0, S * 0.2); lc1_op(ctx, S2, 'SA', 1, HS);
         }
         return bb;
@@ -25598,18 +25556,18 @@ function lc1_halftone(S, name, x, y, w, h, col, bgc, seed, kind) {
 /* ================================================================== 9 dictionary \u2014 \u8F9E\u66F8 */
 jzReg('layout', 'dictionary', {
     plan: function (rng, cut, st) {
-        return { font: rng.pick(jzFontsOf(st, ['serif', 'display'])), variant: rng.pick(['entry', 'page', 'page']), pos: rng.pick(['\u540D', '\u9023\u8A9E', '\u611F', '\u5F62\u52D5', '\u526F']),
+        return { font: rng.pick(jzFontsOf(st, ['serif', 'display'])), variant: rng.pick(['entry', 'page', 'page']), pos: rng.pick(['\uBA85', '\uC5F0\uC5B4', '\uAC10', '\uD615\uC6A9', '\uBD80']),
             page: rng.int(120, 1480), tabY: rng.range(0.2, 0.75), mark: rng.pick(['\u25C6', '\u25BC', '\u25A0']), seed: rng.int(1, 9999) };
     },
     build: function (ctx) {
         var W = ctx.W, H = ctx.H, sc = ctx.sc, c = ctx.cut, u = jzU(ctx), k = lc1_k(ctx), port = jzPortrait(ctx), i;
-        var font = jzP(ctx, 'font', jzSerifF(ctx)), page = jzP(ctx, 'variant', 'page') === 'page', pos = jzP(ctx, 'pos', '\u540D'), seed = jzP(ctx, 'seed', 5), t0 = jzTrim(c.text), latin = jzHasLatin(t0);
+        var font = jzP(ctx, 'font', jzSerifF(ctx)), page = jzP(ctx, 'variant', 'page') === 'page', pos = jzP(ctx, 'pos', '\uBA85'), seed = jzP(ctx, 'seed', 5), t0 = jzTrim(c.text), latin = jzHasLatin(t0);
         var ls = lc1_ls(ctx), mono = jzMonoF(ctx), serif = jzSerifF(ctx), mx = W * (port ? 0.08 : 0.1), aw = W - mx * 2 - (port ? W * 0.04 : W * 0.03), lw = Math.max(1, u * 0.0014);
         var fb = lc1_fitBlock(ctx, t0, font, aw * (port ? 0.84 : 0.72), H * (port ? 0.26 : 0.3), { track: 0.02, lead: 1.1 }, port ? 3 : 2);
         var size = Math.min(fb.size, u * 0.17), nL = fb.lines, mh = size * (1 + (nL - 1) * 1.1), hx = mx + size * 0.62, hy = H * (page ? 0.44 : 0.4);
         var fs = jzClamp(u * 0.02, 11 * k, 24 * k), lh = fs * 1.8, src = jzFlat(c.lineText || t0) + (latin ? ' \u2014 ' : '\u3002');
         var top = hy - mh / 2 - size * 0.55 - ls * 1.6;
-        var defs = [lc1_deck(ctx) || ('\u6B4C\u8A5E \u7B2C' + lc1_kanjiNum(lc1_lineN(ctx)) + '\u884C\u3002'), jzFmtTime(c.start) + ' \u2500 ' + jzFmtTime(c.end) + '\u3000' + jzCount(t0) + (latin ? ' chars' : '\u5B57')];
+        var defs = [lc1_deck(ctx) || ('\uAC00\uC0AC \uC81C' + lc1_kanjiNum(lc1_lineN(ctx)) + '\uD589.'), jzFmtTime(c.start) + ' \u2500 ' + jzFmtTime(c.end) + '\u3000' + jzCount(t0) + (latin ? ' chars' : '\u5B57')];
         var dfs = jzClamp(u * 0.028, 14 * k, 36 * k), defTop = hy + mh / 2 + size * 0.45, defBot = defTop + defs.length * dfs * 1.7 + dfs, T;
         var lines = lc1_lines(fb.text);
         if (page) {
@@ -25713,7 +25671,7 @@ jzReg('layout', 'ema', {
         else if (emblem === 'wave') for (j = 0; j < 2; j++) { var pp = []; for (i = 0; i <= 12; i++) pp.push([-hw * 0.38 + hw * 0.16 * i / 12, ey + j * es * 0.7 + Math.sin(i / 12 * Math.PI * 2) * es * 0.25]); lc1_path(R, 'wave ' + j, pp, emb, Math.max(2 * k, es * 0.18), { cap: 2 }); }
         else if (emblem === 'mount') lc1_path(R, 'mount', [[-hw * 0.4, ey + es * 0.7], [-hw * 0.3, ey - es * 0.8], [-hw * 0.2, ey + es * 0.7]], null, 0, { closed: true, fill: emb });
         else { lc1_ellipse(R, 'knot 1', es * 1.2, es * 1.2, -hw * 0.32, ey, null, { stroke: emb, sw: Math.max(2 * k, es * 0.2) }); lc1_ellipse(R, 'knot 2', es * 1.2, es * 1.2, -hw * 0.26, ey, null, { stroke: emb, sw: Math.max(2 * k, es * 0.2) }); }
-        var T = lc1_T(ctx, '\u5949\u7D0D', { font: jzSerifF(ctx), size: es * 1.1, track: 0.3, x: hw * 0.3, y: ey, color: ink, name: 'hounou' });
+        var T = lc1_T(ctx, '\uD5CC\uC815', { font: jzSerifF(ctx), size: es * 1.1, track: 0.3, x: hw * 0.3, y: ey, color: ink, name: 'hounou' });
         T.setParentWithJump(R); lc1_op(ctx, T, 'HA*0.8', 1, HS);
         // the wish (lyric), handwritten
         var t0 = jzTrim(c.text), ax = -hw * 0.42, aw = hw * 0.84, ay = -ph / 2 + r * 1.6, ah = ph / 2 - ay - ph * 0.14, fb, size, L, mi = lc1_mi(ctx, 0.35);
@@ -25804,11 +25762,11 @@ jzReg('layout', 'ransom', {
 jzReg('layout', 'newspaper', {
     plan: function (rng, cut, st) {
         return { font: rng.pick(jzFontsOf(st, ['display', 'serif'])), variant: jzHasLatin(cut.text) ? 'yoko' : rng.pick(['yoko', 'tate', 'tate']), spin: rng.chance(0.45), rev: rng.chance(0.6),
-            seed: rng.int(1, 9999), mast: rng.pick(['\u5B57\u9762\u65B0\u805E', '\u6B4C\u8A5E\u65B0\u5831', '\u591C\u66F4\u65B0\u805E']), issue: rng.int(1000, 29999) };
+            seed: rng.int(1, 9999), mast: rng.pick(['\uC9C0\uBA74\uC2E0\uBB38', '\uAC00\uC0AC\uC2E0\uBCF4', '\uC57C\uAC04\uC2E0\uBB38']), issue: rng.int(1000, 29999) };
     },
     build: function (ctx) {
         var W = ctx.W, H = ctx.H, sc = ctx.sc, c = ctx.cut, u = jzU(ctx), k = lc1_k(ctx), port = jzPortrait(ctx), i;
-        var font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display')), spin = jzP(ctx, 'spin', false), rev = jzP(ctx, 'rev', true), seed = jzP(ctx, 'seed', 3), mast = String(jzP(ctx, 'mast', '\u5B57\u9762\u65B0\u805E'));
+        var font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display')), spin = jzP(ctx, 'spin', false), rev = jzP(ctx, 'rev', true), seed = jzP(ctx, 'seed', 3), mast = String(jzP(ctx, 'mast', '\uC9C0\uBA74\uC2E0\uBB38'));
         var C = lc1_card(sc), ls = lc1_ls(ctx), pw = W * (port ? 0.92 : 0.9), ph = H * 0.9, cx = W / 2, cy = H / 2, t0 = jzTrim(c.text);
         // the sheet: classic spinning newspaper, or a slide up; everything else rides on it
         var R = lc1_S(ctx, 'newspaper', cx, cy);
@@ -25876,7 +25834,7 @@ jzReg('layout', 'newspaper', {
         // masthead type
         var MT = lc1_vcols(ctx, [mast], { font: font, size: Math.min(mw * 0.62, mh * 0.9 / jzChars(mast).length), x: mX + mw / 2 - pw / 2, top: 0, track: 0.05, color: lc1_onCol(sc, hl), name: 'masthead' });
         jzXf(MT.L, 'ADBE Position').setValue([mX + mw / 2 - pw / 2, mY + mh / 2 - ph / 2]); MT.L.setParentWithJump(R); lc1_op(ctx, MT.L, '1-ic(PO)', 1);
-        T = lc1_T(ctx, '\u7B2C' + jzP(ctx, 'issue', 12000) + '\u53F7', { font: jzBodyF(ctx), size: ls * 0.7, x: mX + mw / 2 - pw / 2, y: mY + mh + ls * 0.8 - ph / 2, color: tx, name: 'issue' }); T.setParentWithJump(R); lc1_op(ctx, T, '1-ic(PO)', 0.8);
+        T = lc1_T(ctx, '\uC81C' + jzP(ctx, 'issue', 12000) + '\uD638', { font: jzBodyF(ctx), size: ls * 0.7, x: mX + mw / 2 - pw / 2, y: mY + mh + ls * 0.8 - ph / 2, color: tx, name: 'issue' }); T.setParentWithJump(R); lc1_op(ctx, T, '1-ic(PO)', 0.8);
         T = lc1_T(ctx, jzFmtTime(c.start), { font: jzMonoF(ctx), size: ls * 0.7, x: mX + mw / 2 - pw / 2, y: mY + mh + ls * 1.8 - ph / 2, color: tx, name: 'date' }); T.setParentWithJump(R); lc1_op(ctx, T, '1-ic(PO)', 0.8);
         L.moveToBeginning(); L.setParentWithJump(R);
         jzAnimate(ctx, L, { mi: mi, noHold: lc1_plateHold(ctx) });
@@ -26201,12 +26159,12 @@ jzReg('layout', 'polaroid', {
 
 var LC2_CY = 0.38;        // glyph centre above the baseline (em)
 var LC2_FX = 'function ioc(x){x=cl(x);return x<0.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}function lp(a,b,t){return a+(b-a)*t;}\n';
-var LC2_WD_J = '\u65E5\u6708\u706B\u6C34\u6728\u91D1\u571F', LC2_WD_E = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+var LC2_WD_J = '\uC77C\uC6D4\uD654\uC218\uBAA9\uAE08\uD1A0', LC2_WD_E = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 var LC2_MON_E = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
-var LC2_ROKUYO = ['\u5927\u5B89', '\u8D64\u53E3', '\u5148\u52DD', '\u53CB\u5F15', '\u5148\u8CA0', '\u4ECF\u6EC5'];
-var LC2_KUJI = ['\u5927\u5409', '\u5409', '\u4E2D\u5409', '\u5C0F\u5409', '\u672B\u5409', '\u5927\u5409'];
-var LC2_KUJI_CAT = ['\u9858\u671B', '\u5F85\u4EBA', '\u5931\u7269', '\u65C5\u884C', '\u5546\u58F2', '\u5B66\u554F', '\u604B\u611B', '\u5065\u5EB7'];
-var LC2_WARN = [['WARNING', '\u8B66\u544A'], ['CAUTION', '\u6CE8\u610F'], ['DANGER', '\u5371\u967A'], ['NOTICE', '\u304A\u77E5\u3089\u305B']];
+var LC2_ROKUYO = ['\uB300\uC548', '\uC801\uAD6C', '\uC120\uC2B9', '\uC6B0\uC778', '\uC120\uBD80', '\uBD88\uBA78'];
+var LC2_KUJI = ['\uB300\uAE38', '\uAE38', '\uC911\uAE38', '\uC18C\uAE38', '\uB9D0\uAE38', '\uB300\uAE38'];
+var LC2_KUJI_CAT = ['\uC18C\uC6D0', '\uAE30\uB2E4\uB9BC', '\uBD84\uC2E4\uBB3C', '\uC5EC\uD589', '\uC0AC\uC5C5', '\uD559\uBB38', '\uC5F0\uC560', '\uAC74\uAC15'];
+var LC2_WARN = [['WARNING', '\uACBD\uACE0'], ['CAUTION', '\uC8FC\uC758'], ['DANGER', '\uC704\uD5D8'], ['NOTICE', '\uC54C\uB9BC']];
 var LC2_KNUM = '\u3007\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D\u4E03\u516B\u4E5D';
 
 /* ---------------------------------------------------------------- text splitting (browser splitK / charUnits / brk) */
@@ -26813,7 +26771,7 @@ jzReg('layout', 'postcard', {
         lc2_kid(tv, R); jzSetExpr(jzXf(tv, 'ADBE Opacity'), EX + 'value*a');
         var ZM = lc2_multi(ctx, zi, { font: font, size: bs * 0.8, color: C.text, name: 'zip code' });
         lc2_kid(ZM.L, R); lc2_op(ctx, ZM.L, ZA, 0.9);
-        var lab = lc2_T(ctx, vertCard ? '\u90F5\u4FBF\u306F\u304C\u304D' : 'POST CARD', { font: vertCard ? jzSerifF(ctx) : jzMonoF(ctx), size: ls * (vertCard ? 1.2 : 0.9), track: 0.5, x: CX + (vertCard ? 0 : x0 + cw * 0.46), y: CY + (vertCard ? y0 + m + sth + ls * 0.9 : y0 + m * 0.75), color: C.text });
+        var lab = lc2_T(ctx, vertCard ? '\uC6B0\uD3B8\uC5FD\uC11C' : 'POST CARD', { font: vertCard ? jzSerifF(ctx) : jzMonoF(ctx), size: ls * (vertCard ? 1.2 : 0.9), track: 0.5, x: CX + (vertCard ? 0 : x0 + cw * 0.46), y: CY + (vertCard ? y0 + m + sth + ls * 0.9 : y0 + m * 0.75), color: C.text });
         lc2_kid(lab, R); jzSetExpr(jzXf(lab, 'ADBE Opacity'), EX + 'value*a*0.75');
         if (lastSama) { lc2_kid(lastSama, R); lc2_op(ctx, lastSama, LA); }
         var tm = lc2_T(ctx, jzFmtTime(c.start), { font: jzMonoF(ctx), size: RR * 0.26, x: CX + pmx, y: CY + pmy, color: C.text, rot: mark });
@@ -27435,7 +27393,7 @@ jzReg('layout', 'omikuji', {
     },
     build: function (ctx) {
         var W = ctx.W, H = ctx.H, sc = ctx.sc, c = ctx.cut, u = jzU(ctx), kx = lc2_k(ctx), ls = jzSmallSize(ctx), port = jzPortrait(ctx), HD = lc2_H(ctx), i;
-        var font = jzP(ctx, 'font', jzSerifF(ctx)), rank = String(jzP(ctx, 'rank', '\u5927\u5409')), cats = jzP(ctx, 'cats', ['\u9858\u671B', '\u5F85\u4EBA', '\u5931\u7269', '\u65C5\u884C']);
+        var font = jzP(ctx, 'font', jzSerifF(ctx)), rank = String(jzP(ctx, 'rank', '\uB300\uAE38')), cats = jzP(ctx, 'cats', ['\uC18C\uC6D0', '\uAE30\uB2E4\uB9BC', '\uBD84\uC2E4\uBB3C', '\uC5EC\uD589']);
         var C = lc2_card(sc), red = lc2_plate(sc, [sc.accent, sc.accent2, C.text], C.fill, 1.7), t0 = lc2_vt(c.text);
         var sw = port ? W * 0.84 : Math.min(W * 0.88, H * 1.7), sh = port ? Math.min(H * 0.82, sw * 1.7) : Math.min(H * 0.66, sw * 0.46), x0 = W / 2 - sw / 2, y0 = H / 2 - sh / 2;
         var OP = HD + 'var op=ioc(cl((time-0.03)/0.55))*(1-ioc(cl((PO-0.1)/0.8))),vis=Math.max(0.12,op),a=oc(cl(time/0.2))*(1-cl((PO-0.75)/0.25));';
@@ -27811,13 +27769,13 @@ jzReg('layout', 'priceTag', {
             jzSetExpr(jzXf(R, 'ADBE Position'), E + '[value[0],value[1]+(1-ob(e,1.3))*' + jzN(H * 0.3) + '+eo*' + jzN(H * 0.1) + ']');
             jzSetExpr(jzXf(R, 'ADBE Opacity'), E + 'value*a');
             lc2_paint(R);
-            var hT = lc2_T(ctx, '\u304A\u8CB7\u3044\u5F97  \u00B7  No.' + jzLineNo(ctx), { font: jzBodyF(ctx), size: hdr * 0.5, track: 0.2, align: 'left', x: CX + x0 + bw * 0.03, y: CY + y0 + hdr / 2, color: lc2_onCol(sc, red) });
+            var hT = lc2_T(ctx, '\uCD94\uCC9C\uC0C1\uD488  \u00B7  No.' + jzLineNo(ctx), { font: jzBodyF(ctx), size: hdr * 0.5, track: 0.2, align: 'left', x: CX + x0 + bw * 0.03, y: CY + y0 + hdr / 2, color: lc2_onCol(sc, red) });
             lc2_kid(hT, R); jzSetExpr(jzXf(hT, 'ADBE Opacity'), E + 'value*a');
             var nameW = bw * (port ? 0.9 : 0.62), nTop = y0 + hdr, nBot = y0 + bh * (port ? 0.62 : 0.8);
             fb = lc2_fitBlock(t0, nameW * 0.92, (nBot - nTop) * 0.86, { lead: 1.05 }, 2); size = Math.min(fb.size, bh * 0.3);
             var px = x0 + bw * 0.96, py = port ? y0 + bh * 0.76 : y0 + hdr + (bh - hdr) * 0.44, ps = Math.min((bh - hdr) * (port ? 0.26 : 0.3), size * 0.8);
             var PT = lc2_T(ctx, lc2_yen(price), { font: 'gothic_black', size: ps, align: 'right', x: CX + px, y: CY + py, color: red });
-            var TX = lc2_T(ctx, '\u7A0E\u8FBC', { font: jzBodyF(ctx), size: ls * 0.9, align: 'right', x: CX + px, y: CY + py + ps * 0.62, color: tc });
+            var TX = lc2_T(ctx, '\uC138\uAE08\uD3EC\uD568', { font: jzBodyF(ctx), size: ls * 0.9, align: 'right', x: CX + px, y: CY + py + ps * 0.62, color: tc });
             lc2_kid(PT, R); lc2_kid(TX, R);
             jzSetExpr(jzXf(PT, 'ADBE Scale'), E + '[value[0]*pa,value[1]*pa]'); jzSetExpr(jzXf(PT, 'ADBE Opacity'), E + 'value*pa'); jzSetExpr(jzXf(TX, 'ADBE Opacity'), E + 'value*pa*0.8');
             T = lc2_T(ctx, fb.text, { font: font, size: size, x: CX + x0 + bw * 0.04, y: CY + (nTop + nBot) / 2, align: 'left', lead: 1.05, color: tc, name: t0 });
@@ -27882,8 +27840,8 @@ jzReg('layout', 'nameTag', {
             lc2_circ(g, 'pin head', x0 + bw * 0.8, pinY, u * 0.008, sc.sub);
             lc2_line(g, 'field rule', [[x0 + bw * 0.06, fy + bh * 0.09], [x0 + bw * 0.94, fy + bh * 0.09]], bandC, Math.max(2 * kx, u * 0.003));
             lc2_circ(g, 'mark', x0 + bw * 0.88, y0 + bh * 0.2, bh * 0.08, bandC);
-            kids.push(lc2_T(ctx, jzP(ctx, 'grade', 1) + ' \u306D\u3093\u3000' + jzP(ctx, 'cls', 1) + ' \u304F\u307F', { font: font, size: bh * 0.1, align: 'left', x: CX + x0 + bw * 0.08, y: CY + fy, color: C.text }));
-            kids.push(lc2_T(ctx, '\u306A\u307E\u3048', { font: jzBodyF(ctx), size: bh * 0.07, align: 'left', x: CX + x0 + bw * 0.08, y: CY + fy + bh * 0.19, color: bandC }));
+            kids.push(lc2_T(ctx, jzP(ctx, 'grade', 1) + ' \uD559\uB144\u3000' + jzP(ctx, 'cls', 1) + ' \uBC18', { font: font, size: bh * 0.1, align: 'left', x: CX + x0 + bw * 0.08, y: CY + fy, color: C.text }));
+            kids.push(lc2_T(ctx, '\uC774\uB984', { font: jzBodyF(ctx), size: bh * 0.07, align: 'left', x: CX + x0 + bw * 0.08, y: CY + fy + bh * 0.19, color: bandC }));
             fb = lc2_fitBlock(t0, bw * 0.84, bh * 0.44, { lead: 1.05 }, 2); size = Math.min(fb.size, bh * 0.34); ty = y0 + bh * 0.66;
         }
         jzSetExpr(jzXf(R, 'ADBE Position'), E + '[value[0]+eo*' + jzN(W * 0.1) + ',value[1]+(1-q)*' + jzN(-H * 0.35) + '+eo*' + jzN(H * 0.5) + ']');
@@ -28008,7 +27966,7 @@ jzReg('layout', 'karuta', {
             // \u8AAD\u307F\u672D (the verse) + \u53D6\u308A\u672D (the first glyph + a picture)
             var A = card(0, ax, ay);
             lc2_paint(A.R);
-            stat(A, lc2_T(ctx, '\u8AAD', { font: jzSerifF(ctx), size: cw * 0.1, x: ax + cw * 0.34, y: ay - ch / 2 + cw * 0.16, color: red }));
+            stat(A, lc2_T(ctx, '\uB3C5', { font: jzSerifF(ctx), size: cw * 0.1, x: ax + cw * 0.34, y: ay - ch / 2 + cw * 0.16, color: red }));
             verse(A, false);
             var B = card(1, bx, by), aY = ch * 0.12, aw = cw * 0.66, artC = lc2_plate(sc, [sc.accent2, sc.accent, sc.sub], C.fill, 1.3), ga = lc2_sub(B.g, 'picture');
             if (art === 'sun') { lc2_circ(ga, 'sun', 0, aY, aw * 0.26, artC, { op: 90 }); lc2_box(ga, 'horizon', -aw / 2, aY + aw * 0.2, aw, aw * 0.05, C.text, { op: 60 }); }
@@ -29866,7 +29824,7 @@ ld1_reg('crossword', {
         if (clue) {
             var fs = fsC, cxl = below ? gx : gx + gw + W * 0.035, cyl = below ? gy + gh + fs * 1.6 : gy + fs;
             var n1 = num[key(rowsW[0], c0[0])] || 1, rom = jzRomajiOf(ctx);
-            var lines = [['\u30E8\u30B3\u306E\u30AB\u30AE', sc.accent, jzMonoF(ctx)], [n1 + '  ' + (c.note || rom || '(' + n + ')'), sc.fg, jzBodyF(ctx)], ['\u30BF\u30C6\u306E\u30AB\u30AE', sc.accent, jzMonoF(ctx)], [(numCount > 3 ? 3 : 2) + '  \u2500', sc.sub, jzBodyF(ctx)]];
+            var lines = [['\uAC00\uB85C\uC5F4\uC1E0', sc.accent, jzMonoF(ctx)], [n1 + '  ' + (c.note || rom || '(' + n + ')'), sc.fg, jzBodyF(ctx)], ['\uC138\uB85C\uC5F4\uC1E0', sc.accent, jzMonoF(ctx)], [(numCount > 3 ? 3 : 2) + '  \u2500', sc.sub, jzBodyF(ctx)]];
             for (i = 0; i < lines.length; i++) {
                 var tt = jzChars(lines[i][0]).length > 22 ? jzChars(lines[i][0]).slice(0, 21).join('') + '\u2026' : lines[i][0];
                 var yy = below ? cyl + (i % 2) * fs * 1.7 : cyl + i * fs * 1.9 + (i >= 2 ? fs * 0.8 : 0), xx = below && i >= 2 ? cxl + gw * 0.55 : cxl;
@@ -39460,8 +39418,8 @@ axn_reg('xnGlyphStats', function (ctx, bb, p, u) {
     var sc = ctx.sc, g0 = axn_glyphs(axn_cutText(ctx)), g = [], i, cnt = [0, 0, 0, 0], c;
     for (i = 0; i < g0.length; i++) if (!jzIsPunct(g0[i])) g.push(g0[i]);
     if (!g.length) return;
-    for (i = 0; i < g.length; i++) { c = g[i]; cnt[jzIsKanji(c) ? 0 : (jzIsHira(c) || jzIsKata(c)) ? 1 : jzIsLatin(c) ? 2 : 3]++; }
-    var names = ['\u6F22\u5B57', '\u304B\u306A', 'ABC', '\u4ED6'], pal = [sc.fg, axn_acc(sc), axn_acc2(sc), axn_sub(sc)], ci = 0, nn = axn_noNo(ctx);
+    for (i = 0; i < g.length; i++) { c = g[i]; cnt[jzIsHangul(c) ? 0 : jzIsKanji(c) ? 1 : jzIsLatin(c) ? 2 : 3]++; }
+    var names = ['\uD55C\uAE00', '\uD55C\uC790', 'ABC', '\uAE30\uD0C0'], pal = [sc.fg, axn_acc(sc), axn_acc2(sc), axn_sub(sc)], ci = 0, nn = axn_noNo(ctx);
     var fs = axn_fs(ctx) * 0.9, bf = jzBodyF(ctx), w = jzClamp(axn_bw(bb) * 0.6, 220 * u, 340 * u), barH = Math.max(6, 9 * u), h = fs * 1.5 + barH + fs * 1.9;
     var sp = axn_spot(ctx, bb, w, h, p, 22 * u), A = sp.ok ? 1 : 0.3, e = axn_e(0.55, 0.05), by = sp.y + fs * 1.5, x = sp.x, lx = sp.x, labs = [], sw, e2, col, lab;
     var S = axn_S(ctx, 'glyph bar', A);
@@ -50652,7 +50610,7 @@ axa_reg('xaThumbIndex', {
     build: function (ctx) {
         var B = axa_base(ctx), W = B.W, H = B.H, sc = B.sc, M = B.M, port = B.port, lw = B.lw, ls = B.ls, font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display'));
         var nT = jzP(ctx, 'nT', 7), act = jzP(ctx, 'act', 0) % nT, right = jzP(ctx, 'side', 'r') === 'r', th = H * 0.84 / nT, tw = M * 0.1, y0 = H * 0.08;
-        var set = jzChars(jzIsLatinText(B.txt) ? 'ABCDEFGH' : '\u3042\u304B\u3055\u305F\u306A\u306F\u307E\u3084'), dim = axa_dimOf(sc), plate = axa_pickPlate(sc, jzP(ctx, 'col', 'accent')), pon = axa_onCol(sc, plate);
+        var set = jzChars(jzIsLatinText(B.txt) ? 'ABCDEFGH' : '\uAC00\uB098\uB2E4\uB77C\uB9C8\uBC14\uC0AC\uC544'), dim = axa_dimOf(sc), plate = axa_pickPlate(sc, jzP(ctx, 'col', 'accent')), pon = axa_onCol(sc, plate);
         var sl = axa_slots(B.txt), first = '\u30FB', i, S = axa_sheet(ctx, 'thumb index');
         for (i = 0; i < sl.length; i++) if (!axa_isSp(sl[i]) && !jzIsPunct(sl[i])) { first = sl[i]; break; }
         var ay = 0, aw = 0, tS = [], tP = [], tD = [];
@@ -50887,14 +50845,14 @@ axa_reg('xaErrata', {
     plan: function (rng, cut, st) { return { font: rng.pick(jzFontsOf(st, ['serif', 'display'])), strike: rng.pick(['line', 'double', 'wave']), pg: rng.int(3, 240), ln: rng.int(1, 24) }; },
     build: function (ctx) {
         var B = axa_base(ctx), W = B.W, H = B.H, sc = B.sc, M = B.M, port = B.port, lw = B.lw, ls = B.ls, font = jzP(ctx, 'font', jzSerifF(ctx)), strike = jzP(ctx, 'strike', 'line');
-        var latin = jzIsLatinText(B.txt), labs = latin ? ['FOR', 'READ'] : ['\u8AA4', '\u6B63'], bf = jzBodyF(ctx);
+        var latin = jzIsLatinText(B.txt), labs = latin ? ['FOR', 'READ'] : ['\uC624', '\uC815'], bf = jzBodyF(ctx);
         var tw = W * 0.86, x0 = W * 0.07, lc = M * (latin ? 0.15 : 0.12), hh = ls * 2.4, h1 = H * (port ? 0.2 : 0.25), h2 = H * (port ? 0.38 : 0.44), th = hh + h1 + h2, y0 = (H - th) / 2;
         var acc = axa_accentOn(sc), pad = M * 0.035, o = { lead: 1.2, track: 0.03 }, e = axa_iE(0.6, 0) + '*K', la = axa_iC(0.3, 0.2) + '*K', S = axa_sheet(ctx, 'errata table'), k, i;
         axa_R(S, x0, y0 + hh - M * 0.005, tw, M * 0.005, sc.fg, 1, { sc: '[' + e + ',1]', piv: [x0, y0 + hh], n: 'top rule' });
         axa_L(S, [[[x0, y0 + hh + h1], [x0 + tw, y0 + hh + h1]], [[x0 + lc, y0 + hh], [x0 + lc, y0 + hh + h1 + h2]]], sc.sub, lw, 0.8, { trim: e, n: 'cells' });
         axa_R(S, x0, y0 + th, tw, M * 0.005, sc.fg, 1, { sc: '[' + e + ',1]', piv: [x0 + tw, y0 + th], n: 'foot rule' });
         axa_flush(S, true);
-        axa_label(ctx, latin ? 'ERRATA' : '\u6B63\u8AA4\u8868', x0, y0 + hh * 0.42, { font: bf, size: ls * 1.25, color: sc.fg, op: la, track: 0.3 });
+        axa_label(ctx, latin ? 'ERRATA' : '\uC815\uC624\uD45C', x0, y0 + hh * 0.42, { font: bf, size: ls * 1.25, color: sc.fg, op: la, track: 0.3 });
         axa_label(ctx, 'p.' + jzP(ctx, 'pg', 3) + '  l.' + jzP(ctx, 'ln', 1), x0 + tw, y0 + hh * 0.42, { align: 'right', op: la });
         var lsz2 = latin ? lc * 0.24 : lc * 0.44;
         axa_label(ctx, labs[0], x0 + lc / 2, y0 + hh + h1 / 2, { align: 'center', font: bf, size: lsz2, color: sc.sub, op: la, track: 0.05 });
@@ -51204,7 +51162,7 @@ axa_reg('xaCutLine', {
         var SL = axa_flush(SC, false);
         jzSetExpr(jzXf(SL, 'ADBE Position'), axa_hd(ctx) + 'var u=cl(time/' + T + ');[' + (d > 0 ? jzN(W) + '*(0.05+0.9*u)' : jzN(W) + '*(0.95-0.9*u)') + ',' + jzN(yl) + ']');
         var la = axa_iC(0.3, 0.3) + '*K', latin = jzIsLatinText(B.txt);
-        axa_label(ctx, latin ? 'CUT HERE' : '\u30AD\u30EA\u30C8\u30EA', d > 0 ? W * 0.93 : W * 0.07, yl + (low ? -1 : 1) * ls * 1.1, { align: d > 0 ? 'right' : 'left', font: jzBodyF(ctx), op: la, size: ls * 0.9, track: 0.3 });
+        axa_label(ctx, latin ? 'CUT HERE' : '\uC790\uB974\uB294\uC120', d > 0 ? W * 0.93 : W * 0.07, yl + (low ? -1 : 1) * ls * 1.1, { align: d > 0 ? 'right' : 'left', font: jzBodyF(ctx), op: la, size: ls * 0.9, track: 0.3 });
         // stub
         axa_label(ctx, 'No.' + jzPad(1 + (axa_h(B.seed, 5) % 9999), 4), W * 0.07, scy - sh * 0.2, { op: la, color: acc });
         if (jzP(ctx, 'stub', 'bar') === 'bar') {
@@ -51358,7 +51316,7 @@ axa_reg('xaBrace', {
     build: function (ctx) {
         var B = axa_base(ctx), W = B.W, H = B.H, sc = B.sc, M = B.M, port = B.port, ls = B.ls, font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display')), pos = jzP(ctx, 'pos', 'r'), i;
         var n = jzCount(B.txt), latin = jzIsLatinText(B.txt), c = jzP(ctx, 'col', 'accent') === 'accent' ? axa_accentOn(sc) : sc.fg, bf = jzBodyF(ctx);
-        var cnt = latin ? B.txt.split(/\s+/).length + ' WORDS' : n + ' \u5B57', e = 'ioc((time-0.12)/0.6)*XO', la = axa_iC(0.3, 0.55) + '*K', S = axa_sheet(ctx, 'brace');
+        var cnt = latin ? B.txt.split(/\s+/).length + ' WORDS' : n + ' \uC790', e = 'ioc((time-0.12)/0.6)*XO', la = axa_iC(0.3, 0.55) + '*K', S = axa_sheet(ctx, 'brace');
         var under = pos === 'under' && !port && n <= 9, o = { lead: 1.25, track: 0.03 }, size, it, m, d, pts;
         if (under) {
             size = Math.min(axa_fit(B.txt, font, W * 0.82, H * 0.3, o), M * 0.26);
@@ -54160,7 +54118,7 @@ axc_reg('xcSelect', {
             d2 = 0.5 + 0.12 * Ln;
             var gb = axc_kit(ctx, 'selection bar', { cx: W / 2, cy: by + bh, a: 'cl((time-' + jzN(d2) + ')/0.1)*K', pose: { s: axc_inB(0.35, d2, 1.5) } });
             gb.rr(W / 2 - bw / 2, by, bw, bh, bh * 0.25, bar); gb.p([[W / 2 - bh * 0.22, by + bh - 1], [W / 2 + bh * 0.22, by + bh - 1], [W / 2, by + bh * 1.26]], bar);
-            labs = latin ? ['Copy', 'Share', 'Search'] : ['\u30B3\u30D4\u30FC', '\u5171\u6709', '\u691C\u7D22'];
+            labs = latin ? ['Copy', 'Share', 'Search'] : ['\uBCF5\uC0AC', '\uACF5\uC720', '\uAC80\uC0C9'];
             for (i = 0; i < 3; i++) {
                 gb.t(labs[i], W / 2 + (i - 1) * bw / 3, by + bh / 2, { color: bin, align: 'center', font: jzBodyF(ctx), size: bh * 0.36, track: 0.04 });
                 if (i) gb.l(W / 2 + (i - 1.5) * bw / 3, by + bh * 0.25, W / 2 + (i - 1.5) * bw / 3, by + bh * 0.75, bin, lw, 0.35);
@@ -54177,7 +54135,7 @@ axc_reg('xcSelect', {
             var gm = axc_kit(ctx, 'context menu', { cx: mx, cy: my, a: 'cl((time-' + jzN(d2) + ')/0.1)*K', X: 'var hot=Math.min(2,Math.floor(Math.max(0,time-' + jzN(0.8 + 0.12 * Ln) + ')/0.35));', pose: { s: axc_inB(0.3, d2, 1.4) } });
             gm.r(mx + M * 0.008, my + M * 0.01, mw2, mh, sc.dim, 0.7); gm.r(mx, my, mw2, mh, menu); gm.rs(mx, my, mw2, mh, 0, min, lw * 1.5);
             gm.r(mx + lw * 2, my + M * 0.008, mw2 - lw * 4, rh, mac, 1, { dy: 'hot*' + jzN(rh) });
-            labs = latin ? ['Copy', 'Cut', 'Search\u2026'] : ['\u30B3\u30D4\u30FC', '\u5207\u308A\u53D6\u308A', '\u691C\u7D22\u2026'];
+            labs = latin ? ['Copy', 'Cut', 'Search\u2026'] : ['\uBCF5\uC0AC', '\uC798\uB77C\uB0B4\uAE30', '\uAC80\uC0C9\u2026'];
             for (i = 0; i < 3; i++) {
                 var ry = my + M * 0.008 + i * rh, j;
                 for (j = 0; j < 2; j++) {
@@ -57881,7 +57839,7 @@ jzReg('layout', 'tzWideOne', {
                 atza_grp(G, 'tick b', [[[0, -t], [0, t]]], sc.sub, { width: lw, alpha: 0.8, gpos: hd + E + '[' + jzN(xa + kw) + '+' + jzN(dk) + '*e,' + jzN(yd) + ']' });
                 atza_op(ctx, G, a);
                 if (li === L - 1 || size * (leadK - 1) > ls * 2.4) {
-                    var word = latin ? 'WIDTH' : '\u5E73\u4F53';
+                    var word = latin ? 'WIDTH' : '\uAC00\uB85C\uBE44';
                     var R = atza_label(ctx, word + ' 100%', xa + kw / 2, yd + ls * 1.1, { size: ls, align: 'center', font: latin ? jzMonoF(ctx) : jzBodyF(ctx), op: a, name: 'width readout' });
                     atza_srcText(R, hd + E + atza_str(word + ' ') + '+Math.round((1+' + jzN(sxT - 1) + '*e)*100)+"%"');
                     jzSetExpr(jzXf(R, 'ADBE Position'), hd + E + '[value[0]+' + jzN(dk / 2) + '*e,value[1]]');
@@ -62465,7 +62423,7 @@ function jzBuild(plan, opt) { var job = jzBuildStart(plan, opt); while (!job.fin
 function jzBuildStart(plan, opt) {
     opt = opt || {};
     JZLOG = []; JZ_FALLBACKS = 0; JZ_FALLBACK_KEYS = []; JZ_FONT_MISSING = {}; JZ_FONT_NOAPI = false;
-    jzSetLang(plan.lang || (typeof jzDetectLang === 'function' ? jzDetectLang(plan) : 'ja'));   // \u6B4C\u8A5E\u306E\u8A00\u8A9E \u2192 faces
+    jzSetLang(plan.lang || (typeof jzDetectLang === 'function' ? jzDetectLang(plan) : 'ko'));   // \uAC00\uC0AC \uC5B8\uC5B4 \u2192 faces
     var W = opt.width || plan.width || 1920, H = opt.height || plan.height || 1080, fps = plan.fps || 24, D = Math.max(1, plan.duration || 10);
     var st = plan.style, fx = plan.fx || {}, roles = opt.roles || JZ_ROLE_DEFAULT;
     var ghostAmt = (fx.chroma == null ? 0.7 : fx.chroma) * (st.ghost == null ? 1 : st.ghost);
@@ -62793,7 +62751,7 @@ function jzDiagnose(comp, plan, maxSecs) {
     }
     walkComp(comp, comp ? comp.name : '?');
     var out = [];
-    out.push('JIZURA \u8A3A\u65AD\u30EC\u30DD\u30FC\u30C8');
+    out.push('JIZURA \uC9C4\uB2E8 \uBCF4\uACE0\uC11C');
     out.push('panel ' + JZ_PANEL_VERSION + ' / parts ' + jzPartsCount() + ' / After Effects ' + app.version + ' / ' + $.os);
     try { out.push('expression engine: ' + app.project.expressionEngine); } catch (e6) {}
     out.push('comp: ' + (comp ? comp.name + ' ' + comp.width + 'x' + comp.height + ' ' + comp.frameRate + 'fps' : '(none)'));
@@ -62838,74 +62796,77 @@ var JZ_SECTION = 'JIZURA';
 function jzGet(key, def) { try { if (app.settings.haveSetting(JZ_SECTION, key)) return decodeURIComponent(app.settings.getSetting(JZ_SECTION, key)); } catch (e) {} return def; }
 function jzPut(key, v) { try { app.settings.saveSetting(JZ_SECTION, key, encodeURIComponent(String(v))); } catch (e) {} }
 
-var JZ_SAMPLE = '\u591C\u660E\u3051\u306E\u8272\u3092/\u899A\u3048\u3066\u308B\n\u307B\u3069\u3051\u305F\u58F0\u304C\u9060\u304F\u3067\u9CF4\u3063\u305F\n\u306D\u3048\u3001\u307E\u3060\u9593\u306B\u5408\u3046\u304B\u306A\n*\u900F\u660E*\u306A\u307E\u307E\u3058\u3083\u7D42\u308F\u308C\u306A\u3044!';
+var JZ_SAMPLE = '\uC0C8\uBCBD\uC758 \uC0C9\uC744/\uAE30\uC5B5\uD558\uACE0 \uC788\uC5B4
+\uD480\uB824\uBC84\uB9B0 \uBAA9\uC18C\uB9AC\uAC00 \uBA40\uB9AC\uC11C \uC6B8\uB838\uC5B4
+\uC800\uAE30, \uC544\uC9C1 \uB2A6\uC9C0 \uC54A\uC558\uC744\uAE4C
+*\uD22C\uBA85\uD55C* \uCC44\uB85C\uB294 \uB05D\uB0BC \uC218 \uC5C6\uC5B4!';
 
 function jzUI(thisObj) {
     var win = (thisObj instanceof Panel) ? thisObj : new Window('palette', 'JIZURA', undefined, { resizeable: true });
     win.orientation = 'column'; win.alignChildren = ['fill', 'top']; win.spacing = 6; win.margins = 10;
     var head = win.add('group'); head.alignChildren = ['left', 'center'];
-    var ttl = head.add('statictext', undefined, 'JIZURA \u5B57\u9762  lyric motion  v' + JZ_PANEL_VERSION + '\uFF08' + jzPartsCount() + ' \u90E8\u54C1\uFF09'); try { ttl.graphics.font = ScriptUI.newFont(ttl.graphics.font.name, 'BOLD', 14); } catch (e) {}
+    var ttl = head.add('statictext', undefined, 'JIZURA \uC9C0\uBA74  lyric motion  v' + JZ_PANEL_VERSION + '\uFF08' + jzPartsCount() + ' \uBD80\uD488\uFF09'); try { ttl.graphics.font = ScriptUI.newFont(ttl.graphics.font.name, 'BOLD', 14); } catch (e) {}
 
     var tp = win.add('tabbedpanel'); tp.alignChildren = ['fill', 'top'];
     // ---------------- tab 1: from lyrics
-    var t1 = tp.add('tab', undefined, '\u6B4C\u8A5E\u304B\u3089'); t1.orientation = 'column'; t1.alignChildren = ['fill', 'top']; t1.spacing = 6; t1.margins = 8;
-    t1.add('statictext', undefined, '\u6B4C\u8A5E\uFF081\u884C=1\u30D5\u30EC\u30FC\u30BA\u3000/ \u533A\u5207\u308A\u3000*\u5F37\u8ABF*\u3000\u884C\u672B! \u30A4\u30F3\u30D1\u30AF\u30C8\uFF09');
+    var t1 = tp.add('tab', undefined, '\uAC00\uC0AC\uC5D0\uC11C'); t1.orientation = 'column'; t1.alignChildren = ['fill', 'top']; t1.spacing = 6; t1.margins = 8;
+    t1.add('statictext', undefined, '\uAC00\uC0AC\uFF081\uC904=1\uD504\uB808\uC774\uC988\u3000/ \uAD6C\uBD84\u3000*\uAC15\uC870*\u3000\uC904\uB05D! \uC784\uD329\uD2B8\uFF09');
     var lyr = t1.add('edittext', undefined, jzGet('lyrics', JZ_SAMPLE), { multiline: true, wantReturn: true, scrolling: true }); lyr.preferredSize = [340, 150];
-    var gT = t1.add('group'); gT.add('statictext', undefined, '\u66F2\u540D'); var eTitle = gT.add('edittext', undefined, jzGet('title', '')); eTitle.preferredSize.width = 120;
-    gT.add('statictext', undefined, '\u30A2\u30FC\u30C6\u30A3\u30B9\u30C8'); var eArtist = gT.add('edittext', undefined, jzGet('artist', '')); eArtist.preferredSize.width = 100;
-    var bOmk = t1.add('button', undefined, '\u304A\u307E\u304B\u305B\u3067\u751F\u6210\uFF08\u62BC\u3059\u305F\u3073\u306B\u5225\u306E\u6F14\u51FA\uFF09');
-    bOmk.helpTip = '\u30B9\u30BF\u30A4\u30EB\u30FB\u96F0\u56F2\u6C17\u30FB\u6F14\u51FA\u306E\u5F37\u3055\u30FB\u914D\u8272\u30FB\u30B7\u30FC\u30C9\u3092\u307E\u308B\u3054\u3068\u30E9\u30F3\u30C0\u30E0\u306B\u6C7A\u3081\u3066\u3001\u65B0\u3057\u3044\u30B3\u30F3\u30DD\u3092\u4F5C\u308A\u307E\u3059';
+    var gT = t1.add('group'); gT.add('statictext', undefined, '\uACE1\uBA85'); var eTitle = gT.add('edittext', undefined, jzGet('title', '')); eTitle.preferredSize.width = 120;
+    gT.add('statictext', undefined, '\uC544\uD2F0\uC2A4\uD2B8'); var eArtist = gT.add('edittext', undefined, jzGet('artist', '')); eArtist.preferredSize.width = 100;
+    var bOmk = t1.add('button', undefined, '\uC790\uB3D9 \uC0DD\uC131\uFF08\uB204\uB97C \uB54C\uB9C8\uB2E4 \uB2E4\uB978 \uC5F0\uCD9C\uFF09');
+    bOmk.helpTip = '\uC2A4\uD0C0\uC77C\u00B7\uBD84\uC704\uAE30\u00B7\uC5F0\uCD9C \uAC15\uB3C4\u00B7\uBC30\uC0C9\u00B7\uC2DC\uB4DC\uB97C \uBAA8\uB450 \uBB34\uC791\uC704\uB85C \uACB0\uC815\uD558\uC5EC \uC0C8 \uCEF4\uD3EC\uC9C0\uC158\uC744 \uB9CC\uB4ED\uB2C8\uB2E4';
     try { bOmk.preferredSize.height = 34; bOmk.graphics.font = ScriptUI.newFont(bOmk.graphics.font.name, 'BOLD', 13); } catch (e) {}
     var gSw = t1.add('group'); gSw.orientation = 'column'; gSw.alignChildren = ['left', 'top']; gSw.spacing = 2;
-    var cExtra = gSw.add('checkbox', undefined, '\u8FFD\u52A0\u5206\u306E\u6F14\u51FA\u3082\u4F7F\u3046'); cExtra.value = jzGet('extra', '0') === '1';
-    cExtra.helpTip = '\u30AA\u30D5\u306E\u3068\u304D\u306F\u6700\u521D\u306E\u516C\u958B\u7248\u306E\u6F14\u51FA\uFF08356\u90E8\u54C1\u30FB\u30B9\u30BF\u30A4\u30EB12\u7A2E\uFF09\u3060\u3051\u3092\u4F7F\u3044\u307E\u3059\u3002\u30AA\u30F3\u306B\u3059\u308B\u3068\u3001\u3042\u3068\u304B\u3089\u8FFD\u52A0\u3057\u305F\u6F14\u51FA\u30FB\u30B9\u30BF\u30A4\u30EB\u30FB\u66F8\u4F53\u3082\u5019\u88DC\u306B\u306A\u308A\u307E\u3059';
-    var cWa = gSw.add('checkbox', undefined, '\u548C\u98A8\u306E\u6F14\u51FA\u3082\u4F7F\u3046'); cWa.value = jzGet('wa', '1') === '1';
-    cWa.helpTip = '\u63D0\u706F\u30FB\u306F\u304C\u304D\u30FB\u969C\u5B50\u30FB\u6247\u30FB\u5BB6\u7D0B\u30FB\u9752\u6D77\u6CE2\u30FB\u685C\u306E\u82B1\u3073\u3089\u306A\u3069\u306E\u548C\u98A8\u30B0\u30E9\u30D5\u30A3\u30C3\u30AF\u3068\u3001\u548C\u98A8\u306E\u30B9\u30BF\u30A4\u30EB\u3002\u30AA\u30D5\u306B\u3059\u308B\u3068\u81EA\u52D5\u3067\u306F\u9078\u3070\u308C\u307E\u305B\u3093\uFF08\u8FFD\u52A0\u5206\u306E\u5224\u5B9A\u306E\u3042\u3068\u306B\u9069\u7528\uFF09';
-    var cTypo = gSw.add('checkbox', undefined, '\u6587\u5B57PV\u7CFB\u306E\u90E8\u54C1\u3092\u4F7F\u3046'); cTypo.value = jzGet('typo', '1') === '1';
-    cTypo.helpTip = '\u7DDA\u30FB\u6570\u5B57\u30FB\u5B57\u7D44\u307F\u3060\u3051\u3067\u898B\u305B\u308B\u3001\u6587\u5B57PV\u3089\u3057\u3044\u90E8\u54C1\uFF08\u7D0450\uFF09';
-    var cKin = gSw.add('checkbox', undefined, '\u30AD\u30CD\u30C6\u30A3\u30C3\u30AF\u306E\u90E8\u54C1\u3092\u4F7F\u3046'); cKin.value = jzGet('kinetic', '1') === '1';
-    cKin.helpTip = '\u8A9E\u3054\u3068\u306B\u52D5\u304F\u30FB\u8DF3\u306D\u308B\u30FB\u7A4D\u307F\u4E0A\u304C\u308B\u3001\u52D5\u304D\u91CD\u8996\u306E\u90E8\u54C1\uFF08\u7D0450\uFF09';
-    var cHor = gSw.add('checkbox', undefined, '\u30DB\u30E9\u30FC\u306E\u6F14\u51FA\u3082\u4F7F\u3046'); cHor.value = jzGet('horror', '0') === '1';
-    cHor.helpTip = '\u4E0D\u6C17\u5473\u306A\u96F0\u56F2\u6C17\u306E\u90E8\u54C1\uFF08\u7D0450\uFF09\u3068\u914D\u8272\u30BB\u30C3\u30C83\u3002\u30AA\u30F3\u306B\u3059\u308B\u3068\u3001\u304A\u307E\u304B\u305B\u306E\u96F0\u56F2\u6C17\u306B\u300C\u30DB\u30E9\u30FC\u300D\u304C\u52A0\u308F\u308A\u307E\u3059\uFF08\u30DB\u30E9\u30FC\u306E\u90E8\u54C1\u306F\u96F0\u56F2\u6C17\u304C\u300C\u30DB\u30E9\u30FC\u300D\u306E\u3068\u304D\u3060\u3051\u4F7F\u3044\u307E\u3059\uFF09';
-    var cX2 = gSw.add('checkbox', undefined, '\u8FFD\u52A0\u52062\u306E\u6F14\u51FA\u3082\u4F7F\u3046'); cX2.value = jzGet('extra2', '0') === '1';
-    cX2.helpTip = 'v0.12 \u3067\u8FFD\u52A0\u3057\u305F\u90E8\u54C1\u3002\u6587\u5B57PV\u7CFB\u30FB\u30AD\u30CD\u30C6\u30A3\u30C3\u30AF\u30FB\u30DB\u30E9\u30FC\u30FB\u548C\u98A8\u306E\u65B0\u3057\u3044\u90E8\u54C1\u306F\u3001\u305D\u308C\u305E\u308C\u306E\u30C1\u30A7\u30C3\u30AF\u3082\u30AA\u30F3\u306E\u3068\u304D\u306B\u4F7F\u3044\u307E\u3059';
-    var gLang = gSw.add('group'); gLang.spacing = 4; gLang.add('statictext', undefined, '\u6B4C\u8A5E\u306E\u8A00\u8A9E');
-    var JZ_LANG_KEYS = ['auto', 'ja', 'zh-Hant', 'zh-Hans', 'ko', 'en'];
-    var ddLang = gLang.add('dropdownlist', undefined, ['\u81EA\u52D5\u5224\u5B9A', '\u65E5\u672C\u8A9E', '\u7E41\u9AD4\u4E2D\u6587', '\u7B80\u4F53\u4E2D\u6587', '\uD55C\uAD6D\uC5B4', 'English']); ddLang.selection = parseInt(jzGet('lang', '0'), 10) || 0;
-    ddLang.helpTip = '\u4E2D\u56FD\u8A9E\uFF08\u7E41\u4F53\u5B57\u30FB\u7C21\u4F53\u5B57\uFF09\u3084\u97D3\u56FD\u8A9E\u306E\u6B4C\u8A5E\u306F\u3001\u305D\u306E\u6587\u5B57\u3092\u6301\u3064\u66F8\u4F53\u3067\u7D44\u307F\u307E\u3059\uFF08\u5404\u30B9\u30BF\u30A4\u30EB\u306E\u66F8\u4F53\u306E\u96F0\u56F2\u6C17\u306B\u8FD1\u3044\u3082\u306E\u306B\u7F6E\u304D\u63DB\u3048\uFF09\u3002\u81EA\u52D5\u5224\u5B9A\u306F\u304B\u306A\u30FB\u30CF\u30F3\u30B0\u30EB\u30FB\u7E41\u4F53\u5B57\uFF0F\u7C21\u4F53\u5B57\u306B\u7279\u6709\u306E\u5B57\u304B\u3089\u5224\u65AD\u3057\u307E\u3059';
+    var cExtra = gSw.add('checkbox', undefined, '\uCD94\uAC00 \uC5F0\uCD9C\uB3C4 \uC0AC\uC6A9'); cExtra.value = jzGet('extra', '0') === '1';
+    cExtra.helpTip = '\uAEBC\uC9D0 \uC0C1\uD0DC\uC5D0\uC11C\uB294 \uCD5C\uCD08 \uACF5\uAC1C \uBC84\uC804\uC758 \uC5F0\uCD9C(356\uBD80\uD488\u00B7\uC2A4\uD0C0\uC77C 12\uC885)\uB9CC \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uCF1C\uBA74 \uB098\uC911\uC5D0 \uCD94\uAC00\uB41C \uC5F0\uCD9C\u00B7\uC2A4\uD0C0\uC77C\u00B7\uC11C\uCCB4\uB3C4 \uD6C4\uBCF4\uC5D0 \uD3EC\uD568\uB429\uB2C8\uB2E4';
+    var cWa = gSw.add('checkbox', undefined, '\uC804\uD1B5 \uC2A4\uD0C0\uC77C \uC5F0\uCD9C\uB3C4 \uC0AC\uC6A9'); cWa.value = jzGet('wa', '1') === '1';
+    cWa.helpTip = '\uB4F1\uBD88\u00B7\uC5FD\uC11C\u00B7\uCC3D\uD638\u00B7\uBD80\uCC44\u00B7\uBB38\uC591\u00B7\uD30C\uB3C4\u00B7\uAF43\uC78E \uB4F1\uC758 \uC804\uD1B5 \uADF8\uB798\uD53D\uACFC \uC804\uD1B5 \uC2A4\uD0C0\uC77C. \uB044\uBA74 \uC790\uB3D9 \uC120\uD0DD\uB418\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4(\uCD94\uAC00\uBD84 \uD310\uC815 \uD6C4 \uC801\uC6A9)';
+    var cTypo = gSw.add('checkbox', undefined, '\uD0C0\uC774\uD3ECPV \uACC4\uC5F4 \uBD80\uD488 \uC0AC\uC6A9'); cTypo.value = jzGet('typo', '1') === '1';
+    cTypo.helpTip = '\uC120\u00B7\uC22B\uC790\u00B7\uD0C0\uC774\uD3EC\uADF8\uB798\uD53C \uBC30\uCE58\uB9CC\uC73C\uB85C \uBCF4\uC5EC\uC8FC\uB294 \uD0C0\uC774\uD3ECPV\uB2E4\uC6B4 \uBD80\uD488(\uC57D 50\uAC1C)';
+    var cKin = gSw.add('checkbox', undefined, '\uD0A4\uB124\uD2F1 \uBD80\uD488 \uC0AC\uC6A9'); cKin.value = jzGet('kinetic', '1') === '1';
+    cKin.helpTip = '\uB2E8\uC5B4\uBCC4\uB85C \uC6C0\uC9C1\uC774\uACE0, \uD280\uACE0, \uC313\uC774\uB294 \uBAA8\uC158 \uC911\uC2EC\uC758 \uBD80\uD488(\uC57D 50\uAC1C)';
+    var cHor = gSw.add('checkbox', undefined, '\uD638\uB7EC \uC5F0\uCD9C\uB3C4 \uC0AC\uC6A9'); cHor.value = jzGet('horror', '0') === '1';
+    cHor.helpTip = '\uBD88\uAE38\uD55C \uBD84\uC704\uAE30\uC758 \uBD80\uD488(\uC57D 50\uAC1C)\uACFC \uBC30\uC0C9 \uC138\uD2B8 3\uC885. \uCF1C\uBA74 \uC790\uB3D9 \uC0DD\uC131 \uBD84\uC704\uAE30\uC5D0 \u300C\uD638\uB7EC\u300D\uAC00 \uCD94\uAC00\uB429\uB2C8\uB2E4(\uD638\uB7EC \uBD80\uD488\uC740 \uBD84\uC704\uAE30\uAC00 \u300C\uD638\uB7EC\u300D\uC77C \uB54C\uB9CC \uC0AC\uC6A9)';
+    var cX2 = gSw.add('checkbox', undefined, '\uCD94\uAC00\uBD842 \uC5F0\uCD9C\uB3C4 \uC0AC\uC6A9'); cX2.value = jzGet('extra2', '0') === '1';
+    cX2.helpTip = 'v0.12\uC5D0\uC11C \uCD94\uAC00\uB41C \uBD80\uD488. \uD0C0\uC774\uD3ECPV\u00B7\uD0A4\uB124\uD2F1\u00B7\uD638\uB7EC\u00B7\uC804\uD1B5\uC758 \uC0C8\uB85C\uC6B4 \uBD80\uD488\uC740 \uAC01\uAC01\uC758 \uCCB4\uD06C\uBC15\uC2A4\uB3C4 \uCF1C\uC838 \uC788\uC744 \uB54C \uC0AC\uC6A9\uB429\uB2C8\uB2E4';
+    var gLang = gSw.add('group'); gLang.spacing = 4; gLang.add('statictext', undefined, '\uAC00\uC0AC \uC5B8\uC5B4');
+    var JZ_LANG_KEYS = ['auto', 'ko', 'en'];
+    var ddLang = gLang.add('dropdownlist', undefined, ['\uC790\uB3D9 \uD310\uC815', '\uD55C\uAD6D\uC5B4', 'English']); ddLang.selection = parseInt(jzGet('lang', '0'), 10) || 0;
+    ddLang.helpTip = '\uD55C\uAD6D\uC5B4\uB098 \uC601\uC5B4 \uAC00\uC0AC\uB294 \uD574\uB2F9 \uBB38\uC790\uB97C \uC9C0\uC6D0\uD558\uB294 \uC11C\uCCB4\uB85C \uAD6C\uC131\uD569\uB2C8\uB2E4. \uC790\uB3D9 \uD310\uC815\uC740 \uD55C\uAE00 \uBC0F \uC601\uBB38 \uAE00\uC790\uC5D0\uC11C \uD310\uB2E8\uD569\uB2C8\uB2E4';
     function switches() { return { extra: cExtra.value, wa: cWa.value, typo: cTypo.value, kinetic: cKin.value, horror: cHor.value, extra2: cX2.value, lang: JZ_LANG_KEYS[ddLang.selection ? ddLang.selection.index : 0] }; }
-    var gS = t1.add('group'); gS.add('statictext', undefined, '\u30B9\u30BF\u30A4\u30EB');
+    var gS = t1.add('group'); gS.add('statictext', undefined, '\uC2A4\uD0C0\uC77C');
     var styleNames = [], i;
-    for (i = 0; i < JZ_DATA.styleOrder.length; i++) { var stI = JZ_DATA.styles[JZ_DATA.styleOrder[i]]; styleNames.push(stI.name + (stI.extra || stI.wa ? '  \u3014' + (stI.extra ? '\u8FFD\u52A0' : '') + (stI.extra && stI.wa ? '\u30FB' : '') + (stI.wa ? '\u548C' : '') + '\u3015' : '') + (stI.set === 'horror' ? '  \u3014\u30DB\u3015' : '')); }
+    for (i = 0; i < JZ_DATA.styleOrder.length; i++) { var stI = JZ_DATA.styles[JZ_DATA.styleOrder[i]]; styleNames.push(stI.name + (stI.extra || stI.wa ? '  \u3014' + (stI.extra ? '\uCD94\uAC00' : '') + (stI.extra && stI.wa ? '\u30FB' : '') + (stI.wa ? '\uC804\uD1B5' : '') + '\u3015' : '') + (stI.set === 'horror' ? '  \u3014\uD638\uB7EC\u3015' : '')); }
     var ddStyle = gS.add('dropdownlist', undefined, styleNames); ddStyle.selection = parseInt(jzGet('style', '0'), 10) || 0;
-    var gC = t1.add('group'); gC.add('statictext', undefined, '\u30B5\u30A4\u30BA');
-    var sizes = ['\u30A2\u30AF\u30C6\u30A3\u30D6\u306A\u30B3\u30F3\u30DD\u3068\u540C\u3058', '1920\u00D71080', '1080\u00D71920', '1080\u00D71080', '3840\u00D72160', '1280\u00D7720', '1440\u00D71080 (4:3)', '1080\u00D71440 (3:4)'];
+    var gC = t1.add('group'); gC.add('statictext', undefined, '\uC0AC\uC774\uC988');
+    var sizes = ['\uD65C\uC131 \uCEF4\uD3EC\uC9C0\uC158\uACFC \uB3D9\uC77C', '1920\u00D71080', '1080\u00D71920', '1080\u00D71080', '3840\u00D72160', '1280\u00D7720', '1440\u00D71080 (4:3)', '1080\u00D71440 (3:4)'];
     var ddSize = gC.add('dropdownlist', undefined, sizes); ddSize.selection = parseInt(jzGet('size', '1'), 10) || 0;
     gC.add('statictext', undefined, 'fps'); var ddFps = gC.add('dropdownlist', undefined, ['24', '30', '60']); ddFps.selection = parseInt(jzGet('fps', '0'), 10) || 0;
-    var gK = t1.add('group'); gK.add('statictext', undefined, '\u80CC\u666F');
-    var ddKey = gK.add('dropdownlist', undefined, ['\u901A\u5E38\uFF08\u30B9\u30BF\u30A4\u30EB\u306E\u80CC\u666F\uFF09', '\u30B0\u30EA\u30FC\u30F3\u30D0\u30C3\u30AF\uFF08\u5408\u6210\u7528\uFF09', '\u30D6\u30E9\u30C3\u30AF\u30D0\u30C3\u30AF\uFF08\u5408\u6210\u7528\uFF09']); ddKey.selection = parseInt(jzGet('key', '0'), 10) || 0;
-    ddKey.helpTip = '\u30B0\u30EA\u30FC\u30F3\u30D0\u30C3\u30AF\uFF0F\u30D6\u30E9\u30C3\u30AF\u30D0\u30C3\u30AF\uFF1A\u767D\u3044\u6587\u5B57\u3068\u6F14\u51FA\u3060\u3051\u3092\u5358\u8272\u306E\u80CC\u666F\u306E\u4E0A\u306B\u4F5C\u308A\u307E\u3059\uFF08\u80CC\u666F\u306E\u6A21\u69D8\u30FB\u7D19\u30FB\u7C92\u5B50\u30FB\u5468\u8FBA\u6E1B\u5149\u306A\u3057\uFF09\u3002\u30B0\u30EA\u30FC\u30F3\u306F\u30AD\u30FC\u30A4\u30F3\u30B0\u3001\u30D6\u30E9\u30C3\u30AF\u306F\u30B9\u30AF\u30EA\u30FC\u30F3\u5408\u6210\u3067\u629C\u3051\u307E\u3059';
-    var cCenter = t1.add('checkbox', undefined, '\u4E2D\u592E\u3092\u7A7A\u3051\u308B\uFF08\u30AD\u30E3\u30E9\u30AF\u30BF\u30FC\u7528\uFF1A\u6A2A\u9577\u306F\u5DE6\u53F3\u30FB\u7E26\u9577\u306F\u4E0A\u4E0B\u306B\u914D\u7F6E\uFF09'); cCenter.value = jzGet('center', '0') === '1';
-    cCenter.helpTip = '\u4E2D\u592E\u306B\u30AD\u30E3\u30E9\u30AF\u30BF\u30FC\u306A\u3069\u3092\u91CD\u306D\u308B\u524D\u63D0\u3067\u3001\u6587\u5B57\u3068\u6F14\u51FA\u3092\u30AB\u30C3\u30C8\u3054\u3068\u306E\u5E2F\uFF08\u6A2A\u9577\u306E\u753B\u9762\u306F\u5DE6\u53F3\u3001\u7E26\u9577\u306F\u4E0A\u4E0B\u3002\u884C\u3054\u3068\u306B\u4EA4\u4E92\uFF09\u306B\u7F6E\u304D\u307E\u3059\u3002\u80CC\u666F\u3068\u753B\u9762\u52B9\u679C\u306F\u753B\u9762\u5168\u4F53\u306E\u307E\u307E\u3067\u3059';
-    var gCD = t1.add('group'); gCD.add('statictext', undefined, '\u3000\u7E26\u9577\u306E\u3068\u304D'); var ddCDir = gCD.add('dropdownlist', undefined, ['\u4E0A\u4E0B\u306B\u5206\u3051\u308B', '\u5DE6\u53F3\u306B\u5206\u3051\u308B']); ddCDir.selection = parseInt(jzGet('centerDir', '0'), 10) || 0;
-    var cLight = t1.add('checkbox', undefined, '\u8EFD\u91CF\uFF08AE \u3067\u306E\u518D\u751F\u3092\u8EFD\u304F\uFF09'); cLight.value = jzGet('light', '0') === '1';
-    cLight.helpTip = '\u8272\u30BA\u30EC\u306E\u8907\u88FD\u30FB\u7D19\u306E\u8CEA\u611F\u30FB\u30B0\u30ED\u30FC\u30FB\u7C92\u5B50\u30FB\u4E00\u90E8\u306E\u753B\u9762\u52B9\u679C\u3092\u7701\u3044\u3066\u3001After Effects \u3067\u306E\u518D\u751F\u3092\u8EFD\u304F\u3057\u307E\u3059\uFF08\u9577\u3044\u66F2\u306B\u304A\u3059\u3059\u3081\uFF09';
+    var gK = t1.add('group'); gK.add('statictext', undefined, '\uBC30\uACBD');
+    var ddKey = gK.add('dropdownlist', undefined, ['\uAE30\uBCF8\uFF08\uC2A4\uD0C0\uC77C \uBC30\uACBD\uFF09', '\uADF8\uB9B0\uBC31\uFF08\uD569\uC131\uC6A9\uFF09', '\uBE14\uB799\uBC31\uFF08\uD569\uC131\uC6A9\uFF09']); ddKey.selection = parseInt(jzGet('key', '0'), 10) || 0;
+    ddKey.helpTip = '\uADF8\uB9B0\uBC31/\uBE14\uB799\uBC31: \uD770\uC0C9 \uAE00\uC790\uC640 \uC5F0\uCD9C\uB9CC \uB2E8\uC0C9 \uBC30\uACBD \uC704\uC5D0 \uB9CC\uB4ED\uB2C8\uB2E4(\uBC30\uACBD \uD328\uD134\u00B7\uC885\uC774 \uC9C8\uAC10\u00B7\uC785\uC790\u00B7\uBE44\uB124\uD305 \uC5C6\uC74C). \uADF8\uB9B0\uC740 \uD06C\uB85C\uB9C8\uD0A4, \uBE14\uB799\uC740 \uC2A4\uD06C\uB9B0 \uD569\uC131\uC73C\uB85C \uD22C\uBA85\uD654\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4';
+    var cCenter = t1.add('checkbox', undefined, '\uC911\uC559 \uBE44\uC6B0\uAE30\uFF08\uCE90\uB9AD\uD130\uC6A9: \uAC00\uB85C\uB294 \uC88C\uC6B0\u00B7\uC138\uB85C\uB294 \uC0C1\uD558 \uBC30\uCE58\uFF09'); cCenter.value = jzGet('center', '0') === '1';
+    cCenter.helpTip = '\uC911\uC559\uC5D0 \uCE90\uB9AD\uD130 \uB4F1\uC744 \uACB9\uCCD0 \uBC30\uCE58\uD560 \uC218 \uC788\uB3C4\uB85D, \uD14D\uC2A4\uD2B8\uC640 \uC5F0\uCD9C\uC744 \uCEF7\uBCC4 \uBC34\uB4DC(\uAC00\uB85C \uD654\uBA74\uC740 \uC88C\uC6B0, \uC138\uB85C \uD654\uBA74\uC740 \uC0C1\uD558 \uAD50\uB300)\uC5D0 \uBC30\uCE58\uD569\uB2C8\uB2E4. \uBC30\uACBD\uACFC \uD654\uBA74 \uD6A8\uACFC\uB294 \uC804\uCCB4 \uD654\uBA74 \uADF8\uB300\uB85C \uC720\uC9C0\uB429\uB2C8\uB2E4';
+    var gCD = t1.add('group'); gCD.add('statictext', undefined, '\u3000\uC138\uB85C \uD654\uBA74\uC77C \uB54C'); var ddCDir = gCD.add('dropdownlist', undefined, ['\uC0C1\uD558\uB85C \uB098\uB204\uAE30', '\uC88C\uC6B0\uB85C \uB098\uB204\uAE30']); ddCDir.selection = parseInt(jzGet('centerDir', '0'), 10) || 0;
+    var cLight = t1.add('checkbox', undefined, '\uACBD\uB7C9\uFF08AE \uC7AC\uC0DD \uAC00\uC18D\uFF09'); cLight.value = jzGet('light', '0') === '1';
+    cLight.helpTip = '\uC0C9\uC218\uCC28 \uBCF5\uC81C\u00B7\uC885\uC774 \uC9C8\uAC10\u00B7\uAE00\uB85C\uC6B0\u00B7\uD30C\uD2F0\uD074\u00B7\uC77C\uBD80 \uD654\uBA74 \uD6A8\uACFC\uB97C \uC0DD\uB7B5\uD558\uC5EC After Effects \uC7AC\uC0DD \uC18D\uB3C4\uB97C \uAC00\uBCCD\uAC8C \uD569\uB2C8\uB2E4(\uAE34 \uACE1\uC5D0 \uAD8C\uC7A5)';
 
-    var pT = t1.add('panel', undefined, '\u30BF\u30A4\u30DF\u30F3\u30B0'); pT.alignChildren = ['left', 'top']; pT.margins = 10;
-    var rAuto = pT.add('radiobutton', undefined, '\u81EA\u52D5\uFF08\u6587\u5B57\u6570\u30FBBPM \u304B\u3089\uFF09 / LRC\u306E\u6642\u523B');
-    var rLayer = pT.add('radiobutton', undefined, '\u9078\u629E\u30EC\u30A4\u30E4\u30FC\u306E\u30DE\u30FC\u30AB\u30FC\u3092\u884C\u982D\u306B\u4F7F\u3046');
-    var rComp = pT.add('radiobutton', undefined, '\u30B3\u30F3\u30DD\u30DE\u30FC\u30AB\u30FC\u3092\u884C\u982D\u306B\u4F7F\u3046');
+    var pT = t1.add('panel', undefined, '\uD0C0\uC774\uBC0D'); pT.alignChildren = ['left', 'top']; pT.margins = 10;
+    var rAuto = pT.add('radiobutton', undefined, '\uC790\uB3D9\uFF08\uAE00\uC790 \uC218\u00B7BPM \uAE30\uC900\uFF09 / LRC \uD0C0\uC784\uC2A4\uD0EC\uD504');
+    var rLayer = pT.add('radiobutton', undefined, '\uC120\uD0DD\uD55C \uB808\uC774\uC5B4\uC758 \uB9C8\uCEE4\uB97C \uD589 \uC2DC\uC791\uC73C\uB85C \uC0AC\uC6A9');
+    var rComp = pT.add('radiobutton', undefined, '\uCEF4\uD3EC\uC9C0\uC158 \uB9C8\uCEE4\uB97C \uD589 \uC2DC\uC791\uC73C\uB85C \uC0AC\uC6A9');
     var tm = jzGet('timing', 'auto'); rAuto.value = tm === 'auto'; rLayer.value = tm === 'layer'; rComp.value = tm === 'comp';
     var gB = pT.add('group'); gB.add('statictext', undefined, 'BPM'); var eBpm = gB.add('edittext', undefined, jzGet('bpm', '')); eBpm.preferredSize.width = 50;
-    gB.add('statictext', undefined, '\u884C\u306E\u9577\u3055'); var eScale = gB.add('edittext', undefined, jzGet('lineScale', '1')); eScale.preferredSize.width = 40;
-    var cAudio = pT.add('checkbox', undefined, '\u9078\u629E\u4E2D\u306E\u97F3\u58F0\u30EC\u30A4\u30E4\u30FC\u3092\u65B0\u3057\u3044\u30B3\u30F3\u30DD\u306B\u5165\u308C\u308B'); cAudio.value = jzGet('audio', '1') === '1';
+    gB.add('statictext', undefined, '\uD589 \uAE38\uC774'); var eScale = gB.add('edittext', undefined, jzGet('lineScale', '1')); eScale.preferredSize.width = 40;
+    var cAudio = pT.add('checkbox', undefined, '\uC120\uD0DD\uD55C \uC624\uB514\uC624 \uB808\uC774\uC5B4\uB97C \uC0C8 \uCEF4\uD3EC\uC9C0\uC158\uC5D0 \uD3EC\uD568'); cAudio.value = jzGet('audio', '1') === '1';
 
-    var pF = t1.add('panel', undefined, '\u6F14\u51FA'); pF.alignChildren = ['fill', 'top']; pF.margins = 10;
-    var gM = pF.add('group'); gM.add('statictext', undefined, '\u96F0\u56F2\u6C17').preferredSize.width = 86;
-    var moodNames = ['\u6A19\u6E96\uFF08\u3059\u3079\u3066\u306E\u624B\u6CD5\u3092\u4F7F\u3046\uFF09'];
+    var pF = t1.add('panel', undefined, '\uC5F0\uCD9C'); pF.alignChildren = ['fill', 'top']; pF.margins = 10;
+    var gM = pF.add('group'); gM.add('statictext', undefined, '\uBD84\uC704\uAE30').preferredSize.width = 86;
+    var moodNames = ['\uD45C\uC900\uFF08\uBAA8\uB4E0 \uAE30\uBC95 \uC0AC\uC6A9\uFF09'];
     for (i = 0; i < JZ_DATA.moodOrder.length; i++) moodNames.push(JZ_DATA.moods[JZ_DATA.moodOrder[i]].name);
     var ddMood = gM.add('dropdownlist', undefined, moodNames); ddMood.selection = parseInt(jzGet('mood', '0'), 10) || 0;
-    ddMood.helpTip = '\u96F0\u56F2\u6C17\u3054\u3068\u306B\u4F7F\u3046\u30EC\u30A4\u30A2\u30A6\u30C8\u30FB\u767B\u5834\u30FB\u9000\u5834\u306E\u624B\u6CD5\u304C\u7D5E\u3089\u308C\u307E\u3059\uFF08\u30B7\u30FC\u30C9\u3067\u518D\u73FE\uFF09';
+    ddMood.helpTip = '\uBD84\uC704\uAE30\uBCC4\uB85C \uC0AC\uC6A9\uD560 \uB808\uC774\uC544\uC6C3\u00B7\uB4F1\uC7A5\u00B7\uD1F4\uC7A5 \uAE30\uBC95\uC744 \uC81C\uD55C\uD569\uB2C8\uB2E4(\uC2DC\uB4DC\uB85C \uC7AC\uD604 \uAC00\uB2A5)';
     function slider(parent, label, key, def) {
         var g = parent.add('group'); g.add('statictext', undefined, label).preferredSize.width = 86;
         var v = parseFloat(jzGet(key, String(def)));
@@ -62914,22 +62875,22 @@ function jzUI(thisObj) {
         s.onChanging = function () { t.text = String(Math.round(s.value)); };
         s.key = key; s.lbl = t; return s;
     }
-    var sMotion = slider(pF, '\u52D5\u304D\u306E\u5F37\u3055', 'motion', 70), sGlitch = slider(pF, '\u30B0\u30EA\u30C3\u30C1', 'glitch', 55), sChroma = slider(pF, '\u8272\u30BA\u30EC', 'chroma', 70);
-    var sDecor = slider(pF, '\u88C5\u98FE\u306E\u91CF', 'decor', 50), sDensity = slider(pF, '\u30AB\u30C3\u30C8\u306E\u7D30\u304B\u3055', 'density', 55), sTexture = slider(pF, '\u8CEA\u611F', 'texture', 60), sBg = slider(pF, '\u80CC\u666F\u306E\u5207\u66FF', 'bgSwitch', 35);
+    var sMotion = slider(pF, '\uBAA8\uC158 \uAC15\uB3C4', 'motion', 70), sGlitch = slider(pF, '\uAE00\uB9AC\uCE58', 'glitch', 55), sChroma = slider(pF, '\uC0C9\uC218\uCC28', 'chroma', 70);
+    var sDecor = slider(pF, '\uC7A5\uC2DD \uC591', 'decor', 50), sDensity = slider(pF, '\uCEF7 \uC138\uBD84\uD654', 'density', 55), sTexture = slider(pF, '\uC9C8\uAC10', 'texture', 60), sBg = slider(pF, '\uBC30\uACBD \uC804\uD658', 'bgSwitch', 35);
     var gO = pF.add('group');
-    var cTwos = gO.add('checkbox', undefined, '2\u30B3\u30DE\u6253\u3061'); cTwos.value = jzGet('twos', '1') === '1';
-    var cFlash = gO.add('checkbox', undefined, '\u30D5\u30E9\u30C3\u30B7\u30E5'); cFlash.value = jzGet('flash', '1') === '1';
-    gO.add('statictext', undefined, 'HUD'); var ddHud = gO.add('dropdownlist', undefined, ['\u30B9\u30BF\u30A4\u30EB\u6B21\u7B2C', '\u8868\u793A', '\u975E\u8868\u793A']); ddHud.selection = parseInt(jzGet('hud', '0'), 10) || 0;
-    var gSeed = t1.add('group'); gSeed.add('statictext', undefined, '\u30B7\u30FC\u30C9');
+    var cTwos = gO.add('checkbox', undefined, '2\uD504\uB808\uC784 \uC560\uB2C8'); cTwos.value = jzGet('twos', '1') === '1';
+    var cFlash = gO.add('checkbox', undefined, '\uD50C\uB798\uC2DC'); cFlash.value = jzGet('flash', '1') === '1';
+    gO.add('statictext', undefined, 'HUD'); var ddHud = gO.add('dropdownlist', undefined, ['\uC2A4\uD0C0\uC77C \uAE30\uBCF8\uAC12', '\uD45C\uC2DC', '\uC228\uAE30\uAE30']); ddHud.selection = parseInt(jzGet('hud', '0'), 10) || 0;
+    var gSeed = t1.add('group'); gSeed.add('statictext', undefined, '\uC2DC\uB4DC');
     var eSeed = gSeed.add('edittext', undefined, jzGet('seed', '20260922')); eSeed.preferredSize.width = 110;
-    var bShuffle = gSeed.add('button', undefined, '\u30B7\u30E3\u30C3\u30D5\u30EB');
+    var bShuffle = gSeed.add('button', undefined, '\uC154\uD50C');
     bShuffle.onClick = function () { eSeed.text = String(Math.floor(Math.random() * 999999999)); };
 
-    var pP = t1.add('panel', undefined, '\u30A2\u30AF\u30BB\u30F3\u30C8\u30FB\u30BA\u30EC\u8272'); pP.alignChildren = ['fill', 'top']; pP.margins = 10; pP.spacing = 6;
+    var pP = t1.add('panel', undefined, '\uC545\uC13C\uD2B8\u00B7\uC0C9\uC218\uCC28 \uCEEC\uB7EC'); pP.alignChildren = ['fill', 'top']; pP.margins = 10; pP.spacing = 6;
     var gP1 = pP.add('group');
-    var cPal = gP1.add('checkbox', undefined, '\u30B9\u30BF\u30A4\u30EB\u306E\u8272\u3092\u4E0A\u66F8\u304D'); cPal.value = jzGet('palOn', '0') === '1';
-    var bPal = gP1.add('button', undefined, '\u30E9\u30F3\u30C0\u30E0\u914D\u8272');
-    bPal.helpTip = '\u80CC\u666F\u306B\u5408\u3046\u30A2\u30AF\u30BB\u30F3\u30C8\u8272\u3068\u30BA\u30EC\u8272A/B\u3092\u30E9\u30F3\u30C0\u30E0\u306B\u9078\u3073\u307E\u3059\uFF08\u660E\u308B\u3055\u306F\u80CC\u666F\u306B\u5408\u308F\u305B\u3066\u81EA\u52D5\u8ABF\u6574\uFF09';
+    var cPal = gP1.add('checkbox', undefined, '\uC2A4\uD0C0\uC77C \uC0C9\uC0C1 \uB36E\uC5B4\uC4F0\uAE30'); cPal.value = jzGet('palOn', '0') === '1';
+    var bPal = gP1.add('button', undefined, '\uBB34\uC791\uC704 \uBC30\uC0C9');
+    bPal.helpTip = '\uBC30\uACBD\uC5D0 \uC5B4\uC6B8\uB9AC\uB294 \uC545\uC13C\uD2B8 \uC0C9\uC0C1\uACFC \uC0C9\uC218\uCC28 \uC0C9\uC0C1 A/B\uB97C \uBB34\uC791\uC704\uB85C \uC120\uD0DD\uD569\uB2C8\uB2E4(\uBC1D\uAE30\uB294 \uBC30\uACBD\uC5D0 \uB9DE\uCDB0 \uC790\uB3D9 \uC870\uC808)';
     var gP2 = pP.add('group'); gP2.spacing = 10;
     function colorField(label, key) {
         var g = gP2.add('group'); g.orientation = 'column'; g.alignChildren = ['left', 'top']; g.spacing = 2;
@@ -62945,57 +62906,57 @@ function jzUI(thisObj) {
         var h = jzCleanHex(f.e.text); if (!h) return;
         try { var c = jzHex(h); f.sw.graphics.backgroundColor = f.sw.graphics.newBrush(f.sw.graphics.BrushType.SOLID_COLOR, [c[0], c[1], c[2], 1]); } catch (e) {}
     }
-    var fAcc = colorField('\u30A2\u30AF\u30BB\u30F3\u30C8', 'accent'), fGA = colorField('\u30BA\u30EC\u8272A', 'ghostA'), fGB = colorField('\u30BA\u30EC\u8272B', 'ghostB'), palFields = [fAcc, fGA, fGB];
+    var fAcc = colorField('\uC545\uC13C\uD2B8', 'accent'), fGA = colorField('\uC0C9\uC218\uCC28A', 'ghostA'), fGB = colorField('\uC0C9\uC218\uCC28B', 'ghostB'), palFields = [fAcc, fGA, fGB];
     function curStyle() { return JZ_DATA.styles[JZ_DATA.styleOrder[ddStyle.selection ? ddStyle.selection.index : 0]] || JZ_DATA.styles.noir; }
     function setPal(p) { fAcc.e.text = p.accent; fGA.e.text = p.ghostA; fGB.e.text = p.ghostB; for (var q = 0; q < 3; q++) paint(palFields[q]); }
     function showStylePal() { var sc = curStyle().schemes[0]; setPal({ accent: sc.accent, ghostA: sc.ghostA, ghostB: sc.ghostB }); }
     if (!cPal.value || !jzCleanHex(fAcc.e.text)) showStylePal(); else setPal({ accent: fAcc.e.text, ghostA: fGA.e.text, ghostB: fGB.e.text });
     ddStyle.onChange = function () { if (!cPal.value) showStylePal(); };
-    bPal.onClick = function () { setPal(jzRandomPalette(curStyle().schemes[0].bg)); cPal.value = true; status.text = '\u914D\u8272\u3092\u5909\u66F4\u3057\u307E\u3057\u305F \u2014 \u300C\u30B3\u30F3\u30DD\u3092\u751F\u6210\u3059\u308B\u300D\u3067\u53CD\u6620\u3055\u308C\u307E\u3059'; };
+    bPal.onClick = function () { setPal(jzRandomPalette(curStyle().schemes[0].bg)); cPal.value = true; status.text = '\uBC30\uC0C9\uC744 \uBCC0\uACBD\uD588\uC2B5\uB2C8\uB2E4 \u2014 \u300C\uCEF4\uD3EC\uC9C0\uC158 \uC0DD\uC131\u300D \uD074\uB9AD \uC2DC \uBC18\uC601\uB429\uB2C8\uB2E4'; };
     cPal.onClick = function () { if (!cPal.value) showStylePal(); };
 
     var gGo = t1.add('group'); gGo.alignChildren = ['fill', 'center'];
-    var bBuild = gGo.add('button', undefined, '\u30B3\u30F3\u30DD\u3092\u751F\u6210\u3059\u308B'); bBuild.alignment = ['fill', 'center'];
+    var bBuild = gGo.add('button', undefined, '\uCEF4\uD3EC\uC9C0\uC158 \uC0DD\uC131'); bBuild.alignment = ['fill', 'center'];
 
     // ---------------- tab 2: from JSON
-    var t2 = tp.add('tab', undefined, 'JSON\u304B\u3089'); t2.orientation = 'column'; t2.alignChildren = ['fill', 'top']; t2.margins = 8;
-    t2.add('statictext', undefined, '\u30D6\u30E9\u30A6\u30B6\u7248 JIZURA \u306E\u300CAE\u7528\u306B\u66F8\u304D\u51FA\u3057\u300D\u3067\u4F5C\u3063\u305F .json \u3092\u8AAD\u307F\u8FBC\u307F\u3001', undefined, { multiline: true });
-    t2.add('statictext', undefined, '\u540C\u3058\u30BF\u30A4\u30DF\u30F3\u30B0\u30FB\u30EC\u30A4\u30A2\u30A6\u30C8\u30FB\u6F14\u51FA\u3067\u7DE8\u96C6\u53EF\u80FD\u306A\u30B3\u30F3\u30DD\u3092\u7D44\u307F\u307E\u3059\u3002', undefined, { multiline: true });
-    var cAudio2 = t2.add('checkbox', undefined, '\u9078\u629E\u4E2D\u306E\u97F3\u58F0\u30EC\u30A4\u30E4\u30FC\u3082\u5165\u308C\u308B'); cAudio2.value = true;
-    var bJson = t2.add('button', undefined, 'JSON\u3092\u9078\u3093\u3067\u751F\u6210\u2026');
-    t2.add('statictext', undefined, '\u601D\u3063\u305F\u3068\u304A\u308A\u306B\u3067\u304D\u306A\u3044\u3068\u304D\u306F\u3001\u4E0B\u306E\u30DC\u30BF\u30F3\u3067\u8A3A\u65AD\u30EC\u30DD\u30FC\u30C8\uFF08JIZURA_report.txt\uFF09\u3092\u4FDD\u5B58\u3057\u3066\u9001\u3063\u3066\u304F\u3060\u3055\u3044\u3002', undefined, { multiline: true });
-    var bDiag = t2.add('button', undefined, '\u8A3A\u65AD\u30EC\u30DD\u30FC\u30C8\u3092\u4FDD\u5B58\uFF08\u6700\u5F8C\u306B\u4F5C\u3063\u305F\u30B3\u30F3\u30DD\uFF09');
+    var t2 = tp.add('tab', undefined, 'JSON\uC5D0\uC11C'); t2.orientation = 'column'; t2.alignChildren = ['fill', 'top']; t2.margins = 8;
+    t2.add('statictext', undefined, '\uC6F9 \uBC84\uC804 JIZURA\uC758 \u300CAE\uC6A9 \uB0B4\uBCF4\uB0B4\uAE30\u300D\uB85C \uB9CC\uB4E0 .json\uC744 \uBD88\uB7EC\uC640,', undefined, { multiline: true });
+    t2.add('statictext', undefined, '\uB3D9\uC77C\uD55C \uD0C0\uC774\uBC0D\u00B7\uB808\uC774\uC544\uC6C3\u00B7\uC5F0\uCD9C\uB85C \uD3B8\uC9D1 \uAC00\uB2A5\uD55C \uCEF4\uD3EC\uC9C0\uC158\uC744 \uAD6C\uC131\uD569\uB2C8\uB2E4.', undefined, { multiline: true });
+    var cAudio2 = t2.add('checkbox', undefined, '\uC120\uD0DD\uD55C \uC624\uB514\uC624 \uB808\uC774\uC5B4\uB3C4 \uD3EC\uD568'); cAudio2.value = true;
+    var bJson = t2.add('button', undefined, 'JSON \uC120\uD0DD \uD6C4 \uC0DD\uC131\u2026');
+    t2.add('statictext', undefined, '\uC6D0\uD558\uB294 \uB300\uB85C \uB3D9\uC791\uD558\uC9C0 \uC54A\uC744 \uB54C\uB294 \uC544\uB798 \uBC84\uD2BC\uC73C\uB85C \uC9C4\uB2E8 \uBCF4\uACE0\uC11C(JIZURA_report.txt)\uB97C \uC800\uC7A5\uD558\uC5EC \uBB38\uC758\uD574 \uC8FC\uC138\uC694.', undefined, { multiline: true });
+    var bDiag = t2.add('button', undefined, '\uC9C4\uB2E8 \uBCF4\uACE0\uC11C \uC800\uC7A5\uFF08\uB9C8\uC9C0\uB9C9\uC73C\uB85C \uC0DD\uC131\uD55C \uCEF4\uD3EC\uC9C0\uC158\uFF09');
 
     // ---------------- tab 3: fonts
-    var t3 = tp.add('tab', undefined, '\u30D5\u30A9\u30F3\u30C8'); t3.orientation = 'column'; t3.alignChildren = ['fill', 'top']; t3.margins = 8;
-    t3.add('statictext', undefined, 'PostScript\u540D\u3067\u6307\u5B9A\uFF08\u898B\u3064\u304B\u3089\u306A\u3044\u6307\u5B9A\u306F\u3053\u3053\u306B\u843D\u3061\u307E\u3059\uFF09', undefined, { multiline: true });
+    var t3 = tp.add('tab', undefined, '\uD3F0\uD2B8'); t3.orientation = 'column'; t3.alignChildren = ['fill', 'top']; t3.margins = 8;
+    t3.add('statictext', undefined, 'PostScript \uC774\uB984\uC73C\uB85C \uC9C0\uC815\uFF08\uCC3E\uC744 \uC218 \uC5C6\uB294 \uC11C\uCCB4\uB294 \uAE30\uBCF8\uAC12\uC73C\uB85C \uB300\uCCB4\uB429\uB2C8\uB2E4\uFF09', undefined, { multiline: true });
     function fontRow(label, key, def) { var g = t3.add('group'); g.add('statictext', undefined, label).preferredSize.width = 70; var e = g.add('edittext', undefined, jzGet('font_' + key, def)); e.preferredSize.width = 230; return e; }
-    var fDisplay = fontRow('\u898B\u51FA\u3057', 'display', 'YuGothic-Bold'), fSerif = fontRow('\u660E\u671D', 'serif', 'YuMincho-Demibold'), fBody = fontRow('\u5C0F\u3055\u306A\u6587\u5B57', 'body', 'YuGothic-Medium'), fMono = fontRow('\u7B49\u5E45', 'mono', 'Consolas');
-    var cForce = t3.add('checkbox', undefined, '\u5E38\u306B\u3053\u306E4\u66F8\u4F53\u3092\u4F7F\u3046\uFF08\u81EA\u52D5\u9078\u629E\u3057\u306A\u3044\uFF09'); cForce.value = jzGet('forceFonts', '0') === '1';
-    var bPick = t3.add('button', undefined, '\u9078\u629E\u4E2D\u306E\u30C6\u30AD\u30B9\u30C8\u30EC\u30A4\u30E4\u30FC\u306E\u66F8\u4F53\u3092\u300C\u898B\u51FA\u3057\u300D\u306B');
+    var fDisplay = fontRow('\uD5E4\uB4DC\uB77C\uC778', 'display', 'AppleSDGothicNeo-Bold'), fSerif = fontRow('\uBA85\uC870', 'serif', 'Batang'), fBody = fontRow('\uBCF8\uBB38', 'body', 'AppleSDGothicNeo-Medium'), fMono = fontRow('\uACE0\uC815\uD3ED', 'mono', 'Consolas');
+    var cForce = t3.add('checkbox', undefined, '\uD56D\uC0C1 \uC774 4\uAC1C \uC11C\uCCB4 \uC0AC\uC6A9\uFF08\uC790\uB3D9 \uC120\uD0DD \uB044\uAE30\uFF09'); cForce.value = jzGet('forceFonts', '0') === '1';
+    var bPick = t3.add('button', undefined, '\uC120\uD0DD\uD55C \uD14D\uC2A4\uD2B8 \uB808\uC774\uC5B4\uC758 \uC11C\uCCB4\uB97C \u300C\uD5E4\uB4DC\uB77C\uC778\u300D\uC5D0 \uC801\uC6A9');
     bPick.onClick = function () {
         var c = app.project.activeItem;
-        if (!(c instanceof CompItem) || !c.selectedLayers.length) { alert('\u30C6\u30AD\u30B9\u30C8\u30EC\u30A4\u30E4\u30FC\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044'); return; }
-        try { fDisplay.text = c.selectedLayers[0].property('ADBE Text Properties').property('ADBE Text Document').value.font; } catch (e) { alert('\u30C6\u30AD\u30B9\u30C8\u30EC\u30A4\u30E4\u30FC\u3067\u306F\u3042\u308A\u307E\u305B\u3093'); }
+        if (!(c instanceof CompItem) || !c.selectedLayers.length) { alert('\uD14D\uC2A4\uD2B8 \uB808\uC774\uC5B4\uB97C \uC120\uD0DD\uD574 \uC8FC\uC138\uC694'); return; }
+        try { fDisplay.text = c.selectedLayers[0].property('ADBE Text Properties').property('ADBE Text Document').value.font; } catch (e) { alert('\uD14D\uC2A4\uD2B8 \uB808\uC774\uC5B4\uAC00 \uC544\uB2D9\uB2C8\uB2E4'); }
     };
-    t3.add('statictext', undefined, 'Noto Sans JP / Noto Serif JP / Dela Gothic One \u306A\u3069\u304C\u5165\u3063\u3066\u3044\u308C\u3070\u81EA\u52D5\u3067\u4F7F\u3044\u307E\u3059\uFF08AE 2024\u4EE5\u964D\uFF09\u3002', undefined, { multiline: true });
+    t3.add('statictext', undefined, 'Pretendard / Noto Sans KR / Noto Serif KR \uB4F1\uC774 \uC124\uCE58\uB418\uC5B4 \uC788\uC73C\uBA74 \uC790\uB3D9\uC73C\uB85C \uC0AC\uC6A9\uD569\uB2C8\uB2E4(AE 2024 \uC774\uC0C1).', undefined, { multiline: true });
 
-    var status = win.add('statictext', undefined, '\u6E96\u5099OK', { truncate: 'end' });
+    var status = win.add('statictext', undefined, '\uC900\uBE44 \uC644\uB8CC', { truncate: 'end' });
     var gRun = win.add('group'); gRun.alignChildren = ['fill', 'center'];
     var pbar = gRun.add('progressbar', undefined, 0, 100); pbar.alignment = ['fill', 'center']; pbar.preferredSize.height = 6;
-    var bStop = gRun.add('button', undefined, '\u4E2D\u6B62'); bStop.enabled = false; bStop.helpTip = '\u4F5C\u6210\u3092\u6B62\u3081\u307E\u3059\uFF08\u305D\u3053\u307E\u3067\u306E\u30AB\u30C3\u30C8\u3067\u30B3\u30F3\u30DD\u3092\u4ED5\u4E0A\u3052\u307E\u3059\uFF09';
+    var bStop = gRun.add('button', undefined, '\uC911\uC9C0'); bStop.enabled = false; bStop.helpTip = '\uC0DD\uC131\uC744 \uC911\uC9C0\uD569\uB2C8\uB2E4(\uC9C0\uAE08\uAE4C\uC9C0 \uC644\uC131\uB41C \uCEF7\uC73C\uB85C \uCEF4\uD3EC\uC9C0\uC158\uC744 \uB9C8\uBB34\uB9AC\uD569\uB2C8\uB2E4)';
     tp.selection = t1;
 
     // ---- build in short steps: After Effects gets control back between steps (app.scheduleTask), so long songs
-    //      don't freeze it into "not responding"; the bar shows progress and \u4E2D\u6B62 finishes with the cuts built so far
+    //      don't freeze it into "not responding"; the bar shows progress and stop finishes with the cuts built so far
     var RUN = null;
     function setRunning(on) { bBuild.enabled = bOmk.enabled = bJson.enabled = !on; bStop.enabled = on; if (!on) pbar.value = 0; }
     function runBuild(plan, bo, undoName, done) {
-        if (RUN) { alert('JIZURA\uFF1A\u3044\u307E\u4F5C\u6210\u4E2D\u3067\u3059\u3002\u7D42\u308F\u308B\u307E\u3067\u5F85\u3064\u304B\u300C\u4E2D\u6B62\u300D\u3092\u62BC\u3057\u3066\u304F\u3060\u3055\u3044'); return; }
+        if (RUN) { alert('JIZURA\uFF1A\uD604\uC7AC \uC0DD\uC131 \uC911\uC785\uB2C8\uB2E4. \uB05D\uB0A0 \uB54C\uAE4C\uC9C0 \uAE30\uB2E4\uB9AC\uAC70\uB098 \u300C\uC911\uC9C0\u300D\uB97C \uB20C\uB7EC\uC8FC\uC138\uC694'); return; }
         var job = null;
         app.beginUndoGroup(undoName);
         try { job = jzBuildStart(plan, bo); }
-        catch (e) { alert('\u751F\u6210\u4E2D\u306B\u30A8\u30E9\u30FC: ' + e.toString() + (e.line ? ' (line ' + e.line + ')' : '')); }
+        catch (e) { alert('\uC0DD\uC131 \uC911 \uC624\uB958: ' + e.toString() + (e.line ? ' (line ' + e.line + ')' : '')); }
         finally { app.endUndoGroup(); }
         if (!job) { done(null); return; }
         RUN = { job: job, done: done, name: undoName, t0: new Date().getTime() };
@@ -63013,17 +62974,16 @@ function jzUI(thisObj) {
         finally { app.endUndoGroup(); }
         if (err || job.finished) {
             RUN = null; $.global.__JZ_TICK = null; setRunning(false);
-            if (err) alert('\u751F\u6210\u4E2D\u306B\u30A8\u30E9\u30FC: ' + err);
+            if (err) alert('\uC0DD\uC131 \uC911 \uC624\uB958: ' + err);
             R.done(err ? null : job.comp, job);
             return;
         }
         var k = job.phase === 'cuts' ? job.done / Math.max(1, job.total) * 0.9 : 0.9 + 0.1 * job.eventsDone / Math.max(1, job.events);
         pbar.value = Math.round(k * 100);
-        status.text = '\u751F\u6210\u4E2D\u2026 ' + Math.round(k * 100) + '%\uFF08' + (job.phase === 'cuts' ? job.done + ' / ' + job.total + ' \u30AB\u30C3\u30C8' : '\u52B9\u679C\u3092\u8FFD\u52A0\u4E2D') + '\uFF09';
-        try { if (win.update) win.update(); } catch (eu) {}
-        if (!sync && !schedule()) { while (RUN) tick(true); }
+        status.text = '\uC0DD\uC131 \uC911\u2026 ' + Math.round(k * 100) + '%\uFF08' + (job.phase === 'cuts' ? job.done + ' / ' + job.total + ' \uCEF7' : '\uD6A8\uACFC \uCD94\uAC00 \uC911') + '\uFF09';
+        try { if (win.update) win.update(); } catch (eu) {}        if (!sync && !schedule()) { while (RUN) tick(true); }
     }
-    bStop.onClick = function () { if (RUN) { RUN.job.cancelled = true; status.text = '\u4E2D\u6B62\u3057\u3066\u3044\u307E\u3059\u2026\uFF08\u4F5C\u6210\u6E08\u307F\u306E\u30AB\u30C3\u30C8\u3067\u4ED5\u4E0A\u3052\u307E\u3059\uFF09'; } };
+    bStop.onClick = function () { if (RUN) { RUN.job.cancelled = true; status.text = '\uC911\uC9C0\uD558\uB294 \uC911\u2026\uFF08\uC0DD\uC131\uB41C \uCEF7\uC73C\uB85C \uB9C8\uBB34\uB9AC\uD569\uB2C8\uB2E4\uFF09'; } };
 
     function roles() {
         jzPut('font_display', fDisplay.text); jzPut('font_serif', fSerif.text); jzPut('font_body', fBody.text); jzPut('font_mono', fMono.text); jzPut('forceFonts', cForce.value ? '1' : '0');
@@ -63039,19 +62999,29 @@ function jzUI(thisObj) {
     var fontNoted = false, lastComp = null, lastPlan = null;
     function report(comp, t0, label) {
         var s = (label ? label + '  ' : '') + (comp ? comp.name : '') + ' \u2014 ' + ((new Date().getTime() - t0) / 1000).toFixed(1) + 's';
-        if (JZLOG.length) { s += ' / \u6CE8\u610F ' + JZLOG.length + '\u4EF6'; alert('JIZURA\uFF1A\u751F\u6210\u3057\u307E\u3057\u305F\u304C\u3001\u4E00\u90E8\u306B\u6CE8\u610F\u304C\u3042\u308A\u307E\u3059\uFF1A\n\n' + JZLOG.slice(0, 14).join('\n')); }
+        if (JZLOG.length) { s += ' / \uC8FC\uC758 ' + JZLOG.length + '\uAC74'; alert('JIZURA\uFF1A\uC0DD\uC131\uB418\uC5C8\uC73C\uB098 \uC77C\uBD80 \uC8FC\uC758\uC0AC\uD56D\uC774 \uC788\uC2B5\uB2C8\uB2E4:
+
+' + JZLOG.slice(0, 14).join('
+')); }
         var mf = comp ? jzMissingFonts() : [];
         if (mf.length) {
-            s += ' / \u66F8\u4F53\u306E\u4EE3\u7528 ' + mf.length; status.helpTip = '\u3053\u306E PC \u306B\u7121\u3044\u66F8\u4F53: ' + mf.join(', ');
+            s += ' / \uC11C\uCCB4 \uB300\uCCB4 ' + mf.length; status.helpTip = '\uC774 PC\uC5D0 \uC5C6\uB294 \uC11C\uCCB4: ' + mf.join(', ');
             if (!fontNoted) {
                 fontNoted = true;
-                alert('JIZURA\uFF1A\u6B21\u306E\u66F8\u4F53\u304C\u3053\u306E PC \u306B\u7121\u3044\u305F\u3081\u3001\u8FD1\u3044\u66F8\u4F53\u3067\u4F5C\u308A\u307E\u3057\u305F\u3002\n\n' + mf.join('\n') +
-                    '\n\n\u3069\u308C\u3082 Google Fonts\uFF08fonts.google.com\uFF09\u304B\u3089\u7121\u6599\u3067\u5165\u308C\u3089\u308C\u307E\u3059\u3002\u5165\u308C\u3066 After Effects \u3092\u518D\u8D77\u52D5\u3057\u3001\u4F5C\u308A\u76F4\u3059\u3068\u3001\u30D6\u30E9\u30A6\u30B6\u7248\u3068\u540C\u3058\u66F8\u4F53\u306B\u306A\u308A\u307E\u3059\u3002');
+                alert('JIZURA\uFF1A\uB2E4\uC74C \uC11C\uCCB4\uAC00 \uC774 PC\uC5D0 \uC5C6\uC5B4 \uC720\uC0AC\uD55C \uC11C\uCCB4\uB85C \uB300\uCCB4\uD558\uC5EC \uC81C\uC791\uD588\uC2B5\uB2C8\uB2E4.
+
+' + mf.join('
+') +
+                    '
+
+\uBAA8\uB450 Google Fonts(fonts.google.com) \uB4F1\uC5D0\uC11C \uBB34\uB8CC\uB85C \uB2E4\uC6B4\uB85C\uB4DC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC124\uCE58 \uD6C4 After Effects\uB97C \uC7AC\uC2DC\uC791\uD558\uACE0 \uB2E4\uC2DC \uC0DD\uC131\uD558\uBA74 \uC6D0\uBCF8 \uC11C\uCCB4\uB85C \uC801\uC6A9\uB429\uB2C8\uB2E4.');
             }
         }
         if (comp && JZ_FONT_NOAPI && !fontNoted) {
             fontNoted = true;
-            alert('JIZURA\uFF1A\u3053\u306E After Effects \u3067\u306F\u66F8\u4F53\u304C\u5165\u3063\u3066\u3044\u308B\u304B\u3092\u78BA\u8A8D\u3067\u304D\u306A\u3044\u305F\u3081\uFF08AE 2024 \u3088\u308A\u524D\uFF09\u3001\u300C\u30D5\u30A9\u30F3\u30C8\u300D\u30BF\u30D6\u3067\u6307\u5B9A\u3057\u305F\u66F8\u4F53\u3067\u4F5C\u308A\u307E\u3057\u305F\u3002\n\n\u30D6\u30E9\u30A6\u30B6\u7248\u3068\u540C\u3058\u66F8\u4F53\u306B\u3059\u308B\u306B\u306F\u3001\u4F7F\u308F\u308C\u3066\u3044\u308B\u66F8\u4F53\uFF08Google Fonts\uFF09\u3092\u5165\u308C\u3066\u300C\u30D5\u30A9\u30F3\u30C8\u300D\u30BF\u30D6\u3067\u6307\u5B9A\u3059\u308B\u304B\u3001AE 2024 \u4EE5\u964D\u3067\u4F5C\u3063\u3066\u304F\u3060\u3055\u3044\u3002');
+            alert('JIZURA\uFF1A\uC774 After Effects \uBC84\uC804\uC5D0\uC11C\uB294 \uC124\uCE58\uB41C \uC11C\uCCB4\uB97C \uC9C1\uC811 \uD655\uC778\uD560 \uC218 \uC5C6\uC5B4(AE 2024 \uC774\uC804 \uBC84\uC804), \u300C\uD3F0\uD2B8\u300D \uD0ED\uC5D0 \uC9C0\uC815\uB41C \uC11C\uCCB4\uB85C \uC81C\uC791\uD588\uC2B5\uB2C8\uB2E4.
+
+\uC6F9 \uBC84\uC804\uACFC \uB3D9\uC77C\uD55C \uC11C\uCCB4\uB85C \uC801\uC6A9\uD558\uB824\uBA74 \uD574\uB2F9 \uC11C\uCCB4\uB97C \uC124\uCE58\uD558\uACE0 \u300C\uD3F0\uD2B8\u300D \uD0ED\uC5D0 \uC9C0\uC815\uD558\uAC70\uB098 AE 2024 \uC774\uC0C1\uC5D0\uC11C \uC2E4\uD589\uD574 \uC8FC\uC138\uC694.');
         }
         status.text = s;
     }
@@ -63073,14 +63043,14 @@ function jzUI(thisObj) {
         else { var wh = sizes[sz].split('\u00D7'); W = parseInt(wh[0], 10); H = parseInt(wh[1], 10); }
         var starts = null, mk, j;
         if (rLayer.value || rComp.value) {
-            if (!(active instanceof CompItem)) { alert('\u30DE\u30FC\u30AB\u30FC\u3092\u4F7F\u3046\u306B\u306F\u3001\u30B3\u30F3\u30DD\u3092\u958B\u3044\u3066\u304F\u3060\u3055\u3044'); return; }
+            if (!(active instanceof CompItem)) { alert('\uB9C8\uCEE4\uB97C \uC0AC\uC6A9\uD558\uB824\uBA74 \uCEF4\uD3EC\uC9C0\uC158\uC744 \uBA3C\uC800 \uC5F4\uC5B4\uC8FC\uC138\uC694'); return; }
             try {
-                if (rLayer.value) { if (!active.selectedLayers.length) { alert('\u30DE\u30FC\u30AB\u30FC\u306E\u3042\u308B\u30EC\u30A4\u30E4\u30FC\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044'); return; } mk = active.selectedLayers[0].property('ADBE Marker'); }
+                if (rLayer.value) { if (!active.selectedLayers.length) { alert('\uB9C8\uCEE4\uAC00 \uC788\uB294 \uB808\uC774\uC5B4\uB97C \uC120\uD0DD\uD574 \uC8FC\uC138\uC694'); return; } mk = active.selectedLayers[0].property('ADBE Marker'); }
                 else mk = active.markerProperty;
                 starts = []; for (j = 1; j <= mk.numKeys; j++) starts.push(mk.keyTime(j));
-                if (!starts.length) { alert('\u30DE\u30FC\u30AB\u30FC\u304C\u898B\u3064\u304B\u308A\u307E\u305B\u3093'); return; }
+                if (!starts.length) { alert('\uB9C8\uCEE4\uB97C \uCC3E\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4'); return; }
                 dur = active.duration;
-            } catch (e) { alert('\u30DE\u30FC\u30AB\u30FC\u3092\u8AAD\u3081\u307E\u305B\u3093\u3067\u3057\u305F: ' + e.toString()); return; }
+            } catch (e) { alert('\uB9C8\uCEE4\uB97C \uC77D\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4: ' + e.toString()); return; }
         }
         var au = audioSel(cAudio.value); if (au && !dur) dur = null;
         var sw = switches(), en = jzMoodEnabled(moodKey(), parseInt(eSeed.text, 10) || 1, sw);
@@ -63093,26 +63063,26 @@ function jzUI(thisObj) {
         var st = JZ_DATA.styles[o.style];
         o.fx.hud = ddHud.selection.index === 1 ? true : ddHud.selection.index === 2 ? false : !!st.hud;
         var plan;
-        try { plan = jzMakePlan(o); } catch (e1) { alert('\u69CB\u6210\u306E\u8A08\u7B97\u3067\u30A8\u30E9\u30FC: ' + e1.toString() + (e1.line ? ' (line ' + e1.line + ')' : '')); return; }
-        if (!plan.cuts.length) { alert('\u6B4C\u8A5E\u304C\u7A7A\u3067\u3059'); return; }
+        try { plan = jzMakePlan(o); } catch (e1) { alert('\uAD6C\uC131 \uACC4\uC0B0 \uC911 \uC624\uB958: ' + e1.toString() + (e1.line ? ' (line ' + e1.line + ')' : '')); return; }
+        if (!plan.cuts.length) { alert('\uAC00\uC0AC\uB97C \uC785\uB825\uD574 \uC8FC\uC138\uC694'); return; }
         plan.hud = o.fx.hud;
         if (cPal.value) {
             var pal = { accent: jzCleanHex(fAcc.e.text), ghostA: jzCleanHex(fGA.e.text), ghostB: jzCleanHex(fGB.e.text) };
-            if (!pal.accent && !pal.ghostA && !pal.ghostB) jzWarn('\u914D\u8272\u306E\u5024\u304C\u8AAD\u3081\u306A\u3044\u305F\u3081\u3001\u30B9\u30BF\u30A4\u30EB\u306E\u8272\u306E\u307E\u307E\u306B\u3057\u307E\u3057\u305F\uFF08#RRGGBB \u5F62\u5F0F\u3067\u5165\u529B\uFF09');
+            if (!pal.accent && !pal.ghostA && !pal.ghostB) jzWarn('\uBC30\uC0C9 \uAC12\uC744 \uC778\uC2DD\uD560 \uC218 \uC5C6\uC5B4 \uC2A4\uD0C0\uC77C \uAE30\uBCF8 \uC0C9\uC0C1\uC73C\uB85C \uC720\uC9C0\uD588\uC2B5\uB2C8\uB2E4(#RRGGBB \uD615\uC2DD\uC73C\uB85C \uC785\uB825)');
             else plan.style = jzStyleWithPalette(plan.style, pal);
         }
         var keyI = ddKey.selection ? ddKey.selection.index : 0;
         if (keyI > 0) { plan.keyBg = keyI === 1 ? 'green' : 'black'; plan.style = jzKeyStyle(plan.style); }
-        status.text = '\u751F\u6210\u4E2D\u2026 (' + plan.cuts.length + ' cuts)';
+        status.text = '\uC0DD\uC131 \uC911\u2026 (' + plan.cuts.length + ' cuts)';
         runBuild(plan, { roles: roles(), audioItem: au ? au.item : null, audioStart: au ? au.start : 0, light: cLight.value }, 'JIZURA build', function (comp, job) {
             if (comp) { lastComp = comp; lastPlan = plan; }
             report(comp, t0, jobLabel(label, job));
         });
     }
-    function jobLabel(label, job) { return job && job.cancelled ? '\u4E2D\u6B62\uFF08' + job.done + ' / ' + job.total + ' \u30AB\u30C3\u30C8\uFF09' + (label ? ' ' + label : '') : label; }
+    function jobLabel(label, job) { return job && job.cancelled ? '\uC911\uC9C0\uFF08' + job.done + ' / ' + job.total + ' \uCEF7\uFF09' + (label ? ' ' + label : '') : label; }
     bBuild.onClick = function () { doBuild(''); };
 
-    // \u304A\u307E\u304B\u305B: roll every setting on the panel, show it, then build a fresh comp
+    // \uC790\uB3D9 \uC0DD\uC131: \uBAA8\uB4E0 \uC124\uC815\uC744 \uAD74\uB9AC\uACE0 \uC0C8 \uCEF4\uD3EC\uC9C0\uC158 \uBE4C\uB4DC
     bOmk.onClick = function () {
         var r = jzOmakase(moodKey(), JZ_DATA.styleOrder[ddStyle.selection ? ddStyle.selection.index : 0], null, switches());
         ddStyle.selection = jzIndexOf(JZ_DATA.styleOrder, r.style);
@@ -63121,7 +63091,7 @@ function jzUI(thisObj) {
         for (var q = 0; q < map.length; q++) if (r.fx[map[q][1]] != null) { map[q][0].value = Math.round(r.fx[map[q][1]] * 100); map[q][0].lbl.text = String(map[q][0].value); }
         cTwos.value = r.onTwos; cFlash.value = r.flash; ddHud.selection = r.hud; eSeed.text = String(r.seed);
         if (r.palette) { setPal(r.palette); cPal.value = true; } else { cPal.value = false; showStylePal(); }
-        doBuild('\u304A\u307E\u304B\u305B\uFF1A' + JZ_DATA.styles[r.style].name + ' \u00D7 ' + JZ_DATA.moods[r.mood].name + (r.palette ? '\u30FB\u30E9\u30F3\u30C0\u30E0\u914D\u8272' : ''));
+        doBuild('\uC790\uB3D9 \uC0DD\uC131\uFF1A' + JZ_DATA.styles[r.style].name + ' \u00D7 ' + JZ_DATA.moods[r.mood].name + (r.palette ? '\u30FB\uBB34\uC791\uC704 \uBC30\uC0C9' : ''));
     };
 
     bJson.onClick = function () {
@@ -63129,34 +63099,43 @@ function jzUI(thisObj) {
         if (!f) return;
         var t0 = new Date().getTime(), plan;
         try { f.encoding = 'UTF-8'; f.open('r'); var s = f.read(); f.close(); plan = jzParseJSON(s); }
-        catch (e) { alert('JSON\u3092\u8AAD\u3081\u307E\u305B\u3093\u3067\u3057\u305F: ' + e.toString()); return; }
-        if (!plan || !plan.cuts || !plan.style) { alert('JIZURA \u306E AE\u7528JSON \u3067\u306F\u306A\u3044\u3088\u3046\u3067\u3059'); return; }
+        catch (e) { alert('JSON\uC744 \uC77D\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4: ' + e.toString()); return; }
+        if (!plan || !plan.cuts || !plan.style) { alert('JIZURA\uC6A9 AE JSON \uD30C\uC77C\uC774 \uC544\uB2CC \uAC83 \uAC19\uC2B5\uB2C8\uB2E4'); return; }
         var note = plan.aeNote ? String(plan.aeNote) : '';
         if (plan.version !== 2 && !note) note = '';
         var au = audioSel(cAudio2.value);
-        status.text = '\u751F\u6210\u4E2D\u2026 (' + plan.cuts.length + ' cuts)';
+        status.text = '\uC0DD\uC131 \uC911\u2026 (' + plan.cuts.length + ' cuts)';
         // a line-range JSON starts part-way into the song: slide the song layer left by the same amount
         var off = +plan.audioOffset || 0;
         runBuild(plan, { roles: roles(), audioItem: au ? au.item : null, audioStart: au ? au.start - off : 0, light: cLight.value }, 'JIZURA build from JSON', function (comp, job) {
             if (comp) { lastComp = comp; lastPlan = plan; }
             if (JZ_FALLBACKS > 0) {
-                note = (note ? note + ' / ' : '') + '\u3053\u306E\u30D1\u30CD\u30EB\u306B\u7121\u3044\u8868\u73FE ' + JZ_FALLBACKS + ' \u7B87\u6240\u3092\u3001\u8FD1\u3044\u8868\u73FE\u3067\u4F5C\u308A\u307E\u3057\u305F';
-                alert('JIZURA\uFF1A\u3053\u306E JSON \u306B\u306F\u3001\u3053\u306E\u30D1\u30CD\u30EB\u304C\u4F5C\u308C\u306A\u3044\u8868\u73FE\u304C ' + JZ_FALLBACKS + ' \u7B87\u6240\u3042\u308A\u3001\u8FD1\u3044\u8868\u73FE\u306B\u7F6E\u304D\u63DB\u3048\u307E\u3057\u305F\u3002\n\n' + JZ_FALLBACK_KEYS.slice(0, 12).join(', ') +
-                    '\n\n\u30D6\u30E9\u30A6\u30B6\u7248\u3088\u308A\u53E4\u3044\u30D1\u30CD\u30EB\u3092\u4F7F\u3063\u3066\u3044\u308B\u53EF\u80FD\u6027\u304C\u3042\u308A\u307E\u3059\u3002\u6700\u65B0\u306E JIZURA_AE.jsx\uFF08v' + JZ_PANEL_VERSION + '\u30FB860 \u90E8\u54C1\uFF09\u306B\u5DEE\u3057\u66FF\u3048\u3066\u3001After Effects \u3092\u518D\u8D77\u52D5\u3057\u3066\u304F\u3060\u3055\u3044\u3002');
+                note = (note ? note + ' / ' : '') + '\uC774 \uD328\uB110\uC5D0 \uC5C6\uB294 \uD45C\uD604 ' + JZ_FALLBACKS + '\uACF3\uC744 \uC720\uC0AC\uD55C \uD45C\uD604\uC73C\uB85C \uB300\uCCB4\uD588\uC2B5\uB2C8\uB2E4';
+                alert('JIZURA\uFF1A\uC774 JSON\uC5D0\uB294 \uD604\uC7AC \uD328\uB110\uC5D0\uC11C \uC9C0\uC6D0\uD558\uC9C0 \uC54A\uB294 \uD45C\uD604\uC774 ' + JZ_FALLBACKS + '\uACF3 \uD3EC\uD568\uB418\uC5B4 \uC788\uC5B4 \uB300\uCCB4 \uD45C\uD604\uC73C\uB85C \uAD6C\uC131\uD588\uC2B5\uB2C8\uB2E4.
+
+' + JZ_FALLBACK_KEYS.slice(0, 12).join(', ') +
+                    '
+
+\uC6F9 \uBC84\uC804\uBCF4\uB2E4 \uAD6C\uBC84\uC804 \uD328\uB110\uC744 \uC0AC\uC6A9 \uC911\uC77C \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uCD5C\uC2E0 JIZURA_AE.jsx\uFF08v' + JZ_PANEL_VERSION + '\u00B7' + jzPartsCount() + ' \uBD80\uD488\uFF09\uB85C \uAD50\uCCB4 \uD6C4 After Effects\uB97C \uC7AC\uC2DC\uC791\uD574 \uC8FC\uC138\uC694.');
             }
-            report(comp, t0, jobLabel(note ? '\u7F6E\u63DB\u3042\u308A' : '', job));
+            report(comp, t0, jobLabel(note ? '\uB300\uCCB4 \uC801\uC6A9\uB428' : '', job));
             if (note) status.helpTip = note;
         });
     };
     bDiag.onClick = function () {
-        if (!lastComp) { alert('\u5148\u306B\u30B3\u30F3\u30DD\u3092\u4F5C\u3063\u3066\u304F\u3060\u3055\u3044\uFF08\u3053\u306E\u30D1\u30CD\u30EB\u3067\u6700\u5F8C\u306B\u4F5C\u3063\u305F\u30B3\u30F3\u30DD\u3092\u8ABF\u3079\u307E\u3059\uFF09'); return; }
+        if (!lastComp) { alert('\uBA3C\uC800 \uCEF4\uD3EC\uC9C0\uC158\uC744 \uC0DD\uC131\uD574 \uC8FC\uC138\uC694(\uC774 \uD328\uB110\uC5D0\uC11C \uB9C8\uC9C0\uB9C9\uC73C\uB85C \uB9CC\uB4E0 \uCEF4\uD3EC\uC9C0\uC158\uC744 \uC9C4\uB2E8\uD569\uB2C8\uB2E4)'); return; }
         var ok = false; try { ok = !!lastComp.name; } catch (e) { ok = false; }
-        if (!ok) { alert('\u6700\u5F8C\u306B\u4F5C\u3063\u305F\u30B3\u30F3\u30DD\u304C\u898B\u3064\u304B\u308A\u307E\u305B\u3093\uFF08\u524A\u9664\u3055\u308C\u305F\u53EF\u80FD\u6027\u304C\u3042\u308A\u307E\u3059\uFF09'); return; }
-        status.text = '\u8A3A\u65AD\u4E2D\u2026\uFF08\u6570\u5341\u79D2\u304B\u304B\u308B\u3053\u3068\u304C\u3042\u308A\u307E\u3059\uFF09';
+        if (!ok) { alert('\uB9C8\uC9C0\uB9C9\uC73C\uB85C \uB9CC\uB4E0 \uCEF4\uD3EC\uC9C0\uC158\uC744 \uCC3E\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4(\uC0AD\uC81C\uB418\uC5C8\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4)'); return; }
+        status.text = '\uC9C4\uB2E8 \uC911\u2026\uFF08\uC218\uC2ED \uCD08\uAC00 \uAC78\uB9B4 \uC218 \uC788\uC2B5\uB2C8\uB2E4\uFF09';
         var r = jzDiagnose(lastComp, lastPlan, 120), path = jzSaveReport(r.text);
-        status.text = '\u8A3A\u65AD\uFF1A\u30A8\u30AF\u30B9\u30D7\u30EC\u30C3\u30B7\u30E7\u30F3\u306E\u30A8\u30E9\u30FC ' + r.errors + ' / ' + r.expressions + (r.partial ? '\uFF08\u9014\u4E2D\u307E\u3067\uFF09' : '');
-        alert('JIZURA \u8A3A\u65AD\uFF1A\u30A8\u30AF\u30B9\u30D7\u30EC\u30C3\u30B7\u30E7\u30F3 ' + r.expressions + ' \u500B\u306E\u3046\u3061\u3001\u30A8\u30E9\u30FC ' + r.errors + ' \u500B' + (r.partial ? '\uFF08\u6642\u9593\u306E\u4E0A\u9650\u3067\u9014\u4E2D\u307E\u3067\uFF09' : '') + '\n\n' +
-            (path ? '\u30EC\u30DD\u30FC\u30C8\u3092\u4FDD\u5B58\u3057\u307E\u3057\u305F\uFF1A\n' + path : '\u30EC\u30DD\u30FC\u30C8\u3092\u4FDD\u5B58\u3067\u304D\u307E\u305B\u3093\u3067\u3057\u305F\uFF08\u74B0\u5883\u8A2D\u5B9A \u2192 \u30B9\u30AF\u30EA\u30D7\u30C8\u3068\u30A8\u30AF\u30B9\u30D7\u30EC\u30C3\u30B7\u30E7\u30F3 \u2192\u300C\u30B9\u30AF\u30EA\u30D7\u30C8\u306B\u3088\u308B\u30D5\u30A1\u30A4\u30EB\u3078\u306E\u66F8\u304D\u8FBC\u307F\u3068\u30CD\u30C3\u30C8\u30EF\u30FC\u30AF\u3078\u306E\u30A2\u30AF\u30BB\u30B9\u3092\u8A31\u53EF\u300D\u3092\u30AA\u30F3\u306B\u3057\u3066\u304F\u3060\u3055\u3044\uFF09\u3002\n\n' + r.text.substr(0, 1500)));
+        status.text = '\uC9C4\uB2E8\uFF1A\uC775\uC2A4\uD504\uB808\uC158 \uC624\uB958 ' + r.errors + ' / ' + r.expressions + (r.partial ? '\uFF08\uB3C4\uC911 \uC911\uB2E8\uFF09' : '');
+        alert('JIZURA \uC9C4\uB2E8\uFF1A\uC775\uC2A4\uD504\uB808\uC158 ' + r.expressions + '\uAC1C \uC911 \uC624\uB958 ' + r.errors + '\uAC1C' + (r.partial ? '\uFF08\uC2DC\uAC04 \uCD08\uACFC\uB85C \uB3C4\uC911 \uC911\uB2E8\uFF09' : '') + '
+
+' +
+            (path ? '\uBCF4\uACE0\uC11C\uB97C \uC800\uC7A5\uD588\uC2B5\uB2C8\uB2E4:
+' + path : '\uBCF4\uACE0\uC11C\uB97C \uC800\uC7A5\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4(\uD658\uACBD\uC124\uC815 \u2192 \uC2A4\uD06C\uB9BD\uD2B8 \uBC0F \uC775\uC2A4\uD504\uB808\uC158 \u2192 \u300C\uC2A4\uD06C\uB9BD\uD2B8\uAC00 \uD30C\uC77C\uC5D0 \uC4F0\uACE0 \uB124\uD2B8\uC6CC\uD06C\uC5D0 \uC561\uC138\uC2A4\uD558\uB3C4\uB85D \uD5C8\uC6A9\u300D\uC744 \uCF1C\uC8FC\uC138\uC694).
+
+' + r.text.substr(0, 1500)));
     };
 
     win.onResizing = win.onResize = function () { try { this.layout.resize(); } catch (e) {} };

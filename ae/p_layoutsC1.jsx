@@ -572,7 +572,7 @@ jzReg('layout', 'headlineDeck', {
     plan: function (rng, cut, st) {
         var port = cut.H > cut.W * 1.08;
         return { font: rng.pick(jzFontsOf(st, ['display', 'display', 'serif'])), variant: port ? rng.pick(['top', 'bottom']) : rng.pick(['top', 'bottom', 'split']),
-            kicker: rng.pick(['特集', 'FEATURE', 'COVER STORY', 'ESSAY', '連載', 'REPORT']), mark: rng.pick(['none', 'bar', 'none', 'dot']), dbl: rng.chance(0.5) };
+            kicker: rng.pick(['특집', 'FEATURE', 'COVER STORY', 'ESSAY', '연재', 'REPORT']), mark: rng.pick(['none', 'bar', 'none', 'dot']), dbl: rng.chance(0.5) };
     },
     build: function (ctx) {
         var W = ctx.W, H = ctx.H, sc = ctx.sc, c = ctx.cut, u = jzU(ctx), k = lc1_k(ctx), port = jzPortrait(ctx), i;
@@ -641,14 +641,14 @@ jzReg('layout', 'contents', {
         var chunks = lc1_chunks(ctx), nk = chunks.length, font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display')), page0 = jzP(ctx, 'page0', 12), step = jzP(ctx, 'step', 12), mark = jzP(ctx, 'mark', 'bar');
         var ls = lc1_ls(ctx), lw = Math.max(1.2 * k, u * 0.0016), mono = jzMonoF(ctx), serif = jzSerifF(ctx), bb = null, pages = [];
         for (i = 0; i < nk; i++) pages.push(lc1_pad3(page0 + i * step));
-        var ctxRows = jzP(ctx, 'ctx', true) ? [['序', '000'], ['終', lc1_pad3(page0 + nk * step + 14)]] : null;
+        var ctxRows = jzP(ctx, 'ctx', true) ? [['시작', '000'], ['끝', lc1_pad3(page0 + nk * step + 14)]] : null;
         var CH = 'var NK=' + nk + ',CUR=Math.min(NK-1,Math.floor(cl(time/Math.max(0.3,DUR*0.92))*NK));';
         var L, T, a;
         if (jzP(ctx, 'variant', 'rows') === 'tate' && !jzHasLatin(c.text)) {
             var cols = nk + (ctxRows ? 2 : 0), colW = Math.min(W * 0.86 / (cols + 1), u * 0.22), hTop = H * 0.14, hBot = H * 0.86, x0 = W / 2 + (cols + 1.2) * colW / 2;
             var size = colW * 0.7;
             for (i = 0; i < nk; i++) size = Math.min(size, (hBot - hTop) * 0.62 / Math.max(1, jzCount(chunks[i])) / 1.03);
-            var TT = lc1_vcols(ctx, ['目次'], { font: serif, size: colW * 0.5, x: x0 - colW * 0.45, top: hTop, track: 0.6, color: sc.fg, name: 'title' });
+            var TT = lc1_vcols(ctx, ['목차'], { font: serif, size: colW * 0.5, x: x0 - colW * 0.45, top: hTop, track: 0.6, color: sc.fg, name: 'title' });
             lc1_fade(ctx, TT.L, 0, 0.4);
             lc1_line(ctx, 'title rule', [[x0 - colW * 1.05, hTop], [x0 - colW * 1.05, hBot]], sc.fg, lw, null, lc1_e(0.05, 0.6, 'ioc') + '*K');
             var ci = 0;
@@ -684,14 +684,14 @@ jzReg('layout', 'contents', {
         var rowH0 = Math.min((H * 0.66 - (ctxRows ? cxH * 2 : 0)) / nk, u * 0.26), sz = rowH0 * 0.64;
         for (i = 0; i < nk; i++) sz = Math.min(sz, lc1_fitSize(ctx, chunks[i], font, tw * 0.92, rowH0 * 0.7, { track: 0.03 }));
         var rowH = Math.max(sz * 1.62, ls * 2.4), blockH = nk * rowH + (ctxRows ? cxH * 2 : 0), y0 = H / 2 - blockH / 2 + ls * 1.8, hy = y0 - ls * 2.8;
-        T = lc1_T(ctx, '目次', { font: serif, size: ls * 2.1, track: 0.5, align: 'left', x: bx, y: hy - ls * 0.2, color: sc.fg, name: 'title' }); lc1_fade(ctx, T, 0, 0.4);
+        T = lc1_T(ctx, '목차', { font: serif, size: ls * 2.1, track: 0.5, align: 'left', x: bx, y: hy - ls * 0.2, color: sc.fg, name: 'title' }); lc1_fade(ctx, T, 0, 0.4);
         T = lc1_T(ctx, 'CONTENTS', { font: mono, size: ls * 0.85, track: 0.3, align: 'right', x: bx + bw, y: hy, color: sc.sub, name: 'CONTENTS' }); lc1_fade(ctx, T, 0, 0.4);
         var le = lc1_e(0.05, 0.6, 'ioc') + '*K';
         lc1_line(ctx, 'head rule', [[bx, hy + ls * 1.4], [bx + bw, hy + ls * 1.4]], sc.fg, lw * 1.6, null, le);
         lc1_line(ctx, 'foot rule', [[bx + bw, y0 + blockH + ls * 0.2], [bx, y0 + blockH + ls * 0.2]], sc.fg, lw, 0.7, le);
         var off0 = ctxRows ? cxH : 0;
         var drawCtx = function (lab, pg, y, d) {
-            var A = lc1_e(d, 0.4, 'oc') + '*K', T1 = lc1_T(ctx, lab + '章', { font: serif, size: ls * 1.1, align: 'left', x: bx + numW, y: y, color: sc.sub, name: lab });
+            var A = lc1_e(d, 0.4, 'oc') + '*K', T1 = lc1_T(ctx, lab + '장', { font: serif, size: ls * 1.1, align: 'left', x: bx + numW, y: y, color: sc.sub, name: lab });
             lc1_op(ctx, T1, A, 0.45);
             var LD = lc1_leader(ctx, 'leader ' + lab, [bx + numW + ls * 3.4, y + ls * 0.3], [bx + bw - pgW, y + ls * 0.3], sc.sub, null, ls * 0.55, Math.max(1 * k, ls * 0.07), null);
             lc1_op(ctx, LD, A, 0.45);
@@ -772,7 +772,7 @@ jzReg('layout', 'footnote', {
 });
 
 /* ================================================================== 5 proofread — 校正刷り */
-var LC1_PROOF = { circle: 'ママ', wave: '強調', box: '太字', dots: 'イキ' };
+var LC1_PROOF = { circle: '그대로', wave: '강조', box: '굵게', dots: '살림' };
 jzReg('layout', 'proofread', {
     plan: function (rng, cut, st) {
         var all = ['circle', 'wave', 'box', 'dots'], first = rng.pick(['circle', 'circle', 'box']), rest = [];
@@ -865,7 +865,7 @@ jzReg('layout', 'proofread', {
             var LE = HE + 'var LE=oc(cl(E*1.4-0.4));';
             var LL = lc1_line(ctx, 'pen leader ' + mk, [anchor, mxp, [nx - ns * 0.2, ny]], pen, pw * 0.7, null, 'LE', { head: LE, cap: 2, join: 2 });
             lc1_op(ctx, LL, 'OP', 1, HP);
-            var NT = lc1_T(ctx, LC1_PROOF[mk] || 'ママ', { font: penF, size: ns, align: 'left', x: nx, y: ny, rot: -4, color: pen, name: 'note ' + mk });
+            var NT = lc1_T(ctx, LC1_PROOF[mk] || '그대로', { font: penF, size: ns, align: 'left', x: nx, y: ny, rot: -4, color: pen, name: 'note ' + mk });
             lc1_op(ctx, NT, 'cl((LE-0.6)/0.4)*OP', 1, LE);
         }
         // 校了 stamp
@@ -879,7 +879,7 @@ jzReg('layout', 'proofread', {
             jzXf(ST, 'ADBE Rotate Z').setValue(jzP(ctx, 'rot', 0));
             jzSetExpr(jzXf(ST, 'ADBE Scale'), lc1_H(ctx) + HS + 'var s=1.5+(1-1.5)*ob(cl(X),1.4);[value[0]*s,value[1]*s]');
             lc1_op(ctx, ST, 'SA', 1, HS);
-            var S1 = lc1_T(ctx, '校了', { font: jzSerifF(ctx), size: S * 0.36, track: 0.2, color: pen, name: 'stamp text' }); lc1_parent(S1, ST, 0, -S * 0.06); lc1_op(ctx, S1, 'SA', 1, HS);
+            var S1 = lc1_T(ctx, '교열완료', { font: jzSerifF(ctx), size: S * 0.36, track: 0.2, color: pen, name: 'stamp text' }); lc1_parent(S1, ST, 0, -S * 0.06); lc1_op(ctx, S1, 'SA', 1, HS);
             var S2 = lc1_T(ctx, jzFmtTime(c.start), { font: jzMonoF(ctx), size: S * 0.12, color: pen, name: 'stamp time' }); lc1_parent(S2, ST, 0, S * 0.2); lc1_op(ctx, S2, 'SA', 1, HS);
         }
         return bb;
@@ -1117,18 +1117,18 @@ function lc1_halftone(S, name, x, y, w, h, col, bgc, seed, kind) {
 /* ================================================================== 9 dictionary — 辞書 */
 jzReg('layout', 'dictionary', {
     plan: function (rng, cut, st) {
-        return { font: rng.pick(jzFontsOf(st, ['serif', 'display'])), variant: rng.pick(['entry', 'page', 'page']), pos: rng.pick(['名', '連語', '感', '形動', '副']),
+        return { font: rng.pick(jzFontsOf(st, ['serif', 'display'])), variant: rng.pick(['entry', 'page', 'page']), pos: rng.pick(['명', '연어', '감', '형용', '부']),
             page: rng.int(120, 1480), tabY: rng.range(0.2, 0.75), mark: rng.pick(['◆', '▼', '■']), seed: rng.int(1, 9999) };
     },
     build: function (ctx) {
         var W = ctx.W, H = ctx.H, sc = ctx.sc, c = ctx.cut, u = jzU(ctx), k = lc1_k(ctx), port = jzPortrait(ctx), i;
-        var font = jzP(ctx, 'font', jzSerifF(ctx)), page = jzP(ctx, 'variant', 'page') === 'page', pos = jzP(ctx, 'pos', '名'), seed = jzP(ctx, 'seed', 5), t0 = jzTrim(c.text), latin = jzHasLatin(t0);
+        var font = jzP(ctx, 'font', jzSerifF(ctx)), page = jzP(ctx, 'variant', 'page') === 'page', pos = jzP(ctx, 'pos', '명'), seed = jzP(ctx, 'seed', 5), t0 = jzTrim(c.text), latin = jzHasLatin(t0);
         var ls = lc1_ls(ctx), mono = jzMonoF(ctx), serif = jzSerifF(ctx), mx = W * (port ? 0.08 : 0.1), aw = W - mx * 2 - (port ? W * 0.04 : W * 0.03), lw = Math.max(1, u * 0.0014);
         var fb = lc1_fitBlock(ctx, t0, font, aw * (port ? 0.84 : 0.72), H * (port ? 0.26 : 0.3), { track: 0.02, lead: 1.1 }, port ? 3 : 2);
         var size = Math.min(fb.size, u * 0.17), nL = fb.lines, mh = size * (1 + (nL - 1) * 1.1), hx = mx + size * 0.62, hy = H * (page ? 0.44 : 0.4);
         var fs = jzClamp(u * 0.02, 11 * k, 24 * k), lh = fs * 1.8, src = jzFlat(c.lineText || t0) + (latin ? ' — ' : '。');
         var top = hy - mh / 2 - size * 0.55 - ls * 1.6;
-        var defs = [lc1_deck(ctx) || ('歌詞 第' + lc1_kanjiNum(lc1_lineN(ctx)) + '行。'), jzFmtTime(c.start) + ' ─ ' + jzFmtTime(c.end) + '　' + jzCount(t0) + (latin ? ' chars' : '字')];
+        var defs = [lc1_deck(ctx) || ('가사 제' + lc1_kanjiNum(lc1_lineN(ctx)) + '행.'), jzFmtTime(c.start) + ' ─ ' + jzFmtTime(c.end) + '　' + jzCount(t0) + (latin ? ' chars' : '字')];
         var dfs = jzClamp(u * 0.028, 14 * k, 36 * k), defTop = hy + mh / 2 + size * 0.45, defBot = defTop + defs.length * dfs * 1.7 + dfs, T;
         var lines = lc1_lines(fb.text);
         if (page) {
@@ -1232,7 +1232,7 @@ jzReg('layout', 'ema', {
         else if (emblem === 'wave') for (j = 0; j < 2; j++) { var pp = []; for (i = 0; i <= 12; i++) pp.push([-hw * 0.38 + hw * 0.16 * i / 12, ey + j * es * 0.7 + Math.sin(i / 12 * Math.PI * 2) * es * 0.25]); lc1_path(R, 'wave ' + j, pp, emb, Math.max(2 * k, es * 0.18), { cap: 2 }); }
         else if (emblem === 'mount') lc1_path(R, 'mount', [[-hw * 0.4, ey + es * 0.7], [-hw * 0.3, ey - es * 0.8], [-hw * 0.2, ey + es * 0.7]], null, 0, { closed: true, fill: emb });
         else { lc1_ellipse(R, 'knot 1', es * 1.2, es * 1.2, -hw * 0.32, ey, null, { stroke: emb, sw: Math.max(2 * k, es * 0.2) }); lc1_ellipse(R, 'knot 2', es * 1.2, es * 1.2, -hw * 0.26, ey, null, { stroke: emb, sw: Math.max(2 * k, es * 0.2) }); }
-        var T = lc1_T(ctx, '奉納', { font: jzSerifF(ctx), size: es * 1.1, track: 0.3, x: hw * 0.3, y: ey, color: ink, name: 'hounou' });
+        var T = lc1_T(ctx, '헌정', { font: jzSerifF(ctx), size: es * 1.1, track: 0.3, x: hw * 0.3, y: ey, color: ink, name: 'hounou' });
         T.setParentWithJump(R); lc1_op(ctx, T, 'HA*0.8', 1, HS);
         // the wish (lyric), handwritten
         var t0 = jzTrim(c.text), ax = -hw * 0.42, aw = hw * 0.84, ay = -ph / 2 + r * 1.6, ah = ph / 2 - ay - ph * 0.14, fb, size, L, mi = lc1_mi(ctx, 0.35);
@@ -1323,11 +1323,11 @@ jzReg('layout', 'ransom', {
 jzReg('layout', 'newspaper', {
     plan: function (rng, cut, st) {
         return { font: rng.pick(jzFontsOf(st, ['display', 'serif'])), variant: jzHasLatin(cut.text) ? 'yoko' : rng.pick(['yoko', 'tate', 'tate']), spin: rng.chance(0.45), rev: rng.chance(0.6),
-            seed: rng.int(1, 9999), mast: rng.pick(['字面新聞', '歌詞新報', '夜更新聞']), issue: rng.int(1000, 29999) };
+            seed: rng.int(1, 9999), mast: rng.pick(['지면신문', '가사신보', '야간신문']), issue: rng.int(1000, 29999) };
     },
     build: function (ctx) {
         var W = ctx.W, H = ctx.H, sc = ctx.sc, c = ctx.cut, u = jzU(ctx), k = lc1_k(ctx), port = jzPortrait(ctx), i;
-        var font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display')), spin = jzP(ctx, 'spin', false), rev = jzP(ctx, 'rev', true), seed = jzP(ctx, 'seed', 3), mast = String(jzP(ctx, 'mast', '字面新聞'));
+        var font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display')), spin = jzP(ctx, 'spin', false), rev = jzP(ctx, 'rev', true), seed = jzP(ctx, 'seed', 3), mast = String(jzP(ctx, 'mast', '지면신문'));
         var C = lc1_card(sc), ls = lc1_ls(ctx), pw = W * (port ? 0.92 : 0.9), ph = H * 0.9, cx = W / 2, cy = H / 2, t0 = jzTrim(c.text);
         // the sheet: classic spinning newspaper, or a slide up; everything else rides on it
         var R = lc1_S(ctx, 'newspaper', cx, cy);
@@ -1395,7 +1395,7 @@ jzReg('layout', 'newspaper', {
         // masthead type
         var MT = lc1_vcols(ctx, [mast], { font: font, size: Math.min(mw * 0.62, mh * 0.9 / jzChars(mast).length), x: mX + mw / 2 - pw / 2, top: 0, track: 0.05, color: lc1_onCol(sc, hl), name: 'masthead' });
         jzXf(MT.L, 'ADBE Position').setValue([mX + mw / 2 - pw / 2, mY + mh / 2 - ph / 2]); MT.L.setParentWithJump(R); lc1_op(ctx, MT.L, '1-ic(PO)', 1);
-        T = lc1_T(ctx, '第' + jzP(ctx, 'issue', 12000) + '号', { font: jzBodyF(ctx), size: ls * 0.7, x: mX + mw / 2 - pw / 2, y: mY + mh + ls * 0.8 - ph / 2, color: tx, name: 'issue' }); T.setParentWithJump(R); lc1_op(ctx, T, '1-ic(PO)', 0.8);
+        T = lc1_T(ctx, '제' + jzP(ctx, 'issue', 12000) + '호', { font: jzBodyF(ctx), size: ls * 0.7, x: mX + mw / 2 - pw / 2, y: mY + mh + ls * 0.8 - ph / 2, color: tx, name: 'issue' }); T.setParentWithJump(R); lc1_op(ctx, T, '1-ic(PO)', 0.8);
         T = lc1_T(ctx, jzFmtTime(c.start), { font: jzMonoF(ctx), size: ls * 0.7, x: mX + mw / 2 - pw / 2, y: mY + mh + ls * 1.8 - ph / 2, color: tx, name: 'date' }); T.setParentWithJump(R); lc1_op(ctx, T, '1-ic(PO)', 0.8);
         L.moveToBeginning(); L.setParentWithJump(R);
         jzAnimate(ctx, L, { mi: mi, noHold: lc1_plateHold(ctx) });

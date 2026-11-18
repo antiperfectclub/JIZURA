@@ -13,12 +13,12 @@
 
 var LC2_CY = 0.38;        // glyph centre above the baseline (em)
 var LC2_FX = 'function ioc(x){x=cl(x);return x<0.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}function lp(a,b,t){return a+(b-a)*t;}\n';
-var LC2_WD_J = '日月火水木金土', LC2_WD_E = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+var LC2_WD_J = '일월화수목금토', LC2_WD_E = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 var LC2_MON_E = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
-var LC2_ROKUYO = ['大安', '赤口', '先勝', '友引', '先負', '仏滅'];
-var LC2_KUJI = ['大吉', '吉', '中吉', '小吉', '末吉', '大吉'];
-var LC2_KUJI_CAT = ['願望', '待人', '失物', '旅行', '商売', '学問', '恋愛', '健康'];
-var LC2_WARN = [['WARNING', '警告'], ['CAUTION', '注意'], ['DANGER', '危険'], ['NOTICE', 'お知らせ']];
+var LC2_ROKUYO = ['대안', '적구', '선승', '우인', '선부', '불멸'];
+var LC2_KUJI = ['대길', '길', '중길', '소길', '말길', '대길'];
+var LC2_KUJI_CAT = ['소원', '기다림', '분실물', '여행', '사업', '학문', '연애', '건강'];
+var LC2_WARN = [['WARNING', '경고'], ['CAUTION', '주의'], ['DANGER', '위험'], ['NOTICE', '알림']];
 var LC2_KNUM = '〇一二三四五六七八九';
 
 /* ---------------------------------------------------------------- text splitting (browser splitK / charUnits / brk) */
@@ -625,7 +625,7 @@ jzReg('layout', 'postcard', {
         lc2_kid(tv, R); jzSetExpr(jzXf(tv, 'ADBE Opacity'), EX + 'value*a');
         var ZM = lc2_multi(ctx, zi, { font: font, size: bs * 0.8, color: C.text, name: 'zip code' });
         lc2_kid(ZM.L, R); lc2_op(ctx, ZM.L, ZA, 0.9);
-        var lab = lc2_T(ctx, vertCard ? '郵便はがき' : 'POST CARD', { font: vertCard ? jzSerifF(ctx) : jzMonoF(ctx), size: ls * (vertCard ? 1.2 : 0.9), track: 0.5, x: CX + (vertCard ? 0 : x0 + cw * 0.46), y: CY + (vertCard ? y0 + m + sth + ls * 0.9 : y0 + m * 0.75), color: C.text });
+        var lab = lc2_T(ctx, vertCard ? '우편엽서' : 'POST CARD', { font: vertCard ? jzSerifF(ctx) : jzMonoF(ctx), size: ls * (vertCard ? 1.2 : 0.9), track: 0.5, x: CX + (vertCard ? 0 : x0 + cw * 0.46), y: CY + (vertCard ? y0 + m + sth + ls * 0.9 : y0 + m * 0.75), color: C.text });
         lc2_kid(lab, R); jzSetExpr(jzXf(lab, 'ADBE Opacity'), EX + 'value*a*0.75');
         if (lastSama) { lc2_kid(lastSama, R); lc2_op(ctx, lastSama, LA); }
         var tm = lc2_T(ctx, jzFmtTime(c.start), { font: jzMonoF(ctx), size: RR * 0.26, x: CX + pmx, y: CY + pmy, color: C.text, rot: mark });
@@ -1247,7 +1247,7 @@ jzReg('layout', 'omikuji', {
     },
     build: function (ctx) {
         var W = ctx.W, H = ctx.H, sc = ctx.sc, c = ctx.cut, u = jzU(ctx), kx = lc2_k(ctx), ls = jzSmallSize(ctx), port = jzPortrait(ctx), HD = lc2_H(ctx), i;
-        var font = jzP(ctx, 'font', jzSerifF(ctx)), rank = String(jzP(ctx, 'rank', '大吉')), cats = jzP(ctx, 'cats', ['願望', '待人', '失物', '旅行']);
+        var font = jzP(ctx, 'font', jzSerifF(ctx)), rank = String(jzP(ctx, 'rank', '대길')), cats = jzP(ctx, 'cats', ['소원', '기다림', '분실물', '여행']);
         var C = lc2_card(sc), red = lc2_plate(sc, [sc.accent, sc.accent2, C.text], C.fill, 1.7), t0 = lc2_vt(c.text);
         var sw = port ? W * 0.84 : Math.min(W * 0.88, H * 1.7), sh = port ? Math.min(H * 0.82, sw * 1.7) : Math.min(H * 0.66, sw * 0.46), x0 = W / 2 - sw / 2, y0 = H / 2 - sh / 2;
         var OP = HD + 'var op=ioc(cl((time-0.03)/0.55))*(1-ioc(cl((PO-0.1)/0.8))),vis=Math.max(0.12,op),a=oc(cl(time/0.2))*(1-cl((PO-0.75)/0.25));';
@@ -1623,13 +1623,13 @@ jzReg('layout', 'priceTag', {
             jzSetExpr(jzXf(R, 'ADBE Position'), E + '[value[0],value[1]+(1-ob(e,1.3))*' + jzN(H * 0.3) + '+eo*' + jzN(H * 0.1) + ']');
             jzSetExpr(jzXf(R, 'ADBE Opacity'), E + 'value*a');
             lc2_paint(R);
-            var hT = lc2_T(ctx, 'お買い得  ·  No.' + jzLineNo(ctx), { font: jzBodyF(ctx), size: hdr * 0.5, track: 0.2, align: 'left', x: CX + x0 + bw * 0.03, y: CY + y0 + hdr / 2, color: lc2_onCol(sc, red) });
+            var hT = lc2_T(ctx, '추천상품  ·  No.' + jzLineNo(ctx), { font: jzBodyF(ctx), size: hdr * 0.5, track: 0.2, align: 'left', x: CX + x0 + bw * 0.03, y: CY + y0 + hdr / 2, color: lc2_onCol(sc, red) });
             lc2_kid(hT, R); jzSetExpr(jzXf(hT, 'ADBE Opacity'), E + 'value*a');
             var nameW = bw * (port ? 0.9 : 0.62), nTop = y0 + hdr, nBot = y0 + bh * (port ? 0.62 : 0.8);
             fb = lc2_fitBlock(t0, nameW * 0.92, (nBot - nTop) * 0.86, { lead: 1.05 }, 2); size = Math.min(fb.size, bh * 0.3);
             var px = x0 + bw * 0.96, py = port ? y0 + bh * 0.76 : y0 + hdr + (bh - hdr) * 0.44, ps = Math.min((bh - hdr) * (port ? 0.26 : 0.3), size * 0.8);
             var PT = lc2_T(ctx, lc2_yen(price), { font: 'gothic_black', size: ps, align: 'right', x: CX + px, y: CY + py, color: red });
-            var TX = lc2_T(ctx, '税込', { font: jzBodyF(ctx), size: ls * 0.9, align: 'right', x: CX + px, y: CY + py + ps * 0.62, color: tc });
+            var TX = lc2_T(ctx, '세금포함', { font: jzBodyF(ctx), size: ls * 0.9, align: 'right', x: CX + px, y: CY + py + ps * 0.62, color: tc });
             lc2_kid(PT, R); lc2_kid(TX, R);
             jzSetExpr(jzXf(PT, 'ADBE Scale'), E + '[value[0]*pa,value[1]*pa]'); jzSetExpr(jzXf(PT, 'ADBE Opacity'), E + 'value*pa'); jzSetExpr(jzXf(TX, 'ADBE Opacity'), E + 'value*pa*0.8');
             T = lc2_T(ctx, fb.text, { font: font, size: size, x: CX + x0 + bw * 0.04, y: CY + (nTop + nBot) / 2, align: 'left', lead: 1.05, color: tc, name: t0 });
@@ -1694,8 +1694,8 @@ jzReg('layout', 'nameTag', {
             lc2_circ(g, 'pin head', x0 + bw * 0.8, pinY, u * 0.008, sc.sub);
             lc2_line(g, 'field rule', [[x0 + bw * 0.06, fy + bh * 0.09], [x0 + bw * 0.94, fy + bh * 0.09]], bandC, Math.max(2 * kx, u * 0.003));
             lc2_circ(g, 'mark', x0 + bw * 0.88, y0 + bh * 0.2, bh * 0.08, bandC);
-            kids.push(lc2_T(ctx, jzP(ctx, 'grade', 1) + ' ねん　' + jzP(ctx, 'cls', 1) + ' くみ', { font: font, size: bh * 0.1, align: 'left', x: CX + x0 + bw * 0.08, y: CY + fy, color: C.text }));
-            kids.push(lc2_T(ctx, 'なまえ', { font: jzBodyF(ctx), size: bh * 0.07, align: 'left', x: CX + x0 + bw * 0.08, y: CY + fy + bh * 0.19, color: bandC }));
+            kids.push(lc2_T(ctx, jzP(ctx, 'grade', 1) + ' 학년　' + jzP(ctx, 'cls', 1) + ' 반', { font: font, size: bh * 0.1, align: 'left', x: CX + x0 + bw * 0.08, y: CY + fy, color: C.text }));
+            kids.push(lc2_T(ctx, '이름', { font: jzBodyF(ctx), size: bh * 0.07, align: 'left', x: CX + x0 + bw * 0.08, y: CY + fy + bh * 0.19, color: bandC }));
             fb = lc2_fitBlock(t0, bw * 0.84, bh * 0.44, { lead: 1.05 }, 2); size = Math.min(fb.size, bh * 0.34); ty = y0 + bh * 0.66;
         }
         jzSetExpr(jzXf(R, 'ADBE Position'), E + '[value[0]+eo*' + jzN(W * 0.1) + ',value[1]+(1-q)*' + jzN(-H * 0.35) + '+eo*' + jzN(H * 0.5) + ']');
@@ -1820,7 +1820,7 @@ jzReg('layout', 'karuta', {
             // 読み札 (the verse) + 取り札 (the first glyph + a picture)
             var A = card(0, ax, ay);
             lc2_paint(A.R);
-            stat(A, lc2_T(ctx, '読', { font: jzSerifF(ctx), size: cw * 0.1, x: ax + cw * 0.34, y: ay - ch / 2 + cw * 0.16, color: red }));
+            stat(A, lc2_T(ctx, '독', { font: jzSerifF(ctx), size: cw * 0.1, x: ax + cw * 0.34, y: ay - ch / 2 + cw * 0.16, color: red }));
             verse(A, false);
             var B = card(1, bx, by), aY = ch * 0.12, aw = cw * 0.66, artC = lc2_plate(sc, [sc.accent2, sc.accent, sc.sub], C.fill, 1.3), ga = lc2_sub(B.g, 'picture');
             if (art === 'sun') { lc2_circ(ga, 'sun', 0, aY, aw * 0.26, artC, { op: 90 }); lc2_box(ga, 'horizon', -aw / 2, aY + aw * 0.2, aw, aw * 0.05, C.text, { op: 60 }); }

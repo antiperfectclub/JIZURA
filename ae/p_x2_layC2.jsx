@@ -305,7 +305,7 @@ axc_reg('xcSelect', {
             d2 = 0.5 + 0.12 * Ln;
             var gb = axc_kit(ctx, 'selection bar', { cx: W / 2, cy: by + bh, a: 'cl((time-' + jzN(d2) + ')/0.1)*K', pose: { s: axc_inB(0.35, d2, 1.5) } });
             gb.rr(W / 2 - bw / 2, by, bw, bh, bh * 0.25, bar); gb.p([[W / 2 - bh * 0.22, by + bh - 1], [W / 2 + bh * 0.22, by + bh - 1], [W / 2, by + bh * 1.26]], bar);
-            labs = latin ? ['Copy', 'Share', 'Search'] : ['コピー', '共有', '検索'];
+            labs = latin ? ['Copy', 'Share', 'Search'] : ['복사', '공유', '검색'];
             for (i = 0; i < 3; i++) {
                 gb.t(labs[i], W / 2 + (i - 1) * bw / 3, by + bh / 2, { color: bin, align: 'center', font: jzBodyF(ctx), size: bh * 0.36, track: 0.04 });
                 if (i) gb.l(W / 2 + (i - 1.5) * bw / 3, by + bh * 0.25, W / 2 + (i - 1.5) * bw / 3, by + bh * 0.75, bin, lw, 0.35);
@@ -322,7 +322,7 @@ axc_reg('xcSelect', {
             var gm = axc_kit(ctx, 'context menu', { cx: mx, cy: my, a: 'cl((time-' + jzN(d2) + ')/0.1)*K', X: 'var hot=Math.min(2,Math.floor(Math.max(0,time-' + jzN(0.8 + 0.12 * Ln) + ')/0.35));', pose: { s: axc_inB(0.3, d2, 1.4) } });
             gm.r(mx + M * 0.008, my + M * 0.01, mw2, mh, sc.dim, 0.7); gm.r(mx, my, mw2, mh, menu); gm.rs(mx, my, mw2, mh, 0, min, lw * 1.5);
             gm.r(mx + lw * 2, my + M * 0.008, mw2 - lw * 4, rh, mac, 1, { dy: 'hot*' + jzN(rh) });
-            labs = latin ? ['Copy', 'Cut', 'Search…'] : ['コピー', '切り取り', '検索…'];
+            labs = latin ? ['Copy', 'Cut', 'Search…'] : ['복사', '잘라내기', '검색…'];
             for (i = 0; i < 3; i++) {
                 var ry = my + M * 0.008 + i * rh, j;
                 for (j = 0; j < 2; j++) {

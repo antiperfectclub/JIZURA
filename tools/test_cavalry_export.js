@@ -65,7 +65,7 @@ assert.equal(report.blockingMissing, Object.values(report.coverage).reduce((n, r
 assert.equal(report.status, 'preview');
 assert.equal(manifest.status, 'preview');
 assert(manifest.coverage.cam.registered.includes('panL'));
-assert(!manifest.coverage.cam.registered.includes('push'), 'aliases are not registered');
+assert(manifest.coverage.cam.registered.includes('push'));
 assert(manifest.modules[manifest.modules.length - 1] === 'native/30_assembly.js');
 for (const row of Object.values(report.recipes)) for (const def of Object.values(row)) {
   assert.equal(def.exact, false, 'a native port is never a pixel-identical claim');
@@ -150,7 +150,7 @@ assert.equal(a.cuts[0].nodes[0].glyphs.map(g => g.ch).join(''), '漢가');
 assert.equal(a.nodeCount, 1);
 assert.equal(a.capabilities.shapes, true);
 assert(a.capabilities.presets.cam.includes('panL'));
-assert(!a.capabilities.presets.cam.includes('push'), 'exact-only: no family alias is advertised');
+assert(a.capabilities.presets.cam.includes('push'));
 assert(a.capabilities.presets.hold.includes('breathe'));
 assert.equal(a.capabilities.transitions, true);
 assert(a.capabilities.presets.trans.includes('xqPolyIris'));
@@ -194,11 +194,11 @@ const separated = J.Cavalry.assemble({ plan: fresh({ layout: 'geom' }), strict: 
 assert(separated.cuts[0].graphics.every(s => Array.isArray(s.path) && s.path.length >= 2));
 
 /* ---- 6. exact-name preflight: a missing recipe stops strict mode, never silently aliases ---- */
-const strictMissing = J.Cavalry.assemble({ plan: fresh({ cam: 'push' }) });
-assert.equal(strictMissing.presetReport.missing['cam:push'], 1);
-assert(strictMissing.blockingWarnings.some(w => /camera "push" is not built/.test(w)));
-assert.equal(strictMissing.presetReport.fallback['cam:push'], undefined);
-assert.throws(() => J.Cavalry.assemble({ plan: fresh({ cam: 'push' }), strict: true }), /camera "push" is not built/);
+const strictMissing = J.Cavalry.assemble({ plan: fresh({ cam: 'unimplementedCam' }) });
+assert.equal(strictMissing.presetReport.missing['cam:unimplementedCam'], 1);
+assert(strictMissing.blockingWarnings.some(w => /camera "unimplementedCam" is not built/.test(w)));
+assert.equal(strictMissing.presetReport.fallback['cam:unimplementedCam'], undefined);
+assert.throws(() => J.Cavalry.assemble({ plan: fresh({ cam: 'unimplementedCam' }), strict: true }), /camera "unimplementedCam" is not built/);
 assert.equal(J.Cavalry.assemble({ plan: fresh({ cam: 'panL' }) }).presetReport.built['cam:panL'], 1);
 assert.equal(J.Cavalry.assemble({ plan: fresh({ hold: 'breathe' }) }).presetReport.built['hold:breathe'], 1);
 assert.equal(J.Cavalry.assemble({ plan: fresh({ enter: 'slide' }) }).presetReport.built['enter:slide'], 1);
@@ -293,9 +293,9 @@ const p = host.preflight(a);
 assert.equal(p.missing.length, 0, 'preflight agrees with the page: ' + JSON.stringify(p.missing));
 assert.equal(p.hostVerified, false);
 const pushAssembly = JSON.parse(JSON.stringify(a));
-pushAssembly.cuts[0].presets.cam = { name: 'push', params: {} };
+pushAssembly.cuts[0].presets.cam = { name: 'unimplementedCam', params: {} };
 const pushReport = host.preflight(pushAssembly);
-assert.deepEqual(Array.from(pushReport.missing, r => r.group + ':' + r.name + '@' + r.cut), ['cam:push@cut-0']);
+assert.deepEqual(Array.from(pushReport.missing, r => r.group + ':' + r.name + '@' + r.cut), ['cam:unimplementedCam@cut-0']);
 
 const result = host.run(a);
 assert.equal(result.report.built['layout:graphics'], 1);
@@ -503,10 +503,10 @@ badPaint.cuts[0].graphics = [{ name: 'bad', path: [['M', 0, 0], ['L', 10, 10]], 
 assert.throws(() => hostEnv().run(badPaint), /no paint/);
 
 /* the adapter's host report may not invent a miss the page did not predict, nor print it twice */
-const adapterMiss = J.Cavalry.assemble({ plan: fresh({ cam: 'push' }) });
-const missLines = adapterMiss.blockingWarnings.filter(w => /camera "push"/.test(w));
+const adapterMiss = J.Cavalry.assemble({ plan: fresh({ cam: 'nope' }) });
+const missLines = adapterMiss.blockingWarnings.filter(w => /camera "nope"/.test(w));
 assert.equal(missLines.length, 1, 'one line per miss, predicted by the page');
-assert.equal(adapterMiss.blockingWarnings.filter(w => /cam:push/.test(w)).length, 0, 'no duplicate host line');
+assert.equal(adapterMiss.blockingWarnings.filter(w => /cam:nope/.test(w)).length, 0, 'no duplicate host line');
 const holdMiss = J.Cavalry.assemble({ plan: fresh({ hold: 'nope' }) });
 assert.equal(holdMiss.blockingWarnings.filter(w => /hold "nope"/.test(w)).length, 1);
 assert.equal(holdMiss.blockingWarnings.filter(w => /hold:nope/.test(w)).length, 0, 'no duplicate host line');
@@ -606,26 +606,26 @@ const panelRun = uiHarness(J.Cavalry.panelSource, { file: '/tmp/a.json', json: a
 assert.equal(panelRun.buttons.length, 1);
 panelRun.buttons[0].onClick();
 assert.equal(panelRun.calls.run, 1);
-assert.match(panelRun.labels[0].text, /完了/);
-assert.match(panelRun.labels[0].text, /正確 1/);
-assert.match(panelRun.labels[0].text, /未対応 1/);
+assert.match(panelRun.labels[0].text, /완료/);
+assert.match(panelRun.labels[0].text, /정확 1/);
+assert.match(panelRun.labels[0].text, /미지원 1/);
 
 const loaderLocal = uiHarness(J.Cavalry.loaderSource, { file: '/tmp/a.json', json: assemblyJson });
 loaderLocal.buttons[0].onClick();
 assert.equal(loaderLocal.calls.run, 1);
-assert.match(loaderLocal.labels[0].text, /パネルは未接続/);
+assert.match(loaderLocal.labels[0].text, /패널 미연결/);
 
 const client = { status: 200, body: 'JIZURA_CV/1', posted: null };
 const loaderBridge = uiHarness(J.Cavalry.loaderSource, { file: '/tmp/a.json', json: assemblyJson, webClient: client });
 loaderBridge.buttons[0].onClick();
 assert.equal(JSON.parse(client.posted).path, '/tmp/a.json');
 assert.equal(loaderBridge.calls.run, 0);
-assert.match(loaderBridge.labels[0].text, /送信/);
+assert.match(loaderBridge.labels[0].text, /전송/);
 
 const loaderBad = uiHarness(J.Cavalry.loaderSource, { file: '/tmp/a.json', json: '{"format":"other"}' });
 loaderBad.buttons[0].onClick();
 assert.equal(loaderBad.calls.run, 0);
-assert.match(loaderBad.labels[0].text, /JIZURA の JSON ではありません/);
+assert.match(loaderBad.labels[0].text, /JIZURA의 JSON이 아닙니다/);
 
 (async () => {
   let saved;
@@ -706,14 +706,14 @@ assert.match(loaderBad.labels[0].text, /JIZURA の JSON ではありません/);
   assert([...panelDist.files.values()].some(l => l.type === 'textShape'), 'the panel file builds text layers from the JSON');
   assert([...panelDist.files.values()].some(l => l.type === 'editableShape'), 'the panel file builds the background path');
   assert([...panelDist.files.values()].some(l => l.type === 'composition'));
-  assert.match(panelDist.labels[0].text, /完了/);
-  assert.match(panelDist.labels[0].text, /正確 [1-9]/);
+  assert.match(panelDist.labels[0].text, /완료/);
+  assert.match(panelDist.labels[0].text, /정확 [1-9]/);
 
   const loaderDistRun = runDist(path.join(root, 'dist', 'cavalry', 'JIZURA_CV_Loader.js'),
     { file: '/tmp/song.json', json: JSON.stringify(a) });
   loaderDistRun.buttons[0].onClick();
   assert([...loaderDistRun.files.values()].some(l => l.type === 'textShape'), 'loader dist: ' + loaderDistRun.labels[0].text);
-  assert.match(loaderDistRun.labels[0].text, /パネルは未接続/);
+  assert.match(loaderDistRun.labels[0].text, /패널 미연결/);
 
   console.log('Cavalry native graph / capture / catalog / panel / loader contracts passed.');
 })().catch(e => { console.error(e); process.exitCode = 1; });

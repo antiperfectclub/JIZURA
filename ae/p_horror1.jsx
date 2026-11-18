@@ -407,7 +407,7 @@ jzReg('layout', 'hrCctv', {
 });
 
 /* ================================================================ 5. hrOuija — 降霊盤 */
-var AHR_KANA = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん';
+var AHR_HANGUL = 'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ';
 var AHR_ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 // one text layer holding several glyph rows, each glyph moved to its own place: items [{ch, x, y, rot}] (one glyph per line)
 function ahr_glyphCloud(ctx, items, o) {
@@ -437,7 +437,7 @@ jzReg('layout', 'hrOuija', {
         var plate = jzMixHex(sc.bg, sc.fg, ahr_dark(sc.bg) ? 0.07 : 0.06), col = jzMixHex(plate, sc.fg, 0.55);
         var Bd = jzRectLayer(ctx, 'hr board', bx, by, bw, bh, plate, { round: bh * 0.14, stroke: jzMixHex(sc.bg, sc.sub, 0.6), strokeW: lw });
         ahr_fade(ctx, Bd, 0, 0.35); jzNoGhost(Bd);
-        var rowsSrc = latin ? [AHR_ABC.substr(0, 13), AHR_ABC.substr(13), '1234567890'] : [AHR_KANA.substr(0, 16), AHR_KANA.substr(16, 16), AHR_KANA.substr(32)];
+        var rowsSrc = latin ? [AHR_ABC.substr(0, 13), AHR_ABC.substr(13), '1234567890'] : [AHR_HANGUL.substr(0, 14), AHR_HANGUL.substr(14, 10), '1234567890'];
         var cells = [], bf = bh * (latin ? 0.1 : 0.085);
         for (r = 0; r < 3; r++) {
             var arr = jzChars(rowsSrc[r]), n = arr.length, R = bw * (0.64 - r * 0.17), cy = by + bh * (0.52 + r * 0.04), span = (r ? 96 : 112) * (port ? 0.95 : 1), row = [];

@@ -213,7 +213,7 @@ axa_reg('xaCutLine', {
         var SL = axa_flush(SC, false);
         jzSetExpr(jzXf(SL, 'ADBE Position'), axa_hd(ctx) + 'var u=cl(time/' + T + ');[' + (d > 0 ? jzN(W) + '*(0.05+0.9*u)' : jzN(W) + '*(0.95-0.9*u)') + ',' + jzN(yl) + ']');
         var la = axa_iC(0.3, 0.3) + '*K', latin = jzIsLatinText(B.txt);
-        axa_label(ctx, latin ? 'CUT HERE' : 'キリトリ', d > 0 ? W * 0.93 : W * 0.07, yl + (low ? -1 : 1) * ls * 1.1, { align: d > 0 ? 'right' : 'left', font: jzBodyF(ctx), op: la, size: ls * 0.9, track: 0.3 });
+        axa_label(ctx, latin ? 'CUT HERE' : '자르는선', d > 0 ? W * 0.93 : W * 0.07, yl + (low ? -1 : 1) * ls * 1.1, { align: d > 0 ? 'right' : 'left', font: jzBodyF(ctx), op: la, size: ls * 0.9, track: 0.3 });
         // stub
         axa_label(ctx, 'No.' + jzPad(1 + (axa_h(B.seed, 5) % 9999), 4), W * 0.07, scy - sh * 0.2, { op: la, color: acc });
         if (jzP(ctx, 'stub', 'bar') === 'bar') {
@@ -367,7 +367,7 @@ axa_reg('xaBrace', {
     build: function (ctx) {
         var B = axa_base(ctx), W = B.W, H = B.H, sc = B.sc, M = B.M, port = B.port, ls = B.ls, font = jzP(ctx, 'font', jzFontKeyOf(ctx.st, 'display')), pos = jzP(ctx, 'pos', 'r'), i;
         var n = jzCount(B.txt), latin = jzIsLatinText(B.txt), c = jzP(ctx, 'col', 'accent') === 'accent' ? axa_accentOn(sc) : sc.fg, bf = jzBodyF(ctx);
-        var cnt = latin ? B.txt.split(/\s+/).length + ' WORDS' : n + ' 字', e = 'ioc((time-0.12)/0.6)*XO', la = axa_iC(0.3, 0.55) + '*K', S = axa_sheet(ctx, 'brace');
+        var cnt = latin ? B.txt.split(/\s+/).length + ' WORDS' : n + ' 자', e = 'ioc((time-0.12)/0.6)*XO', la = axa_iC(0.3, 0.55) + '*K', S = axa_sheet(ctx, 'brace');
         var under = pos === 'under' && !port && n <= 9, o = { lead: 1.25, track: 0.03 }, size, it, m, d, pts;
         if (under) {
             size = Math.min(axa_fit(B.txt, font, W * 0.82, H * 0.3, o), M * 0.26);

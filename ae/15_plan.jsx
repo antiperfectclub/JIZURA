@@ -218,24 +218,14 @@ function jzPickFx(rng, st, en, fx, emph, fxHist, kind) {
 }
 function jzPlanOf(g, k, rng, st, extra) { var D = JZ_REG[g][k]; if (!D || !D.plan) return {}; try { return (g === 'layout' ? D.plan(rng, extra || {}, st) : D.plan(rng, st)) || {}; } catch (e) { jzWarn(g + ' ' + k + ' plan: ' + e.toString()); return {}; } }
 
-// ---- lyric language (same rule as the browser, src/02b_lang.js): Latin only → en, kana → ja, hangul → ko, Han only → Traditional / Simplified
-var JZ_TC = '們個說這會對時來還後過國開關與為從問間見長東車門愛聽學讓話號發點無現體經電實樣聲變離氣夢給覺當歡陽戀邊頭淚誰歲遠嗎萬難寫應讀憶樂麼麗傷將總結終紅綠線顏風飛鳥謝語請認識熱燈願獨夠紀帶滿靜輕別腦臉懷謊錯顆陣場讚淺溫記憑護壞歸媽隨銀聞態虛遙';
-var JZ_SC = '们个说这会对时来还后过国开关与为从问间见长东车门爱听学让话号发点无现体经电实样声变离气梦给觉当欢阳恋边头泪谁岁远吗万难写应读忆乐么丽伤将总结终红绿线颜风飞鸟谢语请认识热灯愿独够纪带满静轻别脑脸怀谎错颗阵场赞浅温记凭护坏归妈随银闻态虚遥';
+// ---- lyric language: hangul -> ko, latin -> en (default 'ko')
 function jzDetectLangText(text) {
-    var kana = 0, hangul = 0, han = 0, tc = 0, sc = 0, latin = 0, i, u, c;
-    text = String(text || '');
-    for (i = 0; i < text.length; i++) {
-        u = text.charCodeAt(i); c = text.charAt(i);
-        if ((u >= 0x41 && u <= 0x5a) || (u >= 0x61 && u <= 0x7a) || (u >= 0xc0 && u <= 0x24f && u !== 0xd7 && u !== 0xf7) || (u >= 0xff21 && u <= 0xff3a) || (u >= 0xff41 && u <= 0xff5a)) latin++;
-        else if ((u >= 0x3041 && u <= 0x30ff && u !== 0x30fb && u !== 0x30fc) || (u >= 0xff66 && u <= 0xff9d)) kana++;
-        else if ((u >= 0xac00 && u <= 0xd7a3) || (u >= 0x1100 && u <= 0x11ff) || (u >= 0x3130 && u <= 0x318f)) hangul++;
-        else if ((u >= 0x4e00 && u <= 0x9fff) || (u >= 0x3400 && u <= 0x4dbf)) { han++; if (JZ_TC.indexOf(c) >= 0) tc++; if (JZ_SC.indexOf(c) >= 0) sc++; }
-    }
-    if (latin >= 6 && latin >= (latin + (kana + hangul + han) * 3) * 0.9) return 'en';   // almost only Latin letters (English / romaji)
-    if (hangul >= 2 && hangul > kana) return 'ko';
-    if (kana >= 2 || (kana > 0 && kana >= han * 0.03)) return 'ja';
-    if (han >= 2 && (tc || sc)) return tc >= sc ? 'zh-Hant' : 'zh-Hans';
-    return 'ja';
+    var s = String(text || '');
+    var hangul = (s.match(/[가-힯ᄀ-ᇿ㄰-㆏]/g) || []).length;
+    var latin = (s.match(/[A-Za-zÀ-ɏ]/g) || []).length;
+    if (hangul >= 2) return 'ko';
+    if (latin >= 4) return 'en';
+    return hangul > 0 ? 'ko' : 'en';
 }
 // English lyrics: cut by short phrases (2–3 words), not word by word — same as the browser (J.phraseChunks)
 function jzPhraseChunks(words) {

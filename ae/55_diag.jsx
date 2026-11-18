@@ -44,7 +44,7 @@ function jzDiagnose(comp, plan, maxSecs) {
     }
     walkComp(comp, comp ? comp.name : '?');
     var out = [];
-    out.push('JIZURA 診断レポート');
+    out.push('JIZURA 진단 보고서');
     out.push('panel ' + JZ_PANEL_VERSION + ' / parts ' + jzPartsCount() + ' / After Effects ' + app.version + ' / ' + $.os);
     try { out.push('expression engine: ' + app.project.expressionEngine); } catch (e6) {}
     out.push('comp: ' + (comp ? comp.name + ' ' + comp.width + 'x' + comp.height + ' ' + comp.frameRate + 'fps' : '(none)'));

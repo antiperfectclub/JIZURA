@@ -389,8 +389,8 @@ axn_reg('xnGlyphStats', function (ctx, bb, p, u) {
     var sc = ctx.sc, g0 = axn_glyphs(axn_cutText(ctx)), g = [], i, cnt = [0, 0, 0, 0], c;
     for (i = 0; i < g0.length; i++) if (!jzIsPunct(g0[i])) g.push(g0[i]);
     if (!g.length) return;
-    for (i = 0; i < g.length; i++) { c = g[i]; cnt[jzIsKanji(c) ? 0 : (jzIsHira(c) || jzIsKata(c)) ? 1 : jzIsLatin(c) ? 2 : 3]++; }
-    var names = ['漢字', 'かな', 'ABC', '他'], pal = [sc.fg, axn_acc(sc), axn_acc2(sc), axn_sub(sc)], ci = 0, nn = axn_noNo(ctx);
+    for (i = 0; i < g.length; i++) { c = g[i]; cnt[jzIsHangul(c) ? 0 : jzIsKanji(c) ? 1 : jzIsLatin(c) ? 2 : 3]++; }
+    var names = ['한글', '한자', 'ABC', '기타'], pal = [sc.fg, axn_acc(sc), axn_acc2(sc), axn_sub(sc)], ci = 0, nn = axn_noNo(ctx);
     var fs = axn_fs(ctx) * 0.9, bf = jzBodyF(ctx), w = jzClamp(axn_bw(bb) * 0.6, 220 * u, 340 * u), barH = Math.max(6, 9 * u), h = fs * 1.5 + barH + fs * 1.9;
     var sp = axn_spot(ctx, bb, w, h, p, 22 * u), A = sp.ok ? 1 : 0.3, e = axn_e(0.55, 0.05), by = sp.y + fs * 1.5, x = sp.x, lx = sp.x, labs = [], sw, e2, col, lab;
     var S = axn_S(ctx, 'glyph bar', A);
