@@ -1,5 +1,5 @@
 /* GENERATED: host/render verification pending. */
-var JZCavalryBuild={"blockingMissing":1283,"buildId":"54194274796957ae46a45391983072222e01f2fcbeba8f43d556f2fc3fdd6c8d","catalog":{"counts":{"bg":130,"cam":71,"decor":260,"enter":251,"exit":221,"fx":138,"hold":102,"layout":366,"trans":56,"treat":122},"groups":{"bg":{"count":130,"registeredInCatalog":6},"cam":{"count":71,"registeredInCatalog":71},"decor":{"count":260,"registeredInCatalog":5},"enter":{"count":251,"registeredInCatalog":83},"exit":{"count":221,"registeredInCatalog":56},"fx":{"count":138,"registeredInCatalog":42},"hold":{"count":102,"registeredInCatalog":102},"layout":{"count":366,"registeredInCatalog":4},"trans":{"count":56,"registeredInCatalog":56},"treat":{"count":122,"registeredInCatalog":7}},"source":"cavalry/catalog/ae-presets.json","total":1717},"coverage":{"bg":{"additional":["dots","frame","split"],"blockingMissing":["argyle","asanoha","auroraRibbons","bigStripes","bokehBg","borderFrame","chevron","cloudLayers","concentric","dotGrid","duotoneSweep","eqBars","filmStrip","fireworks","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","snowLayers","speedLines","spiralArms","splitDiag","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"],"catalog":{"count":130,"notPorted":["argyle","asanoha","auroraRibbons","bigStripes","bokehBg","borderFrame","chevron","cloudLayers","concentric","dotGrid","duotoneSweep","eqBars","filmStrip","fireworks","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","snowLayers","speedLines","spiralArms","splitDiag","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"],"registeredInCatalog":6,"registeredNotInCatalog":["dots","frame","split"]},"method":"native","missing":["argyle","asanoha","auroraRibbons","bigStripes","bokehBg","borderFrame","chevron","cloudLayers","concentric","dotGrid","duotoneSweep","eqBars","filmStrip","fireworks","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","snowLayers","speedLines","spiralArms","splitDiag","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"],"referenceCount":130,"registered":["bigChar","checker","dots","frame","skyline","split","splitH","splitV","xpRingDots"]},"cam":{"additional":[],"blockingMissing":[],"catalog":{"count":71,"notPorted":[],"registeredInCatalog":71,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":71,"registered":["barrelRoll","beatPunch","bounce","crashZoom","dollyIn","driftDiag","dutch","earthquake","floatNoise","focusIn","handheld","hrDutchSnap","hrNervous","hzColdShiver","hzCreepFreeze","hzGlanceBack","hzHeldBreath","jelly","knCardFlip","knJumpCut","knReadPan","knRushIn","knShearKick","knTiltKick","kzKnockback","kzRecoil","kzSkidStop","kzWordNod","orbitDrift","panL","panR","pendulumSway","pullOut","push","rackFocus","roll","shakeHard","snapPan","spiralIn","stepZoom","tiltDown","tiltUp","tzGridStep","tzItalicSet","tzMeasureZoom","tzTabStep","vertigo","whipIn","wzByobuPan","wzKakejikuView","wzOjigi","xqArcSweep","xqBeatBreath","xqCraneUp","xqDriftTurn","xqFindFrame","xqFocusHunt","xqHeartbeat","xqLeafFall","xqLevelOut","xqLongLens","xqLoudZoom","xqPushPull","xqSquashRelax","xqStopMotion","xqTickRoll","xqTripodNudge","xqTruckAround","xqWalkCam","xqWhipSpring","xqWindUp"]},"decor":{"additional":["ruler"],"blockingMissing":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"catalog":{"count":260,"notPorted":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"registeredInCatalog":5,"registeredNotInCatalog":["ruler"]},"method":"native","missing":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"referenceCount":260,"registered":["cropMarks","indexNum","romajiLine","ruler","tyGlyphBody","xlLadder"]},"enter":{"additional":["fade","flip","rise","slide"],"blockingMissing":["blurStagger","brushReveal","bubbles","checker","crumple","cylinder","dither","echoCount","echoIn","filmFeed","glint","heatHaze","hrBlinkCreep","hrClawReveal","hrJumpScare","hrManifest","hrMirrorSnap","hrUneasy","hrVhold","hzAlreadyThere","hzFloorSeep","hzFromScratch","hzLampSweep","hzLateSnap","hzShakyHand","hzTooClose","hzUnwatched","hzWrongGlyph","inkBleed","inkDrop","interlace","knDiveIn","knHingeDrop","knInertia","knLoopIn","knPushIn","knReplaceIn","knStretchOut","knTypeToSlam","knWordSlam","knWordSpin","kzBowSnap","kzOverrun","kzPunchThrough","kzSeesaw","kzSideVolley","kzSkipStone","kzTowerUnstack","kzTrampoline","kzWordWheel","lightLeak","liquidFill","loadingBar","loupe","magnet","matrixRain","neonOn","noteUnfold","odometer","outlineFill","overexpose","rockSettle","shadowFirst","slideWhole","stickerPeel","stopMotion","strokeDraw","strokeOrder","tokoroten","tornJoin","tyBracketOpen","tyDotGrow","tyLineWipe","tyRetype","tyRubyDrop","tyUnderLift","tyZoomOne","tzBaseAlign","tzCaretSet","tzCloseUp","tzCountSet","tzIndexLead","tzPointSize","tzRuleSlide","tzTextFrame","tzWeightUp","wzChochin","wzFusuma","wzHanabi","wzHanko","wzKakejiku","wzKamifubuki","wzMisu","wzOrigami","wzSeigaiha","xeBellows","xeBlanks","xeCellSlide","xeCloneMorph","xeFillGaps","xeGlyphCurtain","xeKanjiFirst","xePiecePile","xePieceRain","xePieceStrata","xePieceVortex","xeRedact","xeSkewFlap","xeTripleBeat","xfChevron","xfClosingHole","xfCornerBloom","xfCrossOpen","xfDiagStrips","xfEqualizer","xfHolesMerge","xfJaws","xfOutlineLead","xfPassingWipes","xfPrintHead","xfQuadRelay","xfRingDial","xfRollerShutter","xfRovingWindow","xfScanner","xfSlantLouver","xfSpiral","xfStackStrips","xfStaircase","xfStripSort","xfSunburst","xfTapeOff","xfThreeTier","xfTraceFlood","xfTriptych","xfTwoFields","xfUnderSweep","xfWeave","xfWiper","xgAfterimage","xgBlockSink","xgCoinSettle","xgColorPour","xgCornerUnfurl","xgDoubleVision","xgFillDock","xgFocusHunt","xgGate","xgHangSign","xgHeavyDrop","xgJelly","xgKeyPoses","xgLensFringe","xgNewsSpin","xgNoseDive","xgPaperFall","xgPumpUp","xgPushBar","xgQuarterTurn","xgRatchet","xgRoughCut","xgShearUp","xgSignSpin","xgStampLift","xgStrobe","xgWallHit","xgWiper","xgZipLine"],"catalog":{"count":251,"notPorted":["blurStagger","brushReveal","bubbles","checker","crumple","cylinder","dither","echoCount","echoIn","filmFeed","glint","heatHaze","hrBlinkCreep","hrClawReveal","hrJumpScare","hrManifest","hrMirrorSnap","hrUneasy","hrVhold","hzAlreadyThere","hzFloorSeep","hzFromScratch","hzLampSweep","hzLateSnap","hzShakyHand","hzTooClose","hzUnwatched","hzWrongGlyph","inkBleed","inkDrop","interlace","knDiveIn","knHingeDrop","knInertia","knLoopIn","knPushIn","knReplaceIn","knStretchOut","knTypeToSlam","knWordSlam","knWordSpin","kzBowSnap","kzOverrun","kzPunchThrough","kzSeesaw","kzSideVolley","kzSkipStone","kzTowerUnstack","kzTrampoline","kzWordWheel","lightLeak","liquidFill","loadingBar","loupe","magnet","matrixRain","neonOn","noteUnfold","odometer","outlineFill","overexpose","rockSettle","shadowFirst","slideWhole","stickerPeel","stopMotion","strokeDraw","strokeOrder","tokoroten","tornJoin","tyBracketOpen","tyDotGrow","tyLineWipe","tyRetype","tyRubyDrop","tyUnderLift","tyZoomOne","tzBaseAlign","tzCaretSet","tzCloseUp","tzCountSet","tzIndexLead","tzPointSize","tzRuleSlide","tzTextFrame","tzWeightUp","wzChochin","wzFusuma","wzHanabi","wzHanko","wzKakejiku","wzKamifubuki","wzMisu","wzOrigami","wzSeigaiha","xeBellows","xeBlanks","xeCellSlide","xeCloneMorph","xeFillGaps","xeGlyphCurtain","xeKanjiFirst","xePiecePile","xePieceRain","xePieceStrata","xePieceVortex","xeRedact","xeSkewFlap","xeTripleBeat","xfChevron","xfClosingHole","xfCornerBloom","xfCrossOpen","xfDiagStrips","xfEqualizer","xfHolesMerge","xfJaws","xfOutlineLead","xfPassingWipes","xfPrintHead","xfQuadRelay","xfRingDial","xfRollerShutter","xfRovingWindow","xfScanner","xfSlantLouver","xfSpiral","xfStackStrips","xfStaircase","xfStripSort","xfSunburst","xfTapeOff","xfThreeTier","xfTraceFlood","xfTriptych","xfTwoFields","xfUnderSweep","xfWeave","xfWiper","xgAfterimage","xgBlockSink","xgCoinSettle","xgColorPour","xgCornerUnfurl","xgDoubleVision","xgFillDock","xgFocusHunt","xgGate","xgHangSign","xgHeavyDrop","xgJelly","xgKeyPoses","xgLensFringe","xgNewsSpin","xgNoseDive","xgPaperFall","xgPumpUp","xgPushBar","xgQuarterTurn","xgRatchet","xgRoughCut","xgShearUp","xgSignSpin","xgStampLift","xgStrobe","xgWallHit","xgWiper","xgZipLine"],"registeredInCatalog":83,"registeredNotInCatalog":["fade","flip","rise","slide"]},"method":"native","missing":["blurStagger","brushReveal","bubbles","checker","crumple","cylinder","dither","echoCount","echoIn","filmFeed","glint","heatHaze","hrBlinkCreep","hrClawReveal","hrJumpScare","hrManifest","hrMirrorSnap","hrUneasy","hrVhold","hzAlreadyThere","hzFloorSeep","hzFromScratch","hzLampSweep","hzLateSnap","hzShakyHand","hzTooClose","hzUnwatched","hzWrongGlyph","inkBleed","inkDrop","interlace","knDiveIn","knHingeDrop","knInertia","knLoopIn","knPushIn","knReplaceIn","knStretchOut","knTypeToSlam","knWordSlam","knWordSpin","kzBowSnap","kzOverrun","kzPunchThrough","kzSeesaw","kzSideVolley","kzSkipStone","kzTowerUnstack","kzTrampoline","kzWordWheel","lightLeak","liquidFill","loadingBar","loupe","magnet","matrixRain","neonOn","noteUnfold","odometer","outlineFill","overexpose","rockSettle","shadowFirst","slideWhole","stickerPeel","stopMotion","strokeDraw","strokeOrder","tokoroten","tornJoin","tyBracketOpen","tyDotGrow","tyLineWipe","tyRetype","tyRubyDrop","tyUnderLift","tyZoomOne","tzBaseAlign","tzCaretSet","tzCloseUp","tzCountSet","tzIndexLead","tzPointSize","tzRuleSlide","tzTextFrame","tzWeightUp","wzChochin","wzFusuma","wzHanabi","wzHanko","wzKakejiku","wzKamifubuki","wzMisu","wzOrigami","wzSeigaiha","xeBellows","xeBlanks","xeCellSlide","xeCloneMorph","xeFillGaps","xeGlyphCurtain","xeKanjiFirst","xePiecePile","xePieceRain","xePieceStrata","xePieceVortex","xeRedact","xeSkewFlap","xeTripleBeat","xfChevron","xfClosingHole","xfCornerBloom","xfCrossOpen","xfDiagStrips","xfEqualizer","xfHolesMerge","xfJaws","xfOutlineLead","xfPassingWipes","xfPrintHead","xfQuadRelay","xfRingDial","xfRollerShutter","xfRovingWindow","xfScanner","xfSlantLouver","xfSpiral","xfStackStrips","xfStaircase","xfStripSort","xfSunburst","xfTapeOff","xfThreeTier","xfTraceFlood","xfTriptych","xfTwoFields","xfUnderSweep","xfWeave","xfWiper","xgAfterimage","xgBlockSink","xgCoinSettle","xgColorPour","xgCornerUnfurl","xgDoubleVision","xgFillDock","xgFocusHunt","xgGate","xgHangSign","xgHeavyDrop","xgJelly","xgKeyPoses","xgLensFringe","xgNewsSpin","xgNoseDive","xgPaperFall","xgPumpUp","xgPushBar","xgQuarterTurn","xgRatchet","xgRoughCut","xgShearUp","xgSignSpin","xgStampLift","xgStrobe","xgWallHit","xgWiper","xgZipLine"],"referenceCount":251,"registered":["assemble","backlight","blinds","blur","bounceBall","bounceBig","clockWipe","crtOn","cursorSweep","cut","diagWipe","domino","drop","dropMask","fade","fadeStagger","fanOpen","flicker","flip","flipX","flipY","fold","glitchIn","hatchFill","invertBox","iris","pendulum","pop","printRegister","quarters","randomOrder","resolve","ripple","rise","riseMask","rollIn","rubber","scramble","shuffle","shutter","skewIn","slice","slide","slideL","slideR","slingshot","snapRail","spin","spiralIn","splitFlap","splitJoin","springIn","squashDrop","stamp","stretch","tiltUp","trackIn","trackOut","tyKeyFirst","type","unroll","vSlice","waveIn","whip","windBlown","wipe","xeArcToss","xeBlockDrop","xeCeilingFall","xeCenterDeal","xeChainBump","xeCoinToss","xeEndsInward","xeGearTick","xeInchworm","xeLeapfrog","xeMarch","xeOrbitIn","xeRicochet","xeSwingDoor","xeUnevenScale","xeVanishPoint","xgComet","zipper","zoom","zoomAlt","zoomOut"]},"exit":{"additional":["fade","flip","pop","rise","slide"],"blockingMissing":["blurOutStagger","candleOut","crumpleOut","deflateOut","eraserOut","floodOut","flutterOut","glassBreak","glitchDissolve","halftoneOut","hazeOut","hrDrain","hrFlickerDie","hrLookBack","hrPulledDown","hrShiver","hrSwallow","hrTurnAway","hzBackAway","hzDragCorner","hzFlatline","hzOutOfLight","hzRetinal","hzShadowOff","hzTaken","hzThumbSmear","knDiveGlyph","knJumpCutOut","knLaunch","knPushOut","knStackAway","knWordBlink","knWordKick","kzBatAway","kzCrashApart","kzCrouchDive","kzHammerDown","kzPinchShoot","kzSlingAway","kzSwingFling","kzYankOut","lampOff","matrixOut","mosaicOut","outlineOut","overexposeOut","rgbSplitOut","rocketOff","rollUpOut","sandOut","scanOut","scorchOut","scrambleOut","scribbleOut","shatterLite","shockOut","shredOut","slotOut","snakeOut","stripesOut","tearOut","tornadoOut","trackOutWide","tyBracketClose","tyFoldVert","tyKeyLast","tyLineFeed","tyStrike","tyToDot","tyToIndex","tyUnderSink","tzCondense","tzHalfCut","tzOverset","tzProofDelete","tzRulesClose","tzSelectDelete","tzToFootnote","tzToTofu","undraw","vSliceDrop","vacuumOut","waveOut","whipOut","wzDoron","wzFuroshiki","wzHanaChiru","wzKasumi","wzOrizuru","wzShojiKage","wzSumiNijimi","wzToro","xhBarcode","xhCeiling","xhCombOut","xhConcertina","xhConveyor","xhEatAlong","xhFlick","xhFullStop","xhGather","xhKanaFirst","xhMorse","xhPieceHeap","xhPieceParts","xhPieceSpin","xhPieceStrata","xhPieceThin","xhRollCall","xhShuffle","xhShutters","xiCentreOut","xiCounterScroll","xiCounterWipe","xiCropTurns","xiDiagPinch","xiDotted","xiDrawers","xiEyelid","xiFields","xiFillDrop","xiFinder","xiInverseBand","xiLattice","xiMothHoles","xiPicket","xiPistons","xiPortholes","xiRadialBlinds","xiRedact","xiRings","xiRollShutter","xiSawBite","xiSliceWave","xiSpiralTiles","xiTwinPlates","xiTwoPass","xjBigWheel","xjCardToss","xjColourDrain","xjComet","xjDoubleVision","xjEdgeTeeter","xjGateSwing","xjNeedle","xjOnionSkin","xjPanSmear","xjPuckHit","xjQuarterTurn","xjRatchet","xjRubberSnap","xjShadowStay","xjShellChase","xjSlump","xjSpringHop","xjStepFade","xjThroughFocus","xjTrapdoor","xjTug","xjWallSplat","xjWiper","xjYank","zipOut","zoomFar","zoomThrough"],"catalog":{"count":221,"notPorted":["blurOutStagger","candleOut","crumpleOut","deflateOut","eraserOut","floodOut","flutterOut","glassBreak","glitchDissolve","halftoneOut","hazeOut","hrDrain","hrFlickerDie","hrLookBack","hrPulledDown","hrShiver","hrSwallow","hrTurnAway","hzBackAway","hzDragCorner","hzFlatline","hzOutOfLight","hzRetinal","hzShadowOff","hzTaken","hzThumbSmear","knDiveGlyph","knJumpCutOut","knLaunch","knPushOut","knStackAway","knWordBlink","knWordKick","kzBatAway","kzCrashApart","kzCrouchDive","kzHammerDown","kzPinchShoot","kzSlingAway","kzSwingFling","kzYankOut","lampOff","matrixOut","mosaicOut","outlineOut","overexposeOut","rgbSplitOut","rocketOff","rollUpOut","sandOut","scanOut","scorchOut","scrambleOut","scribbleOut","shatterLite","shockOut","shredOut","slotOut","snakeOut","stripesOut","tearOut","tornadoOut","trackOutWide","tyBracketClose","tyFoldVert","tyKeyLast","tyLineFeed","tyStrike","tyToDot","tyToIndex","tyUnderSink","tzCondense","tzHalfCut","tzOverset","tzProofDelete","tzRulesClose","tzSelectDelete","tzToFootnote","tzToTofu","undraw","vSliceDrop","vacuumOut","waveOut","whipOut","wzDoron","wzFuroshiki","wzHanaChiru","wzKasumi","wzOrizuru","wzShojiKage","wzSumiNijimi","wzToro","xhBarcode","xhCeiling","xhCombOut","xhConcertina","xhConveyor","xhEatAlong","xhFlick","xhFullStop","xhGather","xhKanaFirst","xhMorse","xhPieceHeap","xhPieceParts","xhPieceSpin","xhPieceStrata","xhPieceThin","xhRollCall","xhShuffle","xhShutters","xiCentreOut","xiCounterScroll","xiCounterWipe","xiCropTurns","xiDiagPinch","xiDotted","xiDrawers","xiEyelid","xiFields","xiFillDrop","xiFinder","xiInverseBand","xiLattice","xiMothHoles","xiPicket","xiPistons","xiPortholes","xiRadialBlinds","xiRedact","xiRings","xiRollShutter","xiSawBite","xiSliceWave","xiSpiralTiles","xiTwinPlates","xiTwoPass","xjBigWheel","xjCardToss","xjColourDrain","xjComet","xjDoubleVision","xjEdgeTeeter","xjGateSwing","xjNeedle","xjOnionSkin","xjPanSmear","xjPuckHit","xjQuarterTurn","xjRatchet","xjRubberSnap","xjShadowStay","xjShellChase","xjSlump","xjSpringHop","xjStepFade","xjThroughFocus","xjTrapdoor","xjTug","xjWallSplat","xjWiper","xjYank","zipOut","zoomFar","zoomThrough"],"registeredInCatalog":56,"registeredNotInCatalog":["fade","flip","pop","rise","slide"]},"method":"native","missing":["blurOutStagger","candleOut","crumpleOut","deflateOut","eraserOut","floodOut","flutterOut","glassBreak","glitchDissolve","halftoneOut","hazeOut","hrDrain","hrFlickerDie","hrLookBack","hrPulledDown","hrShiver","hrSwallow","hrTurnAway","hzBackAway","hzDragCorner","hzFlatline","hzOutOfLight","hzRetinal","hzShadowOff","hzTaken","hzThumbSmear","knDiveGlyph","knJumpCutOut","knLaunch","knPushOut","knStackAway","knWordBlink","knWordKick","kzBatAway","kzCrashApart","kzCrouchDive","kzHammerDown","kzPinchShoot","kzSlingAway","kzSwingFling","kzYankOut","lampOff","matrixOut","mosaicOut","outlineOut","overexposeOut","rgbSplitOut","rocketOff","rollUpOut","sandOut","scanOut","scorchOut","scrambleOut","scribbleOut","shatterLite","shockOut","shredOut","slotOut","snakeOut","stripesOut","tearOut","tornadoOut","trackOutWide","tyBracketClose","tyFoldVert","tyKeyLast","tyLineFeed","tyStrike","tyToDot","tyToIndex","tyUnderSink","tzCondense","tzHalfCut","tzOverset","tzProofDelete","tzRulesClose","tzSelectDelete","tzToFootnote","tzToTofu","undraw","vSliceDrop","vacuumOut","waveOut","whipOut","wzDoron","wzFuroshiki","wzHanaChiru","wzKasumi","wzOrizuru","wzShojiKage","wzSumiNijimi","wzToro","xhBarcode","xhCeiling","xhCombOut","xhConcertina","xhConveyor","xhEatAlong","xhFlick","xhFullStop","xhGather","xhKanaFirst","xhMorse","xhPieceHeap","xhPieceParts","xhPieceSpin","xhPieceStrata","xhPieceThin","xhRollCall","xhShuffle","xhShutters","xiCentreOut","xiCounterScroll","xiCounterWipe","xiCropTurns","xiDiagPinch","xiDotted","xiDrawers","xiEyelid","xiFields","xiFillDrop","xiFinder","xiInverseBand","xiLattice","xiMothHoles","xiPicket","xiPistons","xiPortholes","xiRadialBlinds","xiRedact","xiRings","xiRollShutter","xiSawBite","xiSliceWave","xiSpiralTiles","xiTwinPlates","xiTwoPass","xjBigWheel","xjCardToss","xjColourDrain","xjComet","xjDoubleVision","xjEdgeTeeter","xjGateSwing","xjNeedle","xjOnionSkin","xjPanSmear","xjPuckHit","xjQuarterTurn","xjRatchet","xjRubberSnap","xjShadowStay","xjShellChase","xjSlump","xjSpringHop","xjStepFade","xjThroughFocus","xjTrapdoor","xjTug","xjWallSplat","xjWiper","xjYank","zipOut","zoomFar","zoomThrough"],"referenceCount":221,"registered":["backspace","balloonOff","blindsClose","blur","bounceOff","burn","checkerOut","clapShut","clockOut","collapse","cut","diagWipeOut","dissolve","dominoOut","drift","echoOut","explode","fade","fall","fanClose","flip","flipOutX","flipOutY","foldOut","glitch","gravity","hingeOut","irisClose","knCloseGap","melt","peelOff","pop","popOut","rise","riseOut","rollOff","scatter","shrink","sinkMask","slashOut","slice","slide","slideOutL","slideOutR","spinOut","splitApart","squash","stretch","sweepCover","twist","wipe","xhCentreThin","xhCoinSpin","xhEndsOut","xhHopFar","xhPageTurn","xhStairs","xhStomp","xhTiltSlide","xiPlateCarry","xjFocusPull"]},"fx":{"additional":["xrScanWipe","xrShutterStep"],"blockingMissing":["anamorphic","bandInvert","colorBars","defocus","ditherBit","dustScratches","echoFrames","edgeDetect","filmAdvance","focusLines","heartbeat","hrPassingShadow","hrSignalLoss","hrSubliminal","hzClosingDark","hzColdBreath","hzDrain","hzFaint","hzTear","hzUpside","kaleido","kzBulldoze","kzCardSlam","kzDustLanding","kzEdgeHit","kzKnockSmear","kzShockArcs","lightRays","loopScroll","negativeRing","perspectiveTilt","ripple","rotateSnap","scanBar","shatter","snapshot","speedLines","squash","starGlint","tvStatic","tzColumnShift","tzFrameStep","tzGridFlash","tzKnockBand","tzRegTicks","tzRuleFlash","wzHanafubuki","wzHyoshigi","wzMaku","wzOrime","wzShojiPass","wzSumiShibuki","xrAccordion","xrBandRepeat","xrBandZoom","xrBlink","xrBorderPunch","xrCheckerInvert","xrClockInvert","xrColorStrobe","xrColumnDrop","xrCornerFold","xrCrossFringe","xrCrossSplit","xrCrosshair","xrDiagSlice","xrDotWave","xrDropout","xrEdgeBars","xrExposureDip","xrFlipTiles","xrFourTints","xrLampFlicker","xrLetterSnap","xrLongShadow","xrLoupe","xrMoire","xrNested","xrPixelSparks","xrQuadCycle","xrRibbonTwist","xrScanBurst","xrShearSnap","xrSlotReel","xrSpotlight","xrStretchWave","xrStripeMosaic","xrSwingEcho","xrSyncBend","xrTapeCrease","xrThumbRow","xrTileLights","xrWaist","xrWaterMirror","xrZebra","zoomStutter"],"catalog":{"count":138,"notPorted":["anamorphic","bandInvert","colorBars","defocus","ditherBit","dustScratches","echoFrames","edgeDetect","filmAdvance","focusLines","heartbeat","hrPassingShadow","hrSignalLoss","hrSubliminal","hzClosingDark","hzColdBreath","hzDrain","hzFaint","hzTear","hzUpside","kaleido","kzBulldoze","kzCardSlam","kzDustLanding","kzEdgeHit","kzKnockSmear","kzShockArcs","lightRays","loopScroll","negativeRing","perspectiveTilt","ripple","rotateSnap","scanBar","shatter","snapshot","speedLines","squash","starGlint","tvStatic","tzColumnShift","tzFrameStep","tzGridFlash","tzKnockBand","tzRegTicks","tzRuleFlash","wzHanafubuki","wzHyoshigi","wzMaku","wzOrime","wzShojiPass","wzSumiShibuki","xrAccordion","xrBandRepeat","xrBandZoom","xrBlink","xrBorderPunch","xrCheckerInvert","xrClockInvert","xrColorStrobe","xrColumnDrop","xrCornerFold","xrCrossFringe","xrCrossSplit","xrCrosshair","xrDiagSlice","xrDotWave","xrDropout","xrEdgeBars","xrExposureDip","xrFlipTiles","xrFourTints","xrLampFlicker","xrLetterSnap","xrLongShadow","xrLoupe","xrMoire","xrNested","xrPixelSparks","xrQuadCycle","xrRibbonTwist","xrScanBurst","xrShearSnap","xrSlotReel","xrSpotlight","xrStretchWave","xrStripeMosaic","xrSwingEcho","xrSyncBend","xrTapeCrease","xrThumbRow","xrTileLights","xrWaist","xrWaterMirror","xrZebra","zoomStutter"],"registeredInCatalog":42,"registeredNotInCatalog":["xrScanWipe","xrShutterStep"]},"method":"native","missing":["anamorphic","bandInvert","colorBars","defocus","ditherBit","dustScratches","echoFrames","edgeDetect","filmAdvance","focusLines","heartbeat","hrPassingShadow","hrSignalLoss","hrSubliminal","hzClosingDark","hzColdBreath","hzDrain","hzFaint","hzTear","hzUpside","kaleido","kzBulldoze","kzCardSlam","kzDustLanding","kzEdgeHit","kzKnockSmear","kzShockArcs","lightRays","loopScroll","negativeRing","perspectiveTilt","ripple","rotateSnap","scanBar","shatter","snapshot","speedLines","squash","starGlint","tvStatic","tzColumnShift","tzFrameStep","tzGridFlash","tzKnockBand","tzRegTicks","tzRuleFlash","wzHanafubuki","wzHyoshigi","wzMaku","wzOrime","wzShojiPass","wzSumiShibuki","xrAccordion","xrBandRepeat","xrBandZoom","xrBlink","xrBorderPunch","xrCheckerInvert","xrClockInvert","xrColorStrobe","xrColumnDrop","xrCornerFold","xrCrossFringe","xrCrossSplit","xrCrosshair","xrDiagSlice","xrDotWave","xrDropout","xrEdgeBars","xrExposureDip","xrFlipTiles","xrFourTints","xrLampFlicker","xrLetterSnap","xrLongShadow","xrLoupe","xrMoire","xrNested","xrPixelSparks","xrQuadCycle","xrRibbonTwist","xrScanBurst","xrShearSnap","xrSlotReel","xrSpotlight","xrStretchWave","xrStripeMosaic","xrSwingEcho","xrSyncBend","xrTapeCrease","xrThumbRow","xrTileLights","xrWaist","xrWaterMirror","xrZebra","zoomStutter"],"referenceCount":138,"registered":["blackFrame","blindsTrans","block","bloomFlash","bulge","chroma","crtOff","doors","duotone","filmBurn","flash","gridRepeat","halftone","hueShift","interlace","invert","irisTrans","lightSweep","macroBlock","mirrorFlash","mosaic","panelWipe","pixelDrift","pixelSort","posterize","radialChroma","rgbSplit","shake","slice","smear","splitSlide","strobe","tileShift","trackingNoise","vhsRoll","waveWarp","whipBlur","whiteFrame","xrDiscTurn","xrDropBounce","xrScanWipe","xrShutterStep","zoom","zoomPunch"]},"hold":{"additional":[],"blockingMissing":[],"catalog":{"count":102,"notPorted":[],"registeredInCatalog":102,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":102,"registered":["beatHop","breathe","colorRun","dangle","drift","echoTrail","eqBounce","flashBox","flipSwap","float","focusRack","glintSweep","glitchJump","glitchtick","glowFlicker","hWave","heartbeat","hrFlickerLight","hrLagOne","hrStare","hrTwitch","hzLoneTremor","hzLoom","hzPassing","hzPresence","hzSlowBreath","jelly","jitter","knBeatLean","knCounterRock","knGapBreath","knTickShift","knWordPulse","knWordRide","kzBeatSquat","kzDivingBoard","kzInertiaSway","kzSlinky","kzSquashWave","magnetJiggle","noiseDrift","orbitSmall","pluckString","pulse","rotateSlow","scanBand","shadowSway","shimmer","skewWobble","still","stretchPulse","sway","tilt","trackBreathe","tyKeyPulse","tyOutlineBlink","tyReadCursor","tyTrackStep","typeRattle","tzCaretBlink","tzCounterRules","tzIndexCount","tzKernNudge","tzUnderGrow","wave","windGust","wzFurin","wzMikoshi","wzNotan","wzShishiodoshi","wzTanzaku","xkBeatBump","xkBigSmall","xkBlink","xkBuoy","xkCradle","xkDepthRock","xkDoubleVision","xkFocusBreath","xkHeatHaze","xkKaraoke","xkLevelFill","xkLoudArch","xkLoudWeight","xkMagnifier","xkMarchEdge","xkMetronome","xkNod","xkPairUp","xkParallax","xkReflection","xkRippleOut","xkSlideBunch","xkSpinOne","xkSplitShear","xkStairStep","xkStopMotion","xkTallBreath","xkTiltSnap","xkWallBounce","xkZigzagFlip","zoomSlow"]},"layout":{"additional":["graphics"],"blockingMissing":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"catalog":{"count":366,"notPorted":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","interlude","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","title","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"registeredInCatalog":4,"registeredNotInCatalog":["graphics"]},"method":"native","missing":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"referenceCount":364,"registered":["center","dictionary","graphics","vcols","xbTwistFrames"]},"trans":{"additional":[],"blockingMissing":[],"catalog":{"count":56,"notPorted":[],"registeredInCatalog":56,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":56,"registered":["blinds","blockDissolve","checker","clockWipe","cover","cubeTurn","diagonalWipe","doorsOpen","flashCross","hrBlink","hrStaticCut","hzBlackout","hzLinger","hzSlideDown","inkBlob","irisOpen","knCornerSwing","knStripSlam","knStutterCut","kzCarousel","kzCrushDown","kzShoveOff","pixelate","pushSlide","shatterTiles","sliceShift","spinOut","tyGridCells","tyRuleWipe","tzBaselineFold","tzColumnReplace","tzRuleSplit","uncover","whipPan","wipe","wzFusumaPass","wzMakimonoRoll","wzMawariButai","xqAccordion","xqBladeRun","xqChevronPush","xqDiagSplit","xqFlipOver","xqHalftone","xqLightLeak","xqLouverTurn","xqPagePeel","xqPolyIris","xqPropeller","xqRingRipple","xqSoftSweep","xqStretchSmear","xqStripShuffle","xqWaveWipe","xqWindowZoom","zoomThrough"]},"treat":{"additional":[],"blockingMissing":["alternate","baselineShift","bracketsQuote","chrome","circled","cutShift","dotted","doubleOutline","echoOutline","emphasisDots","extrude","fadeChars","fauxBold","focusPull","glitchSplit","glow","gradientSweep","gradientV","halftone","hardShadow","hatch","hrDoubleExp","hrEroded","hrInkBleed","hrRedact","hzColdRim","hzDragMarks","hzHairlines","hzHusk","hzUneven","italic","karaoke","kerningWide","knWordPlate","knWordScale","kzCrescendo","kzHopArc","kzOnionSkin","kzSpeedShadow","kzStepShear","longShadow","monoGrid","neonOutline","none","outlineFill","rainbow","ransom","reflection","rotateAlt","shadowStack","sizeWave","softShadow","splitColor","spotChar","stencilGap","sticker","strike","stripes","tall","toneShadow","tyHeadBig","tyHeadRules","tyHollowKey","tyIndexSup","tzKanaSmall","tzLineNo","tzSuperNote","tzTocLeader","tzTypeGuides","waterline","wide","wzBinsen","wzKasure","wzKinpaku","wzObi","wzRakkan","xoAccentTicks","xoAltHollow","xoAltWeight","xoBandExtrude","xoBeltBand","xoBlobKnock","xoBlowUp","xoBorderBands","xoContour","xoCropMarks","xoCutLine","xoDiagSplit","xoDimLine","xoEmboss","xoFadeHem","xoFloorShadow","xoFoldHalf","xoGlyphCorners","xoGlyphUnders","xoGraphFill","xoGroundDots","xoHalfKnock","xoHalfScreen","xoHiliter","xoHollowBlock","xoLeadBar","xoMixedFills","xoOffsetFrame","xoOverlapKern","xoRampAcross","xoRuler","xoSeparators","xoSwoosh","xoTallWide","xoTapedNote","xoThread","xoTopCrop","xoTrackRamp","xoTwinOutline"],"catalog":{"count":122,"notPorted":["alternate","baselineShift","bracketsQuote","chrome","circled","cutShift","dotted","doubleOutline","echoOutline","emphasisDots","extrude","fadeChars","fauxBold","focusPull","glitchSplit","glow","gradientSweep","gradientV","halftone","hardShadow","hatch","hrDoubleExp","hrEroded","hrInkBleed","hrRedact","hzColdRim","hzDragMarks","hzHairlines","hzHusk","hzUneven","italic","karaoke","kerningWide","knWordPlate","knWordScale","kzCrescendo","kzHopArc","kzOnionSkin","kzSpeedShadow","kzStepShear","longShadow","monoGrid","neonOutline","none","outlineFill","rainbow","ransom","reflection","rotateAlt","shadowStack","sizeWave","softShadow","splitColor","spotChar","stencilGap","sticker","strike","stripes","tall","toneShadow","tyHeadBig","tyHeadRules","tyHollowKey","tyIndexSup","tzKanaSmall","tzLineNo","tzSuperNote","tzTocLeader","tzTypeGuides","waterline","wide","wzBinsen","wzKasure","wzKinpaku","wzObi","wzRakkan","xoAccentTicks","xoAltHollow","xoAltWeight","xoBandExtrude","xoBeltBand","xoBlobKnock","xoBlowUp","xoBorderBands","xoContour","xoCropMarks","xoCutLine","xoDiagSplit","xoDimLine","xoEmboss","xoFadeHem","xoFloorShadow","xoFoldHalf","xoGlyphCorners","xoGlyphUnders","xoGraphFill","xoGroundDots","xoHalfKnock","xoHalfScreen","xoHiliter","xoHollowBlock","xoLeadBar","xoMixedFills","xoOffsetFrame","xoOverlapKern","xoRampAcross","xoRuler","xoSeparators","xoSwoosh","xoTallWide","xoTapedNote","xoThread","xoTopCrop","xoTrackRamp","xoTwinOutline"],"registeredInCatalog":7,"registeredNotInCatalog":[]},"method":"native","missing":["alternate","baselineShift","bracketsQuote","chrome","circled","cutShift","dotted","doubleOutline","echoOutline","emphasisDots","extrude","fadeChars","fauxBold","focusPull","glitchSplit","glow","gradientSweep","gradientV","halftone","hardShadow","hatch","hrDoubleExp","hrEroded","hrInkBleed","hrRedact","hzColdRim","hzDragMarks","hzHairlines","hzHusk","hzUneven","italic","karaoke","kerningWide","knWordPlate","knWordScale","kzCrescendo","kzHopArc","kzOnionSkin","kzSpeedShadow","kzStepShear","longShadow","monoGrid","neonOutline","none","outlineFill","rainbow","ransom","reflection","rotateAlt","shadowStack","sizeWave","softShadow","splitColor","spotChar","stencilGap","sticker","strike","stripes","tall","toneShadow","tyHeadBig","tyHeadRules","tyHollowKey","tyIndexSup","tzKanaSmall","tzLineNo","tzSuperNote","tzTocLeader","tzTypeGuides","waterline","wide","wzBinsen","wzKasure","wzKinpaku","wzObi","wzRakkan","xoAccentTicks","xoAltHollow","xoAltWeight","xoBandExtrude","xoBeltBand","xoBlobKnock","xoBlowUp","xoBorderBands","xoContour","xoCropMarks","xoCutLine","xoDiagSplit","xoDimLine","xoEmboss","xoFadeHem","xoFloorShadow","xoFoldHalf","xoGlyphCorners","xoGlyphUnders","xoGraphFill","xoGroundDots","xoHalfKnock","xoHalfScreen","xoHiliter","xoHollowBlock","xoLeadBar","xoMixedFills","xoOffsetFrame","xoOverlapKern","xoRampAcross","xoRuler","xoSeparators","xoSwoosh","xoTallWide","xoTapedNote","xoThread","xoTopCrop","xoTrackRamp","xoTwinOutline"],"referenceCount":122,"registered":["boxed","inline","marker","outline","outlineOffset","underline","xoDoublePrint"]}},"format":"jizura.cavalry.native-build","hostVerified":false,"inventoryBasis":"ae/data.json names snapshot; cavalry/catalog/ae-presets.json when present; source files hashed, dynamic registrations not independently audited","moduleOrder":["native/00_registry.js","native/10_graph.js","native/20_components.js","native/25_recipe_tools.js","native/26_recipe_components.js","native/27_registry_bridge.js","native/28_registry_identity.js","native/29_pack_helpers.js","packs/p_00_registry.js","packs/p_camera.js","packs/p_camera_ext.js","packs/p_core_geometry.js","packs/p_core_scalar.js","packs/p_enter_core.js","packs/p_exit_core.js","packs/p_fx.js","packs/p_graphics.js","packs/p_hold.js","packs/p_hold_core.js","packs/p_hold_ext.js","packs/p_motion.js","packs/p_requested_backgrounds.js","packs/p_requested_decor.js","packs/p_requested_layouts.js","packs/p_requested_motion.js","packs/p_requested_transitions.js","packs/p_requested_treatments.js","packs/p_trans_core.js","packs/p_trans_ext.js","packs/p_x2_enter.js","packs/p_x2_exit.js","native/30_assembly.js"],"recipes":{"bg":{"bigChar":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset bg:bigChar"},"checker":{"differences":["Repeater is expanded to editable paths; tile paint preserves transparency."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:checker"},"dots":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset bg:dots (halftone)"},"frame":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"skyline":{"differences":["The transparent horizon is approximated with 24 editable opacity bands, not AE mask feathering.","Building and window paint is kept transparent instead of compositing the scheme background into the fill.","Absolute phase is on the exported assembly timeline."],"exact":false,"hostVerified":false,"scope":"cut","source":"AE background recipe skyline"},"split":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"splitH":{"differences":["Uses transparent foreground/accent paint rather than a baked scheme-background mix."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:bg1_split"},"splitV":{"differences":["Uses transparent foreground/accent paint rather than a baked scheme-background mix."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:bg1_split"},"xpRingDots":{"differences":["Repeated dots are editable paths rather than AE repeaters."],"exact":false,"hostVerified":false,"scope":"cut","source":"AE background recipe xpRingDots"}},"cam":{"barrelRoll":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"beatPunch":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"bounce":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"crashZoom":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"dollyIn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"driftDiag":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"dutch":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"earthquake":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"floatNoise":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"focusIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"handheld":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"hrDutchSnap":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hrNervous":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzColdShiver":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzCreepFreeze":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzGlanceBack":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzHeldBreath":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"jelly":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"knCardFlip":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knJumpCut":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knReadPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knRushIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knShearKick":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knTiltKick":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzKnockback":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzRecoil":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzSkidStop":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzWordNod":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"orbitDrift":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"panL":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"panR":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"pendulumSway":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"pullOut":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"push":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"rackFocus":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"roll":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"shakeHard":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"snapPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"spiralIn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"stepZoom":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"tiltDown":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tiltUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzGridStep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzItalicSet":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzMeasureZoom":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzTabStep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"vertigo":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"whipIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzByobuPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzKakejikuView":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzOjigi":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqArcSweep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqBeatBreath":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqCraneUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqDriftTurn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqFindFrame":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqFocusHunt":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqHeartbeat":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLeafFall":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLevelOut":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLongLens":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLoudZoom":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqPushPull":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqSquashRelax":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqStopMotion":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqTickRoll":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqTripodNudge":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqTruckAround":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqWalkCam":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqWhipSpring":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqWindUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"}},"decor":{"cropMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"indexNum":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset decor:indexNum"},"romajiLine":{"differences":["Kana conversion follows src/01_util.js.","Kanji requires an explicit reading; unsupported text is not silently replaced.","Annotation placement is a native reconstruction; visual conformance is pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native romajiLine"},"ruler":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"tyGlyphBody":{"differences":["Source: jizura_core.jsx decor:tyGlyphBody.","Draws outside text divisions, not per-glyph boxes.","Vertical suppression follows the source.","Native margin is params.margin or 3% of the shorter composition edge.","Actual host/render conformance remains pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native tyGlyphBody"},"xlLadder":{"differences":["Source: jizura_core.jsx axl_reg(xlLadder).","Rung cadence, reveal interval and three lit rungs follow the source.","AE side-band helper is expressed as explicit native geometry.","Native margin is params.margin or 2.5% of the shorter composition edge.","Actual host/render conformance remains pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native xlLadder"}},"enter":{"assemble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:assemble"},"backlight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:backlight"},"blinds":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:blinds"},"blur":{"differences":["Uses the existing Gaussian-blur component.","Emission requires the explicit verified blur host profile.","No unblurred substitute is emitted."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:blur"},"bounceBall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:bounceBall"},"bounceBig":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:bounceBig"},"clockWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:clockWipe"},"crtOn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:crtOn"},"cursorSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:cursorSweep"},"cut":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"diagWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:diagWipe"},"domino":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:domino"},"drop":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"dropMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:dropMask"},"fade":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"fadeStagger":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fadeStagger"},"fanOpen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fanOpen"},"flicker":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"flip":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"flipX":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:flipX"},"flipY":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:flipY"},"fold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fold"},"glitchIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:glitchIn"},"hatchFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:hatchFill"},"invertBox":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:invertBox"},"iris":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:iris"},"pendulum":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:pendulum"},"pop":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"printRegister":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:printRegister"},"quarters":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:quarters"},"randomOrder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:randomOrder"},"resolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:resolve"},"ripple":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:ripple"},"rise":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"riseMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:riseMask"},"rollIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:rollIn"},"rubber":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:rubber"},"scramble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:scramble"},"shuffle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:shuffle"},"shutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:shutter"},"skewIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:skewIn"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slice"},"slide":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"slideL":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slideL"},"slideR":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slideR"},"slingshot":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slingshot"},"snapRail":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:snapRail"},"spin":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"spiralIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:spiralIn"},"splitFlap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:splitFlap"},"splitJoin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:splitJoin"},"springIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:springIn"},"squashDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:squashDrop"},"stamp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:stamp"},"stretch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:stretch"},"tiltUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:tiltUp"},"trackIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:trackIn"},"trackOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:trackOut"},"tyKeyFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / enter:tyKeyFirst"},"type":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"unroll":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:unroll"},"vSlice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:vSlice"},"waveIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:waveIn"},"whip":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:whip"},"windBlown":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:windBlown"},"wipe":{"differences":["Editable wipe bar plus animated glyph clipping.","Clipping uses the existing JavaScript Deformer component.","Actual host/render verification remains pending."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:wipe"},"xeArcToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeBlockDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCeilingFall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCenterDeal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeChainBump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCoinToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeEndsInward":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeGearTick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeInchworm":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeLeapfrog":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeMarch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeOrbitIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeRicochet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeSwingDoor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeUnevenScale":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeVanishPoint":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xgComet":{"differences":["Eight editable delayed glyph copies replace AE Echo.","Trail sampling is frame-based."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / enter:xgComet"},"zipper":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zipper"},"zoom":{"differences":["Emission requires the explicit verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:zoom"},"zoomAlt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zoomAlt"},"zoomOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zoomOut"}},"exit":{"backspace":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:backspace"},"balloonOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:balloonOff"},"blindsClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:blindsClose"},"blur":{"differences":["Emission requires the explicit verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:blur"},"bounceOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:bounceOff"},"burn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:burn"},"checkerOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:checkerOut"},"clapShut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:clapShut"},"clockOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:clockOut"},"collapse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:collapse"},"cut":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"diagWipeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:diagWipeOut"},"dissolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:dissolve"},"dominoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:dominoOut"},"drift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:drift"},"echoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:echoOut"},"explode":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:explode"},"fade":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"fall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:fall"},"fanClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:fanClose"},"flip":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"flipOutX":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:flipOutX"},"flipOutY":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:flipOutY"},"foldOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:foldOut"},"glitch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:glitch"},"gravity":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:gravity"},"hingeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:hingeOut"},"irisClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:irisClose"},"knCloseGap":{"differences":["When words are absent, script-run segmentation is used.","Export source.words for authoritative planner segmentation."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:knCloseGap"},"melt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:melt"},"peelOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:peelOff"},"pop":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"popOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:popOut"},"rise":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"riseOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:riseOut"},"rollOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:rollOff"},"scatter":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"shrink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:shrink"},"sinkMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:sinkMask"},"slashOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slashOut"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slice"},"slide":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"slideOutL":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slideOutL"},"slideOutR":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slideOutR"},"spinOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:spinOut"},"splitApart":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:splitApart"},"squash":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:squash"},"stretch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:stretch"},"sweepCover":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:sweepCover"},"twist":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:twist"},"wipe":{"differences":["Editable wipe bar plus animated glyph clipping.","Clipping uses the existing JavaScript Deformer component.","Actual host/render verification remains pending."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:wipe"},"xhCentreThin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhCoinSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhEndsOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhHopFar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhPageTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhStairs":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhStomp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhTiltSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xiPlateCarry":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:xiPlateCarry"},"xjFocusPull":{"differences":["Emission requires a verified Gaussian-blur host profile.","No fade-only or scale-only fallback is used."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:xjFocusPull"}},"fx":{"blackFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:blackFrame"},"blindsTrans":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:blindsTrans"},"block":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:block"},"bloomFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:bloomFlash"},"bulge":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:bulge"},"chroma":{"differences":["Drives chromatic ghost separation when style.ghost > 0."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:chroma"},"crtOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:crtOff"},"doors":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:doors"},"duotone":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:duotone"},"filmBurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:filmBurn"},"flash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:flash"},"gridRepeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:gridRepeat"},"halftone":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:halftone"},"hueShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:hueShift"},"interlace":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:interlace"},"invert":{"differences":["Native invert flash uses an editable high-contrast foreground overlay rather than a pixel invert shader."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:invert"},"irisTrans":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:irisTrans"},"lightSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:lightSweep"},"macroBlock":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:macroBlock"},"mirrorFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:mirrorFlash"},"mosaic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:mosaic"},"panelWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:panelWipe"},"pixelDrift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:pixelDrift"},"pixelSort":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:pixelSort"},"posterize":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:posterize"},"radialChroma":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:radialChroma"},"rgbSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:rgbSplit"},"shake":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:shake"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:slice"},"smear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:smear"},"splitSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:splitSlide"},"strobe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:strobe"},"tileShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:tileShift"},"trackingNoise":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:trackingNoise"},"vhsRoll":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:vhsRoll"},"waveWarp":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:waveWarp"},"whipBlur":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:whipBlur"},"whiteFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:whiteFrame"},"xrDiscTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrDiscTurn"},"xrDropBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrDropBounce"},"xrScanWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrScanWipe"},"xrShutterStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrShutterStep"},"zoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:zoom"},"zoomPunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:zoomPunch"}},"hold":{"beatHop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:beatHop"},"breathe":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"colorRun":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:colorRun"},"dangle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:dangle"},"drift":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"echoTrail":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:echoTrail"},"eqBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:eqBounce"},"flashBox":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:flashBox"},"flipSwap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:flipSwap"},"float":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:float"},"focusRack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:focusRack"},"glintSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glintSweep"},"glitchJump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glitchJump"},"glitchtick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glitchtick"},"glowFlicker":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glowFlicker"},"hWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:hWave"},"heartbeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:heartbeat"},"hrFlickerLight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrFlickerLight"},"hrLagOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrLagOne"},"hrStare":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrStare"},"hrTwitch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrTwitch"},"hzLoneTremor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzLoneTremor"},"hzLoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_horrorB.jsx / hold:hzLoom"},"hzPassing":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzPassing"},"hzPresence":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzPresence"},"hzSlowBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzSlowBreath"},"jelly":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:jelly"},"jitter":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"knBeatLean":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knBeatLean"},"knCounterRock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knCounterRock"},"knGapBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knGapBreath"},"knTickShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knTickShift"},"knWordPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knWordPulse"},"knWordRide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knWordRide"},"kzBeatSquat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzBeatSquat"},"kzDivingBoard":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzDivingBoard"},"kzInertiaSway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzInertiaSway"},"kzSlinky":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzSlinky"},"kzSquashWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzSquashWave"},"magnetJiggle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:magnetJiggle"},"noiseDrift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:noiseDrift"},"orbitSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:orbitSmall"},"pluckString":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:pluckString"},"pulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:pulse"},"rotateSlow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:rotateSlow"},"scanBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:scanBand"},"shadowSway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:shadowSway"},"shimmer":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:shimmer"},"skewWobble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:skewWobble"},"still":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"stretchPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:stretchPulse"},"sway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:sway"},"tilt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:tilt"},"trackBreathe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:trackBreathe"},"tyKeyPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / hold:tyKeyPulse"},"tyOutlineBlink":{"differences":["Outline blink is represented as an editable stroke twin toggled on matching glyphs."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_typo3.jsx / hold:tyOutlineBlink"},"tyReadCursor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_typo3.jsx / hold:tyReadCursor"},"tyTrackStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / hold:tyTrackStep"},"typeRattle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:typeRattle"},"tzCaretBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzCaretBlink"},"tzCounterRules":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"jizura_core.jsx / hold:tzCounterRules"},"tzIndexCount":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzIndexCount"},"tzKernNudge":{"differences":["Gap selection uses the native deterministic hash, not AE's expression sine hash."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"jizura_core.jsx / hold:tzKernNudge"},"tzUnderGrow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzUnderGrow"},"wave":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"windGust":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:windGust"},"wzFurin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzFurin"},"wzMikoshi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzMikoshi"},"wzNotan":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzNotan"},"wzShishiodoshi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzShishiodoshi"},"wzTanzaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzTanzaku"},"xkBeatBump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBeatBump"},"xkBigSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBigSmall"},"xkBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBlink"},"xkBuoy":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBuoy"},"xkCradle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkCradle"},"xkDepthRock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkDepthRock"},"xkDoubleVision":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkDoubleVision"},"xkFocusBreath":{"differences":["Emission requires a verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkFocusBreath"},"xkHeatHaze":{"differences":["Native wave displacement is applied per glyph rather than pixel AE Wave Warp."],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkHeatHaze"},"xkKaraoke":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkKaraoke"},"xkLevelFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkLevelFill"},"xkLoudArch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkLoudArch"},"xkLoudWeight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkLoudWeight"},"xkMagnifier":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkMagnifier"},"xkMarchEdge":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkMarchEdge"},"xkMetronome":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkMetronome"},"xkNod":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkNod"},"xkPairUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkPairUp"},"xkParallax":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkParallax"},"xkReflection":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkReflection"},"xkRippleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkRippleOut"},"xkSlideBunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkSlideBunch"},"xkSpinOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkSpinOne"},"xkSplitShear":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkSplitShear"},"xkStairStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkStairStep"},"xkStopMotion":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkStopMotion"},"xkTallBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx: xkTallBreath"},"xkTiltSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkTiltSnap"},"xkWallBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkWallBounce"},"xkZigzagFlip":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkZigzagFlip"},"zoomSlow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:zoomSlow"}},"layout":{"center":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:center"},"dictionary":{"differences":["Existing exported dictionary text nodes are preserved.","Missing dictionary text is rejected upstream rather than synthesised from unrelated text.","Rounded part-of-speech corners are currently square."],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:dictionary"},"graphics":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"vcols":{"differences":["Split mode preserves supplied line breaks.","Repeat mode currently supports dim/same side styles; outline side styling requires text paint export."],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:vcols"},"xbTwistFrames":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:xbTwistFrames"}},"trans":{"blinds":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:blinds"},"blockDissolve":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:blockDissolve"},"checker":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:checker"},"clockWipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:clockWipe"},"cover":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:cover"},"cubeTurn":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:cubeTurn"},"diagonalWipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:diagonalWipe"},"doorsOpen":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:doorsOpen"},"flashCross":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:flashCross"},"hrBlink":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_horror4.jsx / trans:hrBlink"},"hrStaticCut":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_horror4.jsx / trans:hrStaticCut"},"hzBlackout":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzBlackout"},"hzLinger":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzLinger"},"hzSlideDown":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzSlideDown"},"inkBlob":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:inkBlob"},"irisOpen":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:irisOpen"},"knCornerSwing":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knCornerSwing"},"knStripSlam":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knStripSlam"},"knStutterCut":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knStutterCut"},"kzCarousel":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzCarousel"},"kzCrushDown":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzCrushDown"},"kzShoveOff":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzShoveOff"},"pixelate":{"differences":["Quantized coarse grid overlay replaces pixel-buffer Mosaic filter in vector scene graph."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:pixelate"},"pushSlide":{"differences":["The outgoing graph holds its final sampled pose when extended into the transition."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx:pushSlide"},"shatterTiles":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:shatterTiles"},"sliceShift":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:sliceShift"},"spinOut":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:spinOut"},"tyGridCells":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_typo4.jsx / trans:tyGridCells"},"tyRuleWipe":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_typo4.jsx / trans:tyRuleWipe"},"tzBaselineFold":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzBaselineFold"},"tzColumnReplace":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzColumnReplace"},"tzRuleSplit":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzRuleSplit"},"uncover":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:uncover"},"whipPan":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:whipPan"},"wipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:wipe"},"wzFusumaPass":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzFusumaPass"},"wzMakimonoRoll":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzMakimonoRoll"},"wzMawariButai":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzMawariButai"},"xqAccordion":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqAccordion"},"xqBladeRun":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqBladeRun"},"xqChevronPush":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqChevronPush"},"xqDiagSplit":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqDiagSplit"},"xqFlipOver":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqFlipOver"},"xqHalftone":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqHalftone"},"xqLightLeak":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqLightLeak"},"xqLouverTurn":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqLouverTurn"},"xqPagePeel":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqPagePeel"},"xqPolyIris":{"differences":["Outgoing graph holds its last sampled pose when its clip ends before the transition.","Documented JavaScript Deformer clipping; actual Cavalry render verification is pending."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"src/11p_x2_camtr.js / trans:xqPolyIris"},"xqPropeller":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqPropeller"},"xqRingRipple":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqRingRipple"},"xqSoftSweep":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqSoftSweep"},"xqStretchSmear":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqStretchSmear"},"xqStripShuffle":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqStripShuffle"},"xqWaveWipe":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqWaveWipe"},"xqWindowZoom":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqWindowZoom"},"zoomThrough":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:zoomThrough"}},"treat":{"boxed":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"inline":{"differences":["The inline knockout uses the scheme paper colour, matching the source treatment rather than a transparent Boolean knockout."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:inline"},"marker":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"outline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"AE outline treatment"},"outlineOffset":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:outlineOffset"},"underline":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"xoDoublePrint":{"differences":["The secondary impression follows glyph tracks.","The source's whole-item print pivot is represented per glyph here; whole-line pivot fidelity still needs comparison."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:xoDoublePrint"}}},"renderVerified":false,"sourceHashes":{"VERSION":"d84c9e596c7d6a94e5f74579ef8d8912a807b0d28582474900ad35dfb3edfcf4","ae/data.json":"45557dbad42863c937ea2f2afbf04d37f2859a501b8f97302e892ff9cedcf3f1","ae/p_bg1.jsx":"277dd68bfa368f708688146feb271d9b22c194134c2c179e218f803e82aac7e4","ae/p_bg2.jsx":"c19f16e223e0f8afc517121912ade27fa4669e74a54d19b1fd9b093214faa2af","ae/p_bg3.jsx":"83aabd1592aec8ea8afc4a165e6984134e78ebf314ef9d2c9b682295a5391bd9","ae/p_cam.jsx":"507adf001e732de51aa3dc6d3bcb1736f028f888425cbf889bcc795962391c89","ae/p_decor1.jsx":"b6d46026f39f56aac156db60c7d732a26715b60e36bb8c435b3d8eb696ce97fc","ae/p_decor2.jsx":"c8681312f00accc2e46ad7a5174d264467a40e5a359afd71a80c9f5492433db1","ae/p_decorB1.jsx":"74cf5d7767f23d0a2cb2d7e856439488d4de6b0e2f294fa49e6cedff2371d182","ae/p_decorB2.jsx":"6f7791b9d6911449cfe45f883a480ad38ddb5b98728cbc4cd3d20401a9521144","ae/p_enter1.jsx":"6df64926151b13b7f3008d0af8c2ade387dc547b4e65db7489fd45215813c82c","ae/p_enter2.jsx":"d38bed742fb2fafedcd39966ca1464b9fc3440c3e080099da53cc885c5a7140d","ae/p_enterB1.jsx":"8fc835ae32ce39cf92db09d57e7bf47cbd67ee3888f42a03d7a63c9fa5a4133e","ae/p_enterB2.jsx":"d210842a7e17c47800cad69fdb0aedd7f094d586c68ea3da0df68db5123a967c","ae/p_exit1.jsx":"a03db79991dd5e8d3f6a25f66e54afb70488562ad697e8f4d16ba684f400b423","ae/p_exit2.jsx":"2651c96e555344de78bc3402af2d44f9d412537bc1d232438018794b8ed6a4cf","ae/p_exitB1.jsx":"40a3ebb2b2899267c8891e29c9c513aab4fc7079ee4078e3fb8b9cb54b0435f9","ae/p_exitB2.jsx":"e531df1901cdcc7dd6ee4101cd6ed36f6c3c3b802eae7aca40d12d5415794067","ae/p_fx1.jsx":"8f89d061e72beefc729031ddafa53eb10275b8d7c56206a5f7c0281eaed5d0ed","ae/p_fx2.jsx":"16c65188d7697a1a39fc0b2c978bde5cec2e3bffb58596a27e5a3e13c63f7b01","ae/p_horror1.jsx":"eaaf23a18f25c4f42b3a4875951b87a94bce5e42b5549ec553578577c7b83458","ae/p_horror2.jsx":"8874c4ab727cbc71ccdeb5619e7da5d2f3e39409dd20d085a2ab2f8ec6fbd793","ae/p_horror3.jsx":"f588666cb1e5344d219333c5a1b1d7ccd7434964f5c06ed0987ab9e17d1c9ce3","ae/p_horror4.jsx":"773bee02f22a0444ea68355e2377eadc4d642687614e08e718321de4f9ffb6a3","ae/p_kinetic1.jsx":"ec90aa765e35a1bd4ae2712d3bf544d5b25e3986f7584e75a4c66b35594036ec","ae/p_kinetic2.jsx":"28a9b09591f2ed79ba83f8f11f3e083c859abeae07c1ce9aa9d44f46ab54c6b5","ae/p_kinetic3.jsx":"888a39a7a896836a07b4e05ce2f9017264e301b365e4851cd7b803d39d296b38","ae/p_kinetic4.jsx":"7a309d43ebb2783cafbdb5085e49d9061d9d874231c85dd417f675bc12e6fe79","ae/p_layoutsA1.jsx":"8cb51bde2098425b99b56be138e17cfd3409f40dca7fa5ab4d322eff32dc7e40","ae/p_layoutsA2.jsx":"b9f331dc1f57a93f3e0e7eceede0ceefd7553f1da0cbd111e2d3fd14aa87482f","ae/p_layoutsB1.jsx":"361cf6e99bc4acb14829927fe604bb84a689578b9072bb48c0e23e6f1e06de06","ae/p_layoutsB2.jsx":"373d10cdb7b4cacd470a4d96acc2e19e2422e0c2516cf579cb7d799f04b7d7e5","ae/p_layoutsC1.jsx":"9d5c8d8d1435cb32fab8b0f2aaab5d6648db3f3a2d0af95c6a362cda8d00bd1f","ae/p_layoutsC2.jsx":"a705607883afd551d549db96e74b2cc94ddc64c7ac9f118747d8fc9adc6316e4","ae/p_layoutsD1.jsx":"4b9c3f52709943f4c799a89e80e26a5f96fd2d59bbc1d48b0f53526ecbf925e8","ae/p_layoutsD2.jsx":"8521c40db367c94f65bc16918f82131e52cec75ed9686b27180634bd51fca9f1","ae/p_trans.jsx":"0de7af113add0c633032f7f2f4e59a8e4de10c919f755556ec083dd8ec984021","ae/p_treat1.jsx":"44c7e5f869d24f6a03b4c1f4e2ded5f9168b0f31309a6db931b139b7bae79eb9","ae/p_treat2.jsx":"544421a961e977bcc5cff93c48043853ac23fad4196b60ed204dd38257faead6","ae/p_typo1.jsx":"34a5df2eda66bffd98d01fcf746978a83c69d24d1fb98952f8f010b3fdfb8b91","ae/p_typo2.jsx":"a7333e7f4de55e56acd319832022a326119a8402a25376df4a5f29fb981dc61d","ae/p_typo3.jsx":"2a8695048360fd1ade5f9ba5f0beeb2f6a670afc8fccb003b94a49c30e3a1c4b","ae/p_typo4.jsx":"9c93d9a9a44ae8a4a5cfe7a606070a5a77b05ee46d6a13ca6b187f1391b7c1ed","ae/p_x2_bg1.jsx":"c1dadcbc741b22b0c8e2c1c605889320cfaf1c7341f8654c78b8e54282883848","ae/p_x2_bg2.jsx":"5793a87e873189293deabbb3ddd306b9a11f9057d3b0aa918771e9a9259f4401","ae/p_x2_camtr.jsx":"f2ac5c654073713e685cb39d866d292c2dc53c56f134d7d5f0130e82da903802","ae/p_x2_decA1.jsx":"3cb1cbadacd234f5c9b63b3cdb7ae4aa6a7b061dd303da090fd07b3c34fa26e4","ae/p_x2_decA2.jsx":"e8cfe3da3d29aee4467928633246f3fc70735940354ae1d682f84786aad2a7b7","ae/p_x2_decB.jsx":"559965bd21666260cc72692578a7d6e71fd4a44db9134b5900a33b63a670c66b","ae/p_x2_decC1.jsx":"ddbc775c69ec33339e5f3c32ae45326fa3d91a07aaeee548cb1711e23257788d","ae/p_x2_decC2.jsx":"1fc457e00718d335b55ef29f4289acab8c15c46a78d191334f730e609dc95833","ae/p_x2_entA.jsx":"95da1b4c8e9519e1167147b078b8f053c23174702e13fa74ca74702adc9c4ed3","ae/p_x2_entB.jsx":"ec25d24d3116a972e423ec5fbc86c65c8e2c694e72e02d05be5bfb536a08f135","ae/p_x2_entC.jsx":"0454bd2e85e10e75755d32da66dfe9d685b1c4370fb8250c2f471434dad8d11f","ae/p_x2_exA.jsx":"7a90db95077cec0c2fc23a52515433d9dd01a46b8ffdbaf2b80879b727f0e6ce","ae/p_x2_exB.jsx":"5e5ea8dadfea04a7aade8d1a75b46748a9e6846ca1421af14d85a111acaf2bd1","ae/p_x2_exC.jsx":"5fc726c05103398881af02444616f0a4b51286423b07e66748df9c8b6ce0b075","ae/p_x2_fx.jsx":"8339c3ba59a1780dd5a8750dc7f82c18d55aa0d99df929315faa1a44f1071873","ae/p_x2_hold.jsx":"da7611653b0711d2cf015f3e867567b4ed14fe5e6bf51531b2211ac0a2226631","ae/p_x2_horrorA1.jsx":"4e6c9f70bf32267c358c371e2bbe1517be3ea32c0d47d5ca50368409e196dccd","ae/p_x2_horrorA2.jsx":"da00aaa84adad9b1d42cef75d711674e8dc9a6b2cd54adeb26181f5d43456e79","ae/p_x2_horrorB.jsx":"c6acd93a53764fd905562e84d22235ad2a5602e646ec6a555a09db69fca96b51","ae/p_x2_kineticA1.jsx":"e8df9361a1cc6cc1e30ef087503d63669ca111e253ed300ded68eda914b3ae05","ae/p_x2_kineticA2.jsx":"22a27c3bdda048cfe3640d4fd75800958c26236f678d3baeadbcb1b0a60f53c9","ae/p_x2_kineticB1.jsx":"65b1b8857f964e63a323f480ced6c86fd780324b116bc21675598a4608afae90","ae/p_x2_kineticB2.jsx":"04eb1dba0f99613263750e3bad3d44cd43c9e7b37499d84a17b76f77aabb14e2","ae/p_x2_layA1.jsx":"a5e40aaec917ad1804fbaa8c07cee15b2785413e70aee0045526c4146f4cadf8","ae/p_x2_layA2.jsx":"a2a784cf018c173e4f5967a13a6d6ba32979e3af7d05b9342aa9dc99c6277bbd","ae/p_x2_layB1.jsx":"c4bf3b77276e476f7f8a8355f4b3cd8711986b43abacfd3c1a3bec3eb4961839","ae/p_x2_layB2.jsx":"ea67912cd1fcbce6c3ae2b639ae3bf42ce14dcdfe5ef5bdf5bd06eece974bb25","ae/p_x2_layC1.jsx":"f81e6af39a4dd24418877326a6425180c8719f0ccb4cd91d87740573c41358bb","ae/p_x2_layC2.jsx":"78930a5191544e5734b6ca0ac0143d779f44f7239e0ba489b7c81bbe66b77822","ae/p_x2_layD1.jsx":"f16f941ad330e60e945408f3285feb12c05f7051de3f21c24293b1f1b41a50ee","ae/p_x2_layD2.jsx":"026f5cbc0ebcaade50f0161ea0d7c680dd1f30e1194399a467cd6c273d68ee28","ae/p_x2_treat1.jsx":"ac1432294a46799374ed765a22d77f5b8465af1f501b5d9ee0d0cec825bba421","ae/p_x2_treat2.jsx":"03f79bfa5cfe11b305408454c99d4af58761d2c3f40847227ab48e1cc737062b","ae/p_x2_typoA1.jsx":"0b09b7f8b51a9c304131ca9ae31cce52301d65d420283321af044781586f7419","ae/p_x2_typoA2.jsx":"63f1f909b75278be4606bc632b15f9144763abe6f12f66c764ef584deeedd1f6","ae/p_x2_typoB.jsx":"78087f1e3aba1336105fe0cffad69b74b1d293cf832df2c2edfc2055574b3b84","ae/p_x2_waA1.jsx":"9798164bb6b7aec661a6d5d6aa4107c2a0e1ad8898c9ed9b7ce8fb1320b929bd","ae/p_x2_waA2.jsx":"a09b7a8880c13d6172ca18477e4fc91c6614289c69a20fc24f8cc9ae353eb9c8","ae/p_x2_waB1.jsx":"361afddcc6bc1b4d67935b181343744bd7e166927126f0494ab3013eed8ccdf0","ae/p_x2_waB2.jsx":"ce0f243f05132247760626ca9b63089d02cec97fc356f1ff4fef7527d221cd70","build_cavalry.py":"b9b2eae1c0aca936f65b43258319f1a02042f663e4e01cc377747df82dc48a2c","cavalry/bridge.js":"cb0a946f7df3a39d892132d64bcacd21c9dc700aec3061f18fe69f29a5f74911","cavalry/browser.js":"ca96f1cb546ba7771189f5f81176ca7728b3ab047c5e98b771f4662ccb7bce22","cavalry/loader.js":"f4afa53976fcfd4c5b66467746024a7f1c2b779d76f941df8d4a9b3f74c2b99b","cavalry/native/00_registry.js":"bd9e19352d8ccfa7af6eff999b53588ace86a0bb26488a128d7001a22c414ecc","cavalry/native/10_graph.js":"afa2e39bca9547bc739de2fbc78e33bc72b5ef9881323198b71b2c61c1ce262b","cavalry/native/20_components.js":"0e551a2e4fcf3f9a575ba233bb37171c75141082a1cd0e32a09e547980c0cf31","cavalry/native/25_recipe_tools.js":"92c4df9ac1f160e95831fc22b10d524d5060063968ddee8926913d455a45e27a","cavalry/native/26_recipe_components.js":"40a776a909d3ae7dd0fc69d92f72b55592a0c180c9f76c0e5e4b1d5a3681d484","cavalry/native/27_registry_bridge.js":"a8d7059f743ef7c07ec7d7034be58a4ca094afeddb5e3aa783df66986e289493","cavalry/native/28_registry_identity.js":"06c24778f47f463a5b312729ca6f9eff828508d9337b460a7b771c3664c1b41a","cavalry/native/29_pack_helpers.js":"3a9fbfb0dcc28cfad0454251ba5a6b192004b895137a53adc7e542701998fb94","cavalry/native/30_assembly.js":"4b1408479b68dce2bebb55d9a93ebb8b6429b44ca4a6c430d84e7010d58c3cf7","cavalry/native/browser_adapter.js":"8585093f8d112efde76c5eed009bec501b0023f3e93ab248dff40b772f4fde70","cavalry/packs/p_00_registry.js":"06ae3f1837e48cf86c543b8554e1d5b06f4839b13ad56869df3bfb711c5fb819","cavalry/packs/p_camera.js":"f03fe7e4e6f3d39eb1c7ba21ebcc4270548f89405f0ebc14dee77afa10d45a37","cavalry/packs/p_camera_ext.js":"1039361597c5d5bb63ba1e92d2d7b7ffd06d9603a652f51c87c39af17c449bc6","cavalry/packs/p_core_geometry.js":"e7ac6cc5ee5c5548d5484822376e250e7eea455bef499f09a982170fe363cbd1","cavalry/packs/p_core_scalar.js":"f14c1b33a08cc91c3262f7b4bb2a7479e23d87dd73f88a15b3fb50cef6473822","cavalry/packs/p_enter_core.js":"31e4ad600c54b0571ac3687e66512e8384a5dc918b58461552449766ab15c2aa","cavalry/packs/p_exit_core.js":"d090b143e82a81816e9c1945ceb60bc5d027092446e95000d986d4ae96dd49bf","cavalry/packs/p_fx.js":"591525e64d66fe4bd2978b671ee14f8db940ecc763d10ddfec98a2e5cb2d8507","cavalry/packs/p_graphics.js":"2df776489d6316150c1fa0ffe4e53fb0515734f450f9d550d7f95c4801ff41fa","cavalry/packs/p_hold.js":"f6f6a890cbae16924bf01edae3f267f32cf6a9834680cc168d1fc9880ff2bd4b","cavalry/packs/p_hold_core.js":"9b2bd78489269b0ebd8f5cb0411915b01a3f99bb54e0ee5039f6733312cbc0aa","cavalry/packs/p_hold_ext.js":"f04998d9d6b17fe764ea754096bd9bca708ae558a94e636fb01df96db87b4585","cavalry/packs/p_motion.js":"662351521188450062aebf917d4052d442af3f01d59cb1a987f9e830c9331d39","cavalry/packs/p_requested_backgrounds.js":"8553940cafceca6357d4d1c32ad1e6313436c6dc3671c42945ae50f7434d1a97","cavalry/packs/p_requested_decor.js":"9f3110a36f310ac27e9c32386c8e0f4f6de95ce1fcaba10118567b3b23462527","cavalry/packs/p_requested_layouts.js":"ac5d37ef34364e342e44eba15b917d8406fa8eb65c0778d1f3ee9f36f2f93c63","cavalry/packs/p_requested_motion.js":"2f5cde527a707936fd0ce6a2495c84ae14d2580ec19333e64dc692caaa7a550a","cavalry/packs/p_requested_transitions.js":"af63b5321d133ce61a6672cc3bad714ff5541f350b4c43db02ccab750fa21034","cavalry/packs/p_requested_treatments.js":"001bd8ca9cc3dd0a63af9da539caad604372cb0b1732a4ab12a11400b594d479","cavalry/packs/p_trans_core.js":"61ff3401e73f12aec0b3a2bfad02147e57f6300d508ade0b6c2eea0bad7236c4","cavalry/packs/p_trans_ext.js":"3969aced76853c811e1faa20b482e7773b34bfc5e2247f3ec08b28e92db39f3a","cavalry/packs/p_x2_enter.js":"2301d03492403c064c52794a23356719df84cf8cac812f9d635b24cd6e5e4b7b","cavalry/packs/p_x2_exit.js":"9eb2af8ee3a7287dc7b59ab85da8efeb9d093cb6d18254bf1fa59cabf87886e0","cavalry/panel.js":"2dca5178f41a9cc75f8a3cb3b4c4ffa01649e66fc0585261b8125ba604ae29f4","cavalry/tools/test_requested_native.js":"e1b43b4bc20e6347a42d9a285f521b329ddf1fecc157387fffdb1d658f1a2cb4","src/11p_bgcamB.js":"baad1dab7a4743b4eab351c9e9dfa76d9af5f4e00b29538ce41837a5628dd644","src/11p_decor.js":"b533343d8ad5ad114300fed174d4eb0dff092201c778a6697345157595b933a5","src/11p_decorB.js":"f49747910c456cb829bdfeffa5c0342898305a8e01eebfa8ac18b2cc279bcd62","src/11p_enter.js":"45b8d89a37e08bcfe035d4fde3f93ec739fca891116aeeba62ba28e31d7c97c6","src/11p_enterB.js":"31bce8e07cec677f7ff5c1c77f7f1775a4e8918e46f7a86efdf86bca3f9efa14","src/11p_exit.js":"a013c8d40ba71fa69ea1bfa0782d2a55b7a152aa91bc7c0f7d85a9e89dca0b2b","src/11p_exitB.js":"2b0479412290e7fc9d4d61c4121c2970e0394f5f843c1407c2a1c84478480629","src/11p_fxB.js":"7fe3ce188d24d336a539a1a37752bf2515959fb940ac64518136fdb7bb875946","src/11p_horror1.js":"34a6f7afe72c3e4d4459c671d98f1bb97c4a5fe70484179ce4e1c04788367ed0","src/11p_horror2.js":"828ff4c48181e9755c5e2a82be4e30cab491ca0614cc25d711131108af50b7e4","src/11p_horror3.js":"c99a0d0cef6cf2b246e84586d5a33ebc750d1ef659a1490f211e8316d2727853","src/11p_kinetic1.js":"012282d5f3d44ef99c1b5fa26dd85210b138c4ecc73f54084f929bc74bd0045e","src/11p_kinetic2.js":"8c0401cfc265b6fe79d83e6a056e1bed93f42ae60a17890db165058f842ffd45","src/11p_kinetic3.js":"c1905cb3a5fb7fb7a14e9984b7ee4ce6b435eddeaab89fb71742c0075b7b3393","src/11p_layoutsA.js":"942e712bba6fa21f9b15f5cf5e0b0ccdf9568fa65f65802414180574acddb0ca","src/11p_layoutsB.js":"44a37fef1af83de84131bfe705e6eda2abc873bc5e5c11d2e1b7ed2062fc4191","src/11p_layoutsC.js":"223e99988781cb16d5e146112c040a303e8dbc53d9f29056a6af61906c87cb01","src/11p_layoutsD.js":"64e8276750ff609eb505b251b8e34bb7d7bcf8d759bcef55d94542a2afcb2bad","src/11p_looks.js":"724f124e9b0dfac715bcffb56bbc0342ccc78fdc5f3151481b2c52583470afba","src/11p_styles.js":"a306862fa099e7fd39b2efe1b63a6d30b8abf0462e141a075cd7b9ec24106922","src/11p_treattrans.js":"32711ff3576a30b861ff76ac2330d34cf93db2b1f11c945c013b8967d3f26964","src/11p_typo1.js":"0a1c61c77ebdd61754120283078a1e79e339a3de5341974e9ac7b5bb5a2878da","src/11p_typo2.js":"0fefc16f3e3711da71763bf6f874d02532820e3bbf2f8fd9e327af1a107914e6","src/11p_typo3.js":"bf8f19513f94044faedf74b45601d6cffa467edb79e37542149d34213c03df77","src/11p_x2_bg.js":"b00de8dccdcb6d14296af968973ae1401d98ccf3e12963149e15be8ad0b7f326","src/11p_x2_camtr.js":"40f56b6fa9b6ab6604f37eca2966d8dbce5e818173ad439c6edd3dcd332d8c13","src/11p_x2_decA.js":"32590bab78767e6c2618be9636681f319f2c1a97a9a23af7f2473daca63112b3","src/11p_x2_decB.js":"51714e9ad069b57da4e3ffd682fd2e66f8a0022c2e9efbed04478634a630fada","src/11p_x2_decC.js":"dfa31679d04e2affb884efe1c785422eeb940c646e58972075fb60dffc762279","src/11p_x2_entA.js":"618f428dc97779e46bec9d718810a9c6b4a76904e52c24229dce415f4fc8afde","src/11p_x2_entB.js":"6efc3593a2c9901e1db4a6090d9daf06e05c1a51bf3c48514688642553773d6f","src/11p_x2_entC.js":"b2e7bdb15364736b3c5048bb726416433f457c681e1644acf1dd7b1a08be5892","src/11p_x2_exA.js":"98c893247180f3852af2f5281662f3e9279aa479d58914dfdf2f25b492ca8498","src/11p_x2_exB.js":"27e329bb7f06fa19cf42169e1f4061d09dadd3d9a8b8ec83acb9da973bcc8e60","src/11p_x2_exC.js":"1a10307c1944c67b58ddd1109e6629eabe5653e735a7107a0f3cff2c48f5c761","src/11p_x2_fx.js":"3fb54c6848b4bdab74fdb31d98b740bcac417a93e0ae89a01be46d05177d82ca","src/11p_x2_hold.js":"48cc7c1c15c21ab07e54b488df57d6f24076b0d9f0d8c08cb1a7087eea8f942a","src/11p_x2_horrorA.js":"445797138a9317310ced2dbe6ce43531f65bbe0d0672702f7d6dd2ba27071cb2","src/11p_x2_horrorB.js":"70b02303a91a3977f78fbd2bd8749c7ab510fb8359228ab4d3a487c67f94aa0e","src/11p_x2_kineticA.js":"1151b4a9aa55d4738545ef1a701cf70d4fdf96a9b512886642818494e9d0da8f","src/11p_x2_kineticB.js":"703d7d142451b107f466c30cb2826c1d87cd57537b1ba7e08b8a51e169943d14","src/11p_x2_layA.js":"7ce60a5197ba7252758c5f0f29b4c6ef3c315b75ad80894ecbf437c9b192a756","src/11p_x2_layB.js":"853fefcdb8585534f3fe1a5dd4825d759c89876a5a43b34b879320dcd91fc062","src/11p_x2_layC.js":"07d81f1d5df0bb579ecb2aadc1ddf38cfdc3a44e9e1c0f64309544da936ee3c9","src/11p_x2_layD.js":"29012dc1db484f0b571d3e08c27a3cfcdfcdc7a294103bf1253969dd8939b66a","src/11p_x2_treat.js":"1a8348da5ebc55fffbd6186f4513af5e4f6f020d8ccd2979c8de345ce9516aa9","src/11p_x2_typoA.js":"20fa8af32c93717961a4ec70a8f6b93b5c010265ba37e5aa84fba0d29ebb2be3","src/11p_x2_typoB.js":"acead55a2a8a37797b2d98a35546a0b7ec5fef7c4e5830199f7b2e211af71c5c","src/11p_x2_waA.js":"f38e3c1f4610cf90f8d1f4a426b2331d850dd1e872181745c605a5a5909233cd","src/11p_x2_waB.js":"d3d3a37ee6c99857e40008b4d8b1410013ba7a7738615b61300f45aae1cf1d04"},"status":"preview","version":"0.13.0"};
+var JZCavalryBuild={"blockingMissing":1092,"buildId":"6781fefd5cc063ec4bb015222eba5620256caf324636e4f77af3ef828fbe1d6f","catalog":{"counts":{"bg":130,"cam":71,"decor":260,"enter":251,"exit":221,"fx":138,"hold":102,"layout":366,"trans":56,"treat":122},"groups":{"bg":{"count":130,"registeredInCatalog":6},"cam":{"count":71,"registeredInCatalog":71},"decor":{"count":260,"registeredInCatalog":5},"enter":{"count":251,"registeredInCatalog":178},"exit":{"count":221,"registeredInCatalog":56},"fx":{"count":138,"registeredInCatalog":138},"hold":{"count":102,"registeredInCatalog":102},"layout":{"count":366,"registeredInCatalog":4},"trans":{"count":56,"registeredInCatalog":56},"treat":{"count":122,"registeredInCatalog":7}},"source":"cavalry/catalog/ae-presets.json","total":1717},"coverage":{"bg":{"additional":["dots","frame","split"],"blockingMissing":["argyle","asanoha","auroraRibbons","bigStripes","bokehBg","borderFrame","chevron","cloudLayers","concentric","dotGrid","duotoneSweep","eqBars","filmStrip","fireworks","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","snowLayers","speedLines","spiralArms","splitDiag","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"],"catalog":{"count":130,"notPorted":["argyle","asanoha","auroraRibbons","bigStripes","bokehBg","borderFrame","chevron","cloudLayers","concentric","dotGrid","duotoneSweep","eqBars","filmStrip","fireworks","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","snowLayers","speedLines","spiralArms","splitDiag","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"],"registeredInCatalog":6,"registeredNotInCatalog":["dots","frame","split"]},"method":"native","missing":["argyle","asanoha","auroraRibbons","bigStripes","bokehBg","borderFrame","chevron","cloudLayers","concentric","dotGrid","duotoneSweep","eqBars","filmStrip","fireworks","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","snowLayers","speedLines","spiralArms","splitDiag","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"],"referenceCount":130,"registered":["bigChar","checker","dots","frame","skyline","split","splitH","splitV","xpRingDots"]},"cam":{"additional":[],"blockingMissing":[],"catalog":{"count":71,"notPorted":[],"registeredInCatalog":71,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":71,"registered":["barrelRoll","beatPunch","bounce","crashZoom","dollyIn","driftDiag","dutch","earthquake","floatNoise","focusIn","handheld","hrDutchSnap","hrNervous","hzColdShiver","hzCreepFreeze","hzGlanceBack","hzHeldBreath","jelly","knCardFlip","knJumpCut","knReadPan","knRushIn","knShearKick","knTiltKick","kzKnockback","kzRecoil","kzSkidStop","kzWordNod","orbitDrift","panL","panR","pendulumSway","pullOut","push","rackFocus","roll","shakeHard","snapPan","spiralIn","stepZoom","tiltDown","tiltUp","tzGridStep","tzItalicSet","tzMeasureZoom","tzTabStep","vertigo","whipIn","wzByobuPan","wzKakejikuView","wzOjigi","xqArcSweep","xqBeatBreath","xqCraneUp","xqDriftTurn","xqFindFrame","xqFocusHunt","xqHeartbeat","xqLeafFall","xqLevelOut","xqLongLens","xqLoudZoom","xqPushPull","xqSquashRelax","xqStopMotion","xqTickRoll","xqTripodNudge","xqTruckAround","xqWalkCam","xqWhipSpring","xqWindUp"]},"decor":{"additional":["ruler"],"blockingMissing":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"catalog":{"count":260,"notPorted":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"registeredInCatalog":5,"registeredNotInCatalog":["ruler"]},"method":"native","missing":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"referenceCount":260,"registered":["cropMarks","indexNum","romajiLine","ruler","tyGlyphBody","xlLadder"]},"enter":{"additional":["fade","flip","rise","slide"],"blockingMissing":["xeBellows","xeBlanks","xeCellSlide","xeCloneMorph","xeFillGaps","xeGlyphCurtain","xeKanjiFirst","xePiecePile","xePieceRain","xePieceStrata","xePieceVortex","xeRedact","xeSkewFlap","xeTripleBeat","xfChevron","xfClosingHole","xfCornerBloom","xfCrossOpen","xfDiagStrips","xfEqualizer","xfHolesMerge","xfJaws","xfOutlineLead","xfPassingWipes","xfPrintHead","xfQuadRelay","xfRingDial","xfRollerShutter","xfRovingWindow","xfScanner","xfSlantLouver","xfSpiral","xfStackStrips","xfStaircase","xfStripSort","xfSunburst","xfTapeOff","xfThreeTier","xfTraceFlood","xfTriptych","xfTwoFields","xfUnderSweep","xfWeave","xfWiper","xgAfterimage","xgBlockSink","xgCoinSettle","xgColorPour","xgCornerUnfurl","xgDoubleVision","xgFillDock","xgFocusHunt","xgGate","xgHangSign","xgHeavyDrop","xgJelly","xgKeyPoses","xgLensFringe","xgNewsSpin","xgNoseDive","xgPaperFall","xgPumpUp","xgPushBar","xgQuarterTurn","xgRatchet","xgRoughCut","xgShearUp","xgSignSpin","xgStampLift","xgStrobe","xgWallHit","xgWiper","xgZipLine"],"catalog":{"count":251,"notPorted":["xeBellows","xeBlanks","xeCellSlide","xeCloneMorph","xeFillGaps","xeGlyphCurtain","xeKanjiFirst","xePiecePile","xePieceRain","xePieceStrata","xePieceVortex","xeRedact","xeSkewFlap","xeTripleBeat","xfChevron","xfClosingHole","xfCornerBloom","xfCrossOpen","xfDiagStrips","xfEqualizer","xfHolesMerge","xfJaws","xfOutlineLead","xfPassingWipes","xfPrintHead","xfQuadRelay","xfRingDial","xfRollerShutter","xfRovingWindow","xfScanner","xfSlantLouver","xfSpiral","xfStackStrips","xfStaircase","xfStripSort","xfSunburst","xfTapeOff","xfThreeTier","xfTraceFlood","xfTriptych","xfTwoFields","xfUnderSweep","xfWeave","xfWiper","xgAfterimage","xgBlockSink","xgCoinSettle","xgColorPour","xgCornerUnfurl","xgDoubleVision","xgFillDock","xgFocusHunt","xgGate","xgHangSign","xgHeavyDrop","xgJelly","xgKeyPoses","xgLensFringe","xgNewsSpin","xgNoseDive","xgPaperFall","xgPumpUp","xgPushBar","xgQuarterTurn","xgRatchet","xgRoughCut","xgShearUp","xgSignSpin","xgStampLift","xgStrobe","xgWallHit","xgWiper","xgZipLine"],"registeredInCatalog":178,"registeredNotInCatalog":["fade","flip","rise","slide"]},"method":"native","missing":["xeBellows","xeBlanks","xeCellSlide","xeCloneMorph","xeFillGaps","xeGlyphCurtain","xeKanjiFirst","xePiecePile","xePieceRain","xePieceStrata","xePieceVortex","xeRedact","xeSkewFlap","xeTripleBeat","xfChevron","xfClosingHole","xfCornerBloom","xfCrossOpen","xfDiagStrips","xfEqualizer","xfHolesMerge","xfJaws","xfOutlineLead","xfPassingWipes","xfPrintHead","xfQuadRelay","xfRingDial","xfRollerShutter","xfRovingWindow","xfScanner","xfSlantLouver","xfSpiral","xfStackStrips","xfStaircase","xfStripSort","xfSunburst","xfTapeOff","xfThreeTier","xfTraceFlood","xfTriptych","xfTwoFields","xfUnderSweep","xfWeave","xfWiper","xgAfterimage","xgBlockSink","xgCoinSettle","xgColorPour","xgCornerUnfurl","xgDoubleVision","xgFillDock","xgFocusHunt","xgGate","xgHangSign","xgHeavyDrop","xgJelly","xgKeyPoses","xgLensFringe","xgNewsSpin","xgNoseDive","xgPaperFall","xgPumpUp","xgPushBar","xgQuarterTurn","xgRatchet","xgRoughCut","xgShearUp","xgSignSpin","xgStampLift","xgStrobe","xgWallHit","xgWiper","xgZipLine"],"referenceCount":251,"registered":["assemble","backlight","blinds","blur","blurStagger","bounceBall","bounceBig","brushReveal","bubbles","checker","clockWipe","crtOn","crumple","cursorSweep","cut","cylinder","diagWipe","dither","domino","drop","dropMask","echoCount","echoIn","fade","fadeStagger","fanOpen","filmFeed","flicker","flip","flipX","flipY","fold","glint","glitchIn","hatchFill","heatHaze","hrBlinkCreep","hrClawReveal","hrJumpScare","hrManifest","hrMirrorSnap","hrUneasy","hrVhold","hzAlreadyThere","hzFloorSeep","hzFromScratch","hzLampSweep","hzLateSnap","hzShakyHand","hzTooClose","hzUnwatched","hzWrongGlyph","inkBleed","inkDrop","interlace","invertBox","iris","knDiveIn","knHingeDrop","knInertia","knLoopIn","knPushIn","knReplaceIn","knStretchOut","knTypeToSlam","knWordSlam","knWordSpin","kzBowSnap","kzOverrun","kzPunchThrough","kzSeesaw","kzSideVolley","kzSkipStone","kzTowerUnstack","kzTrampoline","kzWordWheel","lightLeak","liquidFill","loadingBar","loupe","magnet","matrixRain","neonOn","noteUnfold","odometer","outlineFill","overexpose","pendulum","pop","printRegister","quarters","randomOrder","resolve","ripple","rise","riseMask","rockSettle","rollIn","rubber","scramble","shadowFirst","shuffle","shutter","skewIn","slice","slide","slideL","slideR","slideWhole","slingshot","snapRail","spin","spiralIn","splitFlap","splitJoin","springIn","squashDrop","stamp","stickerPeel","stopMotion","stretch","strokeDraw","strokeOrder","tiltUp","tokoroten","tornJoin","trackIn","trackOut","tyBracketOpen","tyDotGrow","tyKeyFirst","tyLineWipe","tyRetype","tyRubyDrop","tyUnderLift","tyZoomOne","type","tzBaseAlign","tzCaretSet","tzCloseUp","tzCountSet","tzIndexLead","tzPointSize","tzRuleSlide","tzTextFrame","tzWeightUp","unroll","vSlice","waveIn","whip","windBlown","wipe","wzChochin","wzFusuma","wzHanabi","wzHanko","wzKakejiku","wzKamifubuki","wzMisu","wzOrigami","wzSeigaiha","xeArcToss","xeBlockDrop","xeCeilingFall","xeCenterDeal","xeChainBump","xeCoinToss","xeEndsInward","xeGearTick","xeInchworm","xeLeapfrog","xeMarch","xeOrbitIn","xeRicochet","xeSwingDoor","xeUnevenScale","xeVanishPoint","xgComet","zipper","zoom","zoomAlt","zoomOut"]},"exit":{"additional":["fade","flip","pop","rise","slide"],"blockingMissing":["blurOutStagger","candleOut","crumpleOut","deflateOut","eraserOut","floodOut","flutterOut","glassBreak","glitchDissolve","halftoneOut","hazeOut","hrDrain","hrFlickerDie","hrLookBack","hrPulledDown","hrShiver","hrSwallow","hrTurnAway","hzBackAway","hzDragCorner","hzFlatline","hzOutOfLight","hzRetinal","hzShadowOff","hzTaken","hzThumbSmear","knDiveGlyph","knJumpCutOut","knLaunch","knPushOut","knStackAway","knWordBlink","knWordKick","kzBatAway","kzCrashApart","kzCrouchDive","kzHammerDown","kzPinchShoot","kzSlingAway","kzSwingFling","kzYankOut","lampOff","matrixOut","mosaicOut","outlineOut","overexposeOut","rgbSplitOut","rocketOff","rollUpOut","sandOut","scanOut","scorchOut","scrambleOut","scribbleOut","shatterLite","shockOut","shredOut","slotOut","snakeOut","stripesOut","tearOut","tornadoOut","trackOutWide","tyBracketClose","tyFoldVert","tyKeyLast","tyLineFeed","tyStrike","tyToDot","tyToIndex","tyUnderSink","tzCondense","tzHalfCut","tzOverset","tzProofDelete","tzRulesClose","tzSelectDelete","tzToFootnote","tzToTofu","undraw","vSliceDrop","vacuumOut","waveOut","whipOut","wzDoron","wzFuroshiki","wzHanaChiru","wzKasumi","wzOrizuru","wzShojiKage","wzSumiNijimi","wzToro","xhBarcode","xhCeiling","xhCombOut","xhConcertina","xhConveyor","xhEatAlong","xhFlick","xhFullStop","xhGather","xhKanaFirst","xhMorse","xhPieceHeap","xhPieceParts","xhPieceSpin","xhPieceStrata","xhPieceThin","xhRollCall","xhShuffle","xhShutters","xiCentreOut","xiCounterScroll","xiCounterWipe","xiCropTurns","xiDiagPinch","xiDotted","xiDrawers","xiEyelid","xiFields","xiFillDrop","xiFinder","xiInverseBand","xiLattice","xiMothHoles","xiPicket","xiPistons","xiPortholes","xiRadialBlinds","xiRedact","xiRings","xiRollShutter","xiSawBite","xiSliceWave","xiSpiralTiles","xiTwinPlates","xiTwoPass","xjBigWheel","xjCardToss","xjColourDrain","xjComet","xjDoubleVision","xjEdgeTeeter","xjGateSwing","xjNeedle","xjOnionSkin","xjPanSmear","xjPuckHit","xjQuarterTurn","xjRatchet","xjRubberSnap","xjShadowStay","xjShellChase","xjSlump","xjSpringHop","xjStepFade","xjThroughFocus","xjTrapdoor","xjTug","xjWallSplat","xjWiper","xjYank","zipOut","zoomFar","zoomThrough"],"catalog":{"count":221,"notPorted":["blurOutStagger","candleOut","crumpleOut","deflateOut","eraserOut","floodOut","flutterOut","glassBreak","glitchDissolve","halftoneOut","hazeOut","hrDrain","hrFlickerDie","hrLookBack","hrPulledDown","hrShiver","hrSwallow","hrTurnAway","hzBackAway","hzDragCorner","hzFlatline","hzOutOfLight","hzRetinal","hzShadowOff","hzTaken","hzThumbSmear","knDiveGlyph","knJumpCutOut","knLaunch","knPushOut","knStackAway","knWordBlink","knWordKick","kzBatAway","kzCrashApart","kzCrouchDive","kzHammerDown","kzPinchShoot","kzSlingAway","kzSwingFling","kzYankOut","lampOff","matrixOut","mosaicOut","outlineOut","overexposeOut","rgbSplitOut","rocketOff","rollUpOut","sandOut","scanOut","scorchOut","scrambleOut","scribbleOut","shatterLite","shockOut","shredOut","slotOut","snakeOut","stripesOut","tearOut","tornadoOut","trackOutWide","tyBracketClose","tyFoldVert","tyKeyLast","tyLineFeed","tyStrike","tyToDot","tyToIndex","tyUnderSink","tzCondense","tzHalfCut","tzOverset","tzProofDelete","tzRulesClose","tzSelectDelete","tzToFootnote","tzToTofu","undraw","vSliceDrop","vacuumOut","waveOut","whipOut","wzDoron","wzFuroshiki","wzHanaChiru","wzKasumi","wzOrizuru","wzShojiKage","wzSumiNijimi","wzToro","xhBarcode","xhCeiling","xhCombOut","xhConcertina","xhConveyor","xhEatAlong","xhFlick","xhFullStop","xhGather","xhKanaFirst","xhMorse","xhPieceHeap","xhPieceParts","xhPieceSpin","xhPieceStrata","xhPieceThin","xhRollCall","xhShuffle","xhShutters","xiCentreOut","xiCounterScroll","xiCounterWipe","xiCropTurns","xiDiagPinch","xiDotted","xiDrawers","xiEyelid","xiFields","xiFillDrop","xiFinder","xiInverseBand","xiLattice","xiMothHoles","xiPicket","xiPistons","xiPortholes","xiRadialBlinds","xiRedact","xiRings","xiRollShutter","xiSawBite","xiSliceWave","xiSpiralTiles","xiTwinPlates","xiTwoPass","xjBigWheel","xjCardToss","xjColourDrain","xjComet","xjDoubleVision","xjEdgeTeeter","xjGateSwing","xjNeedle","xjOnionSkin","xjPanSmear","xjPuckHit","xjQuarterTurn","xjRatchet","xjRubberSnap","xjShadowStay","xjShellChase","xjSlump","xjSpringHop","xjStepFade","xjThroughFocus","xjTrapdoor","xjTug","xjWallSplat","xjWiper","xjYank","zipOut","zoomFar","zoomThrough"],"registeredInCatalog":56,"registeredNotInCatalog":["fade","flip","pop","rise","slide"]},"method":"native","missing":["blurOutStagger","candleOut","crumpleOut","deflateOut","eraserOut","floodOut","flutterOut","glassBreak","glitchDissolve","halftoneOut","hazeOut","hrDrain","hrFlickerDie","hrLookBack","hrPulledDown","hrShiver","hrSwallow","hrTurnAway","hzBackAway","hzDragCorner","hzFlatline","hzOutOfLight","hzRetinal","hzShadowOff","hzTaken","hzThumbSmear","knDiveGlyph","knJumpCutOut","knLaunch","knPushOut","knStackAway","knWordBlink","knWordKick","kzBatAway","kzCrashApart","kzCrouchDive","kzHammerDown","kzPinchShoot","kzSlingAway","kzSwingFling","kzYankOut","lampOff","matrixOut","mosaicOut","outlineOut","overexposeOut","rgbSplitOut","rocketOff","rollUpOut","sandOut","scanOut","scorchOut","scrambleOut","scribbleOut","shatterLite","shockOut","shredOut","slotOut","snakeOut","stripesOut","tearOut","tornadoOut","trackOutWide","tyBracketClose","tyFoldVert","tyKeyLast","tyLineFeed","tyStrike","tyToDot","tyToIndex","tyUnderSink","tzCondense","tzHalfCut","tzOverset","tzProofDelete","tzRulesClose","tzSelectDelete","tzToFootnote","tzToTofu","undraw","vSliceDrop","vacuumOut","waveOut","whipOut","wzDoron","wzFuroshiki","wzHanaChiru","wzKasumi","wzOrizuru","wzShojiKage","wzSumiNijimi","wzToro","xhBarcode","xhCeiling","xhCombOut","xhConcertina","xhConveyor","xhEatAlong","xhFlick","xhFullStop","xhGather","xhKanaFirst","xhMorse","xhPieceHeap","xhPieceParts","xhPieceSpin","xhPieceStrata","xhPieceThin","xhRollCall","xhShuffle","xhShutters","xiCentreOut","xiCounterScroll","xiCounterWipe","xiCropTurns","xiDiagPinch","xiDotted","xiDrawers","xiEyelid","xiFields","xiFillDrop","xiFinder","xiInverseBand","xiLattice","xiMothHoles","xiPicket","xiPistons","xiPortholes","xiRadialBlinds","xiRedact","xiRings","xiRollShutter","xiSawBite","xiSliceWave","xiSpiralTiles","xiTwinPlates","xiTwoPass","xjBigWheel","xjCardToss","xjColourDrain","xjComet","xjDoubleVision","xjEdgeTeeter","xjGateSwing","xjNeedle","xjOnionSkin","xjPanSmear","xjPuckHit","xjQuarterTurn","xjRatchet","xjRubberSnap","xjShadowStay","xjShellChase","xjSlump","xjSpringHop","xjStepFade","xjThroughFocus","xjTrapdoor","xjTug","xjWallSplat","xjWiper","xjYank","zipOut","zoomFar","zoomThrough"],"referenceCount":221,"registered":["backspace","balloonOff","blindsClose","blur","bounceOff","burn","checkerOut","clapShut","clockOut","collapse","cut","diagWipeOut","dissolve","dominoOut","drift","echoOut","explode","fade","fall","fanClose","flip","flipOutX","flipOutY","foldOut","glitch","gravity","hingeOut","irisClose","knCloseGap","melt","peelOff","pop","popOut","rise","riseOut","rollOff","scatter","shrink","sinkMask","slashOut","slice","slide","slideOutL","slideOutR","spinOut","splitApart","squash","stretch","sweepCover","twist","wipe","xhCentreThin","xhCoinSpin","xhEndsOut","xhHopFar","xhPageTurn","xhStairs","xhStomp","xhTiltSlide","xiPlateCarry","xjFocusPull"]},"fx":{"additional":["xrScanWipe","xrShutterStep"],"blockingMissing":[],"catalog":{"count":138,"notPorted":[],"registeredInCatalog":138,"registeredNotInCatalog":["xrScanWipe","xrShutterStep"]},"method":"native","missing":[],"referenceCount":138,"registered":["anamorphic","bandInvert","blackFrame","blindsTrans","block","bloomFlash","bulge","chroma","colorBars","crtOff","defocus","ditherBit","doors","duotone","dustScratches","echoFrames","edgeDetect","filmAdvance","filmBurn","flash","focusLines","gridRepeat","halftone","heartbeat","hrPassingShadow","hrSignalLoss","hrSubliminal","hueShift","hzClosingDark","hzColdBreath","hzDrain","hzFaint","hzTear","hzUpside","interlace","invert","irisTrans","kaleido","kzBulldoze","kzCardSlam","kzDustLanding","kzEdgeHit","kzKnockSmear","kzShockArcs","lightRays","lightSweep","loopScroll","macroBlock","mirrorFlash","mosaic","negativeRing","panelWipe","perspectiveTilt","pixelDrift","pixelSort","posterize","radialChroma","rgbSplit","ripple","rotateSnap","scanBar","shake","shatter","slice","smear","snapshot","speedLines","splitSlide","squash","starGlint","strobe","tileShift","trackingNoise","tvStatic","tzColumnShift","tzFrameStep","tzGridFlash","tzKnockBand","tzRegTicks","tzRuleFlash","vhsRoll","waveWarp","whipBlur","whiteFrame","wzHanafubuki","wzHyoshigi","wzMaku","wzOrime","wzShojiPass","wzSumiShibuki","xrAccordion","xrBandRepeat","xrBandZoom","xrBlink","xrBorderPunch","xrCheckerInvert","xrClockInvert","xrColorStrobe","xrColumnDrop","xrCornerFold","xrCrossFringe","xrCrossSplit","xrCrosshair","xrDiagSlice","xrDiscTurn","xrDotWave","xrDropBounce","xrDropout","xrEdgeBars","xrExposureDip","xrFlipTiles","xrFourTints","xrLampFlicker","xrLetterSnap","xrLongShadow","xrLoupe","xrMoire","xrNested","xrPixelSparks","xrQuadCycle","xrRibbonTwist","xrScanBurst","xrScanWipe","xrShearSnap","xrShutterStep","xrSlotReel","xrSpotlight","xrStretchWave","xrStripeMosaic","xrSwingEcho","xrSyncBend","xrTapeCrease","xrThumbRow","xrTileLights","xrWaist","xrWaterMirror","xrZebra","zoom","zoomPunch","zoomStutter"]},"hold":{"additional":[],"blockingMissing":[],"catalog":{"count":102,"notPorted":[],"registeredInCatalog":102,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":102,"registered":["beatHop","breathe","colorRun","dangle","drift","echoTrail","eqBounce","flashBox","flipSwap","float","focusRack","glintSweep","glitchJump","glitchtick","glowFlicker","hWave","heartbeat","hrFlickerLight","hrLagOne","hrStare","hrTwitch","hzLoneTremor","hzLoom","hzPassing","hzPresence","hzSlowBreath","jelly","jitter","knBeatLean","knCounterRock","knGapBreath","knTickShift","knWordPulse","knWordRide","kzBeatSquat","kzDivingBoard","kzInertiaSway","kzSlinky","kzSquashWave","magnetJiggle","noiseDrift","orbitSmall","pluckString","pulse","rotateSlow","scanBand","shadowSway","shimmer","skewWobble","still","stretchPulse","sway","tilt","trackBreathe","tyKeyPulse","tyOutlineBlink","tyReadCursor","tyTrackStep","typeRattle","tzCaretBlink","tzCounterRules","tzIndexCount","tzKernNudge","tzUnderGrow","wave","windGust","wzFurin","wzMikoshi","wzNotan","wzShishiodoshi","wzTanzaku","xkBeatBump","xkBigSmall","xkBlink","xkBuoy","xkCradle","xkDepthRock","xkDoubleVision","xkFocusBreath","xkHeatHaze","xkKaraoke","xkLevelFill","xkLoudArch","xkLoudWeight","xkMagnifier","xkMarchEdge","xkMetronome","xkNod","xkPairUp","xkParallax","xkReflection","xkRippleOut","xkSlideBunch","xkSpinOne","xkSplitShear","xkStairStep","xkStopMotion","xkTallBreath","xkTiltSnap","xkWallBounce","xkZigzagFlip","zoomSlow"]},"layout":{"additional":["graphics"],"blockingMissing":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"catalog":{"count":366,"notPorted":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","interlude","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","title","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"registeredInCatalog":4,"registeredNotInCatalog":["graphics"]},"method":"native","missing":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"referenceCount":364,"registered":["center","dictionary","graphics","vcols","xbTwistFrames"]},"trans":{"additional":[],"blockingMissing":[],"catalog":{"count":56,"notPorted":[],"registeredInCatalog":56,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":56,"registered":["blinds","blockDissolve","checker","clockWipe","cover","cubeTurn","diagonalWipe","doorsOpen","flashCross","hrBlink","hrStaticCut","hzBlackout","hzLinger","hzSlideDown","inkBlob","irisOpen","knCornerSwing","knStripSlam","knStutterCut","kzCarousel","kzCrushDown","kzShoveOff","pixelate","pushSlide","shatterTiles","sliceShift","spinOut","tyGridCells","tyRuleWipe","tzBaselineFold","tzColumnReplace","tzRuleSplit","uncover","whipPan","wipe","wzFusumaPass","wzMakimonoRoll","wzMawariButai","xqAccordion","xqBladeRun","xqChevronPush","xqDiagSplit","xqFlipOver","xqHalftone","xqLightLeak","xqLouverTurn","xqPagePeel","xqPolyIris","xqPropeller","xqRingRipple","xqSoftSweep","xqStretchSmear","xqStripShuffle","xqWaveWipe","xqWindowZoom","zoomThrough"]},"treat":{"additional":[],"blockingMissing":["alternate","baselineShift","bracketsQuote","chrome","circled","cutShift","dotted","doubleOutline","echoOutline","emphasisDots","extrude","fadeChars","fauxBold","focusPull","glitchSplit","glow","gradientSweep","gradientV","halftone","hardShadow","hatch","hrDoubleExp","hrEroded","hrInkBleed","hrRedact","hzColdRim","hzDragMarks","hzHairlines","hzHusk","hzUneven","italic","karaoke","kerningWide","knWordPlate","knWordScale","kzCrescendo","kzHopArc","kzOnionSkin","kzSpeedShadow","kzStepShear","longShadow","monoGrid","neonOutline","none","outlineFill","rainbow","ransom","reflection","rotateAlt","shadowStack","sizeWave","softShadow","splitColor","spotChar","stencilGap","sticker","strike","stripes","tall","toneShadow","tyHeadBig","tyHeadRules","tyHollowKey","tyIndexSup","tzKanaSmall","tzLineNo","tzSuperNote","tzTocLeader","tzTypeGuides","waterline","wide","wzBinsen","wzKasure","wzKinpaku","wzObi","wzRakkan","xoAccentTicks","xoAltHollow","xoAltWeight","xoBandExtrude","xoBeltBand","xoBlobKnock","xoBlowUp","xoBorderBands","xoContour","xoCropMarks","xoCutLine","xoDiagSplit","xoDimLine","xoEmboss","xoFadeHem","xoFloorShadow","xoFoldHalf","xoGlyphCorners","xoGlyphUnders","xoGraphFill","xoGroundDots","xoHalfKnock","xoHalfScreen","xoHiliter","xoHollowBlock","xoLeadBar","xoMixedFills","xoOffsetFrame","xoOverlapKern","xoRampAcross","xoRuler","xoSeparators","xoSwoosh","xoTallWide","xoTapedNote","xoThread","xoTopCrop","xoTrackRamp","xoTwinOutline"],"catalog":{"count":122,"notPorted":["alternate","baselineShift","bracketsQuote","chrome","circled","cutShift","dotted","doubleOutline","echoOutline","emphasisDots","extrude","fadeChars","fauxBold","focusPull","glitchSplit","glow","gradientSweep","gradientV","halftone","hardShadow","hatch","hrDoubleExp","hrEroded","hrInkBleed","hrRedact","hzColdRim","hzDragMarks","hzHairlines","hzHusk","hzUneven","italic","karaoke","kerningWide","knWordPlate","knWordScale","kzCrescendo","kzHopArc","kzOnionSkin","kzSpeedShadow","kzStepShear","longShadow","monoGrid","neonOutline","none","outlineFill","rainbow","ransom","reflection","rotateAlt","shadowStack","sizeWave","softShadow","splitColor","spotChar","stencilGap","sticker","strike","stripes","tall","toneShadow","tyHeadBig","tyHeadRules","tyHollowKey","tyIndexSup","tzKanaSmall","tzLineNo","tzSuperNote","tzTocLeader","tzTypeGuides","waterline","wide","wzBinsen","wzKasure","wzKinpaku","wzObi","wzRakkan","xoAccentTicks","xoAltHollow","xoAltWeight","xoBandExtrude","xoBeltBand","xoBlobKnock","xoBlowUp","xoBorderBands","xoContour","xoCropMarks","xoCutLine","xoDiagSplit","xoDimLine","xoEmboss","xoFadeHem","xoFloorShadow","xoFoldHalf","xoGlyphCorners","xoGlyphUnders","xoGraphFill","xoGroundDots","xoHalfKnock","xoHalfScreen","xoHiliter","xoHollowBlock","xoLeadBar","xoMixedFills","xoOffsetFrame","xoOverlapKern","xoRampAcross","xoRuler","xoSeparators","xoSwoosh","xoTallWide","xoTapedNote","xoThread","xoTopCrop","xoTrackRamp","xoTwinOutline"],"registeredInCatalog":7,"registeredNotInCatalog":[]},"method":"native","missing":["alternate","baselineShift","bracketsQuote","chrome","circled","cutShift","dotted","doubleOutline","echoOutline","emphasisDots","extrude","fadeChars","fauxBold","focusPull","glitchSplit","glow","gradientSweep","gradientV","halftone","hardShadow","hatch","hrDoubleExp","hrEroded","hrInkBleed","hrRedact","hzColdRim","hzDragMarks","hzHairlines","hzHusk","hzUneven","italic","karaoke","kerningWide","knWordPlate","knWordScale","kzCrescendo","kzHopArc","kzOnionSkin","kzSpeedShadow","kzStepShear","longShadow","monoGrid","neonOutline","none","outlineFill","rainbow","ransom","reflection","rotateAlt","shadowStack","sizeWave","softShadow","splitColor","spotChar","stencilGap","sticker","strike","stripes","tall","toneShadow","tyHeadBig","tyHeadRules","tyHollowKey","tyIndexSup","tzKanaSmall","tzLineNo","tzSuperNote","tzTocLeader","tzTypeGuides","waterline","wide","wzBinsen","wzKasure","wzKinpaku","wzObi","wzRakkan","xoAccentTicks","xoAltHollow","xoAltWeight","xoBandExtrude","xoBeltBand","xoBlobKnock","xoBlowUp","xoBorderBands","xoContour","xoCropMarks","xoCutLine","xoDiagSplit","xoDimLine","xoEmboss","xoFadeHem","xoFloorShadow","xoFoldHalf","xoGlyphCorners","xoGlyphUnders","xoGraphFill","xoGroundDots","xoHalfKnock","xoHalfScreen","xoHiliter","xoHollowBlock","xoLeadBar","xoMixedFills","xoOffsetFrame","xoOverlapKern","xoRampAcross","xoRuler","xoSeparators","xoSwoosh","xoTallWide","xoTapedNote","xoThread","xoTopCrop","xoTrackRamp","xoTwinOutline"],"referenceCount":122,"registered":["boxed","inline","marker","outline","outlineOffset","underline","xoDoublePrint"]}},"format":"jizura.cavalry.native-build","hostVerified":false,"inventoryBasis":"ae/data.json names snapshot; cavalry/catalog/ae-presets.json when present; source files hashed, dynamic registrations not independently audited","moduleOrder":["native/00_registry.js","native/10_graph.js","native/20_components.js","native/25_recipe_tools.js","native/26_recipe_components.js","native/27_registry_bridge.js","native/28_registry_identity.js","native/29_pack_helpers.js","packs/p_00_registry.js","packs/p_camera.js","packs/p_camera_ext.js","packs/p_core_geometry.js","packs/p_core_scalar.js","packs/p_enter_core.js","packs/p_enter_ext.js","packs/p_exit_core.js","packs/p_fx.js","packs/p_fx_ext.js","packs/p_fx_x2.js","packs/p_graphics.js","packs/p_hold.js","packs/p_hold_core.js","packs/p_hold_ext.js","packs/p_motion.js","packs/p_requested_backgrounds.js","packs/p_requested_decor.js","packs/p_requested_layouts.js","packs/p_requested_motion.js","packs/p_requested_transitions.js","packs/p_requested_treatments.js","packs/p_trans_core.js","packs/p_trans_ext.js","packs/p_x2_enter.js","packs/p_x2_exit.js","native/30_assembly.js"],"recipes":{"bg":{"bigChar":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset bg:bigChar"},"checker":{"differences":["Repeater is expanded to editable paths; tile paint preserves transparency."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:checker"},"dots":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset bg:dots (halftone)"},"frame":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"skyline":{"differences":["The transparent horizon is approximated with 24 editable opacity bands, not AE mask feathering.","Building and window paint is kept transparent instead of compositing the scheme background into the fill.","Absolute phase is on the exported assembly timeline."],"exact":false,"hostVerified":false,"scope":"cut","source":"AE background recipe skyline"},"split":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"splitH":{"differences":["Uses transparent foreground/accent paint rather than a baked scheme-background mix."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:bg1_split"},"splitV":{"differences":["Uses transparent foreground/accent paint rather than a baked scheme-background mix."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:bg1_split"},"xpRingDots":{"differences":["Repeated dots are editable paths rather than AE repeaters."],"exact":false,"hostVerified":false,"scope":"cut","source":"AE background recipe xpRingDots"}},"cam":{"barrelRoll":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"beatPunch":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"bounce":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"crashZoom":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"dollyIn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"driftDiag":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"dutch":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"earthquake":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"floatNoise":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"focusIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"handheld":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"hrDutchSnap":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hrNervous":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzColdShiver":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzCreepFreeze":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzGlanceBack":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzHeldBreath":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"jelly":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"knCardFlip":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knJumpCut":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knReadPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knRushIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knShearKick":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knTiltKick":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzKnockback":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzRecoil":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzSkidStop":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzWordNod":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"orbitDrift":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"panL":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"panR":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"pendulumSway":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"pullOut":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"push":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"rackFocus":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"roll":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"shakeHard":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"snapPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"spiralIn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"stepZoom":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"tiltDown":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tiltUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzGridStep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzItalicSet":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzMeasureZoom":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzTabStep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"vertigo":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"whipIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzByobuPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzKakejikuView":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzOjigi":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqArcSweep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqBeatBreath":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqCraneUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqDriftTurn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqFindFrame":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqFocusHunt":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqHeartbeat":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLeafFall":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLevelOut":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLongLens":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLoudZoom":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqPushPull":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqSquashRelax":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqStopMotion":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqTickRoll":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqTripodNudge":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqTruckAround":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqWalkCam":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqWhipSpring":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqWindUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"}},"decor":{"cropMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"indexNum":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset decor:indexNum"},"romajiLine":{"differences":["Kana conversion follows src/01_util.js.","Kanji requires an explicit reading; unsupported text is not silently replaced.","Annotation placement is a native reconstruction; visual conformance is pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native romajiLine"},"ruler":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"tyGlyphBody":{"differences":["Source: jizura_core.jsx decor:tyGlyphBody.","Draws outside text divisions, not per-glyph boxes.","Vertical suppression follows the source.","Native margin is params.margin or 3% of the shorter composition edge.","Actual host/render conformance remains pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native tyGlyphBody"},"xlLadder":{"differences":["Source: jizura_core.jsx axl_reg(xlLadder).","Rung cadence, reveal interval and three lit rungs follow the source.","AE side-band helper is expressed as explicit native geometry.","Native margin is params.margin or 2.5% of the shorter composition edge.","Actual host/render conformance remains pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native xlLadder"}},"enter":{"assemble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:assemble"},"backlight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:backlight"},"blinds":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:blinds"},"blur":{"differences":["Uses the existing Gaussian-blur component.","Emission requires the explicit verified blur host profile.","No unblurred substitute is emitted."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:blur"},"blurStagger":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:blurStagger"},"bounceBall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:bounceBall"},"bounceBig":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:bounceBig"},"brushReveal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:brushReveal"},"bubbles":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:bubbles"},"checker":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:checker"},"clockWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:clockWipe"},"crtOn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:crtOn"},"crumple":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:crumple"},"cursorSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:cursorSweep"},"cut":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"cylinder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:cylinder"},"diagWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:diagWipe"},"dither":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:dither"},"domino":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:domino"},"drop":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"dropMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:dropMask"},"echoCount":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:echoCount"},"echoIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:echoIn"},"fade":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"fadeStagger":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fadeStagger"},"fanOpen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fanOpen"},"filmFeed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:filmFeed"},"flicker":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"flip":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"flipX":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:flipX"},"flipY":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:flipY"},"fold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fold"},"glint":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:glint"},"glitchIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:glitchIn"},"hatchFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:hatchFill"},"heatHaze":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:heatHaze"},"hrBlinkCreep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrBlinkCreep"},"hrClawReveal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrClawReveal"},"hrJumpScare":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrJumpScare"},"hrManifest":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrManifest"},"hrMirrorSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrMirrorSnap"},"hrUneasy":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrUneasy"},"hrVhold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrVhold"},"hzAlreadyThere":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzAlreadyThere"},"hzFloorSeep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzFloorSeep"},"hzFromScratch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzFromScratch"},"hzLampSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzLampSweep"},"hzLateSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzLateSnap"},"hzShakyHand":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzShakyHand"},"hzTooClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzTooClose"},"hzUnwatched":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzUnwatched"},"hzWrongGlyph":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzWrongGlyph"},"inkBleed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:inkBleed"},"inkDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:inkDrop"},"interlace":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:interlace"},"invertBox":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:invertBox"},"iris":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:iris"},"knDiveIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knDiveIn"},"knHingeDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knHingeDrop"},"knInertia":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knInertia"},"knLoopIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knLoopIn"},"knPushIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knPushIn"},"knReplaceIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knReplaceIn"},"knStretchOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knStretchOut"},"knTypeToSlam":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knTypeToSlam"},"knWordSlam":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knWordSlam"},"knWordSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knWordSpin"},"kzBowSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzBowSnap"},"kzOverrun":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzOverrun"},"kzPunchThrough":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzPunchThrough"},"kzSeesaw":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzSeesaw"},"kzSideVolley":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzSideVolley"},"kzSkipStone":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzSkipStone"},"kzTowerUnstack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzTowerUnstack"},"kzTrampoline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzTrampoline"},"kzWordWheel":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzWordWheel"},"lightLeak":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:lightLeak"},"liquidFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:liquidFill"},"loadingBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:loadingBar"},"loupe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:loupe"},"magnet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:magnet"},"matrixRain":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:matrixRain"},"neonOn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:neonOn"},"noteUnfold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:noteUnfold"},"odometer":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:odometer"},"outlineFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx / enter:outlineFill"},"overexpose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:overexpose"},"pendulum":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:pendulum"},"pop":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"printRegister":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:printRegister"},"quarters":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:quarters"},"randomOrder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:randomOrder"},"resolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:resolve"},"ripple":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:ripple"},"rise":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"riseMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:riseMask"},"rockSettle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:rockSettle"},"rollIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:rollIn"},"rubber":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:rubber"},"scramble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:scramble"},"shadowFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:shadowFirst"},"shuffle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:shuffle"},"shutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:shutter"},"skewIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:skewIn"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slice"},"slide":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"slideL":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slideL"},"slideR":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slideR"},"slideWhole":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx / enter:slideWhole"},"slingshot":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slingshot"},"snapRail":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:snapRail"},"spin":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"spiralIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:spiralIn"},"splitFlap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:splitFlap"},"splitJoin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:splitJoin"},"springIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:springIn"},"squashDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:squashDrop"},"stamp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:stamp"},"stickerPeel":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:stickerPeel"},"stopMotion":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:stopMotion"},"stretch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:stretch"},"strokeDraw":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx / enter:strokeDraw"},"strokeOrder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:strokeOrder"},"tiltUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:tiltUp"},"tokoroten":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:tokoroten"},"tornJoin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:tornJoin"},"trackIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:trackIn"},"trackOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:trackOut"},"tyBracketOpen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyBracketOpen"},"tyDotGrow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyDotGrow"},"tyKeyFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / enter:tyKeyFirst"},"tyLineWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyLineWipe"},"tyRetype":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyRetype"},"tyRubyDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyRubyDrop"},"tyUnderLift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyUnderLift"},"tyZoomOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyZoomOne"},"type":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"tzBaseAlign":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzBaseAlign"},"tzCaretSet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzCaretSet"},"tzCloseUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzCloseUp"},"tzCountSet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzCountSet"},"tzIndexLead":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzIndexLead"},"tzPointSize":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzPointSize"},"tzRuleSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzRuleSlide"},"tzTextFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzTextFrame"},"tzWeightUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzWeightUp"},"unroll":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:unroll"},"vSlice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:vSlice"},"waveIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:waveIn"},"whip":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:whip"},"windBlown":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:windBlown"},"wipe":{"differences":["Editable wipe bar plus animated glyph clipping.","Clipping uses the existing JavaScript Deformer component.","Actual host/render verification remains pending."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:wipe"},"wzChochin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzChochin"},"wzFusuma":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzFusuma"},"wzHanabi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzHanabi"},"wzHanko":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzHanko"},"wzKakejiku":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzKakejiku"},"wzKamifubuki":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzKamifubuki"},"wzMisu":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzMisu"},"wzOrigami":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzOrigami"},"wzSeigaiha":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzSeigaiha"},"xeArcToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeBlockDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCeilingFall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCenterDeal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeChainBump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCoinToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeEndsInward":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeGearTick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeInchworm":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeLeapfrog":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeMarch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeOrbitIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeRicochet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeSwingDoor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeUnevenScale":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeVanishPoint":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xgComet":{"differences":["Eight editable delayed glyph copies replace AE Echo.","Trail sampling is frame-based."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / enter:xgComet"},"zipper":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zipper"},"zoom":{"differences":["Emission requires the explicit verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:zoom"},"zoomAlt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zoomAlt"},"zoomOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zoomOut"}},"exit":{"backspace":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:backspace"},"balloonOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:balloonOff"},"blindsClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:blindsClose"},"blur":{"differences":["Emission requires the explicit verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:blur"},"bounceOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:bounceOff"},"burn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:burn"},"checkerOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:checkerOut"},"clapShut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:clapShut"},"clockOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:clockOut"},"collapse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:collapse"},"cut":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"diagWipeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:diagWipeOut"},"dissolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:dissolve"},"dominoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:dominoOut"},"drift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:drift"},"echoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:echoOut"},"explode":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:explode"},"fade":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"fall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:fall"},"fanClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:fanClose"},"flip":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"flipOutX":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:flipOutX"},"flipOutY":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:flipOutY"},"foldOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:foldOut"},"glitch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:glitch"},"gravity":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:gravity"},"hingeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:hingeOut"},"irisClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:irisClose"},"knCloseGap":{"differences":["When words are absent, script-run segmentation is used.","Export source.words for authoritative planner segmentation."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:knCloseGap"},"melt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:melt"},"peelOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:peelOff"},"pop":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"popOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:popOut"},"rise":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"riseOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:riseOut"},"rollOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:rollOff"},"scatter":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"shrink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:shrink"},"sinkMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:sinkMask"},"slashOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slashOut"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slice"},"slide":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"slideOutL":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slideOutL"},"slideOutR":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slideOutR"},"spinOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:spinOut"},"splitApart":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:splitApart"},"squash":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:squash"},"stretch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:stretch"},"sweepCover":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:sweepCover"},"twist":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:twist"},"wipe":{"differences":["Editable wipe bar plus animated glyph clipping.","Clipping uses the existing JavaScript Deformer component.","Actual host/render verification remains pending."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:wipe"},"xhCentreThin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhCoinSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhEndsOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhHopFar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhPageTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhStairs":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhStomp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhTiltSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xiPlateCarry":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:xiPlateCarry"},"xjFocusPull":{"differences":["Emission requires a verified Gaussian-blur host profile.","No fade-only or scale-only fallback is used."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:xjFocusPull"}},"fx":{"anamorphic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:anamorphic"},"bandInvert":{"differences":["Vector band overlay approximates AE Difference blend bands in graph IR."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:bandInvert"},"blackFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:blackFrame"},"blindsTrans":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:blindsTrans"},"block":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:block"},"bloomFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:bloomFlash"},"bulge":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:bulge"},"chroma":{"differences":["Drives chromatic ghost separation when style.ghost > 0."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:chroma"},"colorBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:colorBars"},"crtOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:crtOff"},"defocus":{"differences":["Uses Gaussian Blur filter when hostProfile.gaussianBlur is configured; scale breath always emitted."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:defocus"},"ditherBit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:ditherBit"},"doors":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:doors"},"duotone":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:duotone"},"dustScratches":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:dustScratches"},"echoFrames":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:echoFrames"},"edgeDetect":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:edgeDetect"},"filmAdvance":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:filmAdvance"},"filmBurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:filmBurn"},"flash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:flash"},"focusLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:focusLines"},"gridRepeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:gridRepeat"},"halftone":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:halftone"},"heartbeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:heartbeat"},"hrPassingShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_horror4.jsx / fx:hrPassingShadow"},"hrSignalLoss":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_horror4.jsx / fx:hrSignalLoss"},"hrSubliminal":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_horror4.jsx / fx:hrSubliminal"},"hueShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:hueShift"},"hzClosingDark":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzClosingDark"},"hzColdBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzColdBreath"},"hzDrain":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzDrain"},"hzFaint":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzFaint"},"hzTear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzTear"},"hzUpside":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzUpside"},"interlace":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:interlace"},"invert":{"differences":["Native invert flash uses an editable high-contrast foreground overlay rather than a pixel invert shader."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:invert"},"irisTrans":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:irisTrans"},"kaleido":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:kaleido"},"kzBulldoze":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzBulldoze"},"kzCardSlam":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzCardSlam"},"kzDustLanding":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzDustLanding"},"kzEdgeHit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzEdgeHit"},"kzKnockSmear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzKnockSmear"},"kzShockArcs":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzShockArcs"},"lightRays":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:lightRays"},"lightSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:lightSweep"},"loopScroll":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:loopScroll"},"macroBlock":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:macroBlock"},"mirrorFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:mirrorFlash"},"mosaic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:mosaic"},"negativeRing":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:negativeRing"},"panelWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:panelWipe"},"perspectiveTilt":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:perspectiveTilt"},"pixelDrift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:pixelDrift"},"pixelSort":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:pixelSort"},"posterize":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:posterize"},"radialChroma":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:radialChroma"},"rgbSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:rgbSplit"},"ripple":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:ripple"},"rotateSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:rotateSnap"},"scanBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:scanBar"},"shake":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:shake"},"shatter":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:shatter"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:slice"},"smear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:smear"},"snapshot":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:snapshot"},"speedLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:speedLines"},"splitSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:splitSlide"},"squash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:squash"},"starGlint":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:starGlint"},"strobe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:strobe"},"tileShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:tileShift"},"trackingNoise":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:trackingNoise"},"tvStatic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:tvStatic"},"tzColumnShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzColumnShift"},"tzFrameStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzFrameStep"},"tzGridFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzGridFlash"},"tzKnockBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzKnockBand"},"tzRegTicks":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzRegTicks"},"tzRuleFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzRuleFlash"},"vhsRoll":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:vhsRoll"},"waveWarp":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:waveWarp"},"whipBlur":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:whipBlur"},"whiteFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:whiteFrame"},"wzHanafubuki":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzHanafubuki"},"wzHyoshigi":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzHyoshigi"},"wzMaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzMaku"},"wzOrime":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzOrime"},"wzShojiPass":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzShojiPass"},"wzSumiShibuki":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzSumiShibuki"},"xrAccordion":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrAccordion"},"xrBandRepeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBandRepeat"},"xrBandZoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBandZoom"},"xrBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBlink"},"xrBorderPunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBorderPunch"},"xrCheckerInvert":{"differences":["Checker invert uses high-contrast silhouette squares rather than a Difference blend mode."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCheckerInvert"},"xrClockInvert":{"differences":["Clock sweep renders a translucent high-contrast wedge overlay rather than a Difference pixel buffer."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrClockInvert"},"xrColorStrobe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrColorStrobe"},"xrColumnDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrColumnDrop"},"xrCornerFold":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCornerFold"},"xrCrossFringe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCrossFringe"},"xrCrossSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCrossSplit"},"xrCrosshair":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCrosshair"},"xrDiagSlice":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrDiagSlice"},"xrDiscTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrDiscTurn"},"xrDotWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrDotWave"},"xrDropBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrDropBounce"},"xrDropout":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrDropout"},"xrEdgeBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrEdgeBars"},"xrExposureDip":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrExposureDip"},"xrFlipTiles":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrFlipTiles"},"xrFourTints":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrFourTints"},"xrLampFlicker":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLampFlicker"},"xrLetterSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLetterSnap"},"xrLongShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLongShadow"},"xrLoupe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLoupe"},"xrMoire":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrMoire"},"xrNested":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrNested"},"xrPixelSparks":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrPixelSparks"},"xrQuadCycle":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrQuadCycle"},"xrRibbonTwist":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrRibbonTwist"},"xrScanBurst":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrScanBurst"},"xrScanWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrScanWipe"},"xrShearSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrShearSnap"},"xrShutterStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrShutterStep"},"xrSlotReel":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSlotReel"},"xrSpotlight":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSpotlight"},"xrStretchWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrStretchWave"},"xrStripeMosaic":{"differences":["Mosaic pixel shader is represented as discrete translucent stripe bands pulsing across frames."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrStripeMosaic"},"xrSwingEcho":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSwingEcho"},"xrSyncBend":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSyncBend"},"xrTapeCrease":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrTapeCrease"},"xrThumbRow":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrThumbRow"},"xrTileLights":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrTileLights"},"xrWaist":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrWaist"},"xrWaterMirror":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrWaterMirror"},"xrZebra":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrZebra"},"zoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:zoom"},"zoomPunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:zoomPunch"},"zoomStutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:zoomStutter"}},"hold":{"beatHop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:beatHop"},"breathe":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"colorRun":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:colorRun"},"dangle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:dangle"},"drift":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"echoTrail":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:echoTrail"},"eqBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:eqBounce"},"flashBox":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:flashBox"},"flipSwap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:flipSwap"},"float":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:float"},"focusRack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:focusRack"},"glintSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glintSweep"},"glitchJump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glitchJump"},"glitchtick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glitchtick"},"glowFlicker":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glowFlicker"},"hWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:hWave"},"heartbeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:heartbeat"},"hrFlickerLight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrFlickerLight"},"hrLagOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrLagOne"},"hrStare":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrStare"},"hrTwitch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrTwitch"},"hzLoneTremor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzLoneTremor"},"hzLoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_horrorB.jsx / hold:hzLoom"},"hzPassing":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzPassing"},"hzPresence":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzPresence"},"hzSlowBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzSlowBreath"},"jelly":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:jelly"},"jitter":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"knBeatLean":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knBeatLean"},"knCounterRock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knCounterRock"},"knGapBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knGapBreath"},"knTickShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knTickShift"},"knWordPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knWordPulse"},"knWordRide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knWordRide"},"kzBeatSquat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzBeatSquat"},"kzDivingBoard":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzDivingBoard"},"kzInertiaSway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzInertiaSway"},"kzSlinky":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzSlinky"},"kzSquashWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzSquashWave"},"magnetJiggle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:magnetJiggle"},"noiseDrift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:noiseDrift"},"orbitSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:orbitSmall"},"pluckString":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:pluckString"},"pulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:pulse"},"rotateSlow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:rotateSlow"},"scanBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:scanBand"},"shadowSway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:shadowSway"},"shimmer":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:shimmer"},"skewWobble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:skewWobble"},"still":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"stretchPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:stretchPulse"},"sway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:sway"},"tilt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:tilt"},"trackBreathe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:trackBreathe"},"tyKeyPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / hold:tyKeyPulse"},"tyOutlineBlink":{"differences":["Outline blink is represented as an editable stroke twin toggled on matching glyphs."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_typo3.jsx / hold:tyOutlineBlink"},"tyReadCursor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_typo3.jsx / hold:tyReadCursor"},"tyTrackStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / hold:tyTrackStep"},"typeRattle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:typeRattle"},"tzCaretBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzCaretBlink"},"tzCounterRules":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"jizura_core.jsx / hold:tzCounterRules"},"tzIndexCount":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzIndexCount"},"tzKernNudge":{"differences":["Gap selection uses the native deterministic hash, not AE's expression sine hash."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"jizura_core.jsx / hold:tzKernNudge"},"tzUnderGrow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzUnderGrow"},"wave":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"windGust":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:windGust"},"wzFurin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzFurin"},"wzMikoshi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzMikoshi"},"wzNotan":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzNotan"},"wzShishiodoshi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzShishiodoshi"},"wzTanzaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzTanzaku"},"xkBeatBump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBeatBump"},"xkBigSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBigSmall"},"xkBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBlink"},"xkBuoy":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBuoy"},"xkCradle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkCradle"},"xkDepthRock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkDepthRock"},"xkDoubleVision":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkDoubleVision"},"xkFocusBreath":{"differences":["Emission requires a verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkFocusBreath"},"xkHeatHaze":{"differences":["Native wave displacement is applied per glyph rather than pixel AE Wave Warp."],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkHeatHaze"},"xkKaraoke":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkKaraoke"},"xkLevelFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkLevelFill"},"xkLoudArch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkLoudArch"},"xkLoudWeight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkLoudWeight"},"xkMagnifier":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkMagnifier"},"xkMarchEdge":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkMarchEdge"},"xkMetronome":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkMetronome"},"xkNod":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkNod"},"xkPairUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkPairUp"},"xkParallax":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkParallax"},"xkReflection":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkReflection"},"xkRippleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkRippleOut"},"xkSlideBunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkSlideBunch"},"xkSpinOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkSpinOne"},"xkSplitShear":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkSplitShear"},"xkStairStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkStairStep"},"xkStopMotion":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkStopMotion"},"xkTallBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx: xkTallBreath"},"xkTiltSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkTiltSnap"},"xkWallBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkWallBounce"},"xkZigzagFlip":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkZigzagFlip"},"zoomSlow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:zoomSlow"}},"layout":{"center":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:center"},"dictionary":{"differences":["Existing exported dictionary text nodes are preserved.","Missing dictionary text is rejected upstream rather than synthesised from unrelated text.","Rounded part-of-speech corners are currently square."],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:dictionary"},"graphics":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"vcols":{"differences":["Split mode preserves supplied line breaks.","Repeat mode currently supports dim/same side styles; outline side styling requires text paint export."],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:vcols"},"xbTwistFrames":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:xbTwistFrames"}},"trans":{"blinds":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:blinds"},"blockDissolve":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:blockDissolve"},"checker":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:checker"},"clockWipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:clockWipe"},"cover":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:cover"},"cubeTurn":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:cubeTurn"},"diagonalWipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:diagonalWipe"},"doorsOpen":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:doorsOpen"},"flashCross":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:flashCross"},"hrBlink":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_horror4.jsx / trans:hrBlink"},"hrStaticCut":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_horror4.jsx / trans:hrStaticCut"},"hzBlackout":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzBlackout"},"hzLinger":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzLinger"},"hzSlideDown":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzSlideDown"},"inkBlob":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:inkBlob"},"irisOpen":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:irisOpen"},"knCornerSwing":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knCornerSwing"},"knStripSlam":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knStripSlam"},"knStutterCut":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knStutterCut"},"kzCarousel":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzCarousel"},"kzCrushDown":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzCrushDown"},"kzShoveOff":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzShoveOff"},"pixelate":{"differences":["Quantized coarse grid overlay replaces pixel-buffer Mosaic filter in vector scene graph."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:pixelate"},"pushSlide":{"differences":["The outgoing graph holds its final sampled pose when extended into the transition."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx:pushSlide"},"shatterTiles":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:shatterTiles"},"sliceShift":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:sliceShift"},"spinOut":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:spinOut"},"tyGridCells":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_typo4.jsx / trans:tyGridCells"},"tyRuleWipe":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_typo4.jsx / trans:tyRuleWipe"},"tzBaselineFold":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzBaselineFold"},"tzColumnReplace":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzColumnReplace"},"tzRuleSplit":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzRuleSplit"},"uncover":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:uncover"},"whipPan":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:whipPan"},"wipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:wipe"},"wzFusumaPass":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzFusumaPass"},"wzMakimonoRoll":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzMakimonoRoll"},"wzMawariButai":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzMawariButai"},"xqAccordion":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqAccordion"},"xqBladeRun":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqBladeRun"},"xqChevronPush":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqChevronPush"},"xqDiagSplit":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqDiagSplit"},"xqFlipOver":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqFlipOver"},"xqHalftone":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqHalftone"},"xqLightLeak":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqLightLeak"},"xqLouverTurn":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqLouverTurn"},"xqPagePeel":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqPagePeel"},"xqPolyIris":{"differences":["Outgoing graph holds its last sampled pose when its clip ends before the transition.","Documented JavaScript Deformer clipping; actual Cavalry render verification is pending."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"src/11p_x2_camtr.js / trans:xqPolyIris"},"xqPropeller":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqPropeller"},"xqRingRipple":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqRingRipple"},"xqSoftSweep":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqSoftSweep"},"xqStretchSmear":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqStretchSmear"},"xqStripShuffle":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqStripShuffle"},"xqWaveWipe":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqWaveWipe"},"xqWindowZoom":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqWindowZoom"},"zoomThrough":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:zoomThrough"}},"treat":{"boxed":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"inline":{"differences":["The inline knockout uses the scheme paper colour, matching the source treatment rather than a transparent Boolean knockout."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:inline"},"marker":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"outline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"AE outline treatment"},"outlineOffset":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:outlineOffset"},"underline":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"xoDoublePrint":{"differences":["The secondary impression follows glyph tracks.","The source's whole-item print pivot is represented per glyph here; whole-line pivot fidelity still needs comparison."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:xoDoublePrint"}}},"renderVerified":false,"sourceHashes":{"VERSION":"d84c9e596c7d6a94e5f74579ef8d8912a807b0d28582474900ad35dfb3edfcf4","ae/data.json":"45557dbad42863c937ea2f2afbf04d37f2859a501b8f97302e892ff9cedcf3f1","ae/p_bg1.jsx":"277dd68bfa368f708688146feb271d9b22c194134c2c179e218f803e82aac7e4","ae/p_bg2.jsx":"c19f16e223e0f8afc517121912ade27fa4669e74a54d19b1fd9b093214faa2af","ae/p_bg3.jsx":"83aabd1592aec8ea8afc4a165e6984134e78ebf314ef9d2c9b682295a5391bd9","ae/p_cam.jsx":"507adf001e732de51aa3dc6d3bcb1736f028f888425cbf889bcc795962391c89","ae/p_decor1.jsx":"b6d46026f39f56aac156db60c7d732a26715b60e36bb8c435b3d8eb696ce97fc","ae/p_decor2.jsx":"c8681312f00accc2e46ad7a5174d264467a40e5a359afd71a80c9f5492433db1","ae/p_decorB1.jsx":"74cf5d7767f23d0a2cb2d7e856439488d4de6b0e2f294fa49e6cedff2371d182","ae/p_decorB2.jsx":"6f7791b9d6911449cfe45f883a480ad38ddb5b98728cbc4cd3d20401a9521144","ae/p_enter1.jsx":"6df64926151b13b7f3008d0af8c2ade387dc547b4e65db7489fd45215813c82c","ae/p_enter2.jsx":"d38bed742fb2fafedcd39966ca1464b9fc3440c3e080099da53cc885c5a7140d","ae/p_enterB1.jsx":"8fc835ae32ce39cf92db09d57e7bf47cbd67ee3888f42a03d7a63c9fa5a4133e","ae/p_enterB2.jsx":"d210842a7e17c47800cad69fdb0aedd7f094d586c68ea3da0df68db5123a967c","ae/p_exit1.jsx":"a03db79991dd5e8d3f6a25f66e54afb70488562ad697e8f4d16ba684f400b423","ae/p_exit2.jsx":"2651c96e555344de78bc3402af2d44f9d412537bc1d232438018794b8ed6a4cf","ae/p_exitB1.jsx":"40a3ebb2b2899267c8891e29c9c513aab4fc7079ee4078e3fb8b9cb54b0435f9","ae/p_exitB2.jsx":"e531df1901cdcc7dd6ee4101cd6ed36f6c3c3b802eae7aca40d12d5415794067","ae/p_fx1.jsx":"8f89d061e72beefc729031ddafa53eb10275b8d7c56206a5f7c0281eaed5d0ed","ae/p_fx2.jsx":"16c65188d7697a1a39fc0b2c978bde5cec2e3bffb58596a27e5a3e13c63f7b01","ae/p_horror1.jsx":"eaaf23a18f25c4f42b3a4875951b87a94bce5e42b5549ec553578577c7b83458","ae/p_horror2.jsx":"8874c4ab727cbc71ccdeb5619e7da5d2f3e39409dd20d085a2ab2f8ec6fbd793","ae/p_horror3.jsx":"f588666cb1e5344d219333c5a1b1d7ccd7434964f5c06ed0987ab9e17d1c9ce3","ae/p_horror4.jsx":"773bee02f22a0444ea68355e2377eadc4d642687614e08e718321de4f9ffb6a3","ae/p_kinetic1.jsx":"ec90aa765e35a1bd4ae2712d3bf544d5b25e3986f7584e75a4c66b35594036ec","ae/p_kinetic2.jsx":"28a9b09591f2ed79ba83f8f11f3e083c859abeae07c1ce9aa9d44f46ab54c6b5","ae/p_kinetic3.jsx":"888a39a7a896836a07b4e05ce2f9017264e301b365e4851cd7b803d39d296b38","ae/p_kinetic4.jsx":"7a309d43ebb2783cafbdb5085e49d9061d9d874231c85dd417f675bc12e6fe79","ae/p_layoutsA1.jsx":"8cb51bde2098425b99b56be138e17cfd3409f40dca7fa5ab4d322eff32dc7e40","ae/p_layoutsA2.jsx":"b9f331dc1f57a93f3e0e7eceede0ceefd7553f1da0cbd111e2d3fd14aa87482f","ae/p_layoutsB1.jsx":"361cf6e99bc4acb14829927fe604bb84a689578b9072bb48c0e23e6f1e06de06","ae/p_layoutsB2.jsx":"373d10cdb7b4cacd470a4d96acc2e19e2422e0c2516cf579cb7d799f04b7d7e5","ae/p_layoutsC1.jsx":"9d5c8d8d1435cb32fab8b0f2aaab5d6648db3f3a2d0af95c6a362cda8d00bd1f","ae/p_layoutsC2.jsx":"a705607883afd551d549db96e74b2cc94ddc64c7ac9f118747d8fc9adc6316e4","ae/p_layoutsD1.jsx":"4b9c3f52709943f4c799a89e80e26a5f96fd2d59bbc1d48b0f53526ecbf925e8","ae/p_layoutsD2.jsx":"8521c40db367c94f65bc16918f82131e52cec75ed9686b27180634bd51fca9f1","ae/p_trans.jsx":"0de7af113add0c633032f7f2f4e59a8e4de10c919f755556ec083dd8ec984021","ae/p_treat1.jsx":"44c7e5f869d24f6a03b4c1f4e2ded5f9168b0f31309a6db931b139b7bae79eb9","ae/p_treat2.jsx":"544421a961e977bcc5cff93c48043853ac23fad4196b60ed204dd38257faead6","ae/p_typo1.jsx":"34a5df2eda66bffd98d01fcf746978a83c69d24d1fb98952f8f010b3fdfb8b91","ae/p_typo2.jsx":"a7333e7f4de55e56acd319832022a326119a8402a25376df4a5f29fb981dc61d","ae/p_typo3.jsx":"2a8695048360fd1ade5f9ba5f0beeb2f6a670afc8fccb003b94a49c30e3a1c4b","ae/p_typo4.jsx":"9c93d9a9a44ae8a4a5cfe7a606070a5a77b05ee46d6a13ca6b187f1391b7c1ed","ae/p_x2_bg1.jsx":"c1dadcbc741b22b0c8e2c1c605889320cfaf1c7341f8654c78b8e54282883848","ae/p_x2_bg2.jsx":"5793a87e873189293deabbb3ddd306b9a11f9057d3b0aa918771e9a9259f4401","ae/p_x2_camtr.jsx":"f2ac5c654073713e685cb39d866d292c2dc53c56f134d7d5f0130e82da903802","ae/p_x2_decA1.jsx":"3cb1cbadacd234f5c9b63b3cdb7ae4aa6a7b061dd303da090fd07b3c34fa26e4","ae/p_x2_decA2.jsx":"e8cfe3da3d29aee4467928633246f3fc70735940354ae1d682f84786aad2a7b7","ae/p_x2_decB.jsx":"559965bd21666260cc72692578a7d6e71fd4a44db9134b5900a33b63a670c66b","ae/p_x2_decC1.jsx":"ddbc775c69ec33339e5f3c32ae45326fa3d91a07aaeee548cb1711e23257788d","ae/p_x2_decC2.jsx":"1fc457e00718d335b55ef29f4289acab8c15c46a78d191334f730e609dc95833","ae/p_x2_entA.jsx":"95da1b4c8e9519e1167147b078b8f053c23174702e13fa74ca74702adc9c4ed3","ae/p_x2_entB.jsx":"ec25d24d3116a972e423ec5fbc86c65c8e2c694e72e02d05be5bfb536a08f135","ae/p_x2_entC.jsx":"0454bd2e85e10e75755d32da66dfe9d685b1c4370fb8250c2f471434dad8d11f","ae/p_x2_exA.jsx":"7a90db95077cec0c2fc23a52515433d9dd01a46b8ffdbaf2b80879b727f0e6ce","ae/p_x2_exB.jsx":"5e5ea8dadfea04a7aade8d1a75b46748a9e6846ca1421af14d85a111acaf2bd1","ae/p_x2_exC.jsx":"5fc726c05103398881af02444616f0a4b51286423b07e66748df9c8b6ce0b075","ae/p_x2_fx.jsx":"8339c3ba59a1780dd5a8750dc7f82c18d55aa0d99df929315faa1a44f1071873","ae/p_x2_hold.jsx":"da7611653b0711d2cf015f3e867567b4ed14fe5e6bf51531b2211ac0a2226631","ae/p_x2_horrorA1.jsx":"4e6c9f70bf32267c358c371e2bbe1517be3ea32c0d47d5ca50368409e196dccd","ae/p_x2_horrorA2.jsx":"da00aaa84adad9b1d42cef75d711674e8dc9a6b2cd54adeb26181f5d43456e79","ae/p_x2_horrorB.jsx":"c6acd93a53764fd905562e84d22235ad2a5602e646ec6a555a09db69fca96b51","ae/p_x2_kineticA1.jsx":"e8df9361a1cc6cc1e30ef087503d63669ca111e253ed300ded68eda914b3ae05","ae/p_x2_kineticA2.jsx":"22a27c3bdda048cfe3640d4fd75800958c26236f678d3baeadbcb1b0a60f53c9","ae/p_x2_kineticB1.jsx":"65b1b8857f964e63a323f480ced6c86fd780324b116bc21675598a4608afae90","ae/p_x2_kineticB2.jsx":"04eb1dba0f99613263750e3bad3d44cd43c9e7b37499d84a17b76f77aabb14e2","ae/p_x2_layA1.jsx":"a5e40aaec917ad1804fbaa8c07cee15b2785413e70aee0045526c4146f4cadf8","ae/p_x2_layA2.jsx":"a2a784cf018c173e4f5967a13a6d6ba32979e3af7d05b9342aa9dc99c6277bbd","ae/p_x2_layB1.jsx":"c4bf3b77276e476f7f8a8355f4b3cd8711986b43abacfd3c1a3bec3eb4961839","ae/p_x2_layB2.jsx":"ea67912cd1fcbce6c3ae2b639ae3bf42ce14dcdfe5ef5bdf5bd06eece974bb25","ae/p_x2_layC1.jsx":"f81e6af39a4dd24418877326a6425180c8719f0ccb4cd91d87740573c41358bb","ae/p_x2_layC2.jsx":"78930a5191544e5734b6ca0ac0143d779f44f7239e0ba489b7c81bbe66b77822","ae/p_x2_layD1.jsx":"f16f941ad330e60e945408f3285feb12c05f7051de3f21c24293b1f1b41a50ee","ae/p_x2_layD2.jsx":"026f5cbc0ebcaade50f0161ea0d7c680dd1f30e1194399a467cd6c273d68ee28","ae/p_x2_treat1.jsx":"ac1432294a46799374ed765a22d77f5b8465af1f501b5d9ee0d0cec825bba421","ae/p_x2_treat2.jsx":"03f79bfa5cfe11b305408454c99d4af58761d2c3f40847227ab48e1cc737062b","ae/p_x2_typoA1.jsx":"0b09b7f8b51a9c304131ca9ae31cce52301d65d420283321af044781586f7419","ae/p_x2_typoA2.jsx":"63f1f909b75278be4606bc632b15f9144763abe6f12f66c764ef584deeedd1f6","ae/p_x2_typoB.jsx":"78087f1e3aba1336105fe0cffad69b74b1d293cf832df2c2edfc2055574b3b84","ae/p_x2_waA1.jsx":"9798164bb6b7aec661a6d5d6aa4107c2a0e1ad8898c9ed9b7ce8fb1320b929bd","ae/p_x2_waA2.jsx":"a09b7a8880c13d6172ca18477e4fc91c6614289c69a20fc24f8cc9ae353eb9c8","ae/p_x2_waB1.jsx":"361afddcc6bc1b4d67935b181343744bd7e166927126f0494ab3013eed8ccdf0","ae/p_x2_waB2.jsx":"ce0f243f05132247760626ca9b63089d02cec97fc356f1ff4fef7527d221cd70","build_cavalry.py":"b9b2eae1c0aca936f65b43258319f1a02042f663e4e01cc377747df82dc48a2c","cavalry/bridge.js":"cb0a946f7df3a39d892132d64bcacd21c9dc700aec3061f18fe69f29a5f74911","cavalry/browser.js":"ca96f1cb546ba7771189f5f81176ca7728b3ab047c5e98b771f4662ccb7bce22","cavalry/loader.js":"f4afa53976fcfd4c5b66467746024a7f1c2b779d76f941df8d4a9b3f74c2b99b","cavalry/native/00_registry.js":"bd9e19352d8ccfa7af6eff999b53588ace86a0bb26488a128d7001a22c414ecc","cavalry/native/10_graph.js":"afa2e39bca9547bc739de2fbc78e33bc72b5ef9881323198b71b2c61c1ce262b","cavalry/native/20_components.js":"0e551a2e4fcf3f9a575ba233bb37171c75141082a1cd0e32a09e547980c0cf31","cavalry/native/25_recipe_tools.js":"92c4df9ac1f160e95831fc22b10d524d5060063968ddee8926913d455a45e27a","cavalry/native/26_recipe_components.js":"40a776a909d3ae7dd0fc69d92f72b55592a0c180c9f76c0e5e4b1d5a3681d484","cavalry/native/27_registry_bridge.js":"a8d7059f743ef7c07ec7d7034be58a4ca094afeddb5e3aa783df66986e289493","cavalry/native/28_registry_identity.js":"06c24778f47f463a5b312729ca6f9eff828508d9337b460a7b771c3664c1b41a","cavalry/native/29_pack_helpers.js":"3a9fbfb0dcc28cfad0454251ba5a6b192004b895137a53adc7e542701998fb94","cavalry/native/30_assembly.js":"4b1408479b68dce2bebb55d9a93ebb8b6429b44ca4a6c430d84e7010d58c3cf7","cavalry/native/browser_adapter.js":"8585093f8d112efde76c5eed009bec501b0023f3e93ab248dff40b772f4fde70","cavalry/packs/p_00_registry.js":"06ae3f1837e48cf86c543b8554e1d5b06f4839b13ad56869df3bfb711c5fb819","cavalry/packs/p_camera.js":"f03fe7e4e6f3d39eb1c7ba21ebcc4270548f89405f0ebc14dee77afa10d45a37","cavalry/packs/p_camera_ext.js":"1039361597c5d5bb63ba1e92d2d7b7ffd06d9603a652f51c87c39af17c449bc6","cavalry/packs/p_core_geometry.js":"e7ac6cc5ee5c5548d5484822376e250e7eea455bef499f09a982170fe363cbd1","cavalry/packs/p_core_scalar.js":"f14c1b33a08cc91c3262f7b4bb2a7479e23d87dd73f88a15b3fb50cef6473822","cavalry/packs/p_enter_core.js":"31e4ad600c54b0571ac3687e66512e8384a5dc918b58461552449766ab15c2aa","cavalry/packs/p_enter_ext.js":"3ff24480675c619629de6be18d3a98b78f241e359563e1c3a313a2ae1c38a7b2","cavalry/packs/p_exit_core.js":"d090b143e82a81816e9c1945ceb60bc5d027092446e95000d986d4ae96dd49bf","cavalry/packs/p_fx.js":"591525e64d66fe4bd2978b671ee14f8db940ecc763d10ddfec98a2e5cb2d8507","cavalry/packs/p_fx_ext.js":"a3adc5fad76f07e325d7bb44002d1de35779914279d3b4e8ebe188521cd4e13b","cavalry/packs/p_fx_x2.js":"27fe76f33a10bbc37af80a0655c2baab1866ec2eba33f5e25c3c084480264988","cavalry/packs/p_graphics.js":"2df776489d6316150c1fa0ffe4e53fb0515734f450f9d550d7f95c4801ff41fa","cavalry/packs/p_hold.js":"f6f6a890cbae16924bf01edae3f267f32cf6a9834680cc168d1fc9880ff2bd4b","cavalry/packs/p_hold_core.js":"9b2bd78489269b0ebd8f5cb0411915b01a3f99bb54e0ee5039f6733312cbc0aa","cavalry/packs/p_hold_ext.js":"f04998d9d6b17fe764ea754096bd9bca708ae558a94e636fb01df96db87b4585","cavalry/packs/p_motion.js":"662351521188450062aebf917d4052d442af3f01d59cb1a987f9e830c9331d39","cavalry/packs/p_requested_backgrounds.js":"8553940cafceca6357d4d1c32ad1e6313436c6dc3671c42945ae50f7434d1a97","cavalry/packs/p_requested_decor.js":"9f3110a36f310ac27e9c32386c8e0f4f6de95ce1fcaba10118567b3b23462527","cavalry/packs/p_requested_layouts.js":"ac5d37ef34364e342e44eba15b917d8406fa8eb65c0778d1f3ee9f36f2f93c63","cavalry/packs/p_requested_motion.js":"2f5cde527a707936fd0ce6a2495c84ae14d2580ec19333e64dc692caaa7a550a","cavalry/packs/p_requested_transitions.js":"af63b5321d133ce61a6672cc3bad714ff5541f350b4c43db02ccab750fa21034","cavalry/packs/p_requested_treatments.js":"001bd8ca9cc3dd0a63af9da539caad604372cb0b1732a4ab12a11400b594d479","cavalry/packs/p_trans_core.js":"61ff3401e73f12aec0b3a2bfad02147e57f6300d508ade0b6c2eea0bad7236c4","cavalry/packs/p_trans_ext.js":"3969aced76853c811e1faa20b482e7773b34bfc5e2247f3ec08b28e92db39f3a","cavalry/packs/p_x2_enter.js":"2301d03492403c064c52794a23356719df84cf8cac812f9d635b24cd6e5e4b7b","cavalry/packs/p_x2_exit.js":"9eb2af8ee3a7287dc7b59ab85da8efeb9d093cb6d18254bf1fa59cabf87886e0","cavalry/panel.js":"2dca5178f41a9cc75f8a3cb3b4c4ffa01649e66fc0585261b8125ba604ae29f4","cavalry/tools/test_requested_native.js":"e1b43b4bc20e6347a42d9a285f521b329ddf1fecc157387fffdb1d658f1a2cb4","src/11p_bgcamB.js":"baad1dab7a4743b4eab351c9e9dfa76d9af5f4e00b29538ce41837a5628dd644","src/11p_decor.js":"b533343d8ad5ad114300fed174d4eb0dff092201c778a6697345157595b933a5","src/11p_decorB.js":"f49747910c456cb829bdfeffa5c0342898305a8e01eebfa8ac18b2cc279bcd62","src/11p_enter.js":"45b8d89a37e08bcfe035d4fde3f93ec739fca891116aeeba62ba28e31d7c97c6","src/11p_enterB.js":"31bce8e07cec677f7ff5c1c77f7f1775a4e8918e46f7a86efdf86bca3f9efa14","src/11p_exit.js":"a013c8d40ba71fa69ea1bfa0782d2a55b7a152aa91bc7c0f7d85a9e89dca0b2b","src/11p_exitB.js":"2b0479412290e7fc9d4d61c4121c2970e0394f5f843c1407c2a1c84478480629","src/11p_fxB.js":"7fe3ce188d24d336a539a1a37752bf2515959fb940ac64518136fdb7bb875946","src/11p_horror1.js":"34a6f7afe72c3e4d4459c671d98f1bb97c4a5fe70484179ce4e1c04788367ed0","src/11p_horror2.js":"828ff4c48181e9755c5e2a82be4e30cab491ca0614cc25d711131108af50b7e4","src/11p_horror3.js":"c99a0d0cef6cf2b246e84586d5a33ebc750d1ef659a1490f211e8316d2727853","src/11p_kinetic1.js":"012282d5f3d44ef99c1b5fa26dd85210b138c4ecc73f54084f929bc74bd0045e","src/11p_kinetic2.js":"8c0401cfc265b6fe79d83e6a056e1bed93f42ae60a17890db165058f842ffd45","src/11p_kinetic3.js":"c1905cb3a5fb7fb7a14e9984b7ee4ce6b435eddeaab89fb71742c0075b7b3393","src/11p_layoutsA.js":"942e712bba6fa21f9b15f5cf5e0b0ccdf9568fa65f65802414180574acddb0ca","src/11p_layoutsB.js":"44a37fef1af83de84131bfe705e6eda2abc873bc5e5c11d2e1b7ed2062fc4191","src/11p_layoutsC.js":"223e99988781cb16d5e146112c040a303e8dbc53d9f29056a6af61906c87cb01","src/11p_layoutsD.js":"64e8276750ff609eb505b251b8e34bb7d7bcf8d759bcef55d94542a2afcb2bad","src/11p_looks.js":"724f124e9b0dfac715bcffb56bbc0342ccc78fdc5f3151481b2c52583470afba","src/11p_styles.js":"a306862fa099e7fd39b2efe1b63a6d30b8abf0462e141a075cd7b9ec24106922","src/11p_treattrans.js":"32711ff3576a30b861ff76ac2330d34cf93db2b1f11c945c013b8967d3f26964","src/11p_typo1.js":"0a1c61c77ebdd61754120283078a1e79e339a3de5341974e9ac7b5bb5a2878da","src/11p_typo2.js":"0fefc16f3e3711da71763bf6f874d02532820e3bbf2f8fd9e327af1a107914e6","src/11p_typo3.js":"bf8f19513f94044faedf74b45601d6cffa467edb79e37542149d34213c03df77","src/11p_x2_bg.js":"b00de8dccdcb6d14296af968973ae1401d98ccf3e12963149e15be8ad0b7f326","src/11p_x2_camtr.js":"40f56b6fa9b6ab6604f37eca2966d8dbce5e818173ad439c6edd3dcd332d8c13","src/11p_x2_decA.js":"32590bab78767e6c2618be9636681f319f2c1a97a9a23af7f2473daca63112b3","src/11p_x2_decB.js":"51714e9ad069b57da4e3ffd682fd2e66f8a0022c2e9efbed04478634a630fada","src/11p_x2_decC.js":"dfa31679d04e2affb884efe1c785422eeb940c646e58972075fb60dffc762279","src/11p_x2_entA.js":"618f428dc97779e46bec9d718810a9c6b4a76904e52c24229dce415f4fc8afde","src/11p_x2_entB.js":"6efc3593a2c9901e1db4a6090d9daf06e05c1a51bf3c48514688642553773d6f","src/11p_x2_entC.js":"b2e7bdb15364736b3c5048bb726416433f457c681e1644acf1dd7b1a08be5892","src/11p_x2_exA.js":"98c893247180f3852af2f5281662f3e9279aa479d58914dfdf2f25b492ca8498","src/11p_x2_exB.js":"27e329bb7f06fa19cf42169e1f4061d09dadd3d9a8b8ec83acb9da973bcc8e60","src/11p_x2_exC.js":"1a10307c1944c67b58ddd1109e6629eabe5653e735a7107a0f3cff2c48f5c761","src/11p_x2_fx.js":"3fb54c6848b4bdab74fdb31d98b740bcac417a93e0ae89a01be46d05177d82ca","src/11p_x2_hold.js":"48cc7c1c15c21ab07e54b488df57d6f24076b0d9f0d8c08cb1a7087eea8f942a","src/11p_x2_horrorA.js":"445797138a9317310ced2dbe6ce43531f65bbe0d0672702f7d6dd2ba27071cb2","src/11p_x2_horrorB.js":"70b02303a91a3977f78fbd2bd8749c7ab510fb8359228ab4d3a487c67f94aa0e","src/11p_x2_kineticA.js":"1151b4a9aa55d4738545ef1a701cf70d4fdf96a9b512886642818494e9d0da8f","src/11p_x2_kineticB.js":"703d7d142451b107f466c30cb2826c1d87cd57537b1ba7e08b8a51e169943d14","src/11p_x2_layA.js":"7ce60a5197ba7252758c5f0f29b4c6ef3c315b75ad80894ecbf437c9b192a756","src/11p_x2_layB.js":"853fefcdb8585534f3fe1a5dd4825d759c89876a5a43b34b879320dcd91fc062","src/11p_x2_layC.js":"07d81f1d5df0bb579ecb2aadc1ddf38cfdc3a44e9e1c0f64309544da936ee3c9","src/11p_x2_layD.js":"29012dc1db484f0b571d3e08c27a3cfcdfcdc7a294103bf1253969dd8939b66a","src/11p_x2_treat.js":"1a8348da5ebc55fffbd6186f4513af5e4f6f020d8ccd2979c8de345ce9516aa9","src/11p_x2_typoA.js":"20fa8af32c93717961a4ec70a8f6b93b5c010265ba37e5aa84fba0d29ebb2be3","src/11p_x2_typoB.js":"acead55a2a8a37797b2d98a35546a0b7ec5fef7c4e5830199f7b2e211af71c5c","src/11p_x2_waA.js":"f38e3c1f4610cf90f8d1f4a426b2331d850dd1e872181745c605a5a5909233cd","src/11p_x2_waB.js":"d3d3a37ee6c99857e40008b4d8b1410013ba7a7738615b61300f45aae1cf1d04"},"status":"preview","version":"0.13.0"};
 /* Native recipe registry. No family aliases; no host access at registration time. */
 var JZNative = (function () {
 'use strict';
@@ -2127,6 +2127,1938 @@ reg('zoomOut', function (p, g, gs, e) {
 })(JZNative, JZRecipeTools, JZRecipeComponents);
 
 ;
+/* 95 native enter recipes (core + horror + kinetic + typo + wa).
+ * Paired with p_enter_core.js, p_requested_motion.js, p_x2_enter.js, and p_enter_x2.js.
+ */
+(function (N, G, C, R, V, S, H) {
+'use strict';
+
+var E = R.E, cl = R.clamp, mix = R.mix, st = R.stagger, TAU = R.T, PI = Math.PI, DEG = PI / 180, rand = N.random;
+var HIDE = { hide: true };
+
+function oQuart(x) { return 1 - Math.pow(1 - cl(x), 4); }
+function oQuint(x) { return 1 - Math.pow(1 - cl(x), 5); }
+function ioCubic(x) { x = cl(x); return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+function ioQuart(x) { x = cl(x); return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2; }
+function ioSine(x) { return -(Math.cos(PI * cl(x)) - 1) / 2; }
+function oQuad(x) { x = cl(x); return 1 - (1 - x) * (1 - x); }
+function iQuad(x) { x = cl(x); return x * x; }
+function spring1(t, k, f) { t = cl(t); return Math.exp(-k * t) * Math.cos(f * PI * t) * (1 - t * t * t); }
+function kick(t, k, f) { return t <= 0 ? 0 : Math.exp(-k * t) * Math.sin(f * t); }
+function bounceE(x) {
+  x = cl(x);
+  var n1 = 7.5625, d1 = 2.75;
+  if (x < 1 / d1) return n1 * x * x;
+  if (x < 2 / d1) { x -= 1.5 / d1; return n1 * x * x + 0.75; }
+  if (x < 2.5 / d1) { x -= 2.25 / d1; return n1 * x * x + 0.9375; }
+  x -= 2.625 / d1; return n1 * x * x + 0.984375;
+}
+function outElastic(x) {
+  x = cl(x);
+  if (x <= 0 || x >= 1) return x;
+  return Math.pow(2, -10 * x) * Math.sin((x * 10 - 0.75) * TAU / 3) + 1;
+}
+function noise1(x, s) {
+  var i = Math.floor(x), f = x - i, u = f * f * (3 - 2 * f);
+  return mix(rand(s, i, 1) * 2 - 1, rand(s, i + 1, 1) * 2 - 1, u);
+}
+function rot2(x, y, deg) {
+  var r = deg * DEG, cs = Math.cos(r), sn = Math.sin(r);
+  return [x * cs - y * sn, x * sn + y * cs];
+}
+
+function gx(g, node) { return (g.x + (g.vx || 0)) * (node.sx == null ? 1 : node.sx); }
+function gy(g, node) { return g.y + (g.vy || 0); }
+function lr(g, gs) { return gs.length > 1 ? g.i / (gs.length - 1) : 0; }
+function seedOf(c) { return c.node.seed == null ? ((c.cut.source || {}).seed || 1) : c.node.seed; }
+function nonSpace(gs) { return gs.filter(function (g) { return !/^[\s\u3000]$/.test(g.ch); }); }
+function soloTotal(c, gs) {
+  var total = Array.from(String((c.cut && c.cut.source && c.cut.source.text) || c.node.text || '').replace(/\s+/g, '')).length;
+  return { total: Math.max(1, total), solo: gs.length <= 1 && total > 1, mi: c.node.mi || 0 };
+}
+function padBox(gs, pad) {
+  var b = V.bounds(gs);
+  return { x0: b.x0 - pad, y0: b.y0 - pad, x1: b.x1 + pad, y1: b.y1 + pad, cx: b.cx, cy: b.cy, w: b.w + 2 * pad, h: b.h + 2 * pad };
+}
+function inRange(c) {
+  var start = Math.max(c.cut.start, c.cut.origin + (c.node.delayFrames || 0));
+  var end = Math.min(c.cut.end, start + Math.max(1, c.cut.inFrames) + 1);
+  return { start: start, end: end, ok: end > start };
+}
+function pinAt(c, frame) { return V.envelope(c, c.node, frame).pin; }
+
+function applyState(s, o, c, g) {
+  if (!o) return;
+  if (o.hide) { s.a = 0; return; }
+  s.dx += o.dx || 0; s.dy += o.dy || 0; s.rot += o.rot || 0;
+  var sc = o.s == null ? 1 : o.s;
+  s.sx *= sc * (o.sx == null ? 1 : o.sx); s.sy *= sc * (o.sy == null ? 1 : o.sy);
+  s.a *= o.a == null ? 1 : o.a;
+  if (o.clipPolygon) s.clipPolygon = o.clipPolygon;
+  if (o.clipX || o.clipY) {
+    var cx0 = o.clipX ? o.clipX[0] : -2, cx1 = o.clipX ? o.clipX[1] : 2;
+    var cy0 = o.clipY ? o.clipY[0] : -2, cy1 = o.clipY ? o.clipY[1] : 2;
+    var hw = Math.max(2, g.w), hh = Math.max(2, g.h);
+    var p0x = g.x + (g.vx || 0) + cx0 * hw, p1x = g.x + (g.vx || 0) + cx1 * hw;
+    var p0y = g.y + (g.vy || 0) + cy0 * hh, p1y = g.y + (g.vy || 0) + cy1 * hh;
+    s.clipPolygon = V.polygon(p0x, p0y, p1x, p1y);
+  }
+  if (o.blur != null) s.blur = (s.blur || 0) + o.blur;
+  if (o.ch != null) s.ch = o.ch;
+  if (o.color) s.color = o.color;
+}
+
+function reg(key, source, factory, diffs) {
+  N.register('enter', key, {
+    source: source + ' / enter:' + key,
+    scope: 'glyph',
+    differences: diffs || [],
+    build: function (c) {
+      var fn = factory(c);
+      return function (s, g, gs, frame) {
+        var env = V.envelope(c, c.node, frame);
+        var e = {
+          W: c.comp.width, H: c.comp.height, size: c.node.size, seed: seedOf(c),
+          vertical: !!c.node.vertical, M: R.env(c, frame).M, step: Math.floor(env.t * 24 + 1e-6),
+          inDur: Math.max(0.05, c.cut.inFrames / c.comp.fps), frame: frame
+        };
+        applyState(s, fn(env.pin, g, gs, e), c, g);
+      };
+    }
+  });
+}
+
+function localShape(c, loc, name, cmds, paint, rng, sampleFn) {
+  if (!rng.ok) return null;
+  var id = C.shape(c.graph, { start: rng.start, end: rng.end }, c.cut.id + ' / ' + c.node.id + ' / ' + name, loc, cmds, paint);
+  if (sampleFn) C.sample(c.graph, id, rng.start, rng.end, function (f) { return sampleFn(pinAt(c, f), f); });
+  return id;
+}
+
+function localText(c, loc, name, text, x, y, size, opts, rng, sampleFn) {
+  if (!rng.ok) return null;
+  var f = V.font(c, c.node);
+  var id = c.graph.add('textShape', c.cut.id + ' / ' + c.node.id + ' / ' + name, loc, rng.start, rng.end, {
+    text: String(text), font: { font: f.family, style: f.style }, fontSize: Math.max(4, size),
+    autoWidth: true, autoHeight: true,
+    horizontalAlignment: opts.align === 'left' ? 0 : (opts.align === 'right' ? 2 : 1),
+    verticalAlignment: 1, position: [x, -y],
+    fill: true, stroke: false, 'material.materialColor': opts.color || c.sc.sub || c.sc.fg, alpha: 1
+  });
+  if (sampleFn) C.sample(c.graph, id, rng.start, rng.end, function (fr) { return sampleFn(pinAt(c, fr), fr); });
+  return id;
+}
+
+function clipHalfPoly(poly, evalFn) {
+  var out = [];
+  for (var i = 0; i < poly.length; i++) {
+    var a = poly[i], b = poly[(i + 1) % poly.length];
+    var da = evalFn(a), db = evalFn(b);
+    if (da >= 0) out.push(a);
+    if ((da >= 0) !== (db >= 0)) {
+      var t = da / (da - db);
+      out.push([a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]);
+    }
+  }
+  return out;
+}
+
+var SIGNS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&+=/*?@';
+function pickSign(seed, a, b, st) {
+  var h = Math.floor(rand(seed, a, b, st) * SIGNS.length) % SIGNS.length;
+  return SIGNS.charAt(h);
+}
+
+/* ================================================================ Core (35) */
+
+reg('blurStagger', 'ae/p_enter2.jsx', function (c) {
+  var bl = Math.min(42, c.node.size * 0.14);
+  return function (p, g, gs, e) {
+    var q = st(p, lr(g, gs), 0.55);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var v = E.outCubic(q);
+    return { blur: bl * (1 - v), a: Math.pow(v, 0.6), s: mix(1.35, 1, v), dy: -(1 - v) * e.size * 0.16 };
+  };
+});
+
+reg('slideWhole', 'ae/p_enter1.jsx', function (c) {
+  var sd = seedOf(c), dir = rand(sd, 11, 5) < 0.5 ? -1 : 1;
+  return function (p, g, gs, e) {
+    var v = E.outBack(p, 1.7), n = gs.length <= 1 ? 1.3 : 3.2;
+    var D = e.size * n * (0.7 + 0.6 * e.M) * (1 - v);
+    var out = { a: cl(p * 4) };
+    if (e.vertical) out.dy = dir * D; else out.dx = dir * D;
+    return out;
+  };
+});
+
+reg('outlineFill', 'ae/p_enter1.jsx', function (c) {
+  var sw = Math.max(1.2, c.node.size * 0.028);
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'Outline', below: true,
+    setup: function (graph, clone, src, g, gs) {
+      clone.attrs.fill = false; clone.attrs.stroke = true;
+      clone.attrs['stroke.strokeColor'] = c.node.color; clone.attrs['stroke.width'] = sw;
+      clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var p = pinAt(c, f), q = st(p, lr(g, gs), 0.4), u = cl(q / 0.35), sc = mix(1.3, 1, oQuint(u));
+        var a = (q > 0 && q < 0.9) ? cl(q * 5) * (1 - H.smoothstep(0.68, 0.9, q)) : 0;
+        return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0), 'scale.x': sc, 'scale.y': sc, alpha: a };
+      });
+    }
+  });
+  return function (p, g, gs) {
+    var q = st(p, lr(g, gs), 0.4);
+    if (q <= 0.3) return HIDE;
+    if (q >= 1) return null;
+    if (g.r90) return { a: cl((q - 0.3) / 0.55) };
+    var f = ioQuart((q - 0.3) / 0.55);
+    return f >= 1 ? null : { clipY: [mix(0.66, -0.68, f), 0.72], clipX: [-2, 2] };
+  };
+});
+
+reg('strokeDraw', 'ae/p_enter1.jsx', function (c) {
+  var sw = Math.max(1, c.node.size * 0.032);
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'StrokeDraw', below: true,
+    setup: function (graph, clone, src, g, gs) {
+      clone.attrs.fill = false; clone.attrs.stroke = true;
+      clone.attrs['stroke.strokeColor'] = c.node.color; clone.attrs['stroke.width'] = sw;
+      clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var p = pinAt(c, f), a = (1 - H.smoothstep(0.55, 0.92, p)) * cl(p * 6);
+        return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0), 'stroke.width': Math.max(0.5, sw * (1 - H.smoothstep(0.55, 0.86, p))), alpha: a };
+      });
+    }
+  });
+  return function (p) {
+    var d = oQuad(cl(p / 0.86));
+    return p >= 1 ? null : { clipX: [-0.8, mix(-0.8, 0.8, d)], clipY: [-1, 1], a: H.smoothstep(0.38, 0.9, p) };
+  };
+});
+
+reg('checker', 'ae/p_enter2.jsx', function (c) {
+  var rng = inRange(c), gs = V.glyphs(c, c.node), b = padBox(gs, c.node.size * 0.15);
+  var cell = c.node.size * 0.34, sd = seedOf(c);
+  while ((b.w / cell) * (b.h / cell) > 120) cell *= 1.25;
+  var nx = Math.max(1, Math.ceil(b.w / cell)), ny = Math.max(1, Math.ceil(b.h / cell));
+  var ox = b.cx - nx * cell / 2, oy = b.cy - ny * cell / 2;
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Checker');
+    for (var iy = 0; iy < ny; iy++) for (var ix = 0; ix < nx; ix++) {
+      (function (xIdx, yIdx) {
+        var d = ((xIdx + yIdx) & 1) * 0.25 + (nx > 1 ? xIdx / (nx - 1) : 0) * 0.3 + rand(sd, xIdx, yIdx, 7) * 0.08;
+        var cx = ox + (xIdx + 0.5) * cell, cy = oy + (yIdx + 0.5) * cell;
+        localShape(c, loc, 'Tile ' + xIdx + '_' + yIdx, G.rect(-cell / 2, -cell / 2, cell, cell),
+          { fill: H.accCol(c.sc), alpha: 0.9 }, rng, function (p) {
+            var u = cl((p - d) / 0.22);
+            if (u <= 0 || u >= 0.75) return { alpha: 0 };
+            var k = Math.max(0.01, (1 - E.inCubic(u / 0.75)) * Math.min(1, u * 6));
+            return { 'position.x': cx, 'position.y': -cy, 'scale.x': k, 'scale.y': k, alpha: 0.9 };
+          });
+      })(ix, iy);
+    }
+  }
+  return function (p, g) {
+    var q = cl((p - ((g.i % 2) * 0.25 + (g.ci / Math.max(1, g.n)) * 0.3)) / 0.28);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var hs = oQuart(q);
+    return { s: mix(0.25, 1, hs), a: cl(q * 6) };
+  };
+});
+
+reg('echoIn', 'ae/p_enter2.jsx', function (c) {
+  var col = H.accCol(c.sc), sw = Math.max(1.4, c.node.size * 0.02);
+  [1, 2, 3].forEach(function (m) {
+    (c.node._jzTwins = c.node._jzTwins || []).push({
+      label: 'EchoIn ' + m, below: true,
+      setup: function (graph, clone, src, g, gs) {
+        clone.attrs.fill = false; clone.attrs.stroke = true;
+        clone.attrs['stroke.strokeColor'] = col; clone.attrs['stroke.width'] = sw;
+        clone.keys = {};
+        C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+          var q = st(pinAt(c, f), lr(g, gs), 0.35);
+          if (q <= 0 || q >= 1) return { alpha: 0 };
+          var k = 1 - oQuart(q), sc = 1 + m * 0.3 * k;
+          return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0),
+            'scale.x': sc, 'scale.y': sc, alpha: cl((0.95 - m * 0.2) * Math.min(1, k * 1.8) * cl(q * 6)) };
+        });
+      }
+    });
+  });
+  return function (p, g, gs) {
+    var q = st(p, lr(g, gs), 0.35);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    return { a: cl(q * 2.2), s: mix(0.88, 1, oQuart(q)) };
+  };
+});
+
+reg('inkBleed', 'ae/p_enter2.jsx', function (c) {
+  var bl = Math.min(36, c.node.size * 0.16);
+  return function (p, g, gs, e) {
+    var d = gs.length > 1 ? rand(e.seed, g.i, 91) * 0.45 : 0;
+    var u = cl((p - d) / 0.55);
+    if (u <= 0) return HIDE;
+    if (u >= 1) return null;
+    return { s: mix(0.5, 1, E.outBack(u, 1.1)), blur: bl * Math.pow(1 - E.outCubic(u), 1.3), a: cl(u * 3.2) };
+  };
+});
+
+reg('magnet', 'ae/p_enter2.jsx', function () {
+  return function (p, g, gs, e) {
+    var d = gs.length > 1 ? rand(e.seed, g.i, 81) * 0.3 : 0, u = cl((p - d) / 0.7);
+    if (u <= 0) return HIDE;
+    if (u >= 1) return null;
+    var ang = rand(e.seed, g.i, 82) * TAU, dist = e.size * (1.3 + 1.5 * rand(e.seed, g.i, 83)), rot0 = (rand(e.seed, g.i, 84) * 2 - 1) * 55;
+    var f, a;
+    if (u < 0.36) { f = 1 - 0.16 * E.outCubic(u / 0.36); a = 0.5 * cl(u * 8); }
+    else if (u < 0.6) { var t = (u - 0.36) / 0.24; f = 0.84 * (1 - E.inCubic(t)); a = mix(0.5, 1, cl(t * 3)); }
+    else { var t2 = (u - 0.6) / 0.4; f = -0.1 * Math.sin(t2 * TAU) * (1 - t2); a = 1; }
+    var sc = 1 + 0.14 * Math.exp(-Math.pow((u - 0.6) / 0.05, 2));
+    return { dx: Math.cos(ang) * dist * f, dy: Math.sin(ang) * dist * f, rot: rot0 * f, s: sc, a: a };
+  };
+});
+
+reg('neonOn', 'ae/p_enter2.jsx', function (c) {
+  var col = H.lum(c.node.color) > 0.35 ? c.node.color : H.accCol(c.sc);
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'NeonGlow', below: true,
+    setup: function (graph, clone, src, g) {
+      clone.attrs.fill = false; clone.attrs.stroke = true;
+      clone.attrs['stroke.strokeColor'] = col; clone.attrs['stroke.width'] = Math.max(2, c.node.size * 0.08);
+      clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var p = pinAt(c, f), glow = H.smoothstep(0.1, 0.4, p) * (1 - H.smoothstep(0.62, 0.92, p));
+        return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0), alpha: cl(glow * 0.6) };
+      });
+    }
+  });
+  return function (p, g, gs, e) {
+    var ig = 0.3 + 0.45 * rand(e.seed, g.i, 101);
+    if (p >= ig + 0.12) return null;
+    if (p < ig - 0.22) return { a: 0.1 * cl(p * 8) };
+    var on = rand(e.seed, g.i, e.step, 102) < 0.25 + 0.75 * cl((p - ig + 0.22) / 0.34);
+    return on ? null : { a: 0.1 };
+  };
+});
+
+reg('brushReveal', 'ae/p_enterB2.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), spans = V.spans(gs, !!c.node.vertical), rng = inRange(c);
+  var sz = c.node.size, tail = sz * 1.1, pad = sz * 0.2, K = 8, sd = seedOf(c), vert = !!c.node.vertical;
+  if (rng.ok && spans.length) {
+    var loc = V.local(c, c.node, 'Brush');
+    spans.forEach(function (L, li) {
+      var hv = sz * 0.66, th = hv * 2 / K;
+      for (var k = 0; k < K; k++) {
+        (function (kk) {
+          var lag = tail * Math.pow(rand(sd, L.li, kk, 141), 1.6);
+          var tipLen = sz * 0.32;
+          localShape(c, loc, 'Bristle ' + li + '_' + kk,
+            vert ? G.rect(-th / 2, -tipLen, th, tipLen) : G.rect(-tipLen, -th / 2, tipLen, th),
+            { fill: H.accCol(c.sc), alpha: 0.9 }, rng, function (p) {
+              var q = st(p, spans.length > 1 ? li / (spans.length - 1) : 0, spans.length > 1 ? 0.4 : 0);
+              if (q <= 0 || q >= 0.96) return { alpha: 0 };
+              var F = mix(L.a0 - pad, L.a1 + pad + tail, ioSine(q)), end = F - lag;
+              if (end <= L.a0 - pad) return { alpha: 0 };
+              var cv = L.c - hv + (kk + 0.5) * th, fade = 1 - H.smoothstep(0.65, 0.96, q);
+              return vert ? { 'position.x': cv, 'position.y': -end, alpha: fade } : { 'position.x': end, 'position.y': -cv, alpha: fade };
+            });
+        })(k);
+      }
+    });
+  }
+  return function (p, g) {
+    var li = Math.max(0, spans.findIndex(function (L) { return L.li === g.li; }));
+    var L = spans[li] || { a0: g.x - g.w, a1: g.x + g.w };
+    var q = st(p, spans.length > 1 ? li / (spans.length - 1) : 0, spans.length > 1 ? 0.4 : 0);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var F = mix(L.a0 - pad, L.a1 + pad + tail, ioSine(q)) - tail * 0.35;
+    var u = cl((F - ((vert ? g.y : g.x) - (vert ? g.h : g.w) / 2)) / Math.max(1, (vert ? g.h : g.w)));
+    return u <= 0 ? HIDE : (u >= 1 ? null : (vert ? { clipY: [-0.7, mix(-0.7, 0.7, u)], clipX: [-1.5, 1.5] } : { clipX: [-0.7, mix(-0.7, 0.7, u)], clipY: [-1.5, 1.5] }));
+  };
+});
+
+reg('bubbles', 'ae/p_enterB2.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), rng = inRange(c), tP = 0.68, sz = c.node.size, sd = seedOf(c);
+  function stB(i, n, p) {
+    var q = st(p, 0.5 * rand(sd, i, 221) + 0.5 * (n > 1 ? i / (n - 1) : 0), 0.45);
+    var f = cl(q / tP), ph = rand(sd, i, 222) * TAU;
+    return { q: q, dx: Math.sin(ph + f * 9) * sz * 0.1 * (1 - f), dy: sz * 1.7 * (1 - E.outCubic(f)) };
+  }
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Bubbles'), lw = Math.max(1.2, sz * 0.018);
+    nonSpace(gs).forEach(function (g) {
+      var r = Math.max(g.w, g.h) * 0.5;
+      localShape(c, loc, 'Bubble ' + g.i, G.ellipse(0, 0, r, r), { stroke: H.accCol(c.sc), width: lw, alpha: 0.85 }, rng, function (p) {
+        var S = stB(g.i, gs.length, p);
+        if (S.q <= 0 || S.q >= 1) return { alpha: 0 };
+        if (S.q < tP) return { 'position.x': g.x + (g.vx || 0) + S.dx, 'position.y': -g.y - (g.vy || 0) - S.dy, alpha: 0.85 * cl(S.q * 6) };
+        var u = (S.q - tP) / (1 - tP);
+        if (u >= 0.5) return { alpha: 0 };
+        var sc = 1 + 0.6 * E.outCubic(u / 0.5);
+        return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0), 'scale.x': sc, 'scale.y': sc, alpha: cl(1 - u / 0.5) };
+      });
+    });
+  }
+  return function (p, g, gs2) {
+    var S = stB(g.i, gs2.length, p);
+    if (S.q <= 0) return HIDE;
+    if (S.q >= 1) return null;
+    if (S.q < tP) return { dx: S.dx, dy: S.dy, s: 0.68, a: cl(S.q * 6) };
+    return { s: mix(0.68, 1, E.outBack((S.q - tP) / (1 - tP), 2.6)) };
+  };
+});
+
+reg('crumple', 'ae/p_enterB1.jsx', function () {
+  return function (p, g, gs, e) {
+    var q = st(p, lr(g, gs), 0.45);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var k = E.outBack(q, 1.6);
+    return { s: mix(0.35, 1, k), rot: (rand(e.seed, g.i, 92) * 2 - 1) * 120 * (1 - k), a: cl(q * 4) };
+  };
+});
+
+reg('cylinder', 'ae/p_enterB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = V.bounds(gs), vert = !!c.node.vertical;
+  var U0 = vert ? b.y0 : b.x0, U1 = vert ? b.y1 : b.x1, uc = (U0 + U1) / 2;
+  var R0 = Math.max(c.node.size * 0.6, (U1 - U0) / 2) / 1.2, dir = rand(seedOf(c), 61, 5) < 0.5 ? -1 : 1;
+  var bg = c.sc.bg, col = c.node.color;
+  return function (p, g) {
+    var phi = dir * (1 - oQuart(p)) * 2.4, flat = H.smoothstep(0.5, 1, p), A = cl(p * 6);
+    var u = (vert ? g.y : g.x) - uc, th = u / R0 + phi, cu = Math.cos(th);
+    if (cu <= 0.04 && flat < 0.5) return HIDE;
+    var nu = mix(R0 * Math.sin(th), u, flat), k = mix(Math.max(0.04, cu), 1, flat);
+    var o = { a: A * mix(cl(cu * 1.6), 1, flat), color: H.mixHex(col, bg, (1 - mix(cl(cu), 1, flat)) * 0.6) };
+    if (vert) { o.dy = nu - u; o.sy = k; } else { o.dx = nu - u; o.sx = k; }
+    return o;
+  };
+});
+
+reg('dither', 'ae/p_enterB2.jsx', function () {
+  var BAYER = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5];
+  return function (p, g, gs, e) {
+    var th = (BAYER[((g.li & 3) * 4) + (g.ci & 3)] + 0.5) / 16;
+    var u = gs.length > 1 ? g.i / (gs.length - 1) : 0;
+    var v = p * 1.35 - 0.3 * u;
+    if (v <= th * 0.7) return HIDE;
+    var f = cl((v - th * 0.7) / 0.35);
+    return f >= 1 ? null : { s: mix(0.75, 1, f), a: f };
+  };
+});
+
+reg('echoCount', 'ae/p_enterB2.jsx', function (c) {
+  var col = H.accCol(c.sc), dir = rand(seedOf(c), 181, 5) < 0.5 ? -1 : 1, sz = c.node.size;
+  [1, 2, 3].forEach(function (m) {
+    (c.node._jzTwins = c.node._jzTwins || []).push({
+      label: 'EchoCount ' + m, below: true,
+      setup: function (graph, clone, src, g) {
+        clone.attrs['material.materialColor'] = col; clone.keys = {};
+        C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+          var p = pinAt(c, f), x4 = cl(p / 0.88) * 4, b = Math.min(3, Math.floor(x4)), n = p >= 0.88 ? 0 : 3 - b;
+          if (m > n || p <= 0 || p >= 0.99) return { alpha: 0 };
+          var a = 0.75 * Math.pow(0.72, m - 1);
+          return { 'position.x': g.x + (g.vx || 0) + dir * sz * 0.16 * m, 'position.y': -g.y - (g.vy || 0) - sz * 0.11 * m, alpha: a };
+        });
+      }
+    });
+  });
+  return function (p) {
+    var x4 = cl(p / 0.88) * 4, b = Math.min(3, Math.floor(x4)), f = x4 - b;
+    var punch = (p < 0.88 ? 0.14 * Math.exp(-f * 7) : 0.1 * Math.exp(-(p - 0.88) * 40) * (1 - H.smoothstep(0.9, 0.99, p)));
+    return { s: 1 + punch, a: cl(p * 10) };
+  };
+});
+
+reg('filmFeed', 'ae/p_enterB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = padBox(gs, c.node.size * 0.35), rng = inRange(c);
+  var FH = b.h, sz = c.node.size;
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'FilmFeed');
+    localShape(c, loc, 'Gate bar', G.rect(b.x0 - sz * 0.4, -sz * 0.06, b.w + sz * 0.8, sz * 0.12),
+      { fill: H.mixHex(c.sc.bg, c.sc.fg, 0.18), alpha: 1 }, rng, function (p) {
+        var e = E.outCubic(cl(p / 0.82)), off = ((FH * 2.35 * (1 - e)) % FH + FH) % FH;
+        if (off < 0.5 || p >= 0.98) return { alpha: 0 };
+        return { 'position.y': -(b.y0 + off), alpha: cl(p * 7) };
+      });
+  }
+  return function (p, g, gs2, e) {
+    var ev = E.outCubic(cl(p / 0.82)), off = ((FH * 2.35 * (1 - ev)) % FH + FH) % FH;
+    var fl = 1 - H.smoothstep(0.55, 0.95, p);
+    var a = cl(p * 7) * (1 - 0.45 * fl * rand(e.seed, e.step, 99));
+    return { dx: (rand(e.seed, e.step, 98) * 2 - 1) * sz * 0.02 * fl, dy: off < 0.5 ? 0 : off, a: a,
+      clipPolygon: V.polygon(b.x0 - sz * 2, b.y0, b.x1 + sz * 2, b.y1) };
+  };
+});
+
+reg('glint', 'ae/p_enterB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = V.bounds(gs), vert = !!c.node.vertical, sz = c.node.size;
+  var hot = (H.lum(c.node.color) > 0.7 || H.lum(c.sc.bg) > 0.5) ? H.accCol(c.sc) : '#FFFFFF';
+  var U0 = vert ? b.y0 : b.x0, U1 = vert ? b.y1 : b.x1, kS = 0.45, bw = sz * 0.55, sl = kS * (vert ? b.w : b.h) / 2;
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'GlintHot',
+    setup: function (graph, clone, src, g) {
+      clone.attrs['material.materialColor'] = hot; clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var p = pinAt(c, f), B = mix(U0 - bw - sl, U1 + bw + sl, ioSine(cl(p / 0.9)));
+        var u = vert ? gy(g, c.node) : gx(g, c.node);
+        var a = (1 - Math.abs(u - B) / bw) * (1 - H.smoothstep(0.85, 1, p));
+        return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0), alpha: cl(a) };
+      });
+    }
+  });
+  return function (p, g) {
+    var B = mix(U0 - bw - sl, U1 + bw + sl, ioSine(cl(p / 0.9)));
+    var u = vert ? gy(g, c.node) : gx(g, c.node);
+    return u <= B ? { a: 1 } : { a: 0.2 * cl(p * 6) };
+  };
+});
+
+reg('heatHaze', 'ae/p_enterB2.jsx', function () {
+  return function (p, g, gs, e) {
+    var amp = e.size * 0.36 * (1 - ioSine(p)), t = p * e.inDur;
+    if (amp < 0.5) return { a: E.outCubic(cl(p * 2.4)) };
+    var dx = amp * Math.sin(g.i * 0.9 + t * 17) * (0.55 + 0.45 * Math.sin(g.i * 0.37 + t * 6));
+    return { dx: dx, a: E.outCubic(cl(p * 2.4)) };
+  };
+});
+
+reg('inkDrop', 'ae/p_enterB2.jsx', function (c) {
+  var rng = inRange(c), gs = V.glyphs(c, c.node), sd = seedOf(c), sz = c.node.size;
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'InkDrop');
+    nonSpace(gs).forEach(function (g) {
+      localShape(c, loc, 'Drop ' + g.i, G.ellipse(0, 0, sz * 0.08, sz * 0.08),
+        { fill: H.accCol(c.sc), alpha: 1 }, rng, function (p) {
+          var q = st(p, rand(sd, g.i, 151), 0.5);
+          if (q <= 0 || q >= 0.4) return { alpha: 0 };
+          var s = q < 0.12 ? E.outBack(q / 0.12, 2) : 1 + (q - 0.12) * 4;
+          return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0), 'scale.x': Math.max(0.05, s), 'scale.y': Math.max(0.05, s),
+            alpha: q < 0.12 ? 1 : cl(1 - (q - 0.12) / 0.28) };
+        });
+    });
+  }
+  return function (p, g, gs2, e) {
+    var q = st(p, rand(e.seed, g.i, 151), 0.5);
+    if (q <= 0.12) return HIDE;
+    if (q >= 1) return null;
+    var u = (q - 0.12) / 0.88, R0 = Math.max(g.w, g.h) * 0.72 * E.outCubic(u), pts = [];
+    for (var k = 0; k < 16; k++) { var a = k / 16 * TAU; pts.push([g.x + (g.vx || 0) + Math.cos(a) * R0, g.y + (g.vy || 0) + Math.sin(a) * R0]); }
+    return { clipPolygon: pts };
+  };
+});
+
+reg('interlace', 'ae/p_enterB2.jsx', function (c) {
+  var rng = inRange(c), gs = V.glyphs(c, c.node), b = padBox(gs, c.node.size * 0.25), sz = c.node.size;
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Interlace'), m = sz * 0.3;
+    localShape(c, loc, 'ScanBar', G.rect(b.x0 - m, -1, b.w + m * 2, Math.max(2, sz * 0.02)),
+      { fill: H.accCol(c.sc), alpha: 0.9 }, rng, function (p) {
+        var f = p < 0.5 ? cl(p / 0.52) : cl((p - 0.48) / 0.52);
+        if (f <= 0 || f >= 1) return { alpha: 0 };
+        return { 'position.y': -mix(b.y0, b.y1, f), alpha: cl(0.9 * (p < 0.5 ? 1 : 1 - H.smoothstep(0.85, 0.99, f))) };
+      });
+  }
+  return function (p, g) {
+    var f = (g.i % 2) ? cl((p - 0.48) / 0.52) : cl(p / 0.52);
+    var u = b.h > 1 ? (g.y - b.y0) / b.h : 0;
+    return u <= f + 0.05 ? { a: cl((f - u + 0.08) * 10) } : HIDE;
+  };
+});
+
+reg('lightLeak', 'ae/p_enterB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = V.bounds(gs), vert = !!c.node.vertical, sz = c.node.size;
+  var warm = H.accCol(c.sc), dk = H.dark(c.sc.bg), core = H.mixHex(warm, '#FFFFFF', dk ? 0.45 : 0.2), col = c.node.color;
+  var U0 = vert ? b.y0 : b.x0, U1 = vert ? b.y1 : b.x1, span = Math.max(1, U1 - U0), bl = Math.min(20, sz * 0.06);
+  var rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'LightLeak'), r = Math.max(sz * 1.4, (vert ? b.w : b.h) * 0.9);
+    localShape(c, loc, 'Orb', G.ellipse(0, 0, r, r), { fill: dk ? core : warm, alpha: 0.4 }, rng, function (p) {
+      var a = cl(p * 6) * (1 - H.smoothstep(0.55, 0.95, p)), Hpos = mix(U0 - sz * 0.5, U1 + sz * 0.5, cl(p / 0.62));
+      return { 'position.x': vert ? b.cx : Hpos, 'position.y': -(vert ? Hpos : b.cy), alpha: cl(a * (dk ? 0.45 : 0.3)) };
+    });
+  }
+  return function (p, g) {
+    var f = ((vert ? g.y : g.x) - U0) / span, q = cl((p - 0.55 * f) / 0.45);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var heat = 1 - E.outCubic(q);
+    return { a: cl(q * 4), color: H.mixHex(col, heat > 0.6 ? H.mixHex(warm, core, (heat - 0.6) / 0.4) : warm, Math.min(1, heat * 1.5)),
+      s: 1 + 0.07 * heat, blur: bl * heat * heat };
+  };
+});
+
+reg('liquidFill', 'ae/p_enterB2.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = padBox(gs, c.node.size * 0.3), sz = c.node.size;
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'LiquidOutline', below: true,
+    setup: function (graph, clone, src, g) {
+      clone.attrs.fill = false; clone.attrs.stroke = true;
+      clone.attrs['stroke.strokeColor'] = c.node.color; clone.attrs['stroke.width'] = Math.max(1, sz * 0.014);
+      clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var p = pinAt(c, f), a = 0.45 * cl(p * 6) * (1 - H.smoothstep(0.8, 1, p));
+        return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0), alpha: a };
+      });
+    }
+  });
+  var rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'LiquidLine');
+    localShape(c, loc, 'Surface', G.rect(b.x0, -sz * 0.02, b.w, Math.max(2, sz * 0.03)),
+      { fill: H.accCol(c.sc), alpha: 1 }, rng, function (p) {
+        var e = ioSine(cl(p / 0.94)), oa = cl(p * 6) * (1 - H.smoothstep(0.8, 1, p));
+        return { 'position.y': -mix(b.y1, b.y0, e), alpha: e > 0.02 ? oa : 0 };
+      });
+  }
+  return function (p, g) {
+    var e = ioSine(cl(p / 0.94)), lvl = mix(b.y1, b.y0, e);
+    if (lvl >= g.y + g.h * 0.6) return HIDE;
+    if (lvl <= g.y - g.h * 0.6) return null;
+    return { clipPolygon: V.polygon(b.x0 - sz * 2, lvl, b.x1 + sz * 2, b.y1 + sz * 4) };
+  };
+});
+
+reg('loadingBar', 'ae/p_enterB2.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = V.bounds(gs), vert = !!c.node.vertical, sz = c.node.size, sd = seedOf(c);
+  var U0 = vert ? b.y0 : b.x0, U1 = vert ? b.y1 : b.x1, span = Math.max(1, U1 - U0);
+  var keys = [[0.06, 0], [0.2, 0.16 + 0.08 * rand(sd, 1, 1)], [0.3, 0.24 + 0.08 * rand(sd, 2, 1)], [0.42, 0.52 + 0.1 * rand(sd, 3, 1)], [0.52, 0.6 + 0.08 * rand(sd, 4, 1)], [0.7, 1]];
+  function prAt(p) {
+    var pr = 0;
+    for (var k = 1; k < keys.length; k++) if (p >= keys[k - 1][0]) pr = mix(keys[k - 1][1], keys[k][1], E.outCubic(cl((p - keys[k - 1][0]) / (keys[k][0] - keys[k - 1][0]))));
+    return pr;
+  }
+  var rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'LoadingBar'), th = Math.max(3, sz * 0.07), gap = sz * 0.24, L = Math.max(1, vert ? b.h : b.w);
+    localShape(c, loc, 'Track', vert ? G.rect(b.x0 - gap - th, -b.y1, th, L) : G.rect(b.x0, -(b.y1 + gap + th), L, th),
+      { fill: c.sc.sub || c.sc.fg, alpha: 0.3 }, rng, function (p) {
+        return { alpha: 0.3 * cl(p / 0.08) * (1 - H.smoothstep(0.88, 1, p)) };
+      });
+    localShape(c, loc, 'Fill', vert ? G.rect(b.x0 - gap - th, -1, th, 1) : G.rect(0, -(b.y1 + gap + th), 1, th),
+      { fill: H.accCol(c.sc), alpha: 1 }, rng, function (p) {
+        var pr = prAt(p), out = H.smoothstep(0.74, 0.96, p), lo = L * out, hi = L * pr, w = Math.max(0.5, hi - lo);
+        var a = cl(p / 0.08) * (1 - H.smoothstep(0.88, 1, p)) * (hi > lo ? 1 : 0);
+        return vert ? { 'position.y': -(b.y0 + lo), 'scale.y': w, alpha: a } : { 'position.x': b.x0 + lo, 'scale.x': w, alpha: a };
+      });
+  }
+  return function (p, g) {
+    var f = ((vert ? g.y : g.x) - U0) / span, q = cl((prAt(p) - f) / 0.12 + 0.35);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var v = E.outBack(q, 2);
+    return vert ? { a: cl(q * 3), dx: -(1 - v) * sz * 0.25 } : { a: cl(q * 3), dy: (1 - v) * sz * 0.25 };
+  };
+});
+
+reg('loupe', 'ae/p_enterB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = V.bounds(gs), vert = !!c.node.vertical, sz = c.node.size;
+  var U0 = vert ? b.y0 : b.x0, U1 = vert ? b.y1 : b.x1, vc = vert ? b.cx : b.cy;
+  var r = Math.max(sz * 0.95, (vert ? b.w : b.h) * 0.62);
+  function LcAt(p) { return mix(U0 - r * 0.7, U1 + r * 1.4, ioSine(cl(p / 0.9))); }
+  var rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Loupe'), lw = Math.max(2, sz * 0.05), col = H.accCol(c.sc);
+    var hx = Math.cos(PI / 4) * r, hy = Math.sin(PI / 4) * r;
+    localShape(c, loc, 'Rim', G.ellipse(0, 0, r, r), { stroke: col, width: lw, alpha: 1 }, rng, function (p) {
+      var Lc = LcAt(p), a = cl(p * 8) * (1 - H.smoothstep(0.8, 0.97, p));
+      return { 'position.x': vert ? vc : Lc, 'position.y': -(vert ? Lc : vc), alpha: a };
+    });
+    localShape(c, loc, 'Handle', V.commands([[hx, -hy], [hx + r * 0.55, -(hy + r * 0.55)]], false), { stroke: col, width: lw * 2, alpha: 1 }, rng, function (p) {
+      var Lc = LcAt(p), a = cl(p * 8) * (1 - H.smoothstep(0.8, 0.97, p));
+      return { 'position.x': vert ? vc : Lc, 'position.y': -(vert ? Lc : vc), alpha: a };
+    });
+  }
+  return function (p, g) {
+    var Lc = LcAt(p), u = vert ? g.y : g.x, v = vert ? g.x : g.y;
+    var du = u - Lc, dv = v - vc, d = Math.hypot(du, dv) / r;
+    if (d >= 1) return du > 0 ? { a: 0.14 * cl(p * 5) } : null;
+    var m = 1 - d * d, o = { s: 1 + 0.6 * m, a: cl(p * 6) * (du > 0 ? mix(0.14 * cl(p * 5), 1, Math.min(1, m * 3)) : 1) };
+    if (vert) { o.dy = du * 0.35 * m; o.dx = dv * 0.35 * m; } else { o.dx = du * 0.35 * m; o.dy = dv * 0.35 * m; }
+    return o;
+  };
+});
+
+reg('matrixRain', 'ae/p_enterB2.jsx', function (c) {
+  var col = c.node.color, acc = H.accCol(c.sc), hot = H.mixHex(acc, '#FFFFFF', 0.4), sz = c.node.size;
+  var land = 0.62, sd = seedOf(c);
+  function stM(g, gs, p) {
+    var key = 0.35 * rand(sd, g.i, 121) + 0.65 * (g.n > 1 ? 1 - g.ci / (g.n - 1) : 0);
+    var q = st(p, key, 0.45), D = sz * (2.2 + rand(sd, g.i, 122));
+    return { q: q, y: -D * (1 - E.outCubic(cl(q / land))) };
+  }
+  [1, 2, 3].forEach(function (k) {
+    (c.node._jzTwins = c.node._jzTwins || []).push({
+      label: 'MatrixTail ' + k, below: true,
+      setup: function (graph, clone, src, g, gs) {
+        clone.attrs['material.materialColor'] = acc; clone.keys = {};
+        C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+          var p = pinAt(c, f), S = stM(g, gs, p);
+          if (S.q <= 0 || S.q >= 1) return { alpha: 0 };
+          var a = (1 - k / 4) * 0.75 * (1 - H.smoothstep(land * 0.9, 1, S.q)) * cl(S.q * 6);
+          return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0) - S.y + k * g.h * 0.92, 'scale.x': 0.9, 'scale.y': 0.9, alpha: cl(a) };
+        });
+      }
+    });
+  });
+  return function (p, g, gs, e) {
+    var S = stM(g, gs, p);
+    if (S.q <= 0) return HIDE;
+    if (S.q >= 1) return null;
+    if (S.q < land) return { dy: S.y, ch: pickSign(sd, g.i, 0, e.step), color: hot };
+    return { color: H.mixHex(col, hot, 1 - E.outCubic((S.q - land) / (1 - land))) };
+  };
+});
+
+reg('noteUnfold', 'ae/p_enterB1.jsx', function () {
+  var T1 = [0.14, 0.52];
+  return function (p, g, gs) {
+    var q = st(p, lr(g, gs), 0.45);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    if (g.r90) return { a: cl(q * 2) };
+    if (q < T1[1]) return { a: cl(q / T1[0]), s: mix(0.9, 1, E.outBack(cl(q / T1[0]), 2)), clipX: [-0.64, 0.004], clipY: [-0.66, 0.004] };
+    return { clipX: [-0.7, 0.7], clipY: [-0.66, mix(0.004, 0.7, E.outCubic((q - T1[1]) / (1 - T1[1])))] };
+  };
+});
+
+reg('odometer', 'ae/p_enterB2.jsx', function () {
+  return function (p, g, gs, e) {
+    var q = st(p, lr(g, gs), 0.45), Rn = 3 + (Math.floor(rand(e.seed, g.i, 111) * 100) % 3);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    if (g.r90) return { a: q };
+    var s = Rn * (1 - E.outBack(q, 1.15)), f = s - Math.floor(s);
+    var ch = s >= 0.5 ? pickSign(e.seed, g.i, Math.round(s), 112) : g.ch;
+    return { dy: (f - 0.5 * (s >= 0.5 ? 0 : f)) * g.h * 0.65, ch: ch, a: 1 - 0.35 * Math.abs(f) };
+  };
+});
+
+reg('overexpose', 'ae/p_enterB1.jsx', function (c) {
+  var hot = '#FFFFFF', col = c.node.color;
+  return function (p, g, gs, e) {
+    var tF = 0.12, ex = p < tF ? 1 : 1 - ioSine(cl((p - tF) / (1 - tF)));
+    return {
+      a: p < tF ? E.outCubic(p / tF) : 1,
+      color: H.mixHex(col, hot, ex * 0.96),
+      blur: Math.min(14, e.size * 0.04) * ex * ex,
+      s: 1 + 0.06 * ex
+    };
+  };
+});
+
+reg('rockSettle', 'ae/p_enterB1.jsx', function () {
+  var tL = 0.3;
+  return function (p, g, gs, e) {
+    var q = st(p, lr(g, gs), 0.4);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var hw = g.w / 2, hh = g.h / 2, th0 = (rand(e.seed, g.i, 45) < 0.5 ? -1 : 1) * (16 + 10 * rand(e.seed, g.i, 46));
+    var th, dy = 0;
+    if (q < tL) { var t = q / tL; th = th0; dy = -(1 - t * t) * hh * 4; }
+    else { var t2 = (q - tL) / (1 - tL); th = th0 * Math.pow(1 - t2, 1.5) * Math.cos(PI * (1.4 * t2 + 1.9 * t2 * t2)); }
+    var r = th * DEG, cs = Math.cos(r), sn = Math.sin(r), cx = th >= 0 ? hw : -hw, cy = hh;
+    return { dx: cx - (cx * cs - cy * sn), dy: dy + cy - (cx * sn + cy * cs), rot: th, a: cl(q * 8) };
+  };
+});
+
+reg('shadowFirst', 'ae/p_enterB2.jsx', function (c) {
+  var sh = H.mixHex(c.sc.bg, H.dark(c.sc.bg) ? c.sc.fg : '#000000', 0.28), tL = 0.72, sz = c.node.size;
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'DropShadow', below: true,
+    setup: function (graph, clone, src, g, gs) {
+      clone.attrs['material.materialColor'] = sh; clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var q = st(pinAt(c, f), lr(g, gs), 0.45);
+        if (q <= 0 || q >= tL + 0.05) return { alpha: 0 };
+        var sc = mix(0.55, 1, iQuad(cl(q / tL)));
+        return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0), 'scale.x': sc, 'scale.y': sc, alpha: cl(q * 5) * 0.85 };
+      });
+    }
+  });
+  return function (p, g, gs) {
+    var q = st(p, lr(g, gs), 0.45);
+    if (q <= 0.12) return HIDE;
+    if (q >= 1) return null;
+    if (q < tL) {
+      var ev = iQuad((q - 0.12) / (tL - 0.12));
+      return { s: mix(1.75, 1, ev), dx: -sz * 0.22 * (1 - ev), dy: -sz * 0.34 * (1 - ev), a: cl((q - 0.12) * 4) };
+    }
+    var u = (q - tL) / (1 - tL);
+    return { s: 1 - 0.07 * Math.sin(PI * u) * (1 - u) };
+  };
+});
+
+reg('stickerPeel', 'ae/p_enterB1.jsx', function () {
+  return function (p, g, gs) {
+    var u = st(p, lr(g, gs), 0.5);
+    if (u <= 0) return HIDE;
+    if (u >= 1) return null;
+    var k = ioCubic(u), sc = mix(0.88, 1, k);
+    return { clipX: [-0.7, mix(-0.7, 0.75, k)], clipY: [mix(0.7, -0.75, k), 0.75], s: sc, a: cl(u * 6) };
+  };
+});
+
+reg('stopMotion', 'ae/p_enterB1.jsx', function () {
+  var K = 5;
+  return function (p, g, gs, e) {
+    var q = st(p, rand(e.seed, g.i, 81) * 0.5 + lr(g, gs) * 0.5, 0.45);
+    if (q <= 0) return HIDE;
+    var k = Math.min(K - 1, Math.floor(q * K));
+    if (k >= K - 1) return null;
+    var f = 1 - E.outCubic(k / (K - 1)), ang = rand(e.seed, g.i, 82) * TAU, D = e.size * (0.7 + 0.5 * rand(e.seed, g.i, 83));
+    return {
+      dx: Math.cos(ang) * D * f + (rand(e.seed, g.i, k, 84) * 2 - 1) * e.size * 0.05,
+      dy: Math.sin(ang) * D * f + (rand(e.seed, g.i, k, 85) * 2 - 1) * e.size * 0.05,
+      rot: (rand(e.seed, g.i, k, 86) * 2 - 1) * 22 * f + (rand(e.seed, g.i, k, 87) * 2 - 1) * 6 * f,
+      s: 1 + (rand(e.seed, g.i, k, 88) * 2 - 1) * 0.14 * f
+    };
+  };
+});
+
+reg('strokeOrder', 'ae/p_enterB2.jsx', function () {
+  return function (p, g, gs, e) {
+    var q = st(p, lr(g, gs), 0.6);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    return { a: ioSine(q), s: mix(1.15, 1, E.outCubic(q)), dy: -(1 - E.outCubic(q)) * e.size * 0.04 };
+  };
+});
+
+reg('tokoroten', 'ae/p_enterB2.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = V.bounds(gs), vert = !!c.node.vertical, sz = c.node.size;
+  var U0 = vert ? b.y0 : b.x0, U1 = vert ? b.y1 : b.x1, slit = U0 - sz * 0.12, L = U1 - U0 + sz * 0.3;
+  var rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Tokoroten'), th = Math.max(3, sz * 0.07), ext = sz * 0.25;
+    localShape(c, loc, 'Slit', vert ? G.rect(b.x0 - ext, -(slit), b.w + ext * 2, th) : G.rect(slit - th, -(b.y1 + ext), th, b.h + ext * 2),
+      { fill: H.accCol(c.sc), alpha: 1 }, rng, function (p) {
+        return { alpha: cl(p * 8) * (1 - H.smoothstep(0.85, 1, p)) };
+      });
+  }
+  return function (p, g) {
+    var off = -(1 - ioSine(cl(p / 0.9))) * L, rel = sz * 2, km = 0.18, cv = 1 - H.smoothstep(0.55, 1, p);
+    var u = vert ? g.y : g.x, hu = (vert ? g.h : g.w) / 2, ev = u + off - slit;
+    if (ev + hu < 0) return HIDE;
+    if (off >= -0.5 && cv <= 0) return null;
+    var k = Math.max(0.05, 1 - cv * (1 - (km + (1 - km) * cl(ev / rel))));
+    var d = (function () { if (ev <= 0) return ev * (1 - cv * (1 - km)); var r = Math.min(ev, rel), k0 = 1 - cv * (1 - km); return k0 * r + (1 - k0) * r * r / (2 * rel) + Math.max(0, ev - rel); })();
+    var du = slit + d - u, st2 = 1 + 0.3 * (1 - k);
+    return vert ? { dy: du, sy: k, sx: st2 } : { dx: du, sx: k, sy: st2 };
+  };
+});
+
+reg('tornJoin', 'ae/p_enterB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = V.bounds(gs), vert = !!c.node.vertical, sz = c.node.size, sd = seedOf(c);
+  var D = sz * 2 + (vert ? b.h : b.w) * 0.25;
+  var U = vert ? b.cy : b.cx, V0 = (vert ? b.x0 : b.y0) - sz * 0.15, V1 = (vert ? b.x1 : b.y1) + sz * 0.15;
+  var far = (vert ? b.h : b.w) + sz * 6, seam = [];
+  for (var j = 0; j <= 11; j++) seam.push([U + (rand(sd, j, 95) * 2 - 1) * sz * 0.1 + (j % 2 ? 1 : -1) * sz * 0.03, mix(V0, V1, j / 11)]);
+  function halfPoly(side) {
+    var pts = seam.map(function (q) { return vert ? [q[1], q[0]] : [q[0], q[1]]; });
+    pts.push(vert ? [V1, U + side * far] : [U + side * far, V1]);
+    pts.push(vert ? [V0, U + side * far] : [U + side * far, V0]);
+    return pts;
+  }
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'TornB', below: true,
+    setup: function (graph, clone, src, g) {
+      clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var p = pinAt(c, f), k = 1 - oQuart(p / 0.72);
+        if (p >= 0.72) return { alpha: 0 };
+        return { 'position.x': g.x + (g.vx || 0) + (vert ? 0 : D * k), 'position.y': -g.y - (g.vy || 0) - (vert ? D * k : 0),
+          rotation: -5 * k, alpha: cl(p * 5) };
+      });
+      var poly = halfPoly(1), frames = [];
+      for (var f = clone.start; f < clone.end; f++) frames.push(poly.map(function (pt) { return [pt[0] - g.x - (g.vx || 0), -(pt[1] - g.y - (g.vy || 0))]; }));
+      V.clipDeformer(graph, clone.id, frames, false, 'Torn half B', c.options);
+    }
+  });
+  var rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'TornFibre'), fib = H.mixHex(c.sc.fg, c.sc.bg, 0.35), pts = seam.map(function (q) { return vert ? [q[1], q[0]] : [q[0], q[1]]; });
+    localShape(c, loc, 'Seam', V.commands(pts, false), { stroke: fib, width: Math.max(1, sz * 0.018), alpha: 0.8 }, rng, function (p) {
+      return { alpha: 0.8 * cl(p * 5) * (1 - H.smoothstep(0.7, 0.95, p)) };
+    });
+  }
+  var polyA = halfPoly(-1);
+  return function (p) {
+    var k = 1 - oQuart(p / 0.72), hit = H.smoothstep(0.62, 0.72, p) * (1 - H.smoothstep(0.72, 1, p)), jolt = hit * sz * 0.035 * Math.sin(p * 90);
+    if (k <= 1e-4) return { dx: vert ? jolt : 0, dy: vert ? 0 : jolt };
+    return { dx: (vert ? jolt : -D * k), dy: (vert ? -D * k : jolt), rot: -5 * k, a: cl(p * 5), clipPolygon: polyA };
+  };
+});
+
+/* ================================================================ Horror (16) */
+
+reg('hrBlinkCreep', 'ae/p_horror3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), stInfo = soloTotal(c, gs), sd = seedOf(c);
+  var B = [0.26, 0.52, 0.78], bw = 0.05;
+  return function (p, g, gs2, e) {
+    for (var i = 0; i < B.length; i++) if (p >= B[i] && p < B[i] + bw) return HIDE;
+    var stage = 0;
+    for (var j = 0; j < B.length; j++) if (p >= B[j] + bw) stage++;
+    var f = stage / B.length, r = 1 - f;
+    if (r <= 0) return null;
+    var ord = stInfo.solo ? cl(stInfo.mi / (stInfo.total - 1)) : lr(g, gs2);
+    var k = Math.round(ord * 97), ang = rand(sd, k, 1) * TAU, dist = e.size * (0.9 + rand(sd, k, 2) * 1.1);
+    return { dx: Math.cos(ang) * dist * r, dy: Math.sin(ang) * dist * r * 0.6, s: 1 - 0.45 * r, rot: (rand(sd, k, 3) * 2 - 1) * 25 * r, a: 0.3 + 0.7 * (1 - r) };
+  };
+});
+
+reg('hrClawReveal', 'ae/p_horror3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = padBox(gs, c.node.size * 0.3), sd = seedOf(c);
+  var nClaw = 4, sp = b.w / nClaw, dir = rand(sd, 3, 1) < 0.5 ? -1 : 1;
+  return function (p, g) {
+    if (p > 0.97) return null;
+    var k = cl(Math.floor(((g.x - b.x0) / Math.max(1, b.w)) * nClaw), 0, nClaw - 1);
+    var q = cl((p - k * 0.08) / 0.7);
+    if (q <= 0) return HIDE;
+    var e = ioCubic(q), w = sp * (0.08 + 1.1 * e * e), reach = E.outCubic(cl(q * 3));
+    var y = dir > 0 ? mix(b.y0, b.y1, reach) : mix(b.y1, b.y0, reach);
+    return { clipPolygon: V.polygon(g.x - w / 2, Math.min(dir > 0 ? b.y0 : b.y1, y), g.x + w / 2, Math.max(dir > 0 ? b.y0 : b.y1, y)) };
+  };
+});
+
+reg('hrJumpScare', 'ae/p_horror3.jsx', function () {
+  var at = 0.62;
+  return function (p, g, gs, e) {
+    if (p < at) {
+      var q = p / at;
+      return { s: 0.42 + 0.08 * q, a: (0.1 + 0.12 * q) * (rand(e.seed, e.step, 3) < 0.15 ? 0.3 : 1),
+        dx: (rand(e.seed, e.step, 1) * 2 - 1) * e.size * 0.02, dy: (rand(e.seed, e.step, 2) * 2 - 1) * e.size * 0.02 };
+    }
+    var k = 1 - E.outExpo((p - at) / (1 - at));
+    return { s: 1 + 0.95 * k, dx: (rand(e.seed, e.step, 4) * 2 - 1) * e.size * 0.12 * k,
+      dy: (rand(e.seed, e.step, 5) * 2 - 1) * e.size * 0.12 * k, rot: (rand(e.seed, e.step, 6) * 2 - 1) * 7 * k };
+  };
+});
+
+reg('hrManifest', 'ae/p_horror3.jsx', function (c) {
+  var stInfo = soloTotal(c, V.glyphs(c, c.node));
+  return function (p, g, gs, e) {
+    var fin = H.smoothstep(0.72, 1, p), idx = stInfo.solo ? stInfo.mi : g.i;
+    var ph = rand(e.seed, idx, 1) * TAU, freq = 7 + rand(e.seed, idx, 2) * 6;
+    var wav = cl(p * 1.3) * (0.45 + 0.55 * Math.max(0, Math.sin(p * freq + ph))), a = mix(wav, 1, fin);
+    if (a >= 0.999) return null;
+    return { a: a, dx: noise1(p * 4 + ph, idx * 31) * e.size * 0.12 * (1 - fin), dy: noise1(p * 3 + ph, idx * 31 + 1) * e.size * 0.08 * (1 - fin) };
+  };
+});
+
+reg('hrMirrorSnap', 'ae/p_horror3.jsx', function (c) {
+  var b = V.bounds(V.glyphs(c, c.node));
+  return function (p, g, gs, e) {
+    var s = -1;
+    if (p >= 0.55 && p < 0.72) s = rand(e.seed, e.step, 7) < 0.5 ? -1 : 0.25;
+    else if (p >= 0.72) s = mix(-0.2, 1, E.outBack((p - 0.72) / 0.28, 2.2));
+    var scX = Math.abs(s) < 0.04 ? (s < 0 ? -0.04 : 0.04) : s;
+    return { a: Math.min(1, p / 0.18), sx: scX, dx: (b.cx - g.x) * (1 - scX), rot: p < 0.55 ? Math.sin(p * 30) * 1.5 : 0 };
+  };
+});
+
+reg('hrUneasy', 'ae/p_horror3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), stInfo = soloTotal(c, gs), Np = stInfo.solo ? stInfo.total : Math.max(1, gs.length);
+  var sd = seedOf(c), times = [], sum = 0;
+  for (var i = 0; i < Np; i++) { var dt = 0.2 + rand(sd, i, 91) * 1.5; times.push(sum); sum += dt; }
+  times = times.map(function (t) { return (t / Math.max(1, sum)) * 0.86; });
+  return function (p, g, gs2, e) {
+    var ix = Math.min(times.length - 1, stInfo.solo ? stInfo.mi : g.i), q = (p - times[ix]) / 0.1;
+    if (q < 0) return HIDE;
+    if (q >= 1) return null;
+    return { dx: (rand(sd, ix, 1) * 2 - 1) * e.size * 0.18 * (1 - q), dy: (rand(sd, ix, 2) * 2 - 1) * e.size * 0.1 * (1 - q),
+      rot: (rand(sd, ix, 3) * 2 - 1) * 18 * (1 - q), color: q < 0.5 ? c.sc.accent : null };
+  };
+});
+
+reg('hrVhold', 'ae/p_horror3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = padBox(gs, c.node.size * 0.25), Hh = Math.max(2, b.h), rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'VHold'), bar = H.mixHex(c.sc.bg, '#000000', 0.6);
+    localShape(c, loc, 'Bar', G.rect(b.x0, -Hh * 0.035, b.w, Math.max(2, Hh * 0.07)), { fill: bar, alpha: 0.85 }, rng, function (p) {
+      var e = E.outCubic(p), m = (((1 - e) * 2.6 * Hh) % Hh + Hh) % Hh, fa = 1 - H.smoothstep(0.75, 1, p);
+      return { 'position.y': -(b.y0 + m), alpha: m < 1 ? 0 : 0.85 * fa };
+    });
+  }
+  return function (p, g, gs2, e) {
+    var ev = E.outCubic(p), m = (((1 - ev) * 2.6 * Hh) % Hh + Hh) % Hh;
+    return { dy: m, dx: (rand(e.seed, e.step, 1) * 2 - 1) * e.size * 0.05 * (1 - ev), a: Math.min(1, 0.4 + p * 2),
+      clipPolygon: V.polygon(b.x0 - e.size, b.y0, b.x1 + e.size, b.y1) };
+  };
+});
+
+reg('hzAlreadyThere', 'ae/p_x2_horrorB.jsx', function (c) {
+  var c0 = c.node.color, dk = H.mixHex(c0, c.sc.bg, 0.78), stInfo = soloTotal(c, V.glyphs(c, c.node));
+  return function (p, g, gs, e) {
+    var idx = stInfo.solo ? stInfo.mi : g.i, t0 = rand(e.seed, idx, 1) * 0.5, len = 0.22 + rand(e.seed, idx, 2) * 0.28;
+    var q = cl((p - t0) / len), lv = cl(ioSine(q) - Math.sin(q * PI) * 0.3 * rand(e.seed, idx, 3));
+    if (lv >= 0.999) return null;
+    return { a: mix(0.1, 1, lv) * Math.min(1, p / 0.1), color: H.mixHex(dk, c0, lv) };
+  };
+});
+
+reg('hzFloorSeep', 'ae/p_x2_horrorB.jsx', function (c) {
+  var c0 = c.node.color, dk = H.mixHex(c0, c.sc.bg, 0.6), stInfo = soloTotal(c, V.glyphs(c, c.node));
+  return function (p, g, gs, e) {
+    var idx = stInfo.solo ? stInfo.mi : g.i, t0 = rand(e.seed, idx, 1) * 0.38, len = 0.4 + rand(e.seed, idx, 2) * 0.22;
+    var q = cl((p - t0) / len);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var sv = 0.3 + rand(e.seed, idx, 3) * 0.2;
+    var ev = q < 0.4 ? sv * E.outCubic(q / 0.4) : (q < 0.58 ? sv : mix(sv, 1, ioCubic((q - 0.58) / 0.42)));
+    return { clipY: [0.7 - ev * 1.4, 0.75], dy: (1 - ev) * e.size * 0.16, color: ev < 0.98 ? H.mixHex(dk, c0, ev) : null };
+  };
+});
+
+reg('hzFromScratch', 'ae/p_x2_horrorB.jsx', function (c) {
+  var stInfo = soloTotal(c, V.glyphs(c, c.node));
+  return function (p, g, gs, e) {
+    var idx = stInfo.solo ? stInfo.mi : g.i, q = cl((p - rand(e.seed, idx, 1) * 0.45) / 0.52);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var R0 = (rand(e.seed, idx, 2) < 0.5 ? -1 : 1) * (28 + rand(e.seed, idx, 3) * 30);
+    if (q < 0.38) return { sx: 0.05, sy: mix(0.12, 1.35, E.outCubic(q / 0.38)), rot: R0 };
+    var ev = ioCubic((q - 0.38) / 0.62);
+    return { sx: mix(0.05, 1, ev), sy: mix(1.35, 1, ev), rot: R0 * (1 - ev) };
+  };
+});
+
+reg('hzLampSweep', 'ae/p_x2_horrorB.jsx', function (c) {
+  var dir = rand(seedOf(c), 281, 1) < 0.5, W = c.comp.width, xa = -0.14 * W, xb = 1.14 * W, bw = W * 0.13;
+  return function (p, g) {
+    var u = c.node.x + gx(g, c.node) + (c.node.y + gy(g, c.node) - c.comp.height / 2) * 0.3;
+    var pos = dir ? W - u : u;
+    if (p < 0.42) {
+      var X1 = mix(xa, xb, p / 0.42), a1 = 1 - Math.abs(pos - X1) / bw;
+      return a1 <= 0 ? HIDE : { a: 0.85 * oQuad(a1) };
+    }
+    if (p < 0.48) return HIDE;
+    if (p < 0.94) {
+      var X2 = mix(xa, xb, (p - 0.48) / 0.46), d = pos - X2;
+      if (d <= 0) return null;
+      var a2 = 1 - d / bw;
+      return a2 <= 0 ? HIDE : { a: 0.85 * oQuad(a2) };
+    }
+    return null;
+  };
+});
+
+reg('hzLateSnap', 'ae/p_x2_horrorB.jsx', function (c) {
+  var stInfo = soloTotal(c, V.glyphs(c, c.node)), at = 0.86;
+  return function (p, g, gs, e) {
+    var u = Math.min(1, p / at), ev = p < at ? 0 : E.outExpo((p - at) / (1 - at)), w = 1 - ev, idx = stInfo.solo ? stInfo.mi : g.i;
+    return {
+      dx: (rand(e.seed, idx, 1) * 2 - 1) * e.size * 0.1 * w,
+      dy: ((rand(e.seed, idx, 2) * 2 - 1) * e.size * 0.09 + (1 - u) * e.size * 0.55) * w,
+      rot: (rand(e.seed, idx, 3) * 2 - 1) * 11 * w,
+      a: mix(mix(0.12, 0.62, u) * Math.min(1, p / 0.1), 1, ev)
+    };
+  };
+});
+
+reg('hzShakyHand', 'ae/p_x2_horrorB.jsx', function (c) {
+  var stInfo = soloTotal(c, V.glyphs(c, c.node)), sw = Math.max(0.8, c.node.size * 0.03);
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'ShakyStroke', below: true,
+    setup: function (graph, clone, src, g) {
+      clone.attrs.fill = false; clone.attrs.stroke = true;
+      clone.attrs['stroke.strokeColor'] = c.node.color; clone.attrs['stroke.width'] = sw;
+      clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var p = pinAt(c, f), idx = stInfo.solo ? stInfo.mi : g.i, tr = 1 - H.smoothstep(0.7, 1, p);
+        return {
+          'position.x': g.x + (g.vx || 0) + noise1(p * 38, idx * 17) * c.node.size * 0.028 * tr,
+          'position.y': -g.y - (g.vy || 0) - noise1(p * 31 + 7, idx * 17 + 1) * c.node.size * 0.035 * tr,
+          alpha: cl(p * 5) * (1 - H.smoothstep(0.82, 1, p))
+        };
+      });
+    }
+  });
+  return function (p, g, gs, e) {
+    var idx = stInfo.solo ? stInfo.mi : g.i, tr = 1 - H.smoothstep(0.7, 1, p), u = p / 0.8;
+    var seg = Math.floor(u * 4), dash = u < 1 ? (seg + ioCubic(cl((u * 4 - seg) * 1.7))) / 4 : 1;
+    return {
+      dx: noise1(p * 38, idx * 17) * e.size * 0.028 * tr, dy: noise1(p * 31 + 7, idx * 17 + 1) * e.size * 0.035 * tr,
+      rot: noise1(p * 17 + 3, idx * 17 + 2) * 3.5 * tr, a: H.smoothstep(0.55, 1, p),
+      clipX: [-0.8, mix(-0.8, 0.8, cl(dash))], clipY: [-1, 1]
+    };
+  };
+});
+
+reg('hzTooClose', 'ae/p_x2_horrorB.jsx', function (c) {
+  var b = V.bounds(V.glyphs(c, c.node)), lv = [1.12, 1.07, 1.03, 1], at = [0.5, 0.68, 0.86];
+  return function (p, g) {
+    var s = lv[0] + 0.015 * Math.min(1, p / 0.5);
+    for (var k = 0; k < 3; k++) if (p >= at[k]) s = mix(k === 0 ? lv[0] + 0.015 : lv[k], lv[k + 1], E.outExpo(cl((p - at[k]) / 0.07)));
+    return { s: s, dx: (g.x - b.cx) * (s - 1), dy: (g.y - b.cy) * (s - 1), a: Math.min(1, p / 0.06) };
+  };
+});
+
+reg('hzUnwatched', 'ae/p_x2_horrorB.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), stInfo = soloTotal(c, gs), Np = stInfo.solo ? stInfo.total : Math.max(1, gs.length), sd = seedOf(c);
+  function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+  var hop = Math.max(1, Math.round(Np * 0.38)); while (gcd(hop, Np) !== 1) hop++;
+  var start = Math.floor(rand(sd, 221, 1) * Np) % Np, slot = new Array(Np);
+  for (var k = 0; k < Np; k++) slot[(start + k * hop) % Np] = k;
+  var gap = 0.86 / Np;
+  return function (p, g, gs2, e) {
+    var ix = stInfo.solo ? stInfo.mi : g.i, q = p - (slot[ix % Np] || 0) * gap;
+    if (q < 0) return HIDE;
+    if (q >= gap) return null;
+    return { a: 0.3, dy: e.size * 0.05 * (rand(sd, ix, 222) < 0.5 ? -1 : 1) };
+  };
+});
+
+reg('hzWrongGlyph', 'ae/p_x2_horrorB.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), stInfo = soloTotal(c, gs), Np = stInfo.solo ? stInfo.total : Math.max(1, gs.length), sd = seedOf(c);
+  var pick = Math.floor(rand(sd, 251, 1) * Np) % Np;
+  return function (p, g, gs2, e) {
+    var idx = stInfo.solo ? stInfo.mi : g.i, ord = Np > 1 ? idx / (Np - 1) : 0, a = H.smoothstep(0, 0.3, p - ord * 0.12);
+    if (idx !== pick) return a >= 0.999 ? null : (a <= 0 ? HIDE : { a: a });
+    if (a <= 0) return HIDE;
+    if (p < 0.58) return { a: a, rot: 180, color: c.sc.accent };
+    if (p < 0.7) return { rot: 180 + (rand(sd, e.step, 252) * 2 - 1) * 9, dx: (rand(sd, e.step, 253) * 2 - 1) * e.size * 0.03, color: c.sc.accent };
+    var q = cl((p - 0.7) / 0.24);
+    if (q >= 1) return null;
+    return { rot: 180 * (1 - E.outBack(q, 1.5)), color: q < 0.5 ? c.sc.accent : null };
+  };
+});
+
+/* ================================================================ Kinetic (19) */
+
+function wordInfo(c, gs) {
+  var wObj = H.wordsOf(c, gs);
+  if (!wObj.words.length) {
+    var bAll = V.bounds(gs);
+    wObj = { words: [{ gs: gs, b: bAll, li: 0, index: 0 }], membership: Object.create(null) };
+    gs.forEach(function (g) { wObj.membership[g.i] = 0; });
+  }
+  return wObj;
+}
+
+reg('knDiveIn', 'ae/p_kinetic3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.55 : 0, B = V.bounds(gs);
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var q = st(p, n > 1 ? j / (n - 1) : 0, sp); if (q <= 0) return HIDE;
+    var b = wi.words[j].b, e = E.outCubic(q), sc = mix(5.5, 1, e);
+    return { s: sc, dx: (g.x - b.cx) * (sc - 1) + (b.cx - B.cx) * (sc - 1) * 0.6, dy: (g.y - b.cy) * (sc - 1), a: cl(q * 2.2) * mix(0.35, 1, e) };
+  };
+});
+
+reg('knHingeDrop', 'ae/p_kinetic3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.5 : 0;
+  var dir = rand(seedOf(c), 61, 1) < 0.5 ? 1 : -1;
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var q = st(p, n > 1 ? j / (n - 1) : 0, sp); if (q <= 0) return HIDE;
+    var b = wi.words[j].b, th = -88 * dir * (1 - bounceE(q)), px = dir > 0 ? b.x0 : b.x1, py = b.y1;
+    var rv = rot2(g.x - px, g.y - py, th);
+    return { dx: px + rv[0] - g.x, dy: py + rv[1] - g.y, rot: th, a: cl(q * 6) };
+  };
+});
+
+reg('knInertia', 'ae/p_kinetic3.jsx', function (c) {
+  var vert = !!c.node.vertical, dir = rand(seedOf(c), 67, 1) < 0.5 ? 1 : -1, D = (vert ? c.comp.height : c.comp.width) * 0.6;
+  return function (p, g, gs) {
+    var n = gs.length, back = n > 1 ? (dir > 0 ? (n - 1 - g.i) / (n - 1) : g.i / (n - 1)) : 0;
+    var q = cl((p - back * 0.3) / 0.7), e = E.outBack(q, 2.1), v = (E.outBack(Math.min(1, q + 0.02), 2.1) - e) / 0.02;
+    var off = -dir * D * (1 - e), stf = 1 + Math.min(0.5, Math.abs(v) * 0.08);
+    var sq = q > 0.55 ? 1 - 0.18 * back * H.bell((q - 0.55) / 0.45) : 1;
+    return vert ? { dy: off, sy: stf * sq, sx: 1 / stf } : { dx: off, sx: stf * sq, sy: 1 / stf };
+  };
+});
+
+reg('knLoopIn', 'ae/p_kinetic3.jsx', function (c) {
+  var vert = !!c.node.vertical, dir = rand(seedOf(c), 63, 1) < 0.5 ? 1 : -1;
+  var D = Math.min(c.comp.width, c.comp.height) * 0.55, R0 = D / TAU * 1.5;
+  return function (p, g, gs) {
+    var k = gs.length > 1 ? (dir > 0 ? g.i / (gs.length - 1) : (gs.length - 1 - g.i) / (gs.length - 1)) : 0;
+    var q = st(p, k, 0.5); if (q <= 0) return HIDE;
+    var v = 1 - E.outCubic(q), ph = TAU * v;
+    var a0 = v * D - R0 * Math.sin(ph), b0 = -R0 * (1 - Math.cos(ph));
+    var ta = D - TAU * R0 * Math.cos(ph), tb = -TAU * R0 * Math.sin(ph);
+    var ang = (Math.atan2(tb, ta * dir) / DEG) * Math.min(1, v * 4);
+    return vert ? { dx: b0, dy: -a0 * dir, rot: ang, a: cl(q * 6) } : { dx: a0 * dir, dy: b0, rot: ang, a: cl(q * 6) };
+  };
+});
+
+reg('knPushIn', 'ae/p_kinetic3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, vert = !!c.node.vertical;
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var f = p * n, k0 = Math.min(n - 1, Math.floor(f)), ev = E.outBack(cl((f - k0) / 0.75), 1.5);
+    if (j > k0) return HIDE;
+    var li = wi.words[j].li, rowWords = wi.words.filter(function (w) { return w.li === li; });
+    var end = vert ? rowWords[rowWords.length - 1].b.y1 : rowWords[rowWords.length - 1].b.x1;
+    var vis = rowWords.filter(function (w) { return w.index <= k0; });
+    if (!vis.length) return null;
+    var last = vis[vis.length - 1], prev = vis.length > 1 ? vis[vis.length - 2] : null;
+    var v = end - (vert ? last.b.y1 : last.b.x1);
+    if (last.index === k0) {
+      v += prev ? ((end - (vert ? prev.b.y1 : prev.b.x1)) - v) * (1 - ev) : (end - (vert ? last.b.y0 : last.b.x0)) * 0.6 * (1 - ev);
+    }
+    var a = j === k0 ? cl(ev * 3) : 1;
+    return vert ? { dy: v, a: a } : { dx: v, a: a };
+  };
+});
+
+reg('knReplaceIn', 'ae/p_kinetic3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, T = n > 1 ? 0.7 : 0.2, B = V.bounds(gs);
+  var bw = Math.max(1e-3, c.node.vertical ? B.h : B.w);
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var b = wi.words[j].b, ww = Math.max(1e-3, c.node.vertical ? b.h : b.w), big = Math.min(2.4, Math.max(1, bw / ww * 0.8));
+    var w0 = j / n * T, w1 = (j + 1) / n * T, fly = E.outExpo(cl((p - T) / (1 - T)));
+    var sc, cx, cy, a = 1;
+    if (p < T) {
+      if (p < w0 || p >= w1) return HIDE;
+      var q = (p - w0) / Math.max(1e-4, w1 - w0);
+      sc = big * (1 + 0.35 * Math.exp(-q * 9)); cx = B.cx; cy = B.cy; a = cl(q * 8);
+    } else {
+      var last = j === n - 1, s0 = last ? big : 0.3;
+      sc = mix(s0, 1, fly); cx = mix(B.cx, b.cx, fly); cy = mix(B.cy, b.cy, fly); a = last ? 1 : cl(fly * 3);
+    }
+    return { s: sc, dx: cx + (g.x - b.cx) * sc - g.x, dy: cy + (g.y - b.cy) * sc - g.y, a: a };
+  };
+});
+
+reg('knStretchOut', 'ae/p_kinetic3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.55 : 0;
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var q = st(p, n > 1 ? j / (n - 1) : 0, sp); if (q <= 0) return HIDE;
+    var b = wi.words[j].b, sc = q >= 1 ? 1 : Math.max(0.02, outElastic(q));
+    return c.node.vertical ? { dy: (g.y - b.y0) * (sc - 1), sy: sc, a: cl(q * 8) } : { dx: (g.x - b.x0) * (sc - 1), sx: sc, a: cl(q * 8) };
+  };
+});
+
+reg('knTypeToSlam', 'ae/p_kinetic3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.55 : 0;
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var q = st(p, n > 1 ? j / (n - 1) : 0, sp); if (q <= 0) return HIDE;
+    var w = wi.words[j], inW = w.gs.indexOf(g), cnt = Math.max(1, w.gs.length), tq = 0.55;
+    if (q < tq && inW >= Math.floor(q / tq * cnt + 1e-6) + 1) return HIDE;
+    var ev = q < tq ? 0 : E.outBack(cl((q - tq) / (1 - tq)), 2.2), sc = mix(0.42, 1, ev);
+    var ax = c.node.vertical ? w.b.cx : w.b.x0, ay = c.node.vertical ? w.b.y0 : w.b.cy;
+    return { s: sc, dx: (g.x - ax) * (sc - 1), dy: (g.y - ay) * (sc - 1), a: q < tq ? 0.85 : 1 };
+  };
+});
+
+reg('knWordSlam', 'ae/p_kinetic3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.62 : 0;
+  return function (p, g, gs2, e) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var secs = e.inDur * (1 - sp), land = function (k) { return st(p, n > 1 ? k / (n - 1) : 0, sp); };
+    var q = land(j); if (q <= 0) return HIDE;
+    var b = wi.words[j].b, ev = E.outExpo(cl(q * 1.35)), sc = 1 + 2.1 * (1 - ev), dy = 0;
+    for (var j2 = n - 1; j2 > j; j2--) { var q2 = land(j2); if (q2 >= 0.74) { dy = e.size * 0.09 * kick((q2 - 0.74) * secs, 11, 30); break; } }
+    dy *= cl((1 - p) * 10);
+    return { s: sc, dx: (g.x - b.cx) * (sc - 1), dy: (g.y - b.cy) * (sc - 1) + dy, a: cl(q * 7), rot: (1 - ev) * (j % 2 ? 7 : -7) };
+  };
+});
+
+reg('knWordSpin', 'ae/p_kinetic3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.5 : 0;
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var q = st(p, n > 1 ? j / (n - 1) : 0, sp); if (q <= 0) return HIDE;
+    var b = wi.words[j].b, ev = E.outBack(q, 1.6), th = (1 - E.outCubic(q)) * 200 * (j % 2 ? -1 : 1), sc = mix(0.15, 1, ev);
+    var rv = rot2((g.x - b.cx) * sc, (g.y - b.cy) * sc, th);
+    return { dx: b.cx + rv[0] - g.x, dy: b.cy + rv[1] - g.y, rot: th, s: sc, a: cl(q * 5) };
+  };
+});
+
+function rigidWord(g, b, o) {
+  var px = o.px != null ? o.px : b.cx, py = o.py != null ? o.py : b.cy;
+  var sc = o.s == null ? 1 : o.s, sx = sc * (o.sx == null ? 1 : o.sx), sy = sc * (o.sy == null ? 1 : o.sy);
+  var rx = (g.x - px) * sx, ry = (g.y - py) * sy;
+  if (o.rot) { var rv = rot2(rx, ry, o.rot); rx = rv[0]; ry = rv[1]; }
+  return { dx: px + rx - g.x + (o.tx || 0), dy: py + ry - g.y + (o.ty || 0), rot: o.rot || 0, sx: sx, sy: sy, a: o.a == null ? 1 : o.a, color: o.color };
+}
+
+reg('kzSideVolley', 'ae/p_x2_kineticB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.6 : 0, vert = !!c.node.vertical;
+  var d0 = rand(seedOf(c), 811, 1) < 0.5 ? -1 : 1, D = (vert ? c.comp.height : c.comp.width) * 0.62;
+  return function (p, g, gs2, e) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var sgn = function (k) { return k % 2 ? -d0 : d0; }, secs = e.inDur * (1 - sp);
+    var qs = []; for (var k = 0; k < n; k++) qs.push(st(p, n > 1 ? k / (n - 1) : 0, sp));
+    if (qs[j] <= 0) return HIDE;
+    var sh = 0;
+    for (var j2 = j + 1; j2 < n; j2++) if (qs[j2] > 0.45) sh -= sgn(j2) * 0.14 * kick((qs[j2] - 0.45) * secs, 10, 30);
+    var ev = E.outBack(cl(qs[j] * 1.3), 1.5), fast = Math.pow(1 - cl(qs[j] * 1.7), 2);
+    var off = sgn(j) * D * (1 - ev) + sh * e.size * cl((1 - p) * 10), stf = 1 + 0.7 * fast, al = cl(qs[j] * 8);
+    return rigidWord(g, wi.words[j].b, vert ? { ty: off, sy: stf, a: al } : { tx: off, sx: stf, a: al });
+  };
+});
+
+reg('kzWordWheel', 'ae/p_x2_kineticB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.5 : 0, vert = !!c.node.vertical;
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var q = st(p, n > 1 ? j / (n - 1) : 0, sp); if (q <= 0) return HIDE;
+    var b = wi.words[j].b, Rw = Math.max(20, Math.hypot(b.w, b.h) * 0.4);
+    var d = TAU * Rw * (1 - E.outBack(q, 1.1)), ang = d / Rw / DEG, al = cl(q * 7);
+    return rigidWord(g, b, vert ? { ty: d, rot: -ang, a: al } : { tx: d, rot: ang, a: al });
+  };
+});
+
+reg('kzPunchThrough', 'ae/p_x2_kineticB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.55 : 0, T = 0.46;
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'PunchOutline', below: true,
+    setup: function (graph, clone, src, g) {
+      var j = wi.membership[g.i]; if (j == null) return;
+      clone.attrs.fill = false; clone.attrs.stroke = true;
+      clone.attrs['stroke.strokeColor'] = c.node.color; clone.attrs['stroke.width'] = Math.max(1.5, c.node.size * 0.03);
+      clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var q = st(pinAt(c, f), n > 1 ? j / (n - 1) : 0, sp);
+        if (q <= 0 || q >= T) return { alpha: 0 };
+        var sc = mix(0.15, 1.6, E.outCubic(q / T)), b = wi.words[j].b;
+        return { 'position.x': b.cx + (g.x - b.cx) * sc, 'position.y': -(b.cy + (g.y - b.cy) * sc), 'scale.x': sc, 'scale.y': sc, alpha: cl(q * 12) };
+      });
+    }
+  });
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var q = st(p, n > 1 ? j / (n - 1) : 0, sp);
+    if (q < T) return HIDE;
+    var t = (q - T) / (1 - T);
+    return rigidWord(g, wi.words[j].b, { s: 1 + 0.6 * spring1(t, 4.5, 3.4), color: t < 0.2 ? c.sc.accent : null });
+  };
+});
+
+reg('kzTowerUnstack', 'ae/p_x2_kineticB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, vert = !!c.node.vertical, B = V.bounds(gs);
+  if (n < 2) return function (p) { return { dy: -(1 - bounceE(p)) * c.node.size * 1.5, a: cl(p * 7) }; };
+  var lh = 0; wi.words.forEach(function (w) { lh = Math.max(lh, vert ? w.b.w : w.b.h); });
+  lh *= 1.1;
+  var fit = Math.min(1, (vert ? c.comp.width : c.comp.height) * 0.78 / Math.max(1, n * lh)), T = 0.5;
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var aIn = st(cl(p / T), n > 1 ? j / (n - 1) : 0, 0.72); if (aIn <= 0) return HIDE;
+    var b = wi.words[j].b, off = (j - (n - 1) / 2) * lh * fit;
+    var sx0 = vert ? B.cx - off : B.cx, sy0 = vert ? B.cy : B.cy + off;
+    var ev = E.outBack(ioSine(st(cl((p - T) / (1 - T)), n > 1 ? j / (n - 1) : 0, 0.4)), 1.25), popV = E.outBack(aIn, 2.2);
+    var sc = mix(fit * mix(0.55, 1, popV), 1, cl(ev));
+    return rigidWord(g, b, { s: sc, rot: 4 * ev * (1 - ev) * (j % 2 ? 9 : -9), tx: (sx0 - b.cx) * (1 - ev), ty: (sy0 - b.cy) * (1 - ev), a: cl(aIn * 7) });
+  };
+});
+
+reg('kzSkipStone', 'ae/p_x2_kineticB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.5 : 0;
+  var sg = rand(seedOf(c), 815, 1) < 0.5 ? 1 : -1, D = Math.min(c.comp.width * 0.5, c.node.size * 5.5), H0 = c.node.size * 1.05;
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var q = st(p, n > 1 ? j / (n - 1) : 0, sp); if (q <= 0) return HIDE;
+    var b = wi.words[j].b, u = 1 - Math.pow(1 - q, 1.7), ph = u * 3, fr = ph - Math.floor(ph);
+    var h = Math.abs(Math.sin(PI * ph)) * H0 * Math.pow(1 - u, 1.1);
+    var touch = Math.max(0, 1 - Math.min(fr, 1 - fr) * 7) * (1 - u);
+    return rigidWord(g, b, { py: b.y1, tx: sg * D * (1 - u), ty: -h, sy: 1 - 0.32 * touch, sx: 1 + 0.2 * touch, rot: -sg * 7 * (1 - u) * (1 - touch), a: cl(q * 9) });
+  };
+});
+
+reg('kzSeesaw', 'ae/p_x2_kineticB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, vert = !!c.node.vertical, B = V.bounds(gs);
+  var sp = n > 1 ? 0.45 : 0, fd = (1 - sp) * 0.34, half = Math.max(1, (vert ? B.h : B.w) / 2);
+  var sideD = rand(seedOf(c), 817, 1) < 0.5 ? -1 : 1;
+  return function (p, g, gs2, e) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var th = 0, stArr = [];
+    for (var k = 0; k < n; k++) {
+      var p0 = (n > 1 ? k / (n - 1) : 0) * sp; stArr.push(p0);
+      var u = n > 1 ? (vert ? wi.words[k].b.cy - B.cy : wi.words[k].b.cx - B.cx) / half : 0.5 * sideD;
+      th += 9 * u * kick((p - p0 - fd) * e.inDur, 6.5, 20);
+    }
+    th = cl(th, -13, 13) * cl((1 - p) * 8);
+    if (p <= stArr[j]) return HIDE;
+    var q = cl((p - stArr[j]) / fd), fall = (1 - q * q) * e.size * 2.4;
+    return rigidWord(g, B, { px: B.cx, py: B.cy, rot: th, tx: vert ? fall : 0, ty: vert ? 0 : -fall, a: cl(q * 5) });
+  };
+});
+
+reg('kzTrampoline', 'ae/p_x2_kineticB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, vert = !!c.node.vertical;
+  var sp = n > 1 ? 0.5 : 0, fd = (1 - sp) * 0.4;
+  return function (p, g, gs2, e) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var p0 = (n > 1 ? j / (n - 1) : 0) * sp;
+    if (p <= p0) return HIDE;
+    var q = cl((p - p0) / fd), x = vert ? g.y : g.x, w = 0, A = e.size * 0.3 * cl((1 - p) * 9);
+    for (var j2 = 0; j2 < n; j2++) {
+      var pj = (n > 1 ? j2 / (n - 1) : 0) * sp, d = Math.abs((x - (vert ? wi.words[j2].b.cy : wi.words[j2].b.cx)) / Math.max(1, e.size));
+      var t = (p - pj - fd) * e.inDur - d / 28;
+      if (t > 0) w += Math.exp(-d * 0.28) * kick(t, 6, 19);
+    }
+    var fly = q < 0.55 ? mix(2.4, -0.75, oQuad(q / 0.55)) : -0.75 * (1 - Math.pow((q - 0.55) / 0.45, 2));
+    var v = fly * e.size + A * w, al = cl(q * 5), st2 = 1 + 0.22 * (q < 1 ? Math.sin(PI * q) : 0);
+    return vert ? { dx: -v, sx: st2, a: al } : { dy: v, sy: st2, a: al };
+  };
+});
+
+reg('kzOverrun', 'ae/p_x2_kineticB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), wi = wordInfo(c, gs), n = wi.words.length, sp = n > 1 ? 0.48 : 0, vert = !!c.node.vertical;
+  var D = (vert ? c.comp.height : c.comp.width) * 0.55, O = c.node.size * 0.95, T = 0.55;
+  return function (p, g) {
+    var j = wi.membership[g.i]; if (j == null) return null;
+    var q = st(p, n > 1 ? j / (n - 1) : 0, sp); if (q <= 0) return HIDE;
+    var a, lean, stf = 1;
+    if (q < T) { var t = q / T; a = mix(D, -O, oQuad(t)); lean = mix(17, -21, t * t); stf = 1 + 0.4 * (1 - t) * (1 - t); }
+    else { var t2 = (q - T) / (1 - T); a = -O * (1 - ioCubic(t2)); lean = -21 * (1 - t2) * (1 - t2) + 7 * Math.sin(PI * t2) * (1 - t2); }
+    return rigidWord(g, wi.words[j].b, vert ? { ty: a, sy: stf, rot: -lean * 0.3, a: cl(q * 9) } : { tx: a, sx: stf, rot: lean * 0.35, a: cl(q * 9) });
+  };
+});
+
+reg('kzBowSnap', 'ae/p_x2_kineticB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), B = V.bounds(gs), vert = !!c.node.vertical, half = Math.max(1, (vert ? B.h : B.w) / 2);
+  var sg = rand(seedOf(c), 823, 1) < 0.5 ? -1 : 1, A0 = Math.min(c.node.size * 1.5, (vert ? c.comp.width : c.comp.height) * 0.2) * sg;
+  return function (p, g) {
+    var A = A0 * spring1((p - 0.14) / 0.86, 2.1, 3.2);
+    var u = cl(((vert ? g.y - B.cy : g.x - B.cx)) / half, -1, 1), al = cl((p * 1.8 - Math.abs(u) * 0.22) * 8);
+    if (al <= 0) return HIDE;
+    var d = A * (1 - u * u), sl = Math.atan(2 * u * A / half) / DEG;
+    return vert ? { dx: d, rot: sl, a: al } : { dy: -d, rot: sl, a: al };
+  };
+});
+
+/* ================================================================ Typo (16) */
+
+reg('tyBracketOpen', 'ae/p_typo3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = V.bounds(gs), vert = !!c.node.vertical, sz = c.node.size, pad = sz * 0.12;
+  var rng = inRange(c), stInfo = soloTotal(c, gs);
+  if (rng.ok && !stInfo.solo) {
+    var loc = V.local(c, c.node, 'Brackets'), lw = Math.max(2, sz * 0.04), arm = Math.min(sz * 0.35, (vert ? b.w : b.h) * 0.3), col = H.accCol(c.sc);
+    [-1, 1].forEach(function (side) {
+      var pts = vert
+        ? [[-b.w / 2 - pad, -side * arm], [-b.w / 2 - pad, 0], [b.w / 2 + pad, 0], [b.w / 2 + pad, -side * arm]]
+        : [[-side * arm, -b.h / 2 - pad], [0, -b.h / 2 - pad], [0, b.h / 2 + pad], [-side * arm, b.h / 2 + pad]];
+      localShape(c, loc, 'Bracket ' + (side < 0 ? 'L' : 'R'), V.commands(pts, false), { stroke: col, width: lw, alpha: 1 }, rng, function (p) {
+        var ev = ioCubic(cl((p - 0.08) / 0.62)), half = ((vert ? b.h : b.w) / 2 + pad) * ev;
+        var a = cl(p / 0.08) * (1 - cl((p - 0.78) / 0.22));
+        return vert ? { 'position.x': b.cx, 'position.y': -(b.cy + side * half), alpha: a } : { 'position.x': b.cx + side * half, 'position.y': -b.cy, alpha: a };
+      });
+    });
+  }
+  return function (p) {
+    var ev = ioCubic(cl((p - 0.08) / 0.62)), half = ((vert ? b.h : b.w) / 2 + pad) * ev;
+    return p >= 0.99 ? null : (vert ? { clipPolygon: V.polygon(b.x0 - sz, b.cy - half, b.x1 + sz, b.cy + half) }
+      : { clipPolygon: V.polygon(b.cx - half, b.y0 - sz, b.cx + half, b.y1 + sz) });
+  };
+});
+
+reg('tyDotGrow', 'ae/p_typo3.jsx', function (c) {
+  var ac = H.accCol(c.sc);
+  return function (p, g, gs) {
+    var ord = lr(g, gs), q1 = cl((p - ord * 0.5) / 0.18), q2 = cl((p - ord * 0.5 - 0.2) / 0.3);
+    if (q1 <= 0) return HIDE;
+    if (q2 <= 0) return { ch: '\u30fb', s: 1.25 * E.outBack(q1, 2.6), color: ac };
+    if (q2 >= 1) return null;
+    return { s: mix(0.3, 1, E.outBack(q2, 1.8)), a: cl(q2 * 3) };
+  };
+});
+
+reg('tyLineWipe', 'ae/p_typo3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), spans = V.spans(gs, !!c.node.vertical), nL = Math.max(1, spans.length), stp = Math.min(0.28, 0.6 / nL);
+  var vert = !!c.node.vertical, sz = c.node.size, rng = inRange(c);
+  function qOf(li) { var k = Math.max(0, spans.findIndex(function (L) { return L.li === li; })); return ioCubic(cl((arguments[1] - k * stp) / (1 - (nL - 1) * stp))); }
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'LineWipe'), lw = Math.max(2, sz * 0.05), ac = H.accCol(c.sc);
+    spans.forEach(function (L, k) {
+      localShape(c, loc, 'Rule ' + k, vert ? G.rect(-lw / 2, 0, lw, 1) : G.rect(0, -lw / 2, 1, lw), { fill: ac, alpha: 1 }, rng, function (p) {
+        var q = ioCubic(cl((p - k * stp) / (1 - (nL - 1) * stp)));
+        if (q >= 1) return { alpha: 0 };
+        var a = mix(L.a0, L.a1, E.inCubic(cl(q * 1.4 - 0.4))), b = mix(L.a0, L.a1, q), off = L.c + sz * 0.64;
+        if (b - a < 1) return { alpha: 0 };
+        return vert ? { 'position.x': off, 'position.y': -a, 'scale.y': b - a, alpha: 1 } : { 'position.x': a, 'position.y': -off, 'scale.x': b - a, alpha: 1 };
+      });
+    });
+  }
+  return function (p, g) {
+    var L = spans.filter(function (x) { return x.li === g.li; })[0];
+    if (!L) return null;
+    var k = spans.indexOf(L), q = ioCubic(cl((p - k * stp) / (1 - (nL - 1) * stp)));
+    if (q >= 1) return null;
+    var edge = mix(L.a0, L.a1, q), start = vert ? g.y - g.h / 2 : g.x - g.w / 2, len = Math.max(1, vert ? g.h : g.w), f = (edge - start) / len;
+    if (f <= 0) return HIDE;
+    if (f >= 1) return null;
+    return vert ? { clipY: [-0.7, -0.6 + 1.2 * f] } : { clipX: [-0.7, -0.6 + 1.2 * f] };
+  };
+});
+
+reg('tyRetype', 'ae/p_typo3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), plain = nonSpace(gs), Np = gs.length, sd = seedOf(c), ac = H.accCol(c.sc);
+  var wi = plain.length >= 3 ? plain[1 + (Math.floor(rand(sd, 31, 1) * 100) % (plain.length - 1))].i : -1;
+  var S = Np + (wi >= 0 ? 2 : 0), rng = inRange(c);
+  function shownAt(p) {
+    var k = Math.floor(cl(p) * (S + 0.999));
+    if (wi < 0 || k <= wi) return { n: Math.min(Np, k), wrong: false };
+    if (k === wi + 1) return { n: wi + 1, wrong: true };
+    if (k === wi + 2) return { n: wi, wrong: false };
+    return { n: Math.min(Np, k - 2), wrong: false };
+  }
+  if (rng.ok && plain.length && !c.node.vertical) {
+    var loc = V.local(c, c.node, 'RetypeCursor'), lw = Math.max(2, c.node.size * 0.04);
+    localShape(c, loc, 'Cursor', G.rect(0, -c.node.size * 0.55, lw, c.node.size * 1.1), { fill: ac, alpha: 1 }, rng, function (p) {
+      var stR = shownAt(p);
+      if (p >= 1 || stR.n <= 0) return { alpha: 0 };
+      var gg = gs[Math.min(gs.length - 1, stR.n - 1)];
+      return { 'position.x': gg.x + gg.w / 2 + lw, 'position.y': -gg.y, alpha: 1 };
+    });
+  }
+  return function (p, g) {
+    if (plain.length <= 1) return p < 0.35 ? HIDE : null;
+    var stR = shownAt(p);
+    if (g.i >= stR.n) return HIDE;
+    if (stR.wrong && g.i === wi) return { ch: '?', color: ac };
+    return null;
+  };
+});
+
+reg('tyRubyDrop', 'ae/p_typo3.jsx', function (c) {
+  var vert = !!c.node.vertical, sub = H.subCol(c.sc);
+  return function (p, g, gs) {
+    var q = cl((p - lr(g, gs) * 0.45) / 0.55);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var off = vert ? g.w * 0.8 : -g.h * 0.8;
+    if (q < 0.4) return vert ? { dx: off, s: 0.32, a: cl(q / 0.4 * 1.6), color: sub } : { dy: off, s: 0.32, a: cl(q / 0.4 * 1.6), color: sub };
+    var ev = E.outCubic((q - 0.4) / 0.6), o = { s: mix(0.32, 1, ev) };
+    if (vert) o.dx = off * (1 - ev); else o.dy = off * (1 - ev);
+    if (ev < 0.55) o.color = sub;
+    return o;
+  };
+});
+
+reg('tyUnderLift', 'ae/p_typo3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), spans = V.spans(gs, !!c.node.vertical), vert = !!c.node.vertical, sz = c.node.size;
+  var multi = nonSpace(gs).length > 1, rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'UnderLift'), lw = Math.max(2.5, sz * 0.055), ac = H.accCol(c.sc);
+    spans.forEach(function (L, k) {
+      localShape(c, loc, 'Line ' + k, vert ? G.rect(-lw / 2, -1, lw, 1) : G.rect(0, -lw / 2, 1, lw), { fill: ac, alpha: 1 }, rng, function (p) {
+        var qb = E.outExpo(cl(p / 0.32)), qr = E.inCubic(cl((p - 0.72) / 0.28)), a = mix(L.a0, L.a1, qr), b = mix(L.a0, L.a1, qb);
+        if (b - a < 1) return { alpha: 0 };
+        var off = vert ? L.c - sz * 0.56 : L.c + sz * 0.56;
+        return vert ? { 'position.x': off, 'position.y': -a, 'scale.y': b - a, alpha: 1 } : { 'position.x': a, 'position.y': -off, 'scale.x': b - a, alpha: 1 };
+      });
+    });
+  }
+  return function (p, g, gs2) {
+    var q = cl((p - 0.22 - (multi ? lr(g, gs2) : 0) * 0.38) / 0.4);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var ev = Math.max(0.02, E.outBack(q, 1.5));
+    return vert ? { sx: ev, dx: -(1 - ev) * g.w * 0.45 } : { sy: ev, dy: (1 - ev) * g.h * 0.45 };
+  };
+});
+
+reg('tyZoomOne', 'ae/p_typo3.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), plain = nonSpace(gs), nn = plain.length;
+  var b = V.bounds(plain.length ? plain : gs), big = cl(Math.min(c.comp.width, c.comp.height) * 0.5 / Math.max(1, c.node.size), 1.15, 2.6);
+  var L = nn > 1 ? Math.min(0.55, 2.2 / (nn + 1)) : 1, solo = soloTotal(c, gs).solo;
+  return function (p, g) {
+    var k = plain.indexOf(g); if (k < 0) return null;
+    var s0 = nn > 1 ? k / (nn - 1) * (1 - L) : 0, q = cl((p - s0) / L);
+    if (q <= 0) return HIDE;
+    if (solo) return { s: mix(big, 1, E.outExpo(q)), a: cl(q * 5) };
+    var cx = b.cx - g.x, cy = b.cy - g.y;
+    if (q < 0.38) return { dx: cx, dy: cy, s: mix(big * 1.25, big, E.outCubic(q / 0.38)), a: cl(q / 0.1) };
+    var ev = ioCubic((q - 0.38) / 0.62);
+    return { dx: cx * (1 - ev), dy: cy * (1 - ev), s: mix(big, 1, ev) };
+  };
+});
+
+reg('tzCaretSet', 'ae/p_x2_typoB.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), plain = nonSpace(gs), nn = plain.length, vert = !!c.node.vertical, sz = c.node.size;
+  var rng = inRange(c), stInfo = soloTotal(c, gs), ac = H.accCol(c.sc);
+  if (rng.ok && nn && !stInfo.solo) {
+    var loc = V.local(c, c.node, 'Caret'), lw = Math.max(2, sz * 0.03);
+    localShape(c, loc, 'Bar', vert ? G.rect(-sz * 0.56, -lw / 2, sz * 1.12, lw) : G.rect(-lw / 2, -sz * 0.56, lw, sz * 1.12),
+      { fill: ac, alpha: 1 }, rng, function (p) {
+        if (p >= 1) return { alpha: 0 };
+        var k = cl(p) * (nn + 1.2), shown = Math.min(nn, Math.floor(k));
+        var g = shown > 0 ? plain[shown - 1] : plain[0], sgn = shown > 0 ? 1 : -1;
+        var ca = (vert ? g.y : g.x) + sgn * ((vert ? g.h : g.w) / 2 + sz * 0.07), cv = vert ? g.x : g.y;
+        return vert ? { 'position.x': cv, 'position.y': -ca, alpha: 1 } : { 'position.x': ca, 'position.y': -cv, alpha: 1 };
+      });
+  }
+  return function (p, g) {
+    var r = plain.indexOf(g); if (r < 0) return null;
+    if (stInfo.solo) { var qs = (p - lr(g, gs) * 0.6) / 0.4; return qs <= 0 ? HIDE : (qs < 0.45 ? { color: ac } : null); }
+    var k = cl(p) * (nn + 1.2), shown = Math.min(nn, Math.floor(k));
+    if (r >= shown) return HIDE;
+    return (r === shown - 1 && k < r + 1.6) ? { color: ac } : null;
+  };
+});
+
+reg('tzRuleSlide', 'ae/p_x2_typoB.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), spans = V.spans(gs, !!c.node.vertical), vert = !!c.node.vertical, sz = c.node.size;
+  var dir = rand(seedOf(c), 61, 1) < 0.5 ? 1 : -1, dist = Math.min((vert ? c.comp.height : c.comp.width) * 0.3, sz * 4);
+  var rng = inRange(c), ac = H.accCol(c.sc);
+  if (rng.ok && !soloTotal(c, gs).solo) {
+    var loc = V.local(c, c.node, 'RuleSlide'), lw = Math.max(1.5, sz * 0.022), pad = sz * 0.14;
+    spans.slice(0, 6).forEach(function (L, idx) {
+      var tick = dir > 0 ? L.a1 + pad : L.a0 - pad, far = tick - dir * ((L.a1 - L.a0) + pad * 2 + dist * 0.6);
+      var off = L.c + sz * 0.6;
+      localShape(c, loc, 'Rule ' + idx, vert ? G.rect(-lw / 2, 0, lw, 1) : G.rect(0, -lw / 2, 1, lw), { fill: ac, alpha: 1 }, rng, function (p) {
+        var qb = E.outExpo(cl(p / 0.3)), qr = E.inCubic(cl((p - 0.76) / 0.24));
+        var a = mix(far, tick, qr), b = mix(far, tick, qb), len = Math.abs(b - a);
+        if (len <= 1) return { alpha: 0 };
+        var lo = Math.min(a, b);
+        return vert ? { 'position.x': off, 'position.y': -lo, 'scale.y': len, alpha: 1 } : { 'position.x': lo, 'position.y': -off, 'scale.x': len, alpha: 1 };
+      });
+    });
+  }
+  return function (p) {
+    var off = -dir * dist * (1 - E.outExpo(cl(p / 0.72))), a = cl(p * 7);
+    return vert ? { dy: off, a: a } : { dx: off, a: a };
+  };
+});
+
+reg('tzCountSet', 'ae/p_x2_typoB.jsx', function (c) {
+  var sub = H.subCol(c.sc), ac = H.accCol(c.sc);
+  return function (p, g, gs, e) {
+    var o = lr(g, gs), t0 = o * 0.2, tl = 0.38 + o * 0.52;
+    if (p < t0) return HIDE;
+    if (p < tl) return { ch: String(Math.floor(g.i + e.step) % 10), s: 0.5, color: sub, a: cl((p - t0) / 0.06) };
+    return p < tl + 0.07 ? { color: ac } : null;
+  };
+});
+
+reg('tzCloseUp', 'ae/p_x2_typoB.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), vert = !!c.node.vertical, sz = c.node.size, spans = V.spans(gs, vert);
+  var info = Object.create(null);
+  spans.forEach(function (L) {
+    var n = L.glyphs.length; if (n < 2) return;
+    var gap = cl(((vert ? c.comp.height : c.comp.width) * 0.92 - (L.a1 - L.a0)) / (n - 1), sz * 0.22, sz * 0.55);
+    L.glyphs.forEach(function (g, k) { info[g.i] = { k: k, n: n, gap: gap }; });
+  });
+  return function (p, g) {
+    var stC = info[g.i]; if (!stC) return { a: cl(p * 8) };
+    var cum = 0;
+    for (var j = 1; j <= stC.k; j++) cum += stC.gap * (1 - E.outExpo(cl((p - (0.12 + (j - 1) / (stC.n - 1) * 0.58)) / 0.26)));
+    var tot = 0;
+    for (var j2 = 1; j2 < stC.n; j2++) tot += stC.gap * (1 - E.outExpo(cl((p - (0.12 + (j2 - 1) / (stC.n - 1) * 0.58)) / 0.26)));
+    var d = cum - tot / 2;
+    return vert ? { dy: d, a: cl(p * 8) } : { dx: d, a: cl(p * 8) };
+  };
+});
+
+reg('tzWeightUp', 'ae/p_x2_typoB.jsx', function (c) {
+  var swMax = c.node.size * 0.1;
+  (c.node._jzTwins = c.node._jzTwins || []).push({
+    label: 'WeightMask',
+    setup: function (graph, clone, src, g) {
+      clone.attrs.fill = false; clone.attrs.stroke = true;
+      clone.attrs['stroke.strokeColor'] = c.sc.bg; clone.attrs['stroke.width'] = swMax;
+      clone.keys = {};
+      C.sample(graph, clone.id, clone.start, clone.end, function (f) {
+        var e = E.outCubic(cl((pinAt(c, f) - 0.06) / 0.94));
+        return { 'position.x': g.x + (g.vx || 0), 'position.y': -g.y - (g.vy || 0), 'stroke.width': Math.max(0.5, swMax * (1 - e)), alpha: e < 0.96 ? cl(1 - e) : 0 };
+      });
+    }
+  });
+  return function (p) { return { a: cl(p * 6) }; };
+});
+
+reg('tzBaseAlign', 'ae/p_x2_typoB.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), vert = !!c.node.vertical, spans = V.spans(gs, vert), sz = c.node.size, sd = seedOf(c);
+  var rng = inRange(c), ac = H.accCol(c.sc);
+  if (rng.ok && !soloTotal(c, gs).solo) {
+    var loc = V.local(c, c.node, 'BaseAlign'), lw = Math.max(1.5, sz * 0.02), pad = sz * 0.12;
+    spans.slice(0, 6).forEach(function (L, k) {
+      var off = L.c + sz * 0.56;
+      localShape(c, loc, 'Guide ' + k, vert ? G.rect(-lw / 2, 0, lw, 1) : G.rect(0, -lw / 2, 1, lw), { fill: ac, alpha: 1 }, rng, function (p) {
+        var s = ioCubic(cl((p - 0.14) / 0.66)) * 1.14, pos = Math.min(L.a1 + pad, L.a0 + (L.a1 - L.a0) * (s - 0.04));
+        var len = pos - (L.a0 - pad), ga = cl(p / 0.1) * (1 - cl((p - 0.84) / 0.16));
+        if (len <= 1) return { alpha: 0 };
+        return vert ? { 'position.x': off, 'position.y': -(L.a0 - pad), 'scale.y': len, alpha: ga } : { 'position.x': L.a0 - pad, 'position.y': -off, 'scale.x': len, alpha: ga };
+      });
+    });
+  }
+  return function (p, g) {
+    var L = spans.filter(function (x) { return x.li === g.li; })[0];
+    if (!L) return { a: cl(p * 8) };
+    var s = ioCubic(cl((p - 0.14) / 0.66)) * 1.14, f = L.a1 - L.a0 > 1 ? ((vert ? g.y : g.x) - L.a0) / (L.a1 - L.a0) : 0;
+    var u = cl((s - f) / 0.12); if (u >= 1) return null;
+    var off = ((rand(sd, g.i, 5) < 0.5 ? 1 : -1) * mix(0.16, 0.4, rand(sd, g.i, 6)) * sz) * (1 - E.outExpo(u));
+    return vert ? { dx: off, a: cl(p * 8) } : { dy: off, a: cl(p * 8) };
+  };
+});
+
+reg('tzPointSize', 'ae/p_x2_typoB.jsx', function (c) {
+  var SArr = [0.34, 0.52, 0.76, 1], b = V.bounds(V.glyphs(c, c.node)), rng = inRange(c), sub = H.subCol(c.sc);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'PointSize');
+    localShape(c, loc, 'Rule', G.rect(b.x0, -(b.y0 - 4), Math.max(1, b.w), 1.5), { fill: sub, alpha: 1 }, rng, function (p) {
+      var k = Math.min(3, Math.floor(cl(p) * 4)), a = 1 - cl((p - 0.86) / 0.14);
+      return { 'scale.x': SArr[k], alpha: a };
+    });
+  }
+  return function (p, g) {
+    var k = Math.min(3, Math.floor(cl(p) * 4)), sc = SArr[k];
+    return { s: sc, dx: (g.x - b.cx) * (sc - 1), dy: (g.y - b.cy) * (sc - 1), a: cl(p * 10) };
+  };
+});
+
+reg('tzIndexLead', 'ae/p_x2_typoB.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), spans = V.spans(gs, !!c.node.vertical), vert = !!c.node.vertical, sz = c.node.size;
+  var nL = Math.max(1, spans.length), stp = Math.min(0.06, 0.3 / nL), span = 0.62 - (nL - 1) * stp;
+  var rng = inRange(c), ac = H.accCol(c.sc), sub = H.subCol(c.sc);
+  function qOf(k, p) { return ioCubic(cl((p - 0.14 - k * stp) / span)); }
+  if (rng.ok && spans.length && !soloTotal(c, gs).solo) {
+    var loc = V.local(c, c.node, 'IndexLead'), lw = Math.max(1.5, sz * 0.02), fs = Math.max(12, sz * 0.2);
+    spans.slice(0, 6).forEach(function (L, k) {
+      localShape(c, loc, 'Lead ' + k, vert ? G.rect(-lw / 2, 0, lw, 1) : G.rect(0, -lw / 2, 1, lw), { fill: ac, alpha: 1 }, rng, function (p) {
+        var qr = E.inCubic(cl((p - 0.8) / 0.2)), h0 = mix(L.a0, L.a1, qr), h1 = mix(L.a0, L.a1, qOf(k, p)), off = L.c - sz * 0.62;
+        if (h1 - h0 <= 1) return { alpha: 0 };
+        return vert ? { 'position.x': off, 'position.y': -h0, 'scale.y': h1 - h0, alpha: 1 } : { 'position.x': h0, 'position.y': -off, 'scale.x': h1 - h0, alpha: 1 };
+      });
+    });
+    var L0 = spans[0];
+    localText(c, loc, 'Idx', '01', vert ? L0.c : L0.a0, vert ? L0.a0 - fs * 0.9 : L0.c - sz * 0.62 - fs * 0.8, fs,
+      { align: vert ? 'center' : 'left', color: sub }, rng, function (p) {
+        return { alpha: (p > 0.03 ? 1 : 0) * (1 - cl((p - 0.82) / 0.18)) };
+      });
+  }
+  return function (p, g) {
+    var k = Math.max(0, spans.findIndex(function (L) { return L.li === g.li; })), L = spans[k];
+    if (!L) return null;
+    var d = mix(L.a0, L.a1, qOf(k, p)) - (vert ? g.y : g.x);
+    if (d < 0) return HIDE;
+    return d < sz * 0.6 ? { color: ac } : null;
+  };
+});
+
+reg('tzTextFrame', 'ae/p_x2_typoB.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = padBox(gs, c.node.size * 0.16), rng = inRange(c), ac = H.accCol(c.sc), sz = c.node.size;
+  if (rng.ok && !soloTotal(c, gs).solo) {
+    var loc = V.local(c, c.node, 'TextFrame'), lw = Math.max(1.5, sz * 0.018), hs = Math.max(4, sz * 0.05);
+    localShape(c, loc, 'Frame', G.rect(b.x0, -b.y1, Math.max(2, b.w), Math.max(2, b.h)), { stroke: ac, width: lw, alpha: 1 }, rng, function (p) {
+      var qd = ioCubic(cl(p / 0.38)), qr = E.inCubic(cl((p - 0.8) / 0.2));
+      return { 'scale.x': Math.max(0.02, qd * (1 - qr)), alpha: qr >= 0.99 ? 0 : 1 };
+    });
+    [[b.x0, b.y0], [b.x1, b.y0], [b.x1, b.y1], [b.x0, b.y1]].forEach(function (pt, idx) {
+      localShape(c, loc, 'Handle ' + idx, G.rect(pt[0] - hs / 2, -pt[1] - hs / 2, hs, hs), { fill: ac, alpha: 1 }, rng, function (p) {
+        return { alpha: (p > 0.36 && p < 0.8) ? 1 : 0 };
+      });
+    });
+  }
+  return function (p, g, gs2) {
+    return p < 0.3 + lr(g, gs2) * 0.42 ? HIDE : null;
+  };
+});
+
+/* ================================================================ Wa (9) */
+
+reg('wzFusuma', 'ae/p_x2_waB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), sz = c.node.size, b = padBox(gs, sz * 0.28), rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Fusuma'), lw = Math.max(2, sz * 0.03), ac = H.accCol(c.sc);
+    var paper = H.mixHex(c.sc.bg, c.sc.fg, H.dark(c.sc.bg) ? 0.14 : 0.08);
+    [-1, 1].forEach(function (side) {
+      localShape(c, loc, 'Door ' + (side < 0 ? 'L' : 'R'), G.rect(side < 0 ? -1 : 0, -b.h / 2, 1, b.h),
+        { fill: paper, stroke: c.node.color, width: lw, alpha: 1 }, rng, function (p) {
+          var show = E.outCubic(cl(p / 0.2)), ev = ioCubic(cl((p - 0.16) / 0.72)), fade = 1 - H.smoothstep(0.8, 1, p);
+          var w = (b.w / 2) * (1 - ev);
+          if (w < 1 || fade < 0.01) return { alpha: 0 };
+          var uOut = side < 0 ? b.x0 : b.x1;
+          return { 'position.x': uOut, 'position.y': -b.cy, 'scale.x': w, 'scale.y': Math.max(0.02, show), alpha: cl(fade * cl(show * 1.5)) };
+        });
+      localShape(c, loc, 'Pull ' + (side < 0 ? 'L' : 'R'), G.ellipse(0, 0, sz * 0.085, sz * 0.085), { stroke: ac, width: lw * 0.75, alpha: 1 }, rng, function (p) {
+        var show = E.outCubic(cl(p / 0.2)), ev = ioCubic(cl((p - 0.16) / 0.72)), fade = 1 - H.smoothstep(0.8, 1, p);
+        var half = b.w / 2 * ev, w = b.w / 2 * (1 - ev);
+        if (w <= sz * 0.7 || fade < 0.01) return { alpha: 0 };
+        return { 'position.x': b.cx + side * (half + sz * 0.36), 'position.y': -b.cy, 'scale.x': Math.max(0.05, show), 'scale.y': Math.max(0.05, show), alpha: fade };
+      });
+    });
+  }
+  return function (p) {
+    var ev = ioCubic(cl((p - 0.16) / 0.72)), h = b.w / 2 * ev;
+    return ev >= 0.99 ? null : { clipPolygon: V.polygon(b.cx - h, b.y0 - sz * 2, b.cx + h, b.y1 + sz * 2) };
+  };
+});
+
+reg('wzKakejiku', 'ae/p_x2_waB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), sz = c.node.size, b = padBox(gs, sz * 0.3), rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Kakejiku'), lw = Math.max(2, sz * 0.03), rod = Math.max(4, sz * 0.085);
+    var col = c.node.color, ac = H.accCol(c.sc);
+    localShape(c, loc, 'TopBar', G.rect(-b.w / 2, -lw / 2, b.w, lw), { fill: col, alpha: 1 }, rng, function (p) {
+      var top = E.outCubic(cl(p / 0.2)), fade = 1 - H.smoothstep(0.84, 1, p);
+      return { 'position.x': b.cx, 'position.y': -(b.y0 - lw / 2), 'scale.x': Math.max(0.02, top), alpha: fade };
+    });
+    localShape(c, loc, 'Roller', G.rect(-b.w / 2 - rod * 0.4, -rod / 2, b.w + rod * 0.8, rod), { fill: col, alpha: 1 }, rng, function (p) {
+      var top = E.outCubic(cl(p / 0.2)), ev = ioCubic(cl((p - 0.12) / 0.72)), fade = 1 - H.smoothstep(0.84, 1, p);
+      return { 'position.x': b.cx, 'position.y': -mix(b.y0, b.y1, ev), 'scale.x': Math.max(0.02, top), alpha: cl(top * 2) * fade };
+    });
+    [-1, 1].forEach(function (sd) {
+      localShape(c, loc, 'Knob ' + sd, G.rect(-rod * 0.45, -rod * 0.72, rod * 0.9, rod * 1.44), { fill: ac, alpha: 1 }, rng, function (p) {
+        var top = E.outCubic(cl(p / 0.2)), ev = ioCubic(cl((p - 0.12) / 0.72)), fade = 1 - H.smoothstep(0.84, 1, p);
+        return { 'position.x': b.cx + sd * (b.w / 2 + rod * 0.85), 'position.y': -mix(b.y0, b.y1, ev), alpha: top * fade };
+      });
+    });
+  }
+  return function (p) {
+    var ev = ioCubic(cl((p - 0.12) / 0.72)), y = mix(b.y0, b.y1, ev);
+    return ev >= 0.99 ? null : { clipPolygon: V.polygon(b.x0 - sz * 2, b.y0 - sz * 2, b.x1 + sz * 2, y) };
+  };
+});
+
+reg('wzMisu', 'ae/p_x2_waB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), sz = c.node.size, b = padBox(gs, sz * 0.22), rng = inRange(c);
+  var Np = Math.round(cl(b.h / (sz * 0.14), 6, 20)), pitch = b.h / Np, th = pitch * 0.5, bp = th * 0.4;
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Misu'), slatCol = H.mixHex(c.sc.bg, c.node.color, 0.5);
+    for (var i = 0; i < Np; i++) {
+      (function (idx) {
+        localShape(c, loc, 'Slat ' + idx, G.rect(b.x0, -th / 2, b.w, th), { fill: slatCol, alpha: 0.9 }, rng, function (p) {
+          var ev = ioCubic(cl((p - 0.14) / 0.66)), yb = mix(b.y1, b.y0, ev), fade = 1 - H.smoothstep(0.8, 1, p);
+          var y = Math.min(b.y0 + (idx + 0.5) * pitch, yb - (Np - 1 - idx) * bp - th / 2);
+          return { 'position.y': -y, alpha: 0.9 * fade };
+        });
+      })(i);
+    }
+  }
+  return function (p, g) {
+    var ev = ioCubic(cl((p - 0.14) / 0.66)), yb = mix(b.y1, b.y0, ev);
+    if (g.y - g.h * 0.5 >= yb - sz * 0.2) return { a: cl(p / 0.16) };
+    return { a: cl(p / 0.16) * 0.55 };
+  };
+});
+
+reg('wzHanko', 'ae/p_x2_waB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), sz = c.node.size, b = padBox(gs, sz * 0.2), rng = inRange(c), sd = seedOf(c);
+  var seal = c.sc.accent, own = c.node.color, knock = H.contrast(c.sc.bg, seal) >= 1.6 ? c.sc.bg : (H.dark(seal) ? '#FFFFFF' : '#000000');
+  var dir = rand(sd, 11, 5) < 0.5 ? -1 : 1, tI = 0.26;
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Hanko');
+    localShape(c, loc, 'Seal', G.rect(b.x0, -b.y1, Math.max(2, b.w), Math.max(2, b.h)), { fill: seal, alpha: 1 }, rng, function (p) {
+      return { alpha: 1 - H.smoothstep(0.4, 0.96, p) };
+    });
+  }
+  return function (p, g) {
+    var down = iQuad(cl(p / tI)), t = cl((p - tI) / (1 - tI));
+    var sc = p < tI ? mix(1.2, 1, down) : 1 - 0.035 * Math.exp(-t * 10) * (1 - t);
+    var rot = dir * -5 * (1 - down), rv = rot2((g.x - b.cx) * sc, (g.y - b.cy) * sc, rot);
+    return { dx: b.cx + rv[0] - g.x, dy: b.cy + rv[1] - g.y, rot: rot, s: sc, a: cl(p / 0.1), color: H.mixHex(knock, own, H.smoothstep(0.45, 0.85, p)) };
+  };
+});
+
+reg('wzChochin', 'ae/p_x2_waB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), sz = c.node.size, own = c.node.color, warm = H.accCol(c.sc), rng = inRange(c);
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Chochin'), lw = Math.max(1.5, sz * 0.018);
+    nonSpace(gs).forEach(function (g) {
+      var rx = Math.max(g.w, sz * 0.6) * 0.6, ry = Math.max(g.h, sz * 0.6) * 0.7;
+      localShape(c, loc, 'Lantern ' + g.i, G.ellipse(g.x, -g.y, rx, ry), { fill: warm, stroke: warm, width: lw, alpha: 0.7 }, rng, function (p) {
+        var q = st(p, lr(g, gs), 0.6);
+        return { alpha: (q > 0 && q < 1) ? cl(q * 4) * (1 - H.smoothstep(0.5, 1, q)) * 0.5 : 0 };
+      });
+    });
+  }
+  return function (p, g, gs2, e) {
+    var q = st(p, lr(g, gs2), 0.6);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var fl = q < 0.45 ? 0.55 + 0.45 * rand(e.seed, g.i, e.step, 211) : 1;
+    return { a: cl(q * 3.5) * fl, color: H.mixHex(warm, own, H.smoothstep(0.45, 1, q)) };
+  };
+});
+
+reg('wzKamifubuki', 'ae/p_x2_waB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), sz = c.node.size, sd = seedOf(c), rng = inRange(c);
+  var cols = [H.accCol(c.sc), c.sc.accent2 || c.sc.accent, c.node.color, H.subCol(c.sc)];
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Kamifubuki'), hw = sz * 0.075, hh = sz * 0.048;
+    nonSpace(gs).slice(0, 14).forEach(function (g) {
+      for (var k = 0; k < 2; k++) {
+        (function (kk) {
+          var r1 = rand(sd, g.i, kk, 222), ph = rand(sd, g.i, kk, 223) * TAU;
+          var tx = g.x + (rand(sd, g.i, kk, 224) * 2 - 1) * g.w * 0.32, ty = g.y + (rand(sd, g.i, kk, 225) * 2 - 1) * g.h * 0.32;
+          var dx0 = (rand(sd, g.i, kk, 226) * 2 - 1) * sz * 1.5, dy0 = sz * (1.5 + 1.7 * rand(sd, g.i, kk, 227));
+          localShape(c, loc, 'Flake ' + g.i + '_' + kk, G.rect(-hw, -hh, hw * 2, hh * 2), { fill: cols[(g.i + kk) % 4], alpha: 1 }, rng, function (p) {
+            var q = st(p, rand(sd, g.i, 221), 0.36);
+            if (q <= 0 || q >= 1) return { alpha: 0 };
+            var tf = cl(q / 0.62 * (0.78 + 0.22 * r1)), ef = 1 - Math.pow(1 - tf, 1.5), out = 1 - H.smoothstep(0.68, 1, q);
+            var px = tx + (1 - ef) * dx0 + Math.sin(tf * 9 + ph) * sz * 0.24 * (1 - tf), py = ty - (1 - ef) * dy0;
+            return { 'position.x': px, 'position.y': -py, rotation: -((ph + tf * 8) / DEG), 'scale.x': 0.25 + 0.75 * Math.abs(Math.cos(tf * 11 + ph)), alpha: cl(tf * 5) * out };
+          });
+        })(k);
+      }
+    });
+  }
+  return function (p, g, gs2, e) {
+    var q = st(p, rand(e.seed, g.i, 221), 0.36);
+    if (q <= 0.5) return HIDE;
+    if (q >= 1) return null;
+    return { a: H.smoothstep(0.5, 0.85, q), s: mix(0.82, 1, E.outCubic((q - 0.5) / 0.5)) };
+  };
+});
+
+reg('wzHanabi', 'ae/p_x2_waB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), sz = c.node.size, sd = seedOf(c), rng = inRange(c), tB = 0.32;
+  var c1 = H.accCol(c.sc), c2 = c.sc.accent2 || c.node.color;
+  if (rng.ok) {
+    var loc = V.local(c, c.node, 'Hanabi');
+    nonSpace(gs).slice(0, 10).forEach(function (g) {
+      var rays = [], R = 6, o = rand(sd, g.i, 232) * TAU;
+      for (var k = 0; k < R; k++) {
+        var an = o + k / R * TAU, rr = k % 2 ? 0.72 : 1;
+        rays.push(['M', Math.cos(an) * sz * 0.2 * rr, -Math.sin(an) * sz * 0.2 * rr], ['L', Math.cos(an) * sz * 0.8 * rr, -Math.sin(an) * sz * 0.8 * rr]);
+      }
+      localShape(c, loc, 'Burst ' + g.i, rays, { stroke: g.i % 2 ? c2 : c1, width: Math.max(1.5, sz * 0.025), alpha: 1 }, rng, function (p) {
+        var q = st(p, lr(g, gs) * 0.65 + rand(sd, g.i, 231) * 0.35, 0.42);
+        if (q < tB || q >= 1) return { alpha: 0 };
+        var u = (q - tB) / (1 - tB), sc = 0.25 + E.outExpo(u);
+        return { 'position.x': g.x, 'position.y': -g.y - sz * 0.16 * u * u, 'scale.x': sc, 'scale.y': sc, alpha: 1 - H.smoothstep(0.4, 1, u) };
+      });
+    });
+  }
+  return function (p, g, gs2, e) {
+    var q = st(p, lr(g, gs2) * 0.65 + rand(e.seed, g.i, 231) * 0.35, 0.42);
+    if (q <= tB) return HIDE;
+    if (q >= 1) return null;
+    var u = (q - tB) / (1 - tB);
+    return { s: mix(0.3, 1, E.outBack(cl(u / 0.6), 1.9)), a: cl(u * 4) };
+  };
+});
+
+reg('wzOrigami', 'ae/p_x2_waB1.jsx', function () {
+  var F = 0.78;
+  return function (p, g, gs) {
+    var q = st(p, lr(g, gs), 0.5);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var sc = mix(0.4, 1, E.outBack(cl(q / 0.2), 1.6)), x1 = ioCubic(cl((q - 0.2) / 0.38)), y1 = ioCubic(cl((q - 0.58) / 0.42));
+    return { s: sc, a: cl(q * 8), clipX: [-F, F * x1], clipY: [-F, F * y1] };
+  };
+});
+
+reg('wzSeigaiha', 'ae/p_x2_waB1.jsx', function (c) {
+  var gs = V.glyphs(c, c.node), b = padBox(gs, c.node.size * 0.25), sz = c.node.size;
+  var r = Math.max(sz * 0.36, Math.sqrt(Math.max(1, b.w * b.h) / 140));
+  return function (p, g) {
+    var uRow = b.h > 1 ? (b.y1 - g.y) / b.h : 0, uCol = b.w > 1 ? (g.x - b.x0) / b.w : 0;
+    var q = st(p, cl(uRow * 0.75 + uCol * 0.25), 0.62);
+    if (q <= 0) return HIDE;
+    if (q >= 1) return null;
+    var R0 = r * 1.32 * E.outCubic(q), pts = [];
+    for (var k = 0; k < 12; k++) { var a = k / 12 * TAU; pts.push([g.x + Math.cos(a) * R0, g.y + Math.sin(a) * R0]); }
+    return { clipPolygon: pts, s: mix(0.85, 1, E.outCubic(q)) };
+  };
+});
+
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);
+
+;
 /* Core exit recipes (40 recipes). Source math: ae/p_exit1.jsx, p_exit2.jsx (read-only). */
 (function (N, R, V) {
 'use strict';
@@ -2526,6 +4458,2346 @@ reg('xrDropBounce', function (c, s) {
   if (s.f1 < c.comp.frameCount) c.graph.key(target, 'position.y', s.f1, 0, 1);
 });
 })(JZNative, JZGraph, JZComponents, JZRecipeTools);
+
+;
+/* 53 additional native FX recipes (ae/p_fx2.jsx + ae/p_horror4.jsx + ae/p_x2_*B2.jsx).
+ * Paired with cavalry/packs/p_fx.js and cavalry/packs/p_fx_x2.js.
+ */
+(function (N, G, C, R, V, S, H) {
+'use strict';
+
+var cl = R.clamp, mix = R.mix, E = R.E, PI = Math.PI, TAU = R.T, DEG = PI / 180;
+
+function reg(key, source, fn, diffs) {
+  N.register('fx', key, {
+    source: source + ' / fx:' + key,
+    scope: 'event',
+    differences: diffs || [],
+    build: function (c) { return fn(c, H.fxSpan(c)); }
+  });
+}
+
+function scPt(x, y, W, Hh) { return [x - W / 2, Hh / 2 - y]; }
+function rectPoly(x0, y0, x1, y1, W, Hh) {
+  var a = scPt(x0, y0, W, Hh), b = scPt(x1, y1, W, Hh);
+  return [[a[0], a[1]], [b[0], a[1]], [b[0], b[1]], [a[0], b[1]]];
+}
+function ahr(p, a, b) {
+  return p < a ? E.outCubic(p / Math.max(1e-4, a)) : (p > b ? 1 - E.inCubic((p - b) / Math.max(1e-4, 1 - b)) : 1);
+}
+function vivid(sc) {
+  var c = [sc.accent, sc.accent2, sc.ghostA, sc.ghostB, sc.fg];
+  for (var i = 0; i < c.length; i++) if (c[i] && H.contrast(c[i], sc.bg) > 1.6) return c[i];
+  return H.accCol(sc);
+}
+function ink(sc) { return sc.ink || sc.fg; }
+function pop(sc) { return H.accCol(sc); }
+
+function prog(f, s) {
+  return (f - s.f0) / Math.max(1, s.f1 - s.f0 - 1);
+}
+
+/* Clone active cut subtrees overlapping [f0, f1) into a parent null under c.parent. */
+function cloneActiveCuts(c, s, label, opts) {
+  var g = c.graph, o = opts || {};
+  var cutsRoot = g.layers.filter(function (l) { return l.name === 'JIZURA / Cuts'; })[0];
+  if (!cutsRoot) return { rigId: H.rigTarget(c, label, s), paintables: [] };
+  var rigId = g.add('null', 'FX ' + label + ' @' + s.f0, c.parent, s.f0, s.f1, {});
+  if (o.belowCuts) {
+    var i = g.layers.indexOf(g.byId[rigId]), j = g.layers.indexOf(cutsRoot);
+    if (i > j && j >= 0) { var n = g.layers.splice(i, 1)[0]; g.layers.splice(j, 0, n); }
+  }
+  var cutGroups = g.layers.filter(function (l) { return l.parent === cutsRoot.id && l.type === 'null' && l.start < s.f1 && l.end > s.f0; });
+  var paintables = [];
+  cutGroups.forEach(function (grp) {
+    var map = Object.create(null);
+    map[grp.id] = rigId;
+    var queue = g.layers.filter(function (l) {
+      if (l.start >= s.f1 || l.end <= s.f0) return false;
+      if (o.inkOnly && l.type === 'path' && /bg|background|grid|hatch/i.test(l.name)) return false;
+      var cur = l;
+      while (cur && cur.parent) {
+        if (cur.parent === grp.id) return true;
+        cur = g.byId[cur.parent];
+      }
+      return false;
+    });
+    queue.forEach(function (src) {
+      if (src.type !== 'null' && src.type !== 'path' && src.type !== 'textShape') return;
+      var cs = Math.max(s.f0, src.start), ce = Math.min(s.f1, src.end);
+      if (ce <= cs) return;
+      var pid = map[src.parent] || rigId;
+      var attrs = V.copy(src.attrs);
+      if (o.tintColor && (src.type === 'path' || src.type === 'textShape')) {
+        if (attrs.fill !== false) attrs['material.materialColor'] = o.tintColor;
+        if (attrs.stroke) attrs['stroke.strokeColor'] = o.tintColor;
+      }
+      var nid = g.add(src.type, src.name + ' / ' + label, pid, cs, ce, attrs, src.commands ? V.copy(src.commands) : null);
+      var dst = g.byId[nid];
+      Object.keys(src.keys).forEach(function (attr) {
+        var trk = src.keys[attr], outT = {}, held = null;
+        Object.keys(trk).map(Number).sort(function (a, b) { return a - b; }).forEach(function (f) {
+          if (f <= cs) held = trk[f];
+          if (f >= cs && f < ce) outT[f] = V.copy(trk[f]);
+        });
+        if (!Object.prototype.hasOwnProperty.call(outT, cs) && held != null) outT[cs] = V.copy(held);
+        if (Object.keys(outT).length) dst.keys[attr] = outT;
+      });
+      map[src.id] = nid;
+      if (src.type === 'path' || src.type === 'textShape') paintables.push(nid);
+    });
+  });
+  return { rigId: rigId, paintables: paintables };
+}
+
+function addOverlay(c, f0, f1, name, cmds, paint, fn) {
+  var id = C.shape(c.graph, { id: 'fx', start: f0, end: f1 }, name, c.parent, cmds, paint);
+  if (fn) C.sample(c.graph, id, f0, f1, fn);
+  return id;
+}
+
+/* ================================================================ p_fx2.jsx (26) */
+reg('anamorphic', 'ae/p_fx2.jsx', function (c, s) {
+  var dk = H.dark(s.sc.bg), col = vivid(s.sc), dir = N.random(s.seed, 3, 1) < 0.5 ? 1 : -1;
+  var y = s.H * (0.5 + (N.random(s.seed, 1, 1) * 2 - 1) * 0.1), x = s.W * (0.5 + (N.random(s.seed, 2, 1) * 2 - 1) * 0.22);
+  var M = Math.min(s.W, s.H), scP = scPt(x, y, s.W, s.H), a0 = cl(s.amp, 0.5, 1.2);
+  var specs = [
+    { name: 'Streak', rx: s.W * 0.65, ry: M * 0.04, col: dk ? col : H.mixHex(col, '#FFFFFF', 0.2), op: 0.45, mv: 1 },
+    { name: 'Core', rx: s.W * 0.52, ry: Math.max(2, M * 0.008), col: dk ? '#FFFFFF' : col, op: 0.9, mv: 1 },
+    { name: 'Flare orb', rx: M * 0.07, ry: M * 0.07, col: col, op: 0.6, mv: 1 }
+  ];
+  specs.forEach(function (sp) {
+    addOverlay(c, s.f0, s.f1, 'FX Anamorphic ' + sp.name + ' @' + s.f0, G.ellipse(0, 0, sp.rx, sp.ry), { fill: sp.col, alpha: 1 }, function (f) {
+      var p = prog(f, s), a = a0 * Math.pow(H.bell(p), 0.5) * (0.88 + 0.12 * N.random(s.seed, f * 7, 5));
+      var dx = (p - 0.5) * s.W * 0.14 * dir * sp.mv;
+      return { 'position.x': scP[0] + dx, 'position.y': scP[1], alpha: cl(a * sp.op) };
+    });
+  });
+});
+
+reg('bandInvert', 'ae/p_fx2.jsx', function (c, s) {
+  var vert = N.random(s.seed, 2, 1) < 0.22, Lx = vert ? s.W : s.H, Mx = vert ? s.H : s.W;
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var st = Math.floor(f * 12 / s.fps) * 13 + s.seed, n = 2 + (Math.floor(N.random(st, 1, 1) * 99) % 4), polys = [];
+    for (var i = 0; i < n; i++) {
+      var h = Math.max(2, Lx * mix(0.012, 0.12, N.random(st, i, 3)) * cl(s.amp, 0.6, 1.3));
+      var y = Lx * mix(0.12, 0.88, N.random(st, i, 4)) - h / 2;
+      var part = N.random(st, i, 5) < 0.35, x0 = part ? Mx * mix(0, 0.5, N.random(st, i, 6)) : 0, w = part ? Mx * mix(0.25, 0.6, N.random(st, i, 7)) : Mx;
+      polys.push(vert ? rectPoly(y, x0, y + h, x0 + w, s.W, s.H) : rectPoly(x0, y, x0 + w, y + h, s.W, s.H));
+    }
+    contours[f] = polys;
+  }
+  var id = addOverlay(c, s.f0, s.f1, 'FX Band Invert @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: vivid(s.sc), alpha: 0.72 });
+  H.multiClip(c.graph, id, contours, false, 'Invert bands', c.options);
+}, ['Vector band overlay approximates AE Difference blend bands in graph IR.']);
+
+reg('colorBars', 'ae/p_fx2.jsx', function (c, s) {
+  var vert = N.random(s.seed, 1, 1) < (s.W >= s.H ? 0.35 : 0.15), dir = N.random(s.seed, 2, 1) < 0.5 ? 1 : -1;
+  var src = [s.sc.accent, s.sc.accent2, s.sc.ghostA, s.sc.ghostB, s.sc.fg];
+  var cols = src.filter(function (x) { return x && H.contrast(x, s.sc.bg) > 1.35; });
+  if (!cols.length) cols = [ink(s.sc)];
+  var Lx = vert ? s.W : s.H, Mx = vert ? s.H : s.W, n = 4 + (Math.abs(s.seed) % 4);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var th = Math.max(2, Lx * mix(0.008, 0.045, N.random(s.seed, idx, 4)));
+      var d = N.random(s.seed, idx, 5) * 0.4, sp = mix(0.9, 1.5, N.random(s.seed, idx, 6));
+      var part = N.random(s.seed, idx, 7) < 0.4, m0 = part ? Mx * mix(0, 0.5, N.random(s.seed, idx, 8)) : 0, mw = part ? Mx * mix(0.3, 0.6, N.random(s.seed, idx, 9)) : Mx;
+      var col = cols[(idx + (Math.abs(s.seed) % cols.length)) % cols.length];
+      var cmd = vert ? G.rect(-th / 2, -mw / 2, th, mw) : G.rect(-mw / 2, -th / 2, mw, th);
+      addOverlay(c, s.f0, s.f1, 'FX ColorBar ' + (idx + 1) + ' @' + s.f0, cmd, { fill: col, alpha: 0.92 }, function (f) {
+        var u = cl((prog(f, s) - d) / Math.max(0.01, 1 - d) * sp);
+        var ps = -th + (Lx + 2 * th) * u;
+        if (dir < 0) ps = Lx - ps;
+        var pt = vert ? scPt(ps, m0 + mw / 2, s.W, s.H) : scPt(m0 + mw / 2, ps, s.W, s.H);
+        return { 'position.x': pt[0], 'position.y': pt[1], alpha: (u <= 0 || u >= 1) ? 0 : 0.92 };
+      });
+    })(i);
+  }
+});
+
+reg('defocus', 'ae/p_fx2.jsx', function (c, s) {
+  var target = H.rigTarget(c, 'defocus', s), ac = cl(s.amp, 0.6, 1.2);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), amt = (p < 0.5 ? E.inOutCubic(p / 0.5) : 1 - E.inOutCubic((p - 0.5) / 0.5)) * ac;
+    var scf = 1 + 0.025 * amt;
+    return { 'scale.x': scf, 'scale.y': scf };
+  });
+  var blurProfile = c.options && c.options.hostProfile && c.options.hostProfile.gaussianBlur;
+  if (blurProfile && blurProfile.layerType && blurProfile.amountAttr) {
+    var cutsRoot = c.graph.layers.filter(function (l) { return l.name === 'JIZURA / Cuts'; })[0];
+    if (cutsRoot) {
+      var bid = c.graph.add(blurProfile.layerType, 'FX Defocus Blur @' + s.f0, cutsRoot.id, s.f0, s.f1, {});
+      c.graph.connect(bid, 'id', cutsRoot.id, 'filters');
+      C.sample(c.graph, bid, s.f0, s.f1, function (f) {
+        var p = prog(f, s), amt = (p < 0.5 ? E.inOutCubic(p / 0.5) : 1 - E.inOutCubic((p - 0.5) / 0.5)) * ac;
+        var o = {}; o[blurProfile.amountAttr] = amt * s.H / 27; return o;
+      });
+    }
+  }
+}, ['Uses Gaussian Blur filter when hostProfile.gaussianBlur is configured; scale breath always emitted.']);
+
+reg('ditherBit', 'ae/p_fx2.jsx', function (c, s) {
+  var c0 = s.sc.bg, c1 = vivid(s.sc), dk = H.lum(c0) < 0.5;
+  var cell = Math.max(8, Math.round(s.H / 36));
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var polys = [], k = (f - s.f0) % 2;
+    for (var y = k * cell; y < s.H; y += cell * 2) for (var x = k * cell; x < s.W; x += cell * 2) {
+      if (N.random(s.seed, x + y * 3, f) < 0.45) polys.push(rectPoly(x, y, x + cell * 0.55, y + cell * 0.55, s.W, s.H));
+    }
+    contours[f] = polys;
+  }
+  var id = addOverlay(c, s.f0, s.f1, 'FX Dither dots @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: dk ? c1 : c0, alpha: 0.45 });
+  H.multiClip(c.graph, id, contours, false, 'Dither lattice', c.options);
+});
+
+reg('dustScratches', 'ae/p_fx2.jsx', function (c, s) {
+  var dk = H.dark(s.sc.bg), col = dk ? '#FFFDF5' : '#181008', lw = Math.max(1, Math.min(s.W, s.H) * 0.002);
+  var ac = cl(s.amp, 0.6, 1.2);
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var st = Math.floor(f * 12 / s.fps) * 31 + s.seed, polys = [];
+    for (var i = 0; i < 10; i++) {
+      var x = N.random(st, i, 15) * s.W, y = N.random(st, i, 16) * s.H, r = Math.max(2, Math.min(s.W, s.H) * mix(0.003, 0.009, N.random(st, i, 17)));
+      polys.push(rectPoly(x - r, y - r * 0.6, x + r, y + r * 0.6, s.W, s.H));
+    }
+    for (var j = 0; j < 2; j++) {
+      var sx = s.W * (0.1 + 0.8 * N.random(s.seed, j, 5)) + (N.random(st, j, 6) * 2 - 1) * 8;
+      var y0 = N.random(s.seed, j, 7) < 0.5 ? 0 : s.H * 0.3 * N.random(st, j, 8);
+      var y1 = y0 + s.H * mix(0.35, 0.85, N.random(st, j, 10));
+      polys.push(rectPoly(sx - lw, y0, sx + lw, y1, s.W, s.H));
+    }
+    contours[f] = polys;
+  }
+  var id = addOverlay(c, s.f0, s.f1, 'FX Dust & scratches @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: col, alpha: 1 });
+  H.multiClip(c.graph, id, contours, false, 'Dust & scratches', c.options);
+  C.sample(c.graph, id, s.f0, s.f1, function (f) { return { alpha: cl(ahr(prog(f, s), 0.08, 0.7) * ac * 0.75) }; });
+});
+
+reg('echoFrames', 'ae/p_fx2.jsx', function (c, s) {
+  var a = cl(s.amp, 0.5, 1.3), M = Math.min(s.W, s.H) * a;
+  var ang = N.random(s.seed, 1, 1) < 0.65 ? (N.random(s.seed, 2, 1) < 0.5 ? 0 : PI) : (N.random(s.seed, 3, 1) < 0.5 ? 0.25 : 0.75) * PI;
+  var ca = Math.cos(ang), sa = Math.sin(ang);
+  for (var i = 4; i >= 1; i--) {
+    (function (idx) {
+      var cln = cloneActiveCuts(c, s, 'Echo ' + idx, { belowCuts: true });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var d = M * (0.02 + 0.035 * E.outCubic(prog(f, s))) * idx;
+        return { 'position.x': ca * d, 'position.y': -sa * d };
+      });
+      cln.paintables.forEach(function (pid) {
+        var n = c.graph.byId[pid], base = n.attrs.alpha == null ? 1 : n.attrs.alpha;
+        n.keys.alpha = n.keys.alpha || {};
+        for (var f = s.f0; f < s.f1; f++) {
+          var p = prog(f, s), fade = p < 0.1 ? 1 : 1 - H.inOutQuart((p - 0.1) / 0.9);
+          n.keys.alpha[f] = { value: cl(base * fade * (0.64 - idx * 0.12)), type: 1 };
+        }
+      });
+    })(i);
+  }
+});
+
+reg('edgeDetect', 'ae/p_fx2.jsx', function (c, s) {
+  var col = H.mixHex(vivid(s.sc), '#FFFFFF', H.dark(s.sc.bg) ? 0.45 : 0);
+  var cln = cloneActiveCuts(c, s, 'Edge detect', { inkOnly: true });
+  cln.paintables.forEach(function (pid) {
+    var n = c.graph.byId[pid];
+    n.attrs.fill = false; n.attrs.stroke = true;
+    n.attrs['stroke.strokeColor'] = col;
+    n.attrs['stroke.width'] = Math.max(1.5, 2.5 * s.u);
+    var base = n.attrs.alpha == null ? 1 : n.attrs.alpha;
+    n.keys.alpha = n.keys.alpha || {};
+    for (var f = s.f0; f < s.f1; f++) {
+      n.keys.alpha[f] = { value: cl(base * ahr(prog(f, s), 0.1, 0.72)), type: 1 };
+    }
+  });
+});
+
+reg('filmAdvance', 'ae/p_fx2.jsx', function (c, s) {
+  var dir = N.random(s.seed, 1, 1) < 0.7 ? 1 : -1, gap = Math.max(2, s.H * 0.03);
+  var target = H.rigTarget(c, 'filmAdvance', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), env = p < 0.22 ? E.inOutCubic(p / 0.22) : (p > 0.78 ? 1 - E.inOutCubic((p - 0.78) / 0.22) : 1);
+    var z = 1 - 0.17 * env, q = E.inOutCubic(cl((p - 0.2) / 0.6));
+    var off = ((q * s.H * dir) % s.H + s.H) % s.H;
+    if (off > s.H / 2) off -= s.H;
+    return { 'position.y': off * z, 'scale.x': z, 'scale.y': z };
+  });
+  [-1, 1].forEach(function (side) {
+    addOverlay(c, s.f0, s.f1, 'FX Film margin ' + (side < 0 ? 'L' : 'R') + ' @' + s.f0, G.rect(-s.W * 0.045, -s.H / 2, s.W * 0.09, s.H),
+      { fill: '#0D0B09', alpha: 1 }, function (f) {
+        var p = prog(f, s), env = p < 0.22 ? E.inOutCubic(p / 0.22) : (p > 0.78 ? 1 - E.inOutCubic((p - 0.78) / 0.22) : 1);
+        return { 'position.x': side * (s.W * 0.455), alpha: env };
+      });
+  });
+  addOverlay(c, s.f0, s.f1, 'FX Film gate line @' + s.f0, G.rect(-s.W / 2, -gap / 2, s.W, gap), { fill: '#0D0B09', alpha: 1 }, function (f) {
+    var p = prog(f, s), env = p < 0.22 ? E.inOutCubic(p / 0.22) : (p > 0.78 ? 1 - E.inOutCubic((p - 0.78) / 0.22) : 1);
+    var q = E.inOutCubic(cl((p - 0.2) / 0.6));
+    return { 'position.y': s.H / 2 - ((s.H * q * dir) % s.H + s.H) % s.H, 'scale.y': Math.max(0.01, env), alpha: env };
+  });
+});
+
+reg('focusLines', 'ae/p_fx2.jsx', function (c, s) {
+  var M = Math.min(s.W, s.H), R = Math.hypot(s.W, s.H) * 0.75, n = 48;
+  var cx = s.W / 2 + (N.random(s.seed, 1, 1) * 2 - 1) * s.W * 0.03, cy = s.H / 2 + (N.random(s.seed, 2, 1) * 2 - 1) * s.H * 0.03;
+  var rx = s.W * 0.42, ry = s.H * 0.36;
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var st = Math.floor(f * 12 / s.fps) * 5 + s.seed, polys = [];
+    for (var i = 0; i < n; i++) {
+      var an = (i + N.random(st, i, 4) * 0.8) / n * TAU, w = M * mix(0.003, 0.012, N.random(st, i, 5)), tip = mix(1, 1.4, N.random(st, i, 6));
+      var tx = cx + Math.cos(an) * rx * tip, ty = cy + Math.sin(an) * ry * tip;
+      var nx = -Math.sin(an), ny = Math.cos(an), ox = cx + Math.cos(an) * R, oy = cy + Math.sin(an) * R;
+      polys.push([scPt(tx, ty, s.W, s.H), scPt(ox + nx * w, oy + ny * w, s.W, s.H), scPt(ox - nx * w, oy - ny * w, s.W, s.H)]);
+    }
+    contours[f] = polys;
+  }
+  var id = addOverlay(c, s.f0, s.f1, 'FX Focus lines @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: ink(s.sc), alpha: 1 });
+  H.multiClip(c.graph, id, contours, false, 'Focus lines', c.options);
+  C.sample(c.graph, id, s.f0, s.f1, function (f) { return { alpha: 0.85 * ahr(prog(f, s), 0.1, 0.72) }; });
+});
+
+reg('heartbeat', 'ae/p_fx2.jsx', function (c, s) {
+  var dk = H.dark(s.sc.bg), ac = cl(s.amp, 0.5, 1.2), col = H.mixHex(vivid(s.sc), '#000000', dk ? 0.1 : 0.25);
+  var target = H.rigTarget(c, 'heartbeat', s);
+  function pulse(x, cc, w) {
+    var u = (x - cc) / w;
+    return (u < 0 || u > 1) ? 0 : (u < 0.22 ? E.outCubic(u / 0.22) : 1 - E.inOutCubic((u - 0.22) / 0.78));
+  }
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), P = Math.max(pulse(p, 0, 0.36), 0.8 * pulse(p, 0.44, 0.56)) * ac;
+    var scf = 1 + 0.03 * P;
+    return { 'scale.x': scf, 'scale.y': scf };
+  });
+  var border = Math.min(s.W, s.H) * 0.22;
+  addOverlay(c, s.f0, s.f1, 'FX Heartbeat vignette @' + s.f0, G.ellipse(0, 0, s.W * 0.55, s.H * 0.55),
+    { stroke: col, width: border, alpha: 1 }, function (f) {
+      var p = prog(f, s), P = Math.max(pulse(p, 0, 0.36), 0.8 * pulse(p, 0.44, 0.56)) * ac;
+      return { alpha: cl((dk ? 0.55 : 0.75) * P) };
+    });
+});
+
+reg('kaleido', 'ae/p_fx2.jsx', function (c, s) {
+  var n = N.random(s.seed, 1, 1) < 0.5 ? 6 : 8, th = 360 / n, R = Math.hypot(s.W, s.H) * 1.2;
+  var wedge = [[0, 0], [R * Math.cos(-th * DEG / 2), R * Math.sin(-th * DEG / 2)], [R, 0], [R * Math.cos(th * DEG / 2), R * Math.sin(th * DEG / 2)]];
+  var polys = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) polys[f] = wedge;
+  var r0 = N.random(s.seed, 2, 1) * 360, sg = N.random(s.seed, 3, 1) < 0.5 ? 1 : -1;
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var cln = cloneActiveCuts(c, s, 'Kaleido ' + (idx + 1));
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var p = prog(f, s), z = 1.05 + 0.12 * p, rot = r0 + p * 30 * sg + idx * th;
+        return { 'scale.x': (idx % 2 ? -z : z), 'scale.y': z, rotation: -rot, alpha: p > 0.75 ? 1 - (p - 0.75) / 0.25 * 0.5 : 1 };
+      });
+    })(i);
+  }
+});
+
+reg('lightRays', 'ae/p_fx2.jsx', function (c, s) {
+  var dk = H.dark(s.sc.bg), col = dk ? H.mixHex(s.sc.fg, '#FFFFFF', 0.3) : H.mixHex(vivid(s.sc), '#FFFFFF', 0.35);
+  var cx = s.W * (0.5 + (N.random(s.seed, 1, 1) * 2 - 1) * 0.12), cy = s.H * (0.42 + (N.random(s.seed, 2, 1) * 2 - 1) * 0.1);
+  var n = 10 + (Math.abs(s.seed) % 6), rot0 = N.random(s.seed, 4, 1) * TAU, sg = N.random(s.seed, 7, 1) < 0.5 ? 1 : -1;
+  var R = Math.hypot(s.W, s.H) * 1.1, a0 = cl(s.amp, 0.5, 1.2), cSc = scPt(cx, cy, s.W, s.H);
+  var rig = c.graph.add('null', 'FX LightRays @' + s.f0, c.parent, s.f0, s.f1, { 'position.x': cSc[0], 'position.y': cSc[1] });
+  for (var i = 0; i < n; i++) {
+    var an = rot0 + i / n * TAU + (N.random(s.seed, i, 5) * 2 - 1) * 0.12, w = TAU / n * mix(0.14, 0.4, N.random(s.seed, i, 6));
+    var pts = [[0, 0], [Math.cos(an - w / 2) * R, -Math.sin(an - w / 2) * R], [Math.cos(an + w / 2) * R, -Math.sin(an + w / 2) * R]];
+    C.shape(c.graph, { id: 'fx', start: s.f0, end: s.f1 }, 'Ray ' + (i + 1), rig, V.commands(pts, true), { fill: col, alpha: 0.32 });
+  }
+  C.sample(c.graph, rig, s.f0, s.f1, function (f) {
+    var p = prog(f, s), scf = 0.4 + 0.6 * E.outCubic(p);
+    return { 'scale.x': scf, 'scale.y': scf, rotation: -(p * 0.22 * sg * 180 / PI), alpha: cl(a0 * Math.pow(H.bell(p), 0.6) * 0.8) };
+  });
+});
+
+reg('loopScroll', 'ae/p_fx2.jsx', function (c, s) {
+  var vert = N.random(s.seed, 1, 1) < (s.W < s.H ? 0.6 : 0.2), dir = N.random(s.seed, 2, 1) < 0.5 ? 1 : -1, Lx = vert ? s.H : s.W;
+  var target = H.rigTarget(c, 'loopScroll', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), o = ((E.inOutCubic(p) * Lx * dir) % Lx + Lx) % Lx;
+    if (o > Lx / 2) o -= Lx;
+    return vert ? { 'position.y': -o } : { 'position.x': o };
+  });
+});
+
+reg('negativeRing', 'ae/p_fx2.jsx', function (c, s) {
+  var M = Math.min(s.W, s.H), dia = N.random(s.seed, 1, 1) < 0.35, a = cl(s.amp, 0.6, 1.3);
+  var cx = s.W / 2 + (N.random(s.seed, 2, 1) * 2 - 1) * s.W * 0.05, cy = s.H / 2 + (N.random(s.seed, 3, 1) * 2 - 1) * s.H * 0.05;
+  var Rm = Math.hypot(s.W, s.H) * (dia ? 0.75 : 0.56), cSc = scPt(cx, cy, s.W, s.H);
+  var specs = [{ off: 0.04, sp: 1.05, w: M * 0.16 * a }, { off: -0.22 * 1.35, sp: 1.35, w: M * 0.05 * a }];
+  specs.forEach(function (sp, idx) {
+    var cmds = dia ? V.commands([[1, 0], [0, 1], [-1, 0], [0, -1]], true) : G.ellipse(0, 0, 1, 1);
+    addOverlay(c, s.f0, s.f1, 'FX Negative ring ' + (idx + 1) + ' @' + s.f0, cmds, { stroke: vivid(s.sc), width: 1, alpha: 1 }, function (f) {
+      var q = prog(f, s) * sp.sp + sp.off, on = q > 0 && q < 1, r = on ? Math.max(1e-3, E.outCubic(q) * Rm) : 1e-3;
+      return {
+        'position.x': cSc[0], 'position.y': cSc[1],
+        'scale.x': r, 'scale.y': r,
+        'stroke.width': on ? Math.max(0.5, sp.w * (1 - 0.55 * q) / r) : 1,
+        alpha: on ? 0.85 : 0
+      };
+    });
+  });
+});
+
+reg('perspectiveTilt', 'ae/p_fx2.jsx', function (c, s) {
+  var cols = N.random(s.seed, 1, 1) < (s.W >= s.H ? 0.7 : 0.35), dir = N.random(s.seed, 2, 1) < 0.5 ? 1 : -1;
+  var PH = dir * (30 + 10 * N.random(s.seed, 3, 1)) * cl(s.amp, 0.5, 1.2), Lx = cols ? s.W : s.H, Mx = cols ? s.H : s.W;
+  var Np = 8, DD = 1.15 * Math.max(s.W, s.H), HL = Lx / 2;
+  function phAt(p) {
+    var e = p < 0.25 ? E.outCubic(p / 0.25) : Math.cos((p - 0.25) / 0.75 * PI * 1.5) * Math.exp(-2.6 * (p - 0.25) / 0.75);
+    return PH * e * DEG;
+  }
+  for (var i = 0; i < Np; i++) {
+    (function (idx) {
+      var u0 = -1 + 2 * idx / Np, u1 = -1 + 2 * (idx + 1) / Np, s0 = idx * Lx / Np, s1 = (idx + 1) * Lx / Np;
+      var cln = cloneActiveCuts(c, s, 'Persp ' + (idx + 1));
+      var poly = cols ? rectPoly(s0 - 1, -20, s1 + 1, s.H + 20, s.W, s.H) : rectPoly(-20, s0 - 1, s.W + 20, s1 + 1, s.W, s.H);
+      var polys = Object.create(null); for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      var pv = cols ? scPt((s0 + s1) / 2, s.H / 2, s.W, s.H) : scPt(s.W / 2, (s0 + s1) / 2, s.W, s.H);
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var ph = phAt(prog(f, s)), co = Math.cos(ph), si = Math.sin(ph);
+        function pp(u) { return DD / (DD + u * HL * si); }
+        function dd(u) { return HL + u * HL * co * pp(u); }
+        var d0 = dd(u0), d1 = dd(u1), h = (pp(u0) + pp(u1)) / 2;
+        var sx = cols ? Math.max(1e-3, (d1 - d0) / (s1 - s0)) : Math.max(1e-3, h);
+        var sy = cols ? Math.max(1e-3, h) : Math.max(1e-3, (d1 - d0) / (s1 - s0));
+        var midD = (d0 + d1) / 2;
+        return cols
+          ? { 'position.x': (midD - s.W / 2) - pv[0] * sx, 'scale.x': sx, 'scale.y': sy }
+          : { 'position.y': (s.H / 2 - midD) - pv[1] * sy, 'scale.x': sx, 'scale.y': sy };
+      });
+    })(i);
+  }
+});
+
+reg('ripple', 'ae/p_fx2.jsx', function (c, s) {
+  var dk = H.dark(s.sc.bg), M = Math.min(s.W, s.H), lam = M * 0.1;
+  var cx = s.W * (0.5 + (N.random(s.seed, 1, 1) * 2 - 1) * 0.1), cy = s.H * (0.5 + (N.random(s.seed, 2, 1) * 2 - 1) * 0.08);
+  var Rmax = Math.hypot(Math.max(cx, s.W - cx), Math.max(cy, s.H - cy)), cSc = scPt(cx, cy, s.W, s.H);
+  var col = dk ? '#FFFFFF' : H.mixHex(s.sc.fg, s.sc.bg, 0.4), sw = Math.max(2, lam / 5 * 0.9);
+  for (var j = 2; j >= 0; j--) {
+    (function (idx) {
+      addOverlay(c, s.f0, s.f1, 'FX Ripple crest ' + (idx + 1) + ' @' + s.f0, G.ellipse(0, 0, 1, 1),
+        { stroke: col, width: 1, alpha: 1 }, function (f) {
+          var p = prog(f, s), front = (0.05 + 0.95 * H.inOutQuart(p)) * Rmax * 1.05;
+          var rc = front - lam * (idx + 0.25);
+          if (rc <= 2) return { 'position.x': cSc[0], 'position.y': cSc[1], 'scale.x': 1, 'scale.y': 1, 'stroke.width': 1, alpha: 0 };
+          var a = 0.22 * Math.exp(-idx * 0.9) * (1 - 0.6 * p) * (dk ? 1.6 : 1.2);
+          return { 'position.x': cSc[0], 'position.y': cSc[1], 'scale.x': rc, 'scale.y': rc, 'stroke.width': sw / rc, alpha: cl(a) };
+        });
+    })(j);
+  }
+});
+
+reg('rotateSnap', 'ae/p_fx2.jsx', function (c, s) {
+  var dir = N.random(s.seed, 1, 1) < 0.5 ? 1 : -1, TH = dir * (3 + 2 * N.random(s.seed, 2, 1)) * cl(s.amp, 0.5, 1.3);
+  var target = H.rigTarget(c, 'rotateSnap', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), e = p < 0.12 ? 1 : Math.exp(-4.5 * (p - 0.12)) * Math.cos((p - 0.12) * PI * 2.4);
+    var th = TH * e, q = Math.abs(th) * DEG, co = Math.cos(q), sn = Math.sin(q);
+    var z = Math.max((s.W * co + s.H * sn) / s.W, (s.W * sn + s.H * co) / s.H) * (1 + 0.025 * Math.abs(e));
+    return { rotation: -th, 'scale.x': z, 'scale.y': z };
+  });
+});
+
+reg('scanBar', 'ae/p_fx2.jsx', function (c, s) {
+  var dk = H.dark(s.sc.bg), down = N.random(s.seed, 1, 1) < 0.7, bh = Math.max(8, s.H * 0.06);
+  var col = dk ? H.mixHex(vivid(s.sc), '#FFFFFF', 0.4) : vivid(s.sc), lh = Math.max(2, s.H * 0.004);
+  function yAt(f) { var p = prog(f, s), yy = -bh + p * (s.H + 2 * bh); return down ? yy : s.H - yy; }
+  addOverlay(c, s.f0, s.f1, 'FX ScanBar glow @' + s.f0, G.rect(-s.W / 2, -bh / 2, s.W, bh),
+    { fill: col, alpha: dk ? 0.5 : 0.35 }, function (f) { return { 'position.y': s.H / 2 - yAt(f) }; });
+  addOverlay(c, s.f0, s.f1, 'FX ScanBar line @' + s.f0, G.rect(-s.W / 2, -lh / 2, s.W, lh),
+    { fill: dk ? '#FFFFFF' : col, alpha: 0.9 }, function (f) { return { 'position.y': s.H / 2 - yAt(f) }; });
+});
+
+reg('shatter', 'ae/p_fx2.jsx', function (c, s) {
+  var M = Math.min(s.W, s.H), dk = H.dark(s.sc.bg);
+  var px = s.W * (0.5 + (N.random(s.seed, 1, 1) * 2 - 1) * 0.15), py = s.H * (0.5 + (N.random(s.seed, 2, 1) * 2 - 1) * 0.12);
+  var n = 8 + (Math.abs(s.seed) % 4), R = Math.hypot(s.W, s.H) * 0.9;
+  var crackCol = dk ? '#FFFFFF' : ink(s.sc), lw = Math.max(1.5, M * 0.003);
+  for (var i = 0; i < n; i++) {
+    var an = (i + (N.random(s.seed, i, 6) * 2 - 1) * 0.35) / n * TAU;
+    var pts = [scPt(px, py, s.W, s.H), scPt(px + Math.cos(an) * R, py + Math.sin(an) * R, s.W, s.H)];
+    addOverlay(c, s.f0, s.f1, 'FX Shatter ray ' + (i + 1) + ' @' + s.f0, V.commands(pts, false),
+      { stroke: crackCol, width: lw, alpha: 1 }, function (f) {
+        var u = (prog(f, s) - 0.125) / 0.875;
+        return { alpha: cl((u <= 0 ? 1 : Math.max(0, 1 - u * 1.4)) * 0.75) };
+      });
+  }
+  var cSc = scPt(px, py, s.W, s.H);
+  addOverlay(c, s.f0, s.f1, 'FX Shatter flash @' + s.f0, G.ellipse(cSc[0], cSc[1], M * 0.16, M * 0.16),
+    { fill: '#FFFFFF', alpha: 1 }, function (f) { var p = prog(f, s); return { alpha: p < 0.2 ? 0.85 * (1 - p / 0.2) : 0 }; });
+});
+
+reg('snapshot', 'ae/p_fx2.jsx', function (c, s) {
+  var M = Math.min(s.W, s.H), RT = (N.random(s.seed, 1, 1) < 0.5 ? -1 : 1) * (2 + 2.5 * N.random(s.seed, 2, 1));
+  var target = H.rigTarget(c, 'snapshot', s);
+  function envAt(p) { return p < 0.16 ? E.outBack(p / 0.16, 1.4) : (p > 0.8 ? 1 - E.inOutCubic((p - 0.8) / 0.2) : 1); }
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var env = envAt(prog(f, s)), z = 1 - 0.15 * env, rot = RT * env;
+    return { 'scale.x': z, 'scale.y': z, rotation: -rot };
+  });
+  var frame = addOverlay(c, s.f0, s.f1, 'FX Snapshot frame @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H),
+    { stroke: '#F7F5F0', width: 1, alpha: 1 }, function (f) {
+      var env = cl(envAt(prog(f, s))), z = 1 - 0.15 * env, rot = RT * env, bw = M * 0.024 * env;
+      return { 'scale.x': z, 'scale.y': z, rotation: -rot, 'stroke.width': Math.max(1, bw / z), alpha: env > 0.02 ? 1 : 0 };
+    });
+  void frame;
+  addOverlay(c, s.f0, s.f1, 'FX Snapshot flash @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H),
+    { fill: '#FFFFFF', alpha: 1 }, function (f) { var p = prog(f, s); return { alpha: p < 0.22 ? 0.9 * (1 - p / 0.22) : 0 }; });
+});
+
+reg('speedLines', 'ae/p_fx2.jsx', function (c, s) {
+  var vert = s.W < s.H ? N.random(s.seed, 1, 1) < 0.5 : N.random(s.seed, 1, 1) < 0.15;
+  var dir = N.random(s.seed, 2, 1) < 0.5 ? 1 : -1, Lx = vert ? s.H : s.W, Mx = vert ? s.W : s.H;
+  var n = 20 + (Math.abs(s.seed) % 10), c1 = ink(s.sc), c2 = vivid(s.sc);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var q = N.random(s.seed, idx, 4);
+      if (Math.abs(q - 0.5) < 0.12 && N.random(s.seed, idx, 9) < 0.8) q = q < 0.5 ? 0.38 - N.random(s.seed, idx, 10) * 0.33 : 0.62 + N.random(s.seed, idx, 10) * 0.33;
+      var pp = q * Mx, len = Lx * mix(0.15, 0.55, N.random(s.seed, idx, 5)), th = Math.max(1.5, Mx * mix(0.002, 0.008, N.random(s.seed, idx, 6)));
+      var sp = mix(1.3, 2.6, N.random(s.seed, idx, 7)), ph = N.random(s.seed, idx, 8), op = mix(0.4, 0.9, N.random(s.seed, idx, 11));
+      var col = N.random(s.seed, idx, 12) < 0.22 ? c2 : c1, tl = -len * dir;
+      var pts = !vert ? [[tl, 0], [0, -th / 2], [0, th / 2]] : [[0, tl], [-th / 2, 0], [th / 2, 0]];
+      addOverlay(c, s.f0, s.f1, 'FX Speed line ' + (idx + 1) + ' @' + s.f0, V.commands(pts, true), { fill: col, alpha: 1 }, function (f) {
+        var p = prog(f, s), fr = (ph + p * sp) % 1, hx = -len * 0.2 + fr * (Lx + len * 1.2);
+        if (dir < 0) hx = Lx - hx;
+        var pt = vert ? scPt(pp, hx, s.W, s.H) : scPt(hx, pp, s.W, s.H);
+        return { 'position.x': pt[0], 'position.y': pt[1], alpha: cl(ahr(p, 0.12, 0.7) * op) };
+      });
+    })(i);
+  }
+});
+
+reg('squash', 'ae/p_fx2.jsx', function (c, s) {
+  var hor = N.random(s.seed, 1, 1) < 0.6, ac = cl(s.amp, 0.5, 1.3);
+  var target = H.rigTarget(c, 'squash', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), e = Math.cos(p * PI * 2.5) * Math.exp(-1.8 * p) * (1 - Math.pow(p, 6)), a = 0.17 * ac * e;
+    return { 'scale.x': hor ? 1 + a : 1 - a * 0.6, 'scale.y': hor ? 1 - a * 0.6 : 1 + a };
+  });
+});
+
+reg('starGlint', 'ae/p_fx2.jsx', function (c, s) {
+  var dk = H.dark(s.sc.bg), M = Math.min(s.W, s.H), col = vivid(s.sc), n = 2 + (Math.abs(s.seed) % 3), port = s.H > s.W;
+  var ac = cl(s.amp, 0.6, 1.3);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var t0 = idx * 0.16 + N.random(s.seed, idx, 4) * 0.06, R = M * (0.1 + 0.07 * N.random(s.seed, idx, 5)) * ac;
+      var x = s.W * (0.5 + (N.random(s.seed, idx, 2) * 2 - 1) * (port ? 0.3 : 0.34));
+      var y = s.H * (0.5 + (N.random(s.seed, idx, 3) * 2 - 1) * (port ? 0.14 : 0.1)), scP = scPt(x, y, s.W, s.H);
+      var r0 = (N.random(s.seed, idx, 6) * 2 - 1) * 12;
+      var pts = [];
+      for (var j = 0; j < 16; j++) {
+        var an = j * PI / 8, rr = j % 2 ? R * 0.07 : (j % 4 === 0 ? R : R * 0.42);
+        pts.push([Math.cos(an) * rr, Math.sin(an) * rr]);
+      }
+      addOverlay(c, s.f0, s.f1, 'FX Star glint ' + (idx + 1) + ' @' + s.f0, V.commands(pts, true),
+        { fill: dk ? '#FFFFFF' : col, alpha: 1 }, function (f) {
+          var u = (prog(f, s) - t0) / 0.55, g = (u > 0 && u < 1) ? Math.pow(Math.sin(PI * u), 0.8) : 0;
+          var scf = Math.max(1e-3, g);
+          return { 'position.x': scP[0], 'position.y': scP[1], 'scale.x': scf, 'scale.y': scf, rotation: -(r0 + u * 30), alpha: g > 0.01 ? 1 : 0 };
+        });
+    })(i);
+  }
+});
+
+reg('tvStatic', 'ae/p_fx2.jsx', function (c, s) {
+  var ac = cl(s.amp, 0.7, 1.1), contours = Object.create(null);
+  var cell = Math.max(8, Math.round(Math.min(s.W, s.H) / 28));
+  for (var f = s.f0; f < s.f1; f++) {
+    var p = prog(f, s), cov = (p < 0.4 ? 0.5 + 0.5 * E.outQuart(p / 0.4) : 1 - E.outQuart((p - 0.4) / 0.6)) * ac;
+    var polys = [];
+    for (var k = 0; k < Math.round(35 * cov); k++) {
+      var x = N.random(f * 3, k, 1) * s.W, y = N.random(f * 5, k, 2) * s.H;
+      polys.push(rectPoly(x, y, x + cell * mix(0.6, 2.5, N.random(f, k, 3)), y + cell * 0.45, s.W, s.H));
+    }
+    contours[f] = polys;
+  }
+  var id = addOverlay(c, s.f0, s.f1, 'FX TV static specks @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: '#D8D8D8', alpha: 0.7 });
+  H.multiClip(c.graph, id, contours, false, 'TV static', c.options);
+  addOverlay(c, s.f0, s.f1, 'FX TV static band @' + s.f0, G.rect(-s.W / 2, -s.H * 0.08, s.W, s.H * 0.16), { fill: '#000000', alpha: 0.3 }, function (f) {
+    var p = prog(f, s), cov = (p < 0.4 ? 0.5 + 0.5 * E.outQuart(p / 0.4) : 1 - E.outQuart((p - 0.4) / 0.6)) * ac;
+    return { 'position.y': s.H / 2 - ((N.random(s.seed, f, 4) * 1.2 - 0.1) * s.H + s.H * 0.08), alpha: 0.3 * cl(cov) };
+  });
+});
+
+reg('zoomStutter', 'ae/p_fx2.jsx', function (c, s) {
+  var a = cl(s.amp, 0.5, 1.3), z0 = (0.035 + 0.012 * N.random(s.seed, 1, 1)) * a;
+  var cxs = [0, 1, 2].map(function (j) { return (N.random(s.seed, 2, j) * 2 - 1) * s.W * 0.04; });
+  var cys = [0, 1, 2].map(function (j) { return (N.random(s.seed, 3, j) * 2 - 1) * s.H * 0.04; });
+  var target = H.rigTarget(c, 'zoomStutter', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var j = Math.min(2, Math.floor(prog(f, s) * 3)), z = 1 + (j + 1) * z0;
+    return { 'position.x': -cxs[j] * (z - 1), 'position.y': cys[j] * (z - 1), 'scale.x': z, 'scale.y': z };
+  });
+});
+
+/* ================================================================ Horror / Kinetic / Typo / Wa (27) */
+reg('hrPassingShadow', 'ae/p_horror4.jsx', function (c, s) {
+  var dir = N.random(s.seed, 1, 1) < 0.5 ? 1 : -1, M = Math.min(s.W, s.H), w = M * mix(0.22, 0.32, N.random(s.seed, 2, 1));
+  var top = s.H * mix(0.05, 0.2, N.random(s.seed, 3, 1)), dk = H.dark(s.sc.bg);
+  var col = dk ? H.mixHex(s.sc.fg, s.sc.bg, 0.35) : '#000000';
+  [[1, dk ? 0.3 : 0.65], [1.12, dk ? 0.15 : 0.3]].forEach(function (gg, k) {
+    var gk = gg[0], pts = [
+      [-w * 0.5 * gk, -s.H / 2], [-w * 0.55 * gk, s.H / 2 - (top + w * 0.95)],
+      [-w * 0.3 * gk, s.H / 2 - (top + w * (0.72 - 0.05 * gk))], [0, s.H / 2 - (top + w * (0.7 - 0.05 * gk))],
+      [w * 0.3 * gk, s.H / 2 - (top + w * (0.72 - 0.05 * gk))], [w * 0.55 * gk, s.H / 2 - (top + w * 0.95)],
+      [w * 0.5 * gk, -s.H / 2]
+    ];
+    addOverlay(c, s.f0, s.f1, 'FX Passing shadow ' + k + ' @' + s.f0, V.commands(pts, true), { fill: col, alpha: gg[1] }, function (f) {
+      var p = prog(f, s), x = dir > 0 ? mix(-s.W * 0.25, s.W * 1.25, p) : mix(s.W * 1.25, -s.W * 0.25, p);
+      return { 'position.x': x - s.W / 2 };
+    });
+  });
+});
+
+reg('hrSignalLoss', 'ae/p_horror4.jsx', function (c, s) {
+  var target = H.rigTarget(c, 'hrSignalLoss', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), dx = p < 0.3 ? (N.random(s.seed, f, 1) * 2 - 1) * s.W * 0.08 * (p / 0.3) : 0;
+    var dy = p > 0.78 ? (1 - cl((p - 0.78) / 0.22)) * s.H * 0.5 : 0;
+    return { 'position.x': dx, 'position.y': -dy };
+  });
+  addOverlay(c, s.f0, s.f1, 'FX SignalLoss black @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: '#000000', alpha: 1 }, function (f) {
+    var p = prog(f, s);
+    return { alpha: p < 0.3 ? 0.5 * p / 0.3 : (p < 0.78 ? 1 : 0) };
+  });
+  var fs = Math.max(10, Math.round(Math.min(s.W, s.H) * 0.035));
+  var ch = '0' + (3 + (Math.abs(s.seed) % 7));
+  ['NO SIGNAL', 'CH ' + ch.slice(-2)].forEach(function (txt, idx) {
+    var pt = scPt(s.W * 0.06, s.H * 0.08 + idx * fs * 1.5, s.W, s.H);
+    var fnt = H.primaryFont(c);
+    var tId = c.graph.add('textShape', 'FX ' + txt + ' @' + s.f0, c.parent, s.f0, s.f1, {
+      text: txt, font: { font: fnt.family, style: fnt.style }, fontSize: fs,
+      autoWidth: true, autoHeight: true, horizontalAlignment: 0, verticalAlignment: 1,
+      position: [pt[0], pt[1]], fill: true, stroke: false, 'material.materialColor': '#FFFFFF', alpha: 1
+    });
+    C.sample(c.graph, tId, s.f0, s.f1, function (f) {
+      var p = prog(f, s), on = p >= 0.3 && p < 0.78;
+      return { alpha: on ? (idx ? 0.6 : ((Math.floor(f * 12 / s.fps) % 4 < 3) ? 0.85 : 0.3)) : 0 };
+    });
+  });
+});
+
+reg('hrSubliminal', 'ae/p_horror4.jsx', function (c, s) {
+  var z = 1.25 + 0.2 * N.random(s.seed, 1, 1);
+  var cx = (N.random(s.seed, 2, 1) * 2 - 1) * s.W * 0.08, cy = (N.random(s.seed, 3, 1) * 2 - 1) * s.H * 0.08;
+  var red = H.mixHex(H.fitContrast(s.sc.accent, '#FFFFFF', 2.5), '#000000', 0.25);
+  var end = Math.max(s.f0 + 1, Math.round(s.f0 + (s.f1 - s.f0) * 0.55));
+  var cln = cloneActiveCuts(c, { f0: s.f0, f1: end }, 'Subliminal', { tintColor: red });
+  c.graph.byId[cln.rigId].attrs.position = [-cx * (z - 1), cy * (z - 1)];
+  c.graph.byId[cln.rigId].attrs.scale = [z, z];
+});
+
+reg('hzClosingDark', 'ae/p_x2_horrorB.jsx', function (c, s) {
+  var R = Math.hypot(s.W, s.H) / 2, am = cl(s.amp, 0.7, 1.1);
+  var cSc = scPt(s.W * (0.5 + (N.random(s.seed, 1, 1) * 2 - 1) * 0.05), s.H * (0.5 + (N.random(s.seed, 2, 1) * 2 - 1) * 0.05), s.W, s.H);
+  var border = R * 0.85;
+  addOverlay(c, s.f0, s.f1, 'FX ClosingDark @' + s.f0, G.ellipse(cSc[0], cSc[1], R * 0.9, R * 0.9),
+    { stroke: '#000000', width: border, alpha: 1 }, function (f) {
+      var p = prog(f, s), e = ahr(p, 0.4, 0.5) * am, wob = 1 + 0.04 * Math.sin(p * 23 + (Math.abs(s.seed) % 7));
+      var scf = (1 - 0.5 * e) * wob;
+      return { 'scale.x': scf, 'scale.y': scf, alpha: cl(0.96 * e) };
+    });
+});
+
+reg('hzColdBreath', 'ae/p_x2_horrorB.jsx', function (c, s) {
+  var dk = H.dark(s.sc.bg), col = H.mixHex(s.sc.fg, s.sc.bg, dk ? 0.25 : 0.72), M = Math.min(s.W, s.H);
+  var x0 = s.W * mix(0.3, 0.7, N.random(s.seed, 1, 1)), lean = (N.random(s.seed, 2, 1) * 2 - 1) * s.W * 0.16;
+  var A = (dk ? 0.2 : 0.3) * cl(s.amp, 0.7, 1.1);
+  for (var j = 0; j < 9; j++) {
+    (function (idx) {
+      var d = idx * 0.055, rMax = M * (0.14 + 0.18 * N.random(s.seed, idx, 3));
+      var dx = lean * (0.4 + idx * 0.15) + (N.random(s.seed, idx, 4) * 2 - 1) * M * 0.34;
+      var dy = s.H * (0.16 + 0.34 * N.random(s.seed, idx, 5));
+      addOverlay(c, s.f0, s.f1, 'FX Breath puff ' + (idx + 1) + ' @' + s.f0, G.ellipse(0, 0, rMax, rMax),
+        { fill: col, alpha: 1 }, function (f) {
+          var q = cl((prog(f, s) - d) / Math.max(0.01, 1 - d)), e = E.outCubic(q), scf = Math.max(1e-3, 0.25 + 0.75 * e);
+          var pt = scPt(x0 + dx * e, s.H * 1.03 - dy * e, s.W, s.H);
+          return { 'position.x': pt[0], 'position.y': pt[1], 'scale.x': scf, 'scale.y': scf, alpha: (q <= 0 || q >= 1) ? 0 : cl(A * Math.sin(PI * Math.pow(q, 0.7))) };
+        });
+    })(j);
+  }
+});
+
+reg('hzDrain', 'ae/p_x2_horrorB.jsx', function (c, s) {
+  var am = cl(s.amp, 0.6, 1.1), pale = H.mixHex(s.sc.fg, s.sc.bg, 0.5);
+  H.fullRect(c, s, 'FX Drain pale @' + s.f0, pale, function (p) { return 0.38 * ahr(p, 0.15, 0.55) * am; });
+});
+
+reg('hzFaint', 'ae/p_x2_horrorB.jsx', function (c, s) {
+  var am = cl(s.amp, 0.7, 1.1), dx0 = (N.random(s.seed, 1, 1) * 2 - 1) * s.W * 0.02, ro0 = (N.random(s.seed, 2, 1) * 2 - 1) * 0.02 * 180 / PI;
+  var target = H.rigTarget(c, 'hzFaint', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var e = ahr(prog(f, s), 0.38, 0.52) * am, z = 1 - 0.11 * e;
+    return { 'position.x': dx0 * e, 'position.y': -s.H * 0.025 * e, 'scale.x': z, 'scale.y': z, rotation: -(ro0 * e) };
+  });
+  H.fullRect(c, s, 'FX Faint dim @' + s.f0, '#000000', function (p) { return 0.5 * cl(ahr(p, 0.38, 0.52) * am); });
+});
+
+reg('hzTear', 'ae/p_x2_horrorB.jsx', function (c, s) {
+  var M = Math.min(s.W, s.H), n = 14, x0 = s.W * mix(0.28, 0.72, N.random(s.seed, 1, 1));
+  var slip = M * 0.014 * (N.random(s.seed, 2, 1) < 0.5 ? 1 : -1), lean = (N.random(s.seed, 3, 1) * 2 - 1) * s.W * 0.05;
+  var pts = [];
+  for (var j = 0; j <= n; j++) pts.push([x0 + lean * (j / n - 0.5) + (N.random(s.seed, j, 4) * 2 - 1) * M * 0.022, j === 0 ? -s.H * 0.2 : (j === n ? s.H * 1.2 : s.H * j / n)]);
+  var G0 = M * 0.075 * cl(s.amp, 0.7, 1.2);
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var p = prog(f, s), op = p < 0.18 ? E.outCubic(p / 0.18) : 1 - E.inOutCubic((p - 0.18) / 0.82), gap = G0 * op;
+    if (gap < 0.6) { contours[f] = []; continue; }
+    var poly = [];
+    for (var i = 0; i <= n; i++) poly.push(scPt(pts[i][0] - gap / 2, pts[i][1], s.W, s.H));
+    for (var i2 = n; i2 >= 0; i2--) poly.push(scPt(pts[i2][0] + gap / 2, pts[i2][1], s.W, s.H));
+    contours[f] = [poly];
+  }
+  var id = addOverlay(c, s.f0, s.f1, 'FX Tear seam @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: '#000000', alpha: 0.92 });
+  H.multiClip(c.graph, id, contours, false, 'Tear seam', c.options);
+});
+
+reg('hzUpside', 'ae/p_x2_horrorB.jsx', function (c, s) {
+  var end = Math.max(s.f0 + 1, Math.round(s.f0 + (s.f1 - s.f0) * 0.7));
+  var target = H.rigTarget(c, 'hzUpside', s);
+  c.graph.key(target, 'scale.x', s.f0, 1.06, 1);
+  c.graph.key(target, 'scale.y', s.f0, -1.06, 1);
+  if (end < s.fc) { c.graph.key(target, 'scale.x', end, 1, 1); c.graph.key(target, 'scale.y', end, 1, 1); }
+  addOverlay(c, s.f0, end, 'FX Upside dim @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: '#000000', alpha: 0.42 });
+});
+
+reg('kzBulldoze', 'ae/p_x2_kineticB2.jsx', function (c, s) {
+  var M = Math.min(s.W, s.H), vert = N.random(s.seed, 1, 1) < (s.W < s.H ? 0.6 : 0.15), rev = N.random(s.seed, 2, 1) < 0.5;
+  var Lc = vert ? s.H : s.W, target = H.rigTarget(c, 'kzBulldoze', s);
+  var anchor = vert ? (rev ? -s.H / 2 : s.H / 2) : (rev ? s.W / 2 : -s.W / 2);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var b = Math.round(Lc * E.inOutSine(prog(f, s))), rest = Math.max(0.01, (Lc - b) / Lc);
+    return vert ? { 'position.y': anchor * (1 - rest), 'scale.y': rest } : { 'position.x': anchor * (1 - rest), 'scale.x': rest };
+  });
+  addOverlay(c, s.f0, s.f1, 'FX Bulldoze bar @' + s.f0, vert ? G.rect(-s.W / 2, -0.5, s.W, 1) : G.rect(-0.5, -s.H / 2, 1, s.H),
+    { fill: pop(s.sc), alpha: 1 }, function (f) {
+      var p = prog(f, s), b = Math.round(Lc * E.inOutSine(p)), rest = Lc - b, seam = rev ? rest : b;
+      var bw = Math.max(3, M * 0.03 * cl(s.amp, 0.6, 1.3) * Math.sin(PI * p));
+      var on = p > 0 && p < 1 && rest >= 1;
+      return vert
+        ? { 'position.y': s.H / 2 - seam, 'scale.y': bw, alpha: on ? 1 : 0 }
+        : { 'position.x': seam - s.W / 2, 'scale.x': bw, alpha: on ? 1 : 0 };
+    });
+});
+
+reg('kzCardSlam', 'ae/p_x2_kineticB2.jsx', function (c, s) {
+  var a = cl(s.amp, 0.6, 1.3), sg = N.random(s.seed, 1, 1) < 0.5 ? 1 : -1;
+  var target = H.rigTarget(c, 'kzCardSlam', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), lift = 0, z = 1, rot = 0;
+    if (p >= 0.68) {
+      var q = (p - 0.68) / 0.32;
+      z = 1 + 0.035 * a * Math.exp(-q * 3) * Math.cos(q * PI * 1.5);
+    } else {
+      lift = p < 0.28 ? E.outBack(p / 0.28, 1.8) : (p < 0.56 ? 1 : 1 - E.inCubic((p - 0.56) / 0.12));
+      z = 1 - 0.11 * a * lift; rot = -1.6 * sg * lift;
+    }
+    return { 'scale.x': z, 'scale.y': z, rotation: -rot };
+  });
+  addOverlay(c, s.f0, s.f1, 'FX CardSlam frame @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H),
+    { stroke: pop(s.sc), width: Math.max(2, Math.min(s.W, s.H) * 0.008), alpha: 1 }, function (f) {
+      var p = prog(f, s);
+      if (p >= 0.68) return { alpha: 0 };
+      var lift = p < 0.28 ? E.outBack(p / 0.28, 1.8) : (p < 0.56 ? 1 : 1 - E.inCubic((p - 0.56) / 0.12));
+      var z = 1 - 0.11 * a * lift, rot = -1.6 * sg * lift;
+      return { 'scale.x': z, 'scale.y': z, rotation: -rot, alpha: cl(lift) };
+    });
+});
+
+reg('kzDustLanding', 'ae/p_x2_kineticB2.jsx', function (c, s) {
+  var M = Math.min(s.W, s.H), a = cl(s.amp, 0.6, 1.3), col = H.mixHex(s.sc.fg, s.sc.bg, 0.45);
+  var target = H.rigTarget(c, 'kzDustLanding', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), drop = p < 0.1 ? E.outCubic(p / 0.1) : Math.exp(-(p - 0.1) / 0.9 * 3.5) * Math.cos((p - 0.1) / 0.9 * PI * 1.75);
+    return { 'position.y': -Math.round(M * 0.028 * a * drop) };
+  });
+  [-1, 1].forEach(function (sd) {
+    for (var i = 0; i < 6; i++) {
+      (function (idx) {
+        var u = (idx + 1) / 6, rK = M * (0.02 + 0.04 * N.random(s.seed, idx, sd + 2)) * a, yK = M * 0.07 * u * N.random(s.seed, idx, 7);
+        addOverlay(c, s.f0, s.f1, 'FX Dust ' + (sd < 0 ? 'L' : 'R') + (idx + 1) + ' @' + s.f0, G.ellipse(0, 0, 1, 1),
+          { fill: col, alpha: 1 }, function (f) {
+            var q = cl((prog(f, s) - 0.05) / 0.95), e = E.outCubic(q), r = Math.max(0.5, rK * (0.45 + 0.9 * e) * (1 - 0.55 * q));
+            var px = s.W / 2 + sd * (s.W * 0.06 + s.W * 0.38 * u * e), py = s.H - r * 0.5 - yK * e;
+            var pt = scPt(px, py, s.W, s.H);
+            return { 'position.x': pt[0], 'position.y': pt[1], 'scale.x': r, 'scale.y': r, alpha: (q <= 0 || q >= 1) ? 0 : 0.9 * (1 - 0.4 * u) * (1 - q) };
+          });
+      })(i);
+    }
+  });
+});
+
+reg('kzEdgeHit', 'ae/p_x2_kineticB2.jsx', function (c, s) {
+  var M = Math.min(s.W, s.H), a = cl(s.amp, 0.6, 1.3), side = Math.abs(s.seed) % 4, u = 0.3 + 0.4 * N.random(s.seed, 2, 1);
+  var hx = side === 0 ? 0 : (side === 1 ? s.W : s.W * u), hy = side === 2 ? 0 : (side === 3 ? s.H : s.H * u);
+  var nx = side === 0 ? 1 : (side === 1 ? -1 : 0), ny = side === 2 ? 1 : (side === 3 ? -1 : 0);
+  var hSc = scPt(hx, hy, s.W, s.H), target = H.rigTarget(c, 'kzEdgeHit', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), rec = (p < 0.14 ? E.outCubic(p / 0.14) : Math.exp(-(p - 0.14) / 0.86 * 3.2) * Math.cos((p - 0.14) / 0.86 * PI * 1.5)) * M * 0.035 * a;
+    return { 'position.x': Math.round(nx * rec), 'position.y': -Math.round(ny * rec) };
+  });
+  var base = Math.atan2(ny, nx), pc = pop(s.sc);
+  for (var i = 0; i < 9; i++) {
+    (function (idx) {
+      var an = base + ((idx + 0.5) / 9 - 0.5) * 2.5 + (N.random(s.seed, idx, 3) * 2 - 1) * 0.08;
+      var lenK = M * mix(0.2, 0.48, N.random(s.seed, idx, 4)) * a, wK = M * mix(0.012, 0.028, N.random(s.seed, idx, 5));
+      addOverlay(c, s.f0, s.f1, 'FX Hit spike ' + (idx + 1) + ' @' + s.f0, V.commands([[0, -0.5], [1, 0], [0, 0.5]], true),
+        { fill: idx % 3 === 1 ? s.sc.fg : pc, alpha: 1 }, function (f) {
+          var p = prog(f, s), g = p < 0.22 ? E.outCubic(p / 0.22) : 1, out = E.outCubic(cl((p - 0.18) / 0.82));
+          var len = lenK * g, r0 = M * 0.03 + len * 1.1 * out, r1 = r0 + len * (1 - out), w = wK * (1 - out);
+          var dx = Math.cos(an) * r0, dy = -Math.sin(an) * r0;
+          return { 'position.x': hSc[0] + dx, 'position.y': hSc[1] + dy, rotation: -(an * 180 / PI), 'scale.x': Math.max(0.5, r1 - r0), 'scale.y': Math.max(0.5, w), alpha: (r1 - r0 < 1 || w < 0.4) ? 0 : 1 };
+        });
+    })(i);
+  }
+});
+
+reg('kzKnockSmear', 'ae/p_x2_kineticB2.jsx', function (c, s) {
+  var vert = N.random(s.seed, 1, 1) < 0.25, dir = N.random(s.seed, 2, 1) < 0.5 ? 1 : -1, M = Math.min(s.W, s.H);
+  var dk = H.dark(s.sc.bg);
+  function offAt(p) {
+    var e = p < 0.18 ? E.outCubic(p / 0.18) : Math.exp(-(p - 0.18) / 0.82 * 3.4) * Math.cos((p - 0.18) / 0.82 * PI * 1.8);
+    return dir * M * 0.05 * cl(s.amp, 0.6, 1.3) * e;
+  }
+  var target = H.rigTarget(c, 'kzKnockSmear', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var o = Math.round(offAt(prog(f, s)));
+    return vert ? { 'position.y': -o } : { 'position.x': o };
+  });
+  for (var i = 1; i < 6; i++) {
+    (function (idx) {
+      var fr = idx / 6, cln = cloneActiveCuts(c, s, 'Smear ' + idx, { belowCuts: dk });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var o = Math.round(offAt(prog(f, s)) * (1 - fr * 1.6));
+        return vert ? { 'position.y': -o } : { 'position.x': o };
+      });
+      cln.paintables.forEach(function (pid) {
+        var n = c.graph.byId[pid], base = n.attrs.alpha == null ? 1 : n.attrs.alpha;
+        n.keys.alpha = n.keys.alpha || {};
+        for (var f = s.f0; f < s.f1; f++) {
+          var o = offAt(prog(f, s));
+          n.keys.alpha[f] = { value: Math.abs(o) < 1 ? 0 : base * 0.42 * (1 - fr), type: 1 };
+        }
+      });
+    })(i);
+  }
+});
+
+reg('kzShockArcs', 'ae/p_x2_kineticB2.jsx', function (c, s) {
+  var M = Math.min(s.W, s.H), a = cl(s.amp, 0.6, 1.3), vert = s.W < s.H * 0.9, Lc = vert ? s.H : s.W;
+  var target = H.rigTarget(c, 'kzShockArcs', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var p = prog(f, s), pu = p < 0.15 ? E.outCubic(p / 0.15) : 1 - E.inOutCubic((p - 0.15) / 0.85), st = 1 + 0.035 * a * pu;
+    return vert ? { 'scale.y': st } : { 'scale.x': st };
+  });
+  var bs = vert ? [90, -90] : [0, 180], pc = pop(s.sc);
+  for (var i = 0; i < 3; i++) for (var k = 0; k < 2; k++) {
+    (function (idx, side) {
+      var pts = H.arcPts(0, 0, 1, 1, -0.5, 0.5, 16);
+      addOverlay(c, s.f0, s.f1, 'FX ShockArc ' + idx + '_' + side + ' @' + s.f0, V.commands(pts, false),
+        { stroke: pc, width: 1, alpha: 1 }, function (f) {
+          var q = cl((prog(f, s) - idx * 0.11) / 0.7), R = Lc * (0.2 + 0.28 * E.outCubic(q));
+          var lw = Math.max(0.5, M * 0.024 * a * (1 - idx * 0.22) * (1 - q));
+          return { 'scale.x': R, 'scale.y': R, rotation: -bs[side], 'stroke.width': lw / Math.max(1, R), alpha: (q <= 0 || q >= 1) ? 0 : 1 - q * q };
+        });
+    })(i, k);
+  }
+});
+
+reg('tzColumnShift', 'ae/p_x2_typoB.jsx', function (c, s) {
+  var n = 4 + (Math.abs(s.seed) % 3), sg = (s.seed & 1) ? 1 : -1, d = s.H * 0.04 * cl(s.amp, 0.6, 1.4), w = Math.max(1.5, Math.min(s.W, s.H) * 0.002);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var x0 = Math.round(idx * s.W / n), x1 = Math.round((idx + 1) * s.W / n), colSg = ((idx & 1) ? 1 : -1) * sg;
+      var cln = cloneActiveCuts(c, s, 'ColShift ' + (idx + 1));
+      var polys = Object.create(null), poly = rectPoly(x0, 0, x1, s.H, s.W, s.H);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var p = prog(f, s), lv = p >= 1 ? 0 : (p < 0.18 ? 0.5 : (p < 0.5 ? 1 : 1 - E.inOutCubic((p - 0.5) / 0.5)));
+        return { 'position.y': -Math.round(colSg * d * lv) };
+      });
+      if (idx > 0) {
+        addOverlay(c, s.f0, s.f1, 'FX ColShift rule ' + idx + ' @' + s.f0, G.rect(x0 - s.W / 2 - w / 2, -s.H / 2, w, s.H),
+          { fill: pop(s.sc), alpha: 1 }, function (f) {
+            var p = prog(f, s), lv = p >= 1 ? 0 : (p < 0.18 ? 0.5 : (p < 0.5 ? 1 : 1 - E.inOutCubic((p - 0.5) / 0.5)));
+            return { alpha: 0.7 * Math.min(1, lv * 2) };
+          });
+      }
+    })(i);
+  }
+});
+
+reg('tzFrameStep', 'ae/p_x2_typoB.jsx', function (c, s) {
+  var a = Math.min(s.W, s.H) * 0.024 * cl(s.amp, 0.5, 1.4), path = [[1, 0], [1, 1], [0, 1], [0, 0]];
+  var sx = (s.seed & 1) ? 1 : -1, sy = (s.seed & 2) ? 1 : -1, target = H.rigTarget(c, 'tzFrameStep', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var i = Math.min(3, Math.floor(prog(f, s) * 4)), q = (s.seed & 4) ? [path[i][1], path[i][0]] : path[i];
+    return { 'position.x': Math.round(q[0] * sx * a), 'position.y': -Math.round(q[1] * sy * a) };
+  });
+});
+
+reg('tzGridFlash', 'ae/p_x2_typoB.jsx', function (c, s) {
+  var rows = s.W > s.H ? 12 : 18, cols = s.W > s.H ? 6 : 4, w = Math.max(1.2, Math.min(s.W, s.H) * 0.0018);
+  var col = pop(s.sc), am = cl(s.amp, 0, 1) * 0.5;
+  for (var r = 1; r < rows; r++) {
+    var ry = s.H / 2 - Math.round(r * s.H / rows);
+    addOverlay(c, s.f0, s.f1, 'FX GridFlash r' + r + ' @' + s.f0, G.rect(-s.W / 2, ry - w / 2, s.W, w), { fill: col, alpha: 1 }, function (f) {
+      var p = prog(f, s);
+      return { alpha: am * (p < 0.65 ? 1 : 1 - E.inCubic((p - 0.65) / 0.35)) };
+    });
+  }
+  for (var cc = 1; cc < cols; cc++) {
+    var cx = Math.round(cc * s.W / cols) - s.W / 2;
+    addOverlay(c, s.f0, s.f1, 'FX GridFlash c' + cc + ' @' + s.f0, G.rect(cx - w / 2, -s.H / 2, w, s.H), { fill: col, alpha: 1 }, function (f) {
+      var p = prog(f, s);
+      return { alpha: am * (p < 0.65 ? 1 : 1 - E.inCubic((p - 0.65) / 0.35)) };
+    });
+  }
+});
+
+reg('tzKnockBand', 'ae/p_x2_typoB.jsx', function (c, s) {
+  var dk = H.dark(s.sc.bg), col = dk ? s.sc.fg : s.sc.bg, bh = Math.max(4, Math.round(s.H * (0.14 + 0.1 * N.random(s.seed, 1, 1)) * cl(s.amp, 0.7, 1.3)));
+  var y0 = cl(s.H * (0.5 + 0.14 * (N.random(s.seed, 2, 1) * 2 - 1)), bh / 2, s.H - bh / 2);
+  addOverlay(c, s.f0, s.f1, 'FX KnockBand @' + s.f0, G.rect(-s.W / 2, -bh / 2, s.W, bh), { fill: col, alpha: 0.9 }, function (f) {
+    return { 'position.y': s.H / 2 - y0, 'scale.y': prog(f, s) < 0.55 ? 1 : 0.34 };
+  });
+});
+
+reg('tzRegTicks', 'ae/p_x2_typoB.jsx', function (c, s) {
+  var mn = Math.min(s.W, s.H), w = Math.max(1.2, mn * 0.002), ins = mn * 0.07, len = mn * 0.04, gap = mn * 0.012, col = pop(s.sc);
+  var am = cl(s.amp, 0, 1);
+  [-1, 1].forEach(function (a) {
+    [-1, 1].forEach(function (b) {
+      var x = a < 0 ? ins : s.W - ins, y = b < 0 ? ins : s.H - ins;
+      [V.commands([scPt(x + a * gap, y, s.W, s.H), scPt(x + a * (gap + len), y, s.W, s.H)], false),
+       V.commands([scPt(x, y + b * gap, s.W, s.H), scPt(x, y + b * (gap + len), s.W, s.H)], false)].forEach(function (cmd, idx) {
+        addOverlay(c, s.f0, s.f1, 'FX RegTick ' + a + b + idx + ' @' + s.f0, cmd, { stroke: col, width: w, alpha: 1 }, function (f) {
+          var p = prog(f, s);
+          return { alpha: (p < 0.3 || (p >= 0.45 && p < 0.82)) ? am : 0 };
+        });
+      });
+    });
+  });
+});
+
+reg('tzRuleFlash', 'ae/p_x2_typoB.jsx', function (c, s) {
+  var n = 2 + (Math.abs(s.seed) % 2), w = Math.max(1.5, Math.min(s.W, s.H) * 0.0025), vert = N.random(s.seed, 2, 1) < 0.2;
+  var LL = vert ? s.W : s.H, M = vert ? s.H : s.W, col = pop(s.sc);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var pos = Math.round(LL * (1 + ((Math.abs(s.seed) % 3) + idx * 4) % 11) / 12);
+      var cmd = vert ? G.rect(-w / 2, -0.5, w, 1) : G.rect(-0.5, -w / 2, 1, w);
+      addOverlay(c, s.f0, s.f1, 'FX RuleFlash ' + (idx + 1) + ' @' + s.f0, cmd, { fill: col, alpha: 1 }, function (f) {
+        var u = cl(prog(f, s) * 1.25 - idx * 0.1), hd = E.outCubic(cl(u / 0.45)), tl = E.inCubic(cl((u - 0.5) / 0.5));
+        var sLen = Math.max(0.5, M * Math.max(0, hd - tl));
+        return vert
+          ? { 'position.x': pos - s.W / 2, 'position.y': s.H / 2 - M * (hd + tl) / 2, 'scale.y': sLen, alpha: sLen > 1 ? cl(s.amp) : 0 }
+          : { 'position.x': M * (hd + tl) / 2 - s.W / 2, 'position.y': s.H / 2 - pos, 'scale.x': sLen, alpha: sLen > 1 ? cl(s.amp) : 0 };
+      });
+    })(i);
+  }
+});
+
+reg('wzHanafubuki', 'ae/p_x2_waB2.jsx', function (c, s) {
+  var mn = Math.min(s.W, s.H), dir = N.random(s.seed, 1, 1) < 0.5 ? 1 : -1, n = Math.round(28 + 14 * cl(s.amp, 0.5, 1.3));
+  var c1 = pop(s.sc), c2 = (s.sc.accent2 && H.contrast(s.sc.accent2, s.sc.bg) > 1.4) ? s.sc.accent2 : c1;
+  var cols = [c1, c2, H.mixHex(c1, '#FFFFFF', 0.45)], X0 = (dir > 0 ? -0.08 : 1.08) * s.W;
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var ph = N.random(s.seed, idx, 3) * TAU, y0 = s.H * (-0.25 + 1.05 * N.random(s.seed, idx, 4)), sp = mn * (0.016 + 0.022 * N.random(s.seed, idx, 5));
+      var d0 = 0.4 * N.random(s.seed, idx, 2);
+      var pts = [[0, -sp], [0.22 * sp, sp * 0.5], [0, sp * 0.72], [-0.22 * sp, sp * 0.5]];
+      addOverlay(c, s.f0, s.f1, 'FX Petal ' + (idx + 1) + ' @' + s.f0, V.commands(pts, true), { fill: cols[idx % 3], alpha: 1 }, function (f) {
+        var kk = cl(prog(f, s) * 1.4 - d0);
+        var pt = scPt(X0 + dir * s.W * 1.16 * kk, y0 + s.H * 0.36 * kk + Math.sin(kk * 9 + ph) * mn * 0.035, s.W, s.H);
+        return {
+          'position.x': pt[0], 'position.y': pt[1],
+          rotation: -(ph + kk * (idx % 2 ? 8 : -8)) * 180 / PI,
+          'scale.x': 0.3 + 0.7 * Math.abs(Math.cos(kk * 12 + ph)),
+          alpha: (kk > 0 && kk < 1) ? H.smoothstep(0, 0.1, kk) * (1 - H.smoothstep(0.85, 1, kk)) * 0.92 : 0
+        };
+      });
+    })(i);
+  }
+});
+
+reg('wzHyoshigi', 'ae/p_x2_waB2.jsx', function (c, s) {
+  var mn = Math.min(s.W, s.H), cx = s.W * (0.3 + 0.4 * N.random(s.seed, 1, 1)), cy = s.H * (0.32 + 0.36 * N.random(s.seed, 2, 1));
+  var tilt = (N.random(s.seed, 3, 1) * 2 - 1) * 18, th = mn * 0.052, Lc = mn * 0.25, cSc = scPt(cx, cy, s.W, s.H);
+  var col = ink(s.sc), band = pop(s.sc), A1 = cl(s.amp, 0.5, 1.3);
+  [-1, 1].forEach(function (sd) {
+    addOverlay(c, s.f0, s.f1, 'FX Hyoshigi ' + (sd < 0 ? 'A' : 'B') + ' @' + s.f0, G.rect(-th / 2, -Lc / 2, th, Lc),
+      { fill: col, stroke: band, width: 2, alpha: 1 }, function (f) {
+        var p = prog(f, s), u = cl((p - 0.3) / 0.7);
+        var d = p < 0.3 ? mix(mn * 0.8, th / 2, E.inCubic(p / 0.3)) : th / 2 + mn * 0.1 * E.outCubic(u);
+        var rad = tilt * DEG, rx = sd * d * Math.cos(rad), ry = -sd * d * Math.sin(rad);
+        return { 'position.x': cSc[0] + rx, 'position.y': cSc[1] + ry, rotation: -tilt, alpha: p < 0.3 ? cl(p / 0.3 * 4) : 1 - H.inOutQuart(u) };
+      });
+  });
+  for (var i = 0; i < 8; i++) {
+    (function (idx) {
+      var an = idx / 8 * TAU + 0.26, Rm = mn * 0.4;
+      addOverlay(c, s.f0, s.f1, 'FX Hyoshigi ray ' + (idx + 1) + ' @' + s.f0, V.commands([[0, 0], [Math.cos(an) * Rm, -Math.sin(an) * Rm]], false),
+        { stroke: band, width: Math.max(2, mn * 0.009), alpha: 1 }, function (f) {
+          var p = prog(f, s), u = cl((p - 0.3) / 0.7);
+          return { 'position.x': cSc[0], 'position.y': cSc[1], 'scale.x': 0.2 + 0.8 * E.outCubic(u), 'scale.y': 0.2 + 0.8 * E.outCubic(u), alpha: p >= 0.3 ? (1 - H.smoothstep(0.1, 0.75, u)) : 0 };
+        });
+    })(i);
+  }
+  H.fullRect(c, s, 'FX Hyoshigi wash @' + s.f0, band, function (p) {
+    var u = cl((p - 0.3) / 0.7);
+    return p >= 0.3 ? 0.2 * (1 - E.outCubic(cl(u / 0.5))) * A1 : 0;
+  });
+});
+
+reg('wzMaku', 'ae/p_x2_waB2.jsx', function (c, s) {
+  var dir = N.random(s.seed, 1, 1) < 0.5 ? 1 : -1, sw = Math.max(12, s.W / 12), c1 = ink(s.sc), c2 = pop(s.sc), c3 = s.sc.accent2 || H.mixHex(c1, c2, 0.5);
+  var cols = [c1, c2, c3], contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var p = prog(f, s), x0 = p < 0.5 ? 0 : s.W * E.inOutCubic((p - 0.5) / 0.5), x1 = p < 0.5 ? s.W * E.inOutCubic(p / 0.5) : s.W;
+    var rx0 = dir > 0 ? x0 : s.W - x1, rx1 = dir > 0 ? x1 : s.W - x0;
+    contours[f] = (rx1 - rx0 < 1) ? [] : [rectPoly(rx0, 0, rx1, s.H, s.W, s.H)];
+  }
+  cols.forEach(function (col, ci) {
+    var stripGroup = addOverlay(c, s.f0, s.f1, 'FX Maku stripe ' + ci + ' @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: col, alpha: ci === 0 ? 0.9 : 0.85 });
+    var cMap = Object.create(null);
+    for (var f = s.f0; f < s.f1; f++) {
+      var p = prog(f, s), x0 = p < 0.5 ? 0 : s.W * E.inOutCubic((p - 0.5) / 0.5), x1 = p < 0.5 ? s.W * E.inOutCubic(p / 0.5) : s.W;
+      var rx0 = dir > 0 ? x0 : s.W - x1, rx1 = dir > 0 ? x1 : s.W - x0;
+      if (rx1 - rx0 < 1) { cMap[f] = []; continue; }
+      var polys = [];
+      for (var sx = Math.floor(rx0 / sw) * sw; sx < rx1; sx += sw) {
+        if ((Math.round(sx / sw) % 3 + 3) % 3 !== ci) continue;
+        var a = Math.max(rx0, sx), b = Math.min(rx1, sx + sw);
+        if (b > a + 0.5) polys.push(rectPoly(a, 0, b, s.H, s.W, s.H));
+      }
+      cMap[f] = polys;
+    }
+    H.multiClip(c.graph, stripGroup, cMap, false, 'Maku stripes', c.options);
+  });
+});
+
+reg('wzOrime', 'ae/p_x2_waB2.jsx', function (c, s) {
+  var mn = Math.min(s.W, s.H), A = cl(s.amp, 0.6, 1.1), nx = s.W >= s.H ? 3 : 2, ny = s.W >= s.H ? 2 : 3;
+  var dk = '#000000', lw = Math.max(1.2, mn * 0.003);
+  function alp(f, mult) { return ahr(prog(f, s), 0.14, 0.55) * A * mult; }
+  for (var i = 1; i < nx; i++) {
+    addOverlay(c, s.f0, s.f1, 'FX Orime v' + i + ' @' + s.f0, G.rect(s.W * i / nx - s.W / 2 - lw / 2, -s.H / 2, lw, s.H),
+      { fill: dk, alpha: 1 }, function (f) { return { alpha: alp(f, 0.45) }; });
+  }
+  for (var j = 1; j < ny; j++) {
+    addOverlay(c, s.f0, s.f1, 'FX Orime h' + j + ' @' + s.f0, G.rect(-s.W / 2, s.H / 2 - s.H * j / ny - lw / 2, s.W, lw),
+      { fill: dk, alpha: 1 }, function (f) { return { alpha: alp(f, 0.45) }; });
+  }
+  for (var ix = 0; ix < nx; ix++) for (var iy = 0; iy < ny; iy++) {
+    if ((ix + iy) % 2) {
+      var pt = scPt(s.W * (ix + 0.5) / nx, s.H * (iy + 0.5) / ny, s.W, s.H);
+      addOverlay(c, s.f0, s.f1, 'FX Orime panel ' + ix + '_' + iy + ' @' + s.f0, G.rect(pt[0] - s.W / nx / 2, pt[1] - s.H / ny / 2, s.W / nx, s.H / ny),
+        { fill: dk, alpha: 1 }, function (f) { return { alpha: alp(f, 0.12) }; });
+    }
+  }
+});
+
+reg('wzShojiPass', 'ae/p_x2_waB2.jsx', function (c, s) {
+  var mn = Math.min(s.W, s.H), dir = N.random(s.seed, 1, 1) < 0.5 ? 1 : -1, A = cl(s.amp, 0.6, 1.1);
+  var cu = mn * 0.21, cv = mn * 0.15, lw = Math.max(2, mn * 0.012), sk = 0.32 * dir;
+  var lattice = c.graph.add('null', 'FX ShojiPass @' + s.f0, c.parent, s.f0, s.f1, {});
+  for (var x = -s.W * 0.5, i = 0; x < s.W * 1.5 && i < 24; x += cu, i++) {
+    var t = (i % 3 === 0 ? 2.2 : 1) * lw;
+    var pts = [scPt(x - sk * s.H / 2 - t / 2, 0, s.W, s.H), scPt(x - sk * s.H / 2 + t / 2, 0, s.W, s.H),
+      scPt(x + sk * s.H / 2 + t / 2, s.H, s.W, s.H), scPt(x + sk * s.H / 2 - t / 2, s.H, s.W, s.H)];
+    C.shape(c.graph, { id: 'fx', start: s.f0, end: s.f1 }, 'Shoji v' + i, lattice, V.commands(pts, true), { fill: '#000000', alpha: 0.32 });
+  }
+  for (var y = cv * 0.5, j = 0; y < s.H && j < 20; y += cv, j++) {
+    C.shape(c.graph, { id: 'fx', start: s.f0, end: s.f1 }, 'Shoji h' + j, lattice,
+      G.rect(-s.W, s.H / 2 - y - lw / 2, s.W * 3, lw), { fill: '#000000', alpha: 0.32 });
+  }
+  C.sample(c.graph, lattice, s.f0, s.f1, function (f) {
+    var p = prog(f, s);
+    return { 'position.x': dir * mix(-s.W * 0.14, s.W * 0.14, p), alpha: cl(0.85 * ahr(p, 0.25, 0.7) * A) };
+  });
+});
+
+reg('wzSumiShibuki', 'ae/p_x2_waB2.jsx', function (c, s) {
+  var mn = Math.min(s.W, s.H), a0 = cl(s.amp, 0.6, 1.3), left = N.random(s.seed, 1, 1) < 0.5;
+  var ox = s.W * (left ? 0.1 + 0.1 * N.random(s.seed, 2, 1) : 0.9 - 0.1 * N.random(s.seed, 2, 1));
+  var oy = s.H * (0.2 + 0.6 * N.random(s.seed, 3, 1)), base = Math.atan2(s.H / 2 - oy, s.W / 2 - ox), col = ink(s.sc);
+  for (var i = 0; i < 26; i++) {
+    (function (idx) {
+      var r1 = N.random(s.seed, idx, 7), an = base + (N.random(s.seed, idx, 8) * 2 - 1) * 0.95;
+      var D = mn * (0.09 + 0.85 * r1 * r1) * a0, r = Math.max(1.5, mn * 0.02 * (1 - r1 * 0.8) * (0.4 + 0.6 * N.random(s.seed, idx, 9)) * a0);
+      addOverlay(c, s.f0, s.f1, 'FX Sumi drop ' + (idx + 1) + ' @' + s.f0, G.ellipse(0, 0, r * (1.4 + 2.2 * r1), r),
+        { fill: col, alpha: 1 }, function (f) {
+          var p = prog(f, s), g = E.outCubic(cl(p / 0.3)), al = 1 - H.inOutQuart(cl((p - 0.42) / 0.58));
+          var pt = scPt(ox + Math.cos(an) * D * g, oy + Math.sin(an) * D * g, s.W, s.H);
+          return { 'position.x': pt[0], 'position.y': pt[1], rotation: -(an * 180 / PI), alpha: cl(al) };
+        });
+    })(i);
+  }
+});
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);
+
+;
+/* Remaining 43 native xr* FX recipes from ae/p_x2_fx.jsx (read-only reference).
+ * Completes 138/138 of the ae/data.json fx catalog alongside p_fx.js and p_fx_ext.js.
+ */
+(function (N, G, C, R, V, S, H) {
+'use strict';
+
+var cl = R.clamp, mix = R.mix, E = R.E, PI = Math.PI, TAU = R.T, DEG = PI / 180;
+
+function reg(key, fn, diffs) {
+  N.register('fx', key, {
+    source: 'ae/p_x2_fx.jsx / fx:' + key,
+    scope: 'event',
+    differences: diffs || [],
+    build: function (c) { return fn(c, H.fxSpan(c)); }
+  });
+}
+
+function scPt(x, y, W, Hh) { return [x - W / 2, Hh / 2 - y]; }
+function rectPoly(x0, y0, x1, y1, W, Hh) {
+  var a = scPt(x0, y0, W, Hh), b = scPt(x1, y1, W, Hh);
+  return [[a[0], a[1]], [b[0], a[1]], [b[0], b[1]], [a[0], b[1]]];
+}
+function ahr(p, a, b) {
+  return p < a ? E.outCubic(p / Math.max(1e-4, a)) : (p > b ? 1 - E.inCubic((p - b) / Math.max(1e-4, 1 - b)) : 1);
+}
+function ahs(p, a, b) {
+  return p < a ? E.outCubic(p / Math.max(1e-4, a)) : (p > b ? 1 - E.inOutCubic((p - b) / Math.max(1e-4, 1 - b)) : 1);
+}
+function punch(p, a) {
+  return p < a ? E.outExpo(p / Math.max(1e-4, a)) : 1 - E.inOutCubic((p - a) / Math.max(1e-4, 1 - a));
+}
+function spring(p, a) {
+  if (p < a) return E.outCubic(p / Math.max(1e-4, a));
+  var q = (p - a) / Math.max(1e-4, 1 - a);
+  return Math.exp(-2.2 * q) * Math.cos(q * PI * 2.5) * (1 - q);
+}
+function oq(x) { x = cl(x); return 1 - (1 - x) * (1 - x); }
+function iq(x) { x = cl(x); return x * x; }
+function ios(x) { return -(Math.cos(PI * cl(x)) - 1) / 2; }
+function pop(sc) { return H.accCol(sc); }
+function tints(sc) {
+  var l = [sc.accent, sc.accent2, sc.ghostA, sc.ghostB], o = [];
+  for (var i = 0; i < l.length; i++) if (l[i] && H.contrast(l[i], sc.bg) > 1.3) o.push(l[i]);
+  return o.length ? o : [sc.fg];
+}
+function shade(sc) {
+  return H.dark(sc.bg) ? '#000000' : (sc.ink && H.dark(sc.ink) ? sc.ink : (H.dark(sc.fg) ? sc.fg : '#111111'));
+}
+function prog(f, s) { return (f - s.f0) / Math.max(1, s.f1 - s.f0 - 1); }
+
+/* J.h / J.r / J.rs hash matching ae/p_x2_fx.jsx */
+function imul(a, b) { return Math.imul ? Math.imul(a, b) : ((a & 0xffff) * b + (((a >>> 16) * b & 0xffff) << 16)) | 0; }
+function xh(a, b, c, d, e) {
+  var h = 0x9e3779b9 ^ (a | 0);
+  h = imul(h ^ (h >>> 16), 0x85ebca6b);
+  h = (h + imul((b | 0) + 0x632be5ab, 0xc2b2ae35)) | 0;
+  h = imul(h ^ (h >>> 13), 0xc2b2ae35);
+  h = (h + imul((c | 0) + 0x5bd1e995, 0x27d4eb2f)) | 0;
+  h = imul(h ^ (h >>> 15), 0x165667b1);
+  h = (h + imul((d | 0) + 0x1b873593, 0x85ebca6b)) | 0;
+  h = imul(h ^ (h >>> 16), 0x27d4eb2f);
+  h = (h + imul((e | 0) + 0x68e31da4, 0x9e3779b1)) | 0;
+  h ^= h >>> 15; h = imul(h, 0x2c1b3c6d); h ^= h >>> 12; h = imul(h, 0x297a2d39); h ^= h >>> 15;
+  return h >>> 0;
+}
+function xr(a, b, c, d, e) { return xh(a, b, c, d, e) / 4294967296; }
+function xrs(a, b, c, d, e) { return xr(a, b, c, d, e) * 2 - 1; }
+function xS(s) { return xh(Math.round((s.f0 / s.fps) * 1000), 5519); }
+function xSteps(s) {
+  var t0 = s.f0 / s.fps, t1 = Math.max(t0 + 1 / 24, s.f1 / s.fps), st = Math.floor(t0 * 24 + 1e-6), out = [];
+  for (; st / 24 < t1 - 1e-4 && out.length < 16; st++) {
+    var fStart = Math.max(s.f0, Math.round(st / 24 * s.fps));
+    var fEnd = Math.min(s.f1, Math.round((st + 1) / 24 * s.fps));
+    if (fEnd > fStart) out.push({ st: st, f0: fStart, f1: fEnd, t0: Math.max(t0, st / 24) });
+  }
+  if (!out.length) out.push({ st: st, f0: s.f0, f1: s.f1, t0: t0 });
+  out[out.length - 1].f1 = s.f1;
+  return out;
+}
+
+function addOverlay(c, f0, f1, name, cmds, paint, fn) {
+  var id = C.shape(c.graph, { id: 'fx', start: f0, end: f1 }, name, c.parent, cmds, paint);
+  if (fn) C.sample(c.graph, id, f0, f1, fn);
+  return id;
+}
+
+function addFullBg(c, s, label) {
+  return C.shape(c.graph, { id: 'fx', start: s.f0, end: s.f1 }, 'FX ' + label + ' bg @' + s.f0,
+    c.parent, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: s.sc.bg, alpha: 1 });
+}
+
+function cloneActiveCuts(c, s, label, opts) {
+  var g = c.graph, o = opts || {};
+  var cutsRoot = g.layers.filter(function (l) { return l.name === 'JIZURA / Cuts'; })[0];
+  if (!cutsRoot) return { rigId: H.rigTarget(c, label, s), paintables: [] };
+  var rigId = g.add('null', 'FX ' + label + ' @' + s.f0, c.parent, s.f0, s.f1, {});
+  if (o.belowCuts) {
+    var i = g.layers.indexOf(g.byId[rigId]), j = g.layers.indexOf(cutsRoot);
+    if (i > j && j >= 0) { var n = g.layers.splice(i, 1)[0]; g.layers.splice(j, 0, n); }
+  }
+  var cutGroups = g.layers.filter(function (l) { return l.parent === cutsRoot.id && l.type === 'null' && l.start < s.f1 && l.end > s.f0; });
+  var paintables = [];
+  cutGroups.forEach(function (grp) {
+    var map = Object.create(null);
+    map[grp.id] = rigId;
+    var queue = g.layers.filter(function (l) {
+      if (l.start >= s.f1 || l.end <= s.f0) return false;
+      if (o.inkOnly && l.type === 'path' && /bg|background|grid|hatch/i.test(l.name)) return false;
+      var cur = l;
+      while (cur && cur.parent) {
+        if (cur.parent === grp.id) return true;
+        cur = g.byId[cur.parent];
+      }
+      return false;
+    });
+    queue.forEach(function (src) {
+      if (src.type !== 'null' && src.type !== 'path' && src.type !== 'textShape') return;
+      var cs = Math.max(s.f0, src.start), ce = Math.min(s.f1, src.end);
+      if (ce <= cs) return;
+      var pid = map[src.parent] || rigId;
+      var attrs = V.copy(src.attrs);
+      if (o.tintColor && (src.type === 'path' || src.type === 'textShape')) {
+        if (attrs.fill !== false) attrs['material.materialColor'] = o.tintColor;
+        if (attrs.stroke) attrs['stroke.strokeColor'] = o.tintColor;
+      }
+      var nid = g.add(src.type, src.name + ' / ' + label, pid, cs, ce, attrs, src.commands ? V.copy(src.commands) : null);
+      var dst = g.byId[nid];
+      Object.keys(src.keys).forEach(function (attr) {
+        var trk = src.keys[attr], outT = {}, held = null;
+        Object.keys(trk).map(Number).sort(function (a, b) { return a - b; }).forEach(function (f) {
+          if (f <= cs) held = trk[f];
+          if (f >= cs && f < ce) outT[f] = V.copy(trk[f]);
+        });
+        if (!Object.prototype.hasOwnProperty.call(outT, cs) && held != null) outT[cs] = V.copy(held);
+        if (Object.keys(outT).length) dst.keys[attr] = outT;
+      });
+      map[src.id] = nid;
+      if (src.type === 'path' || src.type === 'textShape') paintables.push(nid);
+    });
+  });
+  return { rigId: rigId, paintables: paintables };
+}
+
+function rotAboutScene(px, py, deg) {
+  var th = deg * DEG, cs = Math.cos(th), sn = Math.sin(th);
+  return { 'position.x': px - (px * cs + py * sn), 'position.y': py - (-px * sn + py * cs), rotation: -deg };
+}
+
+/* 1. xrAccordion */
+reg('xrAccordion', function (c, s) {
+  var sd = xS(s), n = 2 * (4 + (xh(sd, 1) % 3)), w0 = s.W / n;
+  var Q0 = 0.62 * cl(s.amp, 0.5, 1.3) * (xr(sd, 2) < 0.5 ? 1 : -1);
+  function qAt(p) { var q = Q0 * Math.sin(p * TAU) * (1 - 0.35 * p); return Math.abs(q) < 0.004 ? 0 : q; }
+  addFullBg(c, s, 'xrAccordion');
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var odd = idx % 2, xa = idx * w0, xb = (idx + 1) * w0;
+      var pivScX = (odd ? xb : xa) - s.W / 2;
+      var cln = cloneActiveCuts(c, s, 'Accordion ' + (idx + 1));
+      var polys = Object.create(null), poly = rectPoly(xa - 0.3, -20, xb + 0.3, s.H + 20, s.W, s.H);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var sx = Math.max(0.02, 1 + (odd ? -1 : 1) * qAt(prog(f, s)));
+        return { 'position.x': pivScX * (1 - sx), 'scale.x': sx };
+      });
+      addOverlay(c, s.f0, s.f1, 'FX Accordion shade ' + (idx + 1) + ' @' + s.f0,
+        G.rect(odd ? -1 : 0, -s.H / 2, 1, s.H), { fill: '#000000', alpha: 1 }, function (f) {
+          var q = qAt(prog(f, s)), scX = Math.max(0.02, w0 * (odd ? 1 - q : 1 + q));
+          var al = odd ? (q > 0 ? 0.42 * q : 0) : (q < 0 ? -0.42 * q : 0);
+          return { 'position.x': pivScX, 'scale.x': scX, alpha: cl(al) };
+        });
+    })(i);
+  }
+});
+
+/* 2. xrBandRepeat */
+reg('xrBandRepeat', function (c, s) {
+  var bh = Math.round(s.H * 0.26), y0 = Math.round(s.H / 2 - bh / 2);
+  var SP = bh * 0.92 * cl(cl(s.amp, 0.5, 1.3), 0.7, 1.1);
+  for (var i = 3; i >= 1; i--) for (var j = 0; j < 2; j++) {
+    (function (idx, dir) {
+      var cln = cloneActiveCuts(c, s, 'BandRepeat ' + idx + '_' + dir);
+      var polys = Object.create(null), poly = rectPoly(-20, y0, s.W + 20, y0 + bh, s.W, s.H);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var e = punch(prog(f, s), 0.3), sp = SP * e < 1 ? 0 : SP * e;
+        return { 'position.y': -sp * (dir ? 1 : -1) * idx };
+      });
+      cln.paintables.forEach(function (pid) {
+        var node = c.graph.byId[pid], base = node.attrs.alpha == null ? 1 : node.attrs.alpha;
+        node.keys.alpha = node.keys.alpha || {};
+        for (var f = s.f0; f < s.f1; f++) {
+          var e = punch(prog(f, s), 0.3), sp = SP * e < 1 ? 0 : SP * e;
+          node.keys.alpha[f] = { value: sp > 0 ? base * cl(e * 2.5) * (0.7 - idx * 0.16) : 0, type: 1 };
+        }
+      });
+    })(i, j);
+  }
+});
+
+/* 3. xrBandZoom */
+reg('xrBandZoom', function (c, s) {
+  var sd = xS(s), nb = 4 + (xh(sd, 1) % 3), A = cl(s.amp, 0.5, 1.3);
+  addFullBg(c, s, 'xrBandZoom');
+  for (var b = 0; b < nb; b++) {
+    (function (idx) {
+      var y0 = Math.round(idx * s.H / nb), y1 = Math.round((idx + 1) * s.H / nb);
+      var piv = scPt(s.W * (0.5 + xrs(sd, idx, 3) * 0.12), (y0 + y1) / 2, s.W, s.H);
+      var k = 0.03 + 0.2 * xr(sd, idx, 2);
+      var cln = cloneActiveCuts(c, s, 'BandZoom ' + (idx + 1));
+      var polys = Object.create(null), poly = rectPoly(0, y0, s.W, y1, s.W, s.H);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var e = punch(prog(f, s), 0.22) * A;
+        e = e < 0.004 ? 0 : e;
+        var z = 1 + e * k;
+        return { 'position.x': piv[0] * (1 - z), 'position.y': piv[1] * (1 - z), 'scale.x': z, 'scale.y': z };
+      });
+    })(b);
+  }
+});
+
+/* 4. xrBlink */
+reg('xrBlink', function (c, s) {
+  var col = H.lum(s.sc.bg) < 0.08 ? H.mixHex(s.sc.bg, s.sc.fg, 0.1) : shade(s.sc);
+  function lidPoly(rx, ry) {
+    var out = [], Np = 36;
+    for (var i = 0; i < Np; i++) {
+      var a = i / Np * TAU;
+      out.push([Math.cos(a) * rx, Math.sin(a) * ry]);
+    }
+    return out;
+  }
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var p = prog(f, s), b = 4 / 9, cv = p < b ? iq(p / b) : 1 - oq((p - b) / (1 - b));
+    var rx = s.W * 0.8 * Math.pow(Math.max(1e-4, 1 - cv), 0.22), ry = s.H * 0.86 * Math.max(0, 1 - cv);
+    contours[f] = (cv < 0.003 || ry <= 0.5) ? [] : [lidPoly(rx, ry)];
+  }
+  var lid = addOverlay(c, s.f0, s.f1, 'FX Blink lids @' + s.f0, G.rect(-s.W / 2 - 4, -s.H / 2 - 4, s.W + 8, s.H + 8), { fill: col, alpha: 1 }, function (f) {
+    var p = prog(f, s), b = 4 / 9, cv = p < b ? iq(p / b) : 1 - oq((p - b) / (1 - b));
+    return { alpha: cv < 0.003 ? 0 : 1 };
+  });
+  H.multiClip(c.graph, lid, contours, true, 'Eye opening', c.options);
+  addOverlay(c, s.f0, s.f1, 'FX Blink lash @' + s.f0, G.ellipse(0, 0, 1, 1),
+    { stroke: pop(s.sc), width: Math.max(1.5, s.H * 0.005), alpha: 1 }, function (f) {
+      var p = prog(f, s), b = 4 / 9, cv = p < b ? iq(p / b) : 1 - oq((p - b) / (1 - b));
+      var rx = s.W * 0.8 * Math.pow(Math.max(1e-4, 1 - cv), 0.22), ry = s.H * 0.86 * Math.max(0, 1 - cv);
+      return { 'scale.x': Math.max(1, rx), 'scale.y': Math.max(1, ry), alpha: (cv < 0.003 || ry <= 1) ? 0 : cl(cv * 2) };
+    });
+});
+
+/* 5. xrBorderPunch */
+reg('xrBorderPunch', function (c, s) {
+  var M = Math.min(s.W, s.H), lw = Math.max(1, M * 0.003), A = cl(s.amp, 0.5, 1.3), T0K = M * 0.055 * A;
+  function envAt(p) { return p < 0.2 ? E.outBack(p / 0.2, 2) : 1 - E.inOutCubic((p - 0.2) / 0.8); }
+  var target = H.rigTarget(c, 'xrBorderPunch', s);
+  C.sample(c.graph, target, s.f0, s.f1, function (f) {
+    var e = envAt(prog(f, s)), t = T0K * e < 0.5 ? 0 : T0K * e, z = t > 0 ? 1 - 0.07 * A * e : 1;
+    return { 'scale.x': Math.max(0.1, z), 'scale.y': Math.max(0.1, z) };
+  });
+  var borderHole = Object.create(null), bgHole = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var e = envAt(prog(f, s)), t = T0K * e < 0.5 ? 0 : T0K * e, z = t > 0 ? 1 - 0.07 * A * e : 1;
+    borderHole[f] = t > 0 ? [rectPoly(t, t, s.W - t, s.H - t, s.W, s.H)] : [rectPoly(0, 0, s.W, s.H, s.W, s.H)];
+    bgHole[f] = z < 1 ? [rectPoly(s.W * (1 - z) / 2, s.H * (1 - z) / 2, s.W * (1 + z) / 2, s.H * (1 + z) / 2, s.W, s.H)] : [rectPoly(0, 0, s.W, s.H, s.W, s.H)];
+  }
+  var bgId = addOverlay(c, s.f0, s.f1, 'FX BorderPunch ground @' + s.f0, G.rect(-s.W / 2 - 4, -s.H / 2 - 4, s.W + 8, s.H + 8), { fill: s.sc.bg, alpha: 1 });
+  H.multiClip(c.graph, bgId, bgHole, true, 'Ground hole', c.options);
+  var brId = addOverlay(c, s.f0, s.f1, 'FX BorderPunch border @' + s.f0, G.rect(-s.W / 2 - 4, -s.H / 2 - 4, s.W + 8, s.H + 8), { fill: pop(s.sc), alpha: 1 });
+  H.multiClip(c.graph, brId, borderHole, true, 'Border hole', c.options);
+  addOverlay(c, s.f0, s.f1, 'FX BorderPunch line @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { stroke: s.sc.fg, width: lw, alpha: 1 }, function (f) {
+    var e = envAt(prog(f, s)), t = T0K * e < 0.5 ? 0 : T0K * e, o = t * 1.35;
+    return { 'scale.x': Math.max(1e-3, (s.W - 2 * o) / s.W), 'scale.y': Math.max(1e-3, (s.H - 2 * o) / s.H), alpha: t > 0 ? cl(e) : 0 };
+  });
+});
+
+/* 6. xrCheckerInvert */
+reg('xrCheckerInvert', function (c, s) {
+  var sd = xS(s), cell = Math.min(s.W, s.H) / (4 + (xh(sd, 1) % 2));
+  var nx = Math.ceil(s.W / cell / 2) * 2 + 1, ny = Math.ceil(s.H / cell / 2) * 2 + 1;
+  var ox = (s.W - nx * cell) / 2, oy = (s.H - ny * cell) / 2, AM = Math.min(1, cl(s.amp, 0.3, 1.6));
+  var col = H.dark(s.sc.bg) ? '#FFFFFF' : s.sc.fg;
+  for (var ph = 0; ph < 2; ph++) {
+    var contours = Object.create(null);
+    for (var f = s.f0; f < s.f1; f++) {
+      var p = prog(f, s);
+      if ((ph === 0 && p >= 0.5) || (ph === 1 && p < 0.5)) { contours[f] = []; continue; }
+      var e = (p < 0.5 ? ahr(p * 2, 0.5, 0.82) : ahr((p - 0.5) * 2, 0.18, 0.5)) * AM, sz = cell * e;
+      if (sz < 0.5) { contours[f] = []; continue; }
+      var polys = [];
+      for (var iy = 0; iy < ny; iy++) for (var ix = 0; ix < nx; ix++) {
+        if ((ix + iy) % 2 !== ph) continue;
+        var cx = ox + (ix + 0.5) * cell, cy = oy + (iy + 0.5) * cell;
+        polys.push(rectPoly(cx - sz / 2, cy - sz / 2, cx + sz / 2, cy + sz / 2, s.W, s.H));
+      }
+      contours[f] = polys;
+    }
+    var id = addOverlay(c, s.f0, s.f1, 'FX CheckerInvert ph' + (ph + 1) + ' @' + s.f0,
+      G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: col, alpha: 0.72 });
+    H.multiClip(c.graph, id, contours, false, 'Checker phase ' + ph, c.options);
+  }
+}, ['Checker invert uses high-contrast silhouette squares rather than a Difference blend mode.']);
+
+/* 7. xrClockInvert */
+reg('xrClockInvert', function (c, s) {
+  var sd = xS(s), q4 = xh(sd, 1) % 4, ccw = xr(sd, 2) < 0.5, sg = ccw ? -1 : 1, R = Math.hypot(s.W, s.H);
+  function wedgePoly(a0Deg, a1Deg) {
+    var pts = [scPt(s.W / 2, s.H / 2, s.W, s.H)], n = 20;
+    for (var i = 0; i <= n; i++) {
+      var a = (a0Deg + (a1Deg - a0Deg) * i / n) * DEG;
+      pts.push(scPt(s.W / 2 + Math.cos(a) * R, s.H / 2 + Math.sin(a) * R, s.W, s.H));
+    }
+    return pts;
+  }
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var p = prog(f, s), fa = p < 0.5 ? E.inOutCubic(p * 2) : 1, fb = p < 0.5 ? 0 : E.inOutCubic((p - 0.5) * 2);
+    var a0 = -90 + q4 * 90 + sg * 360 * fb, a1 = -90 + q4 * 90 + sg * 360 * fa;
+    contours[f] = Math.abs(a1 - a0) < 1 ? [] : [wedgePoly(a0, a1)];
+  }
+  var wId = addOverlay(c, s.f0, s.f1, 'FX ClockInvert wedge @' + s.f0,
+    G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: H.dark(s.sc.bg) ? '#FFFFFF' : s.sc.fg, alpha: 0.55 });
+  H.multiClip(c.graph, wId, contours, false, 'Clock wedge', c.options);
+  var lw = Math.max(1.5, Math.min(s.W, s.H) * 0.005);
+  addOverlay(c, s.f0, s.f1, 'FX ClockInvert hand @' + s.f0, G.rect(0, -lw / 2, R, lw), { fill: pop(s.sc), alpha: 1 }, function (f) {
+    var p = prog(f, s), fa = p < 0.5 ? E.inOutCubic(p * 2) : 1, fb = p < 0.5 ? 0 : E.inOutCubic((p - 0.5) * 2);
+    var deg = -90 + q4 * 90 + sg * 360 * (p < 0.5 ? fa : fb);
+    return { rotation: -deg, alpha: (fa - fb) < 0.002 ? 0 : 1 };
+  });
+}, ['Clock sweep renders a translucent high-contrast wedge overlay rather than a Difference pixel buffer.']);
+
+/* 8. xrColorStrobe */
+reg('xrColorStrobe', function (c, s) {
+  var sd = xS(s), cols = tints(s.sc), off = xh(sd, 1) % cols.length, dk = H.dark(s.sc.bg), AM = cl(s.amp, 0.5, 1);
+  for (var seg = 0; seg < 3; seg++) {
+    var f0 = s.f0 + Math.floor(seg * (s.f1 - s.f0) / 3);
+    var f1 = seg < 2 ? s.f0 + Math.floor((seg + 1) * (s.f1 - s.f0) / 3) : s.f1;
+    if (f1 <= f0) continue;
+    (function (col, i) {
+      addOverlay(c, f0, f1, 'FX ColorStrobe ' + (i + 1) + ' @' + s.f0,
+        G.rect(-s.W / 2, -s.H / 2, s.W, s.H), { fill: col, alpha: 1 }, function (f) {
+          var p = prog(f, s), fr = p * 3 - i, a = AM * (1 - 0.55 * fr) * (1 - p * p * p);
+          return { alpha: a < 0.01 ? 0 : cl((dk ? 0.5 : 0.4) * a) };
+        });
+    })(cols[(seg + off) % cols.length], seg);
+  }
+});
+
+/* 9. xrColumnDrop */
+reg('xrColumnDrop', function (c, s) {
+  var sd = xS(s), n = 10 + (xh(sd, 1) % 8), rev = xr(sd, 2) < 0.5, up = xr(sd, 4) < 0.3 ? -1 : 1, A = cl(s.amp, 0.5, 1.3);
+  addFullBg(c, s, 'xrColumnDrop');
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var x0 = Math.round(idx * s.W / n), x1 = Math.round((idx + 1) * s.W / n);
+      var o = (rev ? n - 1 - idx : idx) / (n - 1), cf = 0.09 + 0.15 * xr(sd, idx, 3);
+      var cln = cloneActiveCuts(c, s, 'ColDrop ' + (idx + 1));
+      var polys = Object.create(null), poly = rectPoly(x0, 0, x1, s.H, s.W, s.H);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var u = cl((prog(f, s) - o * 0.42) / 0.58), e = u < 0.38 ? iq(u / 0.38) : 1 - E.inOutCubic((u - 0.38) / 0.62);
+        return { 'position.y': -Math.round(up * s.H * cf * A * e) };
+      });
+    })(i);
+  }
+});
+
+/* 10. xrCornerFold */
+reg('xrCornerFold', function (c, s) {
+  var sd = xS(s), cn = xh(sd, 1) % 4, lw = Math.max(1, Math.min(s.W, s.H) * 0.003);
+  var F0 = Math.min(s.W, s.H) * 0.4 * cl(s.amp, 0.5, 1.3);
+  var sx = (cn & 1) ? -1 : 1, sy = (cn & 2) ? 1 : -1;
+  var cx = (cn & 1) ? s.W / 2 : -s.W / 2, cy = (cn & 2) ? -s.H / 2 : s.H / 2;
+  function tri(pts, name, paint) {
+    var norm = pts.map(function (q) { return [q[0] * sx / 100, q[1] * sy / 100]; });
+    addOverlay(c, s.f0, s.f1, name, V.commands(norm, true), paint, function (f) {
+      var fo = F0 * ahs(prog(f, s), 0.3, 0.62);
+      if (fo < 1) return { 'position.x': cx, 'position.y': cy, 'scale.x': 1, 'scale.y': 1, alpha: 0 };
+      return { 'position.x': cx, 'position.y': cy, 'scale.x': fo, 'scale.y': fo, alpha: paint.alpha == null ? 1 : paint.alpha };
+    });
+  }
+  tri([[0, 0], [100, 0], [0, 100]], 'FX CornerFold under @' + s.f0, { fill: pop(s.sc), alpha: 1 });
+  tri([[125, 0], [0, 125], [125, 125]], 'FX CornerFold shadow @' + s.f0, { fill: '#000000', alpha: 0.17 });
+  tri([[100, 0], [0, 100], [100, 100]], 'FX CornerFold flap @' + s.f0, { fill: H.mixHex(s.sc.bg, s.sc.fg, H.dark(s.sc.bg) ? 0.24 : 0.1), alpha: 1 });
+  tri([[100, 0], [0, 100], [50, 100], [100, 50]], 'FX CornerFold shade @' + s.f0, { fill: '#000000', alpha: 0.12 });
+  addOverlay(c, s.f0, s.f1, 'FX CornerFold crease @' + s.f0,
+    V.commands([[sx, 0], [0, sy]], false), { stroke: s.sc.fg, width: lw, alpha: 0.6 }, function (f) {
+      var fo = F0 * ahs(prog(f, s), 0.3, 0.62);
+      return { 'position.x': cx, 'position.y': cy, 'scale.x': Math.max(1, fo), 'scale.y': Math.max(1, fo),
+        'stroke.width': lw / Math.max(1, fo), alpha: fo >= 1 ? 0.6 : 0 };
+    });
+});
+
+/* 11. xrCrossFringe */
+reg('xrCrossFringe', function (c, s) {
+  var sd = xS(s), sw = xr(sd, 1) < 0.5, DK = 0.1 * cl(s.amp, 0.5, 1.3);
+  var gA = s.sc.ghostA || s.sc.accent, gB = s.sc.ghostB || s.sc.accent2 || s.sc.accent;
+  var cols = [sw ? gB : gA, sw ? gA : gB];
+  cols.forEach(function (col, k) {
+    var cln = cloneActiveCuts(c, s, 'CrossFringe ' + (k ? 'wide' : 'tall'), { inkOnly: true, tintColor: col, belowCuts: true });
+    C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+      var d = DK * punch(prog(f, s), 0.2); d = d < 0.002 ? 0 : d;
+      return k ? { 'scale.x': 1 + d } : { 'scale.y': 1 + d * 1.6 };
+    });
+    cln.paintables.forEach(function (pid) {
+      var n = c.graph.byId[pid], base = n.attrs.alpha == null ? 1 : n.attrs.alpha;
+      n.keys.alpha = n.keys.alpha || {};
+      for (var f = s.f0; f < s.f1; f++) {
+        var d = DK * punch(prog(f, s), 0.2);
+        n.keys.alpha[f] = { value: d >= 0.002 ? base * 0.95 : 0, type: 1 };
+      }
+    });
+  });
+});
+
+/* 12. xrCrossSplit */
+reg('xrCrossSplit', function (c, s) {
+  var sd = xS(s), M = Math.min(s.W, s.H), lw = Math.max(1, M * 0.003), G0 = M * 0.04 * cl(s.amp, 0.5, 1.3);
+  var xs = Math.round(s.W * (0.5 + xrs(sd, 1) * 0.1)), ys = Math.round(s.H * (0.5 + xrs(sd, 2) * 0.06));
+  addFullBg(c, s, 'xrCrossSplit');
+  var Q = [[0, 0, xs, ys, -1, -1], [xs, 0, s.W, ys, 1, -1], [0, ys, xs, s.H, -1, 1], [xs, ys, s.W, s.H, 1, 1]];
+  Q.forEach(function (q, idx) {
+    var cln = cloneActiveCuts(c, s, 'CrossSplit Q' + (idx + 1));
+    var polys = Object.create(null), poly = rectPoly(q[0], q[1], q[2], q[3], s.W, s.H);
+    for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+    cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+    C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+      var e = punch(prog(f, s), 0.25), g = G0 * e < 0.5 ? 0 : G0 * e;
+      return { 'position.x': q[4] * g, 'position.y': -q[5] * g };
+    });
+  });
+  var scCenter = scPt(xs, ys, s.W, s.H);
+  addOverlay(c, s.f0, s.f1, 'FX CrossSplit v @' + s.f0, G.rect(scCenter[0] - lw / 2, -s.H / 2, lw, s.H), { fill: pop(s.sc), alpha: 1 }, function (f) {
+    var e = punch(prog(f, s), 0.25), g = G0 * e;
+    return { alpha: g >= 0.5 ? cl(e * 1.3) : 0 };
+  });
+  addOverlay(c, s.f0, s.f1, 'FX CrossSplit h @' + s.f0, G.rect(-s.W / 2, scCenter[1] - lw / 2, s.W, lw), { fill: pop(s.sc), alpha: 1 }, function (f) {
+    var e = punch(prog(f, s), 0.25), g = G0 * e;
+    return { alpha: g >= 0.5 ? cl(e * 1.3) : 0 };
+  });
+});
+
+/* 13. xrCrosshair */
+reg('xrCrosshair', function (c, s) {
+  var sd = xS(s), M = Math.min(s.W, s.H), a = cl(s.amp, 0.7, 1.3);
+  var tx = Math.round(s.W * (0.5 + xrs(sd, 1) * 0.16)), ty = Math.round(s.H * (0.5 + xrs(sd, 2) * 0.12));
+  var x0 = xr(sd, 3) < 0.5 ? 0 : s.W, y0 = xr(sd, 4) < 0.5 ? 0 : s.H;
+  var lw = Math.max(1, Math.round(M * 0.004 * a)), R0 = M * 0.045 * a, tSc = scPt(tx, ty, s.W, s.H);
+  var Cpts = [[-1, -1], [1, -1], [1, 1], [-1, 1]];
+  var brCmds = [];
+  for (var i = 0; i < 4; i++) {
+    brCmds.push(['M', Cpts[i][0], Cpts[i][1] * 0.55], ['L', Cpts[i][0], Cpts[i][1]], ['L', Cpts[i][0] * 0.55, Cpts[i][1]]);
+  }
+  addOverlay(c, s.f0, s.f1, 'FX Crosshair reticle @' + s.f0, brCmds, { stroke: s.sc.fg, width: lw * 1.5, alpha: 1 }, function (f) {
+    var p = prog(f, s), q = (p - 0.38) / 0.62, r = R0 * (1 + 1.6 * E.outCubic(Math.max(0, q)));
+    return { 'position.x': tSc[0], 'position.y': tSc[1], 'scale.x': Math.max(1, r), 'scale.y': Math.max(1, r),
+      'stroke.width': lw * 1.5 / Math.max(1, r), alpha: q > 0 ? cl(1 - iq(q)) : 0 };
+  });
+  addOverlay(c, s.f0, s.f1, 'FX Crosshair vx @' + s.f0, G.rect(-lw / 2, -s.H / 2, lw, s.H), { fill: pop(s.sc), alpha: 1 }, function (f) {
+    var p = prog(f, s), pp = E.outExpo(cl(p / 0.42)), fade = p > 0.62 ? 1 - iq((p - 0.62) / 0.38) : 1;
+    var x = x0 + (tx - x0) * pp;
+    return { 'position.x': x - s.W / 2, alpha: cl(fade * cl(p * 12)) };
+  });
+  addOverlay(c, s.f0, s.f1, 'FX Crosshair hy @' + s.f0, G.rect(-s.W / 2, -lw / 2, s.W, lw), { fill: pop(s.sc), alpha: 1 }, function (f) {
+    var p = prog(f, s), pp = E.outExpo(cl(p / 0.42)), fade = p > 0.62 ? 1 - iq((p - 0.62) / 0.38) : 1;
+    var y = y0 + (ty - y0) * pp;
+    return { 'position.y': s.H / 2 - y, alpha: cl(fade * cl(p * 12)) };
+  });
+  addOverlay(c, s.f0, s.f1, 'FX Crosshair lock @' + s.f0, G.rect(-1, -1, 2, 2), { fill: '#FFFFFF', alpha: 0.7 }, function (f) {
+    var p = prog(f, s), q = (p - 0.38) / 0.62, r = R0 * (1 + 1.6 * E.outCubic(Math.max(0, q)));
+    return { 'position.x': tSc[0], 'position.y': tSc[1], 'scale.x': Math.max(1, r), 'scale.y': Math.max(1, r), alpha: (q > 0 && q < 0.25) ? 0.65 : 0 };
+  });
+});
+
+/* 14. xrDiagSlice */
+reg('xrDiagSlice', function (c, s) {
+  var sd = xS(s), th = (xr(sd, 1) < 0.5 ? 1 : -1) * (18 + 20 * xr(sd, 2)) * DEG;
+  var D = Math.hypot(s.W, s.H), cs = Math.cos(th), sn = Math.sin(th), cx = s.W / 2, cy = s.H / 2;
+  var lw = Math.max(1.5, Math.min(s.W, s.H) * 0.004), D0 = Math.min(s.W, s.H) * 0.13 * cl(s.amp, 0.5, 1.3);
+  function P(x, y) { return scPt(cx + x * cs - y * sn, cy + x * sn + y * cs, s.W, s.H); }
+  addFullBg(c, s, 'xrDiagSlice');
+  for (var hf = 0; hf < 2; hf++) {
+    (function (h) {
+      var sg = h ? -1 : 1, ux = sg * cs, uy = sg * sn;
+      var half = [P(-D, h ? 0 : -D), P(D, h ? 0 : -D), P(D, h ? D : 0), P(-D, h ? D : 0)];
+      var cln = cloneActiveCuts(c, s, 'DiagSlice ' + (h ? 'B' : 'A'));
+      var polys = Object.create(null);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = half;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var d = D0 * punch(prog(f, s), 0.3); d = d < 0.5 ? 0 : d;
+        return { 'position.x': ux * d, 'position.y': -uy * d };
+      });
+    })(hf);
+  }
+  addOverlay(c, s.f0, s.f1, 'FX DiagSlice cut @' + s.f0, G.rect(-D, -lw / 2, 2 * D, lw),
+    { fill: pop(s.sc), alpha: 1 }, function (f) {
+      var e = punch(prog(f, s), 0.3), d = D0 * e;
+      return { rotation: -(th / DEG), alpha: d >= 0.5 ? cl(e * 1.4) : 0 };
+    });
+});
+
+/* 15. xrDotWave */
+reg('xrDotWave', function (c, s) {
+  var sd = xS(s), M = Math.min(s.W, s.H), pt = M / 19, cn = xh(sd, 1) % 4;
+  var ox = (cn & 1) ? s.W : 0, oy = (cn & 2) ? s.H : 0, DG = Math.hypot(s.W, s.H), BD = DG * 0.2;
+  var rm = pt * 0.47 * cl(s.amp, 0.7, 1.05), nx = Math.ceil(s.W / pt) + 1, ny = Math.ceil(s.H / pt) + 1;
+  var col = pop(s.sc), tiers = [[0.36, 0.92], [0.72, 0.64], [0.95, 0.34]];
+  for (var iy = 0; iy < ny; iy++) for (var ix = 0; ix < nx; ix++) {
+    var x = ix * pt + (iy % 2 ? pt / 2 : 0), y = iy * pt;
+    var dist = Math.hypot(x - ox, y - oy);
+    if (dist > DG + BD * 1.2) continue;
+    (function (px, py, dd) {
+      var pSc = scPt(px, py, s.W, s.H);
+      addOverlay(c, s.f0, s.f1, 'FX DotWave dot @' + s.f0, G.ellipse(pSc[0], pSc[1], rm, rm), { fill: col, alpha: 1 }, function (f) {
+        var R = -BD + (DG + 2 * BD) * oq(prog(f, s)), d = Math.abs(dd - R);
+        if (d > BD * 0.92) return { 'scale.x': 0.01, 'scale.y': 0.01, alpha: 0 };
+        var scf = d < BD * 0.34 ? 0.95 : (d < BD * 0.64 ? 0.72 : 0.36);
+        return { 'position.x': pSc[0] * (1 - scf), 'position.y': pSc[1] * (1 - scf), 'scale.x': scf, 'scale.y': scf, alpha: 1 };
+      });
+    })(x, y, dist);
+  }
+});
+
+/* 16. xrDropout */
+reg('xrDropout', function (c, s) {
+  var sd = xS(s), St = xSteps(s), B = Math.max(4, Math.round(Math.min(s.W, s.H) / 10));
+  var n0 = (4 + (xh(sd, 1) % 4)) * cl(s.amp, 0.5, 1.3), nx = Math.ceil(s.W / B), ny = Math.ceil(s.H / B);
+  var lw = Math.max(1, Math.round(B * 0.05)), gc = [s.sc.ghostA || s.sc.accent, s.sc.ghostB || s.sc.accent2 || s.sc.accent];
+  St.forEach(function (step, j) {
+    var st = step.st * 29 + sd, k = cl((step.f0 - s.f0) / Math.max(1, s.f1 - s.f0 - 1));
+    var n = Math.round(n0 * (1 - k)), holeCmds = [], lineCmds = [[], []];
+    for (var i = 0; i < n; i++) {
+      var gw = 1 + (xh(st, i, 2) % 4), gh = 1 + (xh(st, i, 3) % 2);
+      var x = (xh(st, i, 4) % Math.max(1, nx - gw + 1)) * B, y = Math.round(ny * (0.2 + 0.6 * xr(st, i, 5)) - gh / 2) * B;
+      holeCmds = holeCmds.concat(G.rect(x - s.W / 2, s.H / 2 - (y + gh * B), gw * B, gh * B));
+      var cc = xr(st, i, 6) < 0.5 ? 0 : 1;
+      var lrect = xr(st, i, 7) < 0.5
+        ? G.rect(x - s.W / 2, s.H / 2 - (y + gh * B), lw, gh * B)
+        : G.rect(x - s.W / 2, s.H / 2 - (y + gh * B), gw * B, lw);
+      lineCmds[cc] = lineCmds[cc].concat(lrect);
+    }
+    for (var cc2 = 0; cc2 < 2; cc2++) {
+      if (lineCmds[cc2].length) addOverlay(c, step.f0, step.f1, 'FX Dropout edge ' + j + '_' + cc2, lineCmds[cc2], { fill: gc[cc2], alpha: 0.8 });
+    }
+    if (holeCmds.length) addOverlay(c, step.f0, step.f1, 'FX Dropout holes ' + j, holeCmds, { fill: s.sc.bg, alpha: 1 });
+  });
+});
+
+/* 17. xrEdgeBars */
+reg('xrEdgeBars', function (c, s) {
+  var sd = xS(s), vert = xr(sd, 1) < (s.W >= s.H ? 0.3 : 0.55), LL = vert ? s.W : s.H, M = vert ? s.H : s.W;
+  var col = pop(s.sc), TK = LL * 0.06 * cl(s.amp, 0.5, 1.3);
+  function thAt(p) { var e = p < 0.14 ? E.outExpo(p / 0.14) : Math.pow(Math.max(0, 1 - (p - 0.14) / 0.86), 1.6); return { e: e, th: TK * e < 0.5 ? 0 : TK * e }; }
+  [0, 1].forEach(function (side) {
+    addOverlay(c, s.f0, s.f1, 'FX EdgeBars bar ' + side + ' @' + s.f0,
+      vert ? G.rect(0, -M / 2, 1, M) : G.rect(-M / 2, -1, M, 1), { fill: col, alpha: 1 }, function (f) {
+        var r = thAt(prog(f, s)), th = r.th;
+        if (th <= 0) return { alpha: 0 };
+        return vert
+          ? { 'position.x': side ? s.W / 2 - th : -s.W / 2, 'scale.x': th, alpha: 1 }
+          : { 'position.y': side ? -s.H / 2 + th : s.H / 2, 'scale.y': th, alpha: 1 };
+      });
+    addOverlay(c, s.f0, s.f1, 'FX EdgeBars glow ' + side + ' @' + s.f0,
+      vert ? G.rect(0, -M / 2, 1, M) : G.rect(-M / 2, -1, M, 1), { fill: col, alpha: 0.25 }, function (f) {
+        var r = thAt(prog(f, s));
+        return vert
+          ? { 'position.x': side ? s.W / 2 - LL * 0.1 : -s.W / 2, 'scale.x': LL * 0.1, alpha: r.th > 0 ? cl(0.28 * r.e) : 0 }
+          : { 'position.y': side ? -s.H / 2 + LL * 0.1 : s.H / 2, 'scale.y': LL * 0.1, alpha: r.th > 0 ? cl(0.28 * r.e) : 0 };
+      });
+    addOverlay(c, s.f0, s.f1, 'FX EdgeBars line ' + side + ' @' + s.f0,
+      vert ? G.rect(0, -M / 2, 1, M) : G.rect(-M / 2, -1, M, 1), { fill: s.sc.fg, alpha: 1 }, function (f) {
+        var r = thAt(prog(f, s)), th = r.th;
+        if (th <= 0) return { alpha: 0 };
+        var lw = Math.max(0.5, th * 0.15), a = side ? LL - th * 1.45 : th * 1.3;
+        return vert
+          ? { 'position.x': a - s.W / 2, 'scale.x': lw, alpha: cl(r.e) }
+          : { 'position.y': s.H / 2 - a, 'scale.y': lw, alpha: cl(r.e) };
+      });
+  });
+});
+
+/* 18. xrExposureDip */
+reg('xrExposureDip', function (c, s) {
+  var dk = H.dark(s.sc.bg), AM = cl(s.amp, 0.6, 1.1);
+  H.fullRect(c, s, 'FX ExposureDip dim @' + s.f0, shade(s.sc), function (p) {
+    var d = p < 0.28 ? E.outCubic(p / 0.28) : 1 - E.inOutCubic(cl((p - 0.28) / 0.34));
+    return d > 0.005 ? (dk ? 0.86 : 0.7) * AM * d : 0;
+  });
+  H.fullRect(c, s, 'FX ExposureDip over @' + s.f0, dk ? s.sc.fg : '#FFFFFF', function (p) {
+    var o = p > 0.55 ? H.bell((p - 0.55) / 0.45) : 0;
+    return o > 0.005 ? (dk ? 0.13 : 0.4) * AM * o : 0;
+  });
+});
+
+/* 19. xrFlipTiles */
+reg('xrFlipTiles', function (c, s) {
+  var sd = xS(s), M = Math.min(s.W, s.H), gx = Math.max(3, Math.round(s.W / (M / 3.2))), gy = Math.max(3, Math.round(s.H / (M / 3.2)));
+  var rev = xr(sd, 1) < 0.5, back = pop(s.sc), back2 = H.mixHex(back, s.sc.bg, 0.35), part = 0.55 + 0.35 * cl(s.amp - 0.3, 0, 1);
+  function ccAt(p, o) { var u = cl((p - o * 0.45) / 0.55); return (u <= 0 || u >= 1) ? 2 : Math.cos(TAU * E.inOutCubic(u)); }
+  for (var j = 0; j < gy; j++) for (var i = 0; i < gx; i++) {
+    if (xr(sd, i, j, 2) > part) continue;
+    (function (ix, iy) {
+      var x0 = Math.round(ix * s.W / gx), x1 = Math.round((ix + 1) * s.W / gx);
+      var y0 = Math.round(iy * s.H / gy), y1 = Math.round((iy + 1) * s.H / gy);
+      var tw = x1 - x0, th = y1 - y0, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+      var o = ((rev ? gx - 1 - ix : ix) + iy) / Math.max(1, gx + gy - 2), pSc = scPt(cx, cy, s.W, s.H);
+      addOverlay(c, s.f0, s.f1, 'FX FlipTiles bg ' + ix + '_' + iy, G.rect(pSc[0] - tw / 2, pSc[1] - th / 2, tw, th), { fill: s.sc.bg, alpha: 1 }, function (f) {
+        return { alpha: ccAt(prog(f, s), o) <= 1 ? 1 : 0 };
+      });
+      var cln = cloneActiveCuts(c, s, 'FlipTile ' + ix + '_' + iy);
+      var polys = Object.create(null), poly = rectPoly(x0, y0, x1, y1, s.W, s.H);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var cv = ccAt(prog(f, s), o), sx = cv > 1 ? 1 : Math.max(0.01, cv);
+        return { 'position.x': pSc[0] * (1 - sx), 'scale.x': sx };
+      });
+      cln.paintables.forEach(function (pid) {
+        var nd = c.graph.byId[pid], base = nd.attrs.alpha == null ? 1 : nd.attrs.alpha;
+        nd.keys.alpha = nd.keys.alpha || {};
+        for (var f = s.f0; f < s.f1; f++) {
+          var cv = ccAt(prog(f, s), o);
+          nd.keys.alpha[f] = { value: cv > 0 ? base : 0, type: 1 };
+        }
+      });
+      addOverlay(c, s.f0, s.f1, 'FX FlipTiles back ' + ix + '_' + iy, G.rect(-tw / 2, -th / 2, tw, th),
+        { fill: (ix + iy) % 2 ? back : back2, alpha: 1 }, function (f) {
+          var cv = ccAt(prog(f, s), o);
+          return cv < 0 ? { 'position.x': pSc[0], 'position.y': pSc[1], 'scale.x': Math.max(0.01, -cv), alpha: 1 } : { alpha: 0 };
+        });
+    })(i, j);
+  }
+});
+
+/* 20. xrFourTints */
+reg('xrFourTints', function (c, s) {
+  var sd = xS(s), base = tints(s.sc), cols = [], xs = Math.round(s.W / 2), ys = Math.round(s.H / 2);
+  for (var i = 0; i < 4; i++) cols.push(i < base.length ? base[i] : H.mixHex(base[i % base.length], s.sc.fg, 0.5));
+  var R0 = xh(sd, 1) % 4, AM = Math.min(1, s.amp);
+  var Q = [[0, 0, xs, ys], [xs, 0, s.W - xs, ys], [xs, ys, s.W - xs, s.H - ys], [0, ys, xs, s.H - ys]];
+  for (var seg = 0; seg < 4; seg++) {
+    var f0 = s.f0 + Math.floor(seg * (s.f1 - s.f0) / 4);
+    var f1 = seg < 3 ? s.f0 + Math.floor((seg + 1) * (s.f1 - s.f0) / 4) : s.f1;
+    if (f1 <= f0) continue;
+    for (var q = 0; q < 4; q++) {
+      var col = cols[(q + seg + R0) % 4], r = Q[q], pSc = scPt(r[0], r[1] + r[3], s.W, s.H);
+      addOverlay(c, f0, f1, 'FX FourTints s' + seg + '_q' + q, G.rect(pSc[0], pSc[1], r[2], r[3]), { fill: col, alpha: 0.45 }, function (f) {
+        var a = ahr(prog(f, s), 0.12, 0.7) * AM;
+        return { alpha: a < 0.01 ? 0 : cl(0.45 * a) };
+      });
+    }
+  }
+});
+
+/* 21. xrLampFlicker */
+reg('xrLampFlicker', function (c, s) {
+  var sd = xS(s), St = xSteps(s), AM = cl(s.amp, 0.6, 1.15), col = shade(s.sc);
+  H.fullRect(c, s, 'FX LampFlicker @' + s.f0, col, function (p, df, f) {
+    var st = St[0].st;
+    for (var j = 0; j < St.length; j++) if (f >= St[j].f0 && f < St[j].f1) { st = St[j].st; break; }
+    var v = xr(st, sd, 1), lvl = p < 0.12 ? 0.8 : (v < 0.3 ? 0.78 : (v < 0.55 ? 0.42 : (v < 0.75 ? 0.14 : 0)));
+    var a = Math.min(0.88, lvl * AM * Math.pow(Math.max(0, 1 - p), 0.6));
+    return a < 0.01 ? 0 : a;
+  });
+});
+
+/* 22. xrLetterSnap */
+reg('xrLetterSnap', function (c, s) {
+  var list = [s.sc.ink, s.sc.fg, s.sc.bg], dkst = null;
+  for (var i = 0; i < list.length; i++) if (list[i] && (dkst === null || H.lum(list[i]) < H.lum(dkst))) dkst = list[i];
+  var col = H.contrast(dkst, s.sc.bg) > 1.25 ? dkst : H.mixHex(s.sc.bg, s.sc.fg, 0.2);
+  var lw = Math.max(1, s.H * 0.003), HB = s.H * (s.W >= s.H ? 0.125 : 0.075) * cl(s.amp, 0.7, 1.2);
+  function hbAt(p) { var e = p < 0.22 ? E.outBack(p / 0.22, 2.2) : (p > 0.7 ? 1 - E.inCubic((p - 0.7) / 0.3) : 1); return { e: e, hb: HB * e < 0.5 ? 0 : HB * e }; }
+  [0, 1].forEach(function (bot) {
+    addOverlay(c, s.f0, s.f1, 'FX LetterSnap bar ' + (bot ? 'B' : 'T') + ' @' + s.f0,
+      G.rect(-s.W / 2, bot ? 0 : -1, s.W, 1), { fill: col, alpha: 1 }, function (f) {
+        var r = hbAt(prog(f, s));
+        return r.hb > 0 ? { 'position.y': bot ? -s.H / 2 : s.H / 2, 'scale.y': r.hb, alpha: 1 } : { alpha: 0 };
+      });
+    addOverlay(c, s.f0, s.f1, 'FX LetterSnap line ' + (bot ? 'B' : 'T') + ' @' + s.f0,
+      G.rect(-s.W / 2, -lw / 2, s.W, lw), { fill: pop(s.sc), alpha: 1 }, function (f) {
+        var r = hbAt(prog(f, s));
+        if (r.hb <= 0) return { alpha: 0 };
+        var y = bot ? s.H - r.hb - lw / 2 : r.hb + lw / 2;
+        return { 'position.y': s.H / 2 - y, alpha: cl(r.e) };
+      });
+  });
+});
+
+/* 23. xrLongShadow */
+reg('xrLongShadow', function (c, s) {
+  var sd = xS(s), col = xr(sd, 1) < 0.6 ? s.sc.accent : (s.sc.accent2 || s.sc.accent);
+  var ang = (xr(sd, 2) < 0.5 ? 45 : 135) * DEG, L0 = Math.min(s.W, s.H) * 0.085 * cl(s.amp, 0.5, 1.3);
+  var steps = 8, dxU = Math.cos(ang), dyU = Math.sin(ang);
+  for (var k = steps; k >= 1; k--) {
+    (function (idx) {
+      var fr = idx / steps, cln = cloneActiveCuts(c, s, 'LongShadow ' + idx, { inkOnly: true, tintColor: col, belowCuts: true });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var L = L0 * ahs(prog(f, s), 0.3, 0.6); L = L < 1 ? 0 : L;
+        return { 'position.x': dxU * L * fr, 'position.y': -dyU * L * fr };
+      });
+      cln.paintables.forEach(function (pid) {
+        var nd = c.graph.byId[pid], base = nd.attrs.alpha == null ? 1 : nd.attrs.alpha;
+        nd.keys.alpha = nd.keys.alpha || {};
+        for (var f = s.f0; f < s.f1; f++) {
+          var L = L0 * ahs(prog(f, s), 0.3, 0.6);
+          nd.keys.alpha[f] = { value: L >= 1 ? base * (0.95 - fr * 0.25) : 0, type: 1 };
+        }
+      });
+    })(k);
+  }
+});
+
+/* 24. xrLoupe */
+reg('xrLoupe', function (c, s) {
+  var sd = xS(s), M = Math.min(s.W, s.H), dir = xr(sd, 1) < 0.5, lw = Math.max(1.5, M * 0.007);
+  var R0 = M * 0.21 * Math.sqrt(cl(s.amp, 0.5, 1.3)), YB = s.H * (0.5 + xrs(sd, 2) * 0.05);
+  function lensAt(p) {
+    var env = p < 0.22 ? E.outBack(p / 0.22, 1.4) : (p > 0.75 ? 1 - E.inCubic((p - 0.75) / 0.25) : 1);
+    var r = R0 * env >= 1 ? R0 * env : 0, q = ios(p);
+    var x = s.W * (dir ? 0.26 + 0.48 * q : 0.74 - 0.48 * q), y = YB - Math.sin(q * PI) * s.H * 0.03;
+    return { r: r, x: x, y: y, sc: scPt(x, y, s.W, s.H) };
+  }
+  function lensPoly(st) {
+    if (st.r <= 0) return [];
+    var out = [];
+    for (var i = 0; i < 28; i++) {
+      var a = i / 28 * TAU;
+      out.push([st.sc[0] + Math.cos(a) * st.r, st.sc[1] + Math.sin(a) * st.r]);
+    }
+    return [out];
+  }
+  addOverlay(c, s.f0, s.f1, 'FX Loupe bg @' + s.f0, G.ellipse(0, 0, 1, 1), { fill: s.sc.bg, alpha: 1 }, function (f) {
+    var st = lensAt(prog(f, s));
+    return st.r > 0 ? { 'position.x': st.sc[0], 'position.y': st.sc[1], 'scale.x': st.r, 'scale.y': st.r, alpha: 1 } : { alpha: 0 };
+  });
+  var cln = cloneActiveCuts(c, s, 'Loupe zoom');
+  C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+    var st = lensAt(prog(f, s));
+    return { 'position.x': st.sc[0] * (1 - 1.6), 'position.y': st.sc[1] * (1 - 1.6), 'scale.x': 1.6, 'scale.y': 1.6 };
+  });
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) contours[f] = lensPoly(lensAt(prog(f, s)));
+  cln.paintables.forEach(function (id) { H.multiClip(c.graph, id, contours, false, 'Loupe circle', c.options); });
+  addOverlay(c, s.f0, s.f1, 'FX Loupe rim @' + s.f0, G.ellipse(0, 0, 1, 1), { stroke: s.sc.fg, width: lw, alpha: 1 }, function (f) {
+    var st = lensAt(prog(f, s));
+    return st.r > 0 ? { 'position.x': st.sc[0], 'position.y': st.sc[1], 'scale.x': st.r, 'scale.y': st.r, 'stroke.width': lw / st.r, alpha: 1 } : { alpha: 0 };
+  });
+  var glintPts = H.arcPts(0, 0, 1, -138, -86, 10);
+  addOverlay(c, s.f0, s.f1, 'FX Loupe glint @' + s.f0, V.commands(glintPts, false), { stroke: pop(s.sc), width: lw * 0.6, alpha: 0.8 }, function (f) {
+    var st = lensAt(prog(f, s)), rr = st.r > lw * 3 ? st.r - lw * 1.6 : 0;
+    return rr > 0 ? { 'position.x': st.sc[0], 'position.y': st.sc[1], 'scale.x': rr, 'scale.y': rr, 'stroke.width': lw * 0.6 / rr, alpha: 0.8 } : { alpha: 0 };
+  });
+});
+
+/* 25. xrMoire */
+reg('xrMoire', function (c, s) {
+  var sd = xS(s), M = Math.min(s.W, s.H), gp = Math.max(4, M / 22), n = Math.ceil(Math.hypot(s.W, s.H) / gp) + 1;
+  var AL = 0.2 * cl(s.amp, 0.6, 1.1), A0 = xr(sd, 1) * TAU;
+  var cmds = [];
+  for (var i = 1; i <= n; i++) cmds = cmds.concat(G.ellipse(0, 0, i * gp, i * gp));
+  [0, 1].forEach(function (k) {
+    addOverlay(c, s.f0, s.f1, 'FX Moire set ' + (k + 1) + ' @' + s.f0, cmds, { stroke: s.sc.fg, width: gp * 0.32, alpha: 1 }, function (f) {
+      var p = prog(f, s), al = AL * ahs(p, 0.25, 0.6), an = A0 + p * 0.9, sep = M * (0.03 + 0.1 * p), sg = k ? 1 : -1;
+      return { 'position.x': sg * Math.cos(an) * sep, 'position.y': -sg * Math.sin(an) * sep, alpha: al < 0.01 ? 0 : cl(al) };
+    });
+  });
+});
+
+/* 26. xrNested */
+reg('xrNested', function (c, s) {
+  var sd = xS(s), cx = s.W * (0.5 + xrs(sd, 1) * 0.08), cy = s.H * (0.5 + xrs(sd, 2) * 0.06);
+  var piv = scPt(cx, cy, s.W, s.H), lw = Math.max(1, Math.min(s.W, s.H) * 0.004), FK = 0.27 * cl(s.amp, 0.5, 1.3);
+  function ffAt(p) { var e = punch(p, 0.3), ff = 1 - FK * e; return { e: e, ff: ff > 0.997 ? 1 : ff }; }
+  for (var i = 1; i <= 4; i++) {
+    (function (idx) {
+      var cln = cloneActiveCuts(c, s, 'Nested ' + idx);
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var st = ffAt(prog(f, s)), z = Math.pow(st.ff, idx);
+        return { 'position.x': piv[0] * (1 - z), 'position.y': piv[1] * (1 - z), 'scale.x': z, 'scale.y': z };
+      });
+      cln.paintables.forEach(function (pid) {
+        var nd = c.graph.byId[pid], base = nd.attrs.alpha == null ? 1 : nd.attrs.alpha;
+        nd.keys.alpha = nd.keys.alpha || {};
+        for (var f = s.f0; f < s.f1; f++) nd.keys.alpha[f] = { value: ffAt(prog(f, s)).ff < 1 ? base : 0, type: 1 };
+      });
+      addOverlay(c, s.f0, s.f1, 'FX Nested frame ' + idx + ' @' + s.f0, G.rect(-s.W / 2, -s.H / 2, s.W, s.H),
+        { stroke: pop(s.sc), width: lw, alpha: 1 }, function (f) {
+          var st = ffAt(prog(f, s)), z = Math.pow(st.ff, idx);
+          return st.ff < 1
+            ? { 'position.x': piv[0] * (1 - z), 'position.y': piv[1] * (1 - z), 'scale.x': z, 'scale.y': z, 'stroke.width': lw / Math.max(0.1, z), alpha: 0.85 * cl(st.e * 1.5) }
+            : { alpha: 0 };
+        });
+    })(i);
+  }
+});
+
+/* 27. xrPixelSparks */
+reg('xrPixelSparks', function (c, s) {
+  var sd = xS(s), St = xSteps(s), q = Math.max(2, Math.round(Math.min(s.W, s.H) * 0.016));
+  var cols = tints(s.sc).concat([s.sc.fg]);
+  St.forEach(function (step, j) {
+    var st = step.st * 17 + sd, kk = cl((step.f0 - s.f0) / Math.max(1, s.f1 - s.f0 - 1));
+    var n = Math.round(54 * cl(s.amp, 0.5, 1.3) * Math.pow(Math.sin(PI * kk), 0.7));
+    if (n < 1) return;
+    var by = cols.map(function () { return []; });
+    for (var i = 0; i < n; i++) {
+      var z = q * (1 + (xh(st, i, 1) % 3)), x = Math.floor(xr(st, i, 2) * s.W / q) * q, y = Math.floor(xr(st, i, 3) * s.H / q) * q;
+      var w = xr(st, i, 5) < 0.3 ? z * (2 + (xh(st, i, 6) % 4)) : z, h = xr(st, i, 5) < 0.3 ? q : z;
+      by[xh(st, i, 4) % cols.length] = by[xh(st, i, 4) % cols.length].concat(G.rect(x - s.W / 2, s.H / 2 - (y + h), w, h));
+    }
+    cols.forEach(function (col, cIdx) {
+      if (by[cIdx].length) addOverlay(c, step.f0, step.f1, 'FX PixelSparks ' + j + '_' + cIdx, by[cIdx], { fill: col, alpha: 1 });
+    });
+  });
+});
+
+/* 28. xrQuadCycle */
+reg('xrQuadCycle', function (c, s) {
+  var sd = xS(s), cwD = xr(sd, 1) < 0.5 ? 1 : 3, hw = s.W / 2, hh = s.H / 2, SL = [[0, 0], [1, 0], [1, 1], [0, 1]];
+  var SK = 0.08 * cl(s.amp, 0.5, 1.3);
+  addFullBg(c, s, 'xrQuadCycle');
+  for (var q = 0; q < 4; q++) {
+    (function (idx) {
+      var x0 = SL[idx][0] * hw, y0 = SL[idx][1] * hh, piv = scPt(x0 + hw / 2, y0 + hh / 2, s.W, s.H);
+      var cln = cloneActiveCuts(c, s, 'QuadCycle ' + (idx + 1));
+      var polys = Object.create(null), poly = rectPoly(x0, y0, x0 + hw, y0 + hh, s.W, s.H);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var p = prog(f, s), ff = p * 4, j = Math.min(3, Math.floor(ff)), fr = E.inOutCubic(ff - j), sh = 1 - SK * H.bell(p);
+        var a = SL[(idx + j * cwD) % 4], b = SL[(idx + (j + 1) * cwD) % 4];
+        var dstSc = scPt((a[0] + (b[0] - a[0]) * fr + 0.5) * hw, (a[1] + (b[1] - a[1]) * fr + 0.5) * hh, s.W, s.H);
+        return { 'position.x': dstSc[0] - piv[0] * sh, 'position.y': dstSc[1] - piv[1] * sh, 'scale.x': sh, 'scale.y': sh };
+      });
+    })(q);
+  }
+});
+
+/* 29. xrRibbonTwist */
+reg('xrRibbonTwist', function (c, s) {
+  var sd = xS(s), Np = 16, down = xr(sd, 1) < 0.5;
+  function ccAt(p, o) { var u = cl((p - 0.5 * o) / 0.5); return (u <= 0 || u >= 1) ? 1 : Math.cos(TAU * E.inOutCubic(u)); }
+  addFullBg(c, s, 'xrRibbonTwist');
+  for (var i = 0; i < Np; i++) {
+    (function (idx) {
+      var y0 = Math.floor(idx * s.H / Np), y1 = Math.floor((idx + 1) * s.H / Np), o = down ? idx / Np : 1 - idx / Np;
+      var cln = cloneActiveCuts(c, s, 'RibbonTwist ' + (idx + 1));
+      var polys = Object.create(null), poly = rectPoly(0, y0, s.W, y1, s.W, s.H);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var cv = ccAt(prog(f, s), o);
+        return { 'scale.x': Math.abs(cv) < 0.01 ? (cv < 0 ? -0.01 : 0.01) : cv };
+      });
+      var yc = s.H / 2 - (y0 + y1) / 2, rh = Math.max(1, y1 - y0);
+      addOverlay(c, s.f0, s.f1, 'FX RibbonTwist shade ' + (idx + 1), G.rect(-s.W / 2, yc - rh / 2, s.W, rh),
+        { fill: '#000000', alpha: 1 }, function (f) {
+          var ac = Math.abs(ccAt(prog(f, s), o));
+          return { 'scale.x': Math.max(0.01, ac), alpha: cl(0.22 * (1 - ac)) };
+        });
+    })(i);
+  }
+});
+
+/* 30. xrScanBurst */
+reg('xrScanBurst', function (c, s) {
+  var sd = xS(s), AM = Math.min(1, s.amp), P0 = Math.max(4, s.H / 150), DR = xr(sd, 1) < 0.5 ? 1 : -1;
+  var nBars = Math.min(24, Math.ceil(s.H / (s.H / 28)) + 2), hl = Math.max(1, s.H * 0.0015);
+  for (var i = 0; i < nBars; i++) {
+    (function (idx) {
+      addOverlay(c, s.f0, s.f1, 'FX ScanBurst bar ' + (idx + 1) + ' @' + s.f0, G.rect(-s.W / 2, 0, s.W, 1),
+        { fill: s.sc.bg, alpha: 1 }, function (f) {
+          var p = prog(f, s), a = Math.pow(Math.max(0, 1 - p), 0.9) * AM;
+          var PP = P0 + (s.H / 8 - P0) * iq(p), th = PP * 0.5 * (0.35 + 0.65 * a), o = ((p * s.H * 0.35 * DR) % PP + PP) % PP;
+          var y = o - PP + idx * PP;
+          if (a < 0.01 || y > s.H || y + th < 0) return { alpha: 0 };
+          return { 'position.y': s.H / 2 - (y + th), 'scale.y': Math.max(0.5, th), alpha: cl(a * 1.6) };
+        });
+      addOverlay(c, s.f0, s.f1, 'FX ScanBurst light ' + (idx + 1) + ' @' + s.f0, G.rect(-s.W / 2, -hl / 2, s.W, hl),
+        { fill: pop(s.sc), alpha: 1 }, function (f) {
+          var p = prog(f, s), a = Math.pow(Math.max(0, 1 - p), 0.9) * AM;
+          var PP = P0 + (s.H / 8 - P0) * iq(p), th = PP * 0.5 * (0.35 + 0.65 * a), o = ((p * s.H * 0.35 * DR) % PP + PP) % PP;
+          var y = o - PP + th + hl / 2 + idx * PP;
+          if (a < 0.01 || PP <= s.H / 40 || y > s.H || y < 0) return { alpha: 0 };
+          return { 'position.y': s.H / 2 - y, alpha: cl(0.5 * a) };
+        });
+    })(i);
+  }
+});
+
+/* 31. xrShearSnap */
+reg('xrShearSnap', function (c, s) {
+  var sd = xS(s), sg = xr(sd, 1) < 0.5 ? 1 : -1, hor = xr(sd, 2) < 0.75;
+  var K = sg * 0.24 * cl(s.amp, 0.5, 1.3) * (hor ? 1 : 0.55);
+  function decomp(k) {
+    if (Math.abs(k) < 1e-6) return [0, 1, 1, 0];
+    var v = 0.5 * Math.atan2(2 * k, -k * k), a = Math.cos(v) + k * Math.sin(v), b = Math.sin(v), sc = Math.hypot(a, b);
+    return [Math.atan2(b, a) / DEG, sc, 1 / sc, -v / DEG];
+  }
+  var rIn = H.rigTarget(c, 'xrShearSnap in', s), rStr = H.rigTarget(c, 'xrShearSnap stretch', s), rOut = H.rigTarget(c, 'xrShearSnap out', s);
+  C.sample(c.graph, rIn, s.f0, s.f1, function (f) {
+    var sk = K * spring(prog(f, s), 0.2); sk = Math.abs(sk) < 0.0015 ? 0 : sk;
+    var d = decomp(hor ? -sk : sk);
+    return { rotation: (hor ? 0 : -90) + d[3] };
+  });
+  C.sample(c.graph, rStr, s.f0, s.f1, function (f) {
+    var sk = K * spring(prog(f, s), 0.2); sk = Math.abs(sk) < 0.0015 ? 0 : sk;
+    var d = decomp(hor ? -sk : sk);
+    return { 'scale.x': d[1], 'scale.y': d[2] };
+  });
+  C.sample(c.graph, rOut, s.f0, s.f1, function (f) {
+    var sk = K * spring(prog(f, s), 0.2); sk = Math.abs(sk) < 0.0015 ? 0 : sk;
+    var d = decomp(hor ? -sk : sk);
+    return { rotation: (hor ? 0 : 90) + d[0] };
+  });
+  var marginContours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var sk = K * spring(prog(f, s), 0.2); sk = Math.abs(sk) < 0.0015 ? 0 : sk;
+    if (sk === 0) { marginContours[f] = [rectPoly(0, 0, s.W, s.H, s.W, s.H)]; continue; }
+    var hw = s.W / 2, hh = s.H / 2;
+    marginContours[f] = hor
+      ? [[[-hw + sk * hh, hh], [hw + sk * hh, hh], [hw - sk * hh, -hh], [-hw - sk * hh, -hh]]]
+      : [[[-hw, hh - sk * hw], [hw, hh + sk * hw], [hw, -hh + sk * hw], [-hw, -hh - sk * hw]]];
+  }
+  var mId = addOverlay(c, s.f0, s.f1, 'FX ShearSnap margins @' + s.f0,
+    G.rect(-s.W / 2 - 4, -s.H / 2 - 4, s.W + 8, s.H + 8), { fill: s.sc.bg, alpha: 1 });
+  H.multiClip(c.graph, mId, marginContours, true, 'Shear margins', c.options);
+});
+
+/* 32. xrSlotReel */
+reg('xrSlotReel', function (c, s) {
+  var sd = xS(s), n = (s.W >= s.H ? 3 : 2) + (xh(sd, 1) % 2), lag = 0.14, par = xh(sd, 2) % 2;
+  var DN = Math.max(0.1, 1 - (n - 1) * lag);
+  addFullBg(c, s, 'xrSlotReel');
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var x0 = Math.round(idx * s.W / n), x1 = Math.round((idx + 1) * s.W / n), dir = (idx + par) % 2 ? -1 : 1;
+      [0, 1].forEach(function (wrapCopy) {
+        var cln = cloneActiveCuts(c, s, 'SlotReel ' + idx + '_' + wrapCopy);
+        C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+          var u = cl((prog(f, s) - idx * lag) / DN), shift = E.inOutCubic(u) * s.H * dir;
+          return { 'position.y': -(shift - wrapCopy * dir * s.H) };
+        });
+        var polys = Object.create(null), poly = rectPoly(x0, 0, x1, s.H, s.W, s.H);
+        for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+        cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      });
+    })(i);
+  }
+  var lw = Math.max(1, Math.round(Math.min(s.W, s.H) * 0.003));
+  for (var k = 1; k < n; k++) {
+    var x = Math.round(k * s.W / n) - s.W / 2;
+    addOverlay(c, s.f0, s.f1, 'FX SlotReel div ' + k + ' @' + s.f0, G.rect(x - lw / 2, -s.H / 2, lw, s.H), { fill: s.sc.fg, alpha: 0.5 }, function (f) {
+      return { alpha: 0.5 * H.bell(prog(f, s)) };
+    });
+  }
+});
+
+/* 33. xrSpotlight */
+reg('xrSpotlight', function (c, s) {
+  var sd = xS(s), r = Math.min(s.W, s.H) * 0.3, dir = xr(sd, 1) < 0.5, AM = cl(s.amp, 0.6, 1.1);
+  var Y = s.H * (0.5 + xrs(sd, 2) * 0.06), maxAl = H.dark(s.sc.bg) ? 0.8 : 0.6, col = shade(s.sc);
+  function circlePoly(cx, cy, rad) {
+    var out = [];
+    for (var i = 0; i < 28; i++) { var a = i / 28 * TAU; out.push([cx + Math.cos(a) * rad, cy + Math.sin(a) * rad]); }
+    return [out];
+  }
+  [[0.75, 0.35], [1.0, 0.35], [1.28, 0.3]].forEach(function (tier, ti) {
+    var contours = Object.create(null);
+    for (var f = s.f0; f < s.f1; f++) {
+      var q = ios(prog(f, s)), x = s.W * (dir ? 0.2 + 0.6 * q : 0.8 - 0.6 * q), pSc = scPt(x, Y, s.W, s.H);
+      contours[f] = circlePoly(pSc[0], pSc[1], r * tier[0]);
+    }
+    var id = addOverlay(c, s.f0, s.f1, 'FX Spotlight tier ' + ti + ' @' + s.f0,
+      G.rect(-s.W / 2 - 4, -s.H / 2 - 4, s.W + 8, s.H + 8), { fill: col, alpha: 1 }, function (f) {
+        var a = ahr(prog(f, s), 0.2, 0.72) * AM;
+        return { alpha: a < 0.01 ? 0 : cl(maxAl * tier[1] * a) };
+      });
+    H.multiClip(c.graph, id, contours, true, 'Spotlight hole ' + ti, c.options);
+  });
+});
+
+/* 34. xrStretchWave */
+reg('xrStretchWave', function (c, s) {
+  var sd = xS(s), dir = xr(sd, 1) < 0.5, sig = s.W * 0.1, a = 0.85 * cl(s.amp, 0.5, 1.3);
+  for (var j = -10; j <= 10; j++) {
+    var d = j * 0.2, sy = 1 + a * Math.exp(-d * d);
+    if (sy < 1.004) continue;
+    (function (dd, scaleY) {
+      var x0 = (dd - 0.1) * sig, x1 = (dd + 0.1) * sig;
+      var cln = cloneActiveCuts(c, s, 'StretchWave ' + dd.toFixed(1));
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function () { return { 'scale.y': scaleY }; });
+      var contours = Object.create(null);
+      for (var f = s.f0; f < s.f1; f++) {
+        var p = prog(f, s), bx = s.W * (dir ? -0.3 + 1.6 * p : 1.3 - 1.6 * p);
+        contours[f] = [rectPoly(bx + x0, 0, bx + x1, s.H, s.W, s.H)];
+      }
+      cln.paintables.forEach(function (id) { H.multiClip(c.graph, id, contours, false, 'Stretch slice', c.options); });
+    })(d, sy);
+  }
+});
+
+/* 35. xrStripeMosaic */
+reg('xrStripeMosaic', function (c, s) {
+  var sd = xS(s), rows = xr(sd, 1) < 0.3, LL = rows ? s.H : s.W, nBars = 12;
+  var col1 = pop(s.sc), col2 = s.sc.fg;
+  for (var i = 0; i < nBars; i++) {
+    (function (idx) {
+      var a0 = idx * LL / nBars, bw = LL / nBars;
+      addOverlay(c, s.f0, s.f1, 'FX StripeMosaic bar ' + idx + ' @' + s.f0,
+        rows ? G.rect(-s.W / 2, s.H / 2 - (a0 + bw), s.W, bw) : G.rect(a0 - s.W / 2, -s.H / 2, bw, s.H),
+        { fill: idx % 2 ? col1 : col2, alpha: 0.32 }, function (f) {
+          var e = punch(prog(f, s), 0.3), jit = 0.4 + 0.6 * xr(sd + f, idx, 2);
+          return { alpha: e < 0.02 ? 0 : cl(0.26 * e * jit * cl(s.amp, 0.5, 1.3)) };
+        });
+    })(i);
+  }
+}, ['Mosaic pixel shader is represented as discrete translucent stripe bands pulsing across frames.']);
+
+/* 36. xrSwingEcho */
+reg('xrSwingEcho', function (c, s) {
+  var sd = xS(s), dk = H.dark(s.sc.bg), up = xr(sd, 1) < 0.3, piv = scPt(s.W / 2, up ? -s.H * 0.9 : s.H * 1.9, s.W, s.H);
+  var TH = 3.4 * cl(s.amp, 0.5, 1.3);
+  for (var i = 3; i >= 1; i--) for (var j = 0; j < 2; j++) {
+    (function (idx, side) {
+      var cln = cloneActiveCuts(c, s, 'SwingEcho ' + idx + '_' + side, { belowCuts: dk });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var e = punch(prog(f, s), 0.3), th = TH * e < 0.034 ? 0 : TH * e;
+        return rotAboutScene(piv[0], piv[1], th * (side ? 1 : -1) * idx);
+      });
+      cln.paintables.forEach(function (pid) {
+        var nd = c.graph.byId[pid], base = nd.attrs.alpha == null ? 1 : nd.attrs.alpha;
+        nd.keys.alpha = nd.keys.alpha || {};
+        for (var f = s.f0; f < s.f1; f++) {
+          var e = punch(prog(f, s), 0.3), th = TH * e;
+          nd.keys.alpha[f] = { value: th >= 0.034 ? base * cl(e * 2) * (0.62 - idx * 0.14) : 0, type: 1 };
+        }
+      });
+    })(i, j);
+  }
+});
+
+/* 37. xrSyncBend */
+reg('xrSyncBend', function (c, s) {
+  var sd = xS(s), St = xSteps(s), top = xr(sd, 1) < 0.7, dir = xr(sd, 2) < 0.5 ? 1 : -1, zone = s.H * 0.78, Np = 22;
+  var A0 = dir * s.W * 0.34 * cl(s.amp, 0.5, 1.3);
+  function jtAt(i, f, v) {
+    var st = St[0].st;
+    for (var j = 0; j < St.length; j++) if (f >= St[j].f0 && f < St[j].f1) { st = St[j].st; break; }
+    return xrs(st * 7 + sd, i * 2, 3) * s.W * 0.006 * v;
+  }
+  addOverlay(c, s.f0, s.f1, 'FX SyncBend zone bg @' + s.f0,
+    top ? G.rect(-s.W / 2, s.H / 2 - zone, s.W, zone) : G.rect(-s.W / 2, -s.H / 2, s.W, zone), { fill: s.sc.bg, alpha: 1 });
+  for (var i = 0; i < Np; i++) {
+    (function (idx) {
+      var a0 = Math.floor(idx * zone / Np), a1 = Math.floor((idx + 1) * zone / Np), y = top ? a0 : s.H - a1, h = a1 - a0;
+      if (h < 1) return;
+      var v = 1 - (idx + 0.5) / Np;
+      [0, -1].forEach(function (wrap) {
+        var cln = cloneActiveCuts(c, s, 'SyncBend ' + idx + '_' + wrap);
+        var polys = Object.create(null), poly = rectPoly(0, y, s.W, y + h, s.W, s.H);
+        for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+        cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+        C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+          var b = H.bell(prog(f, s)), A = Math.abs(A0 * b) < 1 ? 0 : A0 * b;
+          var dx = A ? A * Math.pow(v, 1.7) + jtAt(idx, f, v) * b : 0;
+          var raw = ((dx % s.W) + s.W) % s.W;
+          return { 'position.x': wrap ? raw - s.W : raw };
+        });
+      });
+    })(i);
+  }
+});
+
+/* 38. xrTapeCrease */
+reg('xrTapeCrease', function (c, s) {
+  var sd = xS(s), HB = Math.min(s.W, s.H) * 0.05 * cl(s.amp, 0.5, 1.3), dir = xr(sd, 1) < 0.5 ? 1 : -1;
+  var dk = H.dark(s.sc.bg), lw = Math.max(1, s.H * 0.0025), Y0 = s.H * (0.28 + 0.44 * xr(sd, 2)), DY = s.H * 0.06 * xrs(sd, 3);
+  function bandAt(p) {
+    var amt = Math.sin(PI * cl((p - 0.1) / 0.85)), y0 = Y0 + DY * p, hb = HB * amt < 1 ? 0 : HB * amt;
+    return { amt: amt, y0: y0, hb: hb };
+  }
+  addOverlay(c, s.f0, s.f1, 'FX TapeCrease bg @' + s.f0, G.rect(-s.W / 2, -1, s.W, 2), { fill: s.sc.bg, alpha: 1 }, function (f) {
+    var st = bandAt(prog(f, s));
+    return st.hb > 0 ? { 'position.y': s.H / 2 - st.y0, 'scale.y': st.hb, alpha: 1 } : { alpha: 0 };
+  });
+  var cln = cloneActiveCuts(c, s, 'TapeCrease squeeze');
+  C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+    var st = bandAt(prog(f, s)), sy = 1 / 1.8, pivY = s.H / 2 - st.y0;
+    return { 'position.x': dir * s.W * 0.024 * cl(s.amp, 0.5, 1.3) * st.amt, 'position.y': pivY * (1 - sy), 'scale.y': sy };
+  });
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var st = bandAt(prog(f, s));
+    contours[f] = st.hb > 0 ? [rectPoly(0, st.y0 - st.hb, s.W, st.y0 + st.hb, s.W, s.H)] : [];
+  }
+  cln.paintables.forEach(function (id) { H.multiClip(c.graph, id, contours, false, 'Crease band', c.options); });
+  addOverlay(c, s.f0, s.f1, 'FX TapeCrease line @' + s.f0, G.rect(-s.W / 2, -lw / 2, s.W, lw),
+    { fill: dk ? '#FFFFFF' : shade(s.sc), alpha: 1 }, function (f) {
+      var st = bandAt(prog(f, s));
+      return st.hb > 0 ? { 'position.y': s.H / 2 - st.y0, alpha: cl((dk ? 0.6 : 0.45) * st.amt) } : { alpha: 0 };
+    });
+  addOverlay(c, s.f0, s.f1, 'FX TapeCrease shadow @' + s.f0, G.rect(-s.W / 2, -0.5, s.W, 1),
+    { fill: '#000000', alpha: 1 }, function (f) {
+      var st = bandAt(prog(f, s));
+      return st.hb > 0 ? { 'position.y': s.H / 2 - (st.y0 + lw / 2 + st.hb * 0.25), 'scale.y': st.hb * 0.5, alpha: cl(0.3 * st.amt) } : { alpha: 0 };
+    });
+});
+
+/* 39. xrThumbRow */
+reg('xrThumbRow', function (c, s) {
+  var sd = xS(s), n = s.W >= s.H ? 5 : 4, a = cl(cl(s.amp, 0.5, 1.3), 0.8, 1.15);
+  var tw = s.W * 0.86 / n * 0.86 * a, th = tw * s.H / s.W, gap = (s.W - n * tw) / (n + 1);
+  var top = xr(sd, 1) < 0.35, yb = top ? s.H * 0.045 : s.H * 0.955 - th, rev = xr(sd, 2) < 0.5;
+  var lw = Math.max(1, Math.min(s.W, s.H) * 0.004);
+  function zzAt(p, o) { var z = E.outBack(cl((p - o) / 0.22), 1.6) * (1 - E.inCubic(cl((p - 0.66 - o * 0.5) / 0.2))); return z < 0.02 ? 0 : z; }
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var o = (rev ? n - 1 - idx : idx) * 0.06, xc = gap + idx * (tw + gap) + tw / 2, yc = yb + th / 2, pSc = scPt(xc, yc, s.W, s.H);
+      addOverlay(c, s.f0, s.f1, 'FX ThumbRow bg ' + (idx + 1), G.rect(-tw / 2, -th / 2, tw, th), { fill: s.sc.bg, alpha: 1 }, function (f) {
+        var z = zzAt(prog(f, s), o);
+        return z > 0 ? { 'position.x': pSc[0], 'position.y': pSc[1], 'scale.x': z, 'scale.y': z, alpha: 1 } : { alpha: 0 };
+      });
+      var cln = cloneActiveCuts(c, s, 'Thumb ' + (idx + 1));
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        var z = zzAt(prog(f, s), o), scf = Math.max(0.01, (tw / s.W) * z);
+        return { 'position.x': pSc[0], 'position.y': pSc[1], 'scale.x': scf, 'scale.y': scf };
+      });
+      cln.paintables.forEach(function (pid) {
+        var nd = c.graph.byId[pid], base = nd.attrs.alpha == null ? 1 : nd.attrs.alpha;
+        nd.keys.alpha = nd.keys.alpha || {};
+        for (var f = s.f0; f < s.f1; f++) nd.keys.alpha[f] = { value: zzAt(prog(f, s), o) > 0 ? base : 0, type: 1 };
+      });
+      addOverlay(c, s.f0, s.f1, 'FX ThumbRow frame ' + (idx + 1), G.rect(-tw / 2, -th / 2, tw, th),
+        { stroke: (idx % 2) ? s.sc.fg : pop(s.sc), width: lw, alpha: 1 }, function (f) {
+          var z = zzAt(prog(f, s), o);
+          return z > 0 ? { 'position.x': pSc[0], 'position.y': pSc[1], 'scale.x': z, 'scale.y': z, 'stroke.width': lw / Math.max(0.1, z), alpha: 1 } : { alpha: 0 };
+        });
+    })(i);
+  }
+});
+
+/* 40. xrTileLights */
+reg('xrTileLights', function (c, s) {
+  var sd = xS(s), M = Math.min(s.W, s.H), gx = Math.max(3, Math.round(s.W / (M / 4.5))), gy = Math.max(3, Math.round(s.H / (M / 4.5)));
+  var cols = tints(s.sc), rev = xr(sd, 1) < 0.5, gp = Math.max(1, Math.round(M * 0.004)), A = cl(s.amp, 0.6, 1.2);
+  var maxD = Math.max(1, gx + gy - 2);
+  for (var d = 0; d <= gx + gy - 2; d++) {
+    var by = cols.map(function () { return []; });
+    for (var j = 0; j < gy; j++) for (var i = 0; i < gx; i++) {
+      if ((rev ? gx - 1 - i : i) + j !== d || xr(sd, i, j, 2) > 0.62) continue;
+      var x0 = Math.round(i * s.W / gx) + gp, x1 = Math.round((i + 1) * s.W / gx) - gp;
+      var y0 = Math.round(j * s.H / gy) + gp, y1 = Math.round((j + 1) * s.H / gy) - gp;
+      if (x1 <= x0 || y1 <= y0) continue;
+      var pSc = scPt(x0, y1, s.W, s.H);
+      var colIdx = xh(sd, i, j, 3) % cols.length;
+      by[colIdx] = by[colIdx].concat(G.rect(pSc[0], pSc[1], x1 - x0, y1 - y0));
+    }
+    (function (off) {
+      by.forEach(function (cmds, ci) {
+        if (!cmds.length) return;
+        addOverlay(c, s.f0, s.f1, 'FX TileLights d' + off + '_' + ci, cmds, { fill: cols[ci], alpha: 0.6 }, function (f) {
+          var u = cl((prog(f, s) - off * 0.62) / 0.38);
+          return { alpha: (u <= 0 || u >= 1) ? 0 : cl((u < 0.2 ? 1 : 1 - oq((u - 0.2) / 0.8)) * 0.62 * A) };
+        });
+      });
+    })(d / maxD);
+  }
+});
+
+/* 41. xrWaist */
+reg('xrWaist', function (c, s) {
+  var sd = xS(s), A0 = (xr(sd, 1) < 0.35 ? -0.2 : 0.3) * cl(s.amp, 0.5, 1.3), yc = 0.5 + xrs(sd, 2) * 0.06, Np = 20;
+  function aAt(p) { var A = A0 * punch(p, 0.28); return Math.abs(A) < 0.003 ? 0 : A; }
+  addFullBg(c, s, 'xrWaist');
+  for (var i = 0; i < Np; i++) {
+    (function (idx) {
+      var v0 = -0.85 + 1.7 * idx / Np, v1 = -0.85 + 1.7 * (idx + 1) / Np, vm = (v0 + v1) / 2;
+      var ya = cl(Math.round((yc + v0 / 2) * s.H), 0, s.H), yb = cl(Math.round((yc + v1 / 2) * s.H), 0, s.H);
+      if (yb - ya < 1) return;
+      var gf = Math.exp(-(vm * vm) / 0.16);
+      var cln = cloneActiveCuts(c, s, 'Waist ' + (idx + 1));
+      var polys = Object.create(null), poly = rectPoly(0, ya, s.W, yb, s.W, s.H);
+      for (var f = s.f0; f < s.f1; f++) polys[f] = poly;
+      cln.paintables.forEach(function (id) { S.clip(c.graph, id, polys); });
+      C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+        return { 'scale.x': Math.max(0.05, 1 - aAt(prog(f, s)) * gf) };
+      });
+    })(i);
+  }
+});
+
+/* 42. xrWaterMirror */
+reg('xrWaterMirror', function (c, s) {
+  var DP = s.H * 0.34 * cl(cl(s.amp, 0.3, 1.6), 0.8, 1.1), lh = Math.max(1, s.H * 0.003);
+  function waterAt(p) { var lift = ahr(p, 0.3, 0.68), dep = DP * lift < 2 ? 0 : DP * lift; return { lift: lift, dep: dep, y0: Math.round(s.H - dep) }; }
+  addOverlay(c, s.f0, s.f1, 'FX WaterMirror bg @' + s.f0, G.rect(-s.W / 2, -1, s.W, 1), { fill: s.sc.bg, alpha: 1 }, function (f) {
+    var st = waterAt(prog(f, s));
+    return st.dep > 0 ? { 'position.y': -s.H / 2 + st.dep, 'scale.y': st.dep, alpha: 1 } : { alpha: 0 };
+  });
+  var cln = cloneActiveCuts(c, s, 'WaterMirror refl');
+  C.sample(c.graph, cln.rigId, s.f0, s.f1, function (f) {
+    var st = waterAt(prog(f, s)), pScY = s.H / 2 - st.y0, sy = -1 / 1.55;
+    return { 'position.x': Math.sin(prog(f, s) * 16) * s.W * 0.008, 'position.y': pScY * (1 - sy), 'scale.y': sy };
+  });
+  var contours = Object.create(null);
+  for (var f = s.f0; f < s.f1; f++) {
+    var st = waterAt(prog(f, s));
+    contours[f] = st.dep > 0 ? [rectPoly(0, st.y0, s.W, s.H, s.W, s.H)] : [];
+  }
+  cln.paintables.forEach(function (id) { H.multiClip(c.graph, id, contours, false, 'Water region', c.options); });
+  [0.35, 0.28, 0.3].forEach(function (vo, k) {
+    var kFrac = 1 - k / 3;
+    addOverlay(c, s.f0, s.f1, 'FX WaterMirror veil ' + (k + 1) + ' @' + s.f0, G.rect(-s.W / 2, 0, s.W, 1), { fill: s.sc.bg, alpha: vo }, function (f) {
+      var st = waterAt(prog(f, s)), h = st.dep * kFrac;
+      return st.dep > 0 ? { 'position.y': -s.H / 2, 'scale.y': Math.max(0.5, h), alpha: vo } : { alpha: 0 };
+    });
+  });
+  addOverlay(c, s.f0, s.f1, 'FX WaterMirror line @' + s.f0, G.rect(-s.W / 2, -lh / 2, s.W, lh), { fill: pop(s.sc), alpha: 0.7 }, function (f) {
+    var st = waterAt(prog(f, s));
+    return st.dep > 0 ? { 'position.y': s.H / 2 - (st.y0 - 1 + lh / 2), alpha: 0.7 * cl(st.lift) } : { alpha: 0 };
+  });
+});
+
+/* 43. xrZebra */
+reg('xrZebra', function (c, s) {
+  var sd = xS(s), D = Math.hypot(s.W, s.H) / 2 + 2, P = Math.max(6, Math.min(s.W, s.H) / 26);
+  var DU = 0.5 * cl(s.amp, 0.7, 1.1), deg = xr(sd, 1) < 0.5 ? 45 : -45;
+  var nStripes = Math.ceil(2 * D / P) + 3;
+  var rigId = c.graph.add('null', 'FX Zebra rot @' + s.f0, c.parent, s.f0, s.f1, { rotation: -deg });
+  for (var i = 0; i < nStripes; i++) {
+    (function (idx) {
+      var id = C.shape(c.graph, { id: 'fx', start: s.f0, end: s.f1 }, 'FX Zebra stripe ' + (idx + 1) + ' @' + s.f0,
+        rigId, G.rect(-0.5, -D, 1, 2 * D), { fill: s.sc.bg, alpha: 0.85 });
+      C.sample(c.graph, id, s.f0, s.f1, function (f) {
+        var p = prog(f, s), duty = DU * ahr(p, 0.22, 0.7);
+        if (duty < 0.02) return { alpha: 0 };
+        var o = (p * 3 * P) % P, x = -D - P + o + idx * P + P * duty / 2;
+        return { 'position.x': x, 'scale.x': Math.max(0.5, P * duty), alpha: 0.85 };
+      });
+    })(i);
+  }
+});
+
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);
 
 ;
 /* Geometry recipes, built in the unanimated cut's design space. */

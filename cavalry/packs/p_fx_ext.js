@@ -228,7 +228,7 @@ reg('echoFrames', 'ae/p_fx2.jsx', function (c, s) {
         var n = c.graph.byId[pid], base = n.attrs.alpha == null ? 1 : n.attrs.alpha;
         n.keys.alpha = n.keys.alpha || {};
         for (var f = s.f0; f < s.f1; f++) {
-          var p = prog(f, s), fade = p < 0.1 ? 1 : 1 - E.inOutQuart((p - 0.1) / 0.9);
+          var p = prog(f, s), fade = p < 0.1 ? 1 : 1 - H.inOutQuart((p - 0.1) / 0.9);
           n.keys.alpha[f] = { value: cl(base * fade * (0.64 - idx * 0.12)), type: 1 };
         }
       });
@@ -609,14 +609,11 @@ reg('hrSignalLoss', 'ae/p_horror4.jsx', function (c, s) {
   var ch = '0' + (3 + (Math.abs(s.seed) % 7));
   ['NO SIGNAL', 'CH ' + ch.slice(-2)].forEach(function (txt, idx) {
     var pt = scPt(s.W * 0.06, s.H * 0.08 + idx * fs * 1.5, s.W, s.H);
-    var tid = C.shape(c.graph, { id: 'fx', start: s.f0, end: s.f1 }, 'FX ' + txt, c.parent,
-      V.commands([[pt[0] - 4, pt[1] - 4], [pt[0] + 4, pt[1] - 4], [pt[0] + 4, pt[1] + 4], [pt[0] - 4, pt[1] + 4]], true), { fill: '#FFFFFF', alpha: 0.01 });
-    c.graph.layers.pop();
-    delete c.graph.byId[tid];
-    var fnt = H.primaryFont(c.assembly);
+    var fnt = H.primaryFont(c);
     var tId = c.graph.add('textShape', 'FX ' + txt + ' @' + s.f0, c.parent, s.f0, s.f1, {
-      text: txt, font: fnt.family, fontSize: fs, alignment: 0, verticalAlignment: 1,
-      'position.x': pt[0], 'position.y': pt[1], 'material.materialColor': '#FFFFFF', alpha: 1
+      text: txt, font: { font: fnt.family, style: fnt.style }, fontSize: fs,
+      autoWidth: true, autoHeight: true, horizontalAlignment: 0, verticalAlignment: 1,
+      position: [pt[0], pt[1]], fill: true, stroke: false, 'material.materialColor': '#FFFFFF', alpha: 1
     });
     C.sample(c.graph, tId, s.f0, s.f1, function (f) {
       var p = prog(f, s), on = p >= 0.3 && p < 0.78;
