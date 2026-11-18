@@ -131,7 +131,7 @@ function addTextures(graph,comp,root,sc,tex,texScale,notices){
   }
   var paperAmt=(tex.paper||0)*texScale;
   if(paperAmt>0.02){
-    var fibers=[], fx=0;
+    var fibers=[];
     for(var i=0;i<64;i++){
       var x0=(N.random(701,i,1)-0.5)*W, y0=(N.random(701,i,2)-0.5)*H;
       var ang=N.random(701,i,3)*Math.PI*2, len=(12+N.random(701,i,4)*32)*u;
@@ -159,7 +159,9 @@ function compile(a,options){
   options=options||{};
   /* Recipes can extend clips or add transition layers; never mutate the caller's assembly. */
   a=JSON.parse(JSON.stringify(a));
-  var report=preflight(a);if(report.missing.length){var e=new Error('Unimplemented native recipes: '+report.missing.map(function(r){return r.group+':'+r.name+' ['+r.cut+']';}).join(', '));e.report=report;throw e;}
+  var report=preflight(a), missingMap={};
+  report.missing.forEach(function(r){missingMap[r.group+':'+r.name]=1;});
+  if(options.strict&&report.missing.length){var e=new Error('Unimplemented native recipes: '+report.missing.map(function(r){return r.group+':'+r.name+' ['+r.cut+']';}).join(', '));e.report=report;throw e;}
   var fx=a.style.fx||{};
   var chromaScale=fx.chroma==null?0.7:N.finite(fx.chroma,'fx.chroma');
   var texScale=fx.texture==null?0.6:N.finite(fx.texture,'fx.texture');
@@ -168,7 +170,9 @@ function compile(a,options){
   var graph=new G.Graph(a.composition), root=graph.add('null','JIZURA / '+(a.title||''),null,0,a.composition.frameCount,{});
   var cutsRoot=graph.add('null','JIZURA / Cuts',root,0,a.composition.frameCount,{});
   var built={}, notices=[], contexts=[], fxCounter=0;
-  function dispatch(group,p,c){var k=name(p);if(!k||k==='none')return null;var out=JZPresets.build(group,p,c);if(out===null)return null;built[group+':'+k]=1;return out;}
+  function dispatch(group,p,c){var k=name(p);if(!k||k==='none')return null;
+    if(!N.get(group,k)){missingMap[group+':'+k]=1;return (group==='enter'||group==='hold'||group==='exit')?function(){}:null;}
+    var out=JZPresets.build(group,p,c);if(out===null)return null;built[group+':'+k]=1;return out;}
   function addFxRig(label){
     var cr=graph.byId[cutsRoot], prevParent=cr.parent;
     var rigId=graph.add('null','FX Rig '+(++fxCounter)+' / '+label,prevParent,0,a.composition.frameCount,{});
@@ -211,12 +215,14 @@ function compile(a,options){
     dispatch('fx',{name:fk,params:e},{graph:graph,assembly:a,comp:a.composition,parent:root,fxRig:null,addFxRig:addFxRig,options:options});
   });
   addTextures(graph,a.composition,root,a.style.schemes[0],a.style.texture||{},texScale,notices);
-  graph.validate();report.built=built;report.fallback={};report.errors=[];report.notices=notices;report.createdLayers=graph.layers.length;report.connections=graph.edges.length;
+  graph.validate();report.built=built;report.missingRecipes=missingMap;report.fallback={};report.errors=[];report.notices=notices;report.createdLayers=graph.layers.length;report.connections=graph.edges.length;
   report.build=typeof JZCavalryBuild==='undefined'?null:JZCavalryBuild;
   return {graph:graph,report:report};
 }
 function run(a,o){o=o||{};var result=compile(a,o),scene=result.graph.emit(Object.assign({},o,{title:a.title}));scene.report=result.report;
   console.log('JIZURA native build report: '+JSON.stringify(result.report));
+  var missKeys=Object.keys(result.report.missingRecipes||{});
+  if(missKeys.length)console.warn('JIZURA: unimplemented native recipes skipped (composition still built): '+missKeys.join(', '));
   if(!o.timingPaths)console.warn('Set composition timing manually: '+a.composition.fps+' fps, 0-'+(a.composition.frameCount-1));
   return scene;
 }
