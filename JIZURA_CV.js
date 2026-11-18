@@ -1,5 +1,5 @@
 /* GENERATED: host/render verification pending. */
-var JZCavalryBuild={"blockingMissing":739,"buildId":"3310d0f624b68a406de75ccbdb60107ebf2bccd58e66c28bf059324e1eb06384","catalog":{"counts":{"bg":130,"cam":71,"decor":260,"enter":251,"exit":221,"fx":138,"hold":102,"layout":366,"trans":56,"treat":122},"groups":{"bg":{"count":130,"registeredInCatalog":6},"cam":{"count":71,"registeredInCatalog":71},"decor":{"count":260,"registeredInCatalog":5},"enter":{"count":251,"registeredInCatalog":251},"exit":{"count":221,"registeredInCatalog":221},"fx":{"count":138,"registeredInCatalog":138},"hold":{"count":102,"registeredInCatalog":102},"layout":{"count":366,"registeredInCatalog":4},"trans":{"count":56,"registeredInCatalog":56},"treat":{"count":122,"registeredInCatalog":122}},"source":"cavalry/catalog/ae-presets.json","total":1717},"coverage":{"bg":{"additional":["dots","frame","split"],"blockingMissing":["argyle","asanoha","auroraRibbons","bigStripes","bokehBg","borderFrame","chevron","cloudLayers","concentric","dotGrid","duotoneSweep","eqBars","filmStrip","fireworks","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","snowLayers","speedLines","spiralArms","splitDiag","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"],"catalog":{"count":130,"notPorted":["argyle","asanoha","auroraRibbons","bigStripes","bokehBg","borderFrame","chevron","cloudLayers","concentric","dotGrid","duotoneSweep","eqBars","filmStrip","fireworks","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","snowLayers","speedLines","spiralArms","splitDiag","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"],"registeredInCatalog":6,"registeredNotInCatalog":["dots","frame","split"]},"method":"native","missing":["argyle","asanoha","auroraRibbons","bigStripes","bokehBg","borderFrame","chevron","cloudLayers","concentric","dotGrid","duotoneSweep","eqBars","filmStrip","fireworks","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","snowLayers","speedLines","spiralArms","splitDiag","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"],"referenceCount":130,"registered":["bigChar","checker","dots","frame","skyline","split","splitH","splitV","xpRingDots"]},"cam":{"additional":[],"blockingMissing":[],"catalog":{"count":71,"notPorted":[],"registeredInCatalog":71,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":71,"registered":["barrelRoll","beatPunch","bounce","crashZoom","dollyIn","driftDiag","dutch","earthquake","floatNoise","focusIn","handheld","hrDutchSnap","hrNervous","hzColdShiver","hzCreepFreeze","hzGlanceBack","hzHeldBreath","jelly","knCardFlip","knJumpCut","knReadPan","knRushIn","knShearKick","knTiltKick","kzKnockback","kzRecoil","kzSkidStop","kzWordNod","orbitDrift","panL","panR","pendulumSway","pullOut","push","rackFocus","roll","shakeHard","snapPan","spiralIn","stepZoom","tiltDown","tiltUp","tzGridStep","tzItalicSet","tzMeasureZoom","tzTabStep","vertigo","whipIn","wzByobuPan","wzKakejikuView","wzOjigi","xqArcSweep","xqBeatBreath","xqCraneUp","xqDriftTurn","xqFindFrame","xqFocusHunt","xqHeartbeat","xqLeafFall","xqLevelOut","xqLongLens","xqLoudZoom","xqPushPull","xqSquashRelax","xqStopMotion","xqTickRoll","xqTripodNudge","xqTruckAround","xqWalkCam","xqWhipSpring","xqWindUp"]},"decor":{"additional":["ruler"],"blockingMissing":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"catalog":{"count":260,"notPorted":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"registeredInCatalog":5,"registeredNotInCatalog":["ruler"]},"method":"native","missing":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"referenceCount":260,"registered":["cropMarks","indexNum","romajiLine","ruler","tyGlyphBody","xlLadder"]},"enter":{"additional":["fade","flip","rise","slide"],"blockingMissing":[],"catalog":{"count":251,"notPorted":[],"registeredInCatalog":251,"registeredNotInCatalog":["fade","flip","rise","slide"]},"method":"native","missing":[],"referenceCount":251,"registered":["assemble","backlight","blinds","blur","blurStagger","bounceBall","bounceBig","brushReveal","bubbles","checker","clockWipe","crtOn","crumple","cursorSweep","cut","cylinder","diagWipe","dither","domino","drop","dropMask","echoCount","echoIn","fade","fadeStagger","fanOpen","filmFeed","flicker","flip","flipX","flipY","fold","glint","glitchIn","hatchFill","heatHaze","hrBlinkCreep","hrClawReveal","hrJumpScare","hrManifest","hrMirrorSnap","hrUneasy","hrVhold","hzAlreadyThere","hzFloorSeep","hzFromScratch","hzLampSweep","hzLateSnap","hzShakyHand","hzTooClose","hzUnwatched","hzWrongGlyph","inkBleed","inkDrop","interlace","invertBox","iris","knDiveIn","knHingeDrop","knInertia","knLoopIn","knPushIn","knReplaceIn","knStretchOut","knTypeToSlam","knWordSlam","knWordSpin","kzBowSnap","kzOverrun","kzPunchThrough","kzSeesaw","kzSideVolley","kzSkipStone","kzTowerUnstack","kzTrampoline","kzWordWheel","lightLeak","liquidFill","loadingBar","loupe","magnet","matrixRain","neonOn","noteUnfold","odometer","outlineFill","overexpose","pendulum","pop","printRegister","quarters","randomOrder","resolve","ripple","rise","riseMask","rockSettle","rollIn","rubber","scramble","shadowFirst","shuffle","shutter","skewIn","slice","slide","slideL","slideR","slideWhole","slingshot","snapRail","spin","spiralIn","splitFlap","splitJoin","springIn","squashDrop","stamp","stickerPeel","stopMotion","stretch","strokeDraw","strokeOrder","tiltUp","tokoroten","tornJoin","trackIn","trackOut","tyBracketOpen","tyDotGrow","tyKeyFirst","tyLineWipe","tyRetype","tyRubyDrop","tyUnderLift","tyZoomOne","type","tzBaseAlign","tzCaretSet","tzCloseUp","tzCountSet","tzIndexLead","tzPointSize","tzRuleSlide","tzTextFrame","tzWeightUp","unroll","vSlice","waveIn","whip","windBlown","wipe","wzChochin","wzFusuma","wzHanabi","wzHanko","wzKakejiku","wzKamifubuki","wzMisu","wzOrigami","wzSeigaiha","xeArcToss","xeBellows","xeBlanks","xeBlockDrop","xeCeilingFall","xeCellSlide","xeCenterDeal","xeChainBump","xeCloneMorph","xeCoinToss","xeEndsInward","xeFillGaps","xeGearTick","xeGlyphCurtain","xeInchworm","xeKanjiFirst","xeLeapfrog","xeMarch","xeOrbitIn","xePiecePile","xePieceRain","xePieceStrata","xePieceVortex","xeRedact","xeRicochet","xeSkewFlap","xeSwingDoor","xeTripleBeat","xeUnevenScale","xeVanishPoint","xfChevron","xfClosingHole","xfCornerBloom","xfCrossOpen","xfDiagStrips","xfEqualizer","xfHolesMerge","xfJaws","xfOutlineLead","xfPassingWipes","xfPrintHead","xfQuadRelay","xfRingDial","xfRollerShutter","xfRovingWindow","xfScanner","xfSlantLouver","xfSpiral","xfStackStrips","xfStaircase","xfStripSort","xfSunburst","xfTapeOff","xfThreeTier","xfTraceFlood","xfTriptych","xfTwoFields","xfUnderSweep","xfWeave","xfWiper","xgAfterimage","xgBlockSink","xgCoinSettle","xgColorPour","xgComet","xgCornerUnfurl","xgDoubleVision","xgFillDock","xgFocusHunt","xgGate","xgHangSign","xgHeavyDrop","xgJelly","xgKeyPoses","xgLensFringe","xgNewsSpin","xgNoseDive","xgPaperFall","xgPumpUp","xgPushBar","xgQuarterTurn","xgRatchet","xgRoughCut","xgShearUp","xgSignSpin","xgStampLift","xgStrobe","xgWallHit","xgWiper","xgZipLine","zipper","zoom","zoomAlt","zoomOut"]},"exit":{"additional":["fade","flip","pop","rise","slide"],"blockingMissing":[],"catalog":{"count":221,"notPorted":[],"registeredInCatalog":221,"registeredNotInCatalog":["fade","flip","pop","rise","slide"]},"method":"native","missing":[],"referenceCount":221,"registered":["backspace","balloonOff","blindsClose","blur","blurOutStagger","bounceOff","burn","candleOut","checkerOut","clapShut","clockOut","collapse","crumpleOut","cut","deflateOut","diagWipeOut","dissolve","dominoOut","drift","echoOut","eraserOut","explode","fade","fall","fanClose","flip","flipOutX","flipOutY","floodOut","flutterOut","foldOut","glassBreak","glitch","glitchDissolve","gravity","halftoneOut","hazeOut","hingeOut","hrDrain","hrFlickerDie","hrLookBack","hrPulledDown","hrShiver","hrSwallow","hrTurnAway","hzBackAway","hzDragCorner","hzFlatline","hzOutOfLight","hzRetinal","hzShadowOff","hzTaken","hzThumbSmear","irisClose","knCloseGap","knDiveGlyph","knJumpCutOut","knLaunch","knPushOut","knStackAway","knWordBlink","knWordKick","kzBatAway","kzCrashApart","kzCrouchDive","kzHammerDown","kzPinchShoot","kzSlingAway","kzSwingFling","kzYankOut","lampOff","matrixOut","melt","mosaicOut","outlineOut","overexposeOut","peelOff","pop","popOut","rgbSplitOut","rise","riseOut","rocketOff","rollOff","rollUpOut","sandOut","scanOut","scatter","scorchOut","scrambleOut","scribbleOut","shatterLite","shockOut","shredOut","shrink","sinkMask","slashOut","slice","slide","slideOutL","slideOutR","slotOut","snakeOut","spinOut","splitApart","squash","stretch","stripesOut","sweepCover","tearOut","tornadoOut","trackOutWide","twist","tyBracketClose","tyFoldVert","tyKeyLast","tyLineFeed","tyStrike","tyToDot","tyToIndex","tyUnderSink","tzCondense","tzHalfCut","tzOverset","tzProofDelete","tzRulesClose","tzSelectDelete","tzToFootnote","tzToTofu","undraw","vSliceDrop","vacuumOut","waveOut","whipOut","wipe","wzDoron","wzFuroshiki","wzHanaChiru","wzKasumi","wzOrizuru","wzShojiKage","wzSumiNijimi","wzToro","xhBarcode","xhCeiling","xhCentreThin","xhCoinSpin","xhCombOut","xhConcertina","xhConveyor","xhEatAlong","xhEndsOut","xhFlick","xhFullStop","xhGather","xhHopFar","xhKanaFirst","xhMorse","xhPageTurn","xhPieceHeap","xhPieceParts","xhPieceSpin","xhPieceStrata","xhPieceThin","xhRollCall","xhShuffle","xhShutters","xhStairs","xhStomp","xhTiltSlide","xiCentreOut","xiCounterScroll","xiCounterWipe","xiCropTurns","xiDiagPinch","xiDotted","xiDrawers","xiEyelid","xiFields","xiFillDrop","xiFinder","xiInverseBand","xiLattice","xiMothHoles","xiPicket","xiPistons","xiPlateCarry","xiPortholes","xiRadialBlinds","xiRedact","xiRings","xiRollShutter","xiSawBite","xiSliceWave","xiSpiralTiles","xiTwinPlates","xiTwoPass","xjBigWheel","xjCardToss","xjColourDrain","xjComet","xjDoubleVision","xjEdgeTeeter","xjFocusPull","xjGateSwing","xjNeedle","xjOnionSkin","xjPanSmear","xjPuckHit","xjQuarterTurn","xjRatchet","xjRubberSnap","xjShadowStay","xjShellChase","xjSlump","xjSpringHop","xjStepFade","xjThroughFocus","xjTrapdoor","xjTug","xjWallSplat","xjWiper","xjYank","zipOut","zoomFar","zoomThrough"]},"fx":{"additional":["xrScanWipe","xrShutterStep"],"blockingMissing":[],"catalog":{"count":138,"notPorted":[],"registeredInCatalog":138,"registeredNotInCatalog":["xrScanWipe","xrShutterStep"]},"method":"native","missing":[],"referenceCount":138,"registered":["anamorphic","bandInvert","blackFrame","blindsTrans","block","bloomFlash","bulge","chroma","colorBars","crtOff","defocus","ditherBit","doors","duotone","dustScratches","echoFrames","edgeDetect","filmAdvance","filmBurn","flash","focusLines","gridRepeat","halftone","heartbeat","hrPassingShadow","hrSignalLoss","hrSubliminal","hueShift","hzClosingDark","hzColdBreath","hzDrain","hzFaint","hzTear","hzUpside","interlace","invert","irisTrans","kaleido","kzBulldoze","kzCardSlam","kzDustLanding","kzEdgeHit","kzKnockSmear","kzShockArcs","lightRays","lightSweep","loopScroll","macroBlock","mirrorFlash","mosaic","negativeRing","panelWipe","perspectiveTilt","pixelDrift","pixelSort","posterize","radialChroma","rgbSplit","ripple","rotateSnap","scanBar","shake","shatter","slice","smear","snapshot","speedLines","splitSlide","squash","starGlint","strobe","tileShift","trackingNoise","tvStatic","tzColumnShift","tzFrameStep","tzGridFlash","tzKnockBand","tzRegTicks","tzRuleFlash","vhsRoll","waveWarp","whipBlur","whiteFrame","wzHanafubuki","wzHyoshigi","wzMaku","wzOrime","wzShojiPass","wzSumiShibuki","xrAccordion","xrBandRepeat","xrBandZoom","xrBlink","xrBorderPunch","xrCheckerInvert","xrClockInvert","xrColorStrobe","xrColumnDrop","xrCornerFold","xrCrossFringe","xrCrossSplit","xrCrosshair","xrDiagSlice","xrDiscTurn","xrDotWave","xrDropBounce","xrDropout","xrEdgeBars","xrExposureDip","xrFlipTiles","xrFourTints","xrLampFlicker","xrLetterSnap","xrLongShadow","xrLoupe","xrMoire","xrNested","xrPixelSparks","xrQuadCycle","xrRibbonTwist","xrScanBurst","xrScanWipe","xrShearSnap","xrShutterStep","xrSlotReel","xrSpotlight","xrStretchWave","xrStripeMosaic","xrSwingEcho","xrSyncBend","xrTapeCrease","xrThumbRow","xrTileLights","xrWaist","xrWaterMirror","xrZebra","zoom","zoomPunch","zoomStutter"]},"hold":{"additional":[],"blockingMissing":[],"catalog":{"count":102,"notPorted":[],"registeredInCatalog":102,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":102,"registered":["beatHop","breathe","colorRun","dangle","drift","echoTrail","eqBounce","flashBox","flipSwap","float","focusRack","glintSweep","glitchJump","glitchtick","glowFlicker","hWave","heartbeat","hrFlickerLight","hrLagOne","hrStare","hrTwitch","hzLoneTremor","hzLoom","hzPassing","hzPresence","hzSlowBreath","jelly","jitter","knBeatLean","knCounterRock","knGapBreath","knTickShift","knWordPulse","knWordRide","kzBeatSquat","kzDivingBoard","kzInertiaSway","kzSlinky","kzSquashWave","magnetJiggle","noiseDrift","orbitSmall","pluckString","pulse","rotateSlow","scanBand","shadowSway","shimmer","skewWobble","still","stretchPulse","sway","tilt","trackBreathe","tyKeyPulse","tyOutlineBlink","tyReadCursor","tyTrackStep","typeRattle","tzCaretBlink","tzCounterRules","tzIndexCount","tzKernNudge","tzUnderGrow","wave","windGust","wzFurin","wzMikoshi","wzNotan","wzShishiodoshi","wzTanzaku","xkBeatBump","xkBigSmall","xkBlink","xkBuoy","xkCradle","xkDepthRock","xkDoubleVision","xkFocusBreath","xkHeatHaze","xkKaraoke","xkLevelFill","xkLoudArch","xkLoudWeight","xkMagnifier","xkMarchEdge","xkMetronome","xkNod","xkPairUp","xkParallax","xkReflection","xkRippleOut","xkSlideBunch","xkSpinOne","xkSplitShear","xkStairStep","xkStopMotion","xkTallBreath","xkTiltSnap","xkWallBounce","xkZigzagFlip","zoomSlow"]},"layout":{"additional":["graphics"],"blockingMissing":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"catalog":{"count":366,"notPorted":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","interlude","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","title","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"registeredInCatalog":4,"registeredNotInCatalog":["graphics"]},"method":"native","missing":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"referenceCount":364,"registered":["center","dictionary","graphics","vcols","xbTwistFrames"]},"trans":{"additional":[],"blockingMissing":[],"catalog":{"count":56,"notPorted":[],"registeredInCatalog":56,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":56,"registered":["blinds","blockDissolve","checker","clockWipe","cover","cubeTurn","diagonalWipe","doorsOpen","flashCross","hrBlink","hrStaticCut","hzBlackout","hzLinger","hzSlideDown","inkBlob","irisOpen","knCornerSwing","knStripSlam","knStutterCut","kzCarousel","kzCrushDown","kzShoveOff","pixelate","pushSlide","shatterTiles","sliceShift","spinOut","tyGridCells","tyRuleWipe","tzBaselineFold","tzColumnReplace","tzRuleSplit","uncover","whipPan","wipe","wzFusumaPass","wzMakimonoRoll","wzMawariButai","xqAccordion","xqBladeRun","xqChevronPush","xqDiagSplit","xqFlipOver","xqHalftone","xqLightLeak","xqLouverTurn","xqPagePeel","xqPolyIris","xqPropeller","xqRingRipple","xqSoftSweep","xqStretchSmear","xqStripShuffle","xqWaveWipe","xqWindowZoom","zoomThrough"]},"treat":{"additional":[],"blockingMissing":[],"catalog":{"count":122,"notPorted":[],"registeredInCatalog":122,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":122,"registered":["alternate","baselineShift","boxed","bracketsQuote","chrome","circled","cutShift","dotted","doubleOutline","echoOutline","emphasisDots","extrude","fadeChars","fauxBold","focusPull","glitchSplit","glow","gradientSweep","gradientV","halftone","hardShadow","hatch","hrDoubleExp","hrEroded","hrInkBleed","hrRedact","hzColdRim","hzDragMarks","hzHairlines","hzHusk","hzUneven","inline","italic","karaoke","kerningWide","knWordPlate","knWordScale","kzCrescendo","kzHopArc","kzOnionSkin","kzSpeedShadow","kzStepShear","longShadow","marker","monoGrid","neonOutline","none","outline","outlineFill","outlineOffset","rainbow","ransom","reflection","rotateAlt","shadowStack","sizeWave","softShadow","splitColor","spotChar","stencilGap","sticker","strike","stripes","tall","toneShadow","tyHeadBig","tyHeadRules","tyHollowKey","tyIndexSup","tzKanaSmall","tzLineNo","tzSuperNote","tzTocLeader","tzTypeGuides","underline","waterline","wide","wzBinsen","wzKasure","wzKinpaku","wzObi","wzRakkan","xoAccentTicks","xoAltHollow","xoAltWeight","xoBandExtrude","xoBeltBand","xoBlobKnock","xoBlowUp","xoBorderBands","xoContour","xoCropMarks","xoCutLine","xoDiagSplit","xoDimLine","xoDoublePrint","xoEmboss","xoFadeHem","xoFloorShadow","xoFoldHalf","xoGlyphCorners","xoGlyphUnders","xoGraphFill","xoGroundDots","xoHalfKnock","xoHalfScreen","xoHiliter","xoHollowBlock","xoLeadBar","xoMixedFills","xoOffsetFrame","xoOverlapKern","xoRampAcross","xoRuler","xoSeparators","xoSwoosh","xoTallWide","xoTapedNote","xoThread","xoTopCrop","xoTrackRamp","xoTwinOutline"]}},"format":"jizura.cavalry.native-build","hostVerified":false,"inventoryBasis":"ae/data.json names snapshot; cavalry/catalog/ae-presets.json when present; source files hashed, dynamic registrations not independently audited","moduleOrder":["native/00_registry.js","native/10_graph.js","native/20_components.js","native/25_recipe_tools.js","native/26_recipe_components.js","native/27_registry_bridge.js","native/28_registry_identity.js","native/29_pack_helpers.js","packs/p_00_registry.js","packs/p_camera.js","packs/p_camera_ext.js","packs/p_core_geometry.js","packs/p_core_scalar.js","packs/p_enter_core.js","packs/p_enter_ext.js","packs/p_enter_x2.js","packs/p_exit_a.js","packs/p_exit_b.js","packs/p_exit_core.js","packs/p_exit_x2a.js","packs/p_exit_x2b.js","packs/p_fx.js","packs/p_fx_ext.js","packs/p_fx_x2.js","packs/p_graphics.js","packs/p_hold.js","packs/p_hold_core.js","packs/p_hold_ext.js","packs/p_motion.js","packs/p_requested_backgrounds.js","packs/p_requested_decor.js","packs/p_requested_layouts.js","packs/p_requested_motion.js","packs/p_requested_transitions.js","packs/p_requested_treatments.js","packs/p_trans_core.js","packs/p_trans_ext.js","packs/p_treat_core.js","packs/p_treat_themes.js","packs/p_treat_x2.js","packs/p_x2_enter.js","packs/p_x2_exit.js","native/30_assembly.js"],"recipes":{"bg":{"bigChar":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset bg:bigChar"},"checker":{"differences":["Repeater is expanded to editable paths; tile paint preserves transparency."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:checker"},"dots":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset bg:dots (halftone)"},"frame":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"skyline":{"differences":["The transparent horizon is approximated with 24 editable opacity bands, not AE mask feathering.","Building and window paint is kept transparent instead of compositing the scheme background into the fill.","Absolute phase is on the exported assembly timeline."],"exact":false,"hostVerified":false,"scope":"cut","source":"AE background recipe skyline"},"split":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"splitH":{"differences":["Uses transparent foreground/accent paint rather than a baked scheme-background mix."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:bg1_split"},"splitV":{"differences":["Uses transparent foreground/accent paint rather than a baked scheme-background mix."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:bg1_split"},"xpRingDots":{"differences":["Repeated dots are editable paths rather than AE repeaters."],"exact":false,"hostVerified":false,"scope":"cut","source":"AE background recipe xpRingDots"}},"cam":{"barrelRoll":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"beatPunch":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"bounce":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"crashZoom":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"dollyIn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"driftDiag":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"dutch":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"earthquake":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"floatNoise":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"focusIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"handheld":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"hrDutchSnap":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hrNervous":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzColdShiver":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzCreepFreeze":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzGlanceBack":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzHeldBreath":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"jelly":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"knCardFlip":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knJumpCut":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knReadPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knRushIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knShearKick":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knTiltKick":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzKnockback":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzRecoil":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzSkidStop":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzWordNod":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"orbitDrift":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"panL":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"panR":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"pendulumSway":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"pullOut":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"push":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"rackFocus":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"roll":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"shakeHard":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"snapPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"spiralIn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"stepZoom":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"tiltDown":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tiltUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzGridStep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzItalicSet":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzMeasureZoom":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzTabStep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"vertigo":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"whipIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzByobuPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzKakejikuView":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzOjigi":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqArcSweep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqBeatBreath":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqCraneUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqDriftTurn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqFindFrame":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqFocusHunt":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqHeartbeat":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLeafFall":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLevelOut":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLongLens":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLoudZoom":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqPushPull":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqSquashRelax":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqStopMotion":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqTickRoll":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqTripodNudge":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqTruckAround":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqWalkCam":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqWhipSpring":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqWindUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"}},"decor":{"cropMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"indexNum":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset decor:indexNum"},"romajiLine":{"differences":["Kana conversion follows src/01_util.js.","Kanji requires an explicit reading; unsupported text is not silently replaced.","Annotation placement is a native reconstruction; visual conformance is pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native romajiLine"},"ruler":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"tyGlyphBody":{"differences":["Source: jizura_core.jsx decor:tyGlyphBody.","Draws outside text divisions, not per-glyph boxes.","Vertical suppression follows the source.","Native margin is params.margin or 3% of the shorter composition edge.","Actual host/render conformance remains pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native tyGlyphBody"},"xlLadder":{"differences":["Source: jizura_core.jsx axl_reg(xlLadder).","Rung cadence, reveal interval and three lit rungs follow the source.","AE side-band helper is expressed as explicit native geometry.","Native margin is params.margin or 2.5% of the shorter composition edge.","Actual host/render conformance remains pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native xlLadder"}},"enter":{"assemble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:assemble"},"backlight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:backlight"},"blinds":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:blinds"},"blur":{"differences":["Uses the existing Gaussian-blur component.","Emission requires the explicit verified blur host profile.","No unblurred substitute is emitted."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:blur"},"blurStagger":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:blurStagger"},"bounceBall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:bounceBall"},"bounceBig":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:bounceBig"},"brushReveal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:brushReveal"},"bubbles":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:bubbles"},"checker":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:checker"},"clockWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:clockWipe"},"crtOn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:crtOn"},"crumple":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:crumple"},"cursorSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:cursorSweep"},"cut":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"cylinder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:cylinder"},"diagWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:diagWipe"},"dither":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:dither"},"domino":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:domino"},"drop":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"dropMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:dropMask"},"echoCount":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:echoCount"},"echoIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:echoIn"},"fade":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"fadeStagger":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fadeStagger"},"fanOpen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fanOpen"},"filmFeed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:filmFeed"},"flicker":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"flip":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"flipX":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:flipX"},"flipY":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:flipY"},"fold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fold"},"glint":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:glint"},"glitchIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:glitchIn"},"hatchFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:hatchFill"},"heatHaze":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:heatHaze"},"hrBlinkCreep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrBlinkCreep"},"hrClawReveal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrClawReveal"},"hrJumpScare":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrJumpScare"},"hrManifest":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrManifest"},"hrMirrorSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrMirrorSnap"},"hrUneasy":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrUneasy"},"hrVhold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrVhold"},"hzAlreadyThere":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzAlreadyThere"},"hzFloorSeep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzFloorSeep"},"hzFromScratch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzFromScratch"},"hzLampSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzLampSweep"},"hzLateSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzLateSnap"},"hzShakyHand":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzShakyHand"},"hzTooClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzTooClose"},"hzUnwatched":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzUnwatched"},"hzWrongGlyph":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzWrongGlyph"},"inkBleed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:inkBleed"},"inkDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:inkDrop"},"interlace":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:interlace"},"invertBox":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:invertBox"},"iris":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:iris"},"knDiveIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knDiveIn"},"knHingeDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knHingeDrop"},"knInertia":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knInertia"},"knLoopIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knLoopIn"},"knPushIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knPushIn"},"knReplaceIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knReplaceIn"},"knStretchOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knStretchOut"},"knTypeToSlam":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knTypeToSlam"},"knWordSlam":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knWordSlam"},"knWordSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knWordSpin"},"kzBowSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzBowSnap"},"kzOverrun":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzOverrun"},"kzPunchThrough":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzPunchThrough"},"kzSeesaw":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzSeesaw"},"kzSideVolley":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzSideVolley"},"kzSkipStone":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzSkipStone"},"kzTowerUnstack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzTowerUnstack"},"kzTrampoline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzTrampoline"},"kzWordWheel":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzWordWheel"},"lightLeak":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:lightLeak"},"liquidFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:liquidFill"},"loadingBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:loadingBar"},"loupe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:loupe"},"magnet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:magnet"},"matrixRain":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:matrixRain"},"neonOn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:neonOn"},"noteUnfold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:noteUnfold"},"odometer":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:odometer"},"outlineFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx / enter:outlineFill"},"overexpose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:overexpose"},"pendulum":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:pendulum"},"pop":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"printRegister":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:printRegister"},"quarters":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:quarters"},"randomOrder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:randomOrder"},"resolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:resolve"},"ripple":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:ripple"},"rise":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"riseMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:riseMask"},"rockSettle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:rockSettle"},"rollIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:rollIn"},"rubber":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:rubber"},"scramble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:scramble"},"shadowFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:shadowFirst"},"shuffle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:shuffle"},"shutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:shutter"},"skewIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:skewIn"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slice"},"slide":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"slideL":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slideL"},"slideR":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slideR"},"slideWhole":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx / enter:slideWhole"},"slingshot":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slingshot"},"snapRail":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:snapRail"},"spin":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"spiralIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:spiralIn"},"splitFlap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:splitFlap"},"splitJoin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:splitJoin"},"springIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:springIn"},"squashDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:squashDrop"},"stamp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:stamp"},"stickerPeel":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:stickerPeel"},"stopMotion":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:stopMotion"},"stretch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:stretch"},"strokeDraw":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx / enter:strokeDraw"},"strokeOrder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:strokeOrder"},"tiltUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:tiltUp"},"tokoroten":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:tokoroten"},"tornJoin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:tornJoin"},"trackIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:trackIn"},"trackOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:trackOut"},"tyBracketOpen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyBracketOpen"},"tyDotGrow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyDotGrow"},"tyKeyFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / enter:tyKeyFirst"},"tyLineWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyLineWipe"},"tyRetype":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyRetype"},"tyRubyDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyRubyDrop"},"tyUnderLift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyUnderLift"},"tyZoomOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyZoomOne"},"type":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"tzBaseAlign":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzBaseAlign"},"tzCaretSet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzCaretSet"},"tzCloseUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzCloseUp"},"tzCountSet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzCountSet"},"tzIndexLead":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzIndexLead"},"tzPointSize":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzPointSize"},"tzRuleSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzRuleSlide"},"tzTextFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzTextFrame"},"tzWeightUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzWeightUp"},"unroll":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:unroll"},"vSlice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:vSlice"},"waveIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:waveIn"},"whip":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:whip"},"windBlown":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:windBlown"},"wipe":{"differences":["Editable wipe bar plus animated glyph clipping.","Clipping uses the existing JavaScript Deformer component.","Actual host/render verification remains pending."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:wipe"},"wzChochin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzChochin"},"wzFusuma":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzFusuma"},"wzHanabi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzHanabi"},"wzHanko":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzHanko"},"wzKakejiku":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzKakejiku"},"wzKamifubuki":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzKamifubuki"},"wzMisu":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzMisu"},"wzOrigami":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzOrigami"},"wzSeigaiha":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzSeigaiha"},"xeArcToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeBellows":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeBellows"},"xeBlanks":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeBlanks"},"xeBlockDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCeilingFall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCellSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeCellSlide"},"xeCenterDeal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeChainBump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCloneMorph":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeCloneMorph"},"xeCoinToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeEndsInward":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeFillGaps":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeFillGaps"},"xeGearTick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeGlyphCurtain":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeGlyphCurtain"},"xeInchworm":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeKanjiFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeKanjiFirst"},"xeLeapfrog":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeMarch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeOrbitIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xePiecePile":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xePiecePile"},"xePieceRain":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xePieceRain"},"xePieceStrata":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entA.jsx / enter:xePieceStrata"},"xePieceVortex":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xePieceVortex"},"xeRedact":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeRedact"},"xeRicochet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeSkewFlap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeSkewFlap"},"xeSwingDoor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeTripleBeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeTripleBeat"},"xeUnevenScale":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeVanishPoint":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xfChevron":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfChevron"},"xfClosingHole":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfClosingHole"},"xfCornerBloom":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfCornerBloom"},"xfCrossOpen":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfCrossOpen"},"xfDiagStrips":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfDiagStrips"},"xfEqualizer":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfEqualizer"},"xfHolesMerge":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfHolesMerge"},"xfJaws":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfJaws"},"xfOutlineLead":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfOutlineLead"},"xfPassingWipes":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfPassingWipes"},"xfPrintHead":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfPrintHead"},"xfQuadRelay":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfQuadRelay"},"xfRingDial":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfRingDial"},"xfRollerShutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfRollerShutter"},"xfRovingWindow":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfRovingWindow"},"xfScanner":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfScanner"},"xfSlantLouver":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfSlantLouver"},"xfSpiral":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfSpiral"},"xfStackStrips":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfStackStrips"},"xfStaircase":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfStaircase"},"xfStripSort":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfStripSort"},"xfSunburst":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfSunburst"},"xfTapeOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfTapeOff"},"xfThreeTier":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfThreeTier"},"xfTraceFlood":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfTraceFlood"},"xfTriptych":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfTriptych"},"xfTwoFields":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfTwoFields"},"xfUnderSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfUnderSweep"},"xfWeave":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfWeave"},"xfWiper":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfWiper"},"xgAfterimage":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgAfterimage"},"xgBlockSink":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgBlockSink"},"xgCoinSettle":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgCoinSettle"},"xgColorPour":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgColorPour"},"xgComet":{"differences":["Eight editable delayed glyph copies replace AE Echo.","Trail sampling is frame-based."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / enter:xgComet"},"xgCornerUnfurl":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgCornerUnfurl"},"xgDoubleVision":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgDoubleVision"},"xgFillDock":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgFillDock"},"xgFocusHunt":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgFocusHunt"},"xgGate":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgGate"},"xgHangSign":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgHangSign"},"xgHeavyDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgHeavyDrop"},"xgJelly":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgJelly"},"xgKeyPoses":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgKeyPoses"},"xgLensFringe":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgLensFringe"},"xgNewsSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgNewsSpin"},"xgNoseDive":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgNoseDive"},"xgPaperFall":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgPaperFall"},"xgPumpUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgPumpUp"},"xgPushBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgPushBar"},"xgQuarterTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgQuarterTurn"},"xgRatchet":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgRatchet"},"xgRoughCut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgRoughCut"},"xgShearUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgShearUp"},"xgSignSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgSignSpin"},"xgStampLift":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgStampLift"},"xgStrobe":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgStrobe"},"xgWallHit":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgWallHit"},"xgWiper":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgWiper"},"xgZipLine":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgZipLine"},"zipper":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zipper"},"zoom":{"differences":["Emission requires the explicit verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:zoom"},"zoomAlt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zoomAlt"},"zoomOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zoomOut"}},"exit":{"backspace":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:backspace"},"balloonOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:balloonOff"},"blindsClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:blindsClose"},"blur":{"differences":["Emission requires the explicit verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:blur"},"blurOutStagger":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:blurOutStagger"},"bounceOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:bounceOff"},"burn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:burn"},"candleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:candleOut"},"checkerOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:checkerOut"},"clapShut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:clapShut"},"clockOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:clockOut"},"collapse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:collapse"},"crumpleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:crumpleOut"},"cut":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"deflateOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:deflateOut"},"diagWipeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:diagWipeOut"},"dissolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:dissolve"},"dominoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:dominoOut"},"drift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:drift"},"echoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:echoOut"},"eraserOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:eraserOut"},"explode":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:explode"},"fade":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"fall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:fall"},"fanClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:fanClose"},"flip":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"flipOutX":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:flipOutX"},"flipOutY":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:flipOutY"},"floodOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:floodOut"},"flutterOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:flutterOut"},"foldOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:foldOut"},"glassBreak":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:glassBreak"},"glitch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:glitch"},"glitchDissolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:glitchDissolve"},"gravity":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:gravity"},"halftoneOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:halftoneOut"},"hazeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:hazeOut"},"hingeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:hingeOut"},"hrDrain":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrDrain"},"hrFlickerDie":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrFlickerDie"},"hrLookBack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrLookBack"},"hrPulledDown":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrPulledDown"},"hrShiver":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrShiver"},"hrSwallow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrSwallow"},"hrTurnAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrTurnAway"},"hzBackAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzBackAway"},"hzDragCorner":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzDragCorner"},"hzFlatline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzFlatline"},"hzOutOfLight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzOutOfLight"},"hzRetinal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzRetinal"},"hzShadowOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzShadowOff"},"hzTaken":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzTaken"},"hzThumbSmear":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzThumbSmear"},"irisClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:irisClose"},"knCloseGap":{"differences":["When words are absent, script-run segmentation is used.","Export source.words for authoritative planner segmentation."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:knCloseGap"},"knDiveGlyph":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knDiveGlyph"},"knJumpCutOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knJumpCutOut"},"knLaunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knLaunch"},"knPushOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knPushOut"},"knStackAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knStackAway"},"knWordBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knWordBlink"},"knWordKick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knWordKick"},"kzBatAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzBatAway"},"kzCrashApart":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzCrashApart"},"kzCrouchDive":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzCrouchDive"},"kzHammerDown":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzHammerDown"},"kzPinchShoot":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzPinchShoot"},"kzSlingAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzSlingAway"},"kzSwingFling":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzSwingFling"},"kzYankOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzYankOut"},"lampOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:lampOff"},"matrixOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:matrixOut"},"melt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:melt"},"mosaicOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:mosaicOut"},"outlineOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:outlineOut"},"overexposeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:overexposeOut"},"peelOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:peelOff"},"pop":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"popOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:popOut"},"rgbSplitOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:rgbSplitOut"},"rise":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"riseOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:riseOut"},"rocketOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:rocketOff"},"rollOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:rollOff"},"rollUpOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:rollUpOut"},"sandOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:sandOut"},"scanOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:scanOut"},"scatter":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"scorchOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:scorchOut"},"scrambleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:scrambleOut"},"scribbleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:scribbleOut"},"shatterLite":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:shatterLite"},"shockOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:shockOut"},"shredOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:shredOut"},"shrink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:shrink"},"sinkMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:sinkMask"},"slashOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slashOut"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slice"},"slide":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"slideOutL":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slideOutL"},"slideOutR":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slideOutR"},"slotOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:slotOut"},"snakeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:snakeOut"},"spinOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:spinOut"},"splitApart":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:splitApart"},"squash":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:squash"},"stretch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:stretch"},"stripesOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:stripesOut"},"sweepCover":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:sweepCover"},"tearOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:tearOut"},"tornadoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:tornadoOut"},"trackOutWide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:trackOutWide"},"twist":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:twist"},"tyBracketClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyBracketClose"},"tyFoldVert":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyFoldVert"},"tyKeyLast":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyKeyLast"},"tyLineFeed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyLineFeed"},"tyStrike":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyStrike"},"tyToDot":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyToDot"},"tyToIndex":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyToIndex"},"tyUnderSink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyUnderSink"},"tzCondense":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzCondense"},"tzHalfCut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzHalfCut"},"tzOverset":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzOverset"},"tzProofDelete":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzProofDelete"},"tzRulesClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzRulesClose"},"tzSelectDelete":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzSelectDelete"},"tzToFootnote":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzToFootnote"},"tzToTofu":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzToTofu"},"undraw":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:undraw"},"vSliceDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exit.js / exit:vSliceDrop"},"vacuumOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:vacuumOut"},"waveOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:waveOut"},"whipOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exit.js / exit:whipOut"},"wipe":{"differences":["Editable wipe bar plus animated glyph clipping.","Clipping uses the existing JavaScript Deformer component.","Actual host/render verification remains pending."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:wipe"},"wzDoron":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzDoron"},"wzFuroshiki":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzFuroshiki"},"wzHanaChiru":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzHanaChiru"},"wzKasumi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzKasumi"},"wzOrizuru":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzOrizuru"},"wzShojiKage":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzShojiKage"},"wzSumiNijimi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzSumiNijimi"},"wzToro":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzToro"},"xhBarcode":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhBarcode"},"xhCeiling":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhCeiling"},"xhCentreThin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhCoinSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhCombOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhCombOut"},"xhConcertina":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhConcertina"},"xhConveyor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhConveyor"},"xhEatAlong":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhEatAlong"},"xhEndsOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhFlick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhFlick"},"xhFullStop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhFullStop"},"xhGather":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhGather"},"xhHopFar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhKanaFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhKanaFirst"},"xhMorse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhMorse"},"xhPageTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhPieceHeap":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceHeap"},"xhPieceParts":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceParts"},"xhPieceSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceSpin"},"xhPieceStrata":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceStrata"},"xhPieceThin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceThin"},"xhRollCall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhRollCall"},"xhShuffle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhShuffle"},"xhShutters":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhShutters"},"xhStairs":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhStomp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhTiltSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xiCentreOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiCentreOut"},"xiCounterScroll":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiCounterScroll"},"xiCounterWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiCounterWipe"},"xiCropTurns":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiCropTurns"},"xiDiagPinch":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiDiagPinch"},"xiDotted":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiDotted"},"xiDrawers":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiDrawers"},"xiEyelid":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiEyelid"},"xiFields":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiFields"},"xiFillDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiFillDrop"},"xiFinder":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiFinder"},"xiInverseBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiInverseBand"},"xiLattice":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiLattice"},"xiMothHoles":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiMothHoles"},"xiPicket":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiPicket"},"xiPistons":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiPistons"},"xiPlateCarry":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:xiPlateCarry"},"xiPortholes":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiPortholes"},"xiRadialBlinds":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiRadialBlinds"},"xiRedact":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiRedact"},"xiRings":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiRings"},"xiRollShutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiRollShutter"},"xiSawBite":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiSawBite"},"xiSliceWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiSliceWave"},"xiSpiralTiles":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiSpiralTiles"},"xiTwinPlates":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiTwinPlates"},"xiTwoPass":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiTwoPass"},"xjBigWheel":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjBigWheel"},"xjCardToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjCardToss"},"xjColourDrain":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjColourDrain"},"xjComet":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjComet"},"xjDoubleVision":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjDoubleVision"},"xjEdgeTeeter":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjEdgeTeeter"},"xjFocusPull":{"differences":["Emission requires a verified Gaussian-blur host profile.","No fade-only or scale-only fallback is used."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:xjFocusPull"},"xjGateSwing":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjGateSwing"},"xjNeedle":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjNeedle"},"xjOnionSkin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjOnionSkin"},"xjPanSmear":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjPanSmear"},"xjPuckHit":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjPuckHit"},"xjQuarterTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjQuarterTurn"},"xjRatchet":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjRatchet"},"xjRubberSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjRubberSnap"},"xjShadowStay":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjShadowStay"},"xjShellChase":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjShellChase"},"xjSlump":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjSlump"},"xjSpringHop":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjSpringHop"},"xjStepFade":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjStepFade"},"xjThroughFocus":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjThroughFocus"},"xjTrapdoor":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjTrapdoor"},"xjTug":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjTug"},"xjWallSplat":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjWallSplat"},"xjWiper":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjWiper"},"xjYank":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjYank"},"zipOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:zipOut"},"zoomFar":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exit.js / exit:zoomFar"},"zoomThrough":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exit.js / exit:zoomThrough"}},"fx":{"anamorphic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:anamorphic"},"bandInvert":{"differences":["Vector band overlay approximates AE Difference blend bands in graph IR."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:bandInvert"},"blackFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:blackFrame"},"blindsTrans":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:blindsTrans"},"block":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:block"},"bloomFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:bloomFlash"},"bulge":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:bulge"},"chroma":{"differences":["Drives chromatic ghost separation when style.ghost > 0."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:chroma"},"colorBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:colorBars"},"crtOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:crtOff"},"defocus":{"differences":["Uses Gaussian Blur filter when hostProfile.gaussianBlur is configured; scale breath always emitted."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:defocus"},"ditherBit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:ditherBit"},"doors":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:doors"},"duotone":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:duotone"},"dustScratches":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:dustScratches"},"echoFrames":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:echoFrames"},"edgeDetect":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:edgeDetect"},"filmAdvance":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:filmAdvance"},"filmBurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:filmBurn"},"flash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:flash"},"focusLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:focusLines"},"gridRepeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:gridRepeat"},"halftone":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:halftone"},"heartbeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:heartbeat"},"hrPassingShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_horror4.jsx / fx:hrPassingShadow"},"hrSignalLoss":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_horror4.jsx / fx:hrSignalLoss"},"hrSubliminal":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_horror4.jsx / fx:hrSubliminal"},"hueShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:hueShift"},"hzClosingDark":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzClosingDark"},"hzColdBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzColdBreath"},"hzDrain":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzDrain"},"hzFaint":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzFaint"},"hzTear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzTear"},"hzUpside":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzUpside"},"interlace":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:interlace"},"invert":{"differences":["Native invert flash uses an editable high-contrast foreground overlay rather than a pixel invert shader."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:invert"},"irisTrans":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:irisTrans"},"kaleido":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:kaleido"},"kzBulldoze":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzBulldoze"},"kzCardSlam":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzCardSlam"},"kzDustLanding":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzDustLanding"},"kzEdgeHit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzEdgeHit"},"kzKnockSmear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzKnockSmear"},"kzShockArcs":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzShockArcs"},"lightRays":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:lightRays"},"lightSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:lightSweep"},"loopScroll":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:loopScroll"},"macroBlock":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:macroBlock"},"mirrorFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:mirrorFlash"},"mosaic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:mosaic"},"negativeRing":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:negativeRing"},"panelWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:panelWipe"},"perspectiveTilt":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:perspectiveTilt"},"pixelDrift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:pixelDrift"},"pixelSort":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:pixelSort"},"posterize":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:posterize"},"radialChroma":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:radialChroma"},"rgbSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:rgbSplit"},"ripple":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:ripple"},"rotateSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:rotateSnap"},"scanBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:scanBar"},"shake":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:shake"},"shatter":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:shatter"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:slice"},"smear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:smear"},"snapshot":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:snapshot"},"speedLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:speedLines"},"splitSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:splitSlide"},"squash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:squash"},"starGlint":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:starGlint"},"strobe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:strobe"},"tileShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:tileShift"},"trackingNoise":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:trackingNoise"},"tvStatic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:tvStatic"},"tzColumnShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzColumnShift"},"tzFrameStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzFrameStep"},"tzGridFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzGridFlash"},"tzKnockBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzKnockBand"},"tzRegTicks":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzRegTicks"},"tzRuleFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzRuleFlash"},"vhsRoll":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:vhsRoll"},"waveWarp":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:waveWarp"},"whipBlur":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:whipBlur"},"whiteFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:whiteFrame"},"wzHanafubuki":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzHanafubuki"},"wzHyoshigi":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzHyoshigi"},"wzMaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzMaku"},"wzOrime":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzOrime"},"wzShojiPass":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzShojiPass"},"wzSumiShibuki":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzSumiShibuki"},"xrAccordion":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrAccordion"},"xrBandRepeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBandRepeat"},"xrBandZoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBandZoom"},"xrBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBlink"},"xrBorderPunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBorderPunch"},"xrCheckerInvert":{"differences":["Checker invert uses high-contrast silhouette squares rather than a Difference blend mode."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCheckerInvert"},"xrClockInvert":{"differences":["Clock sweep renders a translucent high-contrast wedge overlay rather than a Difference pixel buffer."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrClockInvert"},"xrColorStrobe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrColorStrobe"},"xrColumnDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrColumnDrop"},"xrCornerFold":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCornerFold"},"xrCrossFringe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCrossFringe"},"xrCrossSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCrossSplit"},"xrCrosshair":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCrosshair"},"xrDiagSlice":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrDiagSlice"},"xrDiscTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrDiscTurn"},"xrDotWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrDotWave"},"xrDropBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrDropBounce"},"xrDropout":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrDropout"},"xrEdgeBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrEdgeBars"},"xrExposureDip":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrExposureDip"},"xrFlipTiles":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrFlipTiles"},"xrFourTints":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrFourTints"},"xrLampFlicker":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLampFlicker"},"xrLetterSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLetterSnap"},"xrLongShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLongShadow"},"xrLoupe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLoupe"},"xrMoire":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrMoire"},"xrNested":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrNested"},"xrPixelSparks":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrPixelSparks"},"xrQuadCycle":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrQuadCycle"},"xrRibbonTwist":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrRibbonTwist"},"xrScanBurst":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrScanBurst"},"xrScanWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrScanWipe"},"xrShearSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrShearSnap"},"xrShutterStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrShutterStep"},"xrSlotReel":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSlotReel"},"xrSpotlight":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSpotlight"},"xrStretchWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrStretchWave"},"xrStripeMosaic":{"differences":["Mosaic pixel shader is represented as discrete translucent stripe bands pulsing across frames."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrStripeMosaic"},"xrSwingEcho":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSwingEcho"},"xrSyncBend":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSyncBend"},"xrTapeCrease":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrTapeCrease"},"xrThumbRow":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrThumbRow"},"xrTileLights":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrTileLights"},"xrWaist":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrWaist"},"xrWaterMirror":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrWaterMirror"},"xrZebra":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrZebra"},"zoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:zoom"},"zoomPunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:zoomPunch"},"zoomStutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:zoomStutter"}},"hold":{"beatHop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:beatHop"},"breathe":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"colorRun":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:colorRun"},"dangle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:dangle"},"drift":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"echoTrail":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:echoTrail"},"eqBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:eqBounce"},"flashBox":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:flashBox"},"flipSwap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:flipSwap"},"float":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:float"},"focusRack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:focusRack"},"glintSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glintSweep"},"glitchJump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glitchJump"},"glitchtick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glitchtick"},"glowFlicker":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glowFlicker"},"hWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:hWave"},"heartbeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:heartbeat"},"hrFlickerLight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrFlickerLight"},"hrLagOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrLagOne"},"hrStare":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrStare"},"hrTwitch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrTwitch"},"hzLoneTremor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzLoneTremor"},"hzLoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_horrorB.jsx / hold:hzLoom"},"hzPassing":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzPassing"},"hzPresence":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzPresence"},"hzSlowBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzSlowBreath"},"jelly":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:jelly"},"jitter":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"knBeatLean":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knBeatLean"},"knCounterRock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knCounterRock"},"knGapBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knGapBreath"},"knTickShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knTickShift"},"knWordPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knWordPulse"},"knWordRide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knWordRide"},"kzBeatSquat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzBeatSquat"},"kzDivingBoard":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzDivingBoard"},"kzInertiaSway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzInertiaSway"},"kzSlinky":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzSlinky"},"kzSquashWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzSquashWave"},"magnetJiggle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:magnetJiggle"},"noiseDrift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:noiseDrift"},"orbitSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:orbitSmall"},"pluckString":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:pluckString"},"pulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:pulse"},"rotateSlow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:rotateSlow"},"scanBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:scanBand"},"shadowSway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:shadowSway"},"shimmer":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:shimmer"},"skewWobble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:skewWobble"},"still":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"stretchPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:stretchPulse"},"sway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:sway"},"tilt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:tilt"},"trackBreathe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:trackBreathe"},"tyKeyPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / hold:tyKeyPulse"},"tyOutlineBlink":{"differences":["Outline blink is represented as an editable stroke twin toggled on matching glyphs."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_typo3.jsx / hold:tyOutlineBlink"},"tyReadCursor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_typo3.jsx / hold:tyReadCursor"},"tyTrackStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / hold:tyTrackStep"},"typeRattle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:typeRattle"},"tzCaretBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzCaretBlink"},"tzCounterRules":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"jizura_core.jsx / hold:tzCounterRules"},"tzIndexCount":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzIndexCount"},"tzKernNudge":{"differences":["Gap selection uses the native deterministic hash, not AE's expression sine hash."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"jizura_core.jsx / hold:tzKernNudge"},"tzUnderGrow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzUnderGrow"},"wave":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"windGust":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:windGust"},"wzFurin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzFurin"},"wzMikoshi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzMikoshi"},"wzNotan":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzNotan"},"wzShishiodoshi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzShishiodoshi"},"wzTanzaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzTanzaku"},"xkBeatBump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBeatBump"},"xkBigSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBigSmall"},"xkBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBlink"},"xkBuoy":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBuoy"},"xkCradle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkCradle"},"xkDepthRock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkDepthRock"},"xkDoubleVision":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkDoubleVision"},"xkFocusBreath":{"differences":["Emission requires a verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkFocusBreath"},"xkHeatHaze":{"differences":["Native wave displacement is applied per glyph rather than pixel AE Wave Warp."],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkHeatHaze"},"xkKaraoke":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkKaraoke"},"xkLevelFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkLevelFill"},"xkLoudArch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkLoudArch"},"xkLoudWeight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkLoudWeight"},"xkMagnifier":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkMagnifier"},"xkMarchEdge":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkMarchEdge"},"xkMetronome":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkMetronome"},"xkNod":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkNod"},"xkPairUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkPairUp"},"xkParallax":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkParallax"},"xkReflection":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkReflection"},"xkRippleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkRippleOut"},"xkSlideBunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkSlideBunch"},"xkSpinOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkSpinOne"},"xkSplitShear":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkSplitShear"},"xkStairStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkStairStep"},"xkStopMotion":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkStopMotion"},"xkTallBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx: xkTallBreath"},"xkTiltSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkTiltSnap"},"xkWallBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkWallBounce"},"xkZigzagFlip":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkZigzagFlip"},"zoomSlow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:zoomSlow"}},"layout":{"center":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:center"},"dictionary":{"differences":["Existing exported dictionary text nodes are preserved.","Missing dictionary text is rejected upstream rather than synthesised from unrelated text.","Rounded part-of-speech corners are currently square."],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:dictionary"},"graphics":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"vcols":{"differences":["Split mode preserves supplied line breaks.","Repeat mode currently supports dim/same side styles; outline side styling requires text paint export."],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:vcols"},"xbTwistFrames":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:xbTwistFrames"}},"trans":{"blinds":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:blinds"},"blockDissolve":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:blockDissolve"},"checker":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:checker"},"clockWipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:clockWipe"},"cover":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:cover"},"cubeTurn":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:cubeTurn"},"diagonalWipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:diagonalWipe"},"doorsOpen":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:doorsOpen"},"flashCross":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:flashCross"},"hrBlink":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_horror4.jsx / trans:hrBlink"},"hrStaticCut":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_horror4.jsx / trans:hrStaticCut"},"hzBlackout":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzBlackout"},"hzLinger":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzLinger"},"hzSlideDown":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzSlideDown"},"inkBlob":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:inkBlob"},"irisOpen":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:irisOpen"},"knCornerSwing":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knCornerSwing"},"knStripSlam":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knStripSlam"},"knStutterCut":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knStutterCut"},"kzCarousel":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzCarousel"},"kzCrushDown":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzCrushDown"},"kzShoveOff":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzShoveOff"},"pixelate":{"differences":["Quantized coarse grid overlay replaces pixel-buffer Mosaic filter in vector scene graph."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:pixelate"},"pushSlide":{"differences":["The outgoing graph holds its final sampled pose when extended into the transition."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx:pushSlide"},"shatterTiles":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:shatterTiles"},"sliceShift":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:sliceShift"},"spinOut":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:spinOut"},"tyGridCells":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_typo4.jsx / trans:tyGridCells"},"tyRuleWipe":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_typo4.jsx / trans:tyRuleWipe"},"tzBaselineFold":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzBaselineFold"},"tzColumnReplace":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzColumnReplace"},"tzRuleSplit":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzRuleSplit"},"uncover":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:uncover"},"whipPan":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:whipPan"},"wipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:wipe"},"wzFusumaPass":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzFusumaPass"},"wzMakimonoRoll":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzMakimonoRoll"},"wzMawariButai":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzMawariButai"},"xqAccordion":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqAccordion"},"xqBladeRun":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqBladeRun"},"xqChevronPush":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqChevronPush"},"xqDiagSplit":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqDiagSplit"},"xqFlipOver":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqFlipOver"},"xqHalftone":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqHalftone"},"xqLightLeak":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqLightLeak"},"xqLouverTurn":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqLouverTurn"},"xqPagePeel":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqPagePeel"},"xqPolyIris":{"differences":["Outgoing graph holds its last sampled pose when its clip ends before the transition.","Documented JavaScript Deformer clipping; actual Cavalry render verification is pending."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"src/11p_x2_camtr.js / trans:xqPolyIris"},"xqPropeller":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqPropeller"},"xqRingRipple":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqRingRipple"},"xqSoftSweep":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqSoftSweep"},"xqStretchSmear":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqStretchSmear"},"xqStripShuffle":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqStripShuffle"},"xqWaveWipe":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqWaveWipe"},"xqWindowZoom":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqWindowZoom"},"zoomThrough":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:zoomThrough"}},"treat":{"alternate":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"baselineShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"boxed":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"bracketsQuote":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"chrome":{"differences":["Metallic chrome shading is built from clipped horizontal gradient bands + stroke keyline."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"circled":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"cutShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"dotted":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"doubleOutline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"echoOutline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"emphasisDots":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"extrude":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"fadeChars":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"fauxBold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"focusPull":{"differences":["Rack focus blur halo simulated via soft stroke silhouette + focus falloff opacity without gaussianBlur."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"glitchSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"glow":{"differences":["Glow bloom is represented via breathing outer stroke halos rather than gaussianBlur."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"gradientSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"gradientV":{"differences":["Vertical gradient represented via discrete clipped horizontal tonal bands."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"halftone":{"differences":["Pattern fill represented via clipped vector pattern geometry layered over glyph backing fill."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"hardShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"hatch":{"differences":["Pattern fill represented via clipped vector pattern geometry layered over glyph backing fill."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"hrDoubleExp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js"},"hrEroded":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js"},"hrInkBleed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js"},"hrRedact":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js"},"hzColdRim":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"hzDragMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"hzHairlines":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"hzHusk":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"hzUneven":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"inline":{"differences":["The inline knockout uses the scheme paper colour, matching the source treatment rather than a transparent Boolean knockout."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:inline"},"italic":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"karaoke":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"kerningWide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"knWordPlate":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic3.js"},"knWordScale":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic3.js"},"kzCrescendo":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"kzHopArc":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"kzOnionSkin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"kzSpeedShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"kzStepShear":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"longShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"marker":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"monoGrid":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"neonOutline":{"differences":["Neon outer bloom uses layered wide stroke halos instead of gaussianBlur."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"none":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/45_core.jsx"},"outline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"AE outline treatment"},"outlineFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"outlineOffset":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:outlineOffset"},"rainbow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"ransom":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"reflection":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"rotateAlt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"shadowStack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"sizeWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"softShadow":{"differences":["Soft blur shadow is built from layered translucent stroke/fill silhouettes without gaussianBlur."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"splitColor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"spotChar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"stencilGap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"sticker":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"strike":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"stripes":{"differences":["Pattern fill represented via clipped vector pattern geometry layered over glyph backing fill."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"tall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"toneShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"tyHeadBig":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo3.js"},"tyHeadRules":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo3.js"},"tyHollowKey":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo3.js"},"tyIndexSup":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo3.js"},"tzKanaSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"tzLineNo":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"tzSuperNote":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"tzTocLeader":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"tzTypeGuides":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"underline":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"waterline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"wide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"wzBinsen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"wzKasure":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"wzKinpaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"wzObi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"wzRakkan":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"xoAccentTicks":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoAltHollow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoAltWeight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBandExtrude":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBeltBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBlobKnock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBlowUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBorderBands":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoContour":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoCropMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoCutLine":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoDiagSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoDimLine":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoDoublePrint":{"differences":["The secondary impression follows glyph tracks.","The source's whole-item print pivot is represented per glyph here; whole-line pivot fidelity still needs comparison."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:xoDoublePrint"},"xoEmboss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoFadeHem":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoFloorShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoFoldHalf":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoGlyphCorners":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoGlyphUnders":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoGraphFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoGroundDots":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoHalfKnock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoHalfScreen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoHiliter":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoHollowBlock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoLeadBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoMixedFills":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoOffsetFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoOverlapKern":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoRampAcross":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoRuler":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoSeparators":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoSwoosh":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTallWide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTapedNote":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoThread":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTopCrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTrackRamp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTwinOutline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"}}},"renderVerified":false,"sourceHashes":{"VERSION":"d84c9e596c7d6a94e5f74579ef8d8912a807b0d28582474900ad35dfb3edfcf4","ae/data.json":"45557dbad42863c937ea2f2afbf04d37f2859a501b8f97302e892ff9cedcf3f1","ae/p_bg1.jsx":"277dd68bfa368f708688146feb271d9b22c194134c2c179e218f803e82aac7e4","ae/p_bg2.jsx":"c19f16e223e0f8afc517121912ade27fa4669e74a54d19b1fd9b093214faa2af","ae/p_bg3.jsx":"83aabd1592aec8ea8afc4a165e6984134e78ebf314ef9d2c9b682295a5391bd9","ae/p_cam.jsx":"507adf001e732de51aa3dc6d3bcb1736f028f888425cbf889bcc795962391c89","ae/p_decor1.jsx":"b6d46026f39f56aac156db60c7d732a26715b60e36bb8c435b3d8eb696ce97fc","ae/p_decor2.jsx":"c8681312f00accc2e46ad7a5174d264467a40e5a359afd71a80c9f5492433db1","ae/p_decorB1.jsx":"74cf5d7767f23d0a2cb2d7e856439488d4de6b0e2f294fa49e6cedff2371d182","ae/p_decorB2.jsx":"6f7791b9d6911449cfe45f883a480ad38ddb5b98728cbc4cd3d20401a9521144","ae/p_enter1.jsx":"6df64926151b13b7f3008d0af8c2ade387dc547b4e65db7489fd45215813c82c","ae/p_enter2.jsx":"d38bed742fb2fafedcd39966ca1464b9fc3440c3e080099da53cc885c5a7140d","ae/p_enterB1.jsx":"8fc835ae32ce39cf92db09d57e7bf47cbd67ee3888f42a03d7a63c9fa5a4133e","ae/p_enterB2.jsx":"d210842a7e17c47800cad69fdb0aedd7f094d586c68ea3da0df68db5123a967c","ae/p_exit1.jsx":"a03db79991dd5e8d3f6a25f66e54afb70488562ad697e8f4d16ba684f400b423","ae/p_exit2.jsx":"2651c96e555344de78bc3402af2d44f9d412537bc1d232438018794b8ed6a4cf","ae/p_exitB1.jsx":"40a3ebb2b2899267c8891e29c9c513aab4fc7079ee4078e3fb8b9cb54b0435f9","ae/p_exitB2.jsx":"e531df1901cdcc7dd6ee4101cd6ed36f6c3c3b802eae7aca40d12d5415794067","ae/p_fx1.jsx":"8f89d061e72beefc729031ddafa53eb10275b8d7c56206a5f7c0281eaed5d0ed","ae/p_fx2.jsx":"16c65188d7697a1a39fc0b2c978bde5cec2e3bffb58596a27e5a3e13c63f7b01","ae/p_horror1.jsx":"eaaf23a18f25c4f42b3a4875951b87a94bce5e42b5549ec553578577c7b83458","ae/p_horror2.jsx":"8874c4ab727cbc71ccdeb5619e7da5d2f3e39409dd20d085a2ab2f8ec6fbd793","ae/p_horror3.jsx":"f588666cb1e5344d219333c5a1b1d7ccd7434964f5c06ed0987ab9e17d1c9ce3","ae/p_horror4.jsx":"773bee02f22a0444ea68355e2377eadc4d642687614e08e718321de4f9ffb6a3","ae/p_kinetic1.jsx":"ec90aa765e35a1bd4ae2712d3bf544d5b25e3986f7584e75a4c66b35594036ec","ae/p_kinetic2.jsx":"28a9b09591f2ed79ba83f8f11f3e083c859abeae07c1ce9aa9d44f46ab54c6b5","ae/p_kinetic3.jsx":"888a39a7a896836a07b4e05ce2f9017264e301b365e4851cd7b803d39d296b38","ae/p_kinetic4.jsx":"7a309d43ebb2783cafbdb5085e49d9061d9d874231c85dd417f675bc12e6fe79","ae/p_layoutsA1.jsx":"8cb51bde2098425b99b56be138e17cfd3409f40dca7fa5ab4d322eff32dc7e40","ae/p_layoutsA2.jsx":"b9f331dc1f57a93f3e0e7eceede0ceefd7553f1da0cbd111e2d3fd14aa87482f","ae/p_layoutsB1.jsx":"361cf6e99bc4acb14829927fe604bb84a689578b9072bb48c0e23e6f1e06de06","ae/p_layoutsB2.jsx":"373d10cdb7b4cacd470a4d96acc2e19e2422e0c2516cf579cb7d799f04b7d7e5","ae/p_layoutsC1.jsx":"9d5c8d8d1435cb32fab8b0f2aaab5d6648db3f3a2d0af95c6a362cda8d00bd1f","ae/p_layoutsC2.jsx":"a705607883afd551d549db96e74b2cc94ddc64c7ac9f118747d8fc9adc6316e4","ae/p_layoutsD1.jsx":"4b9c3f52709943f4c799a89e80e26a5f96fd2d59bbc1d48b0f53526ecbf925e8","ae/p_layoutsD2.jsx":"8521c40db367c94f65bc16918f82131e52cec75ed9686b27180634bd51fca9f1","ae/p_trans.jsx":"0de7af113add0c633032f7f2f4e59a8e4de10c919f755556ec083dd8ec984021","ae/p_treat1.jsx":"44c7e5f869d24f6a03b4c1f4e2ded5f9168b0f31309a6db931b139b7bae79eb9","ae/p_treat2.jsx":"544421a961e977bcc5cff93c48043853ac23fad4196b60ed204dd38257faead6","ae/p_typo1.jsx":"34a5df2eda66bffd98d01fcf746978a83c69d24d1fb98952f8f010b3fdfb8b91","ae/p_typo2.jsx":"a7333e7f4de55e56acd319832022a326119a8402a25376df4a5f29fb981dc61d","ae/p_typo3.jsx":"2a8695048360fd1ade5f9ba5f0beeb2f6a670afc8fccb003b94a49c30e3a1c4b","ae/p_typo4.jsx":"9c93d9a9a44ae8a4a5cfe7a606070a5a77b05ee46d6a13ca6b187f1391b7c1ed","ae/p_x2_bg1.jsx":"c1dadcbc741b22b0c8e2c1c605889320cfaf1c7341f8654c78b8e54282883848","ae/p_x2_bg2.jsx":"5793a87e873189293deabbb3ddd306b9a11f9057d3b0aa918771e9a9259f4401","ae/p_x2_camtr.jsx":"f2ac5c654073713e685cb39d866d292c2dc53c56f134d7d5f0130e82da903802","ae/p_x2_decA1.jsx":"3cb1cbadacd234f5c9b63b3cdb7ae4aa6a7b061dd303da090fd07b3c34fa26e4","ae/p_x2_decA2.jsx":"e8cfe3da3d29aee4467928633246f3fc70735940354ae1d682f84786aad2a7b7","ae/p_x2_decB.jsx":"559965bd21666260cc72692578a7d6e71fd4a44db9134b5900a33b63a670c66b","ae/p_x2_decC1.jsx":"ddbc775c69ec33339e5f3c32ae45326fa3d91a07aaeee548cb1711e23257788d","ae/p_x2_decC2.jsx":"1fc457e00718d335b55ef29f4289acab8c15c46a78d191334f730e609dc95833","ae/p_x2_entA.jsx":"95da1b4c8e9519e1167147b078b8f053c23174702e13fa74ca74702adc9c4ed3","ae/p_x2_entB.jsx":"ec25d24d3116a972e423ec5fbc86c65c8e2c694e72e02d05be5bfb536a08f135","ae/p_x2_entC.jsx":"0454bd2e85e10e75755d32da66dfe9d685b1c4370fb8250c2f471434dad8d11f","ae/p_x2_exA.jsx":"7a90db95077cec0c2fc23a52515433d9dd01a46b8ffdbaf2b80879b727f0e6ce","ae/p_x2_exB.jsx":"5e5ea8dadfea04a7aade8d1a75b46748a9e6846ca1421af14d85a111acaf2bd1","ae/p_x2_exC.jsx":"5fc726c05103398881af02444616f0a4b51286423b07e66748df9c8b6ce0b075","ae/p_x2_fx.jsx":"8339c3ba59a1780dd5a8750dc7f82c18d55aa0d99df929315faa1a44f1071873","ae/p_x2_hold.jsx":"da7611653b0711d2cf015f3e867567b4ed14fe5e6bf51531b2211ac0a2226631","ae/p_x2_horrorA1.jsx":"4e6c9f70bf32267c358c371e2bbe1517be3ea32c0d47d5ca50368409e196dccd","ae/p_x2_horrorA2.jsx":"da00aaa84adad9b1d42cef75d711674e8dc9a6b2cd54adeb26181f5d43456e79","ae/p_x2_horrorB.jsx":"c6acd93a53764fd905562e84d22235ad2a5602e646ec6a555a09db69fca96b51","ae/p_x2_kineticA1.jsx":"e8df9361a1cc6cc1e30ef087503d63669ca111e253ed300ded68eda914b3ae05","ae/p_x2_kineticA2.jsx":"22a27c3bdda048cfe3640d4fd75800958c26236f678d3baeadbcb1b0a60f53c9","ae/p_x2_kineticB1.jsx":"65b1b8857f964e63a323f480ced6c86fd780324b116bc21675598a4608afae90","ae/p_x2_kineticB2.jsx":"04eb1dba0f99613263750e3bad3d44cd43c9e7b37499d84a17b76f77aabb14e2","ae/p_x2_layA1.jsx":"a5e40aaec917ad1804fbaa8c07cee15b2785413e70aee0045526c4146f4cadf8","ae/p_x2_layA2.jsx":"a2a784cf018c173e4f5967a13a6d6ba32979e3af7d05b9342aa9dc99c6277bbd","ae/p_x2_layB1.jsx":"c4bf3b77276e476f7f8a8355f4b3cd8711986b43abacfd3c1a3bec3eb4961839","ae/p_x2_layB2.jsx":"ea67912cd1fcbce6c3ae2b639ae3bf42ce14dcdfe5ef5bdf5bd06eece974bb25","ae/p_x2_layC1.jsx":"f81e6af39a4dd24418877326a6425180c8719f0ccb4cd91d87740573c41358bb","ae/p_x2_layC2.jsx":"78930a5191544e5734b6ca0ac0143d779f44f7239e0ba489b7c81bbe66b77822","ae/p_x2_layD1.jsx":"f16f941ad330e60e945408f3285feb12c05f7051de3f21c24293b1f1b41a50ee","ae/p_x2_layD2.jsx":"026f5cbc0ebcaade50f0161ea0d7c680dd1f30e1194399a467cd6c273d68ee28","ae/p_x2_treat1.jsx":"ac1432294a46799374ed765a22d77f5b8465af1f501b5d9ee0d0cec825bba421","ae/p_x2_treat2.jsx":"03f79bfa5cfe11b305408454c99d4af58761d2c3f40847227ab48e1cc737062b","ae/p_x2_typoA1.jsx":"0b09b7f8b51a9c304131ca9ae31cce52301d65d420283321af044781586f7419","ae/p_x2_typoA2.jsx":"63f1f909b75278be4606bc632b15f9144763abe6f12f66c764ef584deeedd1f6","ae/p_x2_typoB.jsx":"78087f1e3aba1336105fe0cffad69b74b1d293cf832df2c2edfc2055574b3b84","ae/p_x2_waA1.jsx":"9798164bb6b7aec661a6d5d6aa4107c2a0e1ad8898c9ed9b7ce8fb1320b929bd","ae/p_x2_waA2.jsx":"a09b7a8880c13d6172ca18477e4fc91c6614289c69a20fc24f8cc9ae353eb9c8","ae/p_x2_waB1.jsx":"361afddcc6bc1b4d67935b181343744bd7e166927126f0494ab3013eed8ccdf0","ae/p_x2_waB2.jsx":"ce0f243f05132247760626ca9b63089d02cec97fc356f1ff4fef7527d221cd70","build_cavalry.py":"67bd1a2e206e6b8ff7503fab6c6175ddf6bb305bcc6771320c344f999a281cd9","cavalry/bridge.js":"cb0a946f7df3a39d892132d64bcacd21c9dc700aec3061f18fe69f29a5f74911","cavalry/browser.js":"ca96f1cb546ba7771189f5f81176ca7728b3ab047c5e98b771f4662ccb7bce22","cavalry/loader.js":"f4afa53976fcfd4c5b66467746024a7f1c2b779d76f941df8d4a9b3f74c2b99b","cavalry/native/00_registry.js":"bd9e19352d8ccfa7af6eff999b53588ace86a0bb26488a128d7001a22c414ecc","cavalry/native/10_graph.js":"8bcc987d2c6c9a740762a1ae46f20920b93282d33a5fbf45b98be5deef722efe","cavalry/native/20_components.js":"e66e9c5a87939dc3ca97ae684020da5ea8e5c9440e3a313d7256ffb721b2af13","cavalry/native/25_recipe_tools.js":"92c4df9ac1f160e95831fc22b10d524d5060063968ddee8926913d455a45e27a","cavalry/native/26_recipe_components.js":"205294c84f0857edcb86307b63341d93cda3a3521792d5ab04227c61715cd3e4","cavalry/native/27_registry_bridge.js":"a8d7059f743ef7c07ec7d7034be58a4ca094afeddb5e3aa783df66986e289493","cavalry/native/28_registry_identity.js":"06c24778f47f463a5b312729ca6f9eff828508d9337b460a7b771c3664c1b41a","cavalry/native/29_pack_helpers.js":"96ec2bf548bd70b2e66e7597e8ed8b63311673360d2fff0b908ed29f615a971d","cavalry/native/30_assembly.js":"3c9a6e2be027de5cb8c74cc0b1c5a9601fd5fc2b40a4ef011a1476f41f83ac9d","cavalry/native/browser_adapter.js":"8585093f8d112efde76c5eed009bec501b0023f3e93ab248dff40b772f4fde70","cavalry/packs/p_00_registry.js":"87f23002dc7ea313cd77c357db50b0e136ab0323312fe3c08c93030f41ac830e","cavalry/packs/p_camera.js":"f03fe7e4e6f3d39eb1c7ba21ebcc4270548f89405f0ebc14dee77afa10d45a37","cavalry/packs/p_camera_ext.js":"1039361597c5d5bb63ba1e92d2d7b7ffd06d9603a652f51c87c39af17c449bc6","cavalry/packs/p_core_geometry.js":"e7ac6cc5ee5c5548d5484822376e250e7eea455bef499f09a982170fe363cbd1","cavalry/packs/p_core_scalar.js":"f14c1b33a08cc91c3262f7b4bb2a7479e23d87dd73f88a15b3fb50cef6473822","cavalry/packs/p_enter_core.js":"31e4ad600c54b0571ac3687e66512e8384a5dc918b58461552449766ab15c2aa","cavalry/packs/p_enter_ext.js":"3ff24480675c619629de6be18d3a98b78f241e359563e1c3a313a2ae1c38a7b2","cavalry/packs/p_enter_x2.js":"b308673868015db1c1d4effa645f5f54d52c53a7f49e203edb787481ab0267b1","cavalry/packs/p_exit_a.js":"2e52cffc49d555aa6a686c9e43a113a8b1ab0f6f34842f297aaafae9800342e2","cavalry/packs/p_exit_b.js":"27e193035e6de22f5dc993543dcf7c22e0ad02cdade9fffd2b9a330531747f3e","cavalry/packs/p_exit_core.js":"d090b143e82a81816e9c1945ceb60bc5d027092446e95000d986d4ae96dd49bf","cavalry/packs/p_exit_x2a.js":"4dd864e5018a01da327e4049fc007a98ae388d403cd6b8ea5ee1c6e605642865","cavalry/packs/p_exit_x2b.js":"c6d7e451167efef4866990f07db7695fe26b20c1acd5d4170d39708211fa77e3","cavalry/packs/p_fx.js":"591525e64d66fe4bd2978b671ee14f8db940ecc763d10ddfec98a2e5cb2d8507","cavalry/packs/p_fx_ext.js":"a3adc5fad76f07e325d7bb44002d1de35779914279d3b4e8ebe188521cd4e13b","cavalry/packs/p_fx_x2.js":"27fe76f33a10bbc37af80a0655c2baab1866ec2eba33f5e25c3c084480264988","cavalry/packs/p_graphics.js":"2df776489d6316150c1fa0ffe4e53fb0515734f450f9d550d7f95c4801ff41fa","cavalry/packs/p_hold.js":"f6f6a890cbae16924bf01edae3f267f32cf6a9834680cc168d1fc9880ff2bd4b","cavalry/packs/p_hold_core.js":"9b2bd78489269b0ebd8f5cb0411915b01a3f99bb54e0ee5039f6733312cbc0aa","cavalry/packs/p_hold_ext.js":"f04998d9d6b17fe764ea754096bd9bca708ae558a94e636fb01df96db87b4585","cavalry/packs/p_motion.js":"662351521188450062aebf917d4052d442af3f01d59cb1a987f9e830c9331d39","cavalry/packs/p_requested_backgrounds.js":"8553940cafceca6357d4d1c32ad1e6313436c6dc3671c42945ae50f7434d1a97","cavalry/packs/p_requested_decor.js":"9f3110a36f310ac27e9c32386c8e0f4f6de95ce1fcaba10118567b3b23462527","cavalry/packs/p_requested_layouts.js":"ac5d37ef34364e342e44eba15b917d8406fa8eb65c0778d1f3ee9f36f2f93c63","cavalry/packs/p_requested_motion.js":"2f5cde527a707936fd0ce6a2495c84ae14d2580ec19333e64dc692caaa7a550a","cavalry/packs/p_requested_transitions.js":"af63b5321d133ce61a6672cc3bad714ff5541f350b4c43db02ccab750fa21034","cavalry/packs/p_requested_treatments.js":"001bd8ca9cc3dd0a63af9da539caad604372cb0b1732a4ab12a11400b594d479","cavalry/packs/p_trans_core.js":"61ff3401e73f12aec0b3a2bfad02147e57f6300d508ade0b6c2eea0bad7236c4","cavalry/packs/p_trans_ext.js":"3969aced76853c811e1faa20b482e7773b34bfc5e2247f3ec08b28e92db39f3a","cavalry/packs/p_treat_core.js":"8ac62b5439b327a39795db3b4827b849be9f05b757c9482ddefa1dd4f405387c","cavalry/packs/p_treat_themes.js":"d5551ba94efee5efca20b510a4bbf73f30d26b3981de7e6cd13d4fe5282ced4e","cavalry/packs/p_treat_x2.js":"1b99e7d21ee2009f9d6d81123a086bb23cfd710a254cd51ed0be7cca0e05e8a8","cavalry/packs/p_x2_enter.js":"2301d03492403c064c52794a23356719df84cf8cac812f9d635b24cd6e5e4b7b","cavalry/packs/p_x2_exit.js":"9eb2af8ee3a7287dc7b59ab85da8efeb9d093cb6d18254bf1fa59cabf87886e0","cavalry/panel.js":"e56c1f7bee4b504aca0a9a9234100a1c3737bea5886d6ec77a84299295e069b1","cavalry/tools/test_requested_native.js":"08d3efbf9317f9d4d31b7fc3effa6aafa5843fdb6741a7a9f8ac86274dc1dc9b","src/11p_bgcamB.js":"baad1dab7a4743b4eab351c9e9dfa76d9af5f4e00b29538ce41837a5628dd644","src/11p_decor.js":"b533343d8ad5ad114300fed174d4eb0dff092201c778a6697345157595b933a5","src/11p_decorB.js":"f49747910c456cb829bdfeffa5c0342898305a8e01eebfa8ac18b2cc279bcd62","src/11p_enter.js":"45b8d89a37e08bcfe035d4fde3f93ec739fca891116aeeba62ba28e31d7c97c6","src/11p_enterB.js":"31bce8e07cec677f7ff5c1c77f7f1775a4e8918e46f7a86efdf86bca3f9efa14","src/11p_exit.js":"a013c8d40ba71fa69ea1bfa0782d2a55b7a152aa91bc7c0f7d85a9e89dca0b2b","src/11p_exitB.js":"2b0479412290e7fc9d4d61c4121c2970e0394f5f843c1407c2a1c84478480629","src/11p_fxB.js":"7fe3ce188d24d336a539a1a37752bf2515959fb940ac64518136fdb7bb875946","src/11p_horror1.js":"34a6f7afe72c3e4d4459c671d98f1bb97c4a5fe70484179ce4e1c04788367ed0","src/11p_horror2.js":"828ff4c48181e9755c5e2a82be4e30cab491ca0614cc25d711131108af50b7e4","src/11p_horror3.js":"c99a0d0cef6cf2b246e84586d5a33ebc750d1ef659a1490f211e8316d2727853","src/11p_kinetic1.js":"012282d5f3d44ef99c1b5fa26dd85210b138c4ecc73f54084f929bc74bd0045e","src/11p_kinetic2.js":"8c0401cfc265b6fe79d83e6a056e1bed93f42ae60a17890db165058f842ffd45","src/11p_kinetic3.js":"c1905cb3a5fb7fb7a14e9984b7ee4ce6b435eddeaab89fb71742c0075b7b3393","src/11p_layoutsA.js":"942e712bba6fa21f9b15f5cf5e0b0ccdf9568fa65f65802414180574acddb0ca","src/11p_layoutsB.js":"44a37fef1af83de84131bfe705e6eda2abc873bc5e5c11d2e1b7ed2062fc4191","src/11p_layoutsC.js":"223e99988781cb16d5e146112c040a303e8dbc53d9f29056a6af61906c87cb01","src/11p_layoutsD.js":"64e8276750ff609eb505b251b8e34bb7d7bcf8d759bcef55d94542a2afcb2bad","src/11p_looks.js":"724f124e9b0dfac715bcffb56bbc0342ccc78fdc5f3151481b2c52583470afba","src/11p_styles.js":"a306862fa099e7fd39b2efe1b63a6d30b8abf0462e141a075cd7b9ec24106922","src/11p_treattrans.js":"32711ff3576a30b861ff76ac2330d34cf93db2b1f11c945c013b8967d3f26964","src/11p_typo1.js":"0a1c61c77ebdd61754120283078a1e79e339a3de5341974e9ac7b5bb5a2878da","src/11p_typo2.js":"0fefc16f3e3711da71763bf6f874d02532820e3bbf2f8fd9e327af1a107914e6","src/11p_typo3.js":"bf8f19513f94044faedf74b45601d6cffa467edb79e37542149d34213c03df77","src/11p_x2_bg.js":"b00de8dccdcb6d14296af968973ae1401d98ccf3e12963149e15be8ad0b7f326","src/11p_x2_camtr.js":"40f56b6fa9b6ab6604f37eca2966d8dbce5e818173ad439c6edd3dcd332d8c13","src/11p_x2_decA.js":"32590bab78767e6c2618be9636681f319f2c1a97a9a23af7f2473daca63112b3","src/11p_x2_decB.js":"51714e9ad069b57da4e3ffd682fd2e66f8a0022c2e9efbed04478634a630fada","src/11p_x2_decC.js":"dfa31679d04e2affb884efe1c785422eeb940c646e58972075fb60dffc762279","src/11p_x2_entA.js":"618f428dc97779e46bec9d718810a9c6b4a76904e52c24229dce415f4fc8afde","src/11p_x2_entB.js":"6efc3593a2c9901e1db4a6090d9daf06e05c1a51bf3c48514688642553773d6f","src/11p_x2_entC.js":"b2e7bdb15364736b3c5048bb726416433f457c681e1644acf1dd7b1a08be5892","src/11p_x2_exA.js":"98c893247180f3852af2f5281662f3e9279aa479d58914dfdf2f25b492ca8498","src/11p_x2_exB.js":"27e329bb7f06fa19cf42169e1f4061d09dadd3d9a8b8ec83acb9da973bcc8e60","src/11p_x2_exC.js":"1a10307c1944c67b58ddd1109e6629eabe5653e735a7107a0f3cff2c48f5c761","src/11p_x2_fx.js":"3fb54c6848b4bdab74fdb31d98b740bcac417a93e0ae89a01be46d05177d82ca","src/11p_x2_hold.js":"48cc7c1c15c21ab07e54b488df57d6f24076b0d9f0d8c08cb1a7087eea8f942a","src/11p_x2_horrorA.js":"445797138a9317310ced2dbe6ce43531f65bbe0d0672702f7d6dd2ba27071cb2","src/11p_x2_horrorB.js":"70b02303a91a3977f78fbd2bd8749c7ab510fb8359228ab4d3a487c67f94aa0e","src/11p_x2_kineticA.js":"1151b4a9aa55d4738545ef1a701cf70d4fdf96a9b512886642818494e9d0da8f","src/11p_x2_kineticB.js":"703d7d142451b107f466c30cb2826c1d87cd57537b1ba7e08b8a51e169943d14","src/11p_x2_layA.js":"7ce60a5197ba7252758c5f0f29b4c6ef3c315b75ad80894ecbf437c9b192a756","src/11p_x2_layB.js":"853fefcdb8585534f3fe1a5dd4825d759c89876a5a43b34b879320dcd91fc062","src/11p_x2_layC.js":"07d81f1d5df0bb579ecb2aadc1ddf38cfdc3a44e9e1c0f64309544da936ee3c9","src/11p_x2_layD.js":"29012dc1db484f0b571d3e08c27a3cfcdfcdc7a294103bf1253969dd8939b66a","src/11p_x2_treat.js":"1a8348da5ebc55fffbd6186f4513af5e4f6f020d8ccd2979c8de345ce9516aa9","src/11p_x2_typoA.js":"20fa8af32c93717961a4ec70a8f6b93b5c010265ba37e5aa84fba0d29ebb2be3","src/11p_x2_typoB.js":"acead55a2a8a37797b2d98a35546a0b7ec5fef7c4e5830199f7b2e211af71c5c","src/11p_x2_waA.js":"f38e3c1f4610cf90f8d1f4a426b2331d850dd1e872181745c605a5a5909233cd","src/11p_x2_waB.js":"d3d3a37ee6c99857e40008b4d8b1410013ba7a7738615b61300f45aae1cf1d04"},"status":"preview","version":"0.13.0"};
+var JZCavalryBuild={"blockingMissing":615,"buildId":"f68182a7f62791c581bed518e7ded64c646c286d28d5ddfe95aaaa2f3e0bfa10","catalog":{"counts":{"bg":130,"cam":71,"decor":260,"enter":251,"exit":221,"fx":138,"hold":102,"layout":366,"trans":56,"treat":122},"groups":{"bg":{"count":130,"registeredInCatalog":130},"cam":{"count":71,"registeredInCatalog":71},"decor":{"count":260,"registeredInCatalog":5},"enter":{"count":251,"registeredInCatalog":251},"exit":{"count":221,"registeredInCatalog":221},"fx":{"count":138,"registeredInCatalog":138},"hold":{"count":102,"registeredInCatalog":102},"layout":{"count":366,"registeredInCatalog":4},"trans":{"count":56,"registeredInCatalog":56},"treat":{"count":122,"registeredInCatalog":122}},"source":"cavalry/catalog/ae-presets.json","total":1717},"coverage":{"bg":{"additional":["dots","frame","split"],"blockingMissing":[],"catalog":{"count":130,"notPorted":[],"registeredInCatalog":130,"registeredNotInCatalog":["dots","frame","split"]},"method":"native","missing":[],"referenceCount":130,"registered":["argyle","asanoha","auroraRibbons","bigChar","bigStripes","bokehBg","borderFrame","checker","chevron","cloudLayers","concentric","dotGrid","dots","duotoneSweep","eqBars","filmStrip","fireworks","frame","godRays","gradientSweep","halftoneFade","herringbone","hexGrid","horizonGlow","houndstooth","hrCorridor","hrDeadTrees","hrFailingLamp","hrMold","hzFarWindows","hzFogBanks","hzHallLights","hzHeadlights","hzSwingLight","hzWires","isoCubes","kaleidoscope","kzBigGears","kzBounceDiscs","kzKickStreaks","kzRockHorizon","kzRollSquare","kzSqueezeLines","letterbox","marble","meshBlobs","moire","mountains","nightMoon","noiseField","none","oceanWaves","paperCut","particlesBg","polka","rainWindow","retroGrid","ridgePlot","ripples","scanBars","seigaiha","skyline","snowLayers","speedLines","spiralArms","split","splitDiag","splitH","splitV","spotlight","squareTunnel","starfield","sunburst","sunsetSun","tartan","topoLines","tornPaper","triTess","tvBars","tzBgBaseGrid","tzBgBigDigits","tzBgColumns","tzBgGlyphField","tzBgNumField","tzBgRules","vhsBand","vignettePulse","wzBgRyusui","wzBgSayagata","wzBgShippo","wzBgTatewaku","wzBgYagasuri","wzBgYukiwa","xpBigPolygon","xpBigRing","xpBlinkCells","xpCapsules","xpCornerArcs","xpCropMarks","xpCurtain","xpDepthGrid","xpDialTicks","xpDotSheet","xpDriftBars","xpDriftMarks","xpFlowLines","xpFoldPlanes","xpGreekText","xpHorizonLines","xpLeanVignette","xpLissajous","xpLoadBars","xpMarchDash","xpNestTri","xpOrbits","xpPanels","xpPendulums","xpPhyllo","xpPlexus","xpPlusField","xpPosterGrad","xpRadar","xpRingDots","xpRuler","xpScanner","xpSevenSeg","xpShiftRows","xpSineWeave","xpSlitLight","xpStepBlocks","xpStringArt","xpTwinDiscs","xpWindStreaks"]},"cam":{"additional":[],"blockingMissing":[],"catalog":{"count":71,"notPorted":[],"registeredInCatalog":71,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":71,"registered":["barrelRoll","beatPunch","bounce","crashZoom","dollyIn","driftDiag","dutch","earthquake","floatNoise","focusIn","handheld","hrDutchSnap","hrNervous","hzColdShiver","hzCreepFreeze","hzGlanceBack","hzHeldBreath","jelly","knCardFlip","knJumpCut","knReadPan","knRushIn","knShearKick","knTiltKick","kzKnockback","kzRecoil","kzSkidStop","kzWordNod","orbitDrift","panL","panR","pendulumSway","pullOut","push","rackFocus","roll","shakeHard","snapPan","spiralIn","stepZoom","tiltDown","tiltUp","tzGridStep","tzItalicSet","tzMeasureZoom","tzTabStep","vertigo","whipIn","wzByobuPan","wzKakejikuView","wzOjigi","xqArcSweep","xqBeatBreath","xqCraneUp","xqDriftTurn","xqFindFrame","xqFocusHunt","xqHeartbeat","xqLeafFall","xqLevelOut","xqLongLens","xqLoudZoom","xqPushPull","xqSquashRelax","xqStopMotion","xqTickRoll","xqTripodNudge","xqTruckAround","xqWalkCam","xqWhipSpring","xqWindUp"]},"decor":{"additional":["ruler"],"blockingMissing":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"catalog":{"count":260,"notPorted":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"registeredInCatalog":5,"registeredNotInCatalog":["ruler"]},"method":"native","missing":["arrows","asanoha","atomOrbit","barcode","bars","beatRing","blobs","bokeh","brackets","bracketsJP","brushStroke","bubbles","checkerStrip","chochin","circuit","cloudPuffs","concentricSquares","confetti","constellation","counter","crossOut","crosshair","cursorClick","dandelion","dataColumns","dateStamp","decoCorners","dimension","dots","fireflies","glitchRects","glyphLock","grid","guides","halfCircles","halftonePatch","hanabi","headingTape","heartsStars","hexGrid","highlightMark","hrCracks","hrDrips","hrDustBeam","hrScratches","hrSigil","hrStaticPatch","hrWatchEye","hzBareBulb","hzCobweb","hzDoorAjar","hzFilmDirt","hzFingers","hzFootprints","hzHandprints","hzPairEyes","hzPeeker","hzStrayGlyph","indexTabs","kamon","kasumi","knSpeedTrail","knWordTicks","kzBounceDot","kzChevronRun","kzImpactTicks","kzMarchFrame","kzMetronome","kzPushRods","kzSpringCoils","kzUnderRun","kzWhooshCurls","kzWobbleArcs","leaders","lightLeak","likeCounter","lineBurst","loopArrows","mediaControls","memphis","momiji","moonPhases","musicNotes","namiGashira","notifBell","orbitDots","paperClip","petals","plusGrid","polkaPatch","progressBar","progressRing","punchHoles","qrBlock","radar","rainRipples","rainStreaks","registration","reticle","rings","risingParticles","ruledLines","rulerEdge","scribbleCircle","scribbleUnder","seal","seigaiha","sensu","shapes","shimenawa","slash","smoke","snow","sonarArcs","sparks","spectrumRing","speedCorner","spinner","spiralLine","staple","starField","starburst","stripeCircle","stripes","sunRays","swatches","tally","tapePieces","timecodeBar","toggleSwitch","triangleSpin","tsukiKumo","twinkle","tyBigPunct","tyColophon","tyRunningHead","tyTextRule","tyTypeScale","tzCornerNums","tzDotLeader","tzEmBox","tzHeadEnd","tzNoteMark","tzNumStrip","tzProgRule","tzReadCaret","tzSideCaption","tzTrackMarks","verticalStrip","vines","volumeBars","watermarkKanji","waveLine","waveform","windowChrome","wzChidori","wzKazaguruma","wzMizuhiki","wzRyusui","wzShippo","wzTake","wzUme","wzUroko","wzYagasuri","wzYukiwa","xlAccentTicks","xlAngleMark","xlArrowRules","xlBezier","xlBubbleLine","xlCaliper","xlCheckBox","xlCompass","xlCurlyBrace","xlCutLine","xlDashTrack","xlDoubleRule","xlEdgeTether","xlFocusHunt","xlGapFrame","xlHairpin","xlHandArrow","xlHopCorners","xlLevel","xlNestBracket","xlPennant","xlPlumb","xlProtractor","xlRepeatBars","xlSeam","xlSketchBox","xlSlur","xlTransformBox","xlWingLines","xmBeatSteps","xmBounce","xmContour","xmConveyor","xmDominoes","xmDotWave","xmFountain","xmFuse","xmGauge","xmGears","xmHatch","xmIris","xmIsoCubes","xmMagnet","xmMoire","xmPendulum","xmPie","xmPolyGrow","xmPong","xmScatter","xmSettle","xmSlide","xmSortBars","xmSpiro","xmStairs","xmSwarm","xmTriLattice","xmTruchet","xmWaves","xmWhirl","xnAsciiGauge","xnAxes","xnBattery","xnBoxCoords","xnBreadcrumb","xnCalendar","xnClock","xnDiff","xnDropdown","xnFootnote","xnGlyphStats","xnKeycaps","xnLegend","xnLevelMeter","xnMicroPara","xnPager","xnPrompt","xnRemain","xnSearch","xnSliders","xnSparkline","xnStars","xnSyllables","xnTicker","xnTimeline","xnTooltip","xnTrackList","xnTyping","xnVersionTags","xnVowels","zigzagRibbon"],"referenceCount":260,"registered":["cropMarks","indexNum","romajiLine","ruler","tyGlyphBody","xlLadder"]},"enter":{"additional":["fade","flip","rise","slide"],"blockingMissing":[],"catalog":{"count":251,"notPorted":[],"registeredInCatalog":251,"registeredNotInCatalog":["fade","flip","rise","slide"]},"method":"native","missing":[],"referenceCount":251,"registered":["assemble","backlight","blinds","blur","blurStagger","bounceBall","bounceBig","brushReveal","bubbles","checker","clockWipe","crtOn","crumple","cursorSweep","cut","cylinder","diagWipe","dither","domino","drop","dropMask","echoCount","echoIn","fade","fadeStagger","fanOpen","filmFeed","flicker","flip","flipX","flipY","fold","glint","glitchIn","hatchFill","heatHaze","hrBlinkCreep","hrClawReveal","hrJumpScare","hrManifest","hrMirrorSnap","hrUneasy","hrVhold","hzAlreadyThere","hzFloorSeep","hzFromScratch","hzLampSweep","hzLateSnap","hzShakyHand","hzTooClose","hzUnwatched","hzWrongGlyph","inkBleed","inkDrop","interlace","invertBox","iris","knDiveIn","knHingeDrop","knInertia","knLoopIn","knPushIn","knReplaceIn","knStretchOut","knTypeToSlam","knWordSlam","knWordSpin","kzBowSnap","kzOverrun","kzPunchThrough","kzSeesaw","kzSideVolley","kzSkipStone","kzTowerUnstack","kzTrampoline","kzWordWheel","lightLeak","liquidFill","loadingBar","loupe","magnet","matrixRain","neonOn","noteUnfold","odometer","outlineFill","overexpose","pendulum","pop","printRegister","quarters","randomOrder","resolve","ripple","rise","riseMask","rockSettle","rollIn","rubber","scramble","shadowFirst","shuffle","shutter","skewIn","slice","slide","slideL","slideR","slideWhole","slingshot","snapRail","spin","spiralIn","splitFlap","splitJoin","springIn","squashDrop","stamp","stickerPeel","stopMotion","stretch","strokeDraw","strokeOrder","tiltUp","tokoroten","tornJoin","trackIn","trackOut","tyBracketOpen","tyDotGrow","tyKeyFirst","tyLineWipe","tyRetype","tyRubyDrop","tyUnderLift","tyZoomOne","type","tzBaseAlign","tzCaretSet","tzCloseUp","tzCountSet","tzIndexLead","tzPointSize","tzRuleSlide","tzTextFrame","tzWeightUp","unroll","vSlice","waveIn","whip","windBlown","wipe","wzChochin","wzFusuma","wzHanabi","wzHanko","wzKakejiku","wzKamifubuki","wzMisu","wzOrigami","wzSeigaiha","xeArcToss","xeBellows","xeBlanks","xeBlockDrop","xeCeilingFall","xeCellSlide","xeCenterDeal","xeChainBump","xeCloneMorph","xeCoinToss","xeEndsInward","xeFillGaps","xeGearTick","xeGlyphCurtain","xeInchworm","xeKanjiFirst","xeLeapfrog","xeMarch","xeOrbitIn","xePiecePile","xePieceRain","xePieceStrata","xePieceVortex","xeRedact","xeRicochet","xeSkewFlap","xeSwingDoor","xeTripleBeat","xeUnevenScale","xeVanishPoint","xfChevron","xfClosingHole","xfCornerBloom","xfCrossOpen","xfDiagStrips","xfEqualizer","xfHolesMerge","xfJaws","xfOutlineLead","xfPassingWipes","xfPrintHead","xfQuadRelay","xfRingDial","xfRollerShutter","xfRovingWindow","xfScanner","xfSlantLouver","xfSpiral","xfStackStrips","xfStaircase","xfStripSort","xfSunburst","xfTapeOff","xfThreeTier","xfTraceFlood","xfTriptych","xfTwoFields","xfUnderSweep","xfWeave","xfWiper","xgAfterimage","xgBlockSink","xgCoinSettle","xgColorPour","xgComet","xgCornerUnfurl","xgDoubleVision","xgFillDock","xgFocusHunt","xgGate","xgHangSign","xgHeavyDrop","xgJelly","xgKeyPoses","xgLensFringe","xgNewsSpin","xgNoseDive","xgPaperFall","xgPumpUp","xgPushBar","xgQuarterTurn","xgRatchet","xgRoughCut","xgShearUp","xgSignSpin","xgStampLift","xgStrobe","xgWallHit","xgWiper","xgZipLine","zipper","zoom","zoomAlt","zoomOut"]},"exit":{"additional":["fade","flip","pop","rise","slide"],"blockingMissing":[],"catalog":{"count":221,"notPorted":[],"registeredInCatalog":221,"registeredNotInCatalog":["fade","flip","pop","rise","slide"]},"method":"native","missing":[],"referenceCount":221,"registered":["backspace","balloonOff","blindsClose","blur","blurOutStagger","bounceOff","burn","candleOut","checkerOut","clapShut","clockOut","collapse","crumpleOut","cut","deflateOut","diagWipeOut","dissolve","dominoOut","drift","echoOut","eraserOut","explode","fade","fall","fanClose","flip","flipOutX","flipOutY","floodOut","flutterOut","foldOut","glassBreak","glitch","glitchDissolve","gravity","halftoneOut","hazeOut","hingeOut","hrDrain","hrFlickerDie","hrLookBack","hrPulledDown","hrShiver","hrSwallow","hrTurnAway","hzBackAway","hzDragCorner","hzFlatline","hzOutOfLight","hzRetinal","hzShadowOff","hzTaken","hzThumbSmear","irisClose","knCloseGap","knDiveGlyph","knJumpCutOut","knLaunch","knPushOut","knStackAway","knWordBlink","knWordKick","kzBatAway","kzCrashApart","kzCrouchDive","kzHammerDown","kzPinchShoot","kzSlingAway","kzSwingFling","kzYankOut","lampOff","matrixOut","melt","mosaicOut","outlineOut","overexposeOut","peelOff","pop","popOut","rgbSplitOut","rise","riseOut","rocketOff","rollOff","rollUpOut","sandOut","scanOut","scatter","scorchOut","scrambleOut","scribbleOut","shatterLite","shockOut","shredOut","shrink","sinkMask","slashOut","slice","slide","slideOutL","slideOutR","slotOut","snakeOut","spinOut","splitApart","squash","stretch","stripesOut","sweepCover","tearOut","tornadoOut","trackOutWide","twist","tyBracketClose","tyFoldVert","tyKeyLast","tyLineFeed","tyStrike","tyToDot","tyToIndex","tyUnderSink","tzCondense","tzHalfCut","tzOverset","tzProofDelete","tzRulesClose","tzSelectDelete","tzToFootnote","tzToTofu","undraw","vSliceDrop","vacuumOut","waveOut","whipOut","wipe","wzDoron","wzFuroshiki","wzHanaChiru","wzKasumi","wzOrizuru","wzShojiKage","wzSumiNijimi","wzToro","xhBarcode","xhCeiling","xhCentreThin","xhCoinSpin","xhCombOut","xhConcertina","xhConveyor","xhEatAlong","xhEndsOut","xhFlick","xhFullStop","xhGather","xhHopFar","xhKanaFirst","xhMorse","xhPageTurn","xhPieceHeap","xhPieceParts","xhPieceSpin","xhPieceStrata","xhPieceThin","xhRollCall","xhShuffle","xhShutters","xhStairs","xhStomp","xhTiltSlide","xiCentreOut","xiCounterScroll","xiCounterWipe","xiCropTurns","xiDiagPinch","xiDotted","xiDrawers","xiEyelid","xiFields","xiFillDrop","xiFinder","xiInverseBand","xiLattice","xiMothHoles","xiPicket","xiPistons","xiPlateCarry","xiPortholes","xiRadialBlinds","xiRedact","xiRings","xiRollShutter","xiSawBite","xiSliceWave","xiSpiralTiles","xiTwinPlates","xiTwoPass","xjBigWheel","xjCardToss","xjColourDrain","xjComet","xjDoubleVision","xjEdgeTeeter","xjFocusPull","xjGateSwing","xjNeedle","xjOnionSkin","xjPanSmear","xjPuckHit","xjQuarterTurn","xjRatchet","xjRubberSnap","xjShadowStay","xjShellChase","xjSlump","xjSpringHop","xjStepFade","xjThroughFocus","xjTrapdoor","xjTug","xjWallSplat","xjWiper","xjYank","zipOut","zoomFar","zoomThrough"]},"fx":{"additional":["xrScanWipe","xrShutterStep"],"blockingMissing":[],"catalog":{"count":138,"notPorted":[],"registeredInCatalog":138,"registeredNotInCatalog":["xrScanWipe","xrShutterStep"]},"method":"native","missing":[],"referenceCount":138,"registered":["anamorphic","bandInvert","blackFrame","blindsTrans","block","bloomFlash","bulge","chroma","colorBars","crtOff","defocus","ditherBit","doors","duotone","dustScratches","echoFrames","edgeDetect","filmAdvance","filmBurn","flash","focusLines","gridRepeat","halftone","heartbeat","hrPassingShadow","hrSignalLoss","hrSubliminal","hueShift","hzClosingDark","hzColdBreath","hzDrain","hzFaint","hzTear","hzUpside","interlace","invert","irisTrans","kaleido","kzBulldoze","kzCardSlam","kzDustLanding","kzEdgeHit","kzKnockSmear","kzShockArcs","lightRays","lightSweep","loopScroll","macroBlock","mirrorFlash","mosaic","negativeRing","panelWipe","perspectiveTilt","pixelDrift","pixelSort","posterize","radialChroma","rgbSplit","ripple","rotateSnap","scanBar","shake","shatter","slice","smear","snapshot","speedLines","splitSlide","squash","starGlint","strobe","tileShift","trackingNoise","tvStatic","tzColumnShift","tzFrameStep","tzGridFlash","tzKnockBand","tzRegTicks","tzRuleFlash","vhsRoll","waveWarp","whipBlur","whiteFrame","wzHanafubuki","wzHyoshigi","wzMaku","wzOrime","wzShojiPass","wzSumiShibuki","xrAccordion","xrBandRepeat","xrBandZoom","xrBlink","xrBorderPunch","xrCheckerInvert","xrClockInvert","xrColorStrobe","xrColumnDrop","xrCornerFold","xrCrossFringe","xrCrossSplit","xrCrosshair","xrDiagSlice","xrDiscTurn","xrDotWave","xrDropBounce","xrDropout","xrEdgeBars","xrExposureDip","xrFlipTiles","xrFourTints","xrLampFlicker","xrLetterSnap","xrLongShadow","xrLoupe","xrMoire","xrNested","xrPixelSparks","xrQuadCycle","xrRibbonTwist","xrScanBurst","xrScanWipe","xrShearSnap","xrShutterStep","xrSlotReel","xrSpotlight","xrStretchWave","xrStripeMosaic","xrSwingEcho","xrSyncBend","xrTapeCrease","xrThumbRow","xrTileLights","xrWaist","xrWaterMirror","xrZebra","zoom","zoomPunch","zoomStutter"]},"hold":{"additional":[],"blockingMissing":[],"catalog":{"count":102,"notPorted":[],"registeredInCatalog":102,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":102,"registered":["beatHop","breathe","colorRun","dangle","drift","echoTrail","eqBounce","flashBox","flipSwap","float","focusRack","glintSweep","glitchJump","glitchtick","glowFlicker","hWave","heartbeat","hrFlickerLight","hrLagOne","hrStare","hrTwitch","hzLoneTremor","hzLoom","hzPassing","hzPresence","hzSlowBreath","jelly","jitter","knBeatLean","knCounterRock","knGapBreath","knTickShift","knWordPulse","knWordRide","kzBeatSquat","kzDivingBoard","kzInertiaSway","kzSlinky","kzSquashWave","magnetJiggle","noiseDrift","orbitSmall","pluckString","pulse","rotateSlow","scanBand","shadowSway","shimmer","skewWobble","still","stretchPulse","sway","tilt","trackBreathe","tyKeyPulse","tyOutlineBlink","tyReadCursor","tyTrackStep","typeRattle","tzCaretBlink","tzCounterRules","tzIndexCount","tzKernNudge","tzUnderGrow","wave","windGust","wzFurin","wzMikoshi","wzNotan","wzShishiodoshi","wzTanzaku","xkBeatBump","xkBigSmall","xkBlink","xkBuoy","xkCradle","xkDepthRock","xkDoubleVision","xkFocusBreath","xkHeatHaze","xkKaraoke","xkLevelFill","xkLoudArch","xkLoudWeight","xkMagnifier","xkMarchEdge","xkMetronome","xkNod","xkPairUp","xkParallax","xkReflection","xkRippleOut","xkSlideBunch","xkSpinOne","xkSplitShear","xkStairStep","xkStopMotion","xkTallBreath","xkTiltSnap","xkWallBounce","xkZigzagFlip","zoomSlow"]},"layout":{"additional":["graphics"],"blockingMissing":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"catalog":{"count":366,"notPorted":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","interlude","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","title","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"registeredInCatalog":4,"registeredNotInCatalog":["graphics"]},"method":"native","missing":["accordion","arcTop","balloons","billboard","blocks","bookSpine","bounceLine","bubble","bubbles","bulbs","burst","calendar","cassette","chat","chochin","circle","circleWords","clapper","columnsBig","condensed","contents","contour","corners","credits","crossBands","crossword","crowdBubbles","cube","curtain","cylinder","depthStack","diag","dominoes","dotMatrix","dropCap","edgeFrame","elastic","ema","equalizer","filmstrip","fisheye","flag","flipBoard","flipCards","footnote","frameBox","genkou","glitchGrid","gloss","gridCells","halfVertical","halftoneBig","hanging","hanko","headlineDeck","hrCctv","hrDoorGap","hrFlashlight","hrMissing","hrOuija","hrRedacted","hrRisingDark","hrSpiritPhoto","hrStaticTv","hrWallScrawl","hrWrongOne","hrWrongShadow","huge","hzCloser","hzElevator","hzEmptyRoom","hzFogWindow","hzHangSign","hzKeyhole","hzReflection","hzSlats","hzStairs","hzStoppedClock","hzStreetLamp","hzTornNote","hzUnderDoor","hzVoicemail","hzWrongCopy","justified","kakejiku","kaleido","kanjiFocus","karuta","keycaps","knCollide","knFlowSnap","knGearWords","knPadGrid","knPathRide","knQuarterTurn","knReflow","knRhythmCuts","knSeesaw","knSlamStack","knSwapCenter","knTumble","knTypeSlam","knZoomDive","kzConveyor","kzFoldOut","kzGateSwing","kzHopSteps","kzInchworm","kzLineFeed","kzLob","kzReadLens","kzRelay","kzSagLine","kzShove","kzSlingshot","kzSwingKnock","kzTiltTray","kzWedge","labels","ledScroll","letterPaper","lowerThird","magazine","magnets","marquee","maskReveal","mirror","mixed","mosaicTiles","nameTag","neon","newspaper","noren","notification","numbered","omikuji","orbit","origami","panels","pendulum","perspective","pile","pill","polaroid","postcard","poster","priceTag","proofread","puzzle","quote","rain","ransom","ribbon","ring","routeMap","ruler","scatter","searchBar","shadowPlay","shoji","sideways","sliceStack","slotMachine","spiral","splitHalves","splitScreen","stack","staircase","stampSheet","stationSign","stencil","stickerBomb","stickyNotes","subtitleBar","swissGrid","tanzaku","tape","ticker","ticket","tile","tiles","tunnel","tyBandHide","tyBaseline","tyCropGiant","tyCross","tyErode","tyFullTrack","tyIndexTable","tyJustify","tyKeySplit","tyLineFocus","tyMargin","tyRotBlock","tyRuby","tyScaleSteps","tySplitType","tySquare","tyStatCount","tyVRuler","type","typeSpecimen","tzAlignSpec","tzAxis","tzCanon","tzDetail","tzFunnel","tzHook","tzHorizon","tzMetric","tzPath","tzPointSym","tzSlash","tzTrackClose","tzWarichu","tzWideOne","tzZoomBox","vinyl","wall","warningLabel","wave","wordCloud","wordSearch","wzAndon","wzBanzuke","wzByobu","wzChikkan","wzFurin","wzGenjiGumo","wzNobori","wzNoshi","wzSenjafuda","wzShikishi","wzShogi","wzSudare","wzTenugui","wzTorii","wzUchiwa","xaAirmail","xaBlockquote","xaBrace","xaCatalogCard","xaChecklist","xaColumns","xaCutLine","xaDogEar","xaErrata","xaFigure","xaFormCombs","xaHalfKnock","xaInitialPlate","xaLetterhead","xaLineNumbers","xaNutrition","xaPullQuote","xaPunchCard","xaReceipt","xaRuleSpecimen","xaScreenplay","xaSpacers","xaSplitBaseline","xaSwatchFan","xaTabStops","xaTearTabs","xaThumbIndex","xaTimetable","xaTriBand","xaWaybill","xbArcPoster","xbChevronChain","xbCircleFit","xbCompGrid","xbConstruct","xbCrosshair","xbDiagSplit","xbDial","xbDiamond","xbDonut","xbGolden","xbGradBars","xbGraph","xbHalfDisc","xbHoneycomb","xbIsoStack","xbPatternPanel","xbPie","xbPolyTrack","xbPrimitives","xbShapeLens","xbShapeRow","xbShear","xbSlitDisc","xbStripeDisc","xbTriangleSet","xbVenn","xbWedge","xbZiggurat","xcAwning","xcBattery","xcBlackboard","xcBrowser","xcBunting","xcChipCard","xcDrawers","xcDropdown","xcFloppy","xcFolder","xcGauge","xcHandheld","xcIncoming","xcLoading","xcMapPin","xcMegaphone","xcPaperCup","xcPlate","xcPlayer","xcPoll","xcPopups","xcRadio","xcScoreboard","xcSelect","xcSheet","xcSignpost","xcTruck","xcTshirt","xcVending","xcWeather","xdAxisAlt","xdBentRoad","xdBrick","xdChecker","xdColumnEcho","xdConstellation","xdCyclic","xdDrum","xdFourUp","xdHelix","xdKaraoke","xdMirrorAxis","xdOverlap","xdPassing","xdPivotFan","xdPointSym","xdRipple","xdSkewSweep","xdSkyline","xdSlowSpread","xdSpiralEcho","xdSquareWave","xdStaff","xdStitch","xdStretchEcho","xdSunShadow","xdTide","xdTrace","xdUpSide","xdWindSway","zigzag","zipper","zoomRepeat"],"referenceCount":364,"registered":["center","dictionary","graphics","vcols","xbTwistFrames"]},"trans":{"additional":[],"blockingMissing":[],"catalog":{"count":56,"notPorted":[],"registeredInCatalog":56,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":56,"registered":["blinds","blockDissolve","checker","clockWipe","cover","cubeTurn","diagonalWipe","doorsOpen","flashCross","hrBlink","hrStaticCut","hzBlackout","hzLinger","hzSlideDown","inkBlob","irisOpen","knCornerSwing","knStripSlam","knStutterCut","kzCarousel","kzCrushDown","kzShoveOff","pixelate","pushSlide","shatterTiles","sliceShift","spinOut","tyGridCells","tyRuleWipe","tzBaselineFold","tzColumnReplace","tzRuleSplit","uncover","whipPan","wipe","wzFusumaPass","wzMakimonoRoll","wzMawariButai","xqAccordion","xqBladeRun","xqChevronPush","xqDiagSplit","xqFlipOver","xqHalftone","xqLightLeak","xqLouverTurn","xqPagePeel","xqPolyIris","xqPropeller","xqRingRipple","xqSoftSweep","xqStretchSmear","xqStripShuffle","xqWaveWipe","xqWindowZoom","zoomThrough"]},"treat":{"additional":[],"blockingMissing":[],"catalog":{"count":122,"notPorted":[],"registeredInCatalog":122,"registeredNotInCatalog":[]},"method":"native","missing":[],"referenceCount":122,"registered":["alternate","baselineShift","boxed","bracketsQuote","chrome","circled","cutShift","dotted","doubleOutline","echoOutline","emphasisDots","extrude","fadeChars","fauxBold","focusPull","glitchSplit","glow","gradientSweep","gradientV","halftone","hardShadow","hatch","hrDoubleExp","hrEroded","hrInkBleed","hrRedact","hzColdRim","hzDragMarks","hzHairlines","hzHusk","hzUneven","inline","italic","karaoke","kerningWide","knWordPlate","knWordScale","kzCrescendo","kzHopArc","kzOnionSkin","kzSpeedShadow","kzStepShear","longShadow","marker","monoGrid","neonOutline","none","outline","outlineFill","outlineOffset","rainbow","ransom","reflection","rotateAlt","shadowStack","sizeWave","softShadow","splitColor","spotChar","stencilGap","sticker","strike","stripes","tall","toneShadow","tyHeadBig","tyHeadRules","tyHollowKey","tyIndexSup","tzKanaSmall","tzLineNo","tzSuperNote","tzTocLeader","tzTypeGuides","underline","waterline","wide","wzBinsen","wzKasure","wzKinpaku","wzObi","wzRakkan","xoAccentTicks","xoAltHollow","xoAltWeight","xoBandExtrude","xoBeltBand","xoBlobKnock","xoBlowUp","xoBorderBands","xoContour","xoCropMarks","xoCutLine","xoDiagSplit","xoDimLine","xoDoublePrint","xoEmboss","xoFadeHem","xoFloorShadow","xoFoldHalf","xoGlyphCorners","xoGlyphUnders","xoGraphFill","xoGroundDots","xoHalfKnock","xoHalfScreen","xoHiliter","xoHollowBlock","xoLeadBar","xoMixedFills","xoOffsetFrame","xoOverlapKern","xoRampAcross","xoRuler","xoSeparators","xoSwoosh","xoTallWide","xoTapedNote","xoThread","xoTopCrop","xoTrackRamp","xoTwinOutline"]}},"format":"jizura.cavalry.native-build","hostVerified":false,"inventoryBasis":"ae/data.json names snapshot; cavalry/catalog/ae-presets.json when present; source files hashed, dynamic registrations not independently audited","moduleOrder":["native/00_registry.js","native/10_graph.js","native/20_components.js","native/25_recipe_tools.js","native/26_recipe_components.js","native/27_registry_bridge.js","native/28_registry_identity.js","native/29_pack_helpers.js","packs/p_00_registry.js","packs/p_bg_bgcam.js","packs/p_bg_core.js","packs/p_bg_themes.js","packs/p_bg_x2.js","packs/p_camera.js","packs/p_camera_ext.js","packs/p_core_geometry.js","packs/p_core_scalar.js","packs/p_enter_core.js","packs/p_enter_ext.js","packs/p_enter_x2.js","packs/p_exit_a.js","packs/p_exit_b.js","packs/p_exit_core.js","packs/p_exit_x2a.js","packs/p_exit_x2b.js","packs/p_fx.js","packs/p_fx_ext.js","packs/p_fx_x2.js","packs/p_graphics.js","packs/p_hold.js","packs/p_hold_core.js","packs/p_hold_ext.js","packs/p_motion.js","packs/p_requested_backgrounds.js","packs/p_requested_decor.js","packs/p_requested_layouts.js","packs/p_requested_motion.js","packs/p_requested_transitions.js","packs/p_requested_treatments.js","packs/p_trans_core.js","packs/p_trans_ext.js","packs/p_treat_core.js","packs/p_treat_themes.js","packs/p_treat_x2.js","packs/p_x2_enter.js","packs/p_x2_exit.js","native/30_assembly.js"],"recipes":{"bg":{"argyle":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"asanoha":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"auroraRibbons":{"differences":["Curtains use soft overlapping vertical column pairs instead of per-pixel image gradient strips."],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"bigChar":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset bg:bigChar"},"bigStripes":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"bokehBg":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"borderFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"checker":{"differences":["Repeater is expanded to editable paths; tile paint preserves transparency."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:checker"},"chevron":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"cloudLayers":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"concentric":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"dotGrid":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"dots":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset bg:dots (halftone)"},"duotoneSweep":{"differences":["Conic sweep approximated with 16 smooth-stepped angular sectors."],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"eqBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"filmStrip":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"fireworks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"frame":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"godRays":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"gradientSweep":{"differences":["Linear gradient sweep is built with layered nested translucent bands."],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"halftoneFade":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"herringbone":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"hexGrid":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"horizonGlow":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"houndstooth":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"hrCorridor":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_horror3.js"},"hrDeadTrees":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_horror3.js"},"hrFailingLamp":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_horror3.js"},"hrMold":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_horror3.js"},"hzFarWindows":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_horrorA.js"},"hzFogBanks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_horrorA.js"},"hzHallLights":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_horrorA.js"},"hzHeadlights":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_horrorA.js"},"hzSwingLight":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_horrorA.js"},"hzWires":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_horrorA.js"},"isoCubes":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"kaleidoscope":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"kzBigGears":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_kineticA.js"},"kzBounceDiscs":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_kineticA.js"},"kzKickStreaks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_kineticA.js"},"kzRockHorizon":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_kineticA.js"},"kzRollSquare":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_kineticA.js"},"kzSqueezeLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_kineticA.js"},"letterbox":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"marble":{"differences":["Organic veined curves use layered warped polylines instead of per-pixel image synthesis."],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"meshBlobs":{"differences":["Radial gradients use 3 nested concentric orbs per blob."],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"moire":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"mountains":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"nightMoon":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"noiseField":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"none":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/01_util.js"},"oceanWaves":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"paperCut":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"particlesBg":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"polka":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"rainWindow":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"retroGrid":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"ridgePlot":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"ripples":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"scanBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"seigaiha":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"skyline":{"differences":["The transparent horizon is approximated with 24 editable opacity bands, not AE mask feathering.","Building and window paint is kept transparent instead of compositing the scheme background into the fill.","Absolute phase is on the exported assembly timeline."],"exact":false,"hostVerified":false,"scope":"cut","source":"AE background recipe skyline"},"snowLayers":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"speedLines":{"differences":["Stepped kinetic redraw uses 4 cyclic frame variations."],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"spiralArms":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"split":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"splitDiag":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"splitH":{"differences":["Uses transparent foreground/accent paint rather than a baked scheme-background mix."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:bg1_split"},"splitV":{"differences":["Uses transparent foreground/accent paint rather than a baked scheme-background mix."],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/p_bg1.jsx:bg1_split"},"spotlight":{"differences":["Spotlight falloff and beam use nested translucent shapes rather than canvas gradients."],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"squareTunnel":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"starfield":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"sunburst":{"differences":["Center radial fade uses concentric translucent discs instead of canvas radial gradient."],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"sunsetSun":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"tartan":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"topoLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"tornPaper":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"triTess":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"tvBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_looks.js"},"tzBgBaseGrid":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_typoA.js"},"tzBgBigDigits":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_typoA.js"},"tzBgColumns":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_typoA.js"},"tzBgGlyphField":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_typoA.js"},"tzBgNumField":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_typoA.js"},"tzBgRules":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_typoA.js"},"vhsBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"vignettePulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_bgcamB.js"},"wzBgRyusui":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_waA.js"},"wzBgSayagata":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_waA.js"},"wzBgShippo":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_waA.js"},"wzBgTatewaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_waA.js"},"wzBgYagasuri":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_waA.js"},"wzBgYukiwa":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_waA.js"},"xpBigPolygon":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpBigRing":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpBlinkCells":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpCapsules":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpCornerArcs":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpCropMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpCurtain":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpDepthGrid":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpDialTicks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpDotSheet":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpDriftBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpDriftMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpFlowLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpFoldPlanes":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpGreekText":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpHorizonLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpLeanVignette":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpLissajous":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpLoadBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpMarchDash":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpNestTri":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpOrbits":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpPanels":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpPendulums":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpPhyllo":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpPlexus":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpPlusField":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpPosterGrad":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpRadar":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpRingDots":{"differences":["Repeated dots are editable paths rather than AE repeaters."],"exact":false,"hostVerified":false,"scope":"cut","source":"AE background recipe xpRingDots"},"xpRuler":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpScanner":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpSevenSeg":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpShiftRows":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpSineWeave":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpSlitLight":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpStepBlocks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpStringArt":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpTwinDiscs":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"},"xpWindStreaks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"src/11p_x2_bg.js"}},"cam":{"barrelRoll":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"beatPunch":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"bounce":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"crashZoom":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"dollyIn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"driftDiag":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"dutch":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"earthquake":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"floatNoise":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"focusIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"handheld":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"hrDutchSnap":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hrNervous":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzColdShiver":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzCreepFreeze":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzGlanceBack":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"hzHeldBreath":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"jelly":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"knCardFlip":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knJumpCut":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knReadPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knRushIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knShearKick":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"knTiltKick":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzKnockback":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzRecoil":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzSkidStop":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"kzWordNod":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"orbitDrift":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"panL":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"panR":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"pendulumSway":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"pullOut":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"push":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"rackFocus":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"roll":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"shakeHard":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"snapPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"spiralIn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"stepZoom":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"tiltDown":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tiltUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzGridStep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzItalicSet":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzMeasureZoom":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"tzTabStep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"vertigo":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"whipIn":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzByobuPan":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzKakejikuView":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"wzOjigi":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqArcSweep":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqBeatBreath":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqCraneUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqDriftTurn":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqFindFrame":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqFocusHunt":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqHeartbeat":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLeafFall":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLevelOut":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLongLens":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqLoudZoom":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqPushPull":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqSquashRelax":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqStopMotion":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqTickRoll":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqTripodNudge":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqTruckAround":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqWalkCam":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"},"xqWhipSpring":{"differences":["Camera motion-blur / ghost-pass lag requires hostProfile or is omitted."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_horror*.jsx, ae/p_kinetic*.jsx, ae/p_x2_*.jsx (read-only references)"},"xqWindUp":{"differences":["Ghost-pass lag is not implemented."],"exact":false,"hostVerified":false,"scope":"cut-camera","source":"ae/p_cam.jsx, ae/p_x2_camtr.jsx, ae/p_x2_typoB.jsx numeric models (read-only references)"}},"decor":{"cropMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"indexNum":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset decor:indexNum"},"romajiLine":{"differences":["Kana conversion follows src/01_util.js.","Kanji requires an explicit reading; unsupported text is not silently replaced.","Annotation placement is a native reconstruction; visual conformance is pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native romajiLine"},"ruler":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"tyGlyphBody":{"differences":["Source: jizura_core.jsx decor:tyGlyphBody.","Draws outside text divisions, not per-glyph boxes.","Vertical suppression follows the source.","Native margin is params.margin or 3% of the shorter composition edge.","Actual host/render conformance remains pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native tyGlyphBody"},"xlLadder":{"differences":["Source: jizura_core.jsx axl_reg(xlLadder).","Rung cadence, reveal interval and three lit rungs follow the source.","AE side-band helper is expressed as explicit native geometry.","Native margin is params.margin or 2.5% of the shorter composition edge.","Actual host/render conformance remains pending."],"exact":false,"hostVerified":false,"scope":"cut","source":"Cavalry native xlLadder"}},"enter":{"assemble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:assemble"},"backlight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:backlight"},"blinds":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:blinds"},"blur":{"differences":["Uses the existing Gaussian-blur component.","Emission requires the explicit verified blur host profile.","No unblurred substitute is emitted."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:blur"},"blurStagger":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:blurStagger"},"bounceBall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:bounceBall"},"bounceBig":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:bounceBig"},"brushReveal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:brushReveal"},"bubbles":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:bubbles"},"checker":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:checker"},"clockWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:clockWipe"},"crtOn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:crtOn"},"crumple":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:crumple"},"cursorSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:cursorSweep"},"cut":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"cylinder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:cylinder"},"diagWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:diagWipe"},"dither":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:dither"},"domino":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:domino"},"drop":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"dropMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:dropMask"},"echoCount":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:echoCount"},"echoIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:echoIn"},"fade":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"fadeStagger":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fadeStagger"},"fanOpen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fanOpen"},"filmFeed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:filmFeed"},"flicker":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"flip":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"flipX":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:flipX"},"flipY":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:flipY"},"fold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:fold"},"glint":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:glint"},"glitchIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:glitchIn"},"hatchFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:hatchFill"},"heatHaze":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:heatHaze"},"hrBlinkCreep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrBlinkCreep"},"hrClawReveal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrClawReveal"},"hrJumpScare":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrJumpScare"},"hrManifest":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrManifest"},"hrMirrorSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrMirrorSnap"},"hrUneasy":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrUneasy"},"hrVhold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / enter:hrVhold"},"hzAlreadyThere":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzAlreadyThere"},"hzFloorSeep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzFloorSeep"},"hzFromScratch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzFromScratch"},"hzLampSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzLampSweep"},"hzLateSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzLateSnap"},"hzShakyHand":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzShakyHand"},"hzTooClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzTooClose"},"hzUnwatched":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzUnwatched"},"hzWrongGlyph":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / enter:hzWrongGlyph"},"inkBleed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:inkBleed"},"inkDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:inkDrop"},"interlace":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:interlace"},"invertBox":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:invertBox"},"iris":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:iris"},"knDiveIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knDiveIn"},"knHingeDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knHingeDrop"},"knInertia":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knInertia"},"knLoopIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knLoopIn"},"knPushIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knPushIn"},"knReplaceIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knReplaceIn"},"knStretchOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knStretchOut"},"knTypeToSlam":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knTypeToSlam"},"knWordSlam":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knWordSlam"},"knWordSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / enter:knWordSpin"},"kzBowSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzBowSnap"},"kzOverrun":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzOverrun"},"kzPunchThrough":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzPunchThrough"},"kzSeesaw":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzSeesaw"},"kzSideVolley":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzSideVolley"},"kzSkipStone":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzSkipStone"},"kzTowerUnstack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzTowerUnstack"},"kzTrampoline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzTrampoline"},"kzWordWheel":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / enter:kzWordWheel"},"lightLeak":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:lightLeak"},"liquidFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:liquidFill"},"loadingBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:loadingBar"},"loupe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:loupe"},"magnet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:magnet"},"matrixRain":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:matrixRain"},"neonOn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter2.jsx / enter:neonOn"},"noteUnfold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:noteUnfold"},"odometer":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:odometer"},"outlineFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx / enter:outlineFill"},"overexpose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:overexpose"},"pendulum":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:pendulum"},"pop":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"printRegister":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:printRegister"},"quarters":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:quarters"},"randomOrder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:randomOrder"},"resolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:resolve"},"ripple":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:ripple"},"rise":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"riseMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:riseMask"},"rockSettle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:rockSettle"},"rollIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:rollIn"},"rubber":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:rubber"},"scramble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:scramble"},"shadowFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:shadowFirst"},"shuffle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:shuffle"},"shutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:shutter"},"skewIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:skewIn"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slice"},"slide":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"slideL":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slideL"},"slideR":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slideR"},"slideWhole":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx / enter:slideWhole"},"slingshot":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:slingshot"},"snapRail":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:snapRail"},"spin":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"spiralIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:spiralIn"},"splitFlap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:splitFlap"},"splitJoin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:splitJoin"},"springIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:springIn"},"squashDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:squashDrop"},"stamp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:stamp"},"stickerPeel":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:stickerPeel"},"stopMotion":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:stopMotion"},"stretch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:stretch"},"strokeDraw":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx / enter:strokeDraw"},"strokeOrder":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:strokeOrder"},"tiltUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:tiltUp"},"tokoroten":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB2.jsx / enter:tokoroten"},"tornJoin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enterB1.jsx / enter:tornJoin"},"trackIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:trackIn"},"trackOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:trackOut"},"tyBracketOpen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyBracketOpen"},"tyDotGrow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyDotGrow"},"tyKeyFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / enter:tyKeyFirst"},"tyLineWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyLineWipe"},"tyRetype":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyRetype"},"tyRubyDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyRubyDrop"},"tyUnderLift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyUnderLift"},"tyZoomOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / enter:tyZoomOne"},"type":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"tzBaseAlign":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzBaseAlign"},"tzCaretSet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzCaretSet"},"tzCloseUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzCloseUp"},"tzCountSet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzCountSet"},"tzIndexLead":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzIndexLead"},"tzPointSize":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzPointSize"},"tzRuleSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzRuleSlide"},"tzTextFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzTextFrame"},"tzWeightUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_typoB.jsx / enter:tzWeightUp"},"unroll":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:unroll"},"vSlice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:vSlice"},"waveIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:waveIn"},"whip":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:whip"},"windBlown":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:windBlown"},"wipe":{"differences":["Editable wipe bar plus animated glyph clipping.","Clipping uses the existing JavaScript Deformer component.","Actual host/render verification remains pending."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:wipe"},"wzChochin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzChochin"},"wzFusuma":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzFusuma"},"wzHanabi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzHanabi"},"wzHanko":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzHanko"},"wzKakejiku":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzKakejiku"},"wzKamifubuki":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzKamifubuki"},"wzMisu":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzMisu"},"wzOrigami":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzOrigami"},"wzSeigaiha":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB1.jsx / enter:wzSeigaiha"},"xeArcToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeBellows":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeBellows"},"xeBlanks":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeBlanks"},"xeBlockDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCeilingFall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCellSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeCellSlide"},"xeCenterDeal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeChainBump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeCloneMorph":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeCloneMorph"},"xeCoinToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeEndsInward":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeFillGaps":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeFillGaps"},"xeGearTick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeGlyphCurtain":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeGlyphCurtain"},"xeInchworm":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeKanjiFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeKanjiFirst"},"xeLeapfrog":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeMarch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeOrbitIn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xePiecePile":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xePiecePile"},"xePieceRain":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xePieceRain"},"xePieceStrata":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entA.jsx / enter:xePieceStrata"},"xePieceVortex":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xePieceVortex"},"xeRedact":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeRedact"},"xeRicochet":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeSkewFlap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeSkewFlap"},"xeSwingDoor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeTripleBeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_entA.jsx / enter:xeTripleBeat"},"xeUnevenScale":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xeVanishPoint":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_entA.js"},"xfChevron":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfChevron"},"xfClosingHole":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfClosingHole"},"xfCornerBloom":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfCornerBloom"},"xfCrossOpen":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfCrossOpen"},"xfDiagStrips":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfDiagStrips"},"xfEqualizer":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfEqualizer"},"xfHolesMerge":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfHolesMerge"},"xfJaws":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfJaws"},"xfOutlineLead":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfOutlineLead"},"xfPassingWipes":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfPassingWipes"},"xfPrintHead":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfPrintHead"},"xfQuadRelay":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfQuadRelay"},"xfRingDial":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfRingDial"},"xfRollerShutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfRollerShutter"},"xfRovingWindow":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfRovingWindow"},"xfScanner":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfScanner"},"xfSlantLouver":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfSlantLouver"},"xfSpiral":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfSpiral"},"xfStackStrips":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfStackStrips"},"xfStaircase":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfStaircase"},"xfStripSort":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfStripSort"},"xfSunburst":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfSunburst"},"xfTapeOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfTapeOff"},"xfThreeTier":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfThreeTier"},"xfTraceFlood":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfTraceFlood"},"xfTriptych":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfTriptych"},"xfTwoFields":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfTwoFields"},"xfUnderSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfUnderSweep"},"xfWeave":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfWeave"},"xfWiper":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entB.jsx / enter:xfWiper"},"xgAfterimage":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgAfterimage"},"xgBlockSink":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgBlockSink"},"xgCoinSettle":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgCoinSettle"},"xgColorPour":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgColorPour"},"xgComet":{"differences":["Eight editable delayed glyph copies replace AE Echo.","Trail sampling is frame-based."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / enter:xgComet"},"xgCornerUnfurl":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgCornerUnfurl"},"xgDoubleVision":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgDoubleVision"},"xgFillDock":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgFillDock"},"xgFocusHunt":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgFocusHunt"},"xgGate":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgGate"},"xgHangSign":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgHangSign"},"xgHeavyDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgHeavyDrop"},"xgJelly":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgJelly"},"xgKeyPoses":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgKeyPoses"},"xgLensFringe":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgLensFringe"},"xgNewsSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgNewsSpin"},"xgNoseDive":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgNoseDive"},"xgPaperFall":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgPaperFall"},"xgPumpUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgPumpUp"},"xgPushBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgPushBar"},"xgQuarterTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgQuarterTurn"},"xgRatchet":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgRatchet"},"xgRoughCut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgRoughCut"},"xgShearUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgShearUp"},"xgSignSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgSignSpin"},"xgStampLift":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgStampLift"},"xgStrobe":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgStrobe"},"xgWallHit":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgWallHit"},"xgWiper":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgWiper"},"xgZipLine":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"ae/p_x2_entC.jsx / enter:xgZipLine"},"zipper":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zipper"},"zoom":{"differences":["Emission requires the explicit verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / enter:zoom"},"zoomAlt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zoomAlt"},"zoomOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_enter1.jsx, p_enter2.jsx / enter:zoomOut"}},"exit":{"backspace":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:backspace"},"balloonOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:balloonOff"},"blindsClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:blindsClose"},"blur":{"differences":["Emission requires the explicit verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:blur"},"blurOutStagger":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:blurOutStagger"},"bounceOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:bounceOff"},"burn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:burn"},"candleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:candleOut"},"checkerOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:checkerOut"},"clapShut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:clapShut"},"clockOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:clockOut"},"collapse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:collapse"},"crumpleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:crumpleOut"},"cut":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"deflateOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:deflateOut"},"diagWipeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:diagWipeOut"},"dissolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:dissolve"},"dominoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:dominoOut"},"drift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:drift"},"echoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:echoOut"},"eraserOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:eraserOut"},"explode":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:explode"},"fade":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"fall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:fall"},"fanClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:fanClose"},"flip":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"flipOutX":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:flipOutX"},"flipOutY":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:flipOutY"},"floodOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:floodOut"},"flutterOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:flutterOut"},"foldOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:foldOut"},"glassBreak":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:glassBreak"},"glitch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:glitch"},"glitchDissolve":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:glitchDissolve"},"gravity":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:gravity"},"halftoneOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:halftoneOut"},"hazeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:hazeOut"},"hingeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:hingeOut"},"hrDrain":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrDrain"},"hrFlickerDie":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrFlickerDie"},"hrLookBack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrLookBack"},"hrPulledDown":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrPulledDown"},"hrShiver":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrShiver"},"hrSwallow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrSwallow"},"hrTurnAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js / exit:hrTurnAway"},"hzBackAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzBackAway"},"hzDragCorner":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzDragCorner"},"hzFlatline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzFlatline"},"hzOutOfLight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzOutOfLight"},"hzRetinal":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzRetinal"},"hzShadowOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzShadowOff"},"hzTaken":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzTaken"},"hzThumbSmear":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js / exit:hzThumbSmear"},"irisClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:irisClose"},"knCloseGap":{"differences":["When words are absent, script-run segmentation is used.","Export source.words for authoritative planner segmentation."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:knCloseGap"},"knDiveGlyph":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knDiveGlyph"},"knJumpCutOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knJumpCutOut"},"knLaunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knLaunch"},"knPushOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knPushOut"},"knStackAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knStackAway"},"knWordBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knWordBlink"},"knWordKick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic2.js / exit:knWordKick"},"kzBatAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzBatAway"},"kzCrashApart":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzCrashApart"},"kzCrouchDive":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzCrouchDive"},"kzHammerDown":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzHammerDown"},"kzPinchShoot":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzPinchShoot"},"kzSlingAway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzSlingAway"},"kzSwingFling":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzSwingFling"},"kzYankOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js / exit:kzYankOut"},"lampOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:lampOff"},"matrixOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:matrixOut"},"melt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:melt"},"mosaicOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:mosaicOut"},"outlineOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:outlineOut"},"overexposeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:overexposeOut"},"peelOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:peelOff"},"pop":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"popOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:popOut"},"rgbSplitOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:rgbSplitOut"},"rise":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"riseOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:riseOut"},"rocketOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:rocketOff"},"rollOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:rollOff"},"rollUpOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:rollUpOut"},"sandOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:sandOut"},"scanOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:scanOut"},"scatter":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"scorchOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:scorchOut"},"scrambleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:scrambleOut"},"scribbleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:scribbleOut"},"shatterLite":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:shatterLite"},"shockOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:shockOut"},"shredOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:shredOut"},"shrink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:shrink"},"sinkMask":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:sinkMask"},"slashOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slashOut"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slice"},"slide":{"differences":["Legacy Cavalry recipe ported to glyph tracks; opacity envelope reproduced as a 4x ramp (enter) or linear fade (exit)."],"exact":false,"hostVerified":false,"scope":"glyph","source":"legacy Cavalry preset (native port)"},"slideOutL":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slideOutL"},"slideOutR":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:slideOutR"},"slotOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:slotOut"},"snakeOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:snakeOut"},"spinOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:spinOut"},"splitApart":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:splitApart"},"squash":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:squash"},"stretch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:stretch"},"stripesOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:stripesOut"},"sweepCover":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:sweepCover"},"tearOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exitB.js / exit:tearOut"},"tornadoOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:tornadoOut"},"trackOutWide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:trackOutWide"},"twist":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_exit1.jsx, p_exit2.jsx / exit:twist"},"tyBracketClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyBracketClose"},"tyFoldVert":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyFoldVert"},"tyKeyLast":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyKeyLast"},"tyLineFeed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyLineFeed"},"tyStrike":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyStrike"},"tyToDot":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyToDot"},"tyToIndex":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyToIndex"},"tyUnderSink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo2.js / exit:tyUnderSink"},"tzCondense":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzCondense"},"tzHalfCut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzHalfCut"},"tzOverset":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzOverset"},"tzProofDelete":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzProofDelete"},"tzRulesClose":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzRulesClose"},"tzSelectDelete":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzSelectDelete"},"tzToFootnote":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzToFootnote"},"tzToTofu":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js / exit:tzToTofu"},"undraw":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:undraw"},"vSliceDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exit.js / exit:vSliceDrop"},"vacuumOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:vacuumOut"},"waveOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exit.js / exit:waveOut"},"whipOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exit.js / exit:whipOut"},"wipe":{"differences":["Editable wipe bar plus animated glyph clipping.","Clipping uses the existing JavaScript Deformer component.","Actual host/render verification remains pending."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"src/05_anim.js / exit:wipe"},"wzDoron":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzDoron"},"wzFuroshiki":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzFuroshiki"},"wzHanaChiru":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzHanaChiru"},"wzKasumi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzKasumi"},"wzOrizuru":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzOrizuru"},"wzShojiKage":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzShojiKage"},"wzSumiNijimi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzSumiNijimi"},"wzToro":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js / exit:wzToro"},"xhBarcode":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhBarcode"},"xhCeiling":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhCeiling"},"xhCentreThin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhCoinSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhCombOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhCombOut"},"xhConcertina":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhConcertina"},"xhConveyor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhConveyor"},"xhEatAlong":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhEatAlong"},"xhEndsOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhFlick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhFlick"},"xhFullStop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhFullStop"},"xhGather":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhGather"},"xhHopFar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhKanaFirst":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhKanaFirst"},"xhMorse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhMorse"},"xhPageTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhPieceHeap":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceHeap"},"xhPieceParts":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceParts"},"xhPieceSpin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceSpin"},"xhPieceStrata":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceStrata"},"xhPieceThin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exA.js / exit:xhPieceThin"},"xhRollCall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhRollCall"},"xhShuffle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhShuffle"},"xhShutters":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js / exit:xhShutters"},"xhStairs":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhStomp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xhTiltSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_exA.js"},"xiCentreOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiCentreOut"},"xiCounterScroll":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiCounterScroll"},"xiCounterWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiCounterWipe"},"xiCropTurns":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiCropTurns"},"xiDiagPinch":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiDiagPinch"},"xiDotted":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiDotted"},"xiDrawers":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiDrawers"},"xiEyelid":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiEyelid"},"xiFields":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiFields"},"xiFillDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiFillDrop"},"xiFinder":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiFinder"},"xiInverseBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiInverseBand"},"xiLattice":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiLattice"},"xiMothHoles":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiMothHoles"},"xiPicket":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiPicket"},"xiPistons":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiPistons"},"xiPlateCarry":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:xiPlateCarry"},"xiPortholes":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiPortholes"},"xiRadialBlinds":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiRadialBlinds"},"xiRedact":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiRedact"},"xiRings":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiRings"},"xiRollShutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiRollShutter"},"xiSawBite":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiSawBite"},"xiSliceWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiSliceWave"},"xiSpiralTiles":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiSpiralTiles"},"xiTwinPlates":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiTwinPlates"},"xiTwoPass":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exB.js / exit:xiTwoPass"},"xjBigWheel":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjBigWheel"},"xjCardToss":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjCardToss"},"xjColourDrain":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjColourDrain"},"xjComet":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjComet"},"xjDoubleVision":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjDoubleVision"},"xjEdgeTeeter":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjEdgeTeeter"},"xjFocusPull":{"differences":["Emission requires a verified Gaussian-blur host profile.","No fade-only or scale-only fallback is used."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / exit:xjFocusPull"},"xjGateSwing":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjGateSwing"},"xjNeedle":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjNeedle"},"xjOnionSkin":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjOnionSkin"},"xjPanSmear":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjPanSmear"},"xjPuckHit":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjPuckHit"},"xjQuarterTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjQuarterTurn"},"xjRatchet":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjRatchet"},"xjRubberSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjRubberSnap"},"xjShadowStay":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjShadowStay"},"xjShellChase":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjShellChase"},"xjSlump":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjSlump"},"xjSpringHop":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjSpringHop"},"xjStepFade":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjStepFade"},"xjThroughFocus":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjThroughFocus"},"xjTrapdoor":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjTrapdoor"},"xjTug":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjTug"},"xjWallSplat":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjWallSplat"},"xjWiper":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjWiper"},"xjYank":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_x2_exC.js / exit:xjYank"},"zipOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_exitB.js / exit:zipOut"},"zoomFar":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exit.js / exit:zoomFar"},"zoomThrough":{"differences":[],"exact":false,"hostVerified":false,"scope":"node","source":"src/11p_exit.js / exit:zoomThrough"}},"fx":{"anamorphic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:anamorphic"},"bandInvert":{"differences":["Vector band overlay approximates AE Difference blend bands in graph IR."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:bandInvert"},"blackFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:blackFrame"},"blindsTrans":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:blindsTrans"},"block":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:block"},"bloomFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:bloomFlash"},"bulge":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:bulge"},"chroma":{"differences":["Drives chromatic ghost separation when style.ghost > 0."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:chroma"},"colorBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:colorBars"},"crtOff":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:crtOff"},"defocus":{"differences":["Uses Gaussian Blur filter when hostProfile.gaussianBlur is configured; scale breath always emitted."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:defocus"},"ditherBit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:ditherBit"},"doors":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:doors"},"duotone":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:duotone"},"dustScratches":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:dustScratches"},"echoFrames":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:echoFrames"},"edgeDetect":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:edgeDetect"},"filmAdvance":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:filmAdvance"},"filmBurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:filmBurn"},"flash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:flash"},"focusLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:focusLines"},"gridRepeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:gridRepeat"},"halftone":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:halftone"},"heartbeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:heartbeat"},"hrPassingShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_horror4.jsx / fx:hrPassingShadow"},"hrSignalLoss":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_horror4.jsx / fx:hrSignalLoss"},"hrSubliminal":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_horror4.jsx / fx:hrSubliminal"},"hueShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:hueShift"},"hzClosingDark":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzClosingDark"},"hzColdBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzColdBreath"},"hzDrain":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzDrain"},"hzFaint":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzFaint"},"hzTear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzTear"},"hzUpside":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_horrorB.jsx / fx:hzUpside"},"interlace":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:interlace"},"invert":{"differences":["Native invert flash uses an editable high-contrast foreground overlay rather than a pixel invert shader."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:invert"},"irisTrans":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:irisTrans"},"kaleido":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:kaleido"},"kzBulldoze":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzBulldoze"},"kzCardSlam":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzCardSlam"},"kzDustLanding":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzDustLanding"},"kzEdgeHit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzEdgeHit"},"kzKnockSmear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzKnockSmear"},"kzShockArcs":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_kineticB2.jsx / fx:kzShockArcs"},"lightRays":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:lightRays"},"lightSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:lightSweep"},"loopScroll":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:loopScroll"},"macroBlock":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:macroBlock"},"mirrorFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:mirrorFlash"},"mosaic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:mosaic"},"negativeRing":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:negativeRing"},"panelWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:panelWipe"},"perspectiveTilt":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:perspectiveTilt"},"pixelDrift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:pixelDrift"},"pixelSort":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:pixelSort"},"posterize":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:posterize"},"radialChroma":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:radialChroma"},"rgbSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:rgbSplit"},"ripple":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:ripple"},"rotateSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:rotateSnap"},"scanBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:scanBar"},"shake":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:shake"},"shatter":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:shatter"},"slice":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:slice"},"smear":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:smear"},"snapshot":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:snapshot"},"speedLines":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:speedLines"},"splitSlide":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:splitSlide"},"squash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:squash"},"starGlint":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:starGlint"},"strobe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:strobe"},"tileShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:tileShift"},"trackingNoise":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:trackingNoise"},"tvStatic":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:tvStatic"},"tzColumnShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzColumnShift"},"tzFrameStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzFrameStep"},"tzGridFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzGridFlash"},"tzKnockBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzKnockBand"},"tzRegTicks":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzRegTicks"},"tzRuleFlash":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_typoB.jsx / fx:tzRuleFlash"},"vhsRoll":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:vhsRoll"},"waveWarp":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:waveWarp"},"whipBlur":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:whipBlur"},"whiteFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:whiteFrame"},"wzHanafubuki":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzHanafubuki"},"wzHyoshigi":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzHyoshigi"},"wzMaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzMaku"},"wzOrime":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzOrime"},"wzShojiPass":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzShojiPass"},"wzSumiShibuki":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_waB2.jsx / fx:wzSumiShibuki"},"xrAccordion":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrAccordion"},"xrBandRepeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBandRepeat"},"xrBandZoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBandZoom"},"xrBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBlink"},"xrBorderPunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrBorderPunch"},"xrCheckerInvert":{"differences":["Checker invert uses high-contrast silhouette squares rather than a Difference blend mode."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCheckerInvert"},"xrClockInvert":{"differences":["Clock sweep renders a translucent high-contrast wedge overlay rather than a Difference pixel buffer."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrClockInvert"},"xrColorStrobe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrColorStrobe"},"xrColumnDrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrColumnDrop"},"xrCornerFold":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCornerFold"},"xrCrossFringe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCrossFringe"},"xrCrossSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCrossSplit"},"xrCrosshair":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrCrosshair"},"xrDiagSlice":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrDiagSlice"},"xrDiscTurn":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrDiscTurn"},"xrDotWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrDotWave"},"xrDropBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrDropBounce"},"xrDropout":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrDropout"},"xrEdgeBars":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrEdgeBars"},"xrExposureDip":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrExposureDip"},"xrFlipTiles":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrFlipTiles"},"xrFourTints":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrFourTints"},"xrLampFlicker":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLampFlicker"},"xrLetterSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLetterSnap"},"xrLongShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLongShadow"},"xrLoupe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrLoupe"},"xrMoire":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrMoire"},"xrNested":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrNested"},"xrPixelSparks":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrPixelSparks"},"xrQuadCycle":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrQuadCycle"},"xrRibbonTwist":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrRibbonTwist"},"xrScanBurst":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrScanBurst"},"xrScanWipe":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrScanWipe"},"xrShearSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrShearSnap"},"xrShutterStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:xrShutterStep"},"xrSlotReel":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSlotReel"},"xrSpotlight":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSpotlight"},"xrStretchWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrStretchWave"},"xrStripeMosaic":{"differences":["Mosaic pixel shader is represented as discrete translucent stripe bands pulsing across frames."],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrStripeMosaic"},"xrSwingEcho":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSwingEcho"},"xrSyncBend":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrSyncBend"},"xrTapeCrease":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrTapeCrease"},"xrThumbRow":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrThumbRow"},"xrTileLights":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrTileLights"},"xrWaist":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrWaist"},"xrWaterMirror":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrWaterMirror"},"xrZebra":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_x2_fx.jsx / fx:xrZebra"},"zoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:zoom"},"zoomPunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx1.jsx, ae/p_fx2.jsx, ae/p_x2_fx.jsx / fx:zoomPunch"},"zoomStutter":{"differences":[],"exact":false,"hostVerified":false,"scope":"event","source":"ae/p_fx2.jsx / fx:zoomStutter"}},"hold":{"beatHop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:beatHop"},"breathe":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"colorRun":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:colorRun"},"dangle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:dangle"},"drift":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"echoTrail":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:echoTrail"},"eqBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:eqBounce"},"flashBox":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:flashBox"},"flipSwap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:flipSwap"},"float":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:float"},"focusRack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:focusRack"},"glintSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glintSweep"},"glitchJump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glitchJump"},"glitchtick":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glitchtick"},"glowFlicker":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:glowFlicker"},"hWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:hWave"},"heartbeat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:heartbeat"},"hrFlickerLight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrFlickerLight"},"hrLagOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrLagOne"},"hrStare":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrStare"},"hrTwitch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_horror3.jsx / hold:hrTwitch"},"hzLoneTremor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzLoneTremor"},"hzLoom":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_horrorB.jsx / hold:hzLoom"},"hzPassing":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzPassing"},"hzPresence":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzPresence"},"hzSlowBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_horrorB.jsx / hold:hzSlowBreath"},"jelly":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:jelly"},"jitter":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"knBeatLean":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knBeatLean"},"knCounterRock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knCounterRock"},"knGapBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knGapBreath"},"knTickShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knTickShift"},"knWordPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knWordPulse"},"knWordRide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_kinetic3.jsx / hold:knWordRide"},"kzBeatSquat":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzBeatSquat"},"kzDivingBoard":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzDivingBoard"},"kzInertiaSway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzInertiaSway"},"kzSlinky":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzSlinky"},"kzSquashWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_kineticB1.jsx / hold:kzSquashWave"},"magnetJiggle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:magnetJiggle"},"noiseDrift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:noiseDrift"},"orbitSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:orbitSmall"},"pluckString":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:pluckString"},"pulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:pulse"},"rotateSlow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:rotateSlow"},"scanBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:scanBand"},"shadowSway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:shadowSway"},"shimmer":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:shimmer"},"skewWobble":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:skewWobble"},"still":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"stretchPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:stretchPulse"},"sway":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:sway"},"tilt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:tilt"},"trackBreathe":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:trackBreathe"},"tyKeyPulse":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / hold:tyKeyPulse"},"tyOutlineBlink":{"differences":["Outline blink is represented as an editable stroke twin toggled on matching glyphs."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_typo3.jsx / hold:tyOutlineBlink"},"tyReadCursor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_typo3.jsx / hold:tyReadCursor"},"tyTrackStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_typo3.jsx / hold:tyTrackStep"},"typeRattle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:typeRattle"},"tzCaretBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzCaretBlink"},"tzCounterRules":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"jizura_core.jsx / hold:tzCounterRules"},"tzIndexCount":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzIndexCount"},"tzKernNudge":{"differences":["Gap selection uses the native deterministic hash, not AE's expression sine hash."],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"jizura_core.jsx / hold:tzKernNudge"},"tzUnderGrow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_typoB.jsx / hold:tzUnderGrow"},"wave":{"differences":["Native font metrics can differ; web glyph payload is preferred."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js"},"windGust":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:windGust"},"wzFurin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzFurin"},"wzMikoshi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzMikoshi"},"wzNotan":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzNotan"},"wzShishiodoshi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzShishiodoshi"},"wzTanzaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_waB2.jsx / hold:wzTanzaku"},"xkBeatBump":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBeatBump"},"xkBigSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBigSmall"},"xkBlink":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBlink"},"xkBuoy":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkBuoy"},"xkCradle":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkCradle"},"xkDepthRock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkDepthRock"},"xkDoubleVision":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkDoubleVision"},"xkFocusBreath":{"differences":["Emission requires a verified Gaussian-blur host profile."],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkFocusBreath"},"xkHeatHaze":{"differences":["Native wave displacement is applied per glyph rather than pixel AE Wave Warp."],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkHeatHaze"},"xkKaraoke":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkKaraoke"},"xkLevelFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkLevelFill"},"xkLoudArch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkLoudArch"},"xkLoudWeight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkLoudWeight"},"xkMagnifier":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkMagnifier"},"xkMarchEdge":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkMarchEdge"},"xkMetronome":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkMetronome"},"xkNod":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkNod"},"xkPairUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkPairUp"},"xkParallax":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkParallax"},"xkReflection":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkReflection"},"xkRippleOut":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkRippleOut"},"xkSlideBunch":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkSlideBunch"},"xkSpinOne":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkSpinOne"},"xkSplitShear":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph+graphics","source":"ae/p_x2_hold.jsx / hold:xkSplitShear"},"xkStairStep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkStairStep"},"xkStopMotion":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkStopMotion"},"xkTallBreath":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx: xkTallBreath"},"xkTiltSnap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkTiltSnap"},"xkWallBounce":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkWallBounce"},"xkZigzagFlip":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"ae/p_x2_hold.jsx / hold:xkZigzagFlip"},"zoomSlow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/05_anim.js / hold:zoomSlow"}},"layout":{"center":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:center"},"dictionary":{"differences":["Existing exported dictionary text nodes are preserved.","Missing dictionary text is rejected upstream rather than synthesised from unrelated text.","Rounded part-of-speech corners are currently square."],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:dictionary"},"graphics":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"vcols":{"differences":["Split mode preserves supplied line breaks.","Repeat mode currently supports dim/same side styles; outline side styling requires text paint export."],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:vcols"},"xbTwistFrames":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"jizura_core.jsx / layout:xbTwistFrames"}},"trans":{"blinds":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:blinds"},"blockDissolve":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:blockDissolve"},"checker":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:checker"},"clockWipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:clockWipe"},"cover":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:cover"},"cubeTurn":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:cubeTurn"},"diagonalWipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:diagonalWipe"},"doorsOpen":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:doorsOpen"},"flashCross":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:flashCross"},"hrBlink":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_horror4.jsx / trans:hrBlink"},"hrStaticCut":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_horror4.jsx / trans:hrStaticCut"},"hzBlackout":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzBlackout"},"hzLinger":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzLinger"},"hzSlideDown":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_horrorB.jsx / trans:hzSlideDown"},"inkBlob":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:inkBlob"},"irisOpen":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:irisOpen"},"knCornerSwing":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knCornerSwing"},"knStripSlam":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knStripSlam"},"knStutterCut":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_kinetic4.jsx / trans:knStutterCut"},"kzCarousel":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzCarousel"},"kzCrushDown":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzCrushDown"},"kzShoveOff":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_kineticB2.jsx / trans:kzShoveOff"},"pixelate":{"differences":["Quantized coarse grid overlay replaces pixel-buffer Mosaic filter in vector scene graph."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:pixelate"},"pushSlide":{"differences":["The outgoing graph holds its final sampled pose when extended into the transition."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx:pushSlide"},"shatterTiles":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:shatterTiles"},"sliceShift":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:sliceShift"},"spinOut":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:spinOut"},"tyGridCells":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_typo4.jsx / trans:tyGridCells"},"tyRuleWipe":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_typo4.jsx / trans:tyRuleWipe"},"tzBaselineFold":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzBaselineFold"},"tzColumnReplace":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzColumnReplace"},"tzRuleSplit":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_typoB.jsx / trans:tzRuleSplit"},"uncover":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:uncover"},"whipPan":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:whipPan"},"wipe":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:wipe"},"wzFusumaPass":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzFusumaPass"},"wzMakimonoRoll":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzMakimonoRoll"},"wzMawariButai":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_waB2.jsx / trans:wzMawariButai"},"xqAccordion":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqAccordion"},"xqBladeRun":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqBladeRun"},"xqChevronPush":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqChevronPush"},"xqDiagSplit":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqDiagSplit"},"xqFlipOver":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqFlipOver"},"xqHalftone":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqHalftone"},"xqLightLeak":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqLightLeak"},"xqLouverTurn":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqLouverTurn"},"xqPagePeel":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqPagePeel"},"xqPolyIris":{"differences":["Outgoing graph holds its last sampled pose when its clip ends before the transition.","Documented JavaScript Deformer clipping; actual Cavalry render verification is pending."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"src/11p_x2_camtr.js / trans:xqPolyIris"},"xqPropeller":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqPropeller"},"xqRingRipple":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqRingRipple"},"xqSoftSweep":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqSoftSweep"},"xqStretchSmear":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqStretchSmear"},"xqStripShuffle":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqStripShuffle"},"xqWaveWipe":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqWaveWipe"},"xqWindowZoom":{"differences":["Per-frame sampled Cavalry graph matching AE formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_x2_camtr.jsx / trans:xqWindowZoom"},"zoomThrough":{"differences":["Per-frame sampled Cavalry scene graph matching AE transition formula."],"exact":false,"hostVerified":false,"scope":"cut-pair","source":"ae/p_trans.jsx / trans:zoomThrough"}},"treat":{"alternate":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"baselineShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"boxed":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"bracketsQuote":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"chrome":{"differences":["Metallic chrome shading is built from clipped horizontal gradient bands + stroke keyline."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"circled":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"cutShift":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"dotted":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"doubleOutline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"echoOutline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"emphasisDots":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"extrude":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"fadeChars":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"fauxBold":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"focusPull":{"differences":["Rack focus blur halo simulated via soft stroke silhouette + focus falloff opacity without gaussianBlur."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"glitchSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"glow":{"differences":["Glow bloom is represented via breathing outer stroke halos rather than gaussianBlur."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"gradientSweep":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"gradientV":{"differences":["Vertical gradient represented via discrete clipped horizontal tonal bands."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"halftone":{"differences":["Pattern fill represented via clipped vector pattern geometry layered over glyph backing fill."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"hardShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"hatch":{"differences":["Pattern fill represented via clipped vector pattern geometry layered over glyph backing fill."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"hrDoubleExp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js"},"hrEroded":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js"},"hrInkBleed":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js"},"hrRedact":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_horror2.js"},"hzColdRim":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"hzDragMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"hzHairlines":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"hzHusk":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"hzUneven":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_horrorB.js"},"inline":{"differences":["The inline knockout uses the scheme paper colour, matching the source treatment rather than a transparent Boolean knockout."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:inline"},"italic":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"karaoke":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"kerningWide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"knWordPlate":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic3.js"},"knWordScale":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_kinetic3.js"},"kzCrescendo":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"kzHopArc":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"kzOnionSkin":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"kzSpeedShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"kzStepShear":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_kineticB.js"},"longShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"marker":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"monoGrid":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"neonOutline":{"differences":["Neon outer bloom uses layered wide stroke halos instead of gaussianBlur."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"none":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"ae/45_core.jsx"},"outline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"AE outline treatment"},"outlineFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"outlineOffset":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:outlineOffset"},"rainbow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"ransom":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"reflection":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"rotateAlt":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"shadowStack":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"sizeWave":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"softShadow":{"differences":["Soft blur shadow is built from layered translucent stroke/fill silhouettes without gaussianBlur."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"splitColor":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"spotChar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"stencilGap":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"sticker":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"strike":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"stripes":{"differences":["Pattern fill represented via clipped vector pattern geometry layered over glyph backing fill."],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"tall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"toneShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"tyHeadBig":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo3.js"},"tyHeadRules":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo3.js"},"tyHollowKey":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo3.js"},"tyIndexSup":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_typo3.js"},"tzKanaSmall":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"tzLineNo":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"tzSuperNote":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"tzTocLeader":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"tzTypeGuides":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_typoB.js"},"underline":{"differences":[],"exact":false,"hostVerified":false,"scope":"cut","source":"legacy Cavalry preset (native geometry port)"},"waterline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_treattrans.js"},"wide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_looks.js"},"wzBinsen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"wzKasure":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"wzKinpaku":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"wzObi":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"wzRakkan":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_waB.js"},"xoAccentTicks":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoAltHollow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoAltWeight":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBandExtrude":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBeltBand":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBlobKnock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBlowUp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoBorderBands":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoContour":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoCropMarks":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoCutLine":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoDiagSplit":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoDimLine":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoDoublePrint":{"differences":["The secondary impression follows glyph tracks.","The source's whole-item print pivot is represented per glyph here; whole-line pivot fidelity still needs comparison."],"exact":false,"hostVerified":false,"scope":"glyph","source":"jizura_core.jsx / treat:xoDoublePrint"},"xoEmboss":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoFadeHem":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoFloorShadow":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoFoldHalf":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoGlyphCorners":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoGlyphUnders":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoGraphFill":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoGroundDots":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoHalfKnock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoHalfScreen":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoHiliter":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoHollowBlock":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoLeadBar":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoMixedFills":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoOffsetFrame":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoOverlapKern":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoRampAcross":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoRuler":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoSeparators":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoSwoosh":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTallWide":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTapedNote":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoThread":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTopCrop":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTrackRamp":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"},"xoTwinOutline":{"differences":[],"exact":false,"hostVerified":false,"scope":"glyph","source":"src/11p_x2_treat.js"}}},"renderVerified":false,"sourceHashes":{"VERSION":"d84c9e596c7d6a94e5f74579ef8d8912a807b0d28582474900ad35dfb3edfcf4","ae/data.json":"45557dbad42863c937ea2f2afbf04d37f2859a501b8f97302e892ff9cedcf3f1","ae/p_bg1.jsx":"277dd68bfa368f708688146feb271d9b22c194134c2c179e218f803e82aac7e4","ae/p_bg2.jsx":"c19f16e223e0f8afc517121912ade27fa4669e74a54d19b1fd9b093214faa2af","ae/p_bg3.jsx":"83aabd1592aec8ea8afc4a165e6984134e78ebf314ef9d2c9b682295a5391bd9","ae/p_cam.jsx":"507adf001e732de51aa3dc6d3bcb1736f028f888425cbf889bcc795962391c89","ae/p_decor1.jsx":"b6d46026f39f56aac156db60c7d732a26715b60e36bb8c435b3d8eb696ce97fc","ae/p_decor2.jsx":"c8681312f00accc2e46ad7a5174d264467a40e5a359afd71a80c9f5492433db1","ae/p_decorB1.jsx":"74cf5d7767f23d0a2cb2d7e856439488d4de6b0e2f294fa49e6cedff2371d182","ae/p_decorB2.jsx":"6f7791b9d6911449cfe45f883a480ad38ddb5b98728cbc4cd3d20401a9521144","ae/p_enter1.jsx":"6df64926151b13b7f3008d0af8c2ade387dc547b4e65db7489fd45215813c82c","ae/p_enter2.jsx":"d38bed742fb2fafedcd39966ca1464b9fc3440c3e080099da53cc885c5a7140d","ae/p_enterB1.jsx":"8fc835ae32ce39cf92db09d57e7bf47cbd67ee3888f42a03d7a63c9fa5a4133e","ae/p_enterB2.jsx":"d210842a7e17c47800cad69fdb0aedd7f094d586c68ea3da0df68db5123a967c","ae/p_exit1.jsx":"a03db79991dd5e8d3f6a25f66e54afb70488562ad697e8f4d16ba684f400b423","ae/p_exit2.jsx":"2651c96e555344de78bc3402af2d44f9d412537bc1d232438018794b8ed6a4cf","ae/p_exitB1.jsx":"40a3ebb2b2899267c8891e29c9c513aab4fc7079ee4078e3fb8b9cb54b0435f9","ae/p_exitB2.jsx":"e531df1901cdcc7dd6ee4101cd6ed36f6c3c3b802eae7aca40d12d5415794067","ae/p_fx1.jsx":"8f89d061e72beefc729031ddafa53eb10275b8d7c56206a5f7c0281eaed5d0ed","ae/p_fx2.jsx":"16c65188d7697a1a39fc0b2c978bde5cec2e3bffb58596a27e5a3e13c63f7b01","ae/p_horror1.jsx":"eaaf23a18f25c4f42b3a4875951b87a94bce5e42b5549ec553578577c7b83458","ae/p_horror2.jsx":"8874c4ab727cbc71ccdeb5619e7da5d2f3e39409dd20d085a2ab2f8ec6fbd793","ae/p_horror3.jsx":"f588666cb1e5344d219333c5a1b1d7ccd7434964f5c06ed0987ab9e17d1c9ce3","ae/p_horror4.jsx":"773bee02f22a0444ea68355e2377eadc4d642687614e08e718321de4f9ffb6a3","ae/p_kinetic1.jsx":"ec90aa765e35a1bd4ae2712d3bf544d5b25e3986f7584e75a4c66b35594036ec","ae/p_kinetic2.jsx":"28a9b09591f2ed79ba83f8f11f3e083c859abeae07c1ce9aa9d44f46ab54c6b5","ae/p_kinetic3.jsx":"888a39a7a896836a07b4e05ce2f9017264e301b365e4851cd7b803d39d296b38","ae/p_kinetic4.jsx":"7a309d43ebb2783cafbdb5085e49d9061d9d874231c85dd417f675bc12e6fe79","ae/p_layoutsA1.jsx":"8cb51bde2098425b99b56be138e17cfd3409f40dca7fa5ab4d322eff32dc7e40","ae/p_layoutsA2.jsx":"b9f331dc1f57a93f3e0e7eceede0ceefd7553f1da0cbd111e2d3fd14aa87482f","ae/p_layoutsB1.jsx":"361cf6e99bc4acb14829927fe604bb84a689578b9072bb48c0e23e6f1e06de06","ae/p_layoutsB2.jsx":"373d10cdb7b4cacd470a4d96acc2e19e2422e0c2516cf579cb7d799f04b7d7e5","ae/p_layoutsC1.jsx":"9d5c8d8d1435cb32fab8b0f2aaab5d6648db3f3a2d0af95c6a362cda8d00bd1f","ae/p_layoutsC2.jsx":"a705607883afd551d549db96e74b2cc94ddc64c7ac9f118747d8fc9adc6316e4","ae/p_layoutsD1.jsx":"4b9c3f52709943f4c799a89e80e26a5f96fd2d59bbc1d48b0f53526ecbf925e8","ae/p_layoutsD2.jsx":"8521c40db367c94f65bc16918f82131e52cec75ed9686b27180634bd51fca9f1","ae/p_trans.jsx":"0de7af113add0c633032f7f2f4e59a8e4de10c919f755556ec083dd8ec984021","ae/p_treat1.jsx":"44c7e5f869d24f6a03b4c1f4e2ded5f9168b0f31309a6db931b139b7bae79eb9","ae/p_treat2.jsx":"544421a961e977bcc5cff93c48043853ac23fad4196b60ed204dd38257faead6","ae/p_typo1.jsx":"34a5df2eda66bffd98d01fcf746978a83c69d24d1fb98952f8f010b3fdfb8b91","ae/p_typo2.jsx":"a7333e7f4de55e56acd319832022a326119a8402a25376df4a5f29fb981dc61d","ae/p_typo3.jsx":"2a8695048360fd1ade5f9ba5f0beeb2f6a670afc8fccb003b94a49c30e3a1c4b","ae/p_typo4.jsx":"9c93d9a9a44ae8a4a5cfe7a606070a5a77b05ee46d6a13ca6b187f1391b7c1ed","ae/p_x2_bg1.jsx":"c1dadcbc741b22b0c8e2c1c605889320cfaf1c7341f8654c78b8e54282883848","ae/p_x2_bg2.jsx":"5793a87e873189293deabbb3ddd306b9a11f9057d3b0aa918771e9a9259f4401","ae/p_x2_camtr.jsx":"f2ac5c654073713e685cb39d866d292c2dc53c56f134d7d5f0130e82da903802","ae/p_x2_decA1.jsx":"3cb1cbadacd234f5c9b63b3cdb7ae4aa6a7b061dd303da090fd07b3c34fa26e4","ae/p_x2_decA2.jsx":"e8cfe3da3d29aee4467928633246f3fc70735940354ae1d682f84786aad2a7b7","ae/p_x2_decB.jsx":"559965bd21666260cc72692578a7d6e71fd4a44db9134b5900a33b63a670c66b","ae/p_x2_decC1.jsx":"ddbc775c69ec33339e5f3c32ae45326fa3d91a07aaeee548cb1711e23257788d","ae/p_x2_decC2.jsx":"1fc457e00718d335b55ef29f4289acab8c15c46a78d191334f730e609dc95833","ae/p_x2_entA.jsx":"95da1b4c8e9519e1167147b078b8f053c23174702e13fa74ca74702adc9c4ed3","ae/p_x2_entB.jsx":"ec25d24d3116a972e423ec5fbc86c65c8e2c694e72e02d05be5bfb536a08f135","ae/p_x2_entC.jsx":"0454bd2e85e10e75755d32da66dfe9d685b1c4370fb8250c2f471434dad8d11f","ae/p_x2_exA.jsx":"7a90db95077cec0c2fc23a52515433d9dd01a46b8ffdbaf2b80879b727f0e6ce","ae/p_x2_exB.jsx":"5e5ea8dadfea04a7aade8d1a75b46748a9e6846ca1421af14d85a111acaf2bd1","ae/p_x2_exC.jsx":"5fc726c05103398881af02444616f0a4b51286423b07e66748df9c8b6ce0b075","ae/p_x2_fx.jsx":"8339c3ba59a1780dd5a8750dc7f82c18d55aa0d99df929315faa1a44f1071873","ae/p_x2_hold.jsx":"da7611653b0711d2cf015f3e867567b4ed14fe5e6bf51531b2211ac0a2226631","ae/p_x2_horrorA1.jsx":"4e6c9f70bf32267c358c371e2bbe1517be3ea32c0d47d5ca50368409e196dccd","ae/p_x2_horrorA2.jsx":"da00aaa84adad9b1d42cef75d711674e8dc9a6b2cd54adeb26181f5d43456e79","ae/p_x2_horrorB.jsx":"c6acd93a53764fd905562e84d22235ad2a5602e646ec6a555a09db69fca96b51","ae/p_x2_kineticA1.jsx":"e8df9361a1cc6cc1e30ef087503d63669ca111e253ed300ded68eda914b3ae05","ae/p_x2_kineticA2.jsx":"22a27c3bdda048cfe3640d4fd75800958c26236f678d3baeadbcb1b0a60f53c9","ae/p_x2_kineticB1.jsx":"65b1b8857f964e63a323f480ced6c86fd780324b116bc21675598a4608afae90","ae/p_x2_kineticB2.jsx":"04eb1dba0f99613263750e3bad3d44cd43c9e7b37499d84a17b76f77aabb14e2","ae/p_x2_layA1.jsx":"a5e40aaec917ad1804fbaa8c07cee15b2785413e70aee0045526c4146f4cadf8","ae/p_x2_layA2.jsx":"a2a784cf018c173e4f5967a13a6d6ba32979e3af7d05b9342aa9dc99c6277bbd","ae/p_x2_layB1.jsx":"c4bf3b77276e476f7f8a8355f4b3cd8711986b43abacfd3c1a3bec3eb4961839","ae/p_x2_layB2.jsx":"ea67912cd1fcbce6c3ae2b639ae3bf42ce14dcdfe5ef5bdf5bd06eece974bb25","ae/p_x2_layC1.jsx":"f81e6af39a4dd24418877326a6425180c8719f0ccb4cd91d87740573c41358bb","ae/p_x2_layC2.jsx":"78930a5191544e5734b6ca0ac0143d779f44f7239e0ba489b7c81bbe66b77822","ae/p_x2_layD1.jsx":"f16f941ad330e60e945408f3285feb12c05f7051de3f21c24293b1f1b41a50ee","ae/p_x2_layD2.jsx":"026f5cbc0ebcaade50f0161ea0d7c680dd1f30e1194399a467cd6c273d68ee28","ae/p_x2_treat1.jsx":"ac1432294a46799374ed765a22d77f5b8465af1f501b5d9ee0d0cec825bba421","ae/p_x2_treat2.jsx":"03f79bfa5cfe11b305408454c99d4af58761d2c3f40847227ab48e1cc737062b","ae/p_x2_typoA1.jsx":"0b09b7f8b51a9c304131ca9ae31cce52301d65d420283321af044781586f7419","ae/p_x2_typoA2.jsx":"63f1f909b75278be4606bc632b15f9144763abe6f12f66c764ef584deeedd1f6","ae/p_x2_typoB.jsx":"78087f1e3aba1336105fe0cffad69b74b1d293cf832df2c2edfc2055574b3b84","ae/p_x2_waA1.jsx":"9798164bb6b7aec661a6d5d6aa4107c2a0e1ad8898c9ed9b7ce8fb1320b929bd","ae/p_x2_waA2.jsx":"a09b7a8880c13d6172ca18477e4fc91c6614289c69a20fc24f8cc9ae353eb9c8","ae/p_x2_waB1.jsx":"361afddcc6bc1b4d67935b181343744bd7e166927126f0494ab3013eed8ccdf0","ae/p_x2_waB2.jsx":"ce0f243f05132247760626ca9b63089d02cec97fc356f1ff4fef7527d221cd70","build_cavalry.py":"67bd1a2e206e6b8ff7503fab6c6175ddf6bb305bcc6771320c344f999a281cd9","cavalry/bridge.js":"cb0a946f7df3a39d892132d64bcacd21c9dc700aec3061f18fe69f29a5f74911","cavalry/browser.js":"ca96f1cb546ba7771189f5f81176ca7728b3ab047c5e98b771f4662ccb7bce22","cavalry/loader.js":"f4afa53976fcfd4c5b66467746024a7f1c2b779d76f941df8d4a9b3f74c2b99b","cavalry/native/00_registry.js":"bd9e19352d8ccfa7af6eff999b53588ace86a0bb26488a128d7001a22c414ecc","cavalry/native/10_graph.js":"8bcc987d2c6c9a740762a1ae46f20920b93282d33a5fbf45b98be5deef722efe","cavalry/native/20_components.js":"e66e9c5a87939dc3ca97ae684020da5ea8e5c9440e3a313d7256ffb721b2af13","cavalry/native/25_recipe_tools.js":"92c4df9ac1f160e95831fc22b10d524d5060063968ddee8926913d455a45e27a","cavalry/native/26_recipe_components.js":"205294c84f0857edcb86307b63341d93cda3a3521792d5ab04227c61715cd3e4","cavalry/native/27_registry_bridge.js":"a8d7059f743ef7c07ec7d7034be58a4ca094afeddb5e3aa783df66986e289493","cavalry/native/28_registry_identity.js":"06c24778f47f463a5b312729ca6f9eff828508d9337b460a7b771c3664c1b41a","cavalry/native/29_pack_helpers.js":"96ec2bf548bd70b2e66e7597e8ed8b63311673360d2fff0b908ed29f615a971d","cavalry/native/30_assembly.js":"3c9a6e2be027de5cb8c74cc0b1c5a9601fd5fc2b40a4ef011a1476f41f83ac9d","cavalry/native/browser_adapter.js":"8585093f8d112efde76c5eed009bec501b0023f3e93ab248dff40b772f4fde70","cavalry/packs/p_00_registry.js":"87f23002dc7ea313cd77c357db50b0e136ab0323312fe3c08c93030f41ac830e","cavalry/packs/p_bg_bgcam.js":"6bf42b93217af549d811758e2b088fa5a430c3b6ac7604288d058adcc8d7bf0b","cavalry/packs/p_bg_core.js":"4b857ba0c35be68f649308b750e238ab8b69a08e78cdb4019a0a305cec0bc0d5","cavalry/packs/p_bg_themes.js":"1445162651b05a8d81ea7f9bd245f2aa7324140af7e20a90fe1a2a43129647ac","cavalry/packs/p_bg_x2.js":"249a4686c54aa955d2d598d2b0fcb5ed752133dcca31dd4ad4ba2a9acccc5b0b","cavalry/packs/p_camera.js":"f03fe7e4e6f3d39eb1c7ba21ebcc4270548f89405f0ebc14dee77afa10d45a37","cavalry/packs/p_camera_ext.js":"1039361597c5d5bb63ba1e92d2d7b7ffd06d9603a652f51c87c39af17c449bc6","cavalry/packs/p_core_geometry.js":"e7ac6cc5ee5c5548d5484822376e250e7eea455bef499f09a982170fe363cbd1","cavalry/packs/p_core_scalar.js":"f14c1b33a08cc91c3262f7b4bb2a7479e23d87dd73f88a15b3fb50cef6473822","cavalry/packs/p_enter_core.js":"31e4ad600c54b0571ac3687e66512e8384a5dc918b58461552449766ab15c2aa","cavalry/packs/p_enter_ext.js":"3ff24480675c619629de6be18d3a98b78f241e359563e1c3a313a2ae1c38a7b2","cavalry/packs/p_enter_x2.js":"b308673868015db1c1d4effa645f5f54d52c53a7f49e203edb787481ab0267b1","cavalry/packs/p_exit_a.js":"2e52cffc49d555aa6a686c9e43a113a8b1ab0f6f34842f297aaafae9800342e2","cavalry/packs/p_exit_b.js":"27e193035e6de22f5dc993543dcf7c22e0ad02cdade9fffd2b9a330531747f3e","cavalry/packs/p_exit_core.js":"d090b143e82a81816e9c1945ceb60bc5d027092446e95000d986d4ae96dd49bf","cavalry/packs/p_exit_x2a.js":"4dd864e5018a01da327e4049fc007a98ae388d403cd6b8ea5ee1c6e605642865","cavalry/packs/p_exit_x2b.js":"c6d7e451167efef4866990f07db7695fe26b20c1acd5d4170d39708211fa77e3","cavalry/packs/p_fx.js":"591525e64d66fe4bd2978b671ee14f8db940ecc763d10ddfec98a2e5cb2d8507","cavalry/packs/p_fx_ext.js":"a3adc5fad76f07e325d7bb44002d1de35779914279d3b4e8ebe188521cd4e13b","cavalry/packs/p_fx_x2.js":"27fe76f33a10bbc37af80a0655c2baab1866ec2eba33f5e25c3c084480264988","cavalry/packs/p_graphics.js":"2df776489d6316150c1fa0ffe4e53fb0515734f450f9d550d7f95c4801ff41fa","cavalry/packs/p_hold.js":"f6f6a890cbae16924bf01edae3f267f32cf6a9834680cc168d1fc9880ff2bd4b","cavalry/packs/p_hold_core.js":"9b2bd78489269b0ebd8f5cb0411915b01a3f99bb54e0ee5039f6733312cbc0aa","cavalry/packs/p_hold_ext.js":"f04998d9d6b17fe764ea754096bd9bca708ae558a94e636fb01df96db87b4585","cavalry/packs/p_motion.js":"662351521188450062aebf917d4052d442af3f01d59cb1a987f9e830c9331d39","cavalry/packs/p_requested_backgrounds.js":"8553940cafceca6357d4d1c32ad1e6313436c6dc3671c42945ae50f7434d1a97","cavalry/packs/p_requested_decor.js":"9f3110a36f310ac27e9c32386c8e0f4f6de95ce1fcaba10118567b3b23462527","cavalry/packs/p_requested_layouts.js":"ac5d37ef34364e342e44eba15b917d8406fa8eb65c0778d1f3ee9f36f2f93c63","cavalry/packs/p_requested_motion.js":"2f5cde527a707936fd0ce6a2495c84ae14d2580ec19333e64dc692caaa7a550a","cavalry/packs/p_requested_transitions.js":"af63b5321d133ce61a6672cc3bad714ff5541f350b4c43db02ccab750fa21034","cavalry/packs/p_requested_treatments.js":"001bd8ca9cc3dd0a63af9da539caad604372cb0b1732a4ab12a11400b594d479","cavalry/packs/p_trans_core.js":"61ff3401e73f12aec0b3a2bfad02147e57f6300d508ade0b6c2eea0bad7236c4","cavalry/packs/p_trans_ext.js":"3969aced76853c811e1faa20b482e7773b34bfc5e2247f3ec08b28e92db39f3a","cavalry/packs/p_treat_core.js":"8ac62b5439b327a39795db3b4827b849be9f05b757c9482ddefa1dd4f405387c","cavalry/packs/p_treat_themes.js":"d5551ba94efee5efca20b510a4bbf73f30d26b3981de7e6cd13d4fe5282ced4e","cavalry/packs/p_treat_x2.js":"1b99e7d21ee2009f9d6d81123a086bb23cfd710a254cd51ed0be7cca0e05e8a8","cavalry/packs/p_x2_enter.js":"2301d03492403c064c52794a23356719df84cf8cac812f9d635b24cd6e5e4b7b","cavalry/packs/p_x2_exit.js":"9eb2af8ee3a7287dc7b59ab85da8efeb9d093cb6d18254bf1fa59cabf87886e0","cavalry/panel.js":"e56c1f7bee4b504aca0a9a9234100a1c3737bea5886d6ec77a84299295e069b1","cavalry/tools/test_requested_native.js":"08d3efbf9317f9d4d31b7fc3effa6aafa5843fdb6741a7a9f8ac86274dc1dc9b","src/11p_bgcamB.js":"baad1dab7a4743b4eab351c9e9dfa76d9af5f4e00b29538ce41837a5628dd644","src/11p_decor.js":"b533343d8ad5ad114300fed174d4eb0dff092201c778a6697345157595b933a5","src/11p_decorB.js":"f49747910c456cb829bdfeffa5c0342898305a8e01eebfa8ac18b2cc279bcd62","src/11p_enter.js":"45b8d89a37e08bcfe035d4fde3f93ec739fca891116aeeba62ba28e31d7c97c6","src/11p_enterB.js":"31bce8e07cec677f7ff5c1c77f7f1775a4e8918e46f7a86efdf86bca3f9efa14","src/11p_exit.js":"a013c8d40ba71fa69ea1bfa0782d2a55b7a152aa91bc7c0f7d85a9e89dca0b2b","src/11p_exitB.js":"2b0479412290e7fc9d4d61c4121c2970e0394f5f843c1407c2a1c84478480629","src/11p_fxB.js":"7fe3ce188d24d336a539a1a37752bf2515959fb940ac64518136fdb7bb875946","src/11p_horror1.js":"34a6f7afe72c3e4d4459c671d98f1bb97c4a5fe70484179ce4e1c04788367ed0","src/11p_horror2.js":"828ff4c48181e9755c5e2a82be4e30cab491ca0614cc25d711131108af50b7e4","src/11p_horror3.js":"c99a0d0cef6cf2b246e84586d5a33ebc750d1ef659a1490f211e8316d2727853","src/11p_kinetic1.js":"012282d5f3d44ef99c1b5fa26dd85210b138c4ecc73f54084f929bc74bd0045e","src/11p_kinetic2.js":"8c0401cfc265b6fe79d83e6a056e1bed93f42ae60a17890db165058f842ffd45","src/11p_kinetic3.js":"c1905cb3a5fb7fb7a14e9984b7ee4ce6b435eddeaab89fb71742c0075b7b3393","src/11p_layoutsA.js":"942e712bba6fa21f9b15f5cf5e0b0ccdf9568fa65f65802414180574acddb0ca","src/11p_layoutsB.js":"44a37fef1af83de84131bfe705e6eda2abc873bc5e5c11d2e1b7ed2062fc4191","src/11p_layoutsC.js":"223e99988781cb16d5e146112c040a303e8dbc53d9f29056a6af61906c87cb01","src/11p_layoutsD.js":"64e8276750ff609eb505b251b8e34bb7d7bcf8d759bcef55d94542a2afcb2bad","src/11p_looks.js":"724f124e9b0dfac715bcffb56bbc0342ccc78fdc5f3151481b2c52583470afba","src/11p_styles.js":"a306862fa099e7fd39b2efe1b63a6d30b8abf0462e141a075cd7b9ec24106922","src/11p_treattrans.js":"32711ff3576a30b861ff76ac2330d34cf93db2b1f11c945c013b8967d3f26964","src/11p_typo1.js":"0a1c61c77ebdd61754120283078a1e79e339a3de5341974e9ac7b5bb5a2878da","src/11p_typo2.js":"0fefc16f3e3711da71763bf6f874d02532820e3bbf2f8fd9e327af1a107914e6","src/11p_typo3.js":"bf8f19513f94044faedf74b45601d6cffa467edb79e37542149d34213c03df77","src/11p_x2_bg.js":"b00de8dccdcb6d14296af968973ae1401d98ccf3e12963149e15be8ad0b7f326","src/11p_x2_camtr.js":"40f56b6fa9b6ab6604f37eca2966d8dbce5e818173ad439c6edd3dcd332d8c13","src/11p_x2_decA.js":"32590bab78767e6c2618be9636681f319f2c1a97a9a23af7f2473daca63112b3","src/11p_x2_decB.js":"51714e9ad069b57da4e3ffd682fd2e66f8a0022c2e9efbed04478634a630fada","src/11p_x2_decC.js":"dfa31679d04e2affb884efe1c785422eeb940c646e58972075fb60dffc762279","src/11p_x2_entA.js":"618f428dc97779e46bec9d718810a9c6b4a76904e52c24229dce415f4fc8afde","src/11p_x2_entB.js":"6efc3593a2c9901e1db4a6090d9daf06e05c1a51bf3c48514688642553773d6f","src/11p_x2_entC.js":"b2e7bdb15364736b3c5048bb726416433f457c681e1644acf1dd7b1a08be5892","src/11p_x2_exA.js":"98c893247180f3852af2f5281662f3e9279aa479d58914dfdf2f25b492ca8498","src/11p_x2_exB.js":"27e329bb7f06fa19cf42169e1f4061d09dadd3d9a8b8ec83acb9da973bcc8e60","src/11p_x2_exC.js":"1a10307c1944c67b58ddd1109e6629eabe5653e735a7107a0f3cff2c48f5c761","src/11p_x2_fx.js":"3fb54c6848b4bdab74fdb31d98b740bcac417a93e0ae89a01be46d05177d82ca","src/11p_x2_hold.js":"48cc7c1c15c21ab07e54b488df57d6f24076b0d9f0d8c08cb1a7087eea8f942a","src/11p_x2_horrorA.js":"445797138a9317310ced2dbe6ce43531f65bbe0d0672702f7d6dd2ba27071cb2","src/11p_x2_horrorB.js":"70b02303a91a3977f78fbd2bd8749c7ab510fb8359228ab4d3a487c67f94aa0e","src/11p_x2_kineticA.js":"1151b4a9aa55d4738545ef1a701cf70d4fdf96a9b512886642818494e9d0da8f","src/11p_x2_kineticB.js":"703d7d142451b107f466c30cb2826c1d87cd57537b1ba7e08b8a51e169943d14","src/11p_x2_layA.js":"7ce60a5197ba7252758c5f0f29b4c6ef3c315b75ad80894ecbf437c9b192a756","src/11p_x2_layB.js":"853fefcdb8585534f3fe1a5dd4825d759c89876a5a43b34b879320dcd91fc062","src/11p_x2_layC.js":"07d81f1d5df0bb579ecb2aadc1ddf38cfdc3a44e9e1c0f64309544da936ee3c9","src/11p_x2_layD.js":"29012dc1db484f0b571d3e08c27a3cfcdfcdc7a294103bf1253969dd8939b66a","src/11p_x2_treat.js":"1a8348da5ebc55fffbd6186f4513af5e4f6f020d8ccd2979c8de345ce9516aa9","src/11p_x2_typoA.js":"20fa8af32c93717961a4ec70a8f6b93b5c010265ba37e5aa84fba0d29ebb2be3","src/11p_x2_typoB.js":"acead55a2a8a37797b2d98a35546a0b7ec5fef7c4e5830199f7b2e211af71c5c","src/11p_x2_waA.js":"f38e3c1f4610cf90f8d1f4a426b2331d850dd1e872181745c605a5a5909233cd","src/11p_x2_waB.js":"d3d3a37ee6c99857e40008b4d8b1410013ba7a7738615b61300f45aae1cf1d04"},"status":"preview","version":"0.13.0"};
 /* Native recipe registry. No family aliases; no host access at registration time. */
 var JZNative = (function () {
 'use strict';
@@ -1459,6 +1459,4107 @@ N.register('decor', 'indexNum', { source: 'legacy Cavalry preset decor:indexNum'
 } });
 })(JZNative, JZRecipeTools, JZComponents, JZGraph);
 
+
+;
+/* Cavalry native backgrounds ported from src/11p_bgcamB.js (36 recipes). */
+(function (N, G, C, R, V, S, H) {
+'use strict';
+
+var cl = H.cl, mix = H.mix, E = H.E, TAU = H.TAU, DEG = H.DEG;
+
+function register(key, build, differences) {
+  N.register('bg', key, {
+    source: 'src/11p_bgcamB.js',
+    scope: 'cut',
+    build: build,
+    differences: differences || []
+  });
+}
+
+function wrap(v, m) {
+  return ((v % m) + m) % m;
+}
+
+function fract(v) {
+  return v - Math.floor(v);
+}
+
+function hues(sc) {
+  var out = [], seen = Object.create(null);
+  [sc.accent, sc.accent2, sc.ghostA, sc.ghostB, sc.fg].forEach(function (col) {
+    if (!col || H.contrast(col, sc.bg) < 1.25) return;
+    var k = String(col).toLowerCase();
+    if (!seen[k]) { seen[k] = 1; out.push(col); }
+  });
+  return out.length ? out : [sc.fg];
+}
+
+function glowOf(sc) {
+  var L = H.lum(sc.bg), list = [sc.accent, sc.accent2, sc.ghostA, sc.ghostB, sc.fg];
+  for (var i = 0; i < list.length; i++) {
+    if (list[i] && H.lum(list[i]) > L + 0.25) return list[i];
+  }
+  return sc.fg;
+}
+
+function lightOn(sc) {
+  if (H.dark(sc.bg)) return glowOf(sc);
+  return H.lum(sc.bg) < 0.78 ? '#FFFFFF' : H.mixHex(sc.accent, '#FFFFFF', 0.2);
+}
+
+function hash2(x, y, s) {
+  var h = ((x | 0) * 374761393 + (y | 0) * 668265263 + (s | 0) * 144665) | 0;
+  h = Math.imul ? Math.imul(h ^ (h >>> 13), 1274126177) : ((h ^ (h >>> 13)) * 1274126177) | 0;
+  h ^= h >>> 16;
+  return (h >>> 0) / 4294967296;
+}
+
+function noise2(x, y, s) {
+  var ix = Math.floor(x), iy = Math.floor(y), fx = x - ix, fy = y - iy;
+  var u = fx * fx * (3 - 2 * fx), v = fy * fy * (3 - 2 * fy);
+  var a = hash2(ix, iy, s), b = hash2(ix + 1, iy, s);
+  var c = hash2(ix, iy + 1, s), d = hash2(ix + 1, iy + 1, s);
+  return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v;
+}
+
+function fbm2(x, y, s, oct) {
+  var v = 0, a = 0.5, f = 1, n = 0;
+  for (var i = 0; i < (oct || 3); i++) {
+    v += noise2(x * f, y * f, s + i * 101) * a;
+    n += a; a *= 0.5; f *= 2.03;
+  }
+  return v / n;
+}
+
+function fbm1(x, s, oct) {
+  var v = 0, a = 0.5, f = 1, n = 0;
+  for (var i = 0; i < (oct || 3); i++) {
+    v += R.noise(x * f, s + i * 53) * a;
+    n += a; a *= 0.5; f *= 2.1;
+  }
+  return v / n;
+}
+
+function softGlow(c, name, cx, cy, R, col, stops, animFn) {
+  stops.forEach(function (st, idx) {
+    var r = Math.max(2, R * st[0]), a = st[1];
+    var id = C.shape(c.graph, c.cut, c.cut.id + ' / ' + name + ' ' + idx, c.parent,
+      G.ellipse(0, 0, r, r), { fill: col, alpha: a });
+    c.graph.byId[id].attrs.position = H.toScene(c, cx, cy);
+    if (animFn) {
+      V.animate(c, id, function (e, f) { return animFn(e, f, a, idx); });
+    }
+  });
+}
+
+function cmdsFromPts(pts, close, W, Hh) {
+  var out = [];
+  for (var i = 0; i < pts.length; i++) {
+    out.push([i ? 'L' : 'M', pts[i][0] - W / 2, Hh / 2 - pts[i][1]]);
+  }
+  if (close) out.push(['Z']);
+  return out;
+}
+
+/* ================= GRADIENT ================= */
+
+/* 1. auroraRibbons */
+register('auroraRibbons', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'auroraRibbons'), seed = H.p(P, 'seed', 1), nR = Math.max(1, Math.round(H.p(P, 'n', 2)));
+  var baseY = H.p(P, 'y', 0.42), c0 = Math.round(H.p(P, 'c0', 0)), k = H.p(P, 'k', 0.24) * (dk ? 1.15 : 0.8);
+  var cols = hues(c.sc), lc = [];
+  var bgLum = H.lum(c.sc.bg);
+  cols.forEach(function (col) { if (H.lum(col) > bgLum + 0.12) lc.push(col); });
+  if (!dk || !lc.length) lc = [lightOn(c.sc), c.sc.accent];
+  var Ncol = 22, cw = W / Ncol + 2;
+  for (var r = 0; r < nR; r++) {
+    (function (ri) {
+      var col = lc[(c0 + ri) % lc.length], dir = ri % 2 ? -1 : 1, ph = (seed % 97) * 0.13 + ri * 2.1;
+      var by = Hh * (baseY + ri * 0.1 - 0.05), maxH = Math.max(W, Hh) * 0.34 * (1 - 0.25 * ri / 3);
+      for (var i = 0; i < Ncol; i++) {
+        (function (ci) {
+          var u = (ci + 0.5) / Ncol, xScene = (ci + 0.5) * (W / Ncol) - W / 2;
+          var edgeEnv = H.smoothstep(0, 0.18, u) * H.smoothstep(1, 0.82, u);
+          var outer = C.shape(c.graph, c.cut, c.cut.id + ' / Aurora col ' + ri + '_' + ci, c.parent,
+            G.rect(-cw / 2, 0, cw, maxH), { fill: col, alpha: 0.3 });
+          var core = C.shape(c.graph, c.cut, c.cut.id + ' / Aurora core ' + ri + '_' + ci, c.parent,
+            G.rect(-cw / 2, maxH * 0.05, cw, maxH * 0.28), { fill: col, alpha: 0.5 });
+          [outer, core].forEach(function (id, part) {
+            V.animate(c, id, function (e, f) {
+              var t = clk.absTime(f), q = clk.enter(f, 1.2);
+              var y = by + Hh * 0.07 * Math.sin(u * TAU * 0.75 + t * 0.3 * dir + ph) + Hh * 0.045 * R.noise(u * 3.5 + t * 0.22 * dir, seed + ri * 7);
+              var hScale = (0.65 + 0.35 * R.noise(u * 2.6 - t * 0.15, seed + ri * 13 + 5)) * (0.8 + 0.2 * q);
+              var ray = Math.pow(0.5 + 0.5 * R.noise(u * 34 + t * 0.9 * dir, seed + ri * 31), 1.4) * (0.7 + 0.3 * R.noise(u * 13 - t * 0.4, seed + ri * 3));
+              var a = k * q * (0.2 + 1.0 * ray) * edgeEnv * (part ? 0.55 : 0.28);
+              return { 'position.x': xScene, 'position.y': Hh / 2 - y, 'scale.y': Math.max(0.05, hScale), alpha: cl(a) };
+            });
+          });
+        })(i);
+      }
+    })(r);
+  }
+}, ['Curtains use soft overlapping vertical column pairs instead of per-pixel image gradient strips.']);
+
+/* 2. meshBlobs */
+register('meshBlobs', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'meshBlobs'), seed = H.p(P, 'seed', 1), n = Math.max(2, Math.round(H.p(P, 'n', 3)));
+  var cols = hues(c.sc), k = H.p(P, 'k', 0.25) * (dk ? 1 : 0.75), R0 = Math.max(W, Hh) * 0.5;
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var w1 = mix(0.16, 0.3, N.random(seed, idx, 1)), w2 = mix(0.14, 0.26, N.random(seed, idx, 2));
+      var ph1 = N.random(seed, idx, 3) * TAU, ph2 = N.random(seed, idx, 4) * TAU;
+      var R = R0 * mix(0.75, 1.1, N.random(seed, idx, 5));
+      var col = H.mixHex(c.sc.bg, cols[idx % cols.length], k);
+      [[1.0, 0.22], [0.65, 0.36], [0.35, 0.42]].forEach(function (st, ring) {
+        var r = Math.max(4, R * st[0]);
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Mesh blob ' + idx + '_' + ring, c.parent,
+          G.ellipse(0, 0, r, r), { fill: col, alpha: st[1] });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 1.0);
+          var cx = W * (0.5 + 0.42 * Math.sin(t * w1 + ph1)), cy = Hh * (0.5 + 0.4 * Math.cos(t * w2 + ph2));
+          var sc = 1 + 0.08 * Math.sin(t * 0.45 + idx * 1.7), pos = H.toScene(c, cx, cy);
+          return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': sc, 'scale.y': sc, alpha: st[1] * q };
+        });
+      });
+    })(i);
+  }
+}, ['Radial gradients use 3 nested concentric orbs per blob.']);
+
+/* 3. duotoneSweep */
+register('duotoneSweep', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, cols = hues(c.sc);
+  var clk = H.bgClock(c, 'duotoneSweep'), k = H.p(P, 'k', 0.16);
+  var cA = H.mixHex(c.sc.bg, cols[0], k), cB = H.mixHex(c.sc.bg, cols[1] || c.sc.fg, k);
+  var pos = Array.isArray(P.pos) ? P.pos : [0.5, 1.2], spd = H.p(P, 'spd', 0.1), a0 = H.p(P, 'a0', 0);
+  var R = Math.hypot(W, Hh) * 2.2, sectors = 16;
+  var pivot = H.toScene(c, W * pos[0], Hh * pos[1]);
+  var rig = c.graph.add('null', c.cut.id + ' / Duotone sweep', c.parent, c.cut.start, c.cut.end, { position: pivot });
+  V.animate(c, rig, function (e, f) { return { rotation: -(a0 / DEG + clk.absTime(f) * spd / DEG) }; });
+  for (var i = 0; i < sectors; i++) {
+    (function (idx) {
+      var a1 = idx / sectors * TAU, a2 = (idx + 1) / sectors * TAU;
+      var mixAmt = 0.5 - 0.5 * Math.cos(idx / sectors * TAU * 2);
+      var col = H.mixHex(cA, cB, mixAmt);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Duotone sector ' + idx, rig,
+        [['M', 0, 0], ['L', Math.cos(a1) * R, -Math.sin(a1) * R], ['L', Math.cos(a2) * R, -Math.sin(a2) * R], ['Z']],
+        { fill: col, alpha: 0.85 });
+      V.animate(c, id, function (e, f) { return { alpha: 0.85 * clk.enter(f, 0.8) }; });
+    })(i);
+  }
+}, ['Conic sweep approximated with 16 smooth-stepped angular sectors.']);
+
+/* 4. horizonGlow */
+register('horizonGlow', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'horizonGlow'), seed = H.p(P, 'seed', 1);
+  var R = Math.max(W, Hh) * H.p(P, 'R', 1.6), cxFrac = H.p(P, 'cx', 0.5), topFrac = H.p(P, 'top', 0.75);
+  var gc = dk ? glowOf(c.sc) : H.tintC(c.sc, 0.8), k = H.p(P, 'k', 0.32) * (dk ? 1 : 0.55);
+  var bodyCol = dk ? H.mixHex(c.sc.bg, '#000000', 0.42) : H.mixHex(c.sc.bg, c.sc.fg, 0.05);
+  function planetPos(f) {
+    var t = clk.absTime(f), q = clk.enter(f, 1.1);
+    return {
+      cx: W * cxFrac + W * 0.03 * Math.sin(t * 0.08 + (seed % 9)),
+      cy: Hh * topFrac + R + (1 - q) * Hh * 0.25 + Hh * 0.008 * Math.sin(t * 0.25),
+      q: q, breathe: 0.85 + 0.15 * Math.sin(t * 0.7), t: t
+    };
+  }
+  [1.18, 1.09, 1.03].forEach(function (mult, idx) {
+    var aBase = k * (idx === 2 ? 0.55 : idx === 1 ? 0.28 : 0.12);
+    var halo = C.shape(c.graph, c.cut, c.cut.id + ' / Horizon halo ' + idx, c.parent,
+      G.ellipse(0, 0, R * mult, R * mult), { fill: gc, alpha: aBase });
+    V.animate(c, halo, function (e, f) {
+      var p = planetPos(f), pos = H.toScene(c, p.cx, p.cy);
+      return { 'position.x': pos[0], 'position.y': pos[1], alpha: aBase * p.breathe * p.q };
+    });
+  });
+  var body = C.shape(c.graph, c.cut, c.cut.id + ' / Planet body', c.parent,
+    G.ellipse(0, 0, R, R), { fill: bodyCol, stroke: gc, width: Math.max(1.5, U * 0.0022), alpha: 1 });
+  V.animate(c, body, function (e, f) {
+    var p = planetPos(f), pos = H.toScene(c, p.cx, p.cy);
+    return { 'position.x': pos[0], 'position.y': pos[1], alpha: p.q };
+  });
+  softGlow(c, 'Planet flare', W / 2, Hh / 2, U * 0.3, dk ? gc : lightOn(c.sc), [
+    [0.35, k * 0.45], [0.7, k * 0.2], [1.0, k * 0.08]
+  ], function (e, f, ba) {
+    var p = planetPos(f), fa = -Math.PI / 2 + 0.22 * Math.sin(p.t * 0.12 + (seed % 13));
+    var pos = H.toScene(c, p.cx + Math.cos(fa) * R, p.cy + Math.sin(fa) * R);
+    return { 'position.x': pos[0], 'position.y': pos[1], alpha: ba * p.breathe * p.q };
+  });
+});
+
+/* ================= PATTERN ================= */
+
+/* 5. seigaiha */
+register('seigaiha', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'seigaiha'), R = Math.max(U * H.p(P, 'R', 0.08), 42);
+  var rings = Math.max(2, Math.min(4, Math.round(H.p(P, 'rings', 4)))), k = H.p(P, 'k', 0.09);
+  var dir = H.p(P, 'dir', 1), col = P.acc ? H.tintC(c.sc, k * 1.6) : H.layC(c.sc, k);
+  var pw = 2 * R, ph = R, ni = Math.ceil(W / pw) + 3, nj = Math.ceil(Hh / (R / 2)) + 5;
+  var bgDisks = [], ringCmds = [], dots = [];
+  for (var j = -2; j < nj; j++) {
+    for (var i = -1; i < ni; i++) {
+      var cx = i * pw + ((j & 1) ? R : 0) - W / 2, cy = Hh / 2 - j * (R / 2);
+      bgDisks = bgDisks.concat(G.ellipse(cx, cy, R * 0.99, R * 0.99));
+      for (var m = 0; m < rings; m++) {
+        var rm = R * (1 - m / rings) - R * 0.045;
+        if (rm > 2) ringCmds = ringCmds.concat(G.ellipse(cx, cy, rm, rm));
+      }
+      dots = dots.concat(G.ellipse(cx, cy, R / rings * 0.5, R / rings * 0.5));
+    }
+  }
+  var rig = c.graph.add('null', c.cut.id + ' / Seigaiha rig', c.parent, c.cut.start, c.cut.end, {});
+  C.shape(c.graph, c.cut, c.cut.id + ' / Seigaiha mask disks', rig, bgDisks, { fill: c.sc.bg, alpha: 1 });
+  C.shape(c.graph, c.cut, c.cut.id + ' / Seigaiha cores', rig, dots, { fill: H.layC(c.sc, k * 0.35), alpha: 1 });
+  C.shape(c.graph, c.cut, c.cut.id + ' / Seigaiha arcs', rig, ringCmds, { stroke: col, width: Math.max(1.2, R * 0.075), alpha: 1 });
+  V.animate(c, rig, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.7);
+    var ox = wrap(t * R * 0.22 * dir, pw) - pw;
+    var oy = wrap(R * 0.5 + Math.sin(t * 0.5) * R * 0.08 - (1 - q) * R * 0.5, ph) - ph;
+    return { 'position.x': ox, 'position.y': oy, alpha: q };
+  });
+});
+
+/* 6. asanoha */
+register('asanoha', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'asanoha'), a = Math.max(U * H.p(P, 'a', 0.12), 54), h = a * Math.sqrt(3) / 2;
+  var dxDir = H.p(P, 'dx', 1), col = H.layC(c.sc, H.p(P, 'k', 0.09));
+  var ni = Math.ceil(W / a) + 3, nr = Math.ceil(Hh / h) + 4, cmds = [];
+  function pt(r, i) { return [i * a + ((r & 1) ? a / 2 : 0) - W / 2, Hh / 2 - r * h]; }
+  function addTri(A, B, Cpt) {
+    var gx = (A[0] + B[0] + Cpt[0]) / 3, gy = (A[1] + B[1] + Cpt[1]) / 3;
+    cmds.push(['M', A[0], A[1]], ['L', B[0], B[1]], ['L', Cpt[0], Cpt[1]], ['Z']);
+    [A, B, Cpt].forEach(function (Q) { cmds.push(['M', gx, gy], ['L', Q[0], Q[1]]); });
+  }
+  for (var r = -2; r < nr; r++) {
+    for (var i = -2; i < ni; i++) {
+      if (!(r & 1)) { addTri(pt(r, i), pt(r, i + 1), pt(r + 1, i)); addTri(pt(r + 1, i), pt(r + 1, i + 1), pt(r, i + 1)); }
+      else { addTri(pt(r, i), pt(r, i + 1), pt(r + 1, i + 1)); addTri(pt(r + 1, i), pt(r + 1, i + 1), pt(r, i)); }
+    }
+  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Asanoha lattice', c.parent, cmds,
+    { stroke: col, width: Math.max(1, a * 0.018), alpha: 1 });
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.8);
+    return {
+      'position.x': wrap(t * a * 0.08 * dxDir, a) - a,
+      'position.y': -(wrap(t * h * 0.05 + (1 - q) * h, 2 * h) - 2 * h),
+      alpha: q
+    };
+  });
+});
+
+/* 7. houndstooth */
+register('houndstooth', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'houndstooth'), cell = Math.max(U * H.p(P, 'c', 0.045), 26);
+  var k = H.p(P, 'k', 0.065), dxDir = H.p(P, 'dx', 1);
+  var col = P.acc ? H.tintC(c.sc, k * 1.7) : H.layC(c.sc, k);
+  var nx = Math.ceil(W / (2 * cell)) + 2, ny = Math.ceil(Hh / (2 * cell)) + 2, cmds = [];
+  function pushPoly(pts) {
+    pts.forEach(function (pt, idx) { cmds.push([idx ? 'L' : 'M', pt[0] - W / 2, Hh / 2 - pt[1]]); });
+    cmds.push(['Z']);
+  }
+  for (var j = -1; j <= ny; j++) {
+    for (var i = -1; i <= nx; i++) {
+      var ox = i * 2 * cell, oy = j * 2 * cell;
+      cmds = cmds.concat(G.rect(ox - W / 2, Hh / 2 - (oy + cell), cell, cell));
+      [[ox + cell, oy], [ox, oy + cell]].forEach(function (b) {
+        var bx = b[0], by = b[1];
+        pushPoly([[bx, by], [bx + cell / 2, by], [bx, by + cell / 2]]);
+        pushPoly([[bx + cell, by], [bx + cell, by + cell / 2], [bx + cell / 2, by + cell], [bx, by + cell]]);
+      });
+    }
+  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Houndstooth', c.parent, cmds, { fill: col, alpha: 1 });
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), d = t * cell * 0.35, q = clk.enter(f, 0.6);
+    return { 'position.x': wrap(d * dxDir, 2 * cell) - 2 * cell, 'position.y': -(wrap(d * 0.6, 2 * cell) - 2 * cell), alpha: q };
+  });
+});
+
+/* 8. herringbone */
+register('herringbone', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'herringbone'), u = Math.max(U * H.p(P, 'u', 0.038), 22);
+  var k = H.p(P, 'k', 0.08), dir = H.p(P, 'dir', 1), rot = H.p(P, 'rot', 45);
+  var cA = H.layC(c.sc, k), cB = H.layC(c.sc, k * 0.45), Pd = 4 * u * Math.SQRT2, D = Math.hypot(W, Hh) / 2 + Pd;
+  var rig = c.graph.add('null', c.cut.id + ' / Herringbone rig', c.parent, c.cut.start, c.cut.end, { rotation: -rot });
+  var cmdsA = [], cmdsB = [], g = u * 0.1;
+  var Kmax = Math.ceil(D / u) + 3, Mmax = Math.ceil(D / (2 * u)) + 3;
+  for (var kk = -Kmax; kk <= Kmax; kk++) {
+    for (var m = -Mmax; m <= Mmax; m++) {
+      var bx = (kk + 2 * m) * u, by = (kk - 2 * m) * u;
+      if (Math.abs(bx) > D || Math.abs(by) > D) continue;
+      cmdsA = cmdsA.concat(G.rect(bx + g, by + g, 2 * u - 2 * g, u - 2 * g));
+      cmdsB = cmdsB.concat(G.rect(bx + 2 * u + g, by - u + g, u - 2 * g, 2 * u - 2 * g));
+    }
+  }
+  var idA = C.shape(c.graph, c.cut, c.cut.id + ' / Herringbone A', rig, cmdsA, { fill: cA, alpha: 1 });
+  var idB = C.shape(c.graph, c.cut, c.cut.id + ' / Herringbone B', rig, cmdsB, { fill: cB, alpha: 1 });
+  [idA, idB].forEach(function (id) {
+    V.animate(c, id, function (e, f) {
+      var t = clk.absTime(f), sp = wrap(t * u * 0.6 * dir, 4 * u) - 2 * u;
+      return { 'position.x': sp, 'position.y': -sp, alpha: clk.enter(f, 0.7) };
+    });
+  });
+});
+
+/* 9. argyle */
+register('argyle', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'argyle'), dw = U * H.p(P, 'dw', 0.18), dh = dw * H.p(P, 'asp', 1.4);
+  var k = H.p(P, 'k', 0.07), up = H.p(P, 'up', 1);
+  var cA = H.layC(c.sc, k), cB = H.tintC(c.sc, k * 1.6), cL = H.layC(c.sc, k * 3);
+  var nx = Math.ceil(W / dw) + 3, ny = Math.ceil(Hh / dh) + 3;
+  var diaA = [], diaB = [], lines = [];
+  for (var j = -1; j <= ny; j++) {
+    for (var i = -1; i <= nx; i++) {
+      var cx = i * dw - W / 2, cy = Hh / 2 - j * dh;
+      var poly = [['M', cx, cy + dh / 2], ['L', cx + dw / 2, cy], ['L', cx, cy - dh / 2], ['L', cx - dw / 2, cy], ['Z']];
+      if ((i + j) & 1) diaB = diaB.concat(poly); else diaA = diaA.concat(poly);
+      lines.push(['M', cx - dw / 2, cy], ['L', cx + dw / 2, cy - dh], ['M', cx + dw / 2, cy], ['L', cx - dw / 2, cy - dh]);
+    }
+  }
+  var idA = C.shape(c.graph, c.cut, c.cut.id + ' / Argyle A', c.parent, diaA, { fill: cA, alpha: 1 });
+  var idB = C.shape(c.graph, c.cut, c.cut.id + ' / Argyle B', c.parent, diaB, { fill: cB, alpha: 1 });
+  var idL = C.shape(c.graph, c.cut, c.cut.id + ' / Argyle cross', c.parent, lines, { stroke: cL, width: Math.max(1, dw * 0.012), alpha: 0.9 });
+  [idA, idB].forEach(function (id) {
+    V.animate(c, id, function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.6), d = t * dh * 0.1 * up;
+      return { 'position.y': -(wrap(d - (1 - q) * dh * 0.3, 2 * dh) - 2 * dh), alpha: q };
+    });
+  });
+  V.animate(c, idL, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.6), d = t * dh * 0.1 * up;
+    return { 'position.x': wrap(-d * 0.6, dw) - dw, 'position.y': -(wrap(-d, dh) - dh), alpha: q * 0.9 };
+  });
+});
+
+/* 10. tartan */
+register('tartan', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'tartan'), S0 = U * H.p(P, 'S', 0.42), k = H.p(P, 'k', 0.1);
+  var w1 = H.p(P, 'w1', 0.22), w2 = H.p(P, 'w2', 0.1);
+  var cA = H.layC(c.sc, k), cB = P.acc ? H.tintC(c.sc, k * 1.5) : H.layC(c.sc, k * 0.6);
+  var cL = H.layC(c.sc, k * 1.6), cT = H.tintC(c.sc, k * 2.4);
+  var sett = [[0, w1, cA, 0.6], [w1 + 0.04, 0.012, cL, 0.9], [w1 + 0.1, w2, cB, 0.55], [0.72, 0.008, cT, 0.9], [0.84, 0.02, cL, 0.7]];
+  var vRig = c.graph.add('null', c.cut.id + ' / Tartan V', c.parent, c.cut.start, c.cut.end, {});
+  var hRig = c.graph.add('null', c.cut.id + ' / Tartan H', c.parent, c.cut.start, c.cut.end, {});
+  sett.forEach(function (st, si) {
+    var p = st[0], w = st[1], col = st[2], a = st[3];
+    var vCmds = [], hCmds = [];
+    for (var o = -S0; o < W + S0 * 2; o += S0) {
+      vCmds = vCmds.concat(G.rect(o + p * S0 - W / 2, -Hh / 2, w * S0, Hh), G.rect(o + S0 - (p + w) * S0 - W / 2, -Hh / 2, w * S0, Hh));
+    }
+    for (var o2 = -S0; o2 < Hh + S0 * 2; o2 += S0) {
+      hCmds = hCmds.concat(G.rect(-W / 2, Hh / 2 - (o2 + p * S0 + w * S0), W, w * S0), G.rect(-W / 2, Hh / 2 - (o2 + S0 - p * S0), W, w * S0));
+    }
+    C.shape(c.graph, c.cut, c.cut.id + ' / Tartan V ' + si, vRig, vCmds, { fill: col, alpha: a });
+    C.shape(c.graph, c.cut, c.cut.id + ' / Tartan H ' + si, hRig, hCmds, { fill: col, alpha: a });
+  });
+  V.animate(c, vRig, function (e, f) {
+    return { 'position.x': wrap(-clk.absTime(f) * S0 * 0.035, S0) - S0, alpha: clk.enter(f, 0.8) };
+  });
+  V.animate(c, hRig, function (e, f) {
+    return { 'position.y': -(wrap(clk.absTime(f) * S0 * 0.025 + S0 * 0.37, S0) - S0), alpha: clk.enter(f, 0.8) };
+  });
+});
+
+/* 11. chevron */
+register('chevron', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'chevron'), p = U * H.p(P, 'p', 0.16), D = p * 0.5, A = p * H.p(P, 'amp', 0.35);
+  var k = H.p(P, 'k', 0.065), dir = H.p(P, 'dir', 1), col = P.acc ? H.tintC(c.sc, k * 1.7) : H.layC(c.sc, k);
+  var ni = Math.ceil(W / p) + 3, nj = Math.ceil(Hh / D) + 4, cmds = [];
+  for (var j = -2; j <= nj; j++) {
+    var y0 = j * D + A / 2;
+    for (var i = -1; i <= ni; i++) {
+      var x0 = i * p;
+      var pts = [[x0, y0], [x0 + p / 2, y0 - A], [x0 + p, y0], [x0 + p, y0 + D / 2], [x0 + p / 2, y0 - A + D / 2], [x0, y0 + D / 2]];
+      pts.forEach(function (pt, idx) { cmds.push([idx ? 'L' : 'M', pt[0] - W / 2, Hh / 2 - pt[1]]); });
+      cmds.push(['Z']);
+    }
+  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Chevron field', c.parent, cmds, { fill: col, alpha: 1 });
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.6);
+    return {
+      'position.x': wrap(p / 2 + Math.sin(t * 0.3) * p * 0.1, p) - p,
+      'position.y': -(wrap(-t * D * 0.4 * dir + (1 - q) * D, D) - D),
+      alpha: q
+    };
+  });
+});
+
+/* 12. isoCubes */
+register('isoCubes', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'isoCubes'), s = Math.max(U * H.p(P, 's', 0.065), 32), r3 = Math.sqrt(3), pw = r3 * s, ph = 3 * s;
+  var k = H.p(P, 'k', 0.09), spd = H.p(P, 'spd', 0.25), l0 = H.p(P, 'l0', 0), col = H.layC(c.sc, k);
+  var nx = Math.ceil(W / pw) + 3, ny = Math.ceil(Hh / (1.5 * s)) + 3;
+  var dirs = [-Math.PI / 2, Math.PI * 5 / 6, Math.PI / 6];
+  [0, 1, 2].forEach(function (fi) {
+    var cmds = [];
+    for (var n2 = -2; n2 <= ny; n2++) {
+      for (var n1 = -Math.ceil(ny / 2) - 2; n1 <= nx + 2; n1++) {
+        var cx = n1 * pw + n2 * pw / 2, cy = n2 * 1.5 * s;
+        if (cx < -pw * 2 || cx > W + pw * 2) continue;
+        var T = [cx, cy - s], UR = [cx + pw / 2, cy - s / 2], LR = [cx + pw / 2, cy + s / 2];
+        var B = [cx, cy + s], LL = [cx - pw / 2, cy + s / 2], UL = [cx - pw / 2, cy - s / 2], Cpt = [cx, cy];
+        var poly = fi === 0 ? [T, UR, Cpt, UL] : fi === 1 ? [UL, Cpt, B, LL] : [UR, LR, B, Cpt];
+        poly.forEach(function (pt, idx) { cmds.push([idx ? 'L' : 'M', pt[0] - W / 2, Hh / 2 - pt[1]]); });
+        cmds.push(['Z']);
+      }
+    }
+    var id = C.shape(c.graph, c.cut, c.cut.id + ' / Iso face ' + fi, c.parent, cmds, { fill: col, alpha: 1 });
+    V.animate(c, id, function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.6), L = l0 + t * spd;
+      return {
+        'position.x': wrap(t * s * 0.25, pw) - pw,
+        'position.y': -(wrap(t * s * 0.25 / r3 * 1.5, ph) - ph),
+        alpha: q * (0.25 + 0.75 * (0.5 + 0.5 * Math.cos(L - dirs[fi])))
+      };
+    });
+  });
+});
+
+/* 13. hexGrid */
+register('hexGrid', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'hexGrid'), seed = H.p(P, 'seed', 1);
+  var s = Math.max(U * H.p(P, 's', 0.06), Math.sqrt(W * Hh / 220)), r3 = Math.sqrt(3);
+  var cols = Math.min(18, Math.ceil(W / (r3 * s)) + 2), rows = Math.min(14, Math.ceil(Hh / (1.5 * s)) + 2);
+  var rr = s * 0.9, k = H.p(P, 'k', 0.1), cx0 = W / 2, cy0 = Hh / 2, R = Math.hypot(W, Hh) / 2;
+  function hexCmds(x, y, rad) {
+    var out = [];
+    for (var m = 0; m < 6; m++) {
+      var a = (m * 60 - 30) * DEG;
+      out.push([m ? 'L' : 'M', x + Math.cos(a) * rad - W / 2, Hh / 2 - (y + Math.sin(a) * rad)]);
+    }
+    out.push(['Z']);
+    return out;
+  }
+  var baseCmds = [];
+  for (var j = -1; j < rows; j++) {
+    for (var i = -1; i < cols; i++) {
+      var x = (i + ((j & 1) ? 0.5 : 0)) * r3 * s, y = j * 1.5 * s;
+      baseCmds = baseCmds.concat(hexCmds(x, y, rr));
+      if ((i + j) % 2 === 0 || N.random(seed, i, j, 1) < 0.35) {
+        (function (hi, hj, hx, hy) {
+          var d = Math.hypot(hx - cx0, hy - cy0) / R;
+          var cell = C.shape(c.graph, c.cut, c.cut.id + ' / Hex cell ' + hi + '_' + hj, c.parent,
+            hexCmds(hx, hy, rr * 0.86), { fill: H.tintC(c.sc, k * 1.4), alpha: 1 });
+          V.animate(c, cell, function (e, f) {
+            var t = clk.absTime(f), q = clk.enter(f, 0.7), tw = Math.floor(t * 3);
+            if (d > q * 1.2) return { alpha: 0 };
+            var v = P.mode === 'sparkle'
+              ? (N.random(seed, hi, hj, tw) < 0.08 ? 1 - fract(t * 3) * 0.6 : 0)
+              : Math.pow(0.5 + 0.5 * Math.cos((d * 3.2 - t * 0.55) * TAU), 6) * (0.6 + 0.4 * N.random(seed, hi, hj));
+            return { alpha: v > 0.2 ? cl(v) * q : 0 };
+          });
+        })(i, j, x, y);
+      }
+    }
+  }
+  var strokeId = C.shape(c.graph, c.cut, c.cut.id + ' / Hex grid lines', c.parent, baseCmds,
+    { stroke: H.layC(c.sc, k), width: Math.max(1, U * 0.0022), alpha: 1 });
+  V.animate(c, strokeId, function (e, f) { return { alpha: clk.enter(f, 0.7) }; });
+});
+
+/* 14. triTess */
+register('triTess', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'triTess'), seed = H.p(P, 'seed', 1);
+  var a = Math.max(U * H.p(P, 'a', 0.12), Math.sqrt(W * Hh / 160)), h = a * Math.sqrt(3) / 2;
+  var cols = Math.ceil(W / a) + 2, rows = Math.ceil(Hh / h) + 1, k = H.p(P, 'k', 0.085);
+  var lvCols = [0.35, 0.65, 1.0, 1.45].map(function (m, l) {
+    return (l === 3 && P.acc) ? H.tintC(c.sc, k * m * 1.4) : (P.acc ? H.tintC(c.sc, k * m) : H.layC(c.sc, k * m));
+  });
+  var buckets = [[], [], [], []];
+  for (var r = 0; r < rows; r++) {
+    for (var i = -1; i < cols; i++) {
+      var y0 = r * h, y1 = y0 + h, off = (r & 1) ? a / 2 : 0;
+      for (var up = 0; up < 2; up++) {
+        var x0 = i * a + off + (up ? a / 2 : 0);
+        var tri = up ? [[x0, y1], [x0 + a, y1], [x0 + a / 2, y0]] : [[x0, y0], [x0 + a, y0], [x0 + a / 2, y1]];
+        var gx = x0 + a / 2, gy = up ? y0 + h * 0.66 : y0 + h * 0.33;
+        var v = fbm2(gx / U * 1.6, gy / U * 1.6, seed, 2) + (N.random(seed, r, i, up) - 0.5) * 0.12;
+        var lv = v > 0.72 ? 3 : v > 0.56 ? 2 : v > 0.42 ? 1 : v > 0.28 ? 0 : -1;
+        if (lv >= 0) {
+          buckets[lv].push(
+            ['M', tri[0][0] - W / 2, Hh / 2 - tri[0][1]],
+            ['L', tri[1][0] - W / 2, Hh / 2 - tri[1][1]],
+            ['L', tri[2][0] - W / 2, Hh / 2 - tri[2][1]], ['Z']
+          );
+        }
+      }
+    }
+  }
+  buckets.forEach(function (cmds, lv) {
+    if (!cmds.length) return;
+    var id = C.shape(c.graph, c.cut, c.cut.id + ' / Tri tess ' + lv, c.parent, cmds, { fill: lvCols[lv], alpha: 1 });
+    V.animate(c, id, function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.8);
+      return { alpha: q * (0.7 + 0.3 * Math.sin(t * 0.5 + lv)) };
+    });
+  });
+});
+
+/* 15. moire */
+register('moire', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'moire'), gap = Math.max(U * H.p(P, 'gap', 0.018), 14), amp = U * H.p(P, 'amp', 0.07);
+  var s = H.p(P, 'seed', 1) % 17, col = H.layC(c.sc, H.p(P, 'k', 0.1)), Rm = Math.hypot(W, Hh) * 0.65;
+  var cmds = [];
+  for (var r = gap; r < Rm && cmds.length < 360; r += gap) {
+    cmds = cmds.concat(G.ellipse(0, 0, r, r));
+  }
+  [0, 1].forEach(function (ci) {
+    var id = C.shape(c.graph, c.cut, c.cut.id + ' / Moire plate ' + ci, c.parent, cmds,
+      { stroke: col, width: Math.max(1.2, gap * 0.42), alpha: 1 });
+    V.animate(c, id, function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.8);
+      var dx = ci === 0 ? amp * Math.sin(t * 0.33 + s) : -amp * Math.sin(t * 0.29 + s + 1);
+      var dy = ci === 0 ? amp * 0.7 * Math.cos(t * 0.27 + s) : -amp * 0.7 * Math.cos(t * 0.37 + s + 2);
+      return { 'position.x': dx, 'position.y': -dy, alpha: q };
+    });
+  });
+});
+
+/* 16. squareTunnel */
+register('squareTunnel', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'squareTunnel'), r = H.p(P, 'r', 1.26), twist = H.p(P, 'twist', 5);
+  var spd = H.p(P, 'spd', 0.45), k = H.p(P, 'k', 0.06), lr = Math.log(r), S0 = U * 0.08, maxS = Math.hypot(W, Hh) * 1.1;
+  var count = 16, col = H.layC(c.sc, k);
+  for (var i = 0; i < count; i++) {
+    (function (idx) {
+      var cmds = G.rect(-maxS, -maxS, maxS * 2, maxS * 2);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Tunnel ring ' + idx, c.parent, cmds,
+        { stroke: col, width: Math.max(2, U * 0.012), alpha: 1 });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.5), z = t * spd + (1 - q) * 1.5;
+        var span = Math.log(maxS / (U * 0.03)) / lr;
+        var depth = wrap(z - idx / count * span, span);
+        var hs = U * 0.03 * Math.pow(r, depth);
+        var sc = Math.max(0.01, hs / maxS), ang = (depth * twist + t * 4);
+        return { 'scale.x': sc, 'scale.y': sc, rotation: -ang, alpha: q * cl(hs / (U * 0.04)) * cl(1.4 - hs / maxS) };
+      });
+    })(i);
+  }
+});
+
+/* 17. spiralArms */
+register('spiralArms', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'spiralArms'), n = Math.max(2, Math.round(H.p(P, 'n', 4))), b = H.p(P, 'b', 0.32);
+  var spd = H.p(P, 'spd', 0.18), k = H.p(P, 'k', 0.065), cy = Hh * H.p(P, 'cy', 0.5);
+  var r0 = U * 0.09, Rm = Math.hypot(W, Hh) * 0.62, thMax = Math.log(Rm / r0) / b, w = Math.PI / n, steps = 40;
+  var cmds = [];
+  for (var arm = 0; arm < n; arm++) {
+    var base = arm * TAU / n;
+    for (var i = 0; i <= steps; i++) {
+      var th = thMax * i / steps, rad = r0 * Math.exp(b * th), a = base + th;
+      cmds.push([i ? 'L' : 'M', Math.cos(a) * rad, -Math.sin(a) * rad]);
+    }
+    for (var j = steps; j >= 0; j--) {
+      var th2 = thMax * j / steps, rad2 = r0 * Math.exp(b * th2), a2 = base + th2 + w;
+      cmds.push(['L', Math.cos(a2) * rad2, -Math.sin(a2) * rad2]);
+    }
+    cmds.push(['Z']);
+  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Spiral arms', c.parent, cmds, { fill: H.layC(c.sc, k), alpha: 1 });
+  c.graph.byId[id].attrs.position = H.toScene(c, W / 2, cy);
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.7), sc = 0.4 + 0.6 * q;
+    var rot = t * spd + (1 - q) * 1.2 * (spd < 0 ? -1 : 1);
+    return { rotation: -(rot / DEG), 'scale.x': sc, 'scale.y': sc, alpha: q };
+  });
+  softGlow(c, 'Spiral hub', W / 2, cy, U * 0.42, c.sc.bg, [[0.35, 0.6], [0.7, 0.3], [1.0, 0.12]]);
+});
+
+/* 18. topoLines */
+register('topoLines', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'topoLines'), seed = H.p(P, 'seed', 1), k = H.p(P, 'k', 0.13);
+  var nx = 22, ny = Math.max(10, Math.round(nx * Hh / W)), cx = W / (nx - 1), cy = Hh / (ny - 1);
+  var fGrid = [], fs = H.p(P, 'fs', 1.4) / U;
+  for (var j = 0; j < ny; j++) {
+    for (var i = 0; i < nx; i++) {
+      var X = i * cx * fs, Y = j * cy * fs, rx = X * 0.8 - Y * 0.6, ry = X * 0.6 + Y * 0.8;
+      var v = fbm2(rx + 0.35 * noise2(ry * 0.7, rx * 0.7, seed + 5), ry, seed, 3);
+      fGrid[j * nx + i] = cl((v - 0.5) * 2.1 + 0.5, -0.2, 1.2);
+    }
+  }
+  var MS = [[], [[3, 2]], [[2, 1]], [[3, 1]], [[0, 1]], [[0, 1], [3, 2]], [[0, 2]], [[3, 0]],
+    [[3, 0]], [[0, 2]], [[3, 0], [2, 1]], [[0, 1]], [[3, 1]], [[2, 1]], [[3, 2]], []];
+  var nLevels = Math.min(10, Math.max(6, Math.round(H.p(P, 'n', 10)))), minor = [], major = [];
+  for (var m = 1; m < nLevels; m++) {
+    var L = m / nLevels, dst = m % 3 === 0 ? major : minor;
+    for (var gj = 0; gj < ny - 1; gj++) {
+      for (var gi = 0; gi < nx - 1; gi++) {
+        var a = fGrid[gj * nx + gi], b = fGrid[gj * nx + gi + 1], cc = fGrid[(gj + 1) * nx + gi + 1], d = fGrid[(gj + 1) * nx + gi];
+        var idx = (a > L ? 8 : 0) | (b > L ? 4 : 0) | (cc > L ? 2 : 0) | (d > L ? 1 : 0);
+        if (idx === 0 || idx === 15) continue;
+        function ept(ed) {
+          if (ed === 0) return [gi + (L - a) / ((b - a) || 1e-4), gj];
+          if (ed === 1) return [gi + 1, gj + (L - b) / ((cc - b) || 1e-4)];
+          if (ed === 2) return [gi + (L - d) / ((cc - d) || 1e-4), gj + 1];
+          return [gi, gj + (L - a) / ((d - a) || 1e-4)];
+        }
+        MS[idx].forEach(function (seg) {
+          var p0 = ept(seg[0]), p1 = ept(seg[1]);
+          dst.push(['M', p0[0] * cx - W / 2, Hh / 2 - p0[1] * cy], ['L', p1[0] * cx - W / 2, Hh / 2 - p1[1] * cy]);
+        });
+      }
+    }
+  }
+  if (minor.length) {
+    var idMin = C.shape(c.graph, c.cut, c.cut.id + ' / Topo minor', c.parent, minor,
+      { stroke: H.layC(c.sc, k), width: Math.max(1, U * 0.0018), alpha: 1 });
+    V.animate(c, idMin, function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.9);
+      return { 'position.x': Math.sin(t * 0.2) * U * 0.015, 'position.y': Math.cos(t * 0.15) * U * 0.012, alpha: q };
+    });
+  }
+  if (major.length) {
+    var colMaj = P.acc ? H.tintC(c.sc, k * 2.2) : H.layC(c.sc, k * 1.6);
+    var idMaj = C.shape(c.graph, c.cut, c.cut.id + ' / Topo major', c.parent, major,
+      { stroke: colMaj, width: Math.max(1.5, U * 0.0036), alpha: 1 });
+    V.animate(c, idMaj, function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.9);
+      return { 'position.x': Math.sin(t * 0.2) * U * 0.015, 'position.y': Math.cos(t * 0.15) * U * 0.012, alpha: q };
+    });
+  }
+});
+
+/* 19. ridgePlot */
+register('ridgePlot', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'ridgePlot'), seed = H.p(P, 'seed', 1), n = Math.min(24, Math.max(10, Math.round(H.p(P, 'n', 20))));
+  var spd = H.p(P, 'spd', 0.24), amp = Hh * H.p(P, 'amp', 0.085) * (W < Hh ? 0.6 : 1);
+  var x0 = W * 0.06, x1 = W * 0.94, y0 = Hh * 0.2, y1 = Hh * 0.94, gap = (y1 - y0) / (n - 1), m = 48;
+  var lc = H.layC(c.sc, H.p(P, 'k', 0.17)), lw = Math.max(1, U * 0.0022);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var base = y0 + idx * gap, cmds = [['M', x0 - W / 2, Hh / 2 - (base + 2)]];
+      var strokeCmds = [];
+      for (var j = 0; j <= m; j++) {
+        var u = j / m, x = mix(x0, x1, u);
+        var env1 = P.mode === 'wide' ? 0.3 + 0.7 * Math.pow(Math.sin(Math.PI * u), 2) : 0.08 + 0.92 * Math.exp(-Math.pow((u - 0.5) / 0.16, 2));
+        var v = Math.pow(0.5 + 0.5 * fbm1(u * 7 + idx * 0.41, seed + idx * 7, 3), 2.4);
+        var dy = amp * env1 * v * 2.2 + Hh * 0.002 * R.noise(u * 40 + idx, seed);
+        cmds.push(['L', x - W / 2, Hh / 2 - (base - dy)]);
+        strokeCmds.push([j ? 'L' : 'M', x - W / 2, Hh / 2 - (base - dy)]);
+      }
+      cmds.push(['L', x1 - W / 2, Hh / 2 - (base + 2)], ['Z']);
+      var fillId = C.shape(c.graph, c.cut, c.cut.id + ' / Ridge fill ' + idx, c.parent, cmds, { fill: c.sc.bg, alpha: 0.9 });
+      var lineId = C.shape(c.graph, c.cut, c.cut.id + ' / Ridge line ' + idx, c.parent, strokeCmds, { stroke: lc, width: lw, alpha: 1 });
+      [fillId, lineId].forEach(function (id) {
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 1.0);
+          var grow = E.outCubic(q * 1.6 - idx / n * 0.6);
+          var breathe = 0.8 + 0.25 * Math.sin(t * spd * 3 + idx * 0.7);
+          return { 'position.y': (1 - grow) * gap * 0.8, 'scale.y': Math.max(0.05, grow * breathe), alpha: q > 0.02 ? 1 : 0 };
+        });
+      });
+    })(i);
+  }
+});
+
+/* ================= SCENE ================= */
+
+/* 20. starfield */
+register('starfield', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'starfield'), seed = H.p(P, 'seed', 1), ang = H.p(P, 'ang', 0), spd = H.p(P, 'spd', 1);
+  var col = dk ? H.mixHex(c.sc.bg, c.sc.fg, 0.92) : H.lum(c.sc.bg) < 0.78 ? '#FFFFFF' : H.layC(c.sc, 0.5);
+  var vx = Math.cos(ang), vy = Math.sin(ang);
+  [[32, 0.0014, 0.006, 0.45], [18, 0.0022, 0.018, 0.65], [10, 0.0034, 0.045, 0.85]].forEach(function (spec, l) {
+    var cnt = spec[0], rad = spec[1], sp = spec[2], aB = spec[3], v = U * sp * spd;
+    for (var i = 0; i < cnt; i++) {
+      (function (idx) {
+        var r = U * rad * (0.6 + 0.8 * N.random(seed, l, idx, 3));
+        var x0 = N.random(seed, l, idx, 1) * W * 1.1, y0 = N.random(seed, l, idx, 2) * Hh * 1.1;
+        var twF = mix(1.1, 2.6, N.random(seed, l, idx, 4));
+        var cmds = l < 2 ? G.rect(-r, -r, r * 2, r * 2) : G.ellipse(0, 0, r, r);
+        if (l === 2 && N.random(seed, l, idx, 5) < 0.5) {
+          var Ls = r * 5, th = Math.max(0.8, r * 0.25);
+          cmds = cmds.concat(G.rect(-Ls, -th / 2, Ls * 2, th), G.rect(-th / 2, -Ls, th, Ls * 2));
+        }
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Star ' + l + '_' + idx, c.parent, cmds, { fill: col, alpha: aB });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.9);
+          var x = wrap(x0 + t * v * vx, W * 1.1) - W * 0.05;
+          var y = wrap(y0 + t * v * vy, Hh * 1.1) - Hh * 0.05;
+          var pos = H.toScene(c, x, y);
+          var tw = 0.5 + 0.5 * Math.sin(t * twF + idx * 1.7);
+          return { 'position.x': pos[0], 'position.y': pos[1], alpha: aB * (0.45 + 0.55 * tw) * q * (dk ? 1 : 0.65) };
+        });
+      })(i);
+    }
+  });
+  if (P.shoot !== false) {
+    var per = 3.4, L = U * 0.55, tl = U * 0.16;
+    var shId = C.shape(c.graph, c.cut, c.cut.id + ' / Shooting star', c.parent,
+      [['M', 0, 0], ['L', -tl, 0]], { stroke: col, width: Math.max(1.5, U * 0.0022), alpha: 0.8 });
+    V.animate(c, shId, function (e, f) {
+      var t = clk.absTime(f), q0 = clk.enter(f, 0.9), bIdx = Math.floor(t / per);
+      var age = t - bIdx * per - N.random(seed, bIdx, 8) * 1.5;
+      if (age <= 0 || age >= 0.75 || N.random(seed, bIdx, 9) >= 0.85) return { alpha: 0 };
+      var q = age / 0.75, sx = W * mix(0.15, 0.7, N.random(seed, bIdx, 1)), sy = Hh * mix(0.05, 0.35, N.random(seed, bIdx, 2));
+      var sa = mix(20, 38, N.random(seed, bIdx, 3)) * DEG * (N.random(seed, bIdx, 4) < 0.5 ? 1 : -1);
+      var dx = Math.cos(sa) * (sa < 0 ? -1 : 1), dy = Math.abs(Math.sin(sa));
+      var hx = sx + dx * L * E.outQuad(q), hy = sy + dy * L * E.outQuad(q), pos = H.toScene(c, hx, hy);
+      var sc = Math.max(0.05, Math.sin(Math.PI * q));
+      return { 'position.x': pos[0], 'position.y': pos[1], rotation: -(Math.atan2(dy, dx) / DEG), 'scale.x': sc, alpha: 0.8 * q0 * (1 - q * 0.6) };
+    });
+  }
+});
+
+/* 21. nightMoon */
+register('nightMoon', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'nightMoon'), seed = H.p(P, 'seed', 1), side = H.p(P, 'side', 1), port = Hh > W;
+  var R = U * H.p(P, 'R', 0.13), mx = W * (0.5 + side * (port ? 0.2 : 0.3)), myBase = Hh * (port ? 0.2 : 0.27);
+  var moonC = dk ? H.mixHex(c.sc.bg, glowOf(c.sc) === c.sc.fg ? c.sc.fg : H.mixHex(c.sc.fg, glowOf(c.sc), 0.3), H.p(P, 'k', 0.22))
+    : H.mixHex(c.sc.bg, '#FFFFFF', 0.55);
+  var haloC = dk ? moonC : H.mixHex(c.sc.bg, '#FFFFFF', 0.7);
+  for (var s = 0; s < 24; s++) {
+    (function (idx) {
+      var x = N.random(seed, idx, 1) * W, y = N.random(seed, idx, 2) * Hh * 0.62;
+      if (Math.hypot(x - mx, y - myBase) < R * 2.2) return;
+      var r = U * mix(0.001, 0.0024, N.random(seed, idx, 3)), wf = mix(0.8, 2.4, N.random(seed, idx, 4));
+      var stId = H.rect(c, 'Moon star ' + idx, x - r, y - r, r * 2, r * 2, { fill: H.layC(c.sc, dk ? 0.55 : 0.2), alpha: 1 });
+      V.animate(c, stId, function (e, f) {
+        return { alpha: clk.enter(f, 1.2) * (0.2 + 0.4 * (0.5 + 0.5 * Math.sin(clk.absTime(f) * wf + idx))) };
+      });
+    })(s);
+  }
+  softGlow(c, 'Moon halo', mx, myBase, R * 3.4, haloC, [
+    [0.4, dk ? 0.28 : 0.4], [0.7, dk ? 0.12 : 0.18], [1.0, dk ? 0.04 : 0.06]
+  ], function (e, f, ba) {
+    var q = clk.enter(f, 1.2), br = 0.9 + 0.1 * Math.sin(clk.absTime(f) * 0.7);
+    var pos = H.toScene(c, mx, myBase + (1 - q) * Hh * 0.06);
+    return { 'position.x': pos[0], 'position.y': pos[1], alpha: ba * br * q };
+  });
+  var moonId = C.shape(c.graph, c.cut, c.cut.id + ' / Moon disc', c.parent, G.ellipse(0, 0, R, R), { fill: moonC, alpha: 1 });
+  V.animate(c, moonId, function (e, f) {
+    var q = clk.enter(f, 1.2), pos = H.toScene(c, mx, myBase + (1 - q) * Hh * 0.06);
+    return { 'position.x': pos[0], 'position.y': pos[1], alpha: q };
+  });
+  if (P.phase === 'crescent') {
+    var cutId = C.shape(c.graph, c.cut, c.cut.id + ' / Moon shadow', c.parent,
+      G.ellipse(side * R * 0.42, R * 0.22, R * 0.9, R * 0.9), { fill: c.sc.bg, alpha: 1 });
+    V.animate(c, cutId, function (e, f) {
+      var q = clk.enter(f, 1.2), pos = H.toScene(c, mx, myBase + (1 - q) * Hh * 0.06);
+      return { 'position.x': pos[0], 'position.y': pos[1], alpha: q };
+    });
+  }
+  var cloudC = H.mixHex(c.sc.bg, c.sc.fg, dk ? 0.07 : 0.05);
+  for (var cld = 0; cld < 3; cld++) {
+    (function (ci) {
+      var w = U * mix(0.4, 0.7, N.random(seed, ci, 21)), h = U * mix(0.02, 0.03, N.random(seed, ci, 22)), Lp = W + w * 2;
+      var xOff = (ci + N.random(seed, ci, 23) * 0.5) / 3 * Lp, sp = U * mix(0.025, 0.045, N.random(seed, ci, 24));
+      var y = myBase + R * (ci - 1) * 0.8 + R * mix(-0.2, 0.3, N.random(seed, ci, 25));
+      var cCmds = H.roundRectCmds(w / 2, 0, w, h, h / 2)
+        .concat(H.roundRectCmds(w * (mix(0.15, 0.4, N.random(seed, ci, 26)) + 0.225), h * 0.75, w * 0.45, h * 0.9, h * 0.45))
+        .concat(H.roundRectCmds(w * (mix(0.35, 0.6, N.random(seed, ci, 27)) + 0.25), -h * 0.7, w * 0.5, h * 0.8, h * 0.4));
+      var cId = C.shape(c.graph, c.cut, c.cut.id + ' / Moon cloud ' + ci, c.parent, cCmds, { fill: cloudC, alpha: 0.7 });
+      V.animate(c, cId, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 1.2), x = wrap(xOff + t * sp, Lp) - w;
+        var pos = H.toScene(c, x, y);
+        return { 'position.x': pos[0], 'position.y': pos[1], alpha: 0.7 * q };
+      });
+    })(cld);
+  }
+});
+
+/* 22. sunsetSun */
+register('sunsetSun', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'sunsetSun'), seed = H.p(P, 'seed', 1), k = H.p(P, 'k', 0.35);
+  var hz = Hh * H.p(P, 'hz', 0.72) * (W < Hh ? 0.97 : 1), R = U * H.p(P, 'R', 0.14);
+  var cxFrac = H.p(P, 'cx', 0.3), cx = W * (W < Hh ? 0.5 + (cxFrac - 0.5) * 0.6 : cxFrac);
+  var sunBase = dk ? glowOf(c.sc) : c.sc.accent, sunC = H.mixHex(c.sc.bg, sunBase, k * (dk ? 1 : 0.7));
+  for (var sb = 0; sb < 5; sb++) {
+    var bh = Hh * 0.1 * (sb + 1), a = (dk ? 0.12 : 0.1) * 0.22;
+    var skyId = H.rect(c, 'Sunset sky ' + sb, 0, hz - bh, W, bh, { fill: sunBase, alpha: a });
+    V.animate(c, skyId, function (e, f) { return { alpha: a * clk.enter(f, 1.2) }; });
+  }
+  softGlow(c, 'Sunset halo', cx, hz, R * 3, sunC, [[0.55, 0.28], [0.8, 0.14], [1.0, 0.06]], function (e, f, ba) {
+    var q = clk.enter(f, 1.2), cy = hz - R * 0.5 + R * 0.35 * cl(clk.time(f) / 14) + (1 - q) * R * 0.9;
+    var pos = H.toScene(c, cx, cy);
+    return { 'position.x': pos[0], 'position.y': pos[1], alpha: ba * q };
+  });
+  var sunId = C.shape(c.graph, c.cut, c.cut.id + ' / Sunset disc', c.parent, G.ellipse(0, 0, R, R), { fill: sunC, alpha: 1 });
+  V.animate(c, sunId, function (e, f) {
+    var q = clk.enter(f, 1.2), cy = hz - R * 0.5 + R * 0.35 * cl(clk.time(f) / 14) + (1 - q) * R * 0.9;
+    var pos = H.toScene(c, cx, cy);
+    return { 'position.x': pos[0], 'position.y': pos[1], alpha: q };
+  });
+  var waterBg = H.rect(c, 'Sunset water occlude', 0, hz, W, Hh - hz + 2, { fill: c.sc.bg, alpha: 1 });
+  var horRule = H.rect(c, 'Sunset horizon line', 0, hz - 0.5, W, Math.max(1, U * 0.0018), { fill: H.layC(c.sc, 0.14), alpha: 1 });
+  V.animate(c, horRule, function (e, f) { return { alpha: clk.enter(f, 1.2) }; });
+  for (var j = 0; j < 14; j++) {
+    (function (idx) {
+      var y = hz + U * 0.015 * Math.pow(idx + 1, 1.32);
+      if (y > Hh) return;
+      var q = idx / 14, hh = Math.max(1.5, U * 0.0038 * (1 + idx * 0.1)), wBase = R * (1.25 - q * 0.6);
+      var refl = C.shape(c.graph, c.cut, c.cut.id + ' / Sun glint ' + idx, c.parent,
+        G.rect(-wBase, -hh / 2, wBase * 2, hh), { fill: sunC, alpha: 0.75 * (1 - q) });
+      V.animate(c, refl, function (e, f) {
+        var t = clk.absTime(f), q0 = clk.enter(f, 1.2);
+        var wv = 0.55 + 0.45 * R.noise(t * 1.3 + idx * 1.9, seed), xo = R * 0.18 * R.noise(t * 0.9 + idx * 2.7, seed + 3);
+        var pos = H.toScene(c, cx + xo, y);
+        return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': wv, alpha: 0.75 * (1 - q) * q0 * (0.6 + 0.4 * R.noise(t * 2 + idx, seed + 5)) };
+      });
+    })(j);
+  }
+  return waterBg;
+});
+
+/* 23. oceanWaves */
+register('oceanWaves', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'oceanWaves'), seed = H.p(P, 'seed', 1), n = Math.max(4, Math.round(H.p(P, 'n', 10)));
+  var hz = H.p(P, 'hz', 0.52), k = H.p(P, 'k', 0.14), dir = H.p(P, 'dir', 1), m = 48;
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var q = (idx + 1) / n, y0 = Hh * (hz + (1 - hz) * Math.pow(q, 1.55));
+      var A = U * (0.004 + 0.028 * Math.pow(q, 1.4)), lam = W * (0.07 + 0.3 * q);
+      var w = 0.9 + 0.5 * N.random(seed, idx, 1), ph = N.random(seed, idx, 2) * TAU;
+      var span = Math.max(W * 1.6, Math.ceil(W * 1.6 / lam) * lam), cmds = [];
+      for (var j = 0; j <= m; j++) {
+        var x = -span * 0.25 + span * j / m, u = x / lam * TAU;
+        var y = A * (Math.sin(u + ph) + 0.35 * Math.sin(u * 2.3 + ph * 2));
+        cmds.push([j ? 'L' : 'M', x - W / 2, -y]);
+      }
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Ocean wave ' + idx, c.parent, cmds,
+        { stroke: H.layC(c.sc, k * (0.45 + 0.75 * q)), width: Math.max(1, U * (0.0014 + 0.0035 * q)), alpha: 1 });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), fi = clk.enter(f, 0.9);
+        var xShift = wrap(dir * t * w * lam / TAU, lam);
+        var yPos = y0 + (1 - fi) * Hh * 0.15 * q;
+        return { 'position.x': xShift, 'position.y': Hh / 2 - yPos, alpha: fi };
+      });
+    })(i);
+  }
+});
+
+/* 24. rainWindow */
+register('rainWindow', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'rainWindow'), seed = H.p(P, 'seed', 1), tn = Math.tan(H.p(P, 'ang', 8) * DEG);
+  var k = H.p(P, 'k', 0.15), col = H.layC(c.sc, k), nRain = 36, span = W + Hh * Math.abs(tn);
+  for (var i = 0; i < nRain; i++) {
+    (function (idx) {
+      var v = Hh * mix(1.3, 2.1, N.random(seed, idx, 1)), L = Hh * mix(0.03, 0.09, N.random(seed, idx, 2));
+      var xBase = N.random(seed, idx, 3) * span - (tn > 0 ? Hh * tn : 0), yOff = N.random(seed, idx, 4) * (Hh + L);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Rain streak ' + idx, c.parent,
+        [['M', 0, 0], ['L', L * tn, -L]], { stroke: col, width: Math.max(1, U * 0.0016), alpha: 0.85 });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), y = wrap(yOff + t * v, Hh + L) - L, x = xBase + y * tn;
+        var pos = H.toScene(c, x, y);
+        return { 'position.x': pos[0], 'position.y': pos[1], alpha: 0.85 * clk.enter(f, 0.6) };
+      });
+    })(i);
+  }
+  var dc = H.layC(c.sc, k * 1.5), hc = dk ? H.layC(c.sc, k * 3.5) : H.mixHex(c.sc.bg, '#FFFFFF', 0.7);
+  var nDrops = Math.min(14, Math.max(4, Math.round(H.p(P, 'drops', 10))));
+  for (var d = 0; d < nDrops; d++) {
+    (function (di) {
+      var per = mix(3.5, 6.5, N.random(seed, di, 11)), r = U * mix(0.008, 0.019, N.random(seed, di, 15));
+      var x0 = mix(0.05, 0.95, N.random(seed, di, 13)) * W, y0 = mix(0.06, 0.65, N.random(seed, di, 14)) * Hh;
+      var dropId = C.shape(c.graph, c.cut, c.cut.id + ' / Rain drop ' + di, c.parent,
+        G.ellipse(0, 0, r * 0.9, r).concat(G.ellipse(-r * 0.3, r * 0.35, r * 0.25, r * 0.25)),
+        { fill: dc, stroke: hc, width: 0.8, alpha: 0.9 });
+      V.animate(c, dropId, function (e, f) {
+        var t = clk.absTime(f), q0 = clk.enter(f, 0.6);
+        var u = wrap(t + N.random(seed, di, 12) * per, per) / per, u0 = 0.6;
+        var x = x0, y = y0, sc = 0.65 + 0.35 * cl(u / u0);
+        if (u >= u0) {
+          var qq = (u - u0) / (1 - u0);
+          y = y0 + E.inQuad(qq) * Hh * 1.15;
+          x = x0 + U * 0.006 * Math.sin(qq * 18 + di);
+        }
+        if (y - r > Hh) return { alpha: 0 };
+        var pos = H.toScene(c, x, y);
+        return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': sc, 'scale.y': sc, alpha: 0.9 * q0 * cl(u / 0.08) };
+      });
+    })(d);
+  }
+});
+
+/* 25. snowLayers */
+register('snowLayers', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'snowLayers'), seed = H.p(P, 'seed', 1), wind = H.p(P, 'wind', 0.15);
+  var col = H.lum(c.sc.bg) < 0.88 ? H.mixHex(c.sc.bg, '#FFFFFF', 0.92) : H.layC(c.sc, 0.35);
+  [[24, 0.0045, 0.05, 0.012, 0.5], [16, 0.009, 0.09, 0.02, 0.6], [8, 0.018, 0.16, 0.035, 0.35]].forEach(function (sp, l) {
+    var cnt = sp[0], sz = sp[1], v = sp[2], sw = sp[3], aB = sp[4];
+    var vy = Hh * v, vx = vy * wind;
+    for (var i = 0; i < cnt; i++) {
+      (function (idx) {
+        var r = U * sz * (0.7 + 0.6 * N.random(seed, l, idx, 1)), fq = mix(0.5, 1.3, N.random(seed, l, idx, 2));
+        var y0 = N.random(seed, l, idx, 3) * Hh * 1.2, vyM = 0.8 + 0.4 * N.random(seed, l, idx, 4);
+        var x0 = N.random(seed, l, idx, 5) * W * 1.1, aM = aB * (0.6 + 0.4 * N.random(seed, l, idx, 6));
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Snow ' + l + '_' + idx, c.parent,
+          G.ellipse(0, 0, r, r), { fill: col, alpha: aM });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 1.0);
+          var y = wrap(y0 + t * vy * vyM, Hh * 1.2) - Hh * 0.1;
+          var x = wrap(x0 + t * vx + Math.sin(t * fq + idx) * U * sw, W * 1.1) - W * 0.05;
+          var pos = H.toScene(c, x, y);
+          return { 'position.x': pos[0], 'position.y': pos[1], alpha: aM * q };
+        });
+      })(i);
+    }
+  });
+});
+
+/* 26. fireworks */
+register('fireworks', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'fireworks'), seed = H.p(P, 'seed', 1), per = H.p(P, 'per', 0.65), cols = hues(c.sc);
+  var launch = 0.45, life = 2.0, K = H.p(P, 'k', 0.48) * (dk ? 1 : 0.6);
+  var tStart = clk.absTime(c.cut.start), tEnd = clk.absTime(c.cut.end);
+  var b0 = Math.floor((tStart - launch - life) / per), b1 = Math.ceil(tEnd / per);
+  for (var b = b0; b <= b1; b++) {
+    (function (bi) {
+      var t0 = bi * per + N.random(seed, bi, 1) * per * 0.5;
+      if (t0 + launch + life < tStart || t0 > tEnd) return;
+      var ox = W * mix(0.1, 0.9, N.random(seed, bi, 2)), oy = Hh * mix(0.1, 0.48, N.random(seed, bi, 3));
+      var base = cols[Math.floor(N.random(seed, bi, 4) * cols.length) % cols.length];
+      var col = dk ? base : H.mixHex(base, c.sc.bg, 0.2), burstR = U * mix(0.24, 0.36, N.random(seed, bi, 6));
+      var rktId = C.shape(c.graph, c.cut, c.cut.id + ' / Rocket ' + bi, c.parent,
+        [['M', 0, 0], ['L', 0, -U * 0.06]], { stroke: col, width: Math.max(1.5, U * 0.0024), alpha: K });
+      V.animate(c, rktId, function (e, f) {
+        var age = clk.absTime(f) - t0, fi = clk.enter(f, 0.3);
+        if (age <= 0 || age >= launch) return { alpha: 0 };
+        var q = E.outQuad(age / launch), y = mix(Hh * 1.02, oy, q), pos = H.toScene(c, ox, y);
+        return { 'position.x': pos[0], 'position.y': pos[1], alpha: K * 0.6 * fi };
+      });
+      var rays = 20, cmds = [];
+      for (var j = 0; j < rays; j++) {
+        var a = j / rays * TAU + (N.random(seed, bi, j) - 0.5) * 0.12;
+        var sp = (j % 2 ? 0.55 : 1) * (0.85 + 0.15 * N.random(seed, bi, j, 7));
+        cmds.push(['M', Math.cos(a) * burstR * sp * 0.45, -Math.sin(a) * burstR * sp * 0.45],
+          ['L', Math.cos(a) * burstR * sp, -Math.sin(a) * burstR * sp]);
+        cmds = cmds.concat(G.ellipse(Math.cos(a) * burstR * sp, -Math.sin(a) * burstR * sp, U * 0.004, U * 0.004));
+      }
+      var burstId = C.shape(c.graph, c.cut, c.cut.id + ' / Firework burst ' + bi, c.parent, cmds,
+        { stroke: col, fill: dk ? H.mixHex(col, '#FFFFFF', 0.4) : col, width: Math.max(1.5, U * 0.0024), alpha: K });
+      var bPos = H.toScene(c, ox, oy);
+      c.graph.byId[burstId].attrs.position = bPos;
+      V.animate(c, burstId, function (e, f) {
+        var age = clk.absTime(f) - t0 - launch, fi = clk.enter(f, 0.3);
+        if (age <= 0 || age >= life) return { 'scale.x': 0.05, 'scale.y': 0.05, alpha: 0 };
+        var sc = (1 - Math.exp(-2.6 * age)) / (1 - Math.exp(-2.6 * life)), fade = Math.pow(1 - age / life, 1.6);
+        return { 'position.x': bPos[0], 'position.y': bPos[1] - 0.5 * U * 0.08 * age * age, 'scale.x': Math.max(0.05, sc), 'scale.y': Math.max(0.05, sc), alpha: K * fade * fi };
+      });
+    })(b);
+  }
+});
+
+/* 27. cloudLayers */
+register('cloudLayers', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'cloudLayers'), seed = H.p(P, 'seed', 1), dir = H.p(P, 'dir', 1), k = H.p(P, 'k', 0.075);
+  [[0.1, 0.3, 0.55, 0.012, 0.55], [0.3, 0.55, 0.8, 0.026, 0.8], [0.72, 0.98, 1.15, 0.05, 1.1]].forEach(function (sp, l) {
+    var ya = sp[0], yb = sp[1], scl = sp[2], v = sp[3], km = sp[4], cw0 = U * 0.5 * scl, Lp = W + cw0 * 2.4;
+    for (var cc = 0; cc < 4; cc++) {
+      (function (ci) {
+        var cw = cw0 * mix(0.75, 1.2, N.random(seed, l, ci, 1)), y = Hh * mix(ya, yb, N.random(seed, l, ci, 3));
+        var xOff = (ci + N.random(seed, l, ci, 2) * 0.6) / 4 * Lp, np = 5 + Math.floor(N.random(seed, l, ci, 9) * 3);
+        var cmds = [], rmin = 1e9;
+        for (var p = 0; p < np; p++) {
+          var f = (p + 0.5) / np, pr = cw / np * (0.75 + 1.05 * Math.sin(Math.PI * f)) * (0.85 + 0.3 * N.random(seed, l, ci, p, 4));
+          var px = cw * f + (N.random(seed, l, ci, p, 5) * 2 - 1) * cw * 0.03;
+          cmds = cmds.concat(G.ellipse(px, pr, pr, pr));
+          rmin = Math.min(rmin, pr);
+        }
+        cmds = cmds.concat(G.rect(cw * 0.5 / np, 0, cw * (1 - 1 / np), rmin));
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Cloud ' + l + '_' + ci, c.parent, cmds, { fill: H.layC(c.sc, k * km), alpha: 1 });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 1.0);
+          var x = wrap(xOff + t * U * v * dir, Lp) - cw * 1.2, yy = y + (1 - q) * Hh * 0.05 * (l + 1);
+          var pos = H.toScene(c, x, yy);
+          return { 'position.x': pos[0], 'position.y': pos[1], alpha: q };
+        });
+      })(cc);
+    }
+  });
+});
+
+/* 28. mountains */
+register('mountains', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'mountains'), seed = H.p(P, 'seed', 1), n = Math.max(2, Math.round(H.p(P, 'n', 3)));
+  var k = H.p(P, 'k', 0.085), dir = H.p(P, 'dir', 1), port = Hh > W, m = 72;
+  for (var l = 0; l < n; l++) {
+    (function (li) {
+      var q = n > 1 ? li / (n - 1) : 1, base = Hh * ((port ? 0.68 : 0.64) + 0.14 * q), A = Hh * (port ? 0.17 : 0.3) * (1 - 0.35 * q);
+      var sc2 = U * (0.42 + 0.2 * (1 - q)), span = W * 1.6, cmds = [['M', -span * 0.3 - W / 2, Hh / 2 - (Hh + 20)]];
+      for (var j = 0; j <= m; j++) {
+        var x = -span * 0.3 + span * j / m, X = x / sc2 + li * 7.3;
+        var v = 0, amp = 1, freq = 1, nrm = 0;
+        for (var o = 0; o < 4; o++) { v += (1 - Math.abs(R.noise(X * freq, seed + li * 31 + o * 7))) * amp; nrm += amp; amp *= 0.48; freq *= 2.2; }
+        v = cl((v / nrm - 0.4) * 1.8);
+        cmds.push(['L', x - W / 2, Hh / 2 - (base - A * v * v)]);
+      }
+      cmds.push(['L', span * 0.7 - W / 2, Hh / 2 - (Hh + 20)], ['Z']);
+      var mId = C.shape(c.graph, c.cut, c.cut.id + ' / Mountain ' + li, c.parent, cmds, { fill: H.layC(c.sc, k * (0.45 + 0.75 * q)), alpha: 1 });
+      V.animate(c, mId, function (e, f) {
+        var t = clk.absTime(f), fi = clk.enter(f, 1.1), rise = (1 - fi) * Hh * 0.3 * (1 - q * 0.4);
+        var drift = Math.sin(t * 0.04 * (li + 1)) * dir * W * 0.08;
+        return { 'position.x': drift, 'position.y': -rise, alpha: fi };
+      });
+      if (P.mist !== false && li < n - 1) {
+        for (var mb = 0; mb < 3; mb++) {
+          var mh = (A * 0.25 + Hh * 0.06) * (mb + 1) / 3;
+          var mistId = H.rect(c, 'Mountain mist ' + li + '_' + mb, 0, base - A * 0.25 + mh, W, Hh, { fill: c.sc.bg, alpha: 0.18 });
+          V.animate(c, mistId, function (e, f) { return { alpha: 0.18 * clk.enter(f, 1.1) }; });
+        }
+      }
+    })(l);
+  }
+});
+
+/* ================= TEXTURE / EFFECT ================= */
+
+/* 29. filmStrip */
+register('filmStrip', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'filmStrip'), seed = H.p(P, 'seed', 1), dir = H.p(P, 'dir', 1), spd = H.p(P, 'spd', 0.9);
+  var vert = Hh > W, b = U * 0.085, L = vert ? Hh : W, p = b * 0.62, hw = b * 0.3, hh = b * 0.38;
+  var bandCol = H.layC(c.sc, dk ? 0.05 : 0.13), holeCol = dk ? H.layC(c.sc, 0.17) : H.mixHex(c.sc.bg, '#FFFFFF', 0.55);
+  var edgeCol = H.layC(c.sc, dk ? 0.12 : 0.22);
+  [0, 1].forEach(function (side) {
+    var rig = c.graph.add('null', c.cut.id + ' / Film edge ' + side, c.parent, c.cut.start, c.cut.end, {});
+    var c0 = side ? (vert ? W : Hh) - b : 0;
+    if (vert) H.rect(c, 'Film band ' + side, c0, 0, b, L, { fill: bandCol, alpha: 1 }, rig);
+    else H.rect(c, 'Film band ' + side, 0, c0, L, b, { fill: bandCol, alpha: 1 }, rig);
+    var lw = Math.max(1, U * 0.002), ec = side ? c0 : c0 + b - lw;
+    if (vert) H.rect(c, 'Film border ' + side, ec, 0, lw, L, { fill: edgeCol, alpha: 1 }, rig);
+    else H.rect(c, 'Film border ' + side, 0, ec, L, lw, { fill: edgeCol, alpha: 1 }, rig);
+    var holeCmds = [];
+    for (var a = -p * 2; a < L + p * 2; a += p) {
+      var x = a + (p - hw) / 2, y = c0 + (b - hh) / 2 + (side ? b * 0.12 : -b * 0.12);
+      holeCmds = holeCmds.concat(vert
+        ? H.roundRectCmds(y + hh / 2 - W / 2, Hh / 2 - (x + hw / 2), hh, hw, b * 0.06)
+        : H.roundRectCmds(x + hw / 2 - W / 2, Hh / 2 - (y + hh / 2), hw, hh, b * 0.06));
+    }
+    var hId = C.shape(c.graph, c.cut, c.cut.id + ' / Film holes ' + side, rig, holeCmds, { fill: holeCol, alpha: 1 });
+    V.animate(c, rig, function (e, f) {
+      var q = E.outExpo(clk.time(f) / 0.55), sl = (1 - q) * b * 1.3 * (side ? 1 : -1);
+      return vert ? { 'position.x': sl, alpha: q } : { 'position.y': -sl, alpha: q };
+    });
+    V.animate(c, hId, function (e, f) {
+      var off = wrap(clk.absTime(f) * p * spd * dir, p) - p;
+      return vert ? { 'position.y': -off } : { 'position.x': off };
+    });
+  });
+  if (P.scratch !== false) {
+    for (var si = 0; si < 3; si++) {
+      (function (idx) {
+        var sw = Math.max(1.5, U * 0.0018);
+        var scId = H.rect(c, 'Film scratch ' + idx, 0, 0, vert ? W : sw, vert ? sw : Hh,
+          { fill: H.layC(c.sc, 0.35), alpha: 0.2 });
+        V.animate(c, scId, function (e, f) {
+          var st = Math.floor(clk.absTime(f) * 12);
+          if (N.random(seed, st, idx, 1) > 0.55) return { alpha: 0 };
+          var pos = N.random(seed, st >> 2, idx, 2) * L + (N.random(seed, st, idx, 3) * 2 - 1) * U * 0.004;
+          return vert ? { 'position.y': Hh / 2 - pos, alpha: 0.2 * clk.enter(f, 0.55) }
+            : { 'position.x': pos - W / 2, alpha: 0.2 * clk.enter(f, 0.55) };
+        });
+      })(si);
+    }
+  }
+});
+
+/* 30. vhsBand */
+register('vhsBand', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'vhsBand'), seed = H.p(P, 'seed', 1), bh = Hh * H.p(P, 'h', 0.09);
+  var spd = H.p(P, 'spd', 0.12), k = H.p(P, 'k', 0.26) * (dk ? 1 : 0.75), col = dk ? c.sc.fg : H.mixHex(c.sc.fg, c.sc.bg, 0.2);
+  var bandRig = c.graph.add('null', c.cut.id + ' / VHS band', c.parent, c.cut.start, c.cut.end, {});
+  C.shape(c.graph, c.cut, c.cut.id + ' / VHS smear', bandRig, G.rect(-W / 2, -bh * 0.7, W, bh * 1.4), { fill: lightOn(c.sc), alpha: dk ? 0.05 : 0.1 });
+  C.shape(c.graph, c.cut, c.cut.id + ' / VHS core', bandRig, G.rect(-W / 2, -bh / 2, W, bh), { fill: col, alpha: k * 0.5 });
+  for (var i = 0; i < 6; i++) {
+    (function (idx) {
+      var lw = Math.max(1.5, U * 0.0022), lineW = W * mix(0.2, 0.65, N.random(seed, idx, 6));
+      var ly = (idx / 6 - 0.5) * bh;
+      var lId = C.shape(c.graph, c.cut, c.cut.id + ' / VHS line ' + idx, bandRig,
+        G.rect(-lineW / 2, ly, lineW, lw), { fill: H.layC(c.sc, dk ? 0.35 : 0.25), alpha: 0.6 });
+      V.animate(c, lId, function (e, f) {
+        var st = Math.floor(clk.absTime(f) * 12);
+        return { 'position.x': (N.random(seed, st, idx, 5) - 0.5) * W * 0.4, alpha: N.random(seed, st, idx, 4) < 0.7 ? 0.55 : 0.1 };
+      });
+    })(i);
+  }
+  V.animate(c, bandRig, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.3), y = wrap(t * Hh * spd + N.random(seed, 1) * Hh, Hh * 1.3) - Hh * 0.15;
+    return { 'position.y': Hh / 2 - y, alpha: q };
+  });
+  var hb = Hh * 0.028;
+  for (var r = 0; r < 4; r++) {
+    (function (ri) {
+      var head = H.rect(c, 'VHS head ' + ri, 0, Hh - hb + hb * ri / 4, W, hb / 4 + 0.5, { fill: col, alpha: k * 0.85 });
+      V.animate(c, head, function (e, f) {
+        var st = Math.floor(clk.absTime(f) * 12), dx = (N.random(seed, st, ri, 7) * 2 - 1) * U * 0.03 + U * 0.02 * (4 - ri) / 4;
+        return { 'position.x': dx, alpha: k * 0.85 * clk.enter(f, 0.3) };
+      });
+    })(r);
+  }
+});
+
+/* 31. tornPaper */
+register('tornPaper', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'tornPaper'), seed = H.p(P, 'seed', 1), k = H.p(P, 'k', 0.065);
+  var v = P.v || 'tb';
+  if (v === 'side' && Hh > W) v = 'tb';
+  var specs = v === 'diag'
+    ? [[[-W * 0.05, Hh * 0.58], [W * 0.5, Hh * 1.05], [-0.7, 0.7]], [[W * 0.55, -Hh * 0.05], [W * 1.05, Hh * 0.48], [0.7, -0.7]]]
+    : v === 'side'
+      ? [[[W * 0.13, -Hh * 0.05], [W * 0.1, Hh * 1.05], [-1, 0]], [[W * 0.9, -Hh * 0.05], [W * 0.87, Hh * 1.05], [1, 0]]]
+      : [[[-W * 0.05, Hh * 0.83], [W * 1.05, Hh * 0.79], [0, 1]], [[-W * 0.05, Hh * 0.13], [W * 1.05, Hh * 0.17], [0, -1]]];
+  var tones = dk ? [H.layC(c.sc, k), H.mixHex(c.sc.bg, c.sc.accent, k * 1.6)] : [H.mixHex(c.sc.bg, '#FFFFFF', 0.5), H.layC(c.sc, k)];
+  specs.forEach(function (sp, i) {
+    var A = sp[0], B = sp[1], nrm = sp[2], len = Math.hypot(B[0] - A[0], B[1] - A[1]), Npts = 72;
+    var tx = (B[0] - A[0]) / len, ty = (B[1] - A[1]) / len, pts = [];
+    for (var j = 0; j <= Npts; j++) {
+      var u = j / Npts, o = U * (0.018 * R.noise(u * 9, seed + i * 17) + 0.007 * R.noise(u * 45, seed + i * 5) + 0.0035 * (N.random(seed, i, j) * 2 - 1));
+      pts.push([A[0] + (B[0] - A[0]) * u + nrm[0] * o, A[1] + (B[1] - A[1]) * u + nrm[1] * o]);
+    }
+    var far = Math.hypot(W, Hh);
+    var polyPts = pts.concat([[B[0] + nrm[0] * far + tx * far * 0.2, B[1] + nrm[1] * far + ty * far * 0.2], [A[0] + nrm[0] * far - tx * far * 0.2, A[1] + nrm[1] * far - ty * far * 0.2]]);
+    var shd = U * 0.008;
+    var shPts = polyPts.map(function (q) { return [q[0] - nrm[0] * shd * 0.5, q[1] - nrm[1] * shd * 0.5 + shd * 0.6]; });
+    var shId = H.poly(c, 'Torn shadow ' + i, shPts, true, { fill: '#000000', alpha: dk ? 0.35 : 0.1 });
+    var bodyId = H.poly(c, 'Torn sheet ' + i, polyPts, true, { fill: tones[i % 2], alpha: 1 });
+    var rimPts = pts.map(function (q) { return [q[0] - nrm[0] * U * 0.002, q[1] - nrm[1] * U * 0.002]; });
+    var rimCol = dk ? H.layC(c.sc, k * 2.4) : H.mixHex(tones[i % 2], '#FFFFFF', 0.75);
+    var rimId = H.line(c, 'Torn rim ' + i, rimPts, rimCol, Math.max(1, U * 0.004), 1);
+    [shId, bodyId, rimId].forEach(function (id) {
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), inP = E.outCubic((clk.time(f) - i * 0.12) / 0.6);
+        var push = (1 - inP) * U * 0.35 + Math.sin(t * 0.5 + i * 2) * U * 0.004;
+        return { 'position.x': nrm[0] * push, 'position.y': -nrm[1] * push };
+      });
+    });
+  });
+});
+
+/* 32. godRays */
+register('godRays', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'godRays'), seed = H.p(P, 'seed', 1), n = Math.max(4, Math.round(H.p(P, 'n', 9)));
+  var spread = H.p(P, 'spread', 60), sx0 = W * H.p(P, 'x', 0.5), sy = -Hh * 0.12, L = Math.hypot(W, Hh) * 1.25;
+  var rc = dk ? lightOn(c.sc) : (H.lum(c.sc.bg) < 0.8 ? '#FFFFFF' : H.mixHex(c.sc.accent, c.sc.bg, 0.3));
+  var k = H.p(P, 'k', 0.13) * (dk ? 1.35 : 1.4), baseA = Math.atan2(Hh * 0.55 - sy, W * 0.5 - sx0);
+  var rig = c.graph.add('null', c.cut.id + ' / God rays origin', c.parent, c.cut.start, c.cut.end,
+    { position: H.toScene(c, sx0, sy) });
+  V.animate(c, rig, function (e, f) {
+    var sx = sx0 + W * 0.04 * Math.sin(clk.absTime(f) * 0.1 + (seed % 7)), pos = H.toScene(c, sx, sy);
+    return { 'position.x': pos[0], 'position.y': pos[1] };
+  });
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var a = baseA + (spread * (idx / (n - 1) - 0.5) + (N.random(seed, idx, 1) * 2 - 1) * 4) * DEG;
+      var w = (1.2 + 3.6 * N.random(seed, idx, 2)) * DEG;
+      [0.45, 1.0, 1.7].forEach(function (fm, qi) {
+        var ww = w * fm, aBase = k * (qi === 0 ? 0.55 : qi === 1 ? 0.3 : 0.16);
+        var cmds = [['M', 0, 0], ['L', Math.cos(a - ww / 2) * L, -Math.sin(a - ww / 2) * L], ['L', Math.cos(a + ww / 2) * L, -Math.sin(a + ww / 2) * L], ['Z']];
+        var rayId = C.shape(c.graph, c.cut, c.cut.id + ' / Ray ' + idx + '_' + qi, rig, cmds, { fill: rc, alpha: aBase });
+        V.animate(c, rayId, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 1.0);
+          var sw = 3 * R.noise(t * 0.15 + idx * 1.3, seed), lv = 0.5 + 0.5 * R.noise(t * 0.35 + idx * 2.1, seed + 3);
+          return { rotation: -sw, alpha: aBase * q * (0.4 + 0.7 * lv) };
+        });
+      });
+    })(i);
+  }
+});
+
+/* 33. vignettePulse */
+register('vignettePulse', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'vignettePulse'), cols = hues(c.sc), rate = H.p(P, 'rate', 0.45);
+  var k = H.p(P, 'k', 0.35) * (dk ? 1 : 0.8), cA = H.mixHex(c.sc.bg, cols[0], 0.7), cB = H.mixHex(c.sc.bg, cols[1] || cols[0], 0.7);
+  var R = Math.hypot(W, Hh) / 2;
+  if (P.two !== false) {
+    [[0, 0, cA, 0], [W, Hh, cB, 1.7]].forEach(function (spec, idx) {
+      softGlow(c, 'Vignette corner ' + idx, spec[0], spec[1], R * 1.25, spec[2], [[0.35, k * 0.45], [0.7, k * 0.25], [1.0, k * 0.1]],
+        function (e, f, ba) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.8), pulse = 0.65 + 0.35 * Math.sin(t * TAU * rate);
+          var sc = 1 + 0.08 * Math.sin(t * 0.6 + spec[3]);
+          return { 'scale.x': sc, 'scale.y': sc, alpha: ba * q * pulse };
+        });
+    });
+  } else {
+    var inner = U * 0.32, outer = R * 1.05;
+    for (var i = 0; i < 4; i++) {
+      (function (idx) {
+        var rIn = mix(inner, outer, idx / 4), cmds = G.rect(-W * 0.65, -Hh * 0.65, W * 1.3, Hh * 1.3);
+        cmds.push(['M', rIn, 0]);
+        for (var j = 27; j >= 0; j--) {
+          var a = j * TAU / 28;
+          cmds.push(['L', Math.cos(a) * rIn, Math.sin(a) * rIn]);
+        }
+        cmds.push(['Z']);
+        var aBase = k * ((idx + 1) / 4) * 0.4;
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Vignette ring ' + idx, c.parent, cmds, { fill: cA, alpha: aBase });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.8), pulse = 0.65 + 0.35 * Math.sin(t * TAU * rate);
+          var sc = 1.08 - 0.12 * pulse;
+          return { 'scale.x': sc, 'scale.y': sc, alpha: aBase * q * pulse };
+        });
+      })(i);
+    }
+  }
+});
+
+/* 34. kaleidoscope */
+register('kaleidoscope', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'kaleidoscope'), seed = H.p(P, 'seed', 1), n = Math.max(4, Math.round(H.p(P, 'n', 8)));
+  var m = Math.max(3, Math.round(H.p(P, 'm', 7))), k = H.p(P, 'k', 0.085), spd = H.p(P, 'spd', 0.07);
+  var R = Math.hypot(W, Hh) * 0.58, seg = Math.PI / n, r0 = U * 0.13;
+  var root = c.graph.add('null', c.cut.id + ' / Kaleidoscope root', c.parent, c.cut.start, c.cut.end, {});
+  V.animate(c, root, function (e, f) { return { rotation: -(clk.absTime(f) * spd / DEG) }; });
+  [0.46, 0.82].forEach(function (fRad, idx) {
+    var pts = [], rr = U * fRad;
+    for (var q = 0; q <= 2 * n; q++) {
+      var a = q * seg;
+      pts.push([q ? 'L' : 'M', Math.cos(a) * rr, -Math.sin(a) * rr]);
+    }
+    var rId = C.shape(c.graph, c.cut, c.cut.id + ' / Kaleido ring ' + idx, root, pts,
+      { stroke: H.layC(c.sc, k * 0.9), width: Math.max(1, U * 0.002), alpha: 1 });
+    V.animate(c, rId, function (e, f) {
+      return { rotation: -(clk.absTime(f) * spd * (idx ? -1.5 : 1.5) / DEG), alpha: clk.enter(f, 0.8) };
+    });
+  });
+  for (var j = 0; j < m; j++) {
+    (function (ji) {
+      var ty = Math.floor(N.random(seed, ji) * 3), v = 0.6 + 0.8 * N.random(seed, ji, 2), isLine = N.random(seed, ji, 5) < 0.35;
+      var sUnit = U * (0.04 + 0.04 * N.random(seed, ji, 3)), cmds = [];
+      for (var q = 0; q < n; q++) {
+        var ang = q * 2 * seg;
+        [-1, 1].forEach(function (flip) {
+          var a = ang + flip * seg * 0.45, cx = Math.cos(a) * U * 0.35, cy = -Math.sin(a) * U * 0.35;
+          if (ty === 2) cmds = cmds.concat(G.ellipse(cx, cy, sUnit * 0.55, sUnit * 0.55));
+          else {
+            var shapePts = ty === 0 ? [[sUnit, 0], [-sUnit / 2, sUnit * 0.8], [-sUnit / 2, -sUnit * 0.3]]
+              : [[sUnit, 0], [0, sUnit * 0.42], [-sUnit * 0.7, 0], [0, -sUnit * 0.42]];
+            var cs = Math.cos(a), sn = Math.sin(a);
+            shapePts.forEach(function (pt, pi) {
+              cmds.push([pi ? 'L' : 'M', cx + pt[0] * cs - pt[1] * flip * sn, cy - (pt[0] * sn + pt[1] * flip * cs)]);
+            });
+            cmds.push(['Z']);
+          }
+        });
+      }
+      var col = isLine ? H.tintC(c.sc, k * 2.4) : H.layC(c.sc, k);
+      var fId = C.shape(c.graph, c.cut, c.cut.id + ' / Kaleido motif ' + ji, root, cmds,
+        isLine ? { stroke: col, width: Math.max(1, U * 0.0028), alpha: 1 } : { fill: col, alpha: 1 });
+      V.animate(c, fId, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.8);
+        var rad = r0 + wrap(N.random(seed, ji, 1) * (R - r0) + t * U * 0.05 * v, R - r0);
+        var fade = cl((rad - r0) / (U * 0.15)) * cl((R - rad) / (U * 0.2)) * q;
+        var sc = Math.max(0.05, rad / (U * 0.35));
+        return { 'scale.x': sc, 'scale.y': sc, rotation: -(Math.sin(t * 0.35 * v + ji * 1.9) * 18), alpha: fade };
+      });
+    })(j);
+  }
+});
+
+/* 35. marble */
+register('marble', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'marble'), seed = H.p(P, 'seed', 1), ang = H.p(P, 'ang', 0.7), freq = H.p(P, 'freq', 1.8);
+  var k = H.p(P, 'k', 0.2) * (H.dark(c.sc.bg) ? 1 : 0.8), dir = H.p(P, 'dir', 1);
+  var c2 = H.contrast(c.sc.accent, c.sc.bg) > 1.3 ? c.sc.accent : (c.sc.accent2 || c.sc.fg);
+  var D = Math.hypot(W, Hh) * 1.15, rig = c.graph.add('null', c.cut.id + ' / Marble rig', c.parent, c.cut.start, c.cut.end,
+    { rotation: -(ang / DEG) });
+  for (var v = 0; v < 14; v++) {
+    var isAcc = P.acc && v % 4 === 1, col = isAcc ? c2 : c.sc.fg, cmds = [];
+    var xBase = -D * 0.55 + D * 1.1 * (v + 0.5) / 14;
+    for (var j = 0; j <= 36; j++) {
+      var u = j / 36 - 0.5, y = u * D * 1.1;
+      var x = xBase + U * 0.09 * Math.sin(u * freq * TAU + fbm2(v * 0.7, u * 3, seed, 3) * 4);
+      cmds.push([j ? 'L' : 'M', x, -y]);
+    }
+    var aVein = k * (0.45 + 0.55 * (v % 3 === 0 ? 1 : 0.6));
+    C.shape(c.graph, c.cut, c.cut.id + ' / Marble vein ' + v, rig, cmds,
+      { stroke: col, width: Math.max(2, U * (0.008 + 0.016 * N.random(seed, v, 2))), alpha: aVein });
+  }
+  V.animate(c, rig, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 1.0), M = U * 0.09;
+    return {
+      'position.x': M * Math.sin(t * 0.06 * dir + (seed % 13)),
+      'position.y': M * Math.cos(t * 0.045 + (seed % 13) * 2),
+      alpha: q
+    };
+  });
+}, ['Organic veined curves use layered warped polylines instead of per-pixel image synthesis.']);
+
+/* 36. paperCut */
+register('paperCut', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'paperCut'), seed = H.p(P, 'seed', 1), L = Math.max(2, Math.round(H.p(P, 'L', 3)));
+  var lobes = Math.round(H.p(P, 'lobes', 6)), k = H.p(P, 'k', 0.075), pe = 2 / H.p(P, 'p', 2.8), Npts = 64;
+  for (var i = 0; i < L; i++) {
+    (function (idx) {
+      var d = L > 1 ? (L - 1 - idx) / (L - 1) : 0, rx = W * (0.41 + 0.17 * (1 - d)), ry = Hh * (0.38 + 0.17 * (1 - d));
+      var ph = N.random(seed, idx, 1) * TAU, cmds = G.rect(-W, -Hh, W * 2, Hh * 2);
+      for (var j = Npts; j >= 0; j--) {
+        var th = j / Npts * TAU, cs = Math.cos(th), sn = Math.sin(th);
+        var wv = 1 + 0.035 * Math.sin((lobes + idx) * th + ph) + 0.014 * Math.sin((lobes * 2 + 3) * th - ph * 1.3);
+        var px = rx * (cs >= 0 ? 1 : -1) * Math.pow(Math.abs(cs), pe) * wv;
+        var py = ry * (sn >= 0 ? 1 : -1) * Math.pow(Math.abs(sn), pe) * wv;
+        cmds.push([j === Npts ? 'M' : 'L', px, -py]);
+      }
+      cmds.push(['Z']);
+      var hue = P.acc && (idx % 2) ? c.sc.accent : c.sc.fg;
+      var fillCol = dk ? H.mixHex(c.sc.bg, hue, k * (0.5 + 0.7 * (idx + 1) / L))
+        : H.mixHex(c.sc.bg, (idx % 2) ? hue : '#FFFFFF', (idx % 2 ? k : 0.35) * (0.6 + 0.5 * (idx + 1) / L));
+      var shd = U * 0.009;
+      var shId = C.shape(c.graph, c.cut, c.cut.id + ' / Papercut shadow ' + idx, c.parent, cmds,
+        { fill: '#000000', alpha: dk ? 0.32 : 0.12 });
+      var sheetId = C.shape(c.graph, c.cut, c.cut.id + ' / Papercut layer ' + idx, c.parent, cmds,
+        { fill: fillCol, alpha: 1 });
+      [shId, sheetId].forEach(function (id, isMain) {
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), inP = E.outCubic((clk.time(f) - idx * 0.1) / 0.8), grow = 1 + (1 - inP) * 0.7;
+          var ox = Math.sin(t * 0.35 + idx) * U * 0.006 * (idx + 1) + (isMain ? 0 : shd * 0.4);
+          var oy = Math.cos(t * 0.3 + idx) * U * 0.004 * (idx + 1) + (isMain ? 0 : shd);
+          return { 'position.x': ox, 'position.y': -oy, 'scale.x': grow, 'scale.y': grow, rotation: -(t * 1.4 * (idx % 2 ? 1 : -1)) };
+        });
+      });
+    })(i);
+  }
+});
+
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);
+
+;
+/* Core Cavalry background recipes (none + 11p_looks.js + 11p_horror3.js). */
+(function (N, G, C, R, V, S, H) {
+'use strict';
+
+var cl = H.cl, mix = H.mix, E = H.E, TAU = H.TAU, DEG = H.DEG;
+
+function register(key, source, build, differences) {
+  N.register('bg', key, {
+    source: source,
+    scope: 'cut',
+    build: build,
+    differences: differences || []
+  });
+}
+
+function wrap(v, m) {
+  return ((v % m) + m) % m;
+}
+
+function glowOf(sc) {
+  var L = H.lum(sc.bg);
+  var list = [sc.accent, sc.accent2, sc.ghostA, sc.ghostB, sc.fg];
+  for (var i = 0; i < list.length; i++) {
+    if (list[i] && H.lum(list[i]) > L + 0.25) return list[i];
+  }
+  return sc.fg;
+}
+
+function nightC(sc) {
+  return H.mixHex(sc.bg, '#000000', H.dark(sc.bg) ? 0.72 : 0.9);
+}
+
+function lightOf(sc) {
+  return H.lum(sc.fg) > H.lum(sc.bg) ? sc.fg : sc.bg;
+}
+
+function dimC(sc, k) {
+  return H.dark(sc.bg) ? H.layC(sc, k) : H.mixHex(sc.bg, '#000000', k * 1.1);
+}
+
+function lampLvl(t, seed, rate) {
+  var st = Math.floor(t * 24), run = st >> 2;
+  if (N.random(seed, run, 7) < 0.1 * (rate || 1)) return N.random(seed, st, 8) < 0.5 ? 0.15 : 0.55;
+  return 0.88 + 0.12 * N.random(seed, st, 9);
+}
+
+function radialRings(c, name, cx, cy, R, stops, animFn) {
+  var ids = [];
+  for (var i = stops.length - 1; i >= 0; i--) {
+    var st = stops[i];
+    if (!(st[2] > 0)) continue;
+    var r = Math.max(2, R * st[0]);
+    var id = C.shape(c.graph, c.cut, c.cut.id + ' / ' + name + ' ' + i, c.parent,
+      G.ellipse(0, 0, r, r), { fill: st[1], alpha: st[2] });
+    var p0 = H.toScene(c, cx, cy);
+    c.graph.byId[id].attrs.position = p0;
+    ids.push({ id: id, baseAlpha: st[2] });
+  }
+  if (animFn) {
+    ids.forEach(function (item) {
+      V.animate(c, item.id, function (e, f) {
+        var o = animFn(e, f, item.baseAlpha);
+        return o;
+      });
+    });
+  }
+  return ids;
+}
+
+function vignetteOverlay(c, name, col, innerR, outerR, baseAlpha, clock) {
+  var W = c.comp.width, Hh = c.comp.height;
+  var steps = 5;
+  for (var i = 0; i < steps; i++) {
+    (function (idx) {
+      var frac = (idx + 1) / steps;
+      var rIn = mix(innerR, outerR, idx / steps);
+      var a = baseAlpha * (frac * frac) * 0.36;
+      var cmds = G.rect(-W * 0.65, -Hh * 0.65, W * 1.3, Hh * 1.3);
+      var n = 28;
+      cmds.push(['M', rIn, 0]);
+      for (var k = n - 1; k >= 0; k--) {
+        var ang = k * TAU / n;
+        cmds.push(['L', Math.cos(ang) * rIn, Math.sin(ang) * rIn]);
+      }
+      cmds.push(['Z']);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / ' + name + ' ' + idx, c.parent, cmds, { fill: col, alpha: Math.max(0.01, a) });
+      V.animate(c, id, function (e, f) {
+        return { alpha: a * clock.enter(f, 0.6) };
+      });
+    })(i);
+  }
+}
+
+/* 0. none */
+register('none', 'src/01_util.js', function () { return null; });
+
+/* 1. sunburst */
+register('sunburst', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'sunburst');
+  var cx = W * H.p(P, 'cx', 0.5), cy = Hh * H.p(P, 'cy', 0.5), n = Math.max(4, Math.round(H.p(P, 'n', 16)));
+  var spd = H.p(P, 'spd', 4), k = H.p(P, 'k', 0.08), R = Math.hypot(W, Hh) * 1.15;
+  var w = TAU / n * 0.5, cmds = [];
+  for (var i = 0; i < n; i++) {
+    var a0 = i / n * TAU;
+    cmds.push(['M', 0, 0], ['L', Math.cos(a0) * R, -Math.sin(a0) * R],
+      ['L', Math.cos(a0 + w) * R, -Math.sin(a0 + w) * R], ['Z']);
+  }
+  var p0 = H.toScene(c, cx, cy);
+  var rays = C.shape(c.graph, c.cut, c.cut.id + ' / Sunburst rays', c.parent, cmds, { fill: H.layC(c.sc, k), alpha: 1 });
+  c.graph.byId[rays].attrs.position = p0;
+  V.animate(c, rays, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.5), sc = 0.25 + 0.75 * q;
+    return { rotation: -(t * spd + (1 - q) * 25), 'scale.x': sc, 'scale.y': sc, alpha: q };
+  });
+  var rr = U * 0.55;
+  radialRings(c, 'Sunburst core glow', cx, cy, rr, [
+    [0.35, c.sc.bg, 0.55], [0.68, c.sc.bg, 0.3], [1.0, c.sc.bg, 0.14]
+  ], function (e, f, ba) {
+    return { alpha: ba * clk.enter(f, 0.5) };
+  });
+}, ['Center radial fade uses concentric translucent discs instead of canvas radial gradient.']);
+
+/* 2. concentric */
+register('concentric', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'concentric');
+  var gap = U * H.p(P, 'gap', 0.09), spd = H.p(P, 'spd', 0.2), k = H.p(P, 'k', 0.1);
+  var cy = Hh * H.p(P, 'cy', 0.5), Rm = Math.hypot(W, Hh) * 0.62;
+  var count = Math.min(20, Math.max(4, Math.ceil(Rm / gap) + 1));
+  var p0 = H.toScene(c, W / 2, cy);
+  for (var i = 0; i < count; i++) {
+    (function (idx) {
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Concentric ring ' + idx, c.parent,
+        G.ellipse(0, 0, Rm, Rm), { stroke: H.layC(c.sc, k), width: Math.max(1.5, gap * 0.18), alpha: 1 });
+      c.graph.byId[id].attrs.position = p0;
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.6), ph = wrap(t * spd, 1);
+        var rad = (idx + ph) * gap;
+        var vis = rad >= 2 && rad < Rm * q;
+        var pulse = Math.exp(-e.beat(0.5).since * 5);
+        var sc = Math.max(0.005, rad / Rm);
+        return { 'scale.x': sc, 'scale.y': sc, alpha: vis ? cl(0.75 + 0.35 * pulse) * q : 0 };
+      });
+    })(i);
+  }
+});
+
+/* 3. halftoneFade */
+register('halftoneFade', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'halftoneFade');
+  var cell = Math.max(U * H.p(P, 'cell', 0.036), Math.sqrt(W * Hh / 600));
+  var dir = H.p(P, 'dir', 45) * DEG, k = H.p(P, 'k', 0.14);
+  var dx = Math.cos(dir), dy = Math.sin(dir), ext = Math.max(1, Math.abs(dx) * W / 2 + Math.abs(dy) * Hh / 2);
+  var Wc = W + cell * 2, Hc = Hh + cell * 2, cmds = [], row = 0;
+  for (var y = 0; y < Hc + cell; y += cell * 0.866, row++) {
+    for (var px = (row & 1) * cell / 2; px < Wc + cell; px += cell) {
+      var u = ((px - cell - W / 2) * dx + (y - cell - Hh / 2) * dy) / ext;
+      var r = cell * 0.52 * H.smoothstep(-0.8, 1, u);
+      if (r < cell * 0.06) continue;
+      cmds = cmds.concat(G.ellipse(px - cell - W / 2, Hh / 2 - (y - cell), r, r));
+    }
+  }
+  if (!cmds.length) cmds = G.ellipse(0, 0, cell * 0.25, cell * 0.25);
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Halftone field', c.parent, cmds, { fill: H.layC(c.sc, k), alpha: 1 });
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.5);
+    return { 'position.x': -cell + wrap(t * cell * 0.35, cell), alpha: q };
+  });
+});
+
+/* 4. bigStripes */
+register('bigStripes', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'bigStripes');
+  var ang = H.p(P, 'ang', 45), per = U * H.p(P, 'w', 0.08) * 2, spd = H.p(P, 'spd', 0.05);
+  var fillF = H.p(P, 'fill', 0.5), k = H.p(P, 'k', 0.06), R = Math.hypot(W, Hh) / 2 + per * 2;
+  var rig = c.graph.add('null', c.cut.id + ' / Big stripes rig', c.parent, c.cut.start, c.cut.end, { rotation: -ang });
+  var cmds = [];
+  for (var x = -R - per; x < R + per; x += per) {
+    cmds = cmds.concat(G.rect(x, -R, per * fillF, R * 2));
+  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Big stripes', rig, cmds, { fill: H.layC(c.sc, k), alpha: 1 });
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), q = E.outExpo(clk.time(f) / 0.5);
+    return { 'position.x': wrap(t * U * spd, per), alpha: q };
+  });
+});
+
+/* 5. splitDiag */
+register('splitDiag', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'splitDiag');
+  var side = H.p(P, 'side', 1) > 0 ? 1 : -1, pos = H.p(P, 'pos', 0.5), ang = H.p(P, 'ang', 20);
+  var k = H.p(P, 'k', 0.09), col = P.c === 'tint' ? H.tintC(c.sc, k * 1.8) : H.layC(c.sc, k);
+  var tn = Math.tan(ang * DEG), cx0 = W * pos, xt = cx0 - tn * Hh / 2, xb = cx0 + tn * Hh / 2;
+  var edgeX = side > 0 ? W * 2.2 : -W * 2.2;
+  var poly = H.poly(c, 'Split diag fill', [[xt, -10], [edgeX, -10], [edgeX, Hh + 10], [xb, Hh + 10]], true, { fill: col, alpha: 1 });
+  var line = H.line(c, 'Split diag line', [[xt, -10], [xb, Hh + 10]], H.tintC(c.sc, 0.45), 2, 0.6);
+  [poly, line].forEach(function (id, idx) {
+    V.animate(c, id, function (e, f) {
+      var t = clk.absTime(f), q = E.outExpo(clk.time(f) / 0.5);
+      var dx = (1 - q) * W * 0.9 * side + W * 0.01 * Math.sin(t * 0.5);
+      return { 'position.x': dx, alpha: idx ? 0.6 * q : 1 };
+    });
+  });
+});
+
+/* 6. gradientSweep */
+register('gradientSweep', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'gradientSweep');
+  var L = Math.hypot(W, Hh), k = H.p(P, 'k', 0.2), cKey = P.c || 'accent';
+  var col = H.mixHex(c.sc.bg, c.sc[cKey] || c.sc.accent, k), a0 = H.p(P, 'a0', 0), spd = H.p(P, 'spd', 0.35);
+  var rig = c.graph.add('null', c.cut.id + ' / Gradient sweep rig', c.parent, c.cut.start, c.cut.end, {});
+  V.animate(c, rig, function (e, f) {
+    return { rotation: -(a0 / DEG + clk.absTime(f) * 0.12 / DEG) };
+  });
+  var bands = 9;
+  for (var i = 0; i < bands; i++) {
+    (function (idx) {
+      var u = (idx + 0.5) / bands;
+      var bAlpha = 0.28 * Math.sin(Math.PI * u);
+      var bw = L * (1.2 - idx * 0.09);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Sweep band ' + idx, rig,
+        G.rect(-bw / 2, -L * 0.7, bw, L * 1.4), { fill: col, alpha: bAlpha });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.6), p = 0.32 * Math.sin(t * spd);
+        return { 'position.x': p * L * 0.7, alpha: bAlpha * q };
+      });
+    })(i);
+  }
+}, ['Linear gradient sweep is built with layered nested translucent bands.']);
+
+/* 7. spotlight */
+register('spotlight', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'spotlight');
+  var seed = H.p(P, 'seed', 1), dk = H.dark(c.sc.bg), lc = dk ? c.sc.fg : '#FFFFFF';
+  var k0 = H.p(P, 'k', 0.12), R = U * 0.62;
+  vignetteOverlay(c, 'Spotlight dark', '#000000', R * 0.35, Math.hypot(W, Hh) * 0.85, dk ? 0.4 : 0.18, clk);
+  var glow = radialRings(c, 'Spotlight pool', W / 2, Hh / 2, R, [
+    [0.35, lc, k0 * 0.55], [0.65, lc, k0 * 0.45], [0.95, lc, k0 * 0.22]
+  ], function (e, f, ba) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.6);
+    var cx = W * (0.5 + 0.2 * Math.sin(t * 0.31 + (seed % 7)));
+    var cy = Hh * (0.52 + 0.08 * Math.sin(t * 0.23 + (seed % 5)));
+    var pos = H.toScene(c, cx, cy);
+    return { 'position.x': pos[0], 'position.y': pos[1], alpha: ba * q };
+  });
+  if (P.beam !== false) {
+    for (var b = 0; b < 3; b++) {
+      (function (bi) {
+        var f1 = 1 - bi * 0.28;
+        var beam = C.shape(c.graph, c.cut, c.cut.id + ' / Spotlight beam ' + bi, c.parent,
+          [['M', -U * 0.04 * f1, 0], ['L', U * 0.04 * f1, 0], ['L', R * 0.75 * f1, -Hh], ['L', -R * 0.75 * f1, -Hh], ['Z']],
+          { fill: lc, alpha: k0 * 0.28 });
+        V.animate(c, beam, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.6);
+          var cx = W * (0.5 + 0.2 * Math.sin(t * 0.31 + (seed % 7)));
+          var cy = Hh * (0.52 + 0.08 * Math.sin(t * 0.23 + (seed % 5)));
+          var tx = cx + (W / 2 - cx) * 0.5;
+          var pos = H.toScene(c, tx, 0);
+          return {
+            'position.x': pos[0], 'position.y': pos[1],
+            'scale.y': Math.max(0.1, cy / Hh),
+            alpha: k0 * 0.28 * q
+          };
+        });
+      })(b);
+    }
+  }
+  return glow;
+}, ['Spotlight falloff and beam use nested translucent shapes rather than canvas gradients.']);
+
+/* 8. tvBars */
+register('tvBars', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'tvBars');
+  var seed = H.p(P, 'seed', 1), n = Math.max(2, Math.round(H.p(P, 'n', 5))), spd = H.p(P, 'spd', 0.08), k = H.p(P, 'k', 0.07);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var h = Hh * mix(0.02, 0.15, N.random(seed, idx, 1));
+      var v = Hh * spd * (0.5 + N.random(seed, idx, 2));
+      var off0 = N.random(seed, idx, 3) * Hh * 1.4;
+      var col = idx % 3 === 0 ? H.tintC(c.sc, k * 1.7) : H.layC(c.sc, k * (0.6 + 0.8 * N.random(seed, idx, 4)));
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / TV bar ' + idx, c.parent,
+        G.rect(-W / 2, -h, W, h), { fill: col, alpha: 1 });
+      var line = N.random(seed, idx, 5) < 0.5
+        ? C.shape(c.graph, c.cut, c.cut.id + ' / TV line ' + idx, c.parent,
+          G.rect(-W / 2, 0, W, Math.max(1.5, Hh * 0.002)), { fill: H.layC(c.sc, k * 1.4), alpha: 1 })
+        : null;
+      V.animate(c, id, function (e, f) {
+        var y = wrap(clk.absTime(f) * v + off0, Hh * 1.4) - Hh * 0.2;
+        return { 'position.y': Hh / 2 - y, alpha: clk.enter(f, 0.4) };
+      });
+      if (line) {
+        V.animate(c, line, function (e, f) {
+          var y = wrap(clk.absTime(f) * v + off0, Hh * 1.4) - Hh * 0.2;
+          return { 'position.y': Hh / 2 - (y - Hh * 0.012), alpha: clk.enter(f, 0.4) };
+        });
+      }
+    })(i);
+  }
+});
+
+/* 9. speedLines */
+register('speedLines', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'speedLines');
+  var seed = H.p(P, 'seed', 1), n = Math.min(120, Math.max(24, Math.round(H.p(P, 'n', 90))));
+  var k = H.p(P, 'k', 0.22), clear = H.p(P, 'clear', 0.34), R = Math.hypot(W, Hh) * 0.65;
+  var variants = 4;
+  for (var v = 0; v < variants; v++) {
+    (function (vi) {
+      var cmds = [];
+      for (var i = 0; i < n; i++) {
+        var a = (i + N.random(seed, i, vi, 1) * 0.8) / n * TAU;
+        var f0 = 1 + N.random(seed, i, vi, 2) * 0.5, w = TAU / n * (0.15 + 0.45 * N.random(seed, i, vi, 3));
+        var rx = W * clear * f0, ry = Hh * clear * 1.05 * f0;
+        cmds.push(['M', Math.cos(a) * rx, -Math.sin(a) * ry],
+          ['L', Math.cos(a - w / 2) * R, -Math.sin(a - w / 2) * R],
+          ['L', Math.cos(a + w / 2) * R, -Math.sin(a + w / 2) * R], ['Z']);
+      }
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Speed lines ' + vi, c.parent, cmds, { fill: H.layC(c.sc, k), alpha: 1 });
+      V.animate(c, id, function (e, f) {
+        var st = Math.floor(clk.absTime(f) * 12) % variants;
+        var q = clk.enter(f, 0.3), sc = 1 + (1 - q) * 0.35;
+        return { 'scale.x': sc, 'scale.y': sc, alpha: st === vi ? 1 : 0 };
+      });
+    })(v);
+  }
+}, ['Stepped kinetic redraw uses 4 cyclic frame variations.']);
+
+/* 10. scanBars */
+register('scanBars', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'scanBars');
+  var seed = H.p(P, 'seed', 1), n = Math.max(1, Math.round(H.p(P, 'n', 2)));
+  var spd = H.p(P, 'spd', 0.08), k = H.p(P, 'k', 0.06);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var h = Hh * (0.12 + 0.12 * N.random(seed, idx, 1));
+      var v = Hh * spd * (0.8 + 0.4 * N.random(seed, idx, 2));
+      var off = N.random(seed, idx, 3) * Hh * 1.5;
+      var slices = 5;
+      for (var s = 0; s < slices; s++) {
+        (function (si) {
+          var fy = si / slices, fh = h / slices;
+          var a = k * (si === slices - 1 ? 0.55 : (si + 0.5) / (slices - 1));
+          var id = C.shape(c.graph, c.cut, c.cut.id + ' / Scan bar ' + idx + ' ' + si, c.parent,
+            G.rect(-W / 2, -fy * h - fh, W, fh), { fill: c.sc.fg, alpha: a });
+          V.animate(c, id, function (e, f) {
+            var y = wrap(clk.absTime(f) * v + off, Hh * 1.5) - Hh * 0.3;
+            return { 'position.y': Hh / 2 - y, alpha: a * clk.enter(f, 0.5) };
+          });
+        })(s);
+      }
+      var line = C.shape(c.graph, c.cut, c.cut.id + ' / Scan hairline ' + idx, c.parent,
+        G.rect(-W / 2, -h * 0.86, W, Math.max(1.5, Hh * 0.002)), { fill: c.sc.fg, alpha: cl(k * 1.6) });
+      V.animate(c, line, function (e, f) {
+        var y = wrap(clk.absTime(f) * v + off, Hh * 1.5) - Hh * 0.3;
+        return { 'position.y': Hh / 2 - y, alpha: cl(k * 1.6) * clk.enter(f, 0.5) };
+      });
+    })(i);
+  }
+});
+
+/* 11. dotGrid */
+register('dotGrid', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'dotGrid');
+  var seed = H.p(P, 'seed', 1), sp = Math.max(U * H.p(P, 'sp', 0.055), Math.sqrt(W * Hh / 550));
+  var r = Math.max(1.5, U * 0.0036), k = H.p(P, 'k', 0.25), plus = P.plus !== false;
+  var cols = Math.ceil(W / sp) + 2, rows = Math.ceil(Hh / sp) + 2, cmds = [], accList = [];
+  for (var j = -1; j <= rows; j++) {
+    for (var i = -1; i <= cols; i++) {
+      var x = i * sp - W / 2, y = Hh / 2 - j * sp;
+      if (plus && i % 4 === 0 && j % 4 === 0) {
+        cmds = cmds.concat(G.rect(x - r * 3, y - r * 0.5, r * 6, r), G.rect(x - r * 0.5, y - r * 3, r, r * 6));
+      } else {
+        cmds = cmds.concat(G.ellipse(x, y, r, r));
+        if (N.random(seed, i, j, 5) < 0.03) accList.push([x, y, i, j]);
+      }
+    }
+  }
+  var gridId = C.shape(c.graph, c.cut, c.cut.id + ' / Dot grid', c.parent, cmds, { fill: H.layC(c.sc, k), alpha: 1 });
+  V.animate(c, gridId, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.5);
+    return { 'position.x': wrap(t * 0.15 * sp, sp) - sp, 'position.y': -(wrap(t * 0.08 * sp, sp) - sp), alpha: q };
+  });
+  accList.slice(0, 14).forEach(function (pt, idx) {
+    var aid = C.shape(c.graph, c.cut, c.cut.id + ' / Dot accent ' + idx, c.parent,
+      G.ellipse(pt[0], pt[1], r * 2, r * 2), { fill: H.tintC(c.sc, 0.55), alpha: 1 });
+    V.animate(c, aid, function (e, f) {
+      var t = clk.absTime(f), tw = Math.floor(t * 2), q = clk.enter(f, 0.5);
+      var on = N.random(seed, pt[2], pt[3], tw) < 0.22;
+      return { 'position.x': wrap(t * 0.15 * sp, sp) - sp, 'position.y': -(wrap(t * 0.08 * sp, sp) - sp), alpha: on ? q : 0 };
+    });
+  });
+});
+
+/* 12. retroGrid */
+register('retroGrid', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'retroGrid');
+  var hz = H.p(P, 'hz', 0.6), yh = Hh * hz, spd = H.p(P, 'spd', 0.6), k = H.p(P, 'k', 0.42);
+  var col = H.tintC(c.sc, k);
+  if (P.sun) {
+    var R = U * 0.2, sy = yh - R * 0.35;
+    var sunGroup = c.graph.add('null', c.cut.id + ' / Retro sun group', c.parent, c.cut.start, c.cut.end, {});
+    var sunId = H.circle(c, 'Retro sun', W / 2, sy, R, R, { fill: H.tintC(c.sc, k * 0.45), alpha: 1 }, sunGroup);
+    V.animate(c, sunId, function (e, f) {
+      var q = clk.enter(f, 0.6);
+      return { 'scale.x': Math.max(0.01, q), 'scale.y': Math.max(0.01, q), alpha: q };
+    });
+    for (var s = 0; s < 5; s++) {
+      var yy = sy + R * (0.1 + s * 0.18), hh = R * 0.03 * (1 + s * 0.6);
+      if (yy < yh) H.rect(c, 'Retro sun slice ' + s, W / 2 - R - 2, yy, R * 2 + 4, Math.min(hh, yh - yy), { fill: c.sc.bg, alpha: 1 }, sunGroup);
+    }
+  }
+  /* horizon glow bands + horizon rule */
+  for (var b = 0; b < 4; b++) {
+    var bh = Hh * 0.025 * (4 - b);
+    var hb = H.rect(c, 'Retro horizon glow ' + b, 0, yh - bh, W, bh, { fill: col, alpha: 0.08 });
+    V.animate(c, hb, function (e, f) { return { alpha: 0.08 * clk.enter(f, 0.6) }; });
+  }
+  var hl = H.rect(c, 'Retro horizon line', 0, yh - 1, W, 2, { fill: col, alpha: 0.8 });
+  V.animate(c, hl, function (e, f) { return { alpha: 0.8 * clk.enter(f, 0.6) }; });
+
+  /* vertical perspective lines */
+  var nV = 12, spB = W * 0.18, vCmds = [];
+  for (var i = -nV; i <= nV; i++) {
+    var x0 = W / 2 + i * spB * 0.06 - W / 2, x1 = W / 2 + i * spB * 1.6 - W / 2;
+    vCmds.push(['M', x0, Hh / 2 - yh], ['L', x1, Hh / 2 - Hh * 1.3]);
+  }
+  var vGrid = C.shape(c.graph, c.cut, c.cut.id + ' / Retro radial lines', c.parent, vCmds,
+    { stroke: col, width: Math.max(1.5, U * 0.0025), alpha: 0.75 });
+  V.animate(c, vGrid, function (e, f) { return { alpha: 0.75 * clk.enter(f, 0.6) }; });
+
+  /* scrolling horizontal perspective bars */
+  var nH = 14, lw = Math.max(1.5, U * 0.0025);
+  for (var j = 0; j < nH; j++) {
+    (function (idx) {
+      var bar = C.shape(c.graph, c.cut, c.cut.id + ' / Retro floor rule ' + idx, c.parent,
+        G.rect(-W / 2, -lw / 2, W, lw), { fill: col, alpha: 1 });
+      V.animate(c, bar, function (e, f) {
+        var ph = wrap(clk.absTime(f) * spd, 1), q = clk.enter(f, 0.6);
+        var z = idx + 1 - ph;
+        if (z <= 0.25) return { 'position.y': Hh / 2 - yh, alpha: 0 };
+        var y = yh + (Hh - yh) * 0.9 / z;
+        var fy = cl((y - yh) / Math.max(1, Hh - yh));
+        return { 'position.y': Hh / 2 - y, alpha: (y > Hh + 2 || y - yh < 1.5) ? 0 : cl(0.2 + 0.8 * fy) * q };
+      });
+    })(j);
+  }
+});
+
+/* 13. bokehBg */
+register('bokehBg', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'bokehBg');
+  var seed = H.p(P, 'seed', 1), n = Math.min(18, Math.max(6, Math.round(H.p(P, 'n', 14)))), k = H.p(P, 'k', 0.2);
+  var dk = H.dark(c.sc.bg), cols = [c.sc.accent, c.sc.accent2, c.sc.fg, c.sc.ghostA, c.sc.ghostB];
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var r = U * mix(0.035, 0.13, N.random(seed, idx, 1));
+      var vx = (N.random(seed, idx, 2) * 2 - 1) * U * 0.03, vy = -U * mix(0.01, 0.04, N.random(seed, idx, 3));
+      var x0 = N.random(seed, idx, 4) * W, y0 = N.random(seed, idx, 5) * Hh;
+      var col = cols[idx % cols.length] || c.sc.fg;
+      var aBase = k * (0.5 + 0.5 * N.random(seed, idx, 6)) * (dk ? 1 : 0.7);
+      var wFreq = 0.6 + N.random(seed, idx, 7);
+      var outer = C.shape(c.graph, c.cut, c.cut.id + ' / Bokeh outer ' + idx, c.parent,
+        G.ellipse(0, 0, r, r), { fill: col, alpha: aBase * 0.55 });
+      var rim = C.shape(c.graph, c.cut, c.cut.id + ' / Bokeh rim ' + idx, c.parent,
+        G.ellipse(0, 0, r * 0.86, r * 0.86), { stroke: col, width: Math.max(2, r * 0.14), alpha: aBase * 0.65 });
+      [outer, rim].forEach(function (id, part) {
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.8);
+          var x = wrap(x0 + t * vx, W + 2 * r) - r + Math.sin(t * 0.4 + idx) * U * 0.015;
+          var y = wrap(y0 + t * vy, Hh + 2 * r) - r;
+          var pos = H.toScene(c, x, y);
+          var tw = 0.75 + 0.25 * Math.sin(t * wFreq + idx);
+          return { 'position.x': pos[0], 'position.y': pos[1], alpha: aBase * (part ? 0.65 : 0.45) * tw * q };
+        });
+      });
+    })(i);
+  }
+});
+
+/* 14. particlesBg */
+register('particlesBg', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'particlesBg');
+  var seed = H.p(P, 'seed', 1), k = H.p(P, 'k', 0.48), sq = !!P.sq;
+  var n = Math.min(64, Math.max(20, Math.round(H.p(P, 'n', 60) * 0.65)));
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var v = Hh * mix(0.04, 0.14, N.random(seed, idx, 1));
+      var y0 = N.random(seed, idx, 2) * Hh * 1.2;
+      var xBase = N.random(seed, idx, 3) * W;
+      var freq = mix(0.4, 1.2, N.random(seed, idx, 4));
+      var sz = U * mix(0.0025, 0.008, N.random(seed, idx, 5));
+      var aMax = k * (0.55 + 0.45 * N.random(seed, idx, 6));
+      var col = N.random(seed, idx, 7) < 0.22 ? c.sc.accent : H.layC(c.sc, 0.6);
+      var cmds = sq ? G.rect(-sz, -sz, sz * 2, sz * 2) : G.ellipse(0, 0, sz, sz);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Particle ' + idx, c.parent, cmds, { fill: col, alpha: aMax });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.6);
+        var y = Hh + 10 - wrap(t * v + y0, Hh * 1.2);
+        var x = xBase + Math.sin(t * freq + idx) * U * 0.02;
+        var pos = H.toScene(c, x, y);
+        return { 'position.x': pos[0], 'position.y': pos[1], alpha: aMax * q * cl(y / (Hh * 0.3)) };
+      });
+    })(i);
+  }
+});
+
+/* 15. ripples */
+register('ripples', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'ripples');
+  var seed = H.p(P, 'seed', 1), life = H.p(P, 'life', 1.8), k = H.p(P, 'k', 0.26), per = 0.7;
+  var tStart = clk.time(c.cut.start), tEnd = clk.time(c.cut.end);
+  var i0 = Math.floor((tStart - life) / per), i1 = Math.ceil(tEnd / per);
+  var rMax = U * 0.8;
+  for (var idx = i0; idx <= i1; idx++) {
+    (function (ri) {
+      var x = P.centre ? W / 2 : W * mix(0.15, 0.85, N.random(seed, ri, 1));
+      var y = P.centre ? Hh / 2 : Hh * mix(0.2, 0.8, N.random(seed, ri, 2));
+      var pos = H.toScene(c, x, y);
+      var outer = C.shape(c.graph, c.cut, c.cut.id + ' / Ripple outer ' + ri, c.parent,
+        G.ellipse(0, 0, rMax, rMax), { stroke: c.sc.fg, width: Math.max(2, U * 0.005), alpha: k });
+      var inner = C.shape(c.graph, c.cut, c.cut.id + ' / Ripple inner ' + ri, c.parent,
+        G.ellipse(0, 0, rMax * 0.8, rMax * 0.8), { stroke: c.sc.fg, width: Math.max(1, U * 0.002), alpha: k * 0.5 });
+      [outer, inner].forEach(function (id, part) {
+        c.graph.byId[id].attrs.position = pos;
+        V.animate(c, id, function (e, f) {
+          var age = clk.time(f) - ri * per;
+          if (age <= 0 || age >= life) return { 'scale.x': 0.05, 'scale.y': 0.05, alpha: 0 };
+          var q = cl(age / life), r = U * (0.05 + 0.75 * E.outCubic(q));
+          var sc = Math.max(0.02, r / rMax), a = k * Math.pow(1 - q, 1.4) * (part ? 0.5 : 1);
+          return { 'scale.x': sc, 'scale.y': sc, alpha: a };
+        });
+      });
+    })(idx);
+  }
+});
+
+/* 16. polka */
+register('polka', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'polka');
+  var sp = Math.max(U * H.p(P, 'sp', 0.13), 24), r = sp * H.p(P, 'r', 0.25), rh = sp * 0.866;
+  var k = H.p(P, 'k', 0.07), col = P.acc ? H.tintC(c.sc, k * 1.8) : H.layC(c.sc, k);
+  var cmds = [], j = 0;
+  for (var y = -rh * 2; y < Hh + rh * 2; y += rh, j++) {
+    for (var x = -sp * 2 + (j & 1) * sp / 2; x < W + sp * 2; x += sp) {
+      cmds = cmds.concat(G.ellipse(x - W / 2, Hh / 2 - y, r, r));
+    }
+  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Polka dots', c.parent, cmds, { fill: col, alpha: 1 });
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), q = E.outBack(clk.time(f) / 0.45, 1.5);
+    return {
+      'position.x': wrap(t * sp * 0.25, sp) - sp,
+      'position.y': -(wrap(t * sp * 0.15, rh * 2) - rh * 2),
+      alpha: cl(q * 1.4)
+    };
+  });
+});
+
+/* 17. eqBars */
+register('eqBars', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'eqBars');
+  var seed = H.p(P, 'seed', 1), n = Math.min(40, Math.max(8, Math.round(H.p(P, 'n', 32)))), bw = W / n;
+  var mode = P.mode || 'bottom', k = H.p(P, 'k', 0.11), main = H.layC(c.sc, k), cap = H.tintC(c.sc, 0.4);
+  var maxH = Hh * 0.32;
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var sh = 0.55 + 0.45 * Math.sin(Math.PI * (idx + 0.5) / n);
+      var xScene = idx * bw + bw * 0.19 - W / 2, barW = Math.max(2, bw * 0.62);
+      function lvlAt(e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.4);
+        var en = e.energy != null ? e.energy : 0.45 + 0.2 * R.noise(t * 2, seed);
+        var bt = Math.exp(-e.beat(0.5).since * 6);
+        var nz = 0.5 + 0.5 * R.noise(t * 4 + idx * 1.7, seed + idx);
+        return Math.max(0.02, cl(sh * (0.25 + 0.75 * en) * (0.55 + 0.45 * nz) + bt * 0.18 * nz) * q);
+      }
+      if (mode === 'center') {
+        var cBar = C.shape(c.graph, c.cut, c.cut.id + ' / EQ center ' + idx, c.parent,
+          G.rect(0, -maxH * 0.7, barW, maxH * 1.4), { fill: main, alpha: 1 });
+        c.graph.byId[cBar].attrs.position = [xScene, 0];
+        V.animate(c, cBar, function (e, f) { return { 'scale.y': lvlAt(e, f) }; });
+      } else {
+        var bBar = C.shape(c.graph, c.cut, c.cut.id + ' / EQ bar ' + idx, c.parent,
+          G.rect(0, 0, barW, maxH), { fill: main, alpha: 1 });
+        c.graph.byId[bBar].attrs.position = [xScene, -Hh / 2];
+        V.animate(c, bBar, function (e, f) { return { 'scale.y': lvlAt(e, f) }; });
+        var capId = C.shape(c.graph, c.cut, c.cut.id + ' / EQ cap ' + idx, c.parent,
+          G.rect(0, 0, barW, Math.max(2, bw * 0.12)), { fill: cap, alpha: 1 });
+        V.animate(c, capId, function (e, f) {
+          var l = lvlAt(e, f);
+          return { 'position.x': xScene, 'position.y': -Hh / 2 + maxH * l + bw * 0.18 };
+        });
+        if (mode === 'mirror') {
+          var mBar = C.shape(c.graph, c.cut, c.cut.id + ' / EQ mirror ' + idx, c.parent,
+            G.rect(0, -maxH * 0.7, barW, maxH * 0.7), { fill: main, alpha: 1 });
+          c.graph.byId[mBar].attrs.position = [xScene, Hh / 2];
+          V.animate(c, mBar, function (e, f) { return { 'scale.y': lvlAt(e, f) }; });
+        }
+      }
+    })(i);
+  }
+});
+
+/* 18. borderFrame */
+register('borderFrame', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'borderFrame');
+  var m = U * H.p(P, 'm', 0.04), th = Math.max(2, U * H.p(P, 'th', 0.016));
+  var col = P.acc ? H.accCol(c.sc, c.sc.bg) : (c.sc.ink || c.sc.fg);
+  var x0 = m + th / 2, y0 = m + th / 2, x1 = W - m - th / 2, y1 = Hh - m - th / 2;
+  var bw = x1 - x0 + th, bh = y1 - y0 + th;
+  var edges = [
+    [x0 - th / 2, y0 - th / 2, bw, th, 0, 0],
+    [x1 - th / 2, y0 - th / 2, th, bh, 0, 1],
+    [x0 - th / 2, y1 - th / 2, bw, th, 1, 0],
+    [x0 - th / 2, y0 - th / 2, th, bh, 1, 1]
+  ];
+  edges.forEach(function (ed, idx) {
+    var seg = ed[5] === 0 ? [ed[0], ed[1], ed[2], ed[3]] : [ed[0], ed[1], ed[2], ed[3]];
+    var id = C.shape(c.graph, c.cut, c.cut.id + ' / Border edge ' + idx, c.parent,
+      ed[5] === 0 ? G.rect(ed[4] ? -seg[2] : 0, -seg[3] / 2, seg[2], seg[3]) : G.rect(-seg[2] / 2, ed[4] ? 0 : -seg[3], seg[2], seg[3]),
+      { fill: col, alpha: 1 });
+    var anchorX = ed[4] ? x1 + th / 2 : x0 - th / 2;
+    var anchorY = ed[4] ? y1 + th / 2 : y0 - th / 2;
+    if (ed[5] === 0) anchorY = ed[4] ? y1 : y0;
+    else anchorX = ed[4] ? x0 : x1;
+    c.graph.byId[id].attrs.position = H.toScene(c, anchorX, anchorY);
+    V.animate(c, id, function (e, f) {
+      var q = E.inOutCubic(clk.time(f) / 0.6);
+      return ed[5] === 0 ? { 'scale.x': Math.max(0.005, q), alpha: q > 0.01 ? 1 : 0 }
+        : { 'scale.y': Math.max(0.005, q), alpha: q > 0.01 ? 1 : 0 };
+    });
+  });
+  if (P.dbl) {
+    var m2 = m + th * 2.4, lw = Math.max(1, th * 0.18);
+    var inner = H.rect(c, 'Border inner frame', m2, m2, W - m2 * 2, Hh - m2 * 2, { stroke: col, width: lw, alpha: 0.45 });
+    V.animate(c, inner, function (e, f) { return { alpha: 0.45 * E.inOutCubic(clk.time(f) / 0.6) }; });
+  }
+});
+
+/* 19. letterbox */
+register('letterbox', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'letterbox');
+  var dk = H.dark(c.sc.bg), k = W >= Hh ? H.p(P, 'k', 0.1) : 0.05;
+  var bh = Math.max(4, Hh * k), fillCol = dk ? H.mixHex(c.sc.bg, '#000000', 0.85) : H.mixHex(c.sc.fg, '#000000', 0.3);
+  var lineCol = dk ? H.layC(c.sc, 0.3) : H.tintC(c.sc, 0.6), lw = Math.max(1.2, Hh * 0.0015);
+  var topBar = C.shape(c.graph, c.cut, c.cut.id + ' / Letterbox top', c.parent,
+    G.rect(-W / 2, -bh, W, bh), { fill: fillCol, alpha: 1 });
+  c.graph.byId[topBar].attrs.position = [0, Hh / 2];
+  var botBar = C.shape(c.graph, c.cut, c.cut.id + ' / Letterbox bottom', c.parent,
+    G.rect(-W / 2, 0, W, bh), { fill: fillCol, alpha: 1 });
+  c.graph.byId[botBar].attrs.position = [0, -Hh / 2];
+  [topBar, botBar].forEach(function (id) {
+    V.animate(c, id, function (e, f) {
+      var q = Math.max(0.01, E.outExpo(clk.time(f) / 0.55));
+      return { 'scale.y': q, alpha: q > 0.02 ? 1 : 0 };
+    });
+  });
+  if (P.line || dk) {
+    var tLine = C.shape(c.graph, c.cut, c.cut.id + ' / Letterbox top rule', c.parent,
+      G.rect(-W / 2, -lw / 2, W, lw), { fill: lineCol, alpha: 1 });
+    var bLine = C.shape(c.graph, c.cut, c.cut.id + ' / Letterbox bottom rule', c.parent,
+      G.rect(-W / 2, -lw / 2, W, lw), { fill: lineCol, alpha: 1 });
+    V.animate(c, tLine, function (e, f) {
+      var q = E.outExpo(clk.time(f) / 0.55);
+      return { 'position.y': Hh / 2 - bh * q, alpha: q > 0.02 ? 1 : 0 };
+    });
+    V.animate(c, bLine, function (e, f) {
+      var q = E.outExpo(clk.time(f) / 0.55);
+      return { 'position.y': -Hh / 2 + bh * q, alpha: q > 0.02 ? 1 : 0 };
+    });
+  }
+});
+
+/* 20. noiseField */
+register('noiseField', 'src/11p_looks.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'noiseField');
+  var seed = H.p(P, 'seed', 1), n = Math.min(20, Math.max(10, Math.round(H.p(P, 'n', 16))));
+  var cell = U / n, cols = Math.min(34, Math.ceil(W / cell)), rows = Math.min(24, Math.ceil(Hh / cell));
+  var k = H.p(P, 'k', 0.07), th = H.p(P, 'th', 0.6);
+  var dx = (W - cols * cell) / 2, dy = (Hh - rows * cell) / 2;
+  for (var j = 0; j < rows; j++) {
+    for (var i = 0; i < cols; i++) {
+      if ((i + j) % 2 !== 0 && N.random(seed, i, j, 1) < 0.35) continue;
+      (function (ci, cj) {
+        var acc = N.random(seed, ci, cj, 2) < 0.03;
+        var col = acc ? H.tintC(c.sc, 0.3) : H.layC(c.sc, k);
+        var id = H.rect(c, 'Noise cell ' + ci + '_' + cj,
+          dx + ci * cell, dy + cj * cell, Math.max(2, cell - 1), Math.max(2, cell - 1), { fill: col, alpha: 1 });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.3), st = Math.floor(t * 8);
+          var v = 0.5 + 0.5 * (R.noise(ci * 0.23 + t * 0.7, seed + cj * 31) * 0.6 +
+            R.noise(cj * 0.29 - t * 0.5, seed + ci * 17 + 999) * 0.4) + (N.random(seed, ci, cj, st) - 0.5) * 0.12;
+          if (v < th + (1 - q) * 0.4) return { alpha: 0 };
+          var m = v > th + 0.2 ? 1.5 : v > th + 0.1 ? 1.0 : 0.6;
+          return { alpha: cl(m) * q };
+        });
+      })(i, j);
+    }
+  }
+});
+
+/* 21. hrFailingLamp (src/11p_horror3.js) */
+register('hrFailingLamp', 'src/11p_horror3.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'hrFailingLamp');
+  var seed = H.p(P, 'seed', 1), xPos = H.p(P, 'x', 0.5), rate = H.p(P, 'rate', 1);
+  var dk = H.dark(c.sc.bg), L = lightOf(c.sc), cx = W * xPos, cy = -U * 0.1, R = Math.hypot(W, Hh) * 0.9;
+  radialRings(c, 'Lamp cone', cx, cy, R, [
+    [0.25, L, dk ? 0.14 : 0.26], [0.5, L, dk ? 0.08 : 0.15], [0.85, L, dk ? 0.03 : 0.05]
+  ], function (e, f, ba) {
+    return { alpha: ba * lampLvl(clk.absTime(f), seed, rate) * clk.enter(f, 0.6) };
+  });
+  vignetteOverlay(c, 'Lamp vignette', nightC(c.sc), U * 0.32, Math.hypot(W, Hh) * 0.75, 0.75, clk);
+  var tube = H.rect(c, 'Lamp tube', cx - U * 0.12, U * 0.012, U * 0.24, Math.max(2, U * 0.006),
+    { fill: H.layC(c.sc, dk ? 0.35 : 0.15), alpha: 1 });
+  V.animate(c, tube, function (e, f) {
+    var lv = lampLvl(clk.absTime(f), seed, rate);
+    return { alpha: (0.25 + 0.5 * lv) * clk.enter(f, 0.6) };
+  });
+});
+
+/* 22. hrCorridor (src/11p_horror3.js) */
+register('hrCorridor', 'src/11p_horror3.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'hrCorridor');
+  var seed = H.p(P, 'seed', 1), vx = W * H.p(P, 'vx', 0.5), vy = Hh * H.p(P, 'vy', 0.5);
+  var bw = W * 0.08, bh = Hh * 0.1, spd = H.p(P, 'spd', 0.35);
+  var col = H.layC(c.sc, H.dark(c.sc.bg) ? 0.28 : 0.22), lw = Math.max(1.2, U * 0.0026), L = lightOf(c.sc);
+  radialRings(c, 'Corridor end light', vx, vy, Math.max(bw, bh) * 3, [
+    [0.35, L, H.dark(c.sc.bg) ? 0.22 : 0.3], [0.7, L, H.dark(c.sc.bg) ? 0.1 : 0.14]
+  ], function (e, f, ba) {
+    return { alpha: ba * lampLvl(clk.absTime(f), seed + 1, 1) * clk.enter(f, 0.6) };
+  });
+  var back = [[vx - bw, vy - bh], [vx + bw, vy - bh], [vx + bw, vy + bh], [vx - bw, vy + bh]];
+  var corners = [[0, 0], [W, 0], [W, Hh], [0, Hh]];
+  corners.forEach(function (pt, i) {
+    var edge = H.line(c, 'Corridor corner ' + i, [pt, back[i]], col, lw, 1);
+    V.animate(c, edge, function (e, f) { return { alpha: clk.enter(f, 0.6) }; });
+  });
+  var backRect = H.rect(c, 'Corridor back', vx - bw, vy - bh, bw * 2, bh * 2, { stroke: col, width: lw, alpha: 1 });
+  V.animate(c, backRect, function (e, f) { return { alpha: clk.enter(f, 0.6) }; });
+  var n = 7, vp = H.toScene(c, vx, vy);
+  for (var k = 0; k < n; k++) {
+    (function (idx) {
+      var frameId = C.shape(c.graph, c.cut, c.cut.id + ' / Corridor frame ' + idx, c.parent,
+        G.rect(-W / 2, -Hh / 2, W, Hh), { stroke: col, width: lw, alpha: 1 });
+      V.animate(c, frameId, function (e, f) {
+        var t = clk.time(f), fi = clk.enter(f, 0.6);
+        var frac = wrap(idx / n + t * spd * 0.12, 1), z = Math.pow(frac, 2.2);
+        var sx = mix(bw * 2 / W, 1, z), sy = mix(bh * 2 / Hh, 1, z);
+        var cx = mix(vx, W / 2, z), cy = mix(vy, Hh / 2, z), pos = H.toScene(c, cx, cy);
+        return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': sx, 'scale.y': sy, alpha: fi * cl(z * 1.4) };
+      });
+    })(k);
+  }
+  vignetteOverlay(c, 'Corridor vignette', nightC(c.sc), U * 0.24, Math.hypot(W, Hh) * 0.78, 0.55, clk);
+});
+
+/* 23. hrMold (src/11p_horror3.js) */
+register('hrMold', 'src/11p_horror3.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'hrMold');
+  var seed = H.p(P, 'seed', 1), n = Math.max(2, Math.round(H.p(P, 'n', 4))), k = H.p(P, 'k', 0.1);
+  var dk = H.dark(c.sc.bg);
+  var stain = dk ? H.mixHex(c.sc.bg, H.mixHex(c.sc.fg, c.sc.accent2 || c.sc.sub, 0.5), k)
+    : H.mixHex(c.sc.bg, H.mixHex(c.sc.sub, '#000000', 0.3), k * 1.4);
+  var rim = dk ? H.mixHex(c.sc.bg, c.sc.fg, k * 1.6) : H.mixHex(c.sc.bg, '#000000', k * 1.3);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var edge = Math.floor(N.random(seed, idx, 1) * 4), fr = N.random(seed, idx, 2);
+      var cx = edge === 0 ? fr * W : edge === 1 ? W : edge === 2 ? fr * W : 0;
+      var cy = edge === 0 ? 0 : edge === 1 ? fr * Hh : edge === 2 ? Hh : fr * Hh;
+      var Rmax = U * mix(0.25, 0.5, N.random(seed, idx, 3));
+      var growDur = mix(8, 14, N.random(seed, idx, 4));
+      var m = 32, cmds = [];
+      for (var j = 0; j < m; j++) {
+        var a = j / m * TAU, r = Rmax * (0.7 + 0.45 * R.noise(j * 0.45, seed + idx));
+        cmds.push([j ? 'L' : 'M', Math.cos(a) * r, -Math.sin(a) * r]);
+      }
+      cmds.push(['Z']);
+      for (var sp = 0; sp < 10; sp++) {
+        var sa = N.random(seed, idx, sp, 5) * TAU, sr = Rmax * mix(1.02, 1.24, N.random(seed, idx, sp, 6));
+        var dr = U * mix(0.002, 0.008, N.random(seed, idx, sp, 7));
+        cmds = cmds.concat(G.ellipse(Math.cos(sa) * sr, -Math.sin(sa) * sr, dr, dr));
+      }
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Mold stain ' + idx, c.parent, cmds,
+        { fill: stain, stroke: rim, width: Math.max(1, U * 0.003), alpha: 0.85 });
+      c.graph.byId[id].attrs.position = H.toScene(c, cx, cy);
+      V.animate(c, id, function (e, f) {
+        var t = clk.time(f), sc = (0.35 + 0.65 * E.outCubic(t / growDur)) * clk.enter(f, 0.8);
+        return { 'scale.x': Math.max(0.02, sc), 'scale.y': Math.max(0.02, sc), alpha: 0.85 * clk.enter(f, 0.8) };
+      });
+    })(i);
+  }
+});
+
+/* 24. hrDeadTrees (src/11p_horror3.js) */
+register('hrDeadTrees', 'src/11p_horror3.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'hrDeadTrees');
+  var seed = H.p(P, 'seed', 1), nBase = Math.max(3, Math.round(H.p(P, 'n', 6))), fog = H.p(P, 'fog', 0.15);
+  var dk = H.dark(c.sc.bg);
+  var specs = [[0.07, 0.75, 0.8], [0.13, 1.0, 1.15]];
+  specs.forEach(function (sp, l) {
+    var col = dk ? H.layC(c.sc, sp[0] * 0.9) : H.mixHex(c.sc.bg, '#000000', sp[0] * 1.6);
+    var n = nBase + l * 2;
+    for (var i = 0; i < n; i++) {
+      (function (ti) {
+        var xBase = W * (ti + 0.5 + (N.random(seed, l, ti, 1) * 2 - 1) * 0.35) / n;
+        var h = Hh * mix(0.7, 1.05, N.random(seed, l, ti, 2)) * sp[1];
+        var treeRoot = c.graph.add('null', c.cut.id + ' / Tree ' + l + '_' + ti, c.parent, c.cut.start, c.cut.end,
+          { position: H.toScene(c, xBase, Hh + 2) });
+        V.animate(c, treeRoot, function (e, f) {
+          return { rotation: -Math.sin(clk.absTime(f) * 0.4 + ti + l) * 1.2 };
+        });
+        function seg(x0, y0, an, len, d, idSeed) {
+          var x1 = x0 + Math.cos(an) * len, y1 = y0 + Math.sin(an) * len;
+          var lw = Math.max(1, U * 0.02 * sp[2] * Math.pow(0.55, d));
+          var branchId = C.shape(c.graph, c.cut, c.cut.id + ' / Branch ' + l + '_' + ti + '_' + d + '_' + idSeed,
+            treeRoot, [['M', x0, -y0], ['L', x1, -y1]], { stroke: col, width: lw, alpha: 1 });
+          V.animate(c, branchId, function (e, f) { return { alpha: clk.enter(f, 0.8) }; });
+          if (d >= 3) return;
+          for (var b = 0; b < 2; b++) {
+            var da = (b ? 1 : -1) * mix(0.25, 0.7, N.random(seed, idSeed, b, 3));
+            var bl = len * mix(0.55, 0.78, N.random(seed, idSeed, b, 4));
+            seg(x1, y1, an + da, bl, d + 1, idSeed * 2 + b + 1);
+          }
+        }
+        seg(0, 0, -Math.PI / 2 + (N.random(seed, l, ti, 5) * 2 - 1) * 0.08, h * 0.42, 0, (l * 50 + ti) * 64 + 1);
+      })(i);
+    }
+  });
+  var fogCol = dk ? H.layC(c.sc, 0.5) : c.sc.bg;
+  for (var fg = 0; fg < 6; fg++) {
+    (function (idx) {
+      var yTop = mix(Hh * 0.45, Hh, idx / 6), fh = Hh * 0.55 / 6 + 2;
+      var a = fog * ((idx + 1) / 6) * 0.25;
+      var bId = H.rect(c, 'Tree fog ' + idx, 0, yTop, W, fh, { fill: fogCol, alpha: Math.max(0.01, a) });
+      V.animate(c, bId, function (e, f) { return { alpha: a * clk.enter(f, 0.8) }; });
+    })(fg);
+  }
+});
+
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);
+
+;
+/* Cavalry native backgrounds: x2 horror, kinetic, typo, and wa packs (24 recipes). */
+(function (N, G, C, R, V, S, H) {
+'use strict';
+
+var cl = H.cl, mix = H.mix, E = H.E, TAU = H.TAU, DEG = H.DEG;
+
+function register(key, source, build, differences) {
+  N.register('bg', key, {
+    source: source,
+    scope: 'cut',
+    build: build,
+    differences: differences || []
+  });
+}
+
+function wrap(v, m) {
+  return ((v % m) + m) % m;
+}
+
+function pad2(n) {
+  n = ((n | 0) % 100 + 100) % 100;
+  return (n < 10 ? '0' : '') + n;
+}
+
+function nightC(sc) {
+  return H.mixHex(sc.bg, '#000000', H.dark(sc.bg) ? 0.72 : 0.9);
+}
+
+function dimC(sc, k) {
+  return H.dark(sc.bg) ? H.layC(sc, k) : H.mixHex(sc.bg, '#000000', k * 1.1);
+}
+
+function glowC(sc) {
+  if (H.dark(sc.bg)) return H.lum(sc.fg) > H.lum(sc.bg) ? sc.fg : sc.bg;
+  return H.mixHex(sc.bg, '#FFFFFF', 0.85);
+}
+
+function lampLvl(t, seed, rate) {
+  var st = Math.floor(t * 24), run = st >> 2;
+  if (N.random(seed, run, 7) < 0.1 * (rate || 1)) return N.random(seed, st, 8) < 0.5 ? 0.15 : 0.55;
+  return 0.88 + 0.12 * N.random(seed, st, 9);
+}
+
+function vign(c, name, aMax, r0F, clk) {
+  var W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var dk = nightC(c.sc), rIn0 = U * (r0F || 0.3), rOut = Math.hypot(W, Hh) * 0.65;
+  for (var i = 0; i < 4; i++) {
+    (function (idx) {
+      var rIn = mix(rIn0, rOut, idx / 4), cmds = G.rect(-W * 0.65, -Hh * 0.65, W * 1.3, Hh * 1.3);
+      cmds.push(['M', rIn, 0]);
+      for (var k = 27; k >= 0; k--) {
+        var a = k * TAU / 28;
+        cmds.push(['L', Math.cos(a) * rIn, Math.sin(a) * rIn]);
+      }
+      cmds.push(['Z']);
+      var aBase = aMax * ((idx + 1) / 4) * 0.38;
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / ' + name + ' ' + idx, c.parent, cmds, { fill: dk, alpha: aBase });
+      V.animate(c, id, function (e, f) { return { alpha: aBase * clk.enter(f, 0.8) }; });
+    })(i);
+  }
+}
+
+/* ================================================================ HORROR (src/11p_x2_horrorA.js) */
+
+/* 1. hzFogBanks */
+register('hzFogBanks', 'src/11p_x2_horrorA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'hzFogBanks'), seed = H.p(P, 'seed', 1), n = Math.max(2, Math.round(H.p(P, 'n', 5)));
+  var sp = H.p(P, 'sp', 1), fog = H.mixHex(c.sc.bg, c.sc.fg, dk ? 0.65 : 0.6);
+  var a0 = H.p(P, 'a', 0.12) * (dk ? 1 : 1.5);
+  for (var i = 0; i < n; i++) {
+    for (var j = 0; j < 2; j++) {
+      (function (bi, bj) {
+        var rx = W * mix(0.4, 0.75, N.random(seed, bi, bj, 2)), ry = U * mix(0.06, 0.15, N.random(seed, bi, bj, 3));
+        var yBase = Hh * (0.1 + 0.85 * N.random(seed, bi, 1));
+        var v = mix(0.01, 0.028, N.random(seed, bi, 4)) * (bi % 2 ? -1 : 1) * sp;
+        var span = W + rx * 2, xOff = W * N.random(seed, bi, bj, 5) * 2 + bj * span / 2;
+        [[1.0, 0.42], [0.6, 0.68]].forEach(function (st, ri) {
+          var id = C.shape(c.graph, c.cut, c.cut.id + ' / Fog bank ' + bi + '_' + bj + '_' + ri, c.parent,
+            G.ellipse(0, 0, rx * st[0], ry * st[0]), { fill: fog, alpha: a0 * st[1] });
+          V.animate(c, id, function (e, f) {
+            var t = clk.absTime(f), fi = clk.enter(f, 1.0);
+            var x = wrap(xOff + t * v * W, span) - rx, y = yBase + Math.sin(t * 0.13 + bi * 2) * U * 0.02;
+            var br = 0.75 + 0.25 * Math.sin(t * 0.21 + bi + bj), pos = H.toScene(c, x, y);
+            return { 'position.x': pos[0], 'position.y': pos[1], alpha: cl(a0 * st[1] * br * fi) };
+          });
+        });
+      })(i, j);
+    }
+  }
+  for (var gb = 0; gb < 4; gb++) {
+    var bh = Hh * 0.1 * (gb + 1);
+    var fId = H.rect(c, 'Ground fog ' + gb, 0, Hh - bh, W, bh, { fill: fog, alpha: a0 * 0.25 });
+    V.animate(c, fId, function (e, f) { return { alpha: a0 * 0.25 * clk.enter(f, 1.0) }; });
+  }
+  vign(c, 'Fog vignette', 0.4, 0.3, clk);
+});
+
+/* 2. hzSwingLight */
+register('hzSwingLight', 'src/11p_x2_horrorA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'hzSwingLight'), seed = H.p(P, 'seed', 1);
+  var px = W * H.p(P, 'x', 0.5), py = -U * 0.04, amp = H.p(P, 'amp', 14), wF = H.p(P, 'w', 0.7);
+  var half = H.p(P, 'half', 15), Ll = Math.hypot(W, Hh) * 1.1, hw = Math.tan(half * DEG) * Ll;
+  var L = glowC(c.sc), darkCol = dk ? nightC(c.sc) : H.mixHex(c.sc.bg, '#000000', 0.55);
+  var ph = N.random(seed, 1) * 6;
+  var rig = c.graph.add('null', c.cut.id + ' / Swing lamp rig', c.parent, c.cut.start, c.cut.end,
+    { position: H.toScene(c, px, py) });
+  V.animate(c, rig, function (e, f) {
+    var t = clk.absTime(f), th = amp * Math.sin(t * wF + ph) * (0.35 + 0.65 * H.motionAmt(c));
+    return { rotation: th };
+  });
+  var shadowCmds = G.rect(-Ll * 2, -Ll * 2, Ll * 4, Ll * 3).concat([
+    ['M', -U * 0.02, 0], ['L', U * 0.02, 0], ['L', hw, -Ll], ['L', -hw, -Ll], ['Z']
+  ]);
+  var shId = C.shape(c.graph, c.cut, c.cut.id + ' / Swing shadow cutout', rig, shadowCmds, { fill: darkCol, alpha: dk ? 0.5 : 0.2 });
+  V.animate(c, shId, function (e, f) { return { alpha: (dk ? 0.5 : 0.2) * clk.enter(f, 0.8) }; });
+  [1.0, 0.55].forEach(function (yf, idx) {
+    var cone = C.shape(c.graph, c.cut, c.cut.id + ' / Swing beam ' + idx, rig,
+      [['M', -U * 0.02, 0], ['L', U * 0.02, 0], ['L', hw * yf, -Ll * yf], ['L', -hw * yf, -Ll * yf], ['Z']],
+      { fill: L, alpha: 0.09 });
+    V.animate(c, cone, function (e, f) {
+      return { alpha: 0.09 * lampLvl(clk.absTime(f), seed, 0.5) * clk.enter(f, 0.8) };
+    });
+  });
+  var cord = C.shape(c.graph, c.cut, c.cut.id + ' / Lamp cord', rig,
+    G.rect(-U * 0.0015, -U * 0.075, U * 0.003, U * 0.075), { fill: dimC(c.sc, 0.4), alpha: 1 });
+  var shade = C.shape(c.graph, c.cut, c.cut.id + ' / Lamp shade', rig,
+    [['M', -U * 0.012, -U * 0.075], ['L', U * 0.012, -U * 0.075], ['L', U * 0.04, -U * 0.105], ['L', -U * 0.04, -U * 0.105], ['Z']],
+    { fill: dimC(c.sc, 0.4), alpha: 1 });
+  [cord, shade].forEach(function (id) { V.animate(c, id, function (e, f) { return { alpha: clk.enter(f, 0.8) }; }); });
+  var pool = C.shape(c.graph, c.cut, c.cut.id + ' / Floor pool', c.parent,
+    G.ellipse(0, 0, U * 0.5, U * 0.07), { fill: L, alpha: 0.14 });
+  V.animate(c, pool, function (e, f) {
+    var t = clk.absTime(f), fi = clk.enter(f, 0.8);
+    var th = amp * DEG * Math.sin(t * wF + ph) * (0.35 + 0.65 * H.motionAmt(c));
+    var fx = px + Math.tan(th) * (Hh * 0.94 - py), pos = H.toScene(c, fx, Hh * 0.94);
+    return { 'position.x': pos[0], 'position.y': pos[1], alpha: 0.14 * lampLvl(t, seed, 0.5) * fi };
+  });
+});
+
+/* 3. hzFarWindows */
+register('hzFarWindows', 'src/11p_x2_horrorA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'hzFarWindows'), seed = H.p(P, 'seed', 1), n = Math.max(3, Math.round(H.p(P, 'n', 7)));
+  var per = H.p(P, 'per', 24), keep = ((P.keep | 0) % n + n) % n;
+  var hc = dk ? H.mixHex(c.sc.bg, c.sc.fg, 0.075) : H.mixHex(c.sc.bg, '#000000', 0.16);
+  var wc = dk ? H.mixHex(c.sc.fg, c.sc.accent, 0.2) : H.mixHex(c.sc.bg, '#FFFFFF', 0.7);
+  for (var gb = 0; gb < 4; gb++) {
+    var mh = Hh * 0.11 * (gb + 1);
+    H.rect(c, 'Town mist ' + gb, 0, Hh - mh, W, mh, { fill: hc, alpha: 0.14 });
+  }
+  for (var i = 0; i < n; i++) {
+    (function (hi) {
+      var w = (W / n) * mix(0.72, 1.02, N.random(seed, hi, 1)), x = W * (hi / n) + (N.random(seed, hi, 2) * 2 - 1) * W * 0.012;
+      var h = U * mix(0.11, 0.27, N.random(seed, hi, 3)), y = Hh - h;
+      var cmds = G.rect(x - W / 2, Hh / 2 - Hh - 2, w, h + 2);
+      if (N.random(seed, hi, 4) < 0.6) {
+        var pk = h * mix(0.18, 0.34, N.random(seed, hi, 5));
+        cmds.push(['M', x - w * 0.04 - W / 2, Hh / 2 - (y + 1)], ['L', x + w / 2 - W / 2, Hh / 2 - (y - pk)],
+          ['L', x + w * 1.04 - W / 2, Hh / 2 - (y + 1)], ['Z']);
+      }
+      var house = C.shape(c.graph, c.cut, c.cut.id + ' / House ' + hi, c.parent, cmds, { fill: hc, alpha: 1 });
+      V.animate(c, house, function (e, f) { return { 'position.y': -(1 - clk.enter(f, 0.8)) * h }; });
+      var nw = 1 + Math.floor(N.random(seed, hi, 6) * 3), ww = Math.min(w * 0.14, U * 0.022), wh = ww * 1.3;
+      for (var j = 0; j < nw; j++) {
+        (function (wj) {
+          var isLast = hi === keep && wj === 0, off = isLast ? per * 0.9 : per * (0.1 + 0.68 * N.random(seed, hi, wj, 7));
+          var wx = x + w * (0.18 + 0.64 * (nw === 1 ? 0.5 : wj / (nw - 1))) - ww / 2;
+          var wy = y + h * mix(0.22, 0.55, N.random(seed, hi, wj, 11));
+          var winId = H.rect(c, 'Window ' + hi + '_' + wj, wx, wy, ww, wh, { fill: wc, alpha: 0.62 });
+          V.animate(c, winId, function (e, f) {
+            var t = clk.time(f), fi = clk.enter(f, 0.8), cyc = wrap(t, per), st = Math.floor(clk.absTime(f) * 12);
+            var a = cl((cyc - N.random(seed, hi, wj, 8) * 0.8) / 0.4);
+            if (cyc > off) a = 0; else if (cyc > off - 0.4 && N.random(seed, hi, wj, st, 9) < 0.5) a *= 0.25;
+            if (isLast && cyc > per * 0.74 && N.random(seed, st >> 1, 10) < 0.3) a *= 0.3;
+            return { 'position.y': -(1 - fi) * h, alpha: 0.62 * a * fi };
+          });
+        })(j);
+      }
+    })(i);
+  }
+  vign(c, 'Windows vignette', 0.3, 0.36, clk);
+});
+
+/* 4. hzHeadlights */
+register('hzHeadlights', 'src/11p_x2_horrorA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'hzHeadlights'), per = H.p(P, 'per', 8), dir = H.p(P, 'dir', 1), yc = Hh * H.p(P, 'y', 0.42);
+  var cols = Math.max(2, Math.round(H.p(P, 'cols', 2))), a0 = H.p(P, 'a', 0.12) * (dk ? 1 : 2.3), L = glowC(c.sc);
+  if (!dk) {
+    var veil = H.rect(c, 'Headlight room dim', 0, 0, W, Hh, { fill: H.mixHex(c.sc.bg, '#000000', 0.5), alpha: 0.2 });
+    V.animate(c, veil, function (e, f) { return { alpha: 0.2 * clk.enter(f, 0.6) }; });
+  }
+  [0, 1].forEach(function (q) {
+    for (var r = 0; r < 2; r++) {
+      (function (row) {
+        var wv = U * 0.46, hv = U * 0.4, gp = U * 0.014, cmds = [];
+        for (var col = 0; col < cols; col++) {
+          var lx0 = -wv / 2 + (wv / cols) * col + gp / 2, cw = wv / cols - gp, ch = hv / 2 - gp;
+          cmds = cmds.concat(G.rect(lx0, -ch / 2, cw, ch));
+        }
+        var patch = C.shape(c.graph, c.cut, c.cut.id + ' / Headlight row ' + q + '_' + row, c.parent, cmds, { fill: L, alpha: a0 });
+        V.animate(c, patch, function (e, f) {
+          var t = clk.time(f), fi = clk.enter(f, 0.6), p = (wrap(t + 0.3, per) - q * 0.42) / 3.3;
+          if (p <= 0 || p >= 1) return { alpha: 0 };
+          var pe = dir > 0 ? p : 1 - p, xc = mix(-U * 0.55, W + U * 0.55, pe), sk = mix(-0.85, 0.85, pe);
+          var ly = (row ? 0.25 : -0.25) * hv, pos = H.toScene(c, xc + sk * ly, yc + ly);
+          var sx = 0.8 + 0.45 * Math.sin(Math.PI * p), al = Math.min(0.5, Math.pow(Math.sin(Math.PI * p), 0.7) * a0 * (q ? 0.45 : 1) * fi);
+          return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': sx, rotation: -(Math.atan(sk * 0.35) / DEG), alpha: al };
+        });
+      })(r);
+    }
+  });
+  vign(c, 'Headlight vignette', 0.42, 0.3, clk);
+});
+
+/* 5. hzHallLights */
+register('hzHallLights', 'src/11p_x2_horrorA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'hzHallLights'), seed = H.p(P, 'seed', 1), vx = W * H.p(P, 'vx', 0.5), vy = Hh * 0.47;
+  var n = Math.max(4, Math.round(H.p(P, 'n', 8))), per = H.p(P, 'per', 14), L = glowC(c.sc), col = dimC(c.sc, 0.2);
+  function sK(k) { return 1 / (1 + k * 0.62); }
+  var far = sK(n), lw = Math.max(1.2, U * 0.0024);
+  if (!dk) H.rect(c, 'Hall dim', 0, 0, W, Hh, { fill: H.mixHex(c.sc.bg, '#000000', 0.5), alpha: 0.2 });
+  [[0, 0], [W, 0], [W, Hh], [0, Hh]].forEach(function (cp, idx) {
+    H.line(c, 'Hall edge ' + idx, [cp, [vx + (cp[0] - vx) * far, vy + (cp[1] - vy) * far]], col, lw, 0.8);
+  });
+  H.rect(c, 'Hall far end', vx - vx * far, vy - vy * far, W * far, Hh * far, { stroke: col, width: lw, alpha: 0.8 });
+  var dtt = per * 0.55 / n;
+  for (var k = n - 1; k >= 0; k--) {
+    (function (idx) {
+      var z = sK(idx), y = vy - (vy - Hh * 0.035) * z, fy = vy + (Hh * 0.985 - vy) * z;
+      var hw = W * 0.15 * z, hh = Math.max(1.5, U * 0.014 * z), off = per * 0.14 + (n - 1 - idx) * dtt;
+      H.rect(c, 'Hall fixture ' + idx, vx - hw, y - hh, hw * 2, hh * 2, { stroke: col, width: Math.max(1, U * 0.002 * Math.sqrt(z)), alpha: 1 });
+      var lamp = H.rect(c, 'Hall lamp ' + idx, vx - hw, y - hh, hw * 2, hh * 2, { fill: L, alpha: 0.5 });
+      var pool = H.circle(c, 'Hall pool ' + idx, vx, fy, hw * 1.9, hw * 0.42, { fill: L, alpha: 0.09 });
+      [lamp, pool].forEach(function (id, isPool) {
+        V.animate(c, id, function (e, f) {
+          var t = clk.time(f), fi = clk.enter(f, 0.7), cyc = wrap(t, per), st = Math.floor(clk.absTime(f) * 12);
+          var on = 1;
+          if (cyc > per * 0.9) on = N.random(seed, idx, st, 1) < 0.25 + 0.75 * (cyc - per * 0.9) / (per * 0.1) ? 1 : 0.1;
+          else if (cyc > off) on = 0; else if (cyc > off - 0.45) on = N.random(seed, idx, st, 2) < 0.5 ? 1 : 0.15;
+          return { alpha: Math.pow(z, 0.35) * on * fi * (isPool ? 0.09 : 0.5) * (dk ? 1 : 1.7) };
+        });
+      });
+    })(k);
+  }
+  vign(c, 'Hall vignette', 0.5, 0.25, clk);
+});
+
+/* 6. hzWires */
+register('hzWires', 'src/11p_x2_horrorA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'hzWires'), seed = H.p(P, 'seed', 1), n = Math.max(2, Math.round(H.p(P, 'n', 3)));
+  var nb = Math.max(2, Math.round(H.p(P, 'birds', 6))), per = H.p(P, 'per', 24);
+  var xa = W * H.p(P, 'x1', 0.15), xb = W * H.p(P, 'x2', 0.8), ya = Hh * H.p(P, 'y', 0.2), yb = ya + Hh * 0.05;
+  var col = dk ? H.mixHex(c.sc.bg, c.sc.fg, 0.2) : H.mixHex(c.sc.bg, '#000000', 0.3), lw = Math.max(1.2, U * 0.0022), gapW = U * 0.034;
+  [[xa, ya, 1], [xb, yb, 0.82]].forEach(function (pl, pi) {
+    var px = pl[0], py = pl[1], k = pl[2];
+    H.line(c, 'Pole post ' + pi, [[px, Hh + 4], [px, py - U * 0.04 * k]], col, U * 0.009 * k, 1);
+    H.line(c, 'Pole arm A ' + pi, [[px - U * 0.07 * k, py], [px + U * 0.07 * k, py]], col, U * 0.005 * k, 1);
+    H.line(c, 'Pole arm B ' + pi, [[px - U * 0.05 * k, py + gapW * 1.6 * k], [px + U * 0.05 * k, py + gapW * 1.6 * k]], col, U * 0.005 * k, 1);
+  });
+  var wires = [];
+  for (var k = 0; k < n; k++) {
+    var ox = (k - (n - 1) / 2) * gapW * 1.3, oy = (k % 2) * gapW * 1.6, sag = U * (0.07 + 0.025 * k);
+    var p0 = [xa + ox, ya + oy], p1 = [xb + ox * 0.82, yb + oy * 0.82], cp = [(p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2 + sag * 2];
+    wires.push([p0, cp, p1]);
+    var q0 = H.toScene(c, -W * 0.25, p0[1] - Hh * 0.02), c0 = H.toScene(c, (p0[0] - W * 0.25) / 2, p0[1] + sag * 1.2);
+    var s0 = H.toScene(c, p0[0], p0[1]), sc = H.toScene(c, cp[0], cp[1]), s1 = H.toScene(c, p1[0], p1[1]);
+    var c1 = H.toScene(c, (p1[0] + W * 1.3) / 2, p1[1] + sag * 1.4), q1 = H.toScene(c, W * 1.3, p1[1] + Hh * 0.03);
+    C.shape(c.graph, c.cut, c.cut.id + ' / Wire ' + k, c.parent,
+      [['M', q0[0], q0[1]], ['Q', c0[0], c0[1], s0[0], s0[1]], ['Q', sc[0], sc[1], s1[0], s1[1]], ['Q', c1[0], c1[1], q1[0], q1[1]]],
+      { stroke: col, width: lw, alpha: 1 });
+  }
+  for (var b = 0; b < nb; b++) {
+    (function (bi) {
+      var last = bi === 0, off = last ? per * 0.92 : per * (0.12 + 0.66 * N.random(seed, bi, 1));
+      var w = wires[Math.floor(N.random(seed, bi, 3) * Math.min(2, wires.length)) % wires.length];
+      var fr = last ? 0.5 + (N.random(seed, 9) * 2 - 1) * 0.1 : 0.12 + 0.76 * N.random(seed, bi, 4), q = 1 - fr;
+      var bx = q * q * w[0][0] + 2 * q * fr * w[1][0] + fr * fr * w[2][0];
+      var by = q * q * w[0][1] + 2 * q * fr * w[1][1] + fr * fr * w[2][1], r = U * 0.009;
+      var cmds = G.ellipse(0, r * 1.05, r * 0.75, r * 1.15).concat(G.ellipse((bi % 2 ? 1 : -1) * r * 0.3, r * 2.3, r * 0.5, r * 0.5));
+      var bird = C.shape(c.graph, c.cut, c.cut.id + ' / Wire bird ' + bi, c.parent, cmds, { fill: col, alpha: 1 });
+      c.graph.byId[bird].attrs.position = H.toScene(c, bx, by);
+      V.animate(c, bird, function (e, f) {
+        var cyc = wrap(clk.time(f), per), fi = clk.enter(f, 0.8);
+        return { alpha: cl((cyc - N.random(seed, bi, 2) * 0.6) / 0.3) * (cyc > off ? 0 : 1) * fi };
+      });
+    })(b);
+  }
+  vign(c, 'Wires vignette', 0.3, 0.38, clk);
+});
+
+/* ================================================================ KINETIC (src/11p_x2_kineticA.js) */
+
+/* 7. kzKickStreaks */
+register('kzKickStreaks', 'src/11p_x2_kineticA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), D = Math.hypot(W, Hh);
+  var clk = H.bgClock(c, 'kzKickStreaks'), seed = H.p(P, 'seed', 1), n = Math.max(4, Math.round(H.p(P, 'n', 14)));
+  var k = H.p(P, 'k', 0.08), rig = c.graph.add('null', c.cut.id + ' / Kick streaks rig', c.parent, c.cut.start, c.cut.end,
+    { rotation: -H.p(P, 'ang', 0) });
+  var cutIdx = Math.max(0, c.assembly.cuts.findIndex(function (row) { return row.id === c.cut.id; }));
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var dep = 0.5 + N.random(seed, idx, 1), baseLen = D * (0.08 + 0.2 * N.random(seed, idx, 2));
+      var th = Math.max(2, U * (0.004 + 0.02 * N.random(seed, idx, 3) * N.random(seed, idx, 6)));
+      var xOff = N.random(seed, idx, 4) * (D + baseLen), y = (N.random(seed, idx, 5) - 0.5) * D;
+      var col = idx % 6 === 2 ? c.sc.accent : c.sc.fg;
+      var a = idx % 6 === 2 ? k * 1.3 : k * (0.6 + 0.7 * N.random(seed, idx, 7));
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Kick streak ' + idx, rig, G.rect(0, -th / 2, baseLen, th), { fill: col, alpha: a });
+      V.animate(c, id, function (e, f) {
+        var lt = Math.max(0, e.t), trav = clk.absTime(f) * 0.05 + 0.3 * (cutIdx + 1 - Math.exp(-lt * 5));
+        var len = baseLen * (1 + 0.8 * Math.exp(-lt * 5));
+        var x = wrap(xOff + trav * dep * D, D + len) - len - D / 2;
+        return { 'position.x': x, 'position.y': -y, 'scale.x': len / baseLen, alpha: a * clk.enter(f, 0.6) };
+      });
+    })(i);
+  }
+});
+
+/* 8. kzRollSquare */
+register('kzRollSquare', 'src/11p_x2_kineticA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'kzRollSquare'), dir = H.p(P, 'dir', 1), per = H.p(P, 'per', 3), k = H.p(P, 'k', 0.045);
+  var fl = Hh * 0.9, seed = H.p(P, 'seed', 1);
+  var flId = H.rect(c, 'Roll floor', 0, fl, W, Math.max(2, U * 0.003), { fill: c.sc.fg, alpha: k * 1.6 });
+  V.animate(c, flId, function (e, f) { return { alpha: k * 1.6 * clk.enter(f, 0.8) }; });
+  function addSquare(S0, sqPer, d, ph, fa, isAcc) {
+    var x0 = d > 0 ? -S0 : 0, cmds = G.rect(x0, 0, S0, S0);
+    var fill = C.shape(c.graph, c.cut, c.cut.id + ' / Roll fill ' + (isAcc ? '2' : '1'), c.parent, cmds,
+      { fill: isAcc ? c.sc.accent : c.sc.fg, stroke: c.sc.fg, width: Math.max(2, U * 0.003), alpha: fa });
+    var inner = C.shape(c.graph, c.cut, c.cut.id + ' / Roll inner ' + (isAcc ? '2' : '1'), c.parent,
+      G.rect(x0 + S0 * 0.2, S0 * 0.2, S0 * 0.6, S0 * 0.6), { stroke: c.sc.fg, width: Math.max(2, U * 0.003), alpha: fa * 2.2 });
+    [fill, inner].forEach(function (id, isIn) {
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.8), tt = t / sqPer + ph, st = Math.floor(tt);
+        var fr = cl((tt - st) / 0.82), a = 90 * Math.pow(fr, 2.3), span = Math.ceil((W + S0 * 2) / S0) * S0;
+        var px = wrap((st + 2 + Math.floor(ph * 2)) * S0, span) - S0, x = d > 0 ? px : W - px;
+        var pos = H.toScene(c, x, fl);
+        return { 'position.x': pos[0], 'position.y': pos[1], rotation: -(a * d), alpha: (isIn ? fa * 2.2 : fa) * q };
+      });
+    });
+  }
+  if (P.two) addSquare(U * 0.26, per * 0.55, -dir, (seed % 97) / 97, k * 0.9, true);
+  addSquare(U * H.p(P, 's', 0.58), per, dir, (seed % 53) / 53, k, false);
+});
+
+/* 9. kzBounceDiscs */
+register('kzBounceDiscs', 'src/11p_x2_kineticA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'kzBounceDiscs'), seed = H.p(P, 'seed', 1), n = Math.max(2, Math.round(H.p(P, 'n', 3)));
+  var k = H.p(P, 'k', 0.05), dir = H.p(P, 'dir', 1), fl = Hh * 0.97;
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var r = U * (0.1 + 0.16 * N.random(seed, idx, 1)), Tb = 1.7 + 1.3 * N.random(seed, idx, 2) + r / U * 2;
+      var ph = N.random(seed, idx, 3), hgt = Hh * (0.35 + 0.4 * N.random(seed, idx, 4));
+      var vx = (0.03 + 0.03 * N.random(seed, idx, 5)) * dir * (idx % 2 ? 1 : -0.7), x0 = N.random(seed, idx, 6) * (W + r * 2);
+      var shd = C.shape(c.graph, c.cut, c.cut.id + ' / Bounce shadow ' + idx, c.parent,
+        G.ellipse(0, 0, r, r * 0.07), { fill: c.sc.fg, alpha: k * 0.7 });
+      var disc = C.shape(c.graph, c.cut, c.cut.id + ' / Bounce disc ' + idx, c.parent,
+        G.ellipse(0, 0, r, r), { fill: idx === 1 ? c.sc.accent : c.sc.fg, alpha: k });
+      V.animate(c, shd, function (e, f0) {
+        var t = clk.absTime(f0), q = clk.enter(f0, 0.8), f = wrap(t / Tb + ph, 1), h = hgt * 4 * f * (1 - f);
+        var x = wrap(x0 + t * vx * W, W + r * 2) - r, pos = H.toScene(c, x, fl);
+        return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': 1.1 - 0.5 * h / hgt, alpha: k * 0.7 * (1 - h / hgt * 0.8) * q };
+      });
+      V.animate(c, disc, function (e, f0) {
+        var t = clk.absTime(f0), q = clk.enter(f0, 0.8), f = wrap(t / Tb + ph, 1), h = hgt * 4 * f * (1 - f);
+        var near = Math.exp(-Math.min(f, 1 - f) * Tb * 14), sq = 0.16 * near;
+        var x = wrap(x0 + t * vx * W, W + r * 2) - r, pos = H.toScene(c, x, fl - r * (1 - sq) - h);
+        return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': 1 + sq * 0.7, 'scale.y': 1 - sq, alpha: k * q };
+      });
+    })(i);
+  }
+});
+
+/* 10. kzRockHorizon */
+register('kzRockHorizon', 'src/11p_x2_kineticA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), D = Math.hypot(W, Hh);
+  var clk = H.bgClock(c, 'kzRockHorizon'), k = H.p(P, 'k', 0.05), w = TAU / H.p(P, 'per', 6), ph = (H.p(P, 'seed', 1) % 100) / 100 * TAU;
+  var amp = H.p(P, 'amp', 5), yPos = Hh * H.p(P, 'y', 0.66);
+  var rig = c.graph.add('null', c.cut.id + ' / Rocking horizon', c.parent, c.cut.start, c.cut.end,
+    { position: H.toScene(c, W / 2, yPos) });
+  V.animate(c, rig, function (e, f) {
+    return { rotation: -(amp * Math.sin(clk.absTime(f) * w + ph)), alpha: clk.enter(f, 0.8) };
+  });
+  C.shape(c.graph, c.cut, c.cut.id + ' / Horizon slab', rig, G.rect(-D, -D, D * 2, D), { fill: c.sc.fg, alpha: k });
+  C.shape(c.graph, c.cut, c.cut.id + ' / Horizon rim', rig, G.rect(-D, -Math.max(2, U * 0.003), D * 2, Math.max(2, U * 0.003)), { fill: c.sc.fg, alpha: k * 2.2 });
+  C.shape(c.graph, c.cut, c.cut.id + ' / Horizon sub', rig, G.rect(-D, -U * 0.03, D * 2, Math.max(1.5, U * 0.0015)), { fill: c.sc.fg, alpha: k * 1.2 });
+  C.shape(c.graph, c.cut, c.cut.id + ' / Horizon fulcrum', c.parent,
+    [['M', 0, Hh / 2 - yPos], ['L', -U * 0.05, Hh / 2 - (yPos + U * 0.085)], ['L', U * 0.05, Hh / 2 - (yPos + U * 0.085)], ['Z']],
+    { fill: c.sc.fg, alpha: k * 1.6 });
+  if (P.ball !== false) {
+    var r = U * 0.055;
+    var ball = C.shape(c.graph, c.cut, c.cut.id + ' / Horizon ball', rig, G.ellipse(0, 0, r, r), { fill: c.sc.accent, alpha: k * 1.5 });
+    var spoke = C.shape(c.graph, c.cut, c.cut.id + ' / Horizon ball spoke', rig,
+      [['M', 0, 0], ['L', r, 0]], { stroke: c.sc.bg, width: Math.max(2, U * 0.003), alpha: 0.5 });
+    [ball, spoke].forEach(function (id, isSpoke) {
+      V.animate(c, id, function (e, f) {
+        var sx = -W * 0.36 * Math.cos(clk.absTime(f) * w + ph);
+        return isSpoke ? { 'position.x': sx, 'position.y': r, rotation: -(sx / r / DEG) }
+          : { 'position.x': sx, 'position.y': r };
+      });
+    });
+  }
+});
+
+/* 11. kzBigGears */
+register('kzBigGears', 'src/11p_x2_kineticA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'kzBigGears'), k = H.p(P, 'k', 0.04), spd = H.p(P, 'spd', 4);
+  var nA = Math.max(8, Math.round(H.p(P, 'nA', 18))), nB = Math.round(nA * 0.6), nC = Math.round(nA * 0.42);
+  var rig = c.graph.add('null', c.cut.id + ' / Gears rig', c.parent, c.cut.start, c.cut.end,
+    { 'scale.x': P.flip ? -1 : 1 });
+  function addGear(name, cx, cy, R, n, fa, rotFn) {
+    var m = R * Math.PI / n * 0.55, st = TAU / n, cmds = [];
+    for (var i = 0; i < n; i++) {
+      var a = i * st;
+      [[a - st * 0.18, R + m], [a + st * 0.18, R + m], [a + st * 0.32, R - m], [a + st * 0.68, R - m]].forEach(function (qp, j) {
+        cmds.push([(i || j) ? 'L' : 'M', Math.cos(qp[0]) * qp[1], -Math.sin(qp[0]) * qp[1]]);
+      });
+    }
+    cmds.push(['Z']);
+    cmds = cmds.concat(G.ellipse(0, 0, R * 0.72, R * 0.72));
+    for (var s = 0; s < 4; s++) {
+      var as = s * TAU / 4;
+      cmds.push(['M', Math.cos(as) * R * 0.3, -Math.sin(as) * R * 0.3], ['L', Math.cos(as) * R * 0.72, -Math.sin(as) * R * 0.72]);
+    }
+    var id = C.shape(c.graph, c.cut, c.cut.id + ' / ' + name, rig, cmds,
+      { fill: c.sc.fg, stroke: c.sc.fg, width: Math.max(2, U * 0.003), alpha: fa });
+    c.graph.byId[id].attrs.position = H.toScene(c, cx, cy);
+    V.animate(c, id, function (e, f) { return { rotation: -rotFn(clk.absTime(f)), alpha: fa * clk.enter(f, 0.8) }; });
+  }
+  var RA = U * 0.5, RB = RA * nB / nA, RC = RA * nC / nA, ax = W * 0.1, ay = Hh * 0.9, phi = H.p(P, 'ang', -35) * DEG;
+  var bx = ax + Math.cos(phi) * (RA + RB), by = ay + Math.sin(phi) * (RA + RB);
+  var cx = bx + Math.cos(phi - 1.15) * (RB + RC), cy = by + Math.sin(phi - 1.15) * (RB + RC);
+  addGear('Gear A', ax, ay, RA, nA, k, function (t) { return t * spd; });
+  addGear('Gear B', bx, by, RB, nB, k * 1.15, function (t) { return (phi / DEG + 180 + 180 / nB - (t * spd - phi / DEG) * nA / nB); });
+  addGear('Gear C', cx, cy, RC, nC, k * 0.9, function (t) {
+    var thB = phi + Math.PI + Math.PI / nB - (t * spd * DEG - phi) * nA / nB;
+    return ((phi - 1.15) + Math.PI + Math.PI / nC - (thB - (phi - 1.15)) * nB / nC) / DEG;
+  });
+});
+
+/* 12. kzSqueezeLines */
+register('kzSqueezeLines', 'src/11p_x2_kineticA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'kzSqueezeLines'), vert = P.vert !== false, L = vert ? W : Hh;
+  var n = Math.max(12, Math.round(H.p(P, 'n', 36))), k = H.p(P, 'k', 0.12), lam = L * H.p(P, 'lam', 0.7);
+  var amp = lam / TAU * 0.78, lw = Math.max(2, U * 0.0035), per = H.p(P, 'per', 5);
+  for (var i = -2; i < n + 2; i++) {
+    (function (idx) {
+      var x0 = (idx + 0.5) / n * L, hot = wrap(idx, 9) === 4;
+      var col = hot ? c.sc.accent : c.sc.fg, aBase = hot ? k * 1.3 : k;
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Squeeze line ' + idx, c.parent,
+        vert ? G.rect(-lw / 2, -Hh / 2, lw, Hh) : G.rect(-W / 2, -lw / 2, W, lw), { fill: col, alpha: aBase });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f) / per, q = clk.enter(f, 0.6), ph = TAU * (x0 / lam - t);
+        var x = x0 + amp * Math.sin(ph), dens = 1 - 0.78 * Math.cos(ph);
+        var a = (hot ? k * 1.3 : k * (0.55 + 0.25 * dens)) * q;
+        return vert ? { 'position.x': x - W / 2, alpha: a } : { 'position.y': Hh / 2 - x, alpha: a };
+      });
+    })(i);
+  }
+});
+
+/* ================================================================ TYPOGRAPHY (src/11p_x2_typoA.js) */
+
+/* 13. tzBgBaseGrid */
+register('tzBgBaseGrid', 'src/11p_x2_typoA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, M = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'tzBgBaseGrid'), rows = Math.max(8, Math.round(H.p(P, 'rows', 26)));
+  var every = Math.max(2, Math.round(H.p(P, 'every', 4))), drift = H.p(P, 'drift', 6), k = H.p(P, 'k', 0.12);
+  var g = Math.max(W, Hh) / rows, mx = P.right ? W * 0.92 : W * 0.08, fs = Math.max(9, M * 0.013), lw = Math.max(1, M * 0.0014);
+  var nLines = Math.min(60, Math.ceil(Hh / g) + every * 2), minor = [], major = [];
+  for (var i = -every; i < nLines; i++) {
+    var y = -i * g;
+    if (wrap(i, every) === 0) major.push(['M', -W / 2, y], ['L', W / 2, y]);
+    else minor.push(['M', -W / 2, y], ['L', W / 2, y]);
+  }
+  var gRig = c.graph.add('null', c.cut.id + ' / Base grid rig', c.parent, c.cut.start, c.cut.end,
+    { position: [0, Hh / 2] });
+  if (minor.length) {
+    var mi = C.shape(c.graph, c.cut, c.cut.id + ' / Base grid minor', gRig, minor, { stroke: c.sc.fg, width: lw, alpha: k });
+    V.animate(c, mi, function (e, f) { return { alpha: k * clk.enter(f, 0.8) }; });
+  }
+  if (major.length) {
+    var mj = C.shape(c.graph, c.cut, c.cut.id + ' / Base grid major', gRig, major, { stroke: c.sc.fg, width: lw, alpha: k * 1.8 });
+    V.animate(c, mj, function (e, f) { return { alpha: k * 1.8 * clk.enter(f, 0.8) }; });
+  }
+  V.animate(c, gRig, function (e, f) {
+    var scroll = clk.absTime(f) * drift * M / 1080;
+    return { 'position.y': Hh / 2 - wrap(scroll, every * g) };
+  });
+  var rule = H.line(c, 'Base grid margin rule', [[mx, 0], [mx, Hh]], c.sc.accent, lw, k * 2.4);
+  V.animate(c, rule, function (e, f) { return { alpha: k * 2.4 * clk.enter(f, 0.8) }; });
+  if (P.nums !== false) {
+    for (var j = 0; j < nLines; j += every) {
+      (function (rj) {
+        H.addText(c, 'Base grid num ' + rj, pad2(rj), mx + (P.right ? 1 : -1) * fs * 0.7, rj * g - fs * 0.9, fs,
+          { role: 'mono', align: P.right ? 'left' : 'right', color: c.sc.fg, alpha: k * 2.6, parent: gRig },
+          function (e, f) { return { alpha: k * 2.6 * clk.enter(f, 0.8) }; });
+      })(j);
+    }
+  }
+});
+
+/* 14. tzBgNumField */
+register('tzBgNumField', 'src/11p_x2_typoA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, M = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'tzBgNumField'), seed = H.p(P, 'seed', 1), fs = M * H.p(P, 'fs', 0.018);
+  var rh = fs * 2.5, k = H.p(P, 'k', 0.085), rows = Math.min(28, Math.ceil(Hh / rh) + 1), cols = Math.min(24, Math.ceil(W / (fs * 2.4)) + 1);
+  for (var j = 0; j < rows; j++) {
+    (function (rj) {
+      var str = '';
+      for (var i = 0; i < cols; i++) {
+        str += pad2(Math.floor(N.random(seed, i, rj, 3) * 100)) + '  ';
+      }
+      var rowCol = rj === Math.floor(rows * 0.4) && P.band !== false ? c.sc.fg : c.sc.fg;
+      var baseA = k * (0.75 + 0.5 * N.random(seed, rj, 5));
+      H.addText(c, 'Num field row ' + rj, str, fs * 0.6 - (rj % 2) * fs * 1.1, (rj + 0.5) * rh, fs,
+        { role: 'mono', align: 'left', color: rowCol, alpha: baseA },
+        function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.8);
+          var hot = P.band !== false ? Math.floor(t * 0.4 + N.random(seed, 7) * rows) % rows : -1;
+          return { alpha: (rj === hot ? k * 2.1 : baseA) * q };
+        });
+    })(j);
+  }
+});
+
+/* 15. tzBgColumns */
+register('tzBgColumns', 'src/11p_x2_typoA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, M = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'tzBgColumns'), n = Hh > W ? Math.max(3, Math.round(H.p(P, 'cols', 6) / 2)) : Math.max(3, Math.round(H.p(P, 'cols', 6)));
+  var k = H.p(P, 'k', 0.042), step = H.p(P, 'step', 2.2), mx = W * 0.05, gut = M * 0.016;
+  var cw = (W - mx * 2 - (n - 1) * gut) / n, y0 = Hh * 0.045, y1 = Hh * 0.955, fs = Math.max(9, M * 0.011), lw = Math.max(1, M * 0.001);
+  for (var i = 0; i < n; i++) {
+    (function (ci) {
+      var x = mx + ci * (cw + gut), evenFill = (P.fill !== false && ci % 2 === 0) ? k * 0.55 : 0;
+      var colBox = H.rect(c, 'Column fill ' + ci, x, y0, cw, y1 - y0, { fill: c.sc.fg, alpha: Math.max(0.01, k * 0.9) });
+      V.animate(c, colBox, function (e, f) {
+        var tt = clk.absTime(f) / step, act = Math.floor(tt) % n, pulse = Math.sin(Math.PI * (tt % 1));
+        var q = clk.enter(f, 0.9), a = (evenFill + (ci === act ? k * 0.9 * pulse : 0)) * q;
+        return { 'scale.y': Math.max(0.01, q), alpha: a };
+      });
+      var edgeL = H.line(c, 'Column L ' + ci, [[x, y0], [x, y1]], c.sc.fg, lw, k * 2.2);
+      var edgeR = H.line(c, 'Column R ' + ci, [[x + cw, y0], [x + cw, y1]], c.sc.fg, lw, k * 2.2);
+      [edgeL, edgeR].forEach(function (id) { V.animate(c, id, function (e, f) { return { alpha: k * 2.2 * clk.enter(f, 0.9) }; }); });
+      if (P.nums !== false) {
+        H.addText(c, 'Col num ' + ci, pad2(ci + 1), x + fs * 0.4, y0 + fs * 1.1, fs,
+          { role: 'mono', align: 'left', color: c.sc.fg, alpha: k * 4 },
+          function (e, f) { return { alpha: k * 4 * clk.enter(f, 0.9) }; });
+      }
+    })(i);
+  }
+  var rTop = H.line(c, 'Col rule top', [[0, y0], [W, y0]], c.sc.accent, lw, k * 2.6);
+  var rBot = H.line(c, 'Col rule bot', [[0, y1], [W, y1]], c.sc.accent, lw, k * 2.6);
+  [rTop, rBot].forEach(function (id) { V.animate(c, id, function (e, f) { return { alpha: k * 2.6 * clk.enter(f, 0.9) }; }); });
+});
+
+/* 16. tzBgBigDigits */
+register('tzBgBigDigits', 'src/11p_x2_typoA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'tzBgBigDigits'), k = H.p(P, 'k', 0.065), side = H.p(P, 'side', 1);
+  var txt = P.what === 'sec' ? pad2(Math.floor(clk.absTime(c.cut.start))) : pad2(((c.cut.line | 0) + 1) % 100);
+  var size = Math.max(W, Hh) * 0.6, yBase = Hh * (P.low !== false ? 0.62 : 0.4), isOut = P.outline !== false;
+  var aBase = isOut ? Math.min(0.24, k * 2.4) : k;
+  return H.addText(c, 'Big digits', txt, W / 2 + side * W * 0.2, yBase, size, {
+    role: P.font || 'display', align: 'center', color: c.sc.fg, fill: !isOut, stroke: isOut,
+    strokeColor: c.sc.fg, strokeWidth: Math.max(2, size * 0.004), alpha: aBase
+  }, function (e, f) {
+    var q = clk.enter(f, 0.7), roll = 1 - E.outExpo(clk.time(f) / 0.8);
+    return { 'position.y': Hh / 2 - (yBase + roll * size * 0.16), alpha: aBase * q };
+  });
+});
+
+/* 17. tzBgGlyphField */
+register('tzBgGlyphField', 'src/11p_x2_typoA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, M = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'tzBgGlyphField'), raw = (c.cut.lineText || (c.cut.nodes[0] && c.cut.nodes[0].text) || '');
+  var arr = Array.from(String(raw).replace(/\s+/g, '')).slice(0, 18);
+  if (!arr.length) return null;
+  var fs = M * H.p(P, 'fs', 0.036), rowH = fs * 2.3, v = H.p(P, 'v', 12) * M / 1080, k = H.p(P, 'k', 0.07);
+  var unit = arr.join(' ') + ' ', unitW = Math.max(fs * 2, unit.length * fs * 0.72), rep = unit + unit + unit;
+  var rows = Math.min(18, Math.ceil(Hh / rowH) + 1);
+  for (var j = 0; j < rows; j++) {
+    (function (rj) {
+      var dir = rj % 2 ? 1 : -1, off0 = rj * fs * 1.37 + N.random(H.p(P, 'seed', 1), rj) * unitW;
+      H.addText(c, 'Glyph field row ' + rj, rep, W / 2, (rj + 0.5) * rowH, fs,
+        { role: P.font || 'body', align: 'center', color: c.sc.fg, alpha: k },
+        function (e, f) {
+          var off = wrap(clk.absTime(f) * v * dir + off0, unitW) - unitW / 2;
+          return { 'position.x': off, alpha: k * clk.enter(f, 0.9) };
+        });
+    })(j);
+  }
+});
+
+/* 18. tzBgRules */
+register('tzBgRules', 'src/11p_x2_typoA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, u = Math.min(W, Hh) / 1080;
+  var clk = H.bgClock(c, 'tzBgRules'), seed = H.p(P, 'seed', 1), n = Math.max(3, Math.round(H.p(P, 'n', 7)));
+  var k = H.p(P, 'k', 0.12), lw = Math.max(1, u * 1.5);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var y = Hh * (0.07 + 0.86 * (idx + 0.5) / n) + (N.random(seed, idx, 1) * 2 - 1) * Hh * 0.025;
+      var kind = Math.floor(N.random(seed, idx, 2) * 4), fromL = N.random(seed, idx, 3) < 0.5;
+      var freq = 0.12 + 0.2 * N.random(seed, idx, 4), ph = N.random(seed, idx, 5) * TAU;
+      var col = idx === (seed % n) ? c.sc.accent : c.sc.fg, xa = fromL ? 0 : W, dir = fromL ? 1 : -1;
+      var cmds = [];
+      if (kind === 0) cmds = [['M', 0, 0], ['L', dir * W, 0]];
+      else if (kind === 1) cmds = [['M', 0, 3 * u], ['L', dir * W, 3 * u], ['M', 0, -3 * u], ['L', dir * W, -3 * u]];
+      else if (kind === 2) cmds = G.rect(fromL ? 0 : -W, 2 * u, W, lw * 3).concat([['M', 0, -3.5 * u], ['L', dir * W, -3.5 * u]]);
+      else {
+        var step = lw * 6.1;
+        for (var dx = 0; dx < W; dx += step) cmds.push(['M', dir * dx, 0], ['L', dir * (dx + lw * 1.6), 0]);
+      }
+      var rule = C.shape(c.graph, c.cut, c.cut.id + ' / Typo rule ' + idx, c.parent, cmds,
+        kind === 2 ? { fill: col, stroke: col, width: lw, alpha: k } : { stroke: col, width: lw, alpha: k });
+      c.graph.byId[rule].attrs.position = H.toScene(c, xa, y);
+      var tick = C.shape(c.graph, c.cut, c.cut.id + ' / Rule tick ' + idx, c.parent,
+        [['M', 0, -7 * u], ['L', 0, 7 * u]], { stroke: col, width: lw, alpha: k });
+      V.animate(c, rule, function (e, f) {
+        var fi = E.outExpo(clk.time(f) / 1.1);
+        var len = (0.22 + 0.62 * (0.5 + 0.5 * Math.sin(clk.absTime(f) * freq + ph))) * fi;
+        return { 'scale.x': Math.max(0.01, len) };
+      });
+      V.animate(c, tick, function (e, f) {
+        var fi = E.outExpo(clk.time(f) / 1.1);
+        var len = W * (0.22 + 0.62 * (0.5 + 0.5 * Math.sin(clk.absTime(f) * freq + ph))) * fi;
+        var pos = H.toScene(c, xa + dir * len, y);
+        return { 'position.x': pos[0], 'position.y': pos[1] };
+      });
+    })(i);
+  }
+});
+
+/* ================================================================ WA / TRADITIONAL (src/11p_x2_waA.js) */
+
+/* 19. wzBgShippo */
+register('wzBgShippo', 'src/11p_x2_waA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'wzBgShippo'), r = Math.max(U * H.p(P, 'r', 0.08), 46), k = H.p(P, 'k', 0.08), dx = H.p(P, 'dx', 1);
+  var ni = Math.ceil(W / r) + 4, nj = Math.ceil(Hh / r) + 4, ringCmds = [], knotCmds = [];
+  for (var j = -2; j < nj; j++) {
+    for (var i = -2; i < ni; i++) {
+      if ((i + j) & 1) continue;
+      var cx = i * r - W / 2, cy = Hh / 2 - j * r;
+      ringCmds = ringCmds.concat(G.ellipse(cx, cy, r, r));
+      knotCmds = knotCmds.concat(G.ellipse(cx, cy, r * 0.16, r * 0.16));
+    }
+  }
+  var rings = C.shape(c.graph, c.cut, c.cut.id + ' / Shippo circles', c.parent, ringCmds,
+    { stroke: c.sc.fg, width: Math.max(1.2, r * 0.035), alpha: k });
+  var knots = C.shape(c.graph, c.cut, c.cut.id + ' / Shippo knots', c.parent, knotCmds,
+    { fill: P.acc ? c.sc.accent : c.sc.fg, alpha: k * 1.2 });
+  [rings, knots].forEach(function (id, isKnot) {
+    V.animate(c, id, function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.7);
+      var ox = wrap(t * r * 0.1 * dx, 2 * r) - 2 * r, oy = wrap(t * r * 0.06, 2 * r) - 2 * r;
+      var pulse = isKnot ? (0.85 + 0.25 * Math.sin(t * 0.9)) : 1;
+      return { 'position.x': ox, 'position.y': -oy, alpha: (isKnot ? k * 1.2 * pulse : k) * q };
+    });
+  });
+});
+
+/* 20. wzBgSayagata */
+register('wzBgSayagata', 'src/11p_x2_waA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'wzBgSayagata'), q = Math.max(U * H.p(P, 'q', 0.017), 10), k = H.p(P, 'k', 0.07), dir = H.p(P, 'dir', 1);
+  var rot = P.rot == null ? 45 : P.rot, ax = 6 * q, ay = -4 * q, bx = 4 * q, by = 6 * q;
+  var rad = Math.hypot(W, Hh) / 2 + q * 4, Nmax = Math.min(20, Math.ceil(rad / (q * 7.2)) + 2), cmds = [];
+  for (var i = -Nmax; i <= Nmax; i++) {
+    for (var j = -Nmax; j <= Nmax; j++) {
+      var cx = i * ax + j * bx, cy = i * ay + j * by;
+      if (Math.hypot(cx, cy) > rad * 1.25) continue;
+      for (var a = 0, ux = 0, uy = -1; a < 4; a++) {
+        var vx = -uy, vy = ux;
+        cmds.push(['M', cx, -cy], ['L', cx + ux * 2 * q, -(cy + uy * 2 * q)],
+          ['L', cx + (ux * 2 + vx * 3) * q, -(cy + (uy * 2 + vy * 3) * q)]);
+        ux = vx; uy = vy;
+      }
+    }
+  }
+  var rig = c.graph.add('null', c.cut.id + ' / Sayagata rig', c.parent, c.cut.start, c.cut.end, { rotation: -rot });
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Sayagata fret', rig, cmds,
+    { stroke: c.sc.fg, width: Math.max(1.5, q * 0.3), alpha: k });
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), fr = wrap(t * 0.03 * dir, 1), fi = clk.enter(f, 0.9);
+    return { 'position.x': fr * ax, 'position.y': -fr * ay, alpha: k * fi * (0.85 + 0.15 * Math.sin(t * 0.7)) };
+  });
+});
+
+/* 21. wzBgTatewaku */
+register('wzBgTatewaku', 'src/11p_x2_waA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'wzBgTatewaku'), d = Math.max(U * H.p(P, 'd', 0.12), 56), k = H.p(P, 'k', 0.095);
+  var dir = H.p(P, 'dir', 1), Am = d * 0.25, perY = d * 2.8, kk = TAU / perY, n = Math.min(40, Math.ceil(W / d) + 2);
+  var nCycles = Math.ceil(Hh / perY) + 3, st = perY / 24, cmds = [];
+  for (var i = 0; i < n; i++) {
+    var sg = i % 2 ? -1 : 1, x0 = (i - 0.5) * d;
+    for (var y = -perY, g = 0; y <= nCycles * perY && g <= 160; y += st, g++) {
+      var x = x0 + sg * Am * Math.sin(y * kk);
+      cmds.push([g ? 'L' : 'M', x - W / 2, Hh / 2 - y]);
+    }
+  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Tatewaku lines', c.parent, cmds,
+    { stroke: c.sc.fg, width: Math.max(1.5, d * 0.03), alpha: k });
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.9), sh = wrap(-t * 0.4 * dir / kk, perY);
+    return { 'position.y': Hh / 2 - sh - (Hh / 2), alpha: k * q };
+  });
+  if (P.dots) {
+    var dotCmds = [];
+    for (var ci = 0; ci < n; ci++) {
+      var sg2 = ci % 2 ? -1 : 1, xd = ci * d - W / 2, y0 = (sg2 > 0 ? -Math.PI / 2 : Math.PI / 2) / kk;
+      for (var yd = y0 - perY; yd < (nCycles + 1) * perY; yd += perY) {
+        dotCmds = dotCmds.concat(G.ellipse(xd, Hh / 2 - yd, d * 0.085, d * 0.085));
+      }
+    }
+    var dId = C.shape(c.graph, c.cut, c.cut.id + ' / Tatewaku dots', c.parent, dotCmds, { fill: c.sc.fg, alpha: k * 0.7 });
+    V.animate(c, dId, function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.9), sh = wrap(-t * 0.4 * dir / kk, perY);
+      return { 'position.y': -sh, alpha: k * 0.7 * q * (0.8 + 0.2 * Math.sin(t * 0.9)) };
+    });
+  }
+});
+
+/* 22. wzBgRyusui */
+register('wzBgRyusui', 'src/11p_x2_waA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'wzBgRyusui'), seed = H.p(P, 'seed', 1), n = Math.max(3, Math.round(H.p(P, 'n', 6)));
+  var k = H.p(P, 'k', 0.095), dir = H.p(P, 'dir', 1), dy = U * 0.02;
+  for (var b = 0; b < n; b++) {
+    (function (bi) {
+      var m = 3 + Math.floor(N.random(seed, bi, 1) * 3), base = Hh * (bi + 0.5) / n + (N.random(seed, bi, 2) * 2 - 1) * Hh * 0.04 - (m - 1) * dy / 2;
+      var lam = U * (0.2 + 0.14 * N.random(seed, bi, 3)), Am = U * (0.02 + 0.02 * N.random(seed, bi, 4));
+      var len = W * (0.55 + 0.4 * N.random(seed, bi, 5)), v = W * (0.012 + 0.018 * N.random(seed, bi, 6)) * dir;
+      var span = W + len + U * 0.3, xOff = N.random(seed, bi, 7) * span;
+      var col = P.acc && bi === 1 ? c.sc.accent : c.sc.fg, a = k * (0.7 + 0.5 * N.random(seed, bi, 8));
+      var lw = Math.max(1.5, U * (0.003 + 0.002 * N.random(seed, bi, 9))), cmds = [];
+      for (var j = 0; j < m; j++) {
+        var xs = len * 0.3 * N.random(seed, bi, j, 10), xe = len * (1 - 0.3 * N.random(seed, bi, j, 11));
+        for (var q = 0; q <= 36; q++) {
+          var xx = mix(xs, xe, q / 36), yy = base + j * dy + Am * Math.sin(xx / lam + bi * 1.7) + Am * 0.35 * Math.sin(xx / lam * 2.1);
+          cmds.push([q ? 'L' : 'M', xx, Hh / 2 - yy]);
+        }
+      }
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Ryusui bundle ' + bi, c.parent, cmds, { stroke: col, width: lw, alpha: a });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.9), x0 = wrap(xOff + t * v, span) - len - U * 0.15;
+        return { 'position.x': x0 - W / 2, alpha: a * q };
+      });
+    })(b);
+  }
+});
+
+/* 23. wzBgYukiwa */
+register('wzBgYukiwa', 'src/11p_x2_waA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'wzBgYukiwa'), seed = H.p(P, 'seed', 1), n = Math.min(16, Math.max(6, Math.round(H.p(P, 'n', 10))));
+  var k = H.p(P, 'k', 0.07), lw = Math.max(1.5, U * 0.0042);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var R = U * (0.06 + 0.12 * N.random(seed, idx, 1) * N.random(seed, idx, 2)), span = Hh + R * 2.4;
+      var xBase = W * ((idx + 0.5) / n + 0.3 * (N.random(seed, idx, 3) * 2 - 1)), yOff = N.random(seed, idx, 4) * span;
+      var v = U * (0.006 + 0.01 * N.random(seed, idx, 5)), col = P.acc && idx % 4 === 1 ? c.sc.accent : c.sc.fg;
+      var Npts = 72, cmds = [];
+      for (var m = 0; m <= Npts; m++) {
+        var th = m / Npts * TAU, u = (th / (TAU / 6)) % 1, d = Math.min(u, 1 - u) * (TAU / 6);
+        var rad = R * (1 - 0.17 * Math.exp(-Math.pow(d / 0.075, 2)));
+        cmds.push([m ? 'L' : 'M', Math.cos(th) * rad, -Math.sin(th) * rad]);
+      }
+      cmds.push(['Z']);
+      if (R > U * 0.085) {
+        for (var sp = 0; sp < 6; sp++) {
+          var sa = sp / 6 * TAU;
+          cmds.push(['M', Math.cos(sa) * R * 0.18, -Math.sin(sa) * R * 0.18], ['L', Math.cos(sa) * R * 0.6, -Math.sin(sa) * R * 0.6]);
+        }
+      }
+      var isFill = idx % 3 === 0, paint = isFill ? { fill: col, alpha: k * 0.8 } : { stroke: col, width: lw, alpha: k * 1.5 };
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Yukiwa ' + idx, c.parent, cmds, paint);
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.9), sc = 0.8 + 0.2 * E.outCubic(clk.time(f) / 0.8 - idx * 0.03);
+        var x = wrap(xBase + Math.sin(t * 0.25 + idx * 1.9) * U * 0.02, W + R * 2) - R;
+        var y = wrap(yOff + t * v, span) - R * 1.2, pos = H.toScene(c, x, y);
+        var rot = (idx % 2 ? -1 : 1) * t * 0.06 / DEG + idx * 57;
+        return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': sc, 'scale.y': sc, rotation: -rot, alpha: paint.alpha * q };
+      });
+    })(i);
+  }
+});
+
+/* 24. wzBgYagasuri */
+register('wzBgYagasuri', 'src/11p_x2_waA.js', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'wzBgYagasuri'), d = Math.max(U * H.p(P, 'd', 0.1), 54), k = H.p(P, 'k', 0.05);
+  var spd = H.p(P, 'spd', 0.012), ph = d * 0.85, nc = Math.min(28, Math.ceil(W / d) + 1), x00 = (W - nc * d) / 2;
+  [0, 1].forEach(function (pass) {
+    var cmds = [];
+    for (var ci = pass; ci < nc; ci += 2) {
+      var dir = ci % 2 ? -1 : 1, x0 = x00 + ci * d, xc = x0 + d / 2, sl = dir * d * 0.5;
+      for (var y = -ph * 4; y < Hh + ph * 4; y += ph * 2) {
+        [[x0 + 1, y], [xc - 1, y + sl], [xc - 1, y + sl + ph], [x0 + 1, y + ph]].forEach(function (pt, idx) {
+          cmds.push([idx ? 'L' : 'M', pt[0] - W / 2, Hh / 2 - pt[1]]);
+        });
+        cmds.push(['Z']);
+        [[x0 + d - 1, y], [xc + 1, y + sl], [xc + 1, y + sl + ph], [x0 + d - 1, y + ph]].forEach(function (pt, idx) {
+          cmds.push([idx ? 'L' : 'M', pt[0] - W / 2, Hh / 2 - pt[1]]);
+        });
+        cmds.push(['Z']);
+      }
+    }
+    var col = pass && P.acc ? c.sc.accent : c.sc.fg, a = pass ? k * 0.9 : k;
+    var id = C.shape(c.graph, c.cut, c.cut.id + ' / Yagasuri pass ' + pass, c.parent, cmds, { fill: col, alpha: a });
+    V.animate(c, id, function (e, f) {
+      var dir = pass ? -1 : 1, q = clk.enter(f, 0.8);
+      var off = wrap(dir * clk.absTime(f) * U * spd, ph * 2) + (1 - q) * dir * ph;
+      return { 'position.y': -off, alpha: a * q };
+    });
+  });
+});
+
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);
+
+;
+/* Cavalry native backgrounds ported from src/11p_x2_bg.js (39 recipes). */
+(function (N, G, C, R, V, S, H) {
+'use strict';
+
+var cl = H.cl, mix = H.mix, E = H.E, TAU = H.TAU, DEG = H.DEG;
+
+function register(key, build, differences) {
+  N.register('bg', key, {
+    source: 'src/11p_x2_bg.js',
+    scope: 'cut',
+    build: build,
+    differences: differences || []
+  });
+}
+
+function wrap(v, m) {
+  return ((v % m) + m) % m;
+}
+
+function lightOf(sc) {
+  var L = H.lum(sc.bg);
+  return L < 0.45 ? sc.fg : L < 0.78 ? '#FFFFFF' : H.mixHex(sc.accent, '#FFFFFF', 0.25);
+}
+
+function polyCmds(cx, cy, radius, sides, rotRad) {
+  var out = [];
+  for (var i = 0; i < sides; i++) {
+    var a = rotRad + i / sides * TAU;
+    out.push([i ? 'L' : 'M', cx + Math.cos(a) * radius, cy - Math.sin(a) * radius]);
+  }
+  out.push(['Z']);
+  return out;
+}
+
+function stadiumCmds(x, y, w, h) {
+  return H.roundRectCmds(x + w / 2, y + h / 2, w, h, h / 2);
+}
+
+/* 1. xpDriftBars */
+register('xpDriftBars', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'xpDriftBars'), seed = H.p(P, 'seed', 1);
+  var n = Math.max(2, Math.round(H.p(P, 'n', 6))), vert = P.vert !== false, L = vert ? W : Hh, k = H.p(P, 'k', 0.045);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var w = L * (0.07 + 0.2 * N.random(seed, idx, 1));
+      var v = (0.012 + 0.028 * N.random(seed, idx, 2)) * (N.random(seed, idx, 3) < 0.5 ? -1 : 1);
+      var off0 = N.random(seed, idx, 4) * (L + w);
+      var col = idx === 1 ? c.sc.accent : c.sc.fg;
+      var alpha = idx === 1 ? k * 1.1 : k * (0.6 + 0.8 * N.random(seed, idx, 5));
+      var cmds = vert ? G.rect(0, -Hh / 2, w, Hh) : G.rect(-W / 2, -w, W, w);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Drift bar ' + idx, c.parent, cmds, { fill: col, alpha: alpha });
+      V.animate(c, id, function (e, f) {
+        var pos = wrap(off0 + clk.absTime(f) * v * L, L + w) - w;
+        return vert ? { 'position.x': pos - W / 2, alpha: alpha * clk.enter(f, 0.6) }
+          : { 'position.y': Hh / 2 - pos, alpha: alpha * clk.enter(f, 0.6) };
+      });
+    })(i);
+  }
+});
+
+/* 2. xpBigPolygon */
+register('xpBigPolygon', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpBigPolygon'), seed = H.p(P, 'seed', 1), sides = Math.max(3, Math.round(H.p(P, 'sides', 5)));
+  var cx = W * H.p(P, 'cx', 0.5), cy = Hh * H.p(P, 'cy', 0.5), spd = H.p(P, 'spd', 2), k = H.p(P, 'k', 0.045);
+  var R = U * 0.8, rot0 = (seed % 60), pos = H.toScene(c, cx, cy);
+  var p1 = C.shape(c.graph, c.cut, c.cut.id + ' / Big poly outer', c.parent, polyCmds(0, 0, R, sides, 0), { fill: c.sc.fg, alpha: k });
+  var p2 = C.shape(c.graph, c.cut, c.cut.id + ' / Big poly inner', c.parent, polyCmds(0, 0, R * 0.58, sides, 0), { fill: c.sc.fg, alpha: k * 0.8 });
+  var p3 = C.shape(c.graph, c.cut, c.cut.id + ' / Big poly rim', c.parent, polyCmds(0, 0, R * 1.24, sides, 0), { stroke: c.sc.fg, width: Math.max(1.5, U * 0.003), alpha: k * 2.2 });
+  [[p1, 1, k], [p2, -1.4, k * 0.8], [p3, 0.6, k * 2.2]].forEach(function (sp) {
+    c.graph.byId[sp[0]].attrs.position = pos;
+    V.animate(c, sp[0], function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.8), sc = 0.86 + 0.14 * q;
+      return { 'scale.x': sc, 'scale.y': sc, rotation: -((t * spd + rot0) * sp[1]), alpha: sp[2] * q };
+    });
+  });
+});
+
+/* 3. xpShiftRows */
+register('xpShiftRows', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpShiftRows'), seed = H.p(P, 'seed', 1), rh = U * 0.105, bw = rh * H.p(P, 'ar', 2.6);
+  var spd = H.p(P, 'spd', 0.07), k = H.p(P, 'k', 0.04), rows = Math.min(24, Math.ceil(Hh / rh));
+  for (var j = 0; j < rows; j++) {
+    (function (rj) {
+      var cmds = [];
+      for (var x = -bw * 2; x < W + bw * 2; x += bw * 2) {
+        cmds = cmds.concat(G.rect(x - W / 2, Hh / 2 - (rj + 1) * rh, bw, rh));
+      }
+      var dir = rj % 2 ? -1 : 1, spMult = 0.5 + N.random(seed, rj), off0 = N.random(seed, rj, 2) * bw * 2;
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Shift row ' + rj, c.parent, cmds, { fill: c.sc.fg, alpha: k });
+      V.animate(c, id, function (e, f) {
+        var off = wrap(clk.absTime(f) * bw * spd * dir * spMult + off0, bw * 2) - bw * 2;
+        return { 'position.x': off, alpha: k * clk.enter(f, 0.6) };
+      });
+    })(j);
+  }
+});
+
+/* 4. xpNestTri */
+register('xpNestTri', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpNestTri'), sides = Math.max(3, Math.round(H.p(P, 'sides', 3)));
+  var cy = Hh * H.p(P, 'cy', 0.5), k = H.p(P, 'k', 0.1), pos = H.toScene(c, W / 2, cy);
+  for (var i = 0; i < 8; i++) {
+    (function (idx) {
+      var baseR = U * (0.14 + idx * 0.17);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Nest poly ' + idx, c.parent,
+        polyCmds(0, 0, baseR, sides, Math.PI / 2), { stroke: c.sc.fg, width: Math.max(1.5, U * 0.005), alpha: k });
+      c.graph.byId[id].attrs.position = pos;
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.8);
+        var sc = (1 + 0.05 * Math.sin(t * 0.5 - idx * 0.6)) * (0.7 + 0.3 * q);
+        var rot = Math.sin(t * 0.22 - idx * 0.38) * 28;
+        return { 'scale.x': sc, 'scale.y': sc, rotation: -rot, alpha: k * q };
+      });
+    })(i);
+  }
+});
+
+/* 5. xpCornerArcs */
+register('xpCornerArcs', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpCornerArcs'), k = H.p(P, 'k', 0.05);
+  var cs = P.diag ? [[0, 0], [W, Hh]] : [[W, 0], [0, Hh]];
+  for (var cc = 0; cc < 2; cc++) {
+    for (var i = 0; i < 5; i++) {
+      (function (ci, idx) {
+        var baseR = U * (0.2 + 0.19 * idx), col = ci && idx === 1 ? c.sc.accent : c.sc.fg;
+        var a = k * (1 - idx * 0.14), lw = U * 0.085 * (1 - idx * 0.1);
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Corner arc ' + ci + '_' + idx, c.parent,
+          G.ellipse(0, 0, baseR, baseR), { stroke: col, width: lw, alpha: a });
+        c.graph.byId[id].attrs.position = H.toScene(c, cs[ci][0], cs[ci][1]);
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.8);
+          var sc = (1 + 0.07 * Math.sin(t * 0.5 - idx * 0.7 + ci * 2.2)) * (0.6 + 0.4 * q);
+          return { 'scale.x': sc, 'scale.y': sc, alpha: a * q };
+        });
+      })(cc, i);
+    }
+  }
+});
+
+/* 6. xpPanels */
+register('xpPanels', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpPanels'), s = H.p(P, 'seed', 1) % 9, k = H.p(P, 'k', 0.035), lw = Math.max(1.5, U * 0.003);
+  var flipX = P.flip ? -1 : 1, flipY = P.flipY ? -1 : 1;
+  function coords(f) {
+    var t = clk.absTime(f);
+    var x1 = W * (0.36 + 0.07 * Math.sin(t * 0.21 + s));
+    var y1 = Hh * (0.42 + 0.09 * Math.sin(t * 0.17 + s * 2));
+    var x2 = x1 + (W - x1) * (0.5 + 0.18 * Math.sin(t * 0.13 + s * 3));
+    return { x1: x1, y1: y1, x2: x2, q: clk.enter(f, 0.6) };
+  }
+  var rig = c.graph.add('null', c.cut.id + ' / Panels rig', c.parent, c.cut.start, c.cut.end,
+    { 'scale.x': flipX, 'scale.y': flipY });
+  var topP = C.shape(c.graph, c.cut, c.cut.id + ' / Panel top', rig, G.rect(0, -1, 1, 1), { fill: c.sc.fg, alpha: k });
+  var midP = C.shape(c.graph, c.cut, c.cut.id + ' / Panel mid', rig, G.rect(0, -1, 1, 1), { fill: c.sc.accent, alpha: k * 1.3 });
+  var rgtP = C.shape(c.graph, c.cut, c.cut.id + ' / Panel right', rig, G.rect(0, -1, 1, 1), { fill: c.sc.fg, alpha: k * 2 });
+  var l1 = C.shape(c.graph, c.cut, c.cut.id + ' / Panel rule V1', rig, G.rect(-lw / 2, -Hh / 2, lw, Hh), { fill: c.sc.fg, alpha: 0.13 });
+  var l2 = C.shape(c.graph, c.cut, c.cut.id + ' / Panel rule H', rig, G.rect(0, -lw / 2, 1, lw), { fill: c.sc.fg, alpha: 0.13 });
+  var l3 = C.shape(c.graph, c.cut, c.cut.id + ' / Panel rule V2', rig, G.rect(-lw / 2, 0, lw, 1), { fill: c.sc.fg, alpha: 0.13 });
+  V.animate(c, topP, function (e, f) {
+    var v = coords(f);
+    return { 'position.x': v.x1 - W / 2, 'position.y': Hh / 2, 'scale.x': W - v.x1, 'scale.y': v.y1, alpha: k * v.q };
+  });
+  V.animate(c, midP, function (e, f) {
+    var v = coords(f);
+    return { 'position.x': v.x1 - W / 2, 'position.y': Hh / 2 - v.y1, 'scale.x': v.x2 - v.x1, 'scale.y': Hh - v.y1, alpha: k * 1.3 * v.q };
+  });
+  V.animate(c, rgtP, function (e, f) {
+    var v = coords(f);
+    return { 'position.x': v.x2 - W / 2, 'position.y': Hh / 2 - v.y1, 'scale.x': W - v.x2, 'scale.y': Hh - v.y1, alpha: k * 2 * v.q };
+  });
+  V.animate(c, l1, function (e, f) { var v = coords(f); return { 'position.x': v.x1 - W / 2, alpha: 0.13 * v.q }; });
+  V.animate(c, l2, function (e, f) { var v = coords(f); return { 'position.x': v.x1 - W / 2, 'position.y': Hh / 2 - v.y1, 'scale.x': W - v.x1, alpha: 0.13 * v.q }; });
+  V.animate(c, l3, function (e, f) { var v = coords(f); return { 'position.x': v.x2 - W / 2, 'position.y': -Hh / 2, 'scale.y': Hh - v.y1, alpha: 0.13 * v.q }; });
+});
+
+/* 7. xpPlusField */
+register('xpPlusField', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpPlusField'), sp = Math.max(U * H.p(P, 'sp', 0.12), Math.sqrt(W * Hh / 120));
+  var arm = sp * 0.17, k = H.p(P, 'k', 0.11), lw = Math.max(1.5, U * 0.0035);
+  var nx = Math.min(14, Math.ceil(W / sp) + 1), ny = Math.min(10, Math.ceil(Hh / sp) + 1);
+  var ox = (W - (nx - 1) * sp) / 2, oy = (Hh - (ny - 1) * sp) / 2;
+  var plusCmds = [['M', -arm, 0], ['L', arm, 0], ['M', 0, -arm], ['L', 0, arm]];
+  for (var j = 0; j < ny; j++) {
+    for (var i = 0; i < nx; i++) {
+      (function (ci, cj) {
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Plus ' + ci + '_' + cj, c.parent, plusCmds,
+          { stroke: c.sc.fg, width: lw, alpha: k });
+        c.graph.byId[id].attrs.position = H.toScene(c, ox + ci * sp, oy + cj * sp);
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.6);
+          var ang = E.inOutCubic(0.5 + 0.5 * Math.sin(t * 0.7 - ci * 0.42 - cj * 0.3)) * 90;
+          return { rotation: -ang, alpha: k * q };
+        });
+      })(i, j);
+    }
+  }
+});
+
+/* 8. xpFoldPlanes */
+register('xpFoldPlanes', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpFoldPlanes'), seed = H.p(P, 'seed', 1), k = H.p(P, 'k', 0.04);
+  for (var i = 0; i < 4; i++) {
+    (function (idx) {
+      var pts = [];
+      for (var j = 0; j < 3; j++) {
+        var a = TAU * (N.random(seed, idx, j) * 0.25 + j / 3 + idx * 0.13), rd = 0.5 + 0.4 * N.random(seed, idx, j, 2);
+        pts.push([W * (0.5 + Math.cos(a) * rd), Hh * (0.5 + Math.sin(a) * rd)]);
+      }
+      var id = H.poly(c, 'Fold plane ' + idx, pts, true,
+        { fill: idx === 2 ? c.sc.accent : c.sc.fg, stroke: c.sc.fg, width: Math.max(1.5, U * 0.002), alpha: k });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.8);
+        var ox = W * 0.09 * R.noise(t * 0.07 + idx * 3.1, seed + idx * 7);
+        var oy = Hh * 0.09 * R.noise(t * 0.06 + idx * 5.3, seed + idx * 11 + 40);
+        return { 'position.x': ox, 'position.y': -oy, rotation: -(Math.sin(t * 0.08 + idx) * 6), alpha: k * q };
+      });
+    })(i);
+  }
+});
+
+/* 9. xpFlowLines */
+register('xpFlowLines', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpFlowLines'), seed = H.p(P, 'seed', 1), n = Math.max(6, Math.round(H.p(P, 'n', 20)));
+  var hz = !!P.horiz, L = hz ? W : Hh, X = hz ? Hh : W, amp = X * 0.075, ST = 26, k = H.p(P, 'k', 0.13);
+  for (var i = -1; i <= n; i++) {
+    (function (idx) {
+      var base = (idx + 0.5) / n * X, cmds = [];
+      for (var q = 0; q <= ST; q++) {
+        var u = q / ST, v = base + amp * (R.noise(u * 2.2 + idx * 0.09, seed) + 0.5 * R.noise(u * 5 + idx * 0.05, seed + 9)), a = u * L;
+        var pt = hz ? [a - W / 2, Hh / 2 - v] : [v - W / 2, Hh / 2 - a];
+        cmds.push([q ? 'L' : 'M', pt[0], pt[1]]);
+      }
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Flow line ' + idx, c.parent, cmds,
+        { stroke: c.sc.fg, width: Math.max(1.5, U * 0.0022), alpha: k });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.6), sh = amp * 0.6 * Math.sin(t * 0.45 + idx * 0.25);
+        return hz ? { 'position.y': sh, alpha: k * q } : { 'position.x': sh, alpha: k * q };
+      });
+    })(i);
+  }
+});
+
+/* 10. xpHorizonLines */
+register('xpHorizonLines', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpHorizonLines'), cyF = H.p(P, 'cy', 0.5), spd = H.p(P, 'spd', 0.045), k = H.p(P, 'k', 0.09);
+  var hLine = C.shape(c.graph, c.cut, c.cut.id + ' / Horizon center', c.parent, G.rect(-W / 2, -1, W, 2), { fill: c.sc.accent, alpha: 0.22 });
+  V.animate(c, hLine, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.6), y0 = Hh * (cyF + 0.04 * Math.sin(t * 0.19));
+    return { 'position.y': Hh / 2 - y0, 'scale.x': Math.max(0.01, q), alpha: 0.22 * q };
+  });
+  var n = 9;
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      [-1, 1].forEach(function (side) {
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Depth rule ' + idx + '_' + side, c.parent,
+          G.rect(-W / 2, -U * 0.005, W, U * 0.01), { fill: c.sc.fg, alpha: k });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.6), p = wrap(idx / n + t * spd, 1);
+          var y0 = Hh * (cyF + 0.04 * Math.sin(t * 0.19)), d = Hh * 0.66 * Math.pow(p, 2.3);
+          var sy = Math.max(0.15, p), a = k * Math.min(1, p * 4) * (1 - H.smoothstep(0.8, 1, p)) * q;
+          return { 'position.y': Hh / 2 - (y0 + side * d), 'scale.y': sy, alpha: a };
+        });
+      });
+    })(i);
+  }
+});
+
+/* 11. xpDialTicks */
+register('xpDialTicks', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpDialTicks'), cx = W * H.p(P, 'cx', 0.5), cy = Hh * H.p(P, 'cy', 0.5);
+  var spd = H.p(P, 'spd', 2), k = H.p(P, 'k', 0.15), pos = H.toScene(c, cx, cy);
+  var NS = [48, 72, 120, 180], RS = [0.3, 0.47, 0.7, 1.02], SP = [1, -0.6, 0.35, -0.2];
+  for (var r = 0; r < 4; r++) {
+    (function (ri) {
+      var Ntick = NS[ri], R = U * RS[ri], cmds = [];
+      for (var i = 0; i < Ntick; i++) {
+        var a = i / Ntick * TAU, cs = Math.cos(a), sn = Math.sin(a), len = U * (i % 6 ? 0.016 : 0.04);
+        cmds.push(['M', cs * R, -sn * R], ['L', cs * (R + len), -sn * (R + len)]);
+      }
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Dial ring ' + ri, c.parent, cmds,
+        { stroke: c.sc.fg, width: Math.max(1.5, U * 0.0034), alpha: k });
+      c.graph.byId[id].attrs.position = pos;
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.8), sc = 0.85 + 0.15 * q;
+        return { 'scale.x': sc, 'scale.y': sc, rotation: -(t * spd * SP[ri]), alpha: k * q };
+      });
+    })(r);
+  }
+});
+
+/* 12. xpSineWeave */
+register('xpSineWeave', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpSineWeave'), seed = H.p(P, 'seed', 1), nb = Hh > W ? 5 : 3;
+  var amp = Hh / nb * 0.3, ST = 48, k = H.p(P, 'k', 0.13), spd = H.p(P, 'spd', 0.3);
+  for (var b = 0; b < nb; b++) {
+    (function (bi) {
+      var cy = Hh * (bi + 0.5) / nb, kx = TAU * (1.3 + 1.2 * N.random(seed, bi)), ph = N.random(seed, bi, 2) * TAU;
+      var lam = W / (1.3 + 1.2 * N.random(seed, bi)), span = W + lam * 2;
+      [-1, 1].forEach(function (sg) {
+        var cmds = [];
+        for (var q = 0; q <= ST; q++) {
+          var x = -lam + span * q / ST, u = x / W;
+          var y = sg * amp * Math.sin(u * kx + ph) * (0.75 + 0.25 * Math.sin(u * 3.1 + bi));
+          cmds.push([q ? 'L' : 'M', x - W / 2, -y]);
+        }
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Sine weave ' + bi + '_' + sg, c.parent, cmds,
+          { stroke: c.sc.fg, width: Math.max(1.5, U * 0.0035), alpha: k });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.6), dir = bi % 2 ? -1 : 1;
+          var ox = wrap(t * spd * dir * lam / TAU, lam) - lam * 0.5;
+          return { 'position.x': ox, 'position.y': Hh / 2 - cy, alpha: k * q };
+        });
+      });
+    })(b);
+  }
+});
+
+/* 13. xpLissajous */
+register('xpLissajous', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpLissajous'), ab = Array.isArray(P.ab) ? P.ab : [3, 2], k = H.p(P, 'k', 0.15);
+  var spd = H.p(P, 'spd', 0.1), seed = H.p(P, 'seed', 1) % 6, rx = W * 0.46, ry = Hh * 0.44, Npts = 180;
+  [0, 1].forEach(function (ci) {
+    var dl = seed - ci * 0.35, cmds = [];
+    for (var i = 0; i <= Npts; i++) {
+      var th = i / Npts * TAU;
+      cmds.push([i ? 'L' : 'M', rx * Math.sin(ab[0] * th + dl), -ry * Math.sin(ab[1] * th)]);
+    }
+    var aBase = k * (ci ? 0.45 : 1);
+    var id = C.shape(c.graph, c.cut, c.cut.id + ' / Lissajous ' + ci, c.parent, cmds,
+      { stroke: c.sc.fg, width: Math.max(1.5, U * 0.0026), alpha: aBase });
+    V.animate(c, id, function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 1.0);
+      return { rotation: -(t * spd * 18 * (ci ? -1 : 1)), 'scale.x': 0.8 + 0.2 * q, 'scale.y': 0.8 + 0.2 * q, alpha: aBase * q };
+    });
+  });
+});
+
+/* 14. xpPendulums */
+register('xpPendulums', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpPendulums'), seed = H.p(P, 'seed', 1), k = H.p(P, 'k', 0.15), amp = H.p(P, 'amp', 7);
+  var n = Math.min(18, Math.max(6, Math.round(W / (U * 0.14))));
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var x = W * (idx + 0.5 + 0.3 * (N.random(seed, idx, 1) * 2 - 1)) / n;
+      var L = Hh * (0.28 + 0.55 * N.random(seed, idx, 2)), ph = N.random(seed, idx, 3) * TAU;
+      var r = U * (0.008 + 0.01 * N.random(seed, idx, 4));
+      var piv = c.graph.add('null', c.cut.id + ' / Pendulum ' + idx, c.parent, c.cut.start, c.cut.end,
+        { position: H.toScene(c, x, 0) });
+      C.shape(c.graph, c.cut, c.cut.id + ' / Pendulum wire ' + idx, piv,
+        [['M', 0, 0], ['L', 0, -L]], { stroke: c.sc.fg, width: Math.max(1.5, U * 0.002), alpha: k });
+      C.shape(c.graph, c.cut, c.cut.id + ' / Pendulum bob ' + idx, piv,
+        G.ellipse(0, -L, r, r), { fill: c.sc.fg, alpha: k * 1.3 });
+      V.animate(c, piv, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.9);
+        var a = amp * Math.sin(t * 0.9 / Math.sqrt(0.3 + L / Hh) + ph);
+        return { rotation: a, 'scale.y': Math.max(0.05, q), alpha: q };
+      });
+    })(i);
+  }
+});
+
+/* 15. xpOrbits */
+register('xpOrbits', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), big = Math.max(W, Hh);
+  var clk = H.bgClock(c, 'xpOrbits'), seed = H.p(P, 'seed', 1), k = H.p(P, 'k', 0.15), spd = H.p(P, 'spd', 0.3);
+  var tilt = H.p(P, 'tilt', 0) + (Hh > W ? 90 : 0);
+  var rig = c.graph.add('null', c.cut.id + ' / Orbits rig', c.parent, c.cut.start, c.cut.end,
+    { position: H.toScene(c, W * H.p(P, 'cx', 0.5), Hh * 0.5), rotation: -tilt });
+  C.shape(c.graph, c.cut, c.cut.id + ' / Orbit star', rig, G.ellipse(0, 0, U * 0.035, U * 0.035), { fill: c.sc.fg, alpha: k * 0.6 });
+  for (var i = 0; i < 5; i++) {
+    (function (idx) {
+      var rx = big * (0.16 + 0.13 * idx), ry = rx * 0.36, pr = U * (0.009 + 0.008 * N.random(seed, idx, 2));
+      var ph = N.random(seed, idx) * TAU, dir = idx % 2 ? -1 : 1, spDiv = 0.6 + idx * 0.5;
+      var ring = C.shape(c.graph, c.cut, c.cut.id + ' / Orbit ring ' + idx, rig,
+        G.ellipse(0, 0, rx, ry), { stroke: c.sc.fg, width: Math.max(1.5, U * 0.002), alpha: k });
+      var planet = C.shape(c.graph, c.cut, c.cut.id + ' / Orbit planet ' + idx, rig,
+        G.ellipse(0, 0, pr, pr), { fill: c.sc.accent, alpha: 0.45 });
+      V.animate(c, ring, function (e, f) {
+        var q = clk.enter(f, 0.9), sc = 0.8 + 0.2 * q;
+        return { 'scale.x': sc, 'scale.y': sc, alpha: k * q };
+      });
+      V.animate(c, planet, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.9), sc = 0.8 + 0.2 * q;
+        var a = t * spd / spDiv * dir + ph;
+        return { 'position.x': Math.cos(a) * rx * sc, 'position.y': -Math.sin(a) * ry * sc, alpha: 0.45 * q };
+      });
+    })(i);
+  }
+});
+
+/* 16. xpMarchDash */
+register('xpMarchDash', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpMarchDash'), seed = H.p(P, 'seed', 1), n = Math.max(4, Math.round(H.p(P, 'n', 11)));
+  var spd = H.p(P, 'spd', 0.04), k = H.p(P, 'k', 0.11), lw = Math.max(1.5, U * 0.005);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var y = Hh * (idx + 0.5) / n, d = U * (0.04 + 0.24 * N.random(seed, idx)), g = d * (0.5 + N.random(seed, idx, 2));
+      var per = d + g, cmds = [];
+      for (var x = -per; x < W + per * 2; x += per) {
+        cmds.push(['M', x - W / 2, 0], ['L', x + d - W / 2, 0]);
+      }
+      var col = idx === (seed % n) ? c.sc.accent : c.sc.fg;
+      var a = k * (0.7 + 0.7 * N.random(seed, idx, 5)), dir = idx % 2 ? -1 : 1;
+      var spM = 0.5 + 1.5 * N.random(seed, idx, 3), ph = N.random(seed, idx, 4) * per;
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Dash row ' + idx, c.parent, cmds, { stroke: col, width: lw, alpha: a });
+      V.animate(c, id, function (e, f) {
+        var ox = wrap(clk.absTime(f) * U * spd * dir * spM + ph, per) - per;
+        return { 'position.x': ox, 'position.y': Hh / 2 - y, alpha: a * clk.enter(f, 0.6) };
+      });
+    })(i);
+  }
+});
+
+/* 17. xpDepthGrid */
+register('xpDepthGrid', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpDepthGrid'), base = U * 0.1, spd = H.p(P, 'spd', 0.045), k = H.p(P, 'k', 0.11);
+  var nx = Math.min(12, Math.ceil(W / 2 / base)), ny = Math.min(12, Math.ceil(Hh / 2 / base));
+  var cmds = [], lw = Math.max(1.2, U * 0.0022);
+  for (var i = -nx; i <= nx; i++) cmds.push(['M', (i + 0.5) * base, -Hh / 2], ['L', (i + 0.5) * base, Hh / 2]);
+  for (var j = -ny; j <= ny; j++) cmds.push(['M', -W / 2, (j + 0.5) * base], ['L', W / 2, (j + 0.5) * base]);
+  for (var l = 0; l < 3; l++) {
+    (function (li) {
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Depth grid ' + li, c.parent, cmds, { stroke: c.sc.fg, width: lw, alpha: k });
+      V.animate(c, id, function (e, f) {
+        var p = wrap(clk.absTime(f) * spd + li / 3, 1), sc = Math.pow(2, p);
+        return { 'scale.x': sc, 'scale.y': sc, alpha: k * Math.sin(Math.PI * p) * clk.enter(f, 0.6) };
+      });
+    })(l);
+  }
+});
+
+/* 18. xpStringArt */
+register('xpStringArt', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpStringArt'), spd = H.p(P, 'spd', 0.05), k = H.p(P, 'k', 0.11), Nline = 22;
+  var cs = P.diag ? [[0, 0, 1, 1], [W, Hh, -1, -1]] : [[W, 0, -1, 1], [0, Hh, 1, -1]];
+  var lw = Math.max(1.5, U * 0.0018);
+  cs.forEach(function (sp, ci) {
+    var x0 = sp[0], y0 = sp[1], dx = sp[2], dy = sp[3], Lx = W * 0.85, Ly = Hh * 0.85;
+    for (var i = 0; i < Nline; i++) {
+      (function (idx) {
+        var u0 = (idx + 0.5) / Nline, pA = [x0, y0 + dy * Ly * (1 - u0)], pB = [x0 + dx * Lx * u0, y0];
+        var id = H.line(c, 'String ' + ci + '_' + idx, [pA, pB], c.sc.fg, lw, k);
+        V.animate(c, id, function (e, f) {
+          var q = clk.enter(f, 0.9), ph = 0.5 + 0.5 * Math.sin(clk.absTime(f) * spd * TAU + idx * 0.25 + ci);
+          return { 'scale.x': Math.max(0.05, q), 'scale.y': Math.max(0.05, q), alpha: k * (0.45 + 0.55 * ph) * q };
+        });
+      })(i);
+    }
+  });
+});
+
+/* 19. xpDotSheet */
+register('xpDotSheet', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpDotSheet'), cols = 20, rows = 10, k = H.p(P, 'k', 0.18), topFlip = P.top ? -1 : 1;
+  var rig = c.graph.add('null', c.cut.id + ' / Dot sheet', c.parent, c.cut.start, c.cut.end, { 'scale.y': topFlip });
+  for (var j = 0; j < rows; j++) {
+    (function (rj) {
+      var f = rj / (rows - 1), near = 1 - f, yb = Hh * (0.4 + 0.58 * Math.pow(near, 1.7)), sz = 0.4 + 0.6 * near;
+      var cmds = [];
+      for (var i = 0; i < cols; i++) {
+        var px = W * (-0.06 + 1.12 * i / (cols - 1)) + U * 0.02 * rj - W / 2, r = U * 0.0065 * sz;
+        cmds = cmds.concat(G.ellipse(px, -Math.sin(i * 0.45 + rj * 0.2) * U * 0.03 * sz, r, r));
+      }
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Dot row ' + rj, rig, cmds, { fill: c.sc.fg, alpha: k });
+      V.animate(c, id, function (e, f0) {
+        var t = clk.absTime(f0), q = clk.enter(f0, 0.6);
+        var dy = Math.sin(t * 0.9 - rj * 0.6) * U * 0.035 * sz;
+        return { 'position.y': Hh / 2 - (yb - dy), alpha: k * q };
+      });
+    })(j);
+  }
+});
+
+/* 20. xpWindStreaks */
+register('xpWindStreaks', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), D = Math.hypot(W, Hh);
+  var clk = H.bgClock(c, 'xpWindStreaks'), seed = H.p(P, 'seed', 1), dir = H.p(P, 'dir', 1);
+  var spd = H.p(P, 'spd', 0.07), k = H.p(P, 'k', 0.16);
+  var rig = c.graph.add('null', c.cut.id + ' / Wind streaks', c.parent, c.cut.start, c.cut.end,
+    { rotation: -H.p(P, 'ang', 0) });
+  for (var b = 0; b < 3; b++) {
+    var d = (b + 1) / 3, a = k * (0.45 + 0.55 * d), lw = Math.max(1.2, U * 0.0018 * (1 + d * 1.4));
+    for (var i = 0; i < 12; i++) {
+      (function (bi, idx) {
+        var len = U * (0.05 + 0.16 * d) * (0.6 + 0.8 * N.random(seed, bi, idx, 1));
+        var xOff = N.random(seed, bi, idx, 2) * (D + len), yBase = (N.random(seed, bi, idx, 3) - 0.5) * D;
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Wind ' + bi + '_' + idx, rig,
+          [['M', 0, 0], ['L', len, 0]], { stroke: c.sc.fg, width: lw, alpha: a });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.6);
+          var x = wrap(xOff + dir * t * D * spd * (0.4 + d), D + len) - D / 2 - len;
+          var y = yBase + U * 0.012 * Math.sin(t * 0.8 + idx);
+          return { 'position.x': x, 'position.y': -y, alpha: a * q };
+        });
+      })(b, i);
+    }
+  }
+});
+
+/* 21. xpPlexus */
+register('xpPlexus', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpPlexus'), seed = H.p(P, 'seed', 1), n = Math.min(20, Math.max(10, Math.round(H.p(P, 'n', 20))));
+  var D = Math.max(W, Hh) * 0.25, k = H.p(P, 'k', 0.22), lw = Math.max(1.2, U * 0.0018);
+  var nodes = [];
+  for (var i = 0; i < n; i++) {
+    nodes.push({
+      bx: W * (N.random(seed, i, 1) * 1.1 - 0.05),
+      by: Hh * (N.random(seed, i, 2) * 1.1 - 0.05),
+      wx: 0.15 + 0.2 * N.random(seed, i, 3), px: N.random(seed, i, 4) * TAU,
+      wy: 0.13 + 0.2 * N.random(seed, i, 5), py: N.random(seed, i, 6) * TAU
+    });
+  }
+  function npos(nd, t) {
+    return [nd.bx + U * 0.07 * Math.sin(t * nd.wx + nd.px), nd.by + U * 0.07 * Math.cos(t * nd.wy + nd.py)];
+  }
+  nodes.forEach(function (nd, idx) {
+    var r = U * 0.005;
+    var dotId = C.shape(c.graph, c.cut, c.cut.id + ' / Plexus node ' + idx, c.parent, G.ellipse(0, 0, r, r), { fill: c.sc.fg, alpha: k });
+    V.animate(c, dotId, function (e, f) {
+      var pt = npos(nd, clk.absTime(f)), p = H.toScene(c, pt[0], pt[1]);
+      return { 'position.x': p[0], 'position.y': p[1], alpha: k * clk.enter(f, 0.6) };
+    });
+  });
+  for (var a = 0; a < n; a++) {
+    for (var b = a + 1; b < n; b++) {
+      if (Math.hypot(nodes[a].bx - nodes[b].bx, nodes[a].by - nodes[b].by) > D + U * 0.14) continue;
+      (function (ia, ib) {
+        var edgeId = C.shape(c.graph, c.cut, c.cut.id + ' / Plexus edge ' + ia + '_' + ib, c.parent,
+          [['M', 0, 0], ['L', 1, 0]], { stroke: c.sc.fg, width: lw, alpha: k });
+        V.animate(c, edgeId, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.6);
+          var pa = npos(nodes[ia], t), pb = npos(nodes[ib], t);
+          var dx = pb[0] - pa[0], dy = pb[1] - pa[1], dist = Math.hypot(dx, dy);
+          if (dist >= D) return { alpha: 0 };
+          var s0 = H.toScene(c, pa[0], pa[1]), ang = Math.atan2(-dy, dx) / DEG;
+          return { 'position.x': s0[0], 'position.y': s0[1], rotation: ang, 'scale.x': Math.max(1, dist), alpha: k * (1 - dist / D) * q };
+        });
+      })(a, b);
+    }
+  }
+});
+
+/* 22. xpPhyllo */
+register('xpPhyllo', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpPhyllo'), cx = W * H.p(P, 'cx', 0.5), cy = Hh * H.p(P, 'cy', 0.5);
+  var spd = H.p(P, 'spd', 1.6), k = H.p(P, 'k', 0.14), Npts = 240, GA = 137.508 * DEG;
+  var cc = Math.hypot(W, Hh) * 0.72 / Math.sqrt(Npts), cmds = [];
+  for (var i = 1; i < Npts; i++) {
+    var q = Math.sqrt(i), r = cc * q, a = i * GA;
+    var rad = U * 0.0095 * (0.75 + 0.45 * Math.sin(q * 0.6));
+    cmds = cmds.concat(G.ellipse(Math.cos(a) * r, -Math.sin(a) * r, rad, rad));
+  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Phyllotaxis', c.parent, cmds, { fill: c.sc.fg, alpha: k });
+  c.graph.byId[id].attrs.position = H.toScene(c, cx, cy);
+  V.animate(c, id, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.9);
+    return { rotation: -(t * spd), 'scale.x': 0.5 + 0.5 * q, 'scale.y': 0.5 + 0.5 * q, alpha: k * q };
+  });
+});
+
+/* 23. xpBlinkCells */
+register('xpBlinkCells', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpBlinkCells'), seed = H.p(P, 'seed', 1);
+  var cell = Math.max(U * H.p(P, 'cell', 0.095), Math.sqrt(W * Hh / 180)), gap = cell * 0.06, k = H.p(P, 'k', 0.09);
+  var nx = Math.min(18, Math.ceil(W / cell)), ny = Math.min(12, Math.ceil(Hh / cell));
+  var ox = (W - nx * cell) / 2, oy = (Hh - ny * cell) / 2;
+  for (var j = 0; j < ny; j++) {
+    for (var i = 0; i < nx; i++) {
+      (function (ci, cj) {
+        var ph = N.random(seed, ci, cj) * 60, ns = (seed + ci * 31 + cj * 17) % 9973;
+        var id = H.rect(c, 'Blink cell ' + ci + '_' + cj,
+          ox + ci * cell + gap, oy + cj * cell + gap, cell - gap * 2, cell - gap * 2, { fill: c.sc.fg, alpha: k });
+        V.animate(c, id, function (e, f) {
+          var v = R.noise(clk.absTime(f) * 0.45 + ph, ns) - 0.3;
+          return { alpha: v > 0 ? cl(v * 2) * k * clk.enter(f, 0.6) : 0 };
+        });
+      })(i, j);
+    }
+  }
+});
+
+/* 24. xpDriftMarks */
+register('xpDriftMarks', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpDriftMarks'), seed = H.p(P, 'seed', 1), n = Math.min(24, Math.max(8, Math.round(H.p(P, 'n', 16))));
+  var M = U * 0.1, k = H.p(P, 'k', 0.18), lw = Math.max(1.5, U * 0.003);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var r = U * (0.018 + 0.03 * N.random(seed, idx, 1));
+      var x0 = N.random(seed, idx, 2) * (W + M * 2), vx = U * 0.02 * (N.random(seed, idx, 3) * 2 - 1);
+      var y0 = N.random(seed, idx, 4) * (Hh + M * 2), vy = U * 0.014 * (N.random(seed, idx, 5) * 2 - 1);
+      var rotV = 0.3 * (N.random(seed, idx, 6) * 2 - 1) / DEG, rot0 = N.random(seed, idx, 7) * 360;
+      var ty = Math.floor(N.random(seed, idx, 8) * 4);
+      var cmds = ty === 0 ? G.ellipse(0, 0, r, r)
+        : ty === 1 ? [['M', -r, 0], ['L', r, 0], ['M', 0, -r], ['L', 0, r]]
+          : polyCmds(0, 0, r * 1.15, ty === 2 ? 3 : 4, 0);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Drift mark ' + idx, c.parent, cmds, { stroke: c.sc.fg, width: lw, alpha: k });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), x = wrap(x0 + t * vx, W + M * 2) - M, y = wrap(y0 + t * vy, Hh + M * 2) - M;
+        var pos = H.toScene(c, x, y);
+        return { 'position.x': pos[0], 'position.y': pos[1], rotation: -(rot0 + t * rotV), alpha: k * clk.enter(f, 0.6) };
+      });
+    })(i);
+  }
+});
+
+/* 25. xpTwinDiscs */
+register('xpTwinDiscs', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpTwinDiscs'), k = H.p(P, 'k', 0.045), ph = H.p(P, 'ph', 0), R = U * 0.56, v = Hh > W;
+  var d1 = C.shape(c.graph, c.cut, c.cut.id + ' / Twin disc A', c.parent, G.ellipse(0, 0, R, R), { fill: c.sc.fg, alpha: k });
+  var d2 = C.shape(c.graph, c.cut, c.cut.id + ' / Twin disc B', c.parent, G.ellipse(0, 0, R * 0.9, R * 0.9), { fill: c.sc.accent, alpha: k * 1.3 });
+  [[-1, d1, k], [1, d2, k * 1.3]].forEach(function (sp) {
+    V.animate(c, sp[1], function (e, f) {
+      var t = clk.absTime(f), q = clk.enter(f, 0.9), sc = 0.8 + 0.2 * q;
+      var a = 0.2 + 0.07 * Math.sin(t * 0.21 + ph), b = 0.09 * Math.cos(t * 0.17 + ph);
+      var cx = W * (0.5 + sp[0] * (v ? b : a)), cy = Hh * (0.5 + sp[0] * (v ? a : b));
+      var pos = H.toScene(c, cx, cy);
+      return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': sc, 'scale.y': sc, alpha: sp[2] * q };
+    });
+  });
+});
+
+/* 26. xpLeanVignette */
+register('xpLeanVignette', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), dk = H.dark(c.sc.bg);
+  var clk = H.bgClock(c, 'xpLeanVignette'), spd = H.p(P, 'spd', 0.22), seed = H.p(P, 'seed', 1) % 6;
+  var k = H.p(P, 'k', 1) * (dk ? 0.5 : 0.16), R = Math.hypot(W, Hh) * 0.9;
+  for (var i = 0; i < 4; i++) {
+    (function (idx) {
+      var rIn = mix(U * 0.3, R * 0.85, idx / 4), cmds = G.rect(-W * 1.2, -Hh * 1.2, W * 2.4, Hh * 2.4);
+      cmds.push(['M', rIn, 0]);
+      for (var j = 27; j >= 0; j--) cmds.push(['L', Math.cos(j * TAU / 28) * rIn, Math.sin(j * TAU / 28) * rIn]);
+      cmds.push(['Z']);
+      var aBase = k * ((idx + 1) / 4) * 0.38;
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Lean vignette ' + idx, c.parent, cmds, { fill: '#000000', alpha: aBase });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 0.9), a = t * spd + seed;
+        var pos = H.toScene(c, W * (0.5 + 0.24 * Math.cos(a)), Hh * (0.5 + 0.24 * Math.sin(a)));
+        return { 'position.x': pos[0], 'position.y': pos[1], alpha: aBase * q };
+      });
+    })(i);
+  }
+  var lc = lightOf(c.sc);
+  var glow = C.shape(c.graph, c.cut, c.cut.id + ' / Lean glow', c.parent, G.ellipse(0, 0, U * 0.5, U * 0.5), { fill: lc, alpha: 0.06 });
+  V.animate(c, glow, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 0.9), a = t * spd + seed;
+    var pos = H.toScene(c, W * (0.5 + 0.24 * Math.cos(a)), Hh * (0.5 + 0.24 * Math.sin(a)));
+    return { 'position.x': pos[0], 'position.y': pos[1], alpha: 0.06 * q };
+  });
+});
+
+/* 27. xpCapsules */
+register('xpCapsules', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh), D = Math.hypot(W, Hh);
+  var clk = H.bgClock(c, 'xpCapsules'), seed = H.p(P, 'seed', 1), spd = H.p(P, 'spd', 0.025), k = H.p(P, 'k', 0.045);
+  var hh = U * 0.17, gapY = U * 0.27, Lp = U * 1.7, nl = Math.min(5, Math.ceil(D / 2 / gapY));
+  var rig = c.graph.add('null', c.cut.id + ' / Capsules rig', c.parent, c.cut.start, c.cut.end, { rotation: -H.p(P, 'ang', 20) });
+  for (var j = -nl; j <= nl; j++) {
+    (function (rj) {
+      var len = U * (0.55 + 0.75 * N.random(seed, rj + 9)), off0 = N.random(seed, rj + 9, 3) * Lp;
+      var dir = rj % 2 ? 1 : -1, spM = 0.5 + 1.5 * N.random(seed, rj + 9, 2), cmds = [];
+      for (var x = -D / 2 - Lp; x < D / 2 + Lp; x += Lp) {
+        cmds = cmds.concat(stadiumCmds(x, rj * gapY - hh / 2, len, hh));
+      }
+      var paint = (rj & 1)
+        ? { stroke: c.sc.fg, width: Math.max(1.5, U * 0.003), alpha: k * 2 }
+        : { fill: rj === 0 ? c.sc.accent : c.sc.fg, alpha: k * (rj === 0 ? 1.3 : 1) };
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Capsule row ' + rj, rig, cmds, paint);
+      V.animate(c, id, function (e, f) {
+        return { 'position.x': wrap(clk.absTime(f) * U * spd * dir * spM + off0, Lp) - Lp, alpha: paint.alpha * clk.enter(f, 0.6) };
+      });
+    })(j);
+  }
+});
+
+/* 28. xpSlitLight */
+register('xpSlitLight', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpSlitLight'), ph = H.p(P, 'seed', 1) % 7, n = Math.max(3, Math.round(H.p(P, 'n', 6)));
+  var lc = lightOf(c.sc), k = H.p(P, 'k', 0.08), sh = U * 0.062, gp = U * 0.04, wd = U * 0.95, tot = n * sh + (n - 1) * gp;
+  var sk = H.p(P, 'sk', -0.4);
+  var rig = c.graph.add('null', c.cut.id + ' / Slit light rig', c.parent, c.cut.start, c.cut.end, {});
+  V.animate(c, rig, function (e, f) {
+    var t = clk.absTime(f), pos = H.toScene(c, W * (0.5 + 0.2 * Math.sin(t * 0.14 + ph)), Hh * (0.5 + 0.1 * Math.sin(t * 0.11 + ph * 2)));
+    return { 'position.x': pos[0], 'position.y': pos[1] };
+  });
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var y0 = -tot / 2 + idx * (sh + gp), y1 = y0 + sh;
+      var pts = [[-wd / 2 + sk * y0, -y0], [wd / 2 + sk * y0, -y0], [wd / 2 + sk * y1, -y1], [-wd / 2 + sk * y1, -y1]];
+      var cmds = pts.map(function (pt, pi) { return [pi ? 'L' : 'M', pt[0], pt[1]]; }).concat([['Z']]);
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Slit ' + idx, rig, cmds, { fill: lc, alpha: k });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), q = clk.enter(f, 1.0);
+        return { 'scale.y': 0.75 + 0.25 * Math.sin(t * 0.3 + idx * 0.5), alpha: k * q };
+      });
+    })(i);
+  }
+});
+
+/* 29. xpPosterGrad */
+register('xpPosterGrad', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, L = Math.hypot(W, Hh);
+  var clk = H.bgClock(c, 'xpPosterGrad'), ang = H.p(P, 'ang', 0), n = Math.max(3, Math.round(H.p(P, 'n', 6)));
+  var k = H.p(P, 'k', 0.022), ph = H.p(P, 'seed', 1) % 5, col = P.acc ? c.sc.accent : c.sc.fg;
+  var rig = c.graph.add('null', c.cut.id + ' / Poster grad rig', c.parent, c.cut.start, c.cut.end, {});
+  V.animate(c, rig, function (e, f) { return { rotation: -(ang + 9 * Math.sin(clk.absTime(f) * 0.13 + ph)) }; });
+  for (var i = 1; i <= n; i++) {
+    (function (idx) {
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Poster step ' + idx, rig, G.rect(0, -L / 2, L, L), { fill: col, alpha: k });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), x = -L / 2 + L * (idx / (n + 1) + 0.035 * Math.sin(t * 0.3 + idx * 1.1 + ph));
+        return { 'position.x': x, alpha: k * clk.enter(f, 0.6) };
+      });
+    })(i);
+  }
+});
+
+/* 30. xpBigRing */
+register('xpBigRing', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpBigRing'), ph = H.p(P, 'seed', 1) % 7, k = H.p(P, 'k', 0.055), R = U * 0.6, R2 = R * 1.32;
+  var cxF = H.p(P, 'cx', 0.5), cyF = H.p(P, 'cy', 0.5);
+  var rig = c.graph.add('null', c.cut.id + ' / Big ring rig', c.parent, c.cut.start, c.cut.end, {});
+  V.animate(c, rig, function (e, f) {
+    var t = clk.absTime(f), q = clk.enter(f, 1.0), sc = 0.8 + 0.2 * q;
+    var pos = H.toScene(c, W * (cxF + 0.05 * Math.sin(t * 0.16 + ph)), Hh * (cyF + 0.05 * Math.cos(t * 0.13 + ph)));
+    return { 'position.x': pos[0], 'position.y': pos[1], 'scale.x': sc, 'scale.y': sc, alpha: q };
+  });
+  C.shape(c.graph, c.cut, c.cut.id + ' / Ring main', rig, G.ellipse(0, 0, R, R), { stroke: c.sc.fg, width: U * 0.11, alpha: k });
+  var dashCmds = [];
+  for (var d = 0; d < 40; d++) {
+    var a0 = d / 40 * TAU, a1 = (d + 0.4) / 40 * TAU;
+    dashCmds.push(['M', Math.cos(a0) * R2, -Math.sin(a0) * R2], ['L', Math.cos(a1) * R2, -Math.sin(a1) * R2]);
+  }
+  var dashId = C.shape(c.graph, c.cut, c.cut.id + ' / Ring ticks', rig, dashCmds, { stroke: c.sc.fg, width: Math.max(1.5, U * 0.002), alpha: k * 2 });
+  V.animate(c, dashId, function (e, f) { return { rotation: -(clk.absTime(f) * 3) }; });
+  var dotId = C.shape(c.graph, c.cut, c.cut.id + ' / Ring orb', rig, G.ellipse(0, 0, U * 0.012, U * 0.012), { fill: c.sc.accent, alpha: 0.4 });
+  V.animate(c, dotId, function (e, f) {
+    var a = clk.absTime(f) * 0.22 + ph;
+    return { 'position.x': Math.cos(a) * R2, 'position.y': -Math.sin(a) * R2 };
+  });
+});
+
+/* 31. xpCurtain */
+register('xpCurtain', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'xpCurtain'), n = Math.max(4, Math.round(H.p(P, 'n', 9))), ph = H.p(P, 'seed', 1) % 9, k = H.p(P, 'k', 0.08);
+  var foldW = W / n * 1.1;
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var a = k * (0.6 + 0.4 * Math.sin(idx * 2.1 + ph));
+      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Curtain fold ' + idx, c.parent,
+        G.rect(-foldW * 0.45, -Hh / 2, foldW * 0.9, Hh), { fill: c.sc.fg, alpha: a });
+      V.animate(c, id, function (e, f) {
+        var t = clk.absTime(f), p = cl((idx + 0.5 + 0.3 * Math.sin(t * 0.45 + idx * 1.3 + ph)) / n);
+        return { 'position.x': p * W - W / 2, alpha: a * clk.enter(f, 0.6) };
+      });
+    })(i);
+  }
+  [0.12, 0.24, 0.36].forEach(function (hf, idx) {
+    H.rect(c, 'Curtain top shade ' + idx, 0, 0, W, Hh * hf, { fill: c.sc.bg, alpha: 0.2 });
+  });
+});
+
+/* 32. xpRuler */
+register('xpRuler', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpRuler'), sp = U * 0.016, per = sp * 10, k = H.p(P, 'k', 0.25);
+  var y0 = Hh * (P.top ? 0.085 : 0.915), dy = P.top ? 1 : -1, x0 = W * (P.right ? 0.945 : 0.055), dx = P.right ? -1 : 1;
+  var lw = Math.max(1.5, U * 0.0018);
+  H.line(c, 'Ruler axis H', [[0, y0], [W, y0]], c.sc.fg, lw, k);
+  H.line(c, 'Ruler axis V', [[x0, 0], [x0, Hh]], c.sc.fg, lw, k);
+  var hCmds = [], vCmds = [];
+  for (var i = 0; i * sp < W + per; i++) {
+    var tl = U * (i % 10 === 0 ? 0.042 : i % 5 === 0 ? 0.028 : 0.015), x = i * sp - W / 2;
+    hCmds.push(['M', x, 0], ['L', x, -dy * tl]);
+  }
+  for (var j = 0; j * sp < Hh + per; j++) {
+    var tl2 = U * (j % 10 === 0 ? 0.042 : j % 5 === 0 ? 0.028 : 0.015), y = -j * sp;
+    vCmds.push(['M', 0, y], ['L', dx * tl2, y]);
+  }
+  var hTicks = C.shape(c.graph, c.cut, c.cut.id + ' / Ruler H ticks', c.parent, hCmds, { stroke: c.sc.fg, width: lw, alpha: k });
+  var vTicks = C.shape(c.graph, c.cut, c.cut.id + ' / Ruler V ticks', c.parent, vCmds, { stroke: c.sc.fg, width: lw, alpha: k });
+  V.animate(c, hTicks, function (e, f) {
+    var q = clk.enter(f, 0.6);
+    return { 'position.x': wrap(clk.absTime(f) * U * 0.02, per) - per, 'position.y': Hh / 2 - y0, 'scale.y': Math.max(0.05, q), alpha: k * q };
+  });
+  V.animate(c, vTicks, function (e, f) {
+    var q = clk.enter(f, 0.6);
+    return { 'position.x': x0 - W / 2, 'position.y': Hh / 2 + wrap(clk.absTime(f) * U * 0.02, per), 'scale.x': Math.max(0.05, q), alpha: k * q };
+  });
+  var ps = U * 0.014;
+  var tri = C.shape(c.graph, c.cut, c.cut.id + ' / Ruler marker', c.parent,
+    [['M', 0, dy * ps * 0.3], ['L', -ps, dy * ps * 1.9], ['L', ps, dy * ps * 1.9], ['Z']], { fill: c.sc.accent, alpha: 0.5 });
+  V.animate(c, tri, function (e, f) {
+    var px = W * (0.5 + 0.3 * Math.sin(clk.absTime(f) * 0.3));
+    return { 'position.x': px - W / 2, 'position.y': Hh / 2 - y0, alpha: 0.5 * clk.enter(f, 0.6) };
+  });
+});
+
+/* 33. xpGreekText */
+register('xpGreekText', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpGreekText'), seed = H.p(P, 'seed', 1), spd = H.p(P, 'spd', 0.013), k = H.p(P, 'k', 0.06);
+  var lh = U * 0.037, bh = U * 0.012, cols = W > Hh ? 3 : 2, gut = W * 0.04, cw = (W * 0.86 - gut * (cols - 1)) / cols;
+  var rows = Math.min(48, Math.ceil(Hh / lh) + 2), cmds = [];
+  for (var ci = 0; ci < cols; ci++) {
+    for (var j = 0; j < rows; j++) {
+      var id = j + ci * 11, m = wrap(id, 7);
+      if (m === 6) continue;
+      var len = m === 5 ? 0.25 + 0.5 * N.random(seed, id, ci) : 0.86 + 0.14 * N.random(seed, id, ci);
+      var ind = m === 0 ? cw * 0.06 : 0;
+      var x = W * 0.07 + ci * (cw + gut) + ind - W / 2, y = Hh / 2 - j * lh - bh;
+      cmds = cmds.concat(G.rect(x, y, cw * len - ind, bh));
+    }
+  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Greek text', c.parent, cmds, { fill: c.sc.fg, alpha: k });
+  V.animate(c, id, function (e, f) {
+    return { 'position.y': wrap(clk.absTime(f) * U * spd, lh * 7), alpha: k * clk.enter(f, 0.6) };
+  });
+});
+
+/* 34. xpSevenSeg */
+register('xpSevenSeg', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height;
+  var clk = H.bgClock(c, 'xpSevenSeg'), seed = H.p(P, 'seed', 1), rate = H.p(P, 'rate', 0.8), k = H.p(P, 'k', 0.08);
+  var SEG = [0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f];
+  var nd = W > Hh * 1.2 ? 3 : 2, gap = 0.24, dw = Math.min(W * 0.84 / (nd + (nd - 1) * gap), Hh * 0.66 / 1.85), dh = dw * 1.85;
+  var x0 = (W - dw * (nd + (nd - 1) * gap)) / 2, y0 = (Hh - dh) / 2;
+  function segPoly(x, y, w, h, segIdx) {
+    var th = w * 0.17, g = th * 0.14, hl = w - th, vl = h / 2 - th / 2, q = th / 2;
+    var L = x + q, Rg = x + w - q, T = y + q, M = y + h / 2, B = y + h - q, pts;
+    function hz(sx, sy) { return [[sx + g, sy], [sx + q + g, sy - q], [sx + hl - q - g, sy - q], [sx + hl - g, sy], [sx + hl - q - g, sy + q], [sx + q + g, sy + q]]; }
+    function vt(sx, sy) { return [[sx, sy + g], [sx + q, sy + q + g], [sx + q, sy + vl - q - g], [sx, sy + vl - g], [sx - q, sy + vl - q - g], [sx - q, sy + q + g]]; }
+    pts = segIdx === 0 ? hz(L, T) : segIdx === 1 ? vt(Rg, T) : segIdx === 2 ? vt(Rg, M) : segIdx === 3 ? hz(L, B) : segIdx === 4 ? vt(L, M) : segIdx === 5 ? vt(L, T) : hz(L, M);
+    return pts.map(function (pt) { return [pt[0] - 0.07 * (pt[1] - Hh / 2), pt[1]]; });
+  }
+  for (var d = 0; d < nd; d++) {
+    for (var s = 0; s < 7; s++) {
+      (function (di, si) {
+        var p10 = Math.pow(10, nd - 1 - di);
+        var id = H.poly(c, 'Seven seg ' + di + '_' + si, segPoly(x0 + di * dw * (1 + gap), y0, dw, dh, si), true, { fill: c.sc.fg, alpha: k });
+        V.animate(c, id, function (e, f) {
+          var tt = clk.absTime(f) * rate, n0 = Math.floor(tt), m = H.smoothstep(0, 0.22, tt - n0);
+          var cur = (seed % 500) + n0, prv = cur - 1;
+          var on = (SEG[Math.floor(cur / p10) % 10] >> si) & 1;
+          var was = (SEG[Math.floor(prv / p10) % 10] >> si) & 1;
+          var v = (on && was) ? 1 : (!on && !was) ? 0 : (on ? m : 1 - m);
+          return { alpha: k * (0.22 + 0.78 * v) * clk.enter(f, 0.6) };
+        });
+      })(d, s);
+    }
+  }
+});
+
+/* 35. xpCropMarks */
+register('xpCropMarks', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpCropMarks'), sp = U * H.p(P, 'sp', 0.36), r = U * 0.02, arm = U * 0.038, k = H.p(P, 'k', 0.2);
+  var lw = Math.max(1.5, U * 0.002), nx = Math.min(8, Math.ceil(W / sp) + 2), ny = Math.min(8, Math.ceil(Hh / sp) + 2);
+  for (var j = 0; j < ny; j++) {
+    for (var i = 0; i < nx; i++) {
+      (function (ci, cj) {
+        var cmds = G.ellipse(0, 0, r, r).concat([['M', -arm, 0], ['L', arm, 0], ['M', 0, -arm], ['L', 0, arm]]);
+        var dir = (ci + cj) % 2 ? 1 : -1;
+        var id = C.shape(c.graph, c.cut, c.cut.id + ' / Crop grid ' + ci + '_' + cj, c.parent, cmds, { stroke: c.sc.fg, width: lw, alpha: k });
+        V.animate(c, id, function (e, f) {
+          var t = clk.absTime(f), q = clk.enter(f, 0.6);
+          var ox = wrap(t * U * 0.012, sp) - sp / 2, oy = wrap(t * U * 0.007, sp) - sp / 2;
+          var pos = H.toScene(c, ox + ci * sp, oy + cj * sp);
+          return { 'position.x': pos[0], 'position.y': pos[1], rotation: -(t * 0.25 * dir / DEG), alpha: k * q };
+        });
+      })(i, j);
+    }
+  }
+  var m = U * 0.05, l = U * 0.05, cCmds = [];
+  [[m, m, 1, 1], [W - m, m, -1, 1], [m, Hh - m, 1, -1], [W - m, Hh - m, -1, -1]].forEach(function (cp) {
+    var x = cp[0] - W / 2, y = Hh / 2 - cp[1];
+    cCmds.push(['M', x, y + cp[3] * l * 0.2], ['L', x, y - cp[3] * l], ['M', x - cp[2] * l * 0.2, y], ['L', x + cp[2] * l, y]);
+  });
+  var corners = C.shape(c.graph, c.cut, c.cut.id + ' / Crop corners', c.parent, cCmds, { stroke: c.sc.fg, width: lw, alpha: k });
+  V.animate(c, corners, function (e, f) { return { alpha: k * clk.enter(f, 0.6) }; });
+});
+
+/* 36. xpScanner */
+register('xpScanner', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpScanner'), hz = Hh > W, L = hz ? Hh : W, X = hz ? W : Hh;
+  var lc = lightOf(c.sc), k = H.p(P, 'k', 0.11), spd = H.p(P, 'spd', 0.45), seed = H.p(P, 'seed', 1) % 6;
+  var bw = U * 0.11, lw = Math.max(1.5, U * 0.002);
+  var veil = C.shape(c.graph, c.cut, c.cut.id + ' / Scanner veil', c.parent,
+    hz ? G.rect(-X / 2, 0, X, L) : G.rect(0, -X / 2, L, X), { fill: c.sc.fg, alpha: 0.035 });
+  if (hz) c.graph.byId[veil].attrs.position = [0, -L / 2]; else c.graph.byId[veil].attrs.position = [-L / 2, 0];
+  V.animate(c, veil, function (e, f) {
+    var p = 0.5 - 0.56 * Math.cos(clk.absTime(f) * spd + seed), q = clk.enter(f, 0.6);
+    var frac = Math.max(0.005, cl(p));
+    return hz ? { 'scale.y': frac, alpha: 0.035 * q } : { 'scale.x': frac, alpha: 0.035 * q };
+  });
+  [[bw * 2, k * 0.35], [bw, k * 0.55], [lw, k * 2.2]].forEach(function (sp, idx) {
+    var bar = C.shape(c.graph, c.cut, c.cut.id + ' / Scanner beam ' + idx, c.parent,
+      hz ? G.rect(-X / 2, -sp[0] / 2, X, sp[0]) : G.rect(-sp[0] / 2, -X / 2, sp[0], X), { fill: lc, alpha: sp[1] });
+    V.animate(c, bar, function (e, f) {
+      var x = L * (0.5 - 0.56 * Math.cos(clk.absTime(f) * spd + seed)), q = clk.enter(f, 0.6);
+      return hz ? { 'position.y': Hh / 2 - x, alpha: sp[1] * q } : { 'position.x': x - W / 2, alpha: sp[1] * q };
+    });
+  });
+});
+
+/* 37. xpStepBlocks */
+register('xpStepBlocks', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpStepBlocks'), cell = U * 0.11, per = Math.max(3, Math.round(H.p(P, 'per', 6)));
+  var spd = H.p(P, 'spd', 0.55), k = H.p(P, 'k', 0.045), n = Math.min(36, Math.ceil(W / cell) + per + 2);
+  var botCmds = [], topCmds = [];
+  for (var i = 0; i < n; i++) {
+    var hb = cell * 0.6 * (1 + i % per), ht = cell * 0.6 * (1 + (per - 1 - i % per)), x = i * cell - W / 2;
+    botCmds = botCmds.concat(G.rect(x, -Hh / 2, cell + 0.5, hb));
+    topCmds = topCmds.concat(G.rect(x, Hh / 2 - ht, cell + 0.5, ht));
+  }
+  var botId = C.shape(c.graph, c.cut, c.cut.id + ' / Step blocks bottom', c.parent, botCmds, { fill: c.sc.fg, alpha: k });
+  var topId = C.shape(c.graph, c.cut, c.cut.id + ' / Step blocks top', c.parent, topCmds, { fill: c.sc.accent, alpha: k * 1.1 });
+  [botId, topId].forEach(function (id, isTop) {
+    V.animate(c, id, function (e, f) {
+      var fr = clk.absTime(f) * spd, fl = Math.floor(fr), q = clk.enter(f, 0.8);
+      var sh = wrap((fl + E.inOutCubic(cl((fr - fl) * 2.2))) * cell, cell * per);
+      return { 'position.x': isTop ? -sh : sh - cell * per, alpha: (isTop ? k * 1.1 : k) * q };
+    });
+  });
+});
+
+/* 38. xpRadar */
+register('xpRadar', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpRadar'), seed = H.p(P, 'seed', 1), cx = W * H.p(P, 'cx', 0.5), cy = Hh * H.p(P, 'cy', 0.5);
+  var R = Math.hypot(W, Hh), k = H.p(P, 'k', 0.1), sp = H.p(P, 'spd', 0.55), dir = sp < 0 ? -1 : 1, pos = H.toScene(c, cx, cy);
+  var gridCmds = [['M', -W, 0], ['L', W, 0], ['M', 0, -Hh], ['L', 0, Hh]];
+  for (var r = 1; r <= 5; r++) gridCmds = gridCmds.concat(G.ellipse(0, 0, U * 0.2 * r, U * 0.2 * r));
+  var gridId = C.shape(c.graph, c.cut, c.cut.id + ' / Radar grid', c.parent, gridCmds,
+    { stroke: c.sc.fg, width: Math.max(1.5, U * 0.0018), alpha: k * 1.3 });
+  c.graph.byId[gridId].attrs.position = pos;
+  V.animate(c, gridId, function (e, f) {
+    var q = clk.enter(f, 0.8), sc = 0.8 + 0.2 * q;
+    return { 'scale.x': sc, 'scale.y': sc, alpha: k * 1.3 * q };
+  });
+  var sweepRig = c.graph.add('null', c.cut.id + ' / Radar sweep rig', c.parent, c.cut.start, c.cut.end, { position: pos });
+  V.animate(c, sweepRig, function (e, f) { return { rotation: -(clk.absTime(f) * sp / DEG), alpha: clk.enter(f, 0.8) }; });
+  var NS = 16, da = 4.5 * DEG;
+  for (var s = 0; s < NS; s++) {
+    var a0 = -dir * s * da, a1 = -dir * (s + 1.05) * da;
+    C.shape(c.graph, c.cut, c.cut.id + ' / Radar wedge ' + s, sweepRig,
+      [['M', 0, 0], ['L', Math.cos(a0) * R, -Math.sin(a0) * R], ['L', Math.cos(a1) * R, -Math.sin(a1) * R], ['Z']],
+      { fill: c.sc.fg, alpha: k * Math.pow(1 - s / NS, 1.6) });
+  }
+  for (var b = 0; b < 6; b++) {
+    (function (bi) {
+      var a = N.random(seed, bi, 1) * TAU, rad = U * (0.15 + 0.6 * N.random(seed, bi, 2));
+      var blip = C.shape(c.graph, c.cut, c.cut.id + ' / Radar blip ' + bi, c.parent,
+        G.ellipse(0, 0, U * 0.009, U * 0.009), { fill: c.sc.accent, alpha: 0.5 });
+      c.graph.byId[blip].attrs.position = H.toScene(c, cx + Math.cos(a) * rad, cy + Math.sin(a) * rad);
+      V.animate(c, blip, function (e, f) {
+        var ang = clk.absTime(f) * sp, age = wrap(dir * (ang - a), TAU) / TAU;
+        return { alpha: 0.5 * Math.pow(1 - age, 3) * clk.enter(f, 0.8) };
+      });
+    })(b);
+  }
+});
+
+/* 39. xpLoadBars */
+register('xpLoadBars', function (c) {
+  var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, U = Math.min(W, Hh);
+  var clk = H.bgClock(c, 'xpLoadBars'), seed = H.p(P, 'seed', 1), n = Math.max(3, Math.round(H.p(P, 'n', 7)));
+  var k = H.p(P, 'k', 0.08), bh = U * 0.02, lw = Math.max(1.5, U * 0.0018);
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      var w = W * (0.3 + 0.55 * N.random(seed, idx, 1)), x = N.random(seed, idx, 2) < 0.5 ? W * 0.06 : W * 0.94 - w;
+      var y = Hh * (idx + 0.5 + 0.25 * (N.random(seed, idx, 3) * 2 - 1)) / n - bh / 2;
+      var sp = 0.05 + 0.07 * N.random(seed, idx, 4), ph = N.random(seed, idx, 5), hot = idx === (seed % n);
+      var box = H.rect(c, 'Load frame ' + idx, x, y, w, bh, { stroke: c.sc.fg, width: lw, alpha: k * 1.5 });
+      var fill = C.shape(c.graph, c.cut, c.cut.id + ' / Load fill ' + idx, c.parent, G.rect(0, -bh, w, bh),
+        { fill: hot ? c.sc.accent : c.sc.fg, alpha: hot ? k * 2.4 : k });
+      c.graph.byId[fill].attrs.position = H.toScene(c, x, y);
+      var foot = H.rect(c, 'Load foot ' + idx, x, y + bh * 1.8, w * 0.12, Math.max(2, bh * 0.3), { fill: c.sc.fg, alpha: k * 1.5 });
+      [box, fill, foot].forEach(function (id, part) {
+        V.animate(c, id, function (e, f) {
+          var p = wrap(clk.absTime(f) * sp + ph, 1), pe = E.inOutCubic(p / 0.82);
+          var a = clk.enter(f, 0.6) * H.smoothstep(0, 0.04, p) * (1 - H.smoothstep(0.9, 1, p));
+          if (part === 1) return { 'scale.x': Math.max(0.01, pe), alpha: (hot ? k * 2.4 : k) * a };
+          return { alpha: k * 1.5 * a };
+        });
+      });
+    })(i);
+  }
+});
+
+})(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools, JZHelpers);
 
 ;
 /* Native camera models. Numeric models from ae/p_cam.jsx, ae/p_x2_camtr.jsx and ae/p_x2_typoB.jsx (read-only references).
