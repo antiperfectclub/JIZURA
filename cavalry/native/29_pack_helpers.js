@@ -790,6 +790,348 @@ function sampleShape(c, name, cmdsFn, paint, alphaFn, parent) {
   return id;
 }
 
+/* ---- Shared layout helpers (measurement, splitting, node creation, centered animated vector primitives) ---- */
+function layBase(c) {
+  var ns = c.cut && c.cut.nodes;
+  if (ns && ns.length) {
+    return ns.slice().sort(function (a, b) { return (b.size || 0) - (a.size || 0); })[0];
+  }
+  return {
+    id: (c.cut && c.cut.id || 'cut') + '-t0',
+    text: String((c.cut && c.cut.source && c.cut.source.text) || ''),
+    font: primaryFont(c),
+    x: c.comp.width / 2, y: c.comp.height / 2,
+    size: Math.max(12, Math.min(c.comp.width, c.comp.height) * 0.1),
+    sx: 1, rotation: 0, delayFrames: 0, track: 0.04, lead: 1.2, align: 'center',
+    color: (c.sc && c.sc.fg) || '#ffffff'
+  };
+}
+function layText(c) {
+  var n0 = c.cut && c.cut.nodes && c.cut.nodes[0];
+  var s = (c.cut && c.cut.source && c.cut.source.text) || (n0 && n0.text) || '';
+  return String(s).trim();
+}
+function layLineText(c) {
+  var s = (c.cut && c.cut.source && c.cut.source.lineText) || layText(c);
+  return String(s).trim();
+}
+function layNote(c) {
+  var src = c.cut && c.cut.source;
+  return String((src && (src.note || src.romaji)) || '').trim();
+}
+function layStrip(s) { return String(s || '').replace(/[\s\u3000]+/g, ''); }
+function layHasLatin(s) { return /[A-Za-z]/.test(String(s || '')); }
+function layFlat(s) { return layHasLatin(s) ? String(s || '').trim().replace(/[\s\u3000]+/g, ' ') : layStrip(s); }
+function layPad2(n) { return String(Math.max(0, n | 0)).padStart(2, '0'); }
+function layLineNo(c) { return layPad2(((c.cut && c.cut.source && c.cut.source.line) | 0) + 1); }
+function laySeed(c) { return ((c.cut && c.cut.source && c.cut.source.seed) || (c.cut && c.cut.seed) || 1) | 0; }
+function layAltCopy(c) {
+  var t = layStrip(layText(c)), lt = layLineText(c);
+  if (lt && layStrip(lt) !== t) return layFlat(lt);
+  var nt = layNote(c);
+  if (nt) return nt;
+  return 'No.' + layLineNo(c);
+}
+function layFmtTime(sec) {
+  var s = Math.max(0, sec || 0);
+  return layPad2(Math.floor(s / 60)) + ':' + layPad2(Math.floor(s % 60));
+}
+function layIsPunct(ch) { return /^[.,!?;:\-'"()\u3001\u3002\uff0c\uff0e\uff01\uff1f\u30fb\u2026\u2025\u300c\u300d\u300e\u300f\uff08\uff09\u3010\u3011\[\]\u2018\u2019\u201c\u201d]$/.test(ch); }
+function layIsSmall(ch) { return '\u3041\u3043\u3045\u3047\u3049\u3063\u3083\u3085\u3087\u308e\u30a1\u30a3\u30a5\u30a7\u30a9\u30c3\u30e3\u30e5\u30e7\u30ee\u30f5\u30f6\u30fc'.indexOf(ch) >= 0; }
+function layIsKanji(ch) { return /[\u4e00-\u9faf\u3400-\u4dbf]/.test(ch); }
+function laySplitLines(text, maxPer) {
+  var s = String(text || '').trim();
+  if (!s) return '';
+  if (s.indexOf('\n') >= 0) return s;
+  maxPer = Math.max(1, maxPer | 0);
+  var arr = Array.from(s);
+  if (arr.length <= maxPer) return s;
+  if (/\s/.test(s)) {
+    var ws = s.split(/[\s\u3000]+/).filter(Boolean);
+    if (ws.length > 1) {
+      var nL = Math.min(ws.length, Math.max(2, Math.ceil(arr.length / maxPer)));
+      var per = arr.length / nL, lines = [], cur = '';
+      ws.forEach(function (w) {
+        if (cur && Array.from(cur + ' ' + w).length > Math.max(maxPer, Math.ceil(per)) && lines.length < nL - 1) {
+          lines.push(cur); cur = w;
+        } else {
+          cur = cur ? cur + ' ' + w : w;
+        }
+      });
+      if (cur) lines.push(cur);
+      return lines.join('\n');
+    }
+  }
+  var nLines = Math.ceil(arr.length / maxPer), step = arr.length / nLines;
+  var out = [], idx = 0;
+  for (var l = 1; l < nLines; l++) {
+    var tgt = Math.round(step * l);
+    if (tgt <= idx) tgt = idx + 1;
+    while (tgt < arr.length - 1 && (layIsSmall(arr[tgt]) || layIsPunct(arr[tgt]))) tgt++;
+    out.push(arr.slice(idx, tgt).join(''));
+    idx = tgt;
+  }
+  if (idx < arr.length) out.push(arr.slice(idx).join(''));
+  return out.filter(Boolean).join('\n');
+}
+function laySplitK(text, k) {
+  var s = String(text || '').trim();
+  if (!s) return [''];
+  k = Math.max(1, k | 0);
+  if (k === 1) return [s];
+  if (/\s/.test(s)) {
+    var ws = s.split(/[\s\u3000]+/).filter(Boolean);
+    if (ws.length >= k) {
+      var out = [], per = ws.length / k, prev = 0;
+      for (var i = 1; i <= k; i++) {
+        var next = i === k ? ws.length : Math.min(ws.length - (k - i), Math.max(prev + 1, Math.round(per * i)));
+        out.push(ws.slice(prev, next).join(' '));
+        prev = next;
+      }
+      return out.filter(Boolean);
+    }
+  }
+  var arr = Array.from(layStrip(s));
+  if (arr.length <= 1) return [s];
+  var kk = Math.min(k, arr.length), res = [], p0 = 0;
+  for (var j = 1; j <= kk; j++) {
+    var p1 = j === kk ? arr.length : Math.min(arr.length - (kk - j), Math.max(p0 + 1, Math.round(arr.length * j / kk)));
+    res.push(arr.slice(p0, p1).join(''));
+    p0 = p1;
+  }
+  return res.filter(Boolean);
+}
+function layChars(text) {
+  var s = layStrip(text);
+  return s ? Array.from(s) : Array.from(String(text || ' ')).slice(0, 1);
+}
+function layFontObj(c, role) {
+  var base = layBase(c);
+  if (role && c.options && c.options.decorFonts && c.options.decorFonts[role]) {
+    return c.options.decorFonts[role];
+  }
+  return base.font || primaryFont(c, role);
+}
+function layMeasure(c, text, size, opts) {
+  opts = opts || {};
+  var s = String(text || '');
+  if (!s) return { w: 1, h: 1, cx: 0, cy: 0, gs: [] };
+  var sz = Math.max(1, size || 24), sx = opts.sx == null ? 1 : Math.abs(opts.sx), sy = opts.sy == null ? 1 : Math.abs(opts.sy);
+  var f = opts.font || layFontObj(c, opts.role);
+  var probe = {
+    id: '_probe', text: s, font: f, x: 0, y: 0, size: sz,
+    sx: 1, rotation: 0, delayFrames: 0,
+    track: opts.track == null ? 0.04 : opts.track,
+    lead: opts.lead == null ? 1.2 : opts.lead,
+    vertical: !!opts.vertical, align: opts.align || 'center'
+  };
+  var gs = C.glyphs(probe, V.font(c, probe));
+  if (!gs.length) return { w: sz * sx, h: sz * sy, cx: 0, cy: 0, gs: [] };
+  var b = V.bounds(gs);
+  return { w: Math.max(1, b.w * sx), h: Math.max(1, b.h * sy), cx: b.cx * sx, cy: b.cy * sy, gs: gs };
+}
+function layFitSize(c, text, maxW, maxH, opts) {
+  opts = opts || {};
+  var m0 = layMeasure(c, text, 100, opts);
+  var kw = Math.max(1, maxW || c.comp.width * 0.8) / Math.max(1, m0.w);
+  var kh = Math.max(1, maxH || c.comp.height * 0.5) / Math.max(1, m0.h);
+  var sz = 100 * Math.min(kw, kh);
+  if (opts.maxSize != null) sz = Math.min(sz, opts.maxSize);
+  sz = Math.max(opts.minSize || 6, sz);
+  return N.finite(sz, 'layFitSize');
+}
+function laySetNodes(c, specs) {
+  var base = layBase(c), maxDelay = Math.max(0, c.cut.end - c.cut.origin - 1);
+  var list = [];
+  for (var i = 0; i < specs.length; i++) {
+    var sp = specs[i];
+    var txt = sp && sp.text != null ? String(sp.text) : '';
+    if (!txt || !txt.trim()) continue;
+    var n = V.copy(base);
+    n.id = base.id + '-l' + i;
+    n.text = txt;
+    n.font = sp.font || base.font;
+    n.x = N.finite(sp.x == null ? c.comp.width / 2 : sp.x, 'node.x');
+    n.y = N.finite(sp.y == null ? c.comp.height / 2 : sp.y, 'node.y');
+    n.size = Math.max(4, N.finite(sp.size == null ? base.size : sp.size, 'node.size'));
+    n.sx = N.finite(sp.sx == null ? 1 : sp.sx, 'node.sx');
+    n.rotation = N.finite(sp.rot != null ? sp.rot : (sp.rotation || 0), 'node.rotation');
+    n.align = sp.align || 'center';
+    n.vertical = !!sp.vertical;
+    n.track = N.finite(sp.track == null ? 0.04 : sp.track, 'node.track');
+    n.lead = N.finite(sp.lead == null ? 1.2 : sp.lead, 'node.lead');
+    n.color = sp.color || base.color || c.sc.fg;
+    if (sp.mi != null) n.mi = sp.mi;
+    var df = sp.delayFrames != null ? Math.round(sp.delayFrames)
+      : sp.delaySec != null ? Math.round(sp.delaySec * c.comp.fps) : (base.delayFrames || 0);
+    n.delayFrames = Math.max(0, Math.min(maxDelay, df));
+    delete n.glyphs;
+    n.glyphs = V.glyphs(c, n);
+    (function (spec, nd) {
+      var needPost = (spec.sy != null && spec.sy !== 1) || spec.fill === false || spec.stroke ||
+        (spec.alpha != null && spec.alpha < 1) || spec.animPlace || spec.clipRectFn || spec.clipPolyFn || spec.post;
+      if (!needPost) return;
+      nd._jzPost = nd._jzPost || [];
+      nd._jzPost.push(function (graph, ids, gs, cut, parent, options) {
+        if (!ids.length) return;
+        var g0 = graph.byId[ids[0]];
+        var placeId = g0 && g0.parent;
+        var place = placeId && graph.byId[placeId];
+        if (spec.fill === false || spec.stroke) {
+          ids.forEach(function (id) {
+            var l = graph.byId[id];
+            if (!l) return;
+            l.attrs.fill = spec.fill === true;
+            l.attrs.stroke = true;
+            l.attrs['stroke.strokeColor'] = spec.strokeColor || nd.color;
+            l.attrs['stroke.width'] = Math.max(0.5, spec.strokeWidth || Math.max(1.2, nd.size * 0.02));
+          });
+        }
+        if (spec.alpha != null && spec.alpha < 1) {
+          var mul = cl(spec.alpha, 0, 1);
+          ids.forEach(function (id) {
+            var l = graph.byId[id];
+            if (!l) return;
+            if (l.keys.alpha) Object.keys(l.keys.alpha).forEach(function (f) { l.keys.alpha[f].value *= mul; });
+            else l.attrs.alpha = (l.attrs.alpha == null ? 1 : l.attrs.alpha) * mul;
+          });
+        }
+        if (spec.sy != null && spec.sy !== 1 && place && !spec.animPlace) {
+          place.attrs.scale = [nd.sx, spec.sy];
+        }
+        if (spec.animPlace && place) {
+          var bpx = nd.x - c.comp.width / 2, bpy = c.comp.height / 2 - nd.y;
+          var bsy = spec.sy == null ? 1 : spec.sy;
+          C.sample(graph, placeId, place.start, place.end, function (f) {
+            var o = spec.animPlace(R.env(c, f), f) || {};
+            var sc0 = o.s == null ? 1 : o.s;
+            var res = {
+              'position.x': o.x != null ? o.x - c.comp.width / 2 : bpx + (o.dx || 0),
+              'position.y': o.y != null ? c.comp.height / 2 - o.y : bpy - (o.dy || 0),
+              rotation: -(nd.rotation || 0) - (o.rot || 0),
+              'scale.x': nd.sx * sc0 * (o.sx == null ? 1 : o.sx),
+              'scale.y': bsy * sc0 * (o.sy == null ? 1 : o.sy)
+            };
+            if (o.a != null) res.alpha = cl(o.a, 0, 1);
+            return res;
+          });
+        }
+        if (spec.clipRectFn || spec.clipPolyFn) {
+          var polys = Object.create(null);
+          var f0 = g0.start, f1 = g0.end;
+          for (var f = f0; f < f1; f++) {
+            var env = R.env(c, f);
+            var pts = null;
+            if (spec.clipPolyFn) {
+              var raw = spec.clipPolyFn(env, f);
+              if (raw && raw.length >= 3) pts = raw.map(function (pt) { return [pt[0] - c.comp.width / 2, c.comp.height / 2 - pt[1]]; });
+            } else {
+              var rc = spec.clipRectFn(env, f);
+              if (rc && rc[2] > rc[0] && rc[3] > rc[1]) {
+                pts = [
+                  [rc[0] - c.comp.width / 2, c.comp.height / 2 - rc[1]],
+                  [rc[2] - c.comp.width / 2, c.comp.height / 2 - rc[1]],
+                  [rc[2] - c.comp.width / 2, c.comp.height / 2 - rc[3]],
+                  [rc[0] - c.comp.width / 2, c.comp.height / 2 - rc[3]]
+                ];
+              }
+            }
+            polys[f] = pts || [[-99999, -99999], [-99998, -99999], [-99999, -99998]];
+          }
+          var prof = options && options.hostProfile && options.hostProfile.javaScriptDeformer;
+          ids.forEach(function (id) { S.clip(graph, id, polys, prof); });
+        }
+        if (typeof spec.post === 'function') spec.post(graph, ids, gs, cut, parent, options, placeId);
+      });
+    })(sp, n);
+    list.push(n);
+  }
+  if (!list.length) {
+    var fb = V.copy(base);
+    fb.id = base.id + '-fb';
+    delete fb.glyphs; fb.glyphs = V.glyphs(c, fb);
+    list.push(fb);
+  }
+  c.cut.nodes = list;
+  return list;
+}
+function laySampleAt(c, id, cx, cy, animFn, baseAlpha) {
+  if (!id || !animFn) return id;
+  var p0 = toScene(c, cx, cy), ba = baseAlpha == null ? 1 : baseAlpha;
+  C.sample(c.graph, id, c.cut.start, c.cut.end, function (f) {
+    var o = animFn(R.env(c, f), f) || {}, s = o.s == null ? 1 : o.s;
+    var res = {};
+    if (o.x != null || o.dx != null) res['position.x'] = o.x != null ? o.x - c.comp.width / 2 : p0[0] + (o.dx || 0);
+    if (o.y != null || o.dy != null) res['position.y'] = o.y != null ? c.comp.height / 2 - o.y : p0[1] - (o.dy || 0);
+    if (o.rot != null) res.rotation = -o.rot;
+    if (o.s != null || o.sx != null) res['scale.x'] = s * (o.sx == null ? 1 : o.sx);
+    if (o.s != null || o.sy != null) res['scale.y'] = s * (o.sy == null ? 1 : o.sy);
+    if (o.a != null) res.alpha = cl(o.a * ba, 0, 1);
+    return res;
+  });
+  return id;
+}
+function layRectAt(c, name, cx, cy, w, h, paint, animFn, parent) {
+  if (!(w > 0 && h > 0)) return null;
+  var rad = paint && paint.round ? paint.round : 0;
+  var cmds = rad > 0 ? roundRectCmds(0, 0, w, h, rad) : G.rect(-w / 2, -h / 2, w, h);
+  var p = paint && typeof paint === 'object' ? Object.assign({}, paint) : { fill: paint };
+  var ba = p.alpha == null ? 1 : p.alpha;
+  if (animFn && !(ba > 0)) p.alpha = 1;
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / ' + name, parent || c.parent, cmds, p);
+  c.graph.byId[id].attrs.position = toScene(c, cx, cy);
+  if (p.rot) c.graph.byId[id].attrs.rotation = -p.rot;
+  return laySampleAt(c, id, cx, cy, animFn, ba);
+}
+function layRRect(c, name, x, y, w, h, r, paint, animFn, parent) {
+  var p = paint && typeof paint === 'object' ? Object.assign({}, paint, { round: r || 0 }) : { fill: paint, round: r || 0 };
+  return layRectAt(c, name, x + w / 2, y + h / 2, w, h, p, animFn, parent);
+}
+function layCircleAt(c, name, cx, cy, rx, ry, paint, animFn, parent) {
+  if (!(rx > 0 && ry > 0)) return null;
+  var p = paint && typeof paint === 'object' ? Object.assign({}, paint) : { fill: paint };
+  var ba = p.alpha == null ? 1 : p.alpha;
+  if (animFn && !(ba > 0)) p.alpha = 1;
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / ' + name, parent || c.parent, G.ellipse(0, 0, rx, ry), p);
+  c.graph.byId[id].attrs.position = toScene(c, cx, cy);
+  return laySampleAt(c, id, cx, cy, animFn, ba);
+}
+function layPolyAt(c, name, cx, cy, pts, closed, paint, animFn, parent) {
+  if (!pts || pts.length < 2) return null;
+  var cmds = pts.map(function (pt, idx) {
+    N.finite(pt[0], 'layPoly x'); N.finite(pt[1], 'layPoly y');
+    return [idx ? 'L' : 'M', pt[0] - cx, cy - pt[1]];
+  });
+  if (closed !== false) cmds.push(['Z']);
+  var p = paint && typeof paint === 'object' ? Object.assign({}, paint) : { fill: paint };
+  var ba = p.alpha == null ? 1 : p.alpha;
+  if (animFn && !(ba > 0)) p.alpha = 1;
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / ' + name, parent || c.parent, cmds, p);
+  c.graph.byId[id].attrs.position = toScene(c, cx, cy);
+  return laySampleAt(c, id, cx, cy, animFn, ba);
+}
+function layPlateCol(sc, pref, against, minR) {
+  var bgc = against || sc.bg || '#101010', mr = minR || 1.5;
+  for (var i = 0; i < pref.length; i++) if (pref[i] && contrast(pref[i], bgc) >= mr) return pref[i];
+  return contrast(sc.fg || '#ffffff', bgc) >= contrast(sc.bg || '#101010', bgc) ? (sc.fg || '#ffffff') : (sc.bg || '#101010');
+}
+function layPaper(c, name, x, y, w, h, r, fill, edgeCol, shadowK, animFn) {
+  var dk = lum(c.sc.fg || '#ffffff') > lum(c.sc.bg || '#101010') ? (c.sc.bg || '#101010') : (c.sc.fg || '#101010');
+  var sh = Math.min(c.comp.width, c.comp.height) * (shadowK == null ? 0.01 : shadowK);
+  if (sh > 0.5) layRRect(c, name + ' shadow', x + sh * 0.6, y + sh, w, h, r, { fill: mixHex(c.sc.bg || '#101010', dk, 0.7), alpha: dark(c.sc.bg) ? 0.45 : 0.2 }, animFn);
+  var p = { fill: fill, alpha: 1 };
+  if (edgeCol) { p.stroke = edgeCol; p.width = Math.max(1, Math.min(c.comp.width, c.comp.height) * 0.0018); }
+  return layRRect(c, name, x, y, w, h, r, p, animFn);
+}
+function layTin(c, frame, d, len, easeFn) {
+  var t = (frame - c.cut.origin) / c.comp.fps;
+  return (easeFn || E.outExpo)(cl((t - (d || 0)) / Math.max(0.01, len || 0.4)));
+}
+function layTout(c, frame) {
+  var pout = cl((frame - c.cut.sourceEnd + c.cut.outFrames) / Math.max(1, c.cut.outFrames));
+  return 1 - E.inCubic(pout);
+}
+
 return {
   EPS: EPS, TAU: TAU, DEG: DEG, cl: cl, mix: mix, E: E,
   p: p, arrN: arrN,
@@ -808,6 +1150,14 @@ return {
   decU: decU, decMG: decMG, decBB: decBB, hitBB: hitBB, cornerSpot: cornerSpot, nearBB: nearBB,
   freeBand: freeBand, clearOf: clearOf, placeBackFrom: placeBackFrom,
   segCmds: segCmds, polyCmds: polyCmds, rectCmds: rectCmds, dotCmds: dotCmds, ringCmds: ringCmds,
-  partPts: partPts, lyricChar: lyricChar, stepText: stepText, sampleShape: sampleShape
+  partPts: partPts, lyricChar: lyricChar, stepText: stepText, sampleShape: sampleShape,
+  layBase: layBase, layText: layText, layLineText: layLineText, layNote: layNote,
+  layStrip: layStrip, layHasLatin: layHasLatin, layFlat: layFlat, layPad2: layPad2,
+  layLineNo: layLineNo, laySeed: laySeed, layAltCopy: layAltCopy, layFmtTime: layFmtTime,
+  layIsPunct: layIsPunct, layIsSmall: layIsSmall, layIsKanji: layIsKanji,
+  laySplitLines: laySplitLines, laySplitK: laySplitK, layChars: layChars, layFontObj: layFontObj,
+  layMeasure: layMeasure, layFitSize: layFitSize, laySetNodes: laySetNodes,
+  laySampleAt: laySampleAt, layRectAt: layRectAt, layRRect: layRRect, layCircleAt: layCircleAt,
+  layPolyAt: layPolyAt, layPlateCol: layPlateCol, layPaper: layPaper, layTin: layTin, layTout: layTout
 };
 })(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools);
