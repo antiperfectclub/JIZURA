@@ -43,6 +43,7 @@ const required = {
   bg: ['skyline', 'xpRingDots'],
   treat: ['inline', 'outlineOffset', 'xoDoublePrint'],
   decor: ['xlLadder', 'romajiLine', 'tyGlyphBody'],
+  fx: ['shake', 'slice', 'invert', 'flash', 'zoom', 'chroma', 'xrDropBounce'],
   trans: ['xqPolyIris']
 };
 
@@ -95,7 +96,7 @@ function assembly() {
     composition: { width: 320, height: 180, fps: 24, frameCount: 96 },
     style: {
       schemes: [{ bg: '#101010', fg: '#ffffff', sub: '#999999', dim: '#666666',
-        ink: '#eeeeee', accent: '#ff5577', accent2: '#55ccff' }],
+        ink: '#eeeeee', accent: '#ff5577', accent2: '#55ccff', ghostA: '#e4007f', ghostB: '#00a0e9' }],
       fx: { motion: 0.7 }
     },
     cuts: [cut(0, 0, 48), cut(1, 48, 96)],
@@ -116,6 +117,8 @@ for (const [group, names] of Object.entries(required)) {
     } else if (group === 'decor') {
       if (name === 'romajiLine') preset.params.text = 'toumei na mama';
       target.presets.decor = [preset];
+    } else if (group === 'fx') {
+      a.events = [{ t: 0.5, type: name, amp: 0.8, dur: 0.25 }];
     } else {
       target.presets[group] = preset;
     }
@@ -136,6 +139,32 @@ for (const [group, names] of Object.entries(required)) {
     }
   }
 }
+
+const fxAssembly = assembly();
+fxAssembly.style.ghost = 0.45;
+fxAssembly.style.glow = 0.6;
+fxAssembly.style.texture = { grain: 0.5, paper: 0.5, scan: 0.5 };
+fxAssembly.style.fx = { motion: 0.48, glitch: 0.28, decor: 0.64, texture: 0.79, chroma: 0.28 };
+fxAssembly.events = [
+  { t: 0.2, type: 'shake', amp: 0.8, dur: 0.3 },
+  { t: 0.4, type: 'slice', amp: 0.7, dur: 0.2 },
+  { t: 0.6, type: 'flash', amp: 1, dur: 0.2 },
+  { t: 0.8, type: 'invert', amp: 1, dur: 0.1 },
+  { t: 1.0, type: 'zoom', amp: 0.8, dur: 0.25 },
+  { t: 1.2, type: 'chroma', amp: 1, dur: 0.3 },
+  { t: 1.5, type: 'xrDropBounce', amp: 1, dur: 0.35 }
+];
+const fxResult = sandbox.JZCavalry.compile(fxAssembly, {});
+fxResult.graph.validate();
+const fxNames = fxResult.graph.layers.map(l => l.name);
+assert(fxNames.some(n => n.includes('Ghost A')));
+assert(fxNames.some(n => n.includes('Ghost B')));
+assert(fxNames.some(n => n.includes('Glow halo')));
+assert(fxNames.some(n => n === 'Style / Scanlines'));
+assert(fxNames.some(n => n === 'Style / Paper fiber'));
+assert(fxNames.some(n => n === 'Style / Film grain'));
+assert(fxNames.some(n => n.startsWith('FX Rig')));
+checks += 8;
 
 const transformGraph = {
   byId: {

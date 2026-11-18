@@ -2,6 +2,7 @@
 var JZCavalry=(function(N,G,C){
 'use strict';
 function name(p){return typeof p==='string'?p:p&&p.name;}
+function copy(v){return JSON.parse(JSON.stringify(v));}
 function required(a){var r=[];a.cuts.forEach(function(c){var P=c.presets||{};
   r.push({group:'layout',name:c.layoutInstruction&&c.layoutInstruction.name||c.source&&c.source.layout,cut:c.id});
   ['enter','hold','exit','bg','cam','treat','trans'].forEach(function(g){if(name(P[g])&&name(P[g])!=='none')r.push({group:g,name:name(P[g]),cut:c.id});});
@@ -26,20 +27,158 @@ function preflight(a){
   var rows=required(a), missing=rows.filter(function(r){return !N.get(r.group,r.name);});
   return {required:rows,missing:missing,manifest:N.manifest(),hostVerified:false,renderVerified:false};
 }
+function scaleAlpha(node,mult){
+  if(node.keys.alpha){Object.keys(node.keys.alpha).forEach(function(f){node.keys.alpha[f].value*=mult;});}
+  else node.attrs.alpha=(node.attrs.alpha==null?1:node.attrs.alpha)*mult;
+}
+function shiftKeys(node,lag){
+  if(!lag)return;
+  var nextKeys={};
+  Object.keys(node.keys).forEach(function(attr){
+    var src=node.keys[attr], dst={};
+    Object.keys(src).map(Number).sort(function(a,b){return a-b;}).forEach(function(f){
+      var tf=Math.max(node.start,Math.min(node.end-1,f+lag));
+      dst[tf]=copy(src[f]);
+    });
+    nextKeys[attr]=dst;
+  });
+  node.keys=nextKeys;
+}
+function insertBefore(graph,nodeId,targetId){
+  var node=graph.byId[nodeId], target=graph.byId[targetId];
+  var i=graph.layers.indexOf(node), j=graph.layers.indexOf(target);
+  if(i>=0&&j>=0&&i>j){graph.layers.splice(i,1);graph.layers.splice(j,0,node);}
+}
+function addGhosts(graph,comp,cut,cam,textIds,sc,ghostAmt,events,notices){
+  if(!(ghostAmt>0.02)||!textIds.length)return;
+  var u=Math.min(comp.width,comp.height)/1080, k=ghostAmt*u;
+  var chroma=(events||[]).filter(function(e){return (e.type||e.name)==='chroma';});
+  var specs=[
+    {label:'Ghost B',lag:Math.max(1,Math.round(1.6/24*comp.fps)),off:[-3.4,-1.3],color:sc.ghostB||sc.accent2||sc.accent},
+    {label:'Ghost A',lag:Math.max(1,Math.round(0.8/24*comp.fps)),off:[3.2,1.9],color:sc.ghostA||sc.accent}
+  ];
+  var anchorId=graph.byId[textIds[0]].parent||textIds[0];
+  var alphaScale=N.clamp(0.45*ghostAmt,0.18,0.65);
+  specs.forEach(function(sp){
+    var gNull=graph.add('null',cut.id+' / '+sp.label,cam,cut.start,cut.end,{});
+    insertBefore(graph,gNull,anchorId);
+    if(chroma.length){
+      for(var f=cut.start;f<cut.end;f++){
+        var s=1, t=f/comp.fps;
+        for(var ci=0;ci<chroma.length;ci++){
+          var dt=(t-chroma[ci].t)*24;
+          if(dt>=0&&dt<14)s+=(chroma[ci].amp==null?1:chroma[ci].amp)*Math.pow(0.55,dt);
+        }
+        graph.key(gNull,'position.x',f,sp.off[0]*k*s,1);
+        graph.key(gNull,'position.y',f,-sp.off[1]*k*s,1);
+      }
+    } else {
+      graph.byId[gNull].attrs.position=[sp.off[0]*k,-sp.off[1]*k];
+    }
+    var placeMap=Object.create(null);
+    textIds.forEach(function(tid){
+      var src=graph.byId[tid];
+      if(!src||src.type!=='textShape')return;
+      var pId=src.parent, clonedParent=gNull;
+      if(pId&&pId!==cam&&graph.byId[pId]){
+        if(!placeMap[pId]){
+          var spNode=graph.byId[pId];
+          var cpId=graph.add(spNode.type,spNode.name+' / '+sp.label,gNull,spNode.start,spNode.end,copy(spNode.attrs));
+          graph.byId[cpId].keys=copy(spNode.keys);
+          insertBefore(graph,cpId,anchorId);
+          placeMap[pId]=cpId;
+        }
+        clonedParent=placeMap[pId];
+      }
+      var cid=graph.add(src.type,src.name+' / '+sp.label,clonedParent,src.start,src.end,copy(src.attrs),src.commands?copy(src.commands):null);
+      var cn=graph.byId[cid];
+      cn.keys=copy(src.keys);
+      cn.attrs['material.materialColor']=sp.color;
+      if(cn.attrs.stroke)cn.attrs['stroke.strokeColor']=sp.color;
+      scaleAlpha(cn,alphaScale);
+      shiftKeys(cn,sp.lag);
+      insertBefore(graph,cid,anchorId);
+    });
+  });
+  notices.push(cut.id+': chromatic ghost copies built as lagged tinted graph layers');
+}
+function addGlow(graph,cut,textIds,glowAmt,notices){
+  if(!(glowAmt>0.02)||!textIds.length)return;
+  var alphaScale=N.clamp(0.22*glowAmt,0.05,0.35);
+  textIds.forEach(function(tid){
+    var src=graph.byId[tid];
+    if(!src||src.type!=='textShape')return;
+    var hid=graph.add(src.type,src.name+' / Glow halo',src.parent,src.start,src.end,copy(src.attrs));
+    var hn=graph.byId[hid];
+    hn.keys=copy(src.keys);
+    hn.attrs.fill=false;hn.attrs.stroke=true;
+    hn.attrs['stroke.strokeColor']=src.attrs['material.materialColor'];
+    hn.attrs['stroke.width']=Math.max(2,(src.attrs.fontSize||24)*0.08*glowAmt);
+    scaleAlpha(hn,alphaScale);
+    insertBefore(graph,hid,tid);
+  });
+  notices.push(cut.id+': style.glow built as editable stroke halo (blur glow requires hostProfile.glow)');
+}
+function addTextures(graph,comp,root,sc,tex,texScale,notices){
+  var u=Math.min(comp.width,comp.height)/1080, W=comp.width, H=comp.height;
+  var cut={start:0,end:comp.frameCount};
+  var scanAmt=(tex.scan||0)*texScale;
+  if(scanAmt>0.02){
+    var step=Math.max(6,Math.round(H/120)), bars=[];
+    for(var y=-H/2;y<H/2;y+=step)bars=bars.concat(G.rect(-W/2,y,W,Math.max(1,step*0.35)));
+    C.shape(graph,cut,'Style / Scanlines',root,bars,{fill:sc.fg,alpha:N.clamp(0.08*scanAmt,0.02,0.22)});
+    notices.push('style.texture.scan built as editable scanline geometry');
+  }
+  var paperAmt=(tex.paper||0)*texScale;
+  if(paperAmt>0.02){
+    var fibers=[], fx=0;
+    for(var i=0;i<64;i++){
+      var x0=(N.random(701,i,1)-0.5)*W, y0=(N.random(701,i,2)-0.5)*H;
+      var ang=N.random(701,i,3)*Math.PI*2, len=(12+N.random(701,i,4)*32)*u;
+      fibers.push(['M',x0,y0],['L',x0+Math.cos(ang)*len,y0+Math.sin(ang)*len]);
+    }
+    C.shape(graph,cut,'Style / Paper fiber',root,fibers,{stroke:sc.sub||sc.fg,width:Math.max(1,u),alpha:N.clamp(0.1*paperAmt,0.02,0.2)});
+    notices.push('style.texture.paper built as editable fiber strokes');
+  }
+  var grainAmt=(tex.grain||0)*texScale;
+  if(grainAmt>0.02){
+    var dots=[];
+    for(var j=0;j<96;j++){
+      var gx=(N.random(907,j,1)-0.5)*W*0.95, gy=(N.random(907,j,2)-0.5)*H*0.95, sz=Math.max(1.5,2.5*u);
+      dots=dots.concat(G.rect(gx,gy,sz,sz));
+    }
+    var gid=C.shape(graph,cut,'Style / Film grain',root,dots,{fill:sc.fg,alpha:N.clamp(0.06*grainAmt,0.02,0.16)});
+    for(var f=0;f<comp.frameCount;f+=Math.max(1,Math.round(comp.fps/12))){
+      graph.key(gid,'position.x',f,(N.random(907,f,3)-0.5)*24*u,2);
+      graph.key(gid,'position.y',f,(N.random(907,f,4)-0.5)*24*u,2);
+    }
+    notices.push('style.texture.grain built as stepped seeded grain geometry');
+  }
+}
 function compile(a,options){
   options=options||{};
   /* Recipes can extend clips or add transition layers; never mutate the caller's assembly. */
   a=JSON.parse(JSON.stringify(a));
   var report=preflight(a);if(report.missing.length){var e=new Error('Unimplemented native recipes: '+report.missing.map(function(r){return r.group+':'+r.name+' ['+r.cut+']';}).join(', '));e.report=report;throw e;}
-  if(a.events&&a.events.length&&!N.get('fx',(a.events[0].type||a.events[0].name)))throw new Error('Unsupported events');
-  if(a.style.glow||a.style.ghost||Object.keys(a.style.texture||{}).some(function(k){return a.style.texture[k];}))throw new Error('Native style effects are not implemented');
-  if(a.style.fx&&['glitch','texture','chroma'].some(function(k){return a.style.fx[k]>0;}))throw new Error('Native screen FX are not implemented');
+  var fx=a.style.fx||{};
+  var chromaScale=fx.chroma==null?0.7:N.finite(fx.chroma,'fx.chroma');
+  var texScale=fx.texture==null?0.6:N.finite(fx.texture,'fx.texture');
+  var ghostAmt=chromaScale*(a.style.ghost==null?0:N.finite(a.style.ghost,'style.ghost'));
+  var glowAmt=(a.style.glow==null?0:N.finite(a.style.glow,'style.glow'))*texScale;
   var graph=new G.Graph(a.composition), root=graph.add('null','JIZURA / '+(a.title||''),null,0,a.composition.frameCount,{});
-  var built={}, notices=[], contexts=[];
+  var cutsRoot=graph.add('null','JIZURA / Cuts',root,0,a.composition.frameCount,{});
+  var built={}, notices=[], contexts=[], fxCounter=0;
   function dispatch(group,p,c){var k=name(p);if(!k||k==='none')return null;var out=JZPresets.build(group,p,c);if(out===null)return null;built[group+':'+k]=1;return out;}
+  function addFxRig(label){
+    var cr=graph.byId[cutsRoot], prevParent=cr.parent;
+    var rigId=graph.add('null','FX Rig '+(++fxCounter)+' / '+label,prevParent,0,a.composition.frameCount,{});
+    insertBefore(graph,rigId,cutsRoot);
+    cr.parent=rigId;
+    return rigId;
+  }
   a.cuts.forEach(function(cut){
     var firstLayer=graph.layers.length;
-    var P=cut.presets||{},group=graph.add('null',cut.id,root,cut.start,cut.end,{}),sc=a.style.schemes[P.scheme||0]||a.style.schemes[0];
+    var P=cut.presets||{},group=graph.add('null',cut.id,cutsRoot,cut.start,cut.end,{}),sc=a.style.schemes[P.scheme||0]||a.style.schemes[0];
     /* three-node camera rig so shear can be decomposed into rotation > scale > rotation/scale (see packs/p_camera.js) */
     var outer=graph.add('null',cut.id+' / Camera Rotation',group,cut.start,cut.end,{});
     var stretch=graph.add('null',cut.id+' / Camera Stretch',outer,cut.start,cut.end,{});
@@ -55,6 +194,8 @@ function compile(a,options){
       ctx.texts=ctx.texts.concat(ids);
       if(!node.glyphs)notices.push(node.id+': host ink metrics used; web advance metrics absent');
     });
+    addGlow(graph,cut,ctx.texts,glowAmt,notices);
+    addGhosts(graph,a.composition,cut,cam,ctx.texts,sc,ghostAmt,a.events,notices);
     dispatch('treat',P.treat,ctx);(P.decor||[]).forEach(function(p){dispatch('decor',p,ctx);});dispatch('cam',P.cam,ctx);
     /* Transitions are cut-pair recipes: they need the next cut assembled and must not be built in cut order. */
     ctx.layerIds=graph.layers.slice(firstLayer).map(function(n){return n.id;});
@@ -65,7 +206,11 @@ function compile(a,options){
     var transition=(ctx.cut.presets||{}).trans;
     if(transition)dispatch('trans',transition,ctx);
   });
-  (a.events||[]).forEach(function(e){dispatch('fx',{name:e.type||e.name,params:e},{graph:graph,assembly:a,comp:a.composition,parent:root,options:options});});
+  (a.events||[]).forEach(function(e){
+    var fk=e.type||e.name;
+    dispatch('fx',{name:fk,params:e},{graph:graph,assembly:a,comp:a.composition,parent:root,fxRig:null,addFxRig:addFxRig,options:options});
+  });
+  addTextures(graph,a.composition,root,a.style.schemes[0],a.style.texture||{},texScale,notices);
   graph.validate();report.built=built;report.fallback={};report.errors=[];report.notices=notices;report.createdLayers=graph.layers.length;report.connections=graph.edges.length;
   report.build=typeof JZCavalryBuild==='undefined'?null:JZCavalryBuild;
   return {graph:graph,report:report};
