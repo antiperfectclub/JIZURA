@@ -548,6 +548,248 @@ C.text = function (graph, cut, node, parent, options, sampler) {
   return ids;
 };
 
+/* ---- Shared decor & layout helpers ---- */
+function decU(c) { return Math.min(c.comp.width, c.comp.height) / 1080; }
+function decMG(c) { return Math.round(Math.min(c.comp.width, c.comp.height) * 0.05); }
+
+function decBB(c) {
+  var b = V.rest(c), W = c.comp.width, H = c.comp.height;
+  if (!b || !isFinite(b.x0 + b.x1 + b.y0 + b.y1) || !(b.x1 > b.x0 && b.y1 > b.y0)) {
+    return { x0: W * 0.35, x1: W * 0.65, y0: H * 0.4, y1: H * 0.6, cx: W / 2, cy: H / 2, w: W * 0.3, h: H * 0.2, boxes: [] };
+  }
+  var x0 = Math.max(b.x0, -W * 0.1), x1 = Math.min(b.x1, W * 1.1);
+  var y0 = Math.max(b.y0, -H * 0.1), y1 = Math.min(b.y1, H * 1.1);
+  if (x1 <= x0) { x0 = b.x0; x1 = b.x1; }
+  if (y1 <= y0) { y0 = b.y0; y1 = b.y1; }
+  return { x0: x0, x1: x1, y0: y0, y1: y1, cx: (x0 + x1) / 2, cy: (y0 + y1) / 2, w: x1 - x0, h: y1 - y0, boxes: b.boxes || [] };
+}
+
+function hitBB(x0, y0, x1, y1, bb, pad) {
+  pad = pad || 0;
+  return !(x1 < bb.x0 - pad || x0 > bb.x1 + pad || y1 < bb.y0 - pad || y0 > bb.y1 + pad);
+}
+
+function cornerSpot(c, bb, w, h, P, mkMul) {
+  P = P || {};
+  var W = c.comp.width, H = c.comp.height, m = decMG(c) * (mkMul == null ? 1 : mkMul);
+  var sx0 = P.right ? 1 : -1, sy0 = P.low ? 1 : -1;
+  var order = [[sx0, sy0], [-sx0, sy0], [sx0, -sy0], [-sx0, -sy0]];
+  var best = null, bestA = 1e18;
+  for (var i = 0; i < order.length; i++) {
+    var sx = order[i][0], sy = order[i][1];
+    var X = sx > 0 ? W - m - w : m, Y = sy > 0 ? H - m - h : m;
+    if (!hitBB(X, Y, X + w, Y + h, bb, 8)) return { x: X, y: Y, cx: X + w / 2, cy: Y + h / 2, ok: true, sx: sx, sy: sy };
+    var ov = Math.max(0, Math.min(X + w, bb.x1) - Math.max(X, bb.x0)) * Math.max(0, Math.min(Y + h, bb.y1) - Math.max(Y, bb.y0));
+    if (ov < bestA) { bestA = ov; best = { x: X, y: Y, cx: X + w / 2, cy: Y + h / 2, ok: false, sx: sx, sy: sy }; }
+  }
+  return best;
+}
+
+function nearBB(c, bb, w, h, P, gap) {
+  P = P || {};
+  var W = c.comp.width, H = c.comp.height, m = decMG(c) * 0.8;
+  var sx0 = P.right ? 1 : -1, sy0 = P.low ? 1 : -1;
+  var order = P.corner ? [[sx0, sy0], [-sx0, sy0], [sx0, -sy0], [-sx0, -sy0]] : [[sx0, sy0], [sx0, -sy0], [-sx0, sy0], [-sx0, -sy0]];
+  var tries = [];
+  for (var i = 0; i < order.length; i++) {
+    var sx = order[i][0], sy = order[i][1];
+    var ax = sx > 0 ? bb.x1 - w : bb.x0, ox = sx > 0 ? bb.x1 + gap : bb.x0 - gap - w;
+    var ay = sy > 0 ? bb.y1 + gap : bb.y0 - gap - h, iy = sy > 0 ? bb.y1 - h : bb.y0;
+    if ((P.v | 0) % 2) tries.push([ox, iy, sx, sy], [ax, ay, sx, sy], [ox, ay, sx, sy]);
+    else tries.push([ax, ay, sx, sy], [ox, iy, sx, sy], [ox, ay, sx, sy]);
+  }
+  for (var j = 0; j < tries.length; j++) {
+    var t = tries[j];
+    var X = cl(t[0], m, Math.max(m, W - m - w)), Y = cl(t[1], m, Math.max(m, H - m - h));
+    if (!hitBB(X, Y, X + w, Y + h, bb, gap * 0.4)) return { x: X, y: Y, cx: X + w / 2, cy: Y + h / 2, ok: true, sx: t[2], sy: t[3] };
+  }
+  return cornerSpot(c, bb, w, h, P, 1);
+}
+
+function freeBand(c, bb, low) {
+  var H = c.comp.height, u = decU(c), m = decMG(c);
+  var above = bb.y0 - m * 0.5, below = H - m * 0.5 - bb.y1;
+  var lo = !!low;
+  if ((lo ? below : above) < 60 * u && (lo ? above : below) > (lo ? below : above)) lo = !lo;
+  var room = lo ? below : above;
+  var d = Math.min(room * 0.5, 40 * u + room * 0.22);
+  return { low: lo, room: room, y: lo ? bb.y1 + d : bb.y0 - d };
+}
+
+function clearOf(bb, x, y, pad, soft) {
+  var dx = Math.max(bb.x0 - pad - x, 0, x - bb.x1 - pad);
+  var dy = Math.max(bb.y0 - pad - y, 0, y - bb.y1 - pad);
+  return cl(Math.hypot(dx, dy) / Math.max(EPS, soft || 1));
+}
+
+function placeBackFrom(c, startCount) {
+  var g = c.graph, added = g.layers.splice(startCount);
+  if (!added.length) return;
+  var anchorIdx = g.layers.length;
+  var pfx = c.cut.id + ' / ';
+  for (var i = 0; i < g.layers.length; i++) {
+    var l = g.layers[i];
+    if ((l.type === 'textShape' || l.name.indexOf(pfx + 'Ghost') === 0 || (c.texts && c.texts.indexOf(l.id) >= 0)) && l.start >= c.cut.start && l.end <= c.cut.end) {
+      anchorIdx = i;
+      break;
+    }
+  }
+  var camIdx = g.layers.indexOf(g.byId[c.parent]);
+  if (camIdx >= 0 && anchorIdx <= camIdx) anchorIdx = camIdx + 1;
+  g.layers.splice.apply(g.layers, [anchorIdx, 0].concat(added));
+}
+
+function segCmds(c, list) {
+  var W = c.comp.width, H = c.comp.height, out = [];
+  for (var i = 0; i < list.length; i++) {
+    var s = list[i];
+    if (!s || s.length < 4) continue;
+    N.finite(s[0], 'seg x0'); N.finite(s[1], 'seg y0'); N.finite(s[2], 'seg x1'); N.finite(s[3], 'seg y1');
+    out.push(['M', s[0] - W / 2, H / 2 - s[1]], ['L', s[2] - W / 2, H / 2 - s[3]]);
+  }
+  return out;
+}
+
+function polyCmds(c, polysList, closed) {
+  var W = c.comp.width, H = c.comp.height, out = [];
+  for (var i = 0; i < polysList.length; i++) {
+    var pts = polysList[i];
+    if (!pts || pts.length < 2) continue;
+    for (var j = 0; j < pts.length; j++) {
+      N.finite(pts[j][0], 'poly x'); N.finite(pts[j][1], 'poly y');
+      out.push([j ? 'L' : 'M', pts[j][0] - W / 2, H / 2 - pts[j][1]]);
+    }
+    if (closed) out.push(['Z']);
+  }
+  return out;
+}
+
+function rectCmds(c, rectsList) {
+  var W = c.comp.width, H = c.comp.height, out = [];
+  for (var i = 0; i < rectsList.length; i++) {
+    var r = rectsList[i];
+    if (!r || !(r[2] > 0 && r[3] > 0)) continue;
+    var cmds = G.rect(r[0] - W / 2, H / 2 - (r[1] + r[3]), r[2], r[3]);
+    for (var j = 0; j < cmds.length; j++) out.push(cmds[j]);
+  }
+  return out;
+}
+
+function dotCmds(c, dotsList) {
+  var W = c.comp.width, H = c.comp.height, out = [];
+  for (var i = 0; i < dotsList.length; i++) {
+    var d = dotsList[i];
+    if (!d || !(d[2] > 0.05)) continue;
+    var cmds = G.ellipse(d[0] - W / 2, H / 2 - d[1], d[2], d[2]);
+    for (var j = 0; j < cmds.length; j++) out.push(cmds[j]);
+  }
+  return out;
+}
+
+function ringCmds(c, ringsList, segsN) {
+  var W = c.comp.width, H = c.comp.height, out = [], n = segsN || 28;
+  for (var i = 0; i < ringsList.length; i++) {
+    var rg = ringsList[i], r = rg[2];
+    if (!(r > 0.05)) continue;
+    var cx = rg[0] - W / 2, cy = H / 2 - rg[1];
+    for (var k = 0; k <= n; k++) {
+      var a = k / n * TAU;
+      out.push([k ? 'L' : 'M', cx + Math.cos(a) * r, cy - Math.sin(a) * r]);
+    }
+    out.push(['Z']);
+  }
+  return out;
+}
+
+function partPts(pts, e0, e1) {
+  e0 = cl(e0); e1 = cl(e1);
+  if (e1 <= e0 || !pts || pts.length < 2) return [];
+  var d = [0];
+  for (var i = 1; i < pts.length; i++) {
+    d.push(d[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  }
+  var L = d[d.length - 1]; if (!(L > 0)) return [];
+  var A = e0 * L, B = e1 * L;
+  function at(s) {
+    var idx = 1;
+    while (idx < d.length - 1 && d[idx] < s) idx++;
+    var k = cl((s - d[idx - 1]) / Math.max(EPS, d[idx] - d[idx - 1]));
+    return [mix(pts[idx - 1][0], pts[idx][0], k), mix(pts[idx - 1][1], pts[idx][1], k)];
+  }
+  var out = [at(A)];
+  for (var j = 1; j < pts.length - 1; j++) if (d[j] > A && d[j] < B) out.push(pts[j]);
+  out.push(at(B));
+  return out;
+}
+
+function lyricChar(c, salt) {
+  var n0 = c.cut.nodes && c.cut.nodes[0];
+  var txt = (c.cut.source && c.cut.source.text) || (n0 && n0.text) || '';
+  var arr = Array.from(String(txt)).filter(function (ch) { return ch.trim() && !/^[\s\u3000.,!?。、！？「」『』()（）\[\]【】…—\-]$/.test(ch); });
+  if (!arr.length) return '';
+  var kan = arr.filter(function (ch) { return /[\u4E00-\u9FFF\u3400-\u4DBF]/.test(ch); });
+  var pool = kan.length ? kan : arr;
+  return pool[R.hash(c.cut.seed || (c.preset && c.preset.params && c.preset.params.seed) || 1, salt | 0, 5) % pool.length];
+}
+
+function stepText(c, name, x, y, size, opts, textAtFrame, maxSlices) {
+  opts = opts || {};
+  var range = opts.range || c.cut;
+  var s0 = Math.max(0, range.start), e0 = Math.min(c.comp.frameCount, range.end);
+  if (e0 <= s0) return [];
+  var runs = [], cur = null;
+  for (var f = s0; f < e0; f++) {
+    var str = String(textAtFrame(R.env(c, f), f) || '');
+    if (!cur || cur.text !== str) {
+      cur = { text: str, start: f, end: f + 1 };
+      runs.push(cur);
+    } else {
+      cur.end = f + 1;
+    }
+  }
+  var lim = maxSlices || 12;
+  if (runs.length > lim) {
+    var merged = [], step = Math.ceil((e0 - s0) / lim);
+    for (var sf = s0; sf < e0; sf += step) {
+      var ef = Math.min(e0, sf + step);
+      var mid = Math.floor((sf + ef - 1) / 2);
+      var sMid = String(textAtFrame(R.env(c, mid), mid) || '');
+      merged.push({ text: sMid, start: sf, end: ef });
+    }
+    runs = merged;
+  }
+  var ids = [];
+  for (var i = 0; i < runs.length; i++) {
+    var rn = runs[i];
+    if (!rn.text) continue;
+    var subOpts = Object.assign({}, opts, { range: { start: rn.start, end: rn.end } });
+    var id = addText(c, name + (runs.length > 1 ? ' #' + i : ''), rn.text, x, y, size, subOpts, opts.animFn);
+    if (id) ids.push(id);
+  }
+  return ids;
+}
+
+function sampleShape(c, name, cmdsFn, paint, alphaFn, parent) {
+  var cut = c.cut;
+  if (!(cut.end > cut.start)) return null;
+  var f0 = Math.floor((cut.start + cut.end) / 2);
+  var baseCmds = cmdsFn(R.env(c, f0), f0);
+  if (!baseCmds || baseCmds.length < 2) {
+    for (var t = cut.start; t < cut.end; t++) {
+      baseCmds = cmdsFn(R.env(c, t), t);
+      if (baseCmds && baseCmds.length >= 2) break;
+    }
+  }
+  if (!baseCmds || baseCmds.length < 2) return null;
+  var id = C.shape(c.graph, cut, cut.id + ' / ' + name, parent || c.parent, baseCmds, paint);
+  if (alphaFn) {
+    C.sample(c.graph, id, cut.start, cut.end, function (frame) {
+      return alphaFn(R.env(c, frame), frame);
+    });
+  }
+  return id;
+}
+
 return {
   EPS: EPS, TAU: TAU, DEG: DEG, cl: cl, mix: mix, E: E,
   p: p, arrN: arrN,
@@ -562,6 +804,10 @@ return {
   wordsOf: wordsOf, wrapCutRig: wrapCutRig, transWindow: transWindow, extendCut: extendCut,
   clipCut: clipCut, multiClipCut: multiClipCut, paintablesOf: paintablesOf,
   scaleCutAlphaDuring: scaleCutAlphaDuring, hideCutDuring: hideCutDuring,
-  multiClip: multiClip, cloneCutSubtree: cloneCutSubtree
+  multiClip: multiClip, cloneCutSubtree: cloneCutSubtree,
+  decU: decU, decMG: decMG, decBB: decBB, hitBB: hitBB, cornerSpot: cornerSpot, nearBB: nearBB,
+  freeBand: freeBand, clearOf: clearOf, placeBackFrom: placeBackFrom,
+  segCmds: segCmds, polyCmds: polyCmds, rectCmds: rectCmds, dotCmds: dotCmds, ringCmds: ringCmds,
+  partPts: partPts, lyricChar: lyricChar, stepText: stepText, sampleShape: sampleShape
 };
 })(JZNative, JZGraph, JZComponents, JZRecipeTools, JZRecipeComponents, JZSceneTools);
