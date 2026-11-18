@@ -108,7 +108,9 @@ def assemble(root,release=False):
               'enter':['xgComet','tyKeyFirst','blur','zoom','wipe'],'exit':['xjFocusPull','xiPlateCarry','knCloseGap','blur','shrink','wipe'],
               'hold':['tzKernNudge','tzCounterRules'],'bg':['skyline','xpRingDots'],
               'treat':['inline','outlineOffset','xoDoublePrint'],
-              'decor':['xlLadder','romajiLine','tyGlyphBody'],'trans':['xqPolyIris']}
+              'decor':['xlLadder','romajiLine','tyGlyphBody'],
+              'fx':['shake','slice','invert','flash','zoom','chroma','xrDropBounce'],
+              'trans':['xqPolyIris']}
     probe=body+'\n(function(){var R='+literal(required)+';Object.keys(R).forEach(function(g){R[g].forEach(function(k){var d=JZNative.get(g,k);if(!d||typeof d.build!=="function")throw new Error("Missing executable recipe: "+g+":"+k);if(JZPresets.get(g,k)!==d)throw new Error("Registry divergence: "+g+":"+k);});});process.stdout.write(JSON.stringify(JZNative.manifest()));})();'
     manifest=json.loads(run_node(node,probe+'\nif(JZPresets!==JZNative)throw new Error("Registry identity mismatch");','Native registration'))
     regression=subprocess.run([node,str(root/'cavalry/tools/test_requested_native.js')],cwd=root,text=True,encoding='utf-8',capture_output=True,timeout=120)
@@ -138,10 +140,7 @@ def assemble(root,release=False):
         browser+='J.Cavalry.'+key+'='+literal(value)+';\n'
     browser+=body+'\n'+text['cavalry/native/browser_adapter.js']+'\n'
     browser+='J.Cavalry.standaloneSource=J.Cavalry.runtimeSource+"\\n"+J.Cavalry.panelSource+"\\n";\nJ.Cavalry.downloadPanel=function(name){return J.saveFile(String(name||"JIZURA_CV").replace(/[\\\\/:*?"<>|]/g,"_")+".js",new Blob([J.Cavalry.standaloneSource],{type:"text/javascript;charset=utf-8"}));};\n'
-    outputs={n:standalone for n in ('JIZURA_CV.js','dist/cavalry/JIZURA_CV.js','dist/cavalry/JIZURA_Cavalry.js')}
-    loader_out=runtime+'\n'+loader+'\n'
-    outputs['JIZURA_CV_Loader.js']=loader_out
-    outputs['dist/cavalry/JIZURA_CV_Loader.js']=loader_out
+    outputs={n:standalone for n in ('JIZURA_CV.js','dist/cavalry/JIZURA_CV.js')}
     outputs['src/11r_cavalry.js']=browser
     build_manifest={'format':'jizura.cavalry.build-manifest','version':info['version'],'buildId':info['buildId'],
         'modules':modules,'recipes':manifest,'coverage':{g:{k:cov[g][k] for k in ('registered','referenceCount','method','blockingMissing')} for g in GROUPS},
