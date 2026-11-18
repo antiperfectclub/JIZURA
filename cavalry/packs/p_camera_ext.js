@@ -197,6 +197,17 @@ M.wzOjigi = function (e, P) {
   var T = cl(e.dur * 0.6, 0.5, 1.25), h = p(P, 'h', 0.2), u = e.t / T, b = ioc(u / 0.3) * (1 - ioc((u - (0.3 + h)) / (0.7 - h)));
   return out(0, e.H * p(P, 'a', 0.03) * e.K * b, 1 + 0.008 * e.K * b, 1, 1 - 0.04 * e.K * b);
 };
+M.xqTripodNudge = function (e, P) {
+  var per = Math.max(0.1, p(P, 'per', 1)), sd = e.sd + (p(P, 's0', 0) | 0);
+  var kz = Math.min(60, Math.max(1, Math.floor((e.dur - 0.35) / per)));
+  var k = Math.floor(e.t / per), ev = ioc(cl((e.t - k * per) / 0.3));
+  function ps(idx, salt) {
+    if (idx < 0 || idx >= kz) return 0;
+    return (N.random(sd, idx, salt) * 2 - 1) / (1 + 0.5 * idx);
+  }
+  var x0 = ps(k > 0 ? k - 1 : 0, 1), y0 = ps(k > 0 ? k - 1 : 0, 2);
+  return out((x0 + (ps(k, 1) - x0) * ev) * e.W * 0.016 * e.K, (y0 + (ps(k, 2) - y0) * ev) * e.H * 0.013 * e.K, 1.02);
+};
 
 function environment(c, f, ts) {
   var dur = (c.cut.sourceEnd - c.cut.origin) / c.comp.fps, t = Math.max(0, (f - c.cut.origin) / c.comp.fps);
