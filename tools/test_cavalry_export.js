@@ -283,10 +283,12 @@ function hostEnv(options = {}) {
   };
   vm.runInContext(J.Cavalry.runtimeSource, vm.createContext(sandbox));
   return { run: sandbox.JZCavalry.run, preflight: sandbox.JZCavalry.preflight,
+    JZNative: sandbox.JZNative, JZPresets: sandbox.JZPresets,
     layers, keys, connects, deletes, warnings, api };
 }
 
 const host = hostEnv();
+assert.equal(host.JZPresets, host.JZNative, 'JZPresets and JZNative must be the same registry');
 const p = host.preflight(a);
 assert.equal(p.missing.length, 0, 'preflight agrees with the page: ' + JSON.stringify(p.missing));
 assert.equal(p.hostVerified, false);
@@ -402,6 +404,20 @@ assert.equal(blurredResult.report.built['exit:xjFocusPull'], 1);
 assert([...blurred.layers.values()].some(l => l.type === 'blur'), 'blur is a real host layer with keys');
 assert(blurred.keys.some(k => 'radius' in k.data));
 assert(blurred.connects.some(c => c[1] === 'id' && c[3] === 'input'));
+for (const [group, name] of [['enter', 'blur'], ['enter', 'zoom'], ['exit', 'blur']]) {
+  const run = hostEnv();
+  const result = run.run(nativeAssembly({ [group]: name }), { hostProfile: blurProfile });
+  assert.equal(result.report.built[group + ':' + name], 1, group + ':' + name + ' must build with a blur profile');
+  assert([...run.layers.values()].some(l => l.type === 'blur'), group + ':' + name + ' must emit a blur layer');
+}
+for (const [group, name] of [['enter', 'wipe'], ['exit', 'wipe'], ['exit', 'shrink']]) {
+  const run = hostEnv();
+  const result = run.run(nativeAssembly({ [group]: name }));
+  assert.equal(result.report.built[group + ':' + name], 1, group + ':' + name + ' must build');
+}
+const wipeRun = hostEnv();
+wipeRun.run(nativeAssembly({ enter: 'wipe' }));
+assert([...wipeRun.layers.values()].some(l => l.type === 'javaScriptDeformer'), 'wipe clips through a deformer');
 
 const kern = hostEnv();
 assert.equal(kern.run(nativeAssembly({ hold: 'tzKernNudge' })).report.built['hold:tzKernNudge'], 1);
@@ -432,7 +448,8 @@ assert.equal(count(doublePrint, 'textShape'), 4, 'one second impression per glyp
 
 const ladder = hostEnv();
 assert.equal(ladder.run(nativeAssembly({ decor: ['xlLadder'], params: { steps: 4 } })).report.built['decor:xlLadder'], 1);
-assert.equal(graphics(ladder).length, 2 + 5 + 1, 'two rails, five rungs and the cursor');
+assert(graphics(ladder).length >= 6, 'rails, rungs and three lit rungs are real paths');
+assert(named(ladder, 'Ladder lit rung').length === 3, 'three lit rungs');
 const romajiRun = hostEnv();
 romajiRun.run(nativeAssembly({ decor: ['romajiLine'], params: { text: 'toumei na mama' } }));
 assert(named(romajiRun, 'cut-0/Romaji annotation / Placement').length === 1, 'annotation placement is created');

@@ -94,6 +94,7 @@ def assemble(root,release=False):
     names+=sorted(p.relative_to(root).as_posix() for pattern in ('src/11p_*.js','ae/p_*.jsx') for p in root.glob(pattern))
     for n in ('cavalry/build.json','cavalry/bridge.js','cavalry/loader.js'):
         if (root/n).exists(): names.append(n)
+    names.append('cavalry/tools/test_requested_native.js')
     raw={}
     for n in dict.fromkeys(names):
         p=root/n
@@ -104,12 +105,16 @@ def assemble(root,release=False):
         run_node(node,text[n],n,check=True)
     body='\n;\n'.join(text[n] for n in runtime_names)+'\n;\n'
     required={'layout':['center','vcols','dictionary','xbTwistFrames'],
-              'enter':['xgComet','tyKeyFirst'],'exit':['xjFocusPull','xiPlateCarry','knCloseGap'],
+              'enter':['xgComet','tyKeyFirst','blur','zoom','wipe'],'exit':['xjFocusPull','xiPlateCarry','knCloseGap','blur','shrink','wipe'],
               'hold':['tzKernNudge','tzCounterRules'],'bg':['skyline','xpRingDots'],
               'treat':['inline','outlineOffset','xoDoublePrint'],
               'decor':['xlLadder','romajiLine','tyGlyphBody'],'trans':['xqPolyIris']}
     probe=body+'\n(function(){var R='+literal(required)+';Object.keys(R).forEach(function(g){R[g].forEach(function(k){var d=JZNative.get(g,k);if(!d||typeof d.build!=="function")throw new Error("Missing executable recipe: "+g+":"+k);if(JZPresets.get(g,k)!==d)throw new Error("Registry divergence: "+g+":"+k);});});process.stdout.write(JSON.stringify(JZNative.manifest()));})();'
-    manifest=json.loads(run_node(node,probe,'Native registration'))
+    manifest=json.loads(run_node(node,probe+'\nif(JZPresets!==JZNative)throw new Error("Registry identity mismatch");','Native registration'))
+    regression=subprocess.run([node,str(root/'cavalry/tools/test_requested_native.js')],cwd=root,text=True,encoding='utf-8',capture_output=True,timeout=120)
+    if regression.returncode: raise ValueError('Recipe graph regression failed\n'+regression.stderr)
+    graph_tests=json.loads(regression.stdout)
+    if graph_tests.get('requestedRecipeGraphCompilation')!='passed': raise ValueError('Recipe graph regression did not pass')
     absent=['%s:%s'%(g,k) for g,names in required.items() for k in names if k not in manifest[g]]
     if absent: raise ValueError('Requested native recipes missing: '+', '.join(absent))
     refs=json.loads(text['ae/data.json']).get('names')
@@ -144,7 +149,7 @@ def assemble(root,release=False):
             'groups':{g:cov[g]['catalog'] for g in GROUPS}},
         'blockingMissing':blocking,'status':info['status'],'hostVerified':False,'renderVerified':False}
     for n,s in outputs.items(): run_node(node,s,n,check=True)
-    report=dict(info,protectedHashes=before,syntaxCheck='passed',outputHashes={n:sha(s.encode()) for n,s in outputs.items()})
+    report=dict(info,recipeGraphTests=graph_tests,protectedHashes=before,syntaxCheck='passed',outputHashes={n:sha(s.encode()) for n,s in outputs.items()})
     outputs['dist/cavalry/build-report.json']=json.dumps(report,ensure_ascii=True,sort_keys=True,indent=2)+'\n'
     outputs['dist/cavalry/build-manifest.json']=json.dumps(build_manifest,ensure_ascii=True,sort_keys=True,indent=2)+'\n'
     if protected(root)!=before or any((root/n).read_bytes()!=b for n,b in raw.items()): raise ValueError('Build inputs changed')

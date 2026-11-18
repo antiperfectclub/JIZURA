@@ -114,19 +114,22 @@ deterministic seed is carried; no new random values are drawn.
 | --- | --- | --- |
 | layout | `center`, `vcols`, `dictionary`, `xbTwistFrames` | for hand-authored/AE assemblies; browser exports use captured `graphics` |
 | enter | `xgComet`, `tyKeyFirst` | comet trails are eight real delayed glyph copies |
+| core enter | `blur`, `zoom`, `wipe` | glyph resize/tracking, blur channel, editable wipe bar + clip |
 | exit | `xjFocusPull`, `xiPlateCarry`, `knCloseGap` | clip uses the documented deformer; blur needs a host profile (below) |
+| core exit | `blur`, `shrink`, `wipe` | glyph resize/tracking, blur channel, wipe clip |
 | hold | `tzKernNudge`, `tzCounterRules` | kerning ticks and counter rules are real paths |
 | bg | `skyline`, `xpRingDots` | two parallax city planes with windows; concentric dot rings |
 | treat | `inline`, `outlineOffset`, `xoDoublePrint` | real glyph copies, not underline/box aliases |
-| decor | `romajiLine`, `xlLadder`, `tyGlyphBody` | reading line, ladder rails/rungs/cursor, glyph em boxes/baselines/indices |
+| decor | `romajiLine`, `xlLadder`, `tyGlyphBody` | reading line, ladder rails/rungs/three lit rungs, text-outside division rules |
 | trans | `xqPolyIris` | incoming-cut polygon iris with real deformer clipping |
 
 `skyline` omits the source's feathered horizon glow. `xoDoublePrint` rotates per glyph rather than around the
 whole line. `xiPlateCarry` and `xqPolyIris` clip through the documented JavaScript Deformer; `xjFocusPull`
 emits a semantic blur node. Treatments clone the exported glyph layers, so a clip or blur deformer created by
 another recipe is not copied onto those clones. `romajiLine` rejects kanji without `source.romaji` or
-`params.text` instead of inventing a reading. `xlLadder` and `tyGlyphBody` are native reconstructions whose
-parameter conformance with the AE formulas is still pending.
+`params.text` instead of inventing a reading. `xlLadder` now follows the source's rung cadence and three lit rungs; `tyGlyphBody` draws text-outside
+division rules rather than per-glyph boxes. Both remain native reconstructions whose parameter conformance
+with the AE formulas is still pending.
 
 ### Host profile for the unverified blur layer
 
@@ -149,6 +152,9 @@ Without the blur profile:
 ```
 Gaussian blur requires hostProfile.gaussianBlur {verified:true, layerType, radius, input}. No substitute was applied.
 ```
+
+`enter:blur`, `enter:zoom` and `exit:blur` use the same profile. `enter:wipe`/`exit:wipe` and `xiPlateCarry`
+use the documented deformer by default and report a render check instead.
 
 The blur layer also passes through `emit()` and is restored to its semantic form afterwards, so a failed run
 does not leave a partially rewritten graph.
@@ -191,16 +197,16 @@ can be called verified.
 | `cavalry/native/20_components.js` | glyph placement and editable-path components |
 | `cavalry/native/25_recipe_tools.js` | shared math, camera helpers, sampler registration |
 | `cavalry/native/26_recipe_components.js` | requested-package helpers; clip/blur extensions |
-| `cavalry/native/27_registry_bridge.js` | `JZPresets` view over `JZNative`; scene-space transform and clip tools |
+| `cavalry/native/27_registry_bridge.js` | `JZPresets` interface plus scene-space transform and clip tools |
+| `cavalry/native/28_registry_identity.js` | makes `JZPresets === JZNative` (one executable registry) |
 | `cavalry/native/30_assembly.js` | preflight, cut assembly, deferred cut-pair transitions, camera rig, report |
 | `cavalry/native/browser_adapter.js` | browser assembly → v3 native payload + glyphs + words |
-| `cavalry/packs/*.js` | native recipes: geometry, motion, hold, camera, x2 packs, requested packs (motion/backgrounds/treatments/layouts/decor/transitions) |
+| `cavalry/packs/*.js` | native recipes: core scalar (`blur`/`zoom`/`wipe`/`shrink`), geometry, motion, hold, camera, x2 packs, requested packs |
 | `cavalry/bridge.js` | optional `WebServer`/`WebClient` handoff |
 | `cavalry/panel.js`, `cavalry/loader.js` | dockable panel and one-shot loader UI |
 
 The old `presets.js`, `runtime.js`, `families.js`, `host-values.js` and `procedural.js` files are removed.
-`JZPresets` is now a thin view over `JZNative` (same definition object, no copy), so a second registry cannot
-drift. `10_graph.js` validates finite host values, empty paths and Unicode round-trips, and
+`JZPresets` is now the same object as `JZNative` (same registry, no copy), so a second registry cannot drift. `10_graph.js` validates finite host values, empty paths and Unicode round-trips, and
 `25_recipe_tools.js` owns deterministic seeded math.
 
 `build_cavalry.py` writes `src/11r_cavalry.js` (page bundle), `JIZURA_CV.js` / `dist/cavalry/JIZURA_CV.js`
@@ -219,7 +225,7 @@ and `dist/cavalry/build-manifest.json`. Each dist file is self-contained.
   "recipes": { "cam": { "panL": { "exact": false, "hostVerified": false, "source": "…", "scope": "cut-camera" } } },
   "coverage": { "layout": { "method": "native", "registered": ["graphics", "center", "…"], "blockingMissing": ["accordion", "…"] } },
   "catalog": { "total": 1717, "groups": { "layout": { "count": 366, "notPorted": 366 } } },
-  "blockingMissing": 1613,
+  "blockingMissing": 1607,
   "status": "preview",
   "hostVerified": false,
   "renderVerified": false
@@ -249,17 +255,17 @@ does, not a claim that Cavalry implements it. Outputs `cavalry/catalog/ae-preset
 python3 build_cavalry.py          # bundles + build-report.json + build-manifest.json
 python3 build_cavalry.py --check  # fail if any generated file is stale
 node tools/test_cavalry_export.js # contracts: capture, graph, packs, catalog, panel, loader
-node cavalry/tools/test_requested_native.js # registry identity, 46 recipe/graph checks
+node cavalry/tools/test_requested_native.js # registry identity, 59 recipe/graph checks
 python3 build.py --dev            # page HTML with the regenerated src/11r_cavalry.js
 ```
 
 The build also proves every requested recipe is executable, present in the manifest, and the same definition
-via `JZPresets` before writing outputs. The tests run each new recipe at least once against a mock host. They do
-not replace rendering the file in Cavalry: `hostVerified` and `renderVerified` stay false.
+via `JZPresets` before writing outputs, and runs the recipe graph regression during the build. The tests run each
+new recipe at least once against a mock host. They do not replace rendering the file in Cavalry: `hostVerified` and `renderVerified` stay false.
 
 ## Deliberately not built yet
 
-1. The remaining AE names (from the catalog): layout 360, enter 227, exit 208, hold 94, bg 127, cam 33,
+1. The remaining AE names (from the catalog): layout 360, enter 224, exit 205, hold 94, bg 127, cam 33,
    treat 116, decor 255, trans 55, fx 138. `fx` still has no native recipe.
 2. Real host verification of attribute paths, `api.getBoundingBox`, text metrics, `WebServer`/`WebClient`, the
    JavaScript Deformer globals and the blur layer type.

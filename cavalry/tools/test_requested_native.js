@@ -47,6 +47,11 @@ const required = {
 };
 
 let checks = 0;
+assert.strictEqual(sandbox.JZPresets, sandbox.JZNative,
+  'Native and preset interfaces must be the same registry object');
+checks++;
+required.enter.push('blur', 'zoom', 'wipe');
+required.exit.push('blur', 'shrink', 'wipe');
 
 for (const [group, names] of Object.entries(required)) {
   for (const name of names) {

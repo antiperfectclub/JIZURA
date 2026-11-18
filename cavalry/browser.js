@@ -362,7 +362,13 @@ C.assemble = function ({ plan, project = {}, range = null, strict = false }) {
       /* These ports are exact, but their host layer type is not verified yet. Say so at export time,
          not only when the build stops. */
       if (cut.exit === 'xiPlateCarry') host(label + 'exit "xiPlateCarry" uses the documented JavaScript Deformer; its render appearance is not verified yet.');
-      if (cut.exit === 'xjFocusPull') host(label + 'exit "xjFocusPull" needs hostProfile.gaussianBlur {verified:true}; the build stops without it.');
+      if (cut.enter === 'blur' || cut.enter === 'zoom') {
+        host(label + 'enter "' + cut.enter + '" needs hostProfile.gaussianBlur {verified:true}; the build stops without it.');
+      }
+      if (cut.exit === 'xjFocusPull' || cut.exit === 'blur') {
+        host(label + 'exit "' + cut.exit + '" needs hostProfile.gaussianBlur {verified:true}; the build stops without it.');
+      }
+      if (cut.exit === 'wipe' || cut.enter === 'wipe') host(label + 'wipe uses the documented JavaScript Deformer; its render appearance is not verified yet.');
       (cut.decor || []).forEach(d => {
         const name = typeof d === 'string' ? d : d && (d.id || d.name);
         hit('decor', name);
