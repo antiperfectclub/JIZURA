@@ -195,11 +195,15 @@ var originalEmit = G.Graph.prototype.emit;
 G.Graph.prototype.emit = function (options) {
   options = options || {};
   var profile = (options.hostProfile || {}).gaussianBlur, saved = [], graph = this;
+  var dropped = Object.create(null);
   this.layers.forEach(function (n) {
     if (n.type !== '$gaussianBlur') return;
     if (!profile || profile.verified !== true || !profile.layerType || !profile.radius || !profile.input) {
-      throw new Error('Gaussian blur requires hostProfile.gaussianBlur {verified:true, layerType, radius, input}. ' +
-        'No substitute was applied.');
+      dropped[n.id] = true;
+      graph.emitErrors = graph.emitErrors || [];
+      graph.emitErrors.push({ kind: 'effect', label: n.name,
+        message: 'Gaussian blur skipped: hostProfile.gaussianBlur {verified:true, layerType, radius, input} is missing.' });
+      return;
     }
     saved.push({ node: n, type: n.type, attrs: n.attrs, keys: n.keys });
     var attrs = {}; attrs[profile.radius] = n.attrs.radius;
@@ -207,6 +211,10 @@ G.Graph.prototype.emit = function (options) {
     var keys = {}; keys[profile.radius] = n.keys.radius; n.keys = keys;
     n.type = profile.layerType;
   });
+  if (Object.keys(dropped).length) {
+    this.layers = this.layers.filter(function (n) { return !dropped[n.id]; });
+    this.edges = this.edges.filter(function (e) { return !dropped[e.from] && !dropped[e.to]; });
+  }
   var edgeSaved = [];
   this.edges.forEach(function (e) {
     if (e.input !== '$gaussianBlur') return;

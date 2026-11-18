@@ -49,6 +49,22 @@ function insertBefore(graph,nodeId,targetId){
   var i=graph.layers.indexOf(node), j=graph.layers.indexOf(target);
   if(i>=0&&j>=0&&i>j){graph.layers.splice(i,1);graph.layers.splice(j,0,node);}
 }
+/* Remove only the layers/edges added by one failed recipe or text item. */
+function truncate(graph,layerCount,edgeCount){
+  graph.layers.splice(layerCount).forEach(function(n){delete graph.byId[n.id];});
+  graph.edges.splice(edgeCount);
+}
+function record(report,kind,label,error,cut){
+  report.errors.push({kind:kind,label:label,cut:cut||null,message:String(error&&error.message||error)});
+}
+function fontNotice(report,node,cut,options){
+  var info=C.font(node,options);
+  if(!info||!info.fallback)return;
+  var used=info.family?info.family+' / '+info.style:'Cavalry default font';
+  var requested=info.requested&&info.requested.family?info.requested.family+' / '+info.requested.style:'missing metadata';
+  report.fontFallbacks.push({node:node.id,cut:cut.id,requested:requested,used:used,reason:info.reason});
+  report.notices.push(node.id+': font '+requested+' -> '+used);
+}
 function addGhosts(graph,comp,cut,cam,textIds,sc,ghostAmt,events,notices){
   if(!(ghostAmt>0.02)||!textIds.length)return;
   var u=Math.min(comp.width,comp.height)/1080, k=ghostAmt*u;
@@ -160,6 +176,7 @@ function compile(a,options){
   /* Recipes can extend clips or add transition layers; never mutate the caller's assembly. */
   a=JSON.parse(JSON.stringify(a));
   var report=preflight(a), missingMap={};
+  report.errors=[];report.fontFallbacks=[];
   report.missing.forEach(function(r){missingMap[r.group+':'+r.name]=1;});
   if(options.strict&&report.missing.length){var e=new Error('Unimplemented native recipes: '+report.missing.map(function(r){return r.group+':'+r.name+' ['+r.cut+']';}).join(', '));e.report=report;throw e;}
   var fx=a.style.fx||{};
@@ -170,9 +187,18 @@ function compile(a,options){
   var graph=new G.Graph(a.composition), root=graph.add('null','JIZURA / '+(a.title||''),null,0,a.composition.frameCount,{});
   var cutsRoot=graph.add('null','JIZURA / Cuts',root,0,a.composition.frameCount,{});
   var built={}, notices=[], contexts=[], fxCounter=0;
+  report.notices=notices;
   function dispatch(group,p,c){var k=name(p);if(!k||k==='none')return null;
     if(!N.get(group,k)){missingMap[group+':'+k]=1;return (group==='enter'||group==='hold'||group==='exit')?function(){}:null;}
-    var out=JZPresets.build(group,p,c);if(out===null)return null;built[group+':'+k]=1;return out;}
+    var layerCount=graph.layers.length, edgeCount=graph.edges.length;
+    try{
+      var out=JZPresets.build(group,p,c);if(out===null)return null;built[group+':'+k]=1;return out;
+    }catch(error){
+      truncate(graph,layerCount,edgeCount);
+      record(report,'recipe',group+':'+k,error,c&&c.cut&&c.cut.id);
+      return (group==='enter'||group==='hold'||group==='exit')?function(){}:null;
+    }
+  }
   function addFxRig(label){
     var cr=graph.byId[cutsRoot], prevParent=cr.parent;
     var rigId=graph.add('null','FX Rig '+(++fxCounter)+' / '+label,prevParent,0,a.composition.frameCount,{});
@@ -194,12 +220,35 @@ function compile(a,options){
     cut.nodes.forEach(function(node){
       var m=Object.assign({},ctx,{node:node});
       var effects=['enter','hold','exit'].map(function(k){return dispatch(k,P[k]||{name:k==='hold'?'still':'cut'},m);});
-      var ids=C.text(graph,cut,node,cam,options,function(s,g,gs,f){effects.forEach(function(fn){if(typeof fn!=='function')throw new Error('Motion builder must return a sampler');fn(s,g,gs,f);});});
-      ctx.texts=ctx.texts.concat(ids);
-      if(!node.glyphs)notices.push(node.id+': host ink metrics used; web advance metrics absent');
+      var animate=function(s,g,gs,f){effects.forEach(function(fn){if(typeof fn==='function')fn(s,g,gs,f);});};
+      var layerCount=graph.layers.length, edgeCount=graph.edges.length, ids;
+      try{
+        ids=C.text(graph,cut,node,cam,options,animate);
+        ctx.texts=ctx.texts.concat(ids);
+        if(!node.glyphs)notices.push(node.id+': host ink metrics used; web advance metrics absent');
+        fontNotice(report,node,cut,options);
+      }catch(error){
+        truncate(graph,layerCount,edgeCount);
+        record(report,'text',node.id,error,cut.id);
+        try{
+          var fallback=JSON.parse(JSON.stringify(node));
+          delete fallback.glyphs;fallback.font=null;
+          ids=C.text(graph,cut,fallback,cam,options,animate);
+          ctx.texts=ctx.texts.concat(ids);
+          notices.push(node.id+': failed text rebuilt with default glyph placement');
+          fontNotice(report,fallback,cut,options);
+        }catch(error2){
+          truncate(graph,layerCount,edgeCount);
+          record(report,'text-fallback',node.id,error2,cut.id);
+        }
+      }
     });
-    addGlow(graph,cut,ctx.texts,glowAmt,notices);
-    addGhosts(graph,a.composition,cut,cam,ctx.texts,sc,ghostAmt,a.events,notices);
+    var styleLayers=graph.layers.length,styleEdges=graph.edges.length;
+    try{addGlow(graph,cut,ctx.texts,glowAmt,notices);}
+    catch(error){truncate(graph,styleLayers,styleEdges);record(report,'style','glow',error,cut.id);}
+    styleLayers=graph.layers.length;styleEdges=graph.edges.length;
+    try{addGhosts(graph,a.composition,cut,cam,ctx.texts,sc,ghostAmt,a.events,notices);}
+    catch(error){truncate(graph,styleLayers,styleEdges);record(report,'style','ghost',error,cut.id);}
     dispatch('treat',P.treat,ctx);(P.decor||[]).forEach(function(p){dispatch('decor',p,ctx);});dispatch('cam',P.cam,ctx);
     /* Transitions are cut-pair recipes: they need the next cut assembled and must not be built in cut order. */
     ctx.layerIds=graph.layers.slice(firstLayer).map(function(n){return n.id;});
@@ -214,12 +263,16 @@ function compile(a,options){
     var fk=e.type||e.name;
     dispatch('fx',{name:fk,params:e},{graph:graph,assembly:a,comp:a.composition,parent:root,fxRig:null,addFxRig:addFxRig,options:options});
   });
-  addTextures(graph,a.composition,root,a.style.schemes[0],a.style.texture||{},texScale,notices);
-  graph.validate();report.built=built;report.missingRecipes=missingMap;report.fallback={};report.errors=[];report.notices=notices;report.createdLayers=graph.layers.length;report.connections=graph.edges.length;
+  var textureLayers=graph.layers.length,textureEdges=graph.edges.length;
+  try{addTextures(graph,a.composition,root,a.style.schemes[0],a.style.texture||{},texScale,notices);}
+  catch(error){truncate(graph,textureLayers,textureEdges);record(report,'style','texture',error,null);}
+  graph.validate();report.built=built;report.missingRecipes=missingMap;report.fallback={};report.errors=report.errors||[];report.notices=notices;report.createdLayers=graph.layers.length;report.connections=graph.edges.length;
   report.build=typeof JZCavalryBuild==='undefined'?null:JZCavalryBuild;
   return {graph:graph,report:report};
 }
-function run(a,o){o=o||{};var result=compile(a,o),scene=result.graph.emit(Object.assign({},o,{title:a.title}));scene.report=result.report;
+function run(a,o){o=o||{};var result=compile(a,o),scene=result.graph.emit(Object.assign({},o,{title:a.title}));
+  if(scene.errors&&scene.errors.length)result.report.errors=result.report.errors.concat(scene.errors);
+  scene.report=result.report;
   console.log('JIZURA native build report: '+JSON.stringify(result.report));
   var missKeys=Object.keys(result.report.missingRecipes||{});
   if(missKeys.length)console.warn('JIZURA: unimplemented native recipes skipped (composition still built): '+missKeys.join(', '));

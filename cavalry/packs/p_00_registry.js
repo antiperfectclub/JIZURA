@@ -17,9 +17,11 @@ legacy('exit', 'pop', function (p, g, gs, e) { return { s: 1 + 0.4 * p, a: 1 - p
 function rng(seed) { var a = (seed >>> 0) || 1; return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 function firstFont(c) {
   var n0 = c.cut.nodes[0]; if (!n0 || !n0.font) throw new Error('Recipe needs a text node font in ' + c.cut.id);
-  var f = (c.options.fontOverrides || {})[n0.font.key] || n0.font;
-  if (!f.family || !f.style || !cavalry.fontExists(f.family, f.style)) throw new Error('Missing font ' + f.family + ' / ' + f.style);
-  return { node: n0, font: f };
+  return { node: n0, font: C.font(n0, c.options) };
+}
+function textAttrs(f, attrs) {
+  if (f && f.family && f.style) attrs.font = { font: f.family, style: f.style };
+  return attrs;
 }
 N.register('bg', 'dots', { source: 'legacy Cavalry preset bg:dots (halftone)', scope: 'cut', differences: [], build: function (c) {
   var P = (c.preset && c.preset.params) || {}, r = rng(P.seed || (c.cut.source || {}).seed || 1), W = c.comp.width, H = c.comp.height;
@@ -34,14 +36,19 @@ N.register('bg', 'dots', { source: 'legacy Cavalry preset bg:dots (halftone)', s
 N.register('bg', 'bigChar', { source: 'legacy Cavalry preset bg:bigChar', scope: 'cut', differences: [], build: function (c) {
   var f = firstFont(c), ch = Array.from(String(f.node.text).replace(/\n/g, ''))[0];
   if (!ch) throw new Error('bg:bigChar needs a character');
-  c.graph.add('textShape', c.cut.id + ' / Big Char', c.parent, c.cut.start, c.cut.end, { text: ch, font: { font: f.font.family, style: f.font.style }, fontSize: c.comp.height * 1.1,
-    autoWidth: true, autoHeight: true, horizontalAlignment: 1, verticalAlignment: 1, position: [0, 0], fill: true, stroke: false, 'material.materialColor': c.sc.dim || c.sc.sub, alpha: 0.5 });
+  c.graph.add('textShape', c.cut.id + ' / Big Char', c.parent, c.cut.start, c.cut.end,
+    textAttrs(f.font, { text: ch, fontSize: c.comp.height * 1.1, autoWidth: true, autoHeight: true,
+      horizontalAlignment: 1, verticalAlignment: 1, position: [0, 0], fill: true, stroke: false,
+      'material.materialColor': c.sc.dim || c.sc.sub, alpha: 0.5 }));
 } });
 N.register('decor', 'indexNum', { source: 'legacy Cavalry preset decor:indexNum', scope: 'cut', differences: [], build: function (c) {
   var f = firstFont(c), num = parseInt(String(c.cut.id).replace(/\D/g, ''), 10);
   if (!isFinite(num)) throw new Error('decor:indexNum needs a numeric cut id: ' + c.cut.id);
-  c.graph.add('textShape', c.cut.id + ' / Index', c.parent, c.cut.start, c.cut.end, { text: 'No.' + ('0' + (num + 1)).slice(-2), font: { font: f.font.family, style: f.font.style }, fontSize: 28,
-    autoWidth: true, autoHeight: true, horizontalAlignment: 1, verticalAlignment: 1, position: [-c.comp.width / 2 + 90, c.comp.height / 2 - 60], fill: true, stroke: false, 'material.materialColor': c.sc.sub });
+  c.graph.add('textShape', c.cut.id + ' / Index', c.parent, c.cut.start, c.cut.end,
+    textAttrs(f.font, { text: 'No.' + ('0' + (num + 1)).slice(-2), fontSize: 28, autoWidth: true,
+      autoHeight: true, horizontalAlignment: 1, verticalAlignment: 1,
+      position: [-c.comp.width / 2 + 90, c.comp.height / 2 - 60], fill: true, stroke: false,
+      'material.materialColor': c.sc.sub }));
 } });
 })(JZNative, JZRecipeTools, JZComponents, JZGraph);
 

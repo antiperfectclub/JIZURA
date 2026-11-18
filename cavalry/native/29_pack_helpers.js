@@ -520,24 +520,31 @@ function cloneCutSubtree(graph, ctx, label, start, end, extraLayerIds) {
   return { rigId: rigId, paintables: clonedPaintables };
 }
 
-/* Extend C.text once to materialize node._jzTwins after glyph layers are created. */
+/* Extend C.text once to materialize node._jzTwins and node._jzPost after glyph layers are created. */
 var prevText = C.text;
 C.text = function (graph, cut, node, parent, options, sampler) {
   var ids = prevText(graph, cut, node, parent, options, sampler);
-  if (!node || !Array.isArray(node._jzTwins) || !node._jzTwins.length || !ids.length) return ids;
-  var gs = V.glyphs(Object.assign({}, { options: options }, { cut: cut }), node);
-  node._jzTwins.forEach(function (spec) {
-    ids.forEach(function (srcId, idx) {
-      var src = graph.byId[srcId];
-      if (!src || src.type !== 'textShape') return;
-      var clone = V.cloneLayer(graph, srcId, spec.label || 'Twin');
-      if (spec.below) {
-        var i = graph.layers.indexOf(clone), j = graph.layers.indexOf(src);
-        if (i > j && j >= 0) { graph.layers.splice(i, 1); graph.layers.splice(j, 0, clone); }
-      }
-      if (typeof spec.setup === 'function') spec.setup(graph, clone, src, gs[idx], gs, idx, cut);
+  if (!node || !ids.length) return ids;
+  var gs = null;
+  if (Array.isArray(node._jzTwins) && node._jzTwins.length) {
+    gs = V.glyphs(Object.assign({}, { options: options }, { cut: cut }), node);
+    node._jzTwins.forEach(function (spec) {
+      ids.forEach(function (srcId, idx) {
+        var src = graph.byId[srcId];
+        if (!src || src.type !== 'textShape') return;
+        var clone = V.cloneLayer(graph, srcId, spec.label || 'Twin');
+        if (spec.below) {
+          var i = graph.layers.indexOf(clone), j = graph.layers.indexOf(src);
+          if (i > j && j >= 0) { graph.layers.splice(i, 1); graph.layers.splice(j, 0, clone); }
+        }
+        if (typeof spec.setup === 'function') spec.setup(graph, clone, src, gs[idx], gs, idx, cut);
+      });
     });
-  });
+  }
+  if (Array.isArray(node._jzPost) && node._jzPost.length) {
+    if (!gs) gs = V.glyphs(Object.assign({}, { options: options }, { cut: cut }), node);
+    node._jzPost.forEach(function (fn) { fn(graph, ids, gs, cut, parent, options); });
+  }
   return ids;
 };
 

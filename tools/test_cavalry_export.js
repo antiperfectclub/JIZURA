@@ -209,7 +209,7 @@ const blurWarning = J.Cavalry.assemble({ plan: fresh({ exit: 'xjFocusPull' }) })
 assert.equal(blurWarning.presetReport.built['exit:xjFocusPull'], 1);
 assert(blurWarning.hostChecks.some(w => /hostProfile\.gaussianBlur/.test(w)));
 assert.equal(J.Cavalry.assemble({ plan: fresh({ decor: [{ id: 'cropMarks' }] }) }).presetReport.built['decor:cropMarks'], 1);
-const dropped = J.Cavalry.assemble({ plan: fresh({ hold: 'nope', enter: 'alsonope', decor: [{ id: 'crosshair' }], bg: 'grain', treat: 'grain', trans: 'wipe' }) });for (const key of ['hold', 'enter', 'decor', 'bg', 'treat', 'trans']) {
+const dropped = J.Cavalry.assemble({ plan: fresh({ hold: 'nope', enter: 'alsonope', decor: [{ id: 'crosshair' }], bg: 'grain', treat: 'grain', trans: 'noSuchTransition' }) });for (const key of ['hold', 'enter', 'decor', 'bg', 'treat', 'trans']) {
   assert(Object.keys(dropped.presetReport.missing).some(k => k.startsWith(key + ':')), key + ' miss must be reported');
 }
 assert(dropped.warnings.length >= dropped.blockingWarnings.length);
@@ -247,11 +247,11 @@ function hostEnv(options = {}) {
   let n = 0, active = null;
   const mk = (type, name) => { const id = type + '#' + n++; layers.set(id, { type, name, attrs: {}, parent: null }); return id; };
   const api = {
-    createComp(name) { active = mk('composition', name); return active; },
+    createComp(name) { if (options.failComp) throw new Error('mock composition failure'); active = mk('composition', name); return active; },
     getActiveComp() { return active; }, setActiveComp(id) { active = id; },
     getFrame() { return 0; }, setFrame() {},
-    create: mk,
-    createEditable(p, name) { const id = mk('editableShape', name); layers.get(id).path = p; return id; },
+    create(type, name) { if (options.failCreate && options.failCreate(type, name)) throw new Error('mock layer failure: ' + type); return mk(type, name); },
+    createEditable(p, name) { if (options.failCreate && options.failCreate('editableShape', name)) throw new Error('mock layer failure: editableShape'); const id = mk('editableShape', name); layers.get(id).path = p; return id; },
     parent(id, parent) { layers.get(id).parent = parent; },
     set(id, values) { Object.assign(layers.get(id).attrs, values); },
     get(id, attr) {
@@ -276,7 +276,7 @@ function hostEnv(options = {}) {
   const sandbox = {
     api, cavalry: {
       Path,
-      fontExists: () => true,
+      fontExists: options.fontExists || (() => true),
       measureText: () => ({ width: 20 })
     },
     console: { log() {}, warn: m => warnings.push(String(m)) }
@@ -396,7 +396,9 @@ assert.equal(clippedResult.report.built['exit:xiPlateCarry'], 1);
 assert([...clipped.layers.values()].some(l => l.type === 'customDeformer'), 'an explicit host profile overrides the layer type');
 
 const blurNoProfile = hostEnv();
-assert.throws(() => blurNoProfile.run(nativeAssembly({ exit: 'xjFocusPull' })), /Gaussian blur requires hostProfile\.gaussianBlur/);
+const blurNoRun = blurNoProfile.run(nativeAssembly({ exit: 'xjFocusPull' }));
+assert(blurNoRun.report.errors.some(e => e.kind === 'effect' && /Gaussian blur skipped/.test(e.message)));
+assert([...blurNoProfile.layers.values()].some(l => l.type === 'textShape'), 'blur failure leaves text alive');
 const blurProfile = { gaussianBlur: { verified: true, layerType: 'blur', radius: 'radius', input: 'input' } };
 const blurred = hostEnv();
 const blurredResult = blurred.run(nativeAssembly({ exit: 'xjFocusPull' }), { hostProfile: blurProfile });
@@ -485,22 +487,54 @@ assert(named(transHost, 'Iris edge').length === 2, 'iris edge paths are emitted'
 
 /* rollback: a corrupt Unicode read-back must remove everything this build created */
 const failing = hostEnv({ badText: true });
-const beforeFail = failing.layers.size;
-assert.throws(() => failing.run(a), /Unicode readback mismatch/);
-assert(failing.deletes.length > 0, 'created layers are deleted on failure');
-assert.equal(failing.layers.size, beforeFail, 'rollback returns the scene to its previous state');
+const failedRun = failing.run(a);
+assert(failedRun.report.errors.some(e => /Unicode readback mismatch/.test(e.message)), 'text failures are reported');
+assert([...failing.layers.values()].some(l => l.type === 'composition'), 'the composition survives a text failure');
 const invisible = hostEnv({ opacity: 0 });
-assert.throws(() => invisible.run(a), /Invalid native opacity range/);
+const invisibleRun = invisible.run(a);
+assert(invisibleRun.report.errors.length > 0, 'opacity failures are reported');
+assert([...invisible.layers.values()].some(l => l.type === 'composition'), 'the composition survives an opacity failure');
 
-/* empty / unpainted geometry is an error, never an empty layer */
+/* empty / unpainted geometry is reported and skipped, not fatal */
 const badPath = JSON.parse(JSON.stringify(a));
 badPath.cuts[0].nodes = [];
 badPath.cuts[0].graphics = [{ name: 'bad', path: [['M', 0, 0]], fill: '#ffffff', alpha: 1 }];
-assert.throws(() => hostEnv().run(badPath), /Missing geometry|Empty\/invalid path/);
+const badPathRun = hostEnv().run(badPath);
+assert(badPathRun.report.errors.some(e => /missing geometry|Empty\/invalid path/i.test(e.message)));
 const badPaint = JSON.parse(JSON.stringify(a));
 badPaint.cuts[0].nodes = [];
 badPaint.cuts[0].graphics = [{ name: 'bad', path: [['M', 0, 0], ['L', 10, 10]], fill: null, stroke: null, alpha: 1 }];
-assert.throws(() => hostEnv().run(badPaint), /no paint/);
+const badPaintRun = hostEnv().run(badPaint);
+assert(badPaintRun.report.errors.some(e => /no paint/i.test(e.message)));
+
+/* a single layer failure leaves its siblings and the composition alive */
+const oneFail = hostEnv({ failCreate: (type, name) => type === 'textShape' && /\/ 0$/.test(name) });
+const oneFailRun = oneFail.run(a);
+assert(oneFailRun.report.errors.some(e => e.kind === 'layer'));
+assert([...oneFail.layers.values()].filter(l => l.type === 'textShape').length === 1, 'the other glyph layer survives');
+assert([...oneFail.layers.values()].some(l => l.type === 'composition'));
+assert.throws(() => hostEnv({ failComp: true }).run(nativeAssembly({})), /mock composition failure/,
+  'composition creation is the only whole-import failure');
+
+/* font fallback: never abort; report the substitution and keep text */
+const noFont = hostEnv({ fontExists: () => false });
+const noFontRun = noFont.run(nativeAssembly({}));
+assert(noFontRun.report.fontFallbacks.length > 0, 'missing font is reported as a substitution');
+assert(noFontRun.report.errors.length === 0, 'a missing font is not an import failure: ' + JSON.stringify(noFontRun.report.errors));
+const noFontText = [...noFont.layers.values()].filter(l => l.type === 'textShape');
+assert.equal(noFontText.length, 2);
+assert(noFontText.every(l => !l.attrs.font), 'Cavalry default font is requested by omitting the font attribute');
+const styleHost = hostEnv({ fontExists: (family, style) => style === 'Regular' });
+const styleRun = styleHost.run(nativeAssembly({}));
+assert(styleRun.report.fontFallbacks.some(f => f.reason === 'style'));
+assert.equal([...styleHost.layers.values()].find(l => l.type === 'textShape').attrs.font.style, 'Regular');
+
+/* an unsupported blur is dropped as an effect, not as the whole composition */
+const blurMissing = hostEnv();
+const blurMissingRun = blurMissing.run(nativeAssembly({ enter: 'blur' }));
+assert(blurMissingRun.report.errors.some(e => e.kind === 'effect' && /Gaussian blur skipped/.test(e.message)));
+assert([...blurMissing.layers.values()].filter(l => l.type === 'textShape').length === 2);
+assert([...blurMissing.layers.values()].some(l => l.type === 'composition'));
 
 /* the adapter's host report may not invent a miss the page did not predict, nor print it twice */
 const adapterMiss = J.Cavalry.assemble({ plan: fresh({ cam: 'nope' }) });
@@ -671,7 +705,7 @@ assert.match(loaderBad.labels[0].text, /JIZURA의 JSON이 아닙니다/);
     const mk = (type, name) => { const id = type + '#' + n++; files.set(id, { type, name, attrs: {} }); return id; };
     const hostApi = {
       create: mk,
-      createComp(name) { active = mk('composition', name); return active; },
+      createComp(name) { if (options.failComp) throw new Error('mock composition failure'); active = mk('composition', name); return active; },
       getActiveComp: () => active, setActiveComp(id) { active = id; }, getFrame: () => 0, setFrame() {},
       set(id, values) { Object.assign(files.get(id).attrs, values); }, parent() {},
       setInFrame() {}, setOutFrame() {}, setFill() {}, setStroke() {}, select() {}, deleteLayer() {},

@@ -52,17 +52,36 @@ Graph.prototype.validate=function() {
 };
 Graph.prototype.emit=function(options) {
   this.validate(); options=options||{};
-  var self=this, created=[], map={}, oldComp=api.getActiveComp(), oldFrame=api.getFrame(), compId;
+  var self=this, map={}, created=[], errors=(this.emitErrors||[]).slice(), failed=Object.create(null);
+  var oldComp=api.getActiveComp(), oldFrame=api.getFrame(), compId;
   try {
     compId=api.createComp(options.title||'JIZURA'); created.push(compId); api.setActiveComp(compId);
-    api.set(compId,{'resolution.x':this.comp.width,'resolution.y':this.comp.height});
-    if(options.timingPaths) {
+  } catch(error) {
+    /* Only an impossible composition creation aborts the whole import. */
+    if(created.length) created.slice().reverse().forEach(function(id){try{api.deleteLayer(id);}catch(e){}});
+    if(oldComp)try{api.setActiveComp(oldComp);api.setFrame(oldFrame);}catch(e2){}
+    throw error;
+  }
+  try { api.set(compId,{'resolution.x':this.comp.width,'resolution.y':this.comp.height}); }
+  catch(error) { errors.push({kind:'composition',label:'resolution',message:String(error&&error.message||error)}); }
+  if(options.timingPaths) {
+    try {
       var t=options.timingPaths, a={};
       if(!t.fps||!t.end) throw new Error('Incomplete timing profile');
       a[t.fps]=this.comp.fps; a[t.end]=this.comp.frameCount-1; if(t.start)a[t.start]=0; api.set(compId,a);
+    } catch(error) { errors.push({kind:'composition',label:'timing',message:String(error&&error.message||error)}); }
+  }
+
+  this.layers.forEach(function(n){
+    if(n.parent&&failed[n.parent]) {
+      failed[n.id]=true;
+      errors.push({kind:'layer',label:n.name,message:'parent layer failed'});
+      return;
     }
-    this.layers.forEach(function(n){
-      var id=n.type==='path'?api.createEditable(path(n.commands),n.name):api.create(n.type,n.name); map[n.id]=id; created.push(id);
+    var id=null;
+    try {
+      id=n.type==='path'?api.createEditable(path(n.commands),n.name):api.create(n.type,n.name);
+      map[n.id]=id; created.push(id);
       if(n.parent)api.parent(id,map[n.parent]); api.setInFrame(id,n.start); api.setOutFrame(id,n.end-1);
       var attrs=Object.assign({},n.attrs); delete attrs.fill; delete attrs.stroke; delete attrs.alpha;
       if(n.type==='path'||n.type==='textShape') {
@@ -70,8 +89,9 @@ Graph.prototype.emit=function(options) {
       }
       api.set(id,attrs);
       /* Deformers and filters have no opacity channel; reading it would fail after creating them. */
+      var full=1;
       if(n.type==='path'||n.type==='textShape'||n.type==='null') {
-        var full=api.get(id,'opacity'); N.finite(full,'native opacity');
+        full=api.get(id,'opacity'); N.finite(full,'native opacity');
         if(!(full>0))throw new Error('Invalid native opacity range');
         if(n.attrs.alpha!=null)api.set(id,{opacity:full*n.attrs.alpha});
       }
@@ -82,17 +102,27 @@ Graph.prototype.emit=function(options) {
           api.keyframe(id,f,data); meta[attr==='alpha'?'opacity':attr]={frame:f,type:k.type}; api.modifyKeyframe(id,meta);
         });
       });
-    });
-    this.edges.forEach(function(e){api.connect(map[e.from],e.output,map[e.to],e.input);});
-    var ids=this.layers.map(function(n){return map[n.id];});
-    if(options.componentPath&&!api.writeToFile(options.componentPath,api.serialise(ids,true),false))throw new Error('Component write failed');
-    api.setFrame(0); if(ids.length)api.select([ids[0]]);
-    return {compositionId:compId,rootId:ids[0],layerIds:ids};
-  } catch(error) {
-    var cleanup=[]; created.reverse().forEach(function(id){try{api.deleteLayer(id);}catch(e){cleanup.push(String(e));}});
-    if(oldComp)try{api.setActiveComp(oldComp);api.setFrame(oldFrame);}catch(e2){cleanup.push(String(e2));}
-    if(cleanup.length)error.message+='; rollback errors: '+cleanup.join('; '); throw error;
+    } catch(error) {
+      failed[n.id]=true;
+      delete map[n.id];
+      if(id)try{api.deleteLayer(id);}catch(cleanup){errors.push({kind:'cleanup',label:n.name,message:String(cleanup&&cleanup.message||cleanup)});}
+      errors.push({kind:'layer',label:n.name,message:String(error&&error.message||error)});
+    }
+  });
+  this.edges.forEach(function(e){
+    var from=map[e.from], to=map[e.to];
+    if(!from||!to){errors.push({kind:'connection',label:e.from+' -> '+e.to,message:'endpoint layer missing'});return;}
+    try{api.connect(from,e.output,to,e.input);}
+    catch(error){errors.push({kind:'connection',label:e.from+' -> '+e.to,message:String(error&&error.message||error)});}
+  });
+  var ids=this.layers.filter(function(n){return !!map[n.id];}).map(function(n){return map[n.id];});
+  if(options.componentPath) {
+    try { if(!api.writeToFile(options.componentPath,api.serialise(ids,true),false)) throw new Error('Component write failed'); }
+    catch(error) { errors.push({kind:'component',label:options.componentPath,message:String(error&&error.message||error)}); }
   }
+  try { api.setFrame(0); if(ids.length)api.select([ids[0]]); }
+  catch(error) { errors.push({kind:'selection',label:'composition',message:String(error&&error.message||error)}); }
+  return {compositionId:compId,rootId:ids[0],layerIds:ids,errors:errors};
 };
 function codepoints(s) {return Array.from(String(s)).map(function(c){return 'U+'+c.codePointAt(0).toString(16).toUpperCase();}).join(' ');}
 return {Graph:Graph,rect:rect,ellipse:ellipse,codepoints:codepoints};

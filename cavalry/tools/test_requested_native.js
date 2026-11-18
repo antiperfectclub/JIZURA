@@ -183,6 +183,53 @@ assert(Math.abs(roundtrip[0] - input[0]) < 1e-8);
 assert(Math.abs(roundtrip[1] - input[1]) < 1e-8);
 checks++;
 
+
+/* Partial-import contract: missing fonts and single layer failures must not abort the whole import. */
+class MockPath {
+  constructor() { this.used = 0; }
+  moveTo() { this.used++; } lineTo() { this.used++; } quadTo() { this.used++; } cubicTo() { this.used++; }
+  close() {} append() {} empty() { return this.used === 0; }
+}
+function hostApi(failText) {
+  const layers = new Map(); let n = 0, active = null;
+  const mk = (type, name) => { const id = type + '#' + n++; layers.set(id, { type, name, attrs: {} }); return id; };
+  return {
+    layers,
+    api: {
+      createComp(name) { active = mk('composition', name); return active; },
+      getActiveComp: () => active, setActiveComp(id) { active = id; },
+      getFrame: () => 0, setFrame() {},
+      create(type, name) { if (failText && type === 'textShape') throw new Error('mock layer failure'); return mk(type, name); },
+      createEditable(p, name) { const id = mk('editableShape', name); layers.get(id).path = p; return id; },
+      parent(id, parent) { layers.get(id).parent = parent; },
+      set(id, values) { Object.assign(layers.get(id).attrs, values); },
+      get(id, attr) {
+        const l = layers.get(id);
+        return attr === 'opacity' ? 100 : attr === 'text' ? l.attrs.text : l.attrs[attr];
+      },
+      setInFrame(id, f) { layers.get(id).start = f; }, setOutFrame(id, f) { layers.get(id).end = f; },
+      setFill() {}, setStroke() {}, select() {}, deleteLayer(id) { layers.delete(id); },
+      keyframe() {}, modifyKeyframe() {}, connect() {}, serialise() { return '[]'; }, writeToFile() { return true; }
+    }
+  };
+}
+function runWith(fontOk, failText) {
+  const host = hostApi(failText);
+  const previousApi = sandbox.api, previousCavalry = sandbox.cavalry, previousConsole = sandbox.console;
+  sandbox.api = host.api; sandbox.console = { log() {}, warn() {}, error() {} };
+  sandbox.cavalry = Object.assign({}, previousCavalry, { Path: MockPath, fontExists: fontOk });
+  try { return sandbox.JZCavalry.run(assembly(), {}); }
+  finally { sandbox.api = previousApi; sandbox.cavalry = previousCavalry; sandbox.console = previousConsole; }
+}
+const fontFallback = runWith(() => false, false);
+assert(fontFallback.report.fontFallbacks.length > 0, 'missing font is reported');
+assert.strictEqual(fontFallback.report.errors.length, 0, 'missing font does not fail the import');
+assert(fontFallback.layerIds.length > 0, 'composition survives a missing font');
+const layerFailure = runWith(() => true, true);
+assert(layerFailure.report.errors.some(e => e.kind === 'layer'), 'layer failure is recorded');
+assert(layerFailure.layerIds.length > 0, 'composition survives a layer failure');
+checks += 5;
+
 const report = {
   checks,
   syntaxAndRegistration: 'passed',

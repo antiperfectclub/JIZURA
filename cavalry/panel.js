@@ -15,6 +15,7 @@
     var r = result.report || { built: {}, fallback: {}, missing: {}, errors: [] };
     var line = '완료: 텍스트 ' + (assembly.nodeCount || 0) + ' 항목 / 레이어 ' + result.layerIds.length +
       ' / 정확 ' + Object.keys(r.built).length + ' · 근사 ' + Object.keys(r.fallback).length +
+      ' · 대체 ' + (r.fontFallbacks || []).length +
       ' · 미지원 ' + Object.keys(r.missing).length + ' · 오류 ' + r.errors.length;
     status.setText(line + (source ? ' (' + source + ')' : ''));
     console.log('JIZURA report:\n' + JSON.stringify(r, null, 2));

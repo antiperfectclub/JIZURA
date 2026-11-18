@@ -47,8 +47,8 @@ def module_order(root):
     return ordered
 
 def run_node(node,source,label,check=False):
-    args=[node,'--check'] if check else [node,'-e',source]
-    p=subprocess.run(args,input=source if check else None,text=True,encoding='utf-8',capture_output=True,timeout=120)
+    args=[node,'--check'] if check else [node,'-']
+    p=subprocess.run(args,input=source,text=True,encoding='utf-8',capture_output=True,timeout=120)
     if p.returncode: raise ValueError(label+'\n'+p.stderr)
     return p.stdout
 

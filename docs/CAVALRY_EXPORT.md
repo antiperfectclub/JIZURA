@@ -159,17 +159,34 @@ use the documented deformer by default and report a render check instead.
 The blur layer also passes through `emit()` and is restored to its semantic form afterwards, so a failed run
 does not leave a partially rewritten graph.
 
+## Partial import and font fallback
+
+A missing font or one failed layer is not allowed to abort the whole import.
+
+- Font resolution tries the requested family/style, another installed style of the same family, an explicit
+  `fontFallbacks`/`fontOverrides` candidate, the installed family list when the host exposes one, and finally
+  Cavalry's default font by omitting the `font` attribute. Captured glyph positions are reused when present;
+  otherwise estimated advances keep the text editable. Each substitution is recorded in
+  `report.fontFallbacks` and shown as `代替` in the panel.
+- A recipe failure is caught at its own dispatch point; layers and edges added by that recipe are removed and
+  the error is recorded in `report.errors`. Text construction is retried once with default glyph placement.
+- During `emit()`, one layer or connection failure deletes only that layer, records the error, and keeps the
+  composition and every successful sibling. Only composition creation failure (or invalid input rejected by
+  preflight) aborts the import.
+- An unsupported Gaussian blur is dropped as an effect, with an `effect` error; it no longer blocks the
+  composition.
+
 ## Warning model
 
 The dialog lists every known difference before download:
 
 - **Approximations / port notes (amber)** — a native port that differs from the AE recipe (glyph-bounds pivot,
   frame-sampled formulas, per-glyph print pivot). Supported, but not pixel-identical.
-- **Not built (red)** — a preset with no native recipe, HUD, global event FX, ghosts/glow/texture, screen FX,
-  transitions other than `xqPolyIris`, and `fx`. These stay in the JSON and block exact-only export.
-- **Host checks (muted)** — manual Composition Settings, installed font style names, Y axis / rotation
-  direction / glyph bounds, letter tracking, line leading, left/right bbox anchoring, vertical glyph rotation,
-  on-twos (koma) sampling, audio, the graphics z-order, and deformer render appearance.
+- **Not built (red)** — a preset with no native recipe, HUD, global event FX still refused by the browser
+  exporter, and audio embedding. These stay in the JSON and block exact-only export.
+- **Host checks (muted)** — manual Composition Settings, installed font style names and substitutions, Y axis /
+  rotation direction / glyph bounds, letter tracking, line leading, left/right bbox anchoring, vertical glyph
+  rotation, on-twos (koma) sampling, audio, the graphics z-order, deformer and screen-FX render appearance.
 
 Layouts that keep moving over the cut are exported as a still near the end and reported. Layouts that throw
 during capture fall back to a centred block with the original error in `blockingWarnings`.
@@ -199,7 +216,8 @@ can be called verified.
 | `cavalry/native/26_recipe_components.js` | requested-package helpers; clip/blur extensions |
 | `cavalry/native/27_registry_bridge.js` | `JZPresets` interface plus scene-space transform and clip tools |
 | `cavalry/native/28_registry_identity.js` | makes `JZPresets === JZNative` (one executable registry) |
-| `cavalry/native/30_assembly.js` | preflight, cut assembly, deferred cut-pair transitions, camera rig, report |
+| `cavalry/native/29_pack_helpers.js` | shared pack primitives (geometry, timing, clip helpers) |
+| `cavalry/native/30_assembly.js` | preflight, cut assembly, deferred cut-pair transitions, camera rig, partial-import report |
 | `cavalry/native/browser_adapter.js` | browser assembly → v3 native payload + glyphs + words |
 | `cavalry/packs/*.js` | native recipes: core scalar (`blur`/`zoom`/`wipe`/`shrink`), geometry, motion, hold, camera, x2 packs, requested packs |
 | `cavalry/bridge.js` | optional `WebServer`/`WebClient` handoff |
@@ -225,7 +243,7 @@ and `dist/cavalry/build-manifest.json`. Each dist file is self-contained.
   "recipes": { "cam": { "panL": { "exact": false, "hostVerified": false, "source": "…", "scope": "cut-camera" } } },
   "coverage": { "layout": { "method": "native", "registered": ["graphics", "center", "…"], "blockingMissing": ["accordion", "…"] } },
   "catalog": { "total": 1717, "groups": { "layout": { "count": 366, "notPorted": 366 } } },
-  "blockingMissing": 1607,
+  "blockingMissing": 978,
   "status": "preview",
   "hostVerified": false,
   "renderVerified": false
@@ -255,7 +273,7 @@ does, not a claim that Cavalry implements it. Outputs `cavalry/catalog/ae-preset
 python3 build_cavalry.py          # bundles + build-report.json + build-manifest.json
 python3 build_cavalry.py --check  # fail if any generated file is stale
 node tools/test_cavalry_export.js # contracts: capture, graph, packs, catalog, panel, loader
-node cavalry/tools/test_requested_native.js # registry identity, 59 recipe/graph checks
+node cavalry/tools/test_requested_native.js # registry identity, 86 recipe/graph checks
 python3 build.py --dev            # page HTML with the regenerated src/11r_cavalry.js
 ```
 
@@ -265,14 +283,15 @@ new recipe at least once against a mock host. They do not replace rendering the 
 
 ## Deliberately not built yet
 
-1. The remaining AE names (from the catalog): layout 360, enter 224, exit 205, hold 94, bg 127, cam 33,
-   treat 116, decor 255, trans 55, fx 138. `fx` still has no native recipe.
+1. The remaining AE names (from the catalog): layout 360, exit 124, bg 124, treat 115, decor 255.
+   Enter, hold, camera, transitions and FX are fully registered by the current packs.
 2. Real host verification of attribute paths, `api.getBoundingBox`, text metrics, `WebServer`/`WebClient`, the
    JavaScript Deformer globals and the blur layer type.
 3. The source's feathered horizon glow (`skyline`), whole-line print pivot (`xoDoublePrint`), and AE Echo's exact
    sampling (`xgComet` uses frame-based delayed copies). `xlLadder` and `tyGlyphBody` are reconstructions whose
    original formula conformance is pending.
-4. Global events, HUD, audio embedding, ghosts/glow/texture and screen FX. They are reported, never faked.
+4. HUD and audio embedding remain. Ghost/glow/texture/screen FX now have native recipes but still need render
+   verification.
 5. A negotiated `fallback` mode. The data shape keeps the slot, but the current registry is exact-only.
 
 ## References
