@@ -1,9 +1,38 @@
 /* Layout/text/timeline components. Design coordinates are x-right/y-down. */
 var JZComponents = (function(N,G){
 'use strict';
-/* Fallback order is explicit: requested style, same family's installed style, installed fallback families,
-   then Cavalry's default font. A missing font never aborts the import; it is reported as a substitution. */
+/* Fallback order is explicit: requested style, same family's installed style, script-compatible
+   installed fallback families, then Cavalry's default font. A missing font never aborts the import
+   or swaps CJK lyrics to an incompatible symbol/Arabic font; it is reported as a substitution. */
 var STYLE_ORDER=['Regular','Medium','Bold','Light','Black','SemiBold','ExtraBold','ExtraLight','Thin','Italic','Oblique'];
+var GENERIC_CSS=/^(sans-serif|serif|monospace|cursive|fantasy|system-ui|ui-sans-serif|ui-serif|ui-monospace)$/i;
+var UNSAFE_FALLBACK=/^\.|braille|wingdings|webdings|dingbats|symbol|emoji|al bay|al nil|al tar|damascus|geeza|kufi|nadeem|baghdad|diwan|farah|farisi|mishafi|sana|waseem|academy engraved|lastresort/i;
+var SCRIPT_FALLBACKS={
+  ko:['Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR','Pretendard','NanumGothic','NanumBarunGothic','Hiragino Sans','Arial Unicode MS'],
+  ja:['Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic','YuGothic','Meiryo','Noto Sans JP','MS PGothic','MS Gothic','Apple SD Gothic Neo','Arial Unicode MS'],
+  cjk:['Noto Sans CJK JP','Noto Sans CJK KR','PingFang SC','PingFang TC','Hiragino Sans','Microsoft YaHei','Apple SD Gothic Neo','Arial Unicode MS'],
+  latin:['Arial','Helvetica Neue','Helvetica','Segoe UI','Inter','Lato','Roboto','Noto Sans']
+};
+function cleanFamilies(value){
+  if(typeof value!=='string')return [];
+  return value.split(',').map(function(part){
+    return part.trim().replace(/^["']+|["']+$/g,'').trim();
+  }).filter(function(name){return name&&!GENERIC_CSS.test(name);});
+}
+function detectScript(text){
+  var s=String(text||'');
+  if(/[\uAC00-\uD7AF\u3130-\u318F]/.test(s))return 'ko';
+  if(/[\u3040-\u30FF]/.test(s))return 'ja';
+  if(/[\u4E00-\u9FFF]/.test(s))return 'cjk';
+  return 'latin';
+}
+function sampleChar(text){
+  var chars=Array.from(String(text||'').replace(/\s+/g,''));
+  for(var i=0;i<chars.length;i++){
+    if(/[\uAC00-\uD7AF\u3040-\u30FF\u4E00-\u9FFF]/.test(chars[i]))return chars[i];
+  }
+  return chars[0]||'A';
+}
 function namesOf(value,key){
   var out=[];
   (Array.isArray(value)?value:[value]).forEach(function(item){
@@ -16,6 +45,7 @@ function namesOf(value,key){
   return out;
 }
 function apiList(methods,arg){
+  if(typeof cavalry==='undefined'||!cavalry)return null;
   for(var i=0;i<methods.length;i++){
     var fn=cavalry[methods[i]];
     if(typeof fn!=='function')continue;
@@ -35,11 +65,11 @@ function familiesOf(){
     else if(item&&typeof item==='object'&&typeof item.family==='string')out.push(item.family);
     else if(item&&typeof item==='object'&&typeof item.name==='string')out.push(item.name);
   });
-  return out.filter(function(v,i,a){return a.indexOf(v)===i;});
+  return out.filter(function(v,i,a){return v&&!UNSAFE_FALLBACK.test(v)&&a.indexOf(v)===i;});
 }
 function exists(family,style){
   if(!family||!style)return false;
-  if(typeof cavalry.fontExists!=='function')return true;
+  if(typeof cavalry==='undefined'||!cavalry||typeof cavalry.fontExists!=='function')return true;
   try{return !!cavalry.fontExists(family,style);}catch(e){return false;}
 }
 function pick(family,preferred){
@@ -51,11 +81,14 @@ function pick(family,preferred){
   return null;
 }
 function candidate(value){
-  if(typeof value==='string')return {family:value,style:null};
+  if(typeof value==='string'){
+    var list=cleanFamilies(value);
+    return list.length?{family:list[0],style:null}:null;
+  }
   if(value&&typeof value==='object'){
-    var family=value.family||value.name;
+    var list2=cleanFamilies(value.family||value.name||'');
     var style=value.style||value.fontStyle||null;
-    return family?{family:family,style:style}:null;
+    return list2.length?{family:list2[0],style:style}:null;
   }
   return null;
 }
@@ -64,25 +97,45 @@ function font(node,options){
   options=options||{};
   var overrides=options.fontOverrides||{};
   var requested=overrides[node.font&&node.font.key]||node.font||{};
-  var family=requested.family,style=requested.style;
-  var info;
+  var requestedFamilies=cleanFamilies(requested.family||'');
+  var family=requestedFamilies[0]||null,style=requested.style||null;
+  var info=null;
   if(family&&exists(family,style))info={family:family,style:style,fallback:false,reason:'exact'};
-  else if(family){
-    var same=pick(family,style);
-    info=same?{family:same.family,style:same.style,fallback:true,reason:'style'}
-      :{family:null,style:null,fallback:true,reason:'family',default:true};
-  }else info={family:null,style:null,fallback:true,reason:'metadata',default:true};
+  else {
+    for(var fi=0;fi<requestedFamilies.length;fi++){
+      var same=pick(requestedFamilies[fi],style);
+      if(same){info={family:same.family,style:same.style,fallback:true,reason:fi===0?'style':'family'};break;}
+    }
+    if(!info)info={family:null,style:null,fallback:true,reason:family?'family':'metadata',default:true};
+  }
   if(info.fallback&&!info.family){
-    var candidates=[];
-    function add(value){var c=candidate(value);if(c&&c.family!==family)candidates.push(c);}
+    var candidates=[], seen=Object.create(null);
+    function add(value){
+      var c=candidate(value);
+      if(!c||c.family===family||seen[c.family]||UNSAFE_FALLBACK.test(c.family))return;
+      seen[c.family]=true;
+      candidates.push(c);
+    }
     if(Array.isArray(options.fontFallbacks))options.fontFallbacks.forEach(add);
     else add(options.fontFallbacks);
     add(options.fontFallback);add(options.defaultFont);
     Object.keys(overrides).forEach(function(k){add(overrides[k]);});
-    familiesOf().slice(0,48).forEach(function(f){add(f);});
+    var script=detectScript(node.text);
+    (SCRIPT_FALLBACKS[script]||[]).forEach(add);
+    if(script!=='latin')SCRIPT_FALLBACKS.latin.forEach(add);
+    if(script==='latin')familiesOf().slice(0,48).forEach(add);
+    var ch=sampleChar(node.text);
     for(var i=0;i<candidates.length;i++){
       var picked=pick(candidates[i].family,candidates[i].style);
-      if(picked){info={family:picked.family,style:picked.style,fallback:true,reason:'fallback'};break;}
+      if(!picked)continue;
+      if(typeof cavalry!=='undefined'&&cavalry&&typeof cavalry.measureText==='function'){
+        try{
+          var m=cavalry.measureText(ch,picked.family,picked.style,24);
+          if(m&&!(m.width>0))continue;
+        }catch(e){}
+      }
+      info={family:picked.family,style:picked.style,fallback:true,reason:'fallback'};
+      break;
     }
   }
   info.requested={family:requested.family||null,style:requested.style||null,
@@ -100,7 +153,7 @@ function glyphs(node,f) {
   lines.forEach(function(line,li){
     var chars=Array.from(line), widths=chars.map(function(ch){
       if(node.vertical&&!/[A-Za-z0-9]/.test(ch))return node.size;
-      if(f&&f.family&&f.style&&typeof cavalry.measureText==='function'){
+      if(f&&f.family&&f.style&&typeof cavalry!=='undefined'&&cavalry&&typeof cavalry.measureText==='function'){
         try{var m=cavalry.measureText(ch,f.family,f.style,node.size);if(m&&N.finite(m.width)>0)return m.width;}catch(e){}
       }
       return node.size*(ch===' '?0.33:0.62);
@@ -179,5 +232,12 @@ function shape(graph,cut,name,parent,commands,paint,width,alpha) {
   return graph.add('path',name,parent,cut.start,cut.end,{position:[0,0],fill:!!fill,stroke:!!stroke,
     'material.materialColor':fill||stroke,'stroke.strokeColor':stroke||fill,alpha:a,'stroke.width':stroke?w:1},commands);
 }
-return {text:text,glyphs:glyphs,font:font,sample:sample,shape:shape};
+/* Native Cavalry Duplicator helper (api.create('duplicator') + setGenerator + connect('id' -> 'shapes')). */
+function duplicator(graph,cut,name,parent,inputId,distribution,attrs) {
+  var dupId=graph.add('duplicator',name,parent,cut.start,cut.end,attrs||{});
+  if(distribution)graph.setGenerator(dupId,distribution);
+  graph.connect(inputId,'id',dupId,'shapes');
+  return dupId;
+}
+return {text:text,glyphs:glyphs,font:font,sample:sample,shape:shape,duplicator:duplicator};
 })(JZNative,JZGraph);

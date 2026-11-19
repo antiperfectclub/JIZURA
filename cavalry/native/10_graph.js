@@ -3,10 +3,16 @@ var JZGraph = (function (N) {
 'use strict';
 function Graph(comp) { this.comp=comp; this.layers=[]; this.byId=Object.create(null); this.edges=[]; this.serial=0; }
 Graph.prototype.add=function(type,name,parent,start,end,attrs,commands) {
-  var id='n'+(++this.serial), n={id:id,type:type,name:name,parent:parent,start:start,end:end,attrs:attrs||{},commands:commands||null,keys:{}};
+  var id='n'+(++this.serial), n={id:id,type:type,name:name,parent:parent,start:start,end:end,attrs:attrs||{},commands:commands||null,keys:{},generator:null};
   if (!Number.isInteger(start)||!Number.isInteger(end)||start<0||end<=start||end>this.comp.frameCount) throw new Error('Invalid clip '+name);
   if(parent&&!this.byId[parent]) throw new Error('Unknown parent '+parent);
   this.layers.push(n); this.byId[id]=n; return id;
+};
+Graph.prototype.setGenerator=function(id,generatorType) {
+  var n=this.byId[id]; if(!n) throw new Error('Unknown layer '+id);
+  if(typeof generatorType!=='string'||!generatorType) throw new Error('Invalid generator type');
+  n.generator=generatorType;
+  return id;
 };
 Graph.prototype.key=function(id,attr,frame,value,type) {
   var n=this.byId[id]; if(!n) throw new Error('Unknown layer '+id);
@@ -96,6 +102,9 @@ Graph.prototype.emit=function(options) {
       if (!id) throw new Error('Cavalry did not create ' + n.type);
       map[n.id]=id; created.push(id);
       if(n.parent)api.parent(id,map[n.parent]); api.setInFrame(id,n.start); api.setOutFrame(id,n.end-1);
+      if(n.generator&&typeof api.setGenerator==='function') {
+        api.setGenerator(id,'generator',n.generator);
+      }
 
       delete attrs.fill;
       delete attrs.stroke;
@@ -126,11 +135,17 @@ Graph.prototype.emit=function(options) {
       }
 
       if (isText) {
-        put('text', attrs.text);
+        api.set(id, { text: attrs.text });
         var actual = api.get(id, 'text');
         if (actual !== attrs.text) {
-          throw new Error('Unicode readback mismatch: expected ' +
-            codepoints(attrs.text) + '; got ' + codepoints(actual));
+          if (typeof actual !== 'string' || !actual.length) {
+            throw new Error('Unicode readback mismatch: expected ' +
+              codepoints(attrs.text) + '; got ' + codepoints(actual));
+          }
+          errors.push({
+            kind: 'text-attribute', label: n.name + ' / text-readback',
+            message: 'Unicode readback differed: expected ' + codepoints(attrs.text) + '; got ' + codepoints(actual)
+          });
         }
         delete attrs.text;
       }
@@ -141,6 +156,21 @@ Graph.prototype.emit=function(options) {
       }
       if (isText) {
         Object.keys(attrs).forEach(function (key) {
+          if (key === 'font' && attrs.font && typeof attrs.font === 'object') {
+            attempt('font', function () {
+              var face = attrs.font;
+              try {
+                put('font', face);
+              } catch (compoundError) {
+                var split = {};
+                if (face.font) split['font.font'] = face.font;
+                if (face.style) split['font.style'] = face.style;
+                if (!Object.keys(split).length) throw compoundError;
+                api.set(id, split);
+              }
+            });
+            return;
+          }
           attempt(key, function () { put(key, attrs[key]); });
         });
       } else if (Object.keys(attrs).length) {
