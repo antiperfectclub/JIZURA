@@ -9,6 +9,19 @@
     try { return api.getFolderFromPath(api.getSceneFilePath() || '') || ''; } catch (error) { return ''; }
   }
 
+  function summarizeErrors(list) {
+    if (!list || !list.length) return '';
+    var seen = Object.create(null), samples = [];
+    for (var i = 0; i < list.length && samples.length < 3; i++) {
+      var e = list[i] || {};
+      var msg = (e.kind || 'err') + ': ' + (e.message || e.label || 'unknown');
+      if (seen[msg]) continue;
+      seen[msg] = true;
+      samples.push(msg);
+    }
+    return samples.length ? '\n주요 오류: ' + samples.join(' | ') : '';
+  }
+
   function build(assembly, source) {
     if (!assembly || assembly.format !== 'jizura.cavalry.assembly') {
       throw new Error('Cavalry 형식이 아닙니다. 파일 확장자가 아니라 format: "jizura.cavalry.assembly"인 JSON이 필요합니다. 일반 프로젝트 저장 JSON과는 호환되지 않습니다.');
@@ -21,14 +34,25 @@
     var report = r.build || null;
     var drift = !!(assembly.buildId && report && report.buildId && assembly.buildId !== report.buildId);
     var missingText = expected > 0 && texts === 0;
-    var errors = (r.errors || []).length;
+    var errList = r.errors || [];
+    var errors = errList.length;
     var state = missingText ? '텍스트 생성 실패' : (errors || drift) ? '부분 완료' : '완료';
     var line = state + ': 텍스트 ' + texts + '/' + expected + ' 항목 / 레이어 ' + result.layerIds.length +
-      ' / 정확 ' + Object.keys(r.built || {}).length + ' · 근사 ' + Object.keys(r.fallback || {}).length +
+      ' / 등록 ' + Object.keys(r.built || {}).length + ' · 근사 ' + Object.keys(r.fallback || {}).length +
       ' · 대체 ' + (r.fontFallbacks || []).length +
       ' · 미지원 ' + Object.keys(r.missingRecipes || {}).length + ' · 오류 ' + errors +
-      (drift ? ' / 빌드 불일치' : '');
-    status.setText(line + (source ? ' (' + source + ')' : ''));
+      (drift ? ' / 빌드 불일치' : '') + summarizeErrors(errList);
+    status.setText(line + (source ? '\n(' + source + ')' : ''));
+    if (errors) {
+      var counts = Object.create(null);
+      errList.forEach(function (e) {
+        var k = (e.kind || 'err') + ' :: ' + (e.message || '');
+        counts[k] = (counts[k] || 0) + 1;
+      });
+      var top = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; }).slice(0, 10)
+        .map(function (k) { return counts[k] + 'x ' + k; });
+      console.error('JIZURA top errors (' + errors + ' total):\n' + top.join('\n'));
+    }
     console.log('JIZURA report:\n' + JSON.stringify(r, null, 2));
     return result;
   }

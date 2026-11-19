@@ -110,8 +110,8 @@ Graph.prototype.emit=function(options) {
       delete attrs.stroke;
       delete attrs.alpha;
 
-      /* Writing and reading back the string is the only mandatory step. Font, colour and animation
-         failures are recorded; they must never delete a lyric that was created successfully. */
+      /* Once textShape is created, never delete it on attribute/readback mismatches. Record every
+         host quirk so the lyrics remain in the composition and diagnostics show the exact cause. */
       function checkAttr(key) {
         if (typeof api.hasAttribute === 'function' && !api.hasAttribute(id, key)) {
           throw new Error('Attribute unavailable: ' + key);
@@ -135,19 +135,37 @@ Graph.prototype.emit=function(options) {
       }
 
       if (isText) {
-        api.set(id, { text: attrs.text });
-        var actual = api.get(id, 'text');
-        if (actual !== attrs.text) {
-          if (typeof actual !== 'string' || !actual.length) {
-            throw new Error('Unicode readback mismatch: expected ' +
-              codepoints(attrs.text) + '; got ' + codepoints(actual));
-          }
-          errors.push({
-            kind: 'text-attribute', label: n.name + ' / text-readback',
-            message: 'Unicode readback differed: expected ' + codepoints(attrs.text) + '; got ' + codepoints(actual)
-          });
-        }
+        var rawText = attrs.text;
         delete attrs.text;
+        attempt('text', function () {
+          var wrote = false, lastErr = null;
+          var textKeys = ['text', 'string', 'text.text'];
+          for (var ti = 0; ti < textKeys.length; ti++) {
+            var tk = textKeys[ti];
+            try {
+              var payload = {};
+              payload[tk] = rawText;
+              api.set(id, payload);
+              var actual = api.get(id, tk);
+              if (actual === rawText || (actual && typeof actual === 'object' && actual.text === rawText)) {
+                wrote = true;
+                break;
+              }
+              if (typeof actual === 'string' && actual.length) {
+                wrote = true;
+                errors.push({
+                  kind: 'text-attribute', label: n.name + ' / text-readback',
+                  message: 'Unicode readback differed on ' + tk + ': expected ' + codepoints(rawText) + '; got ' + codepoints(actual)
+                });
+                break;
+              }
+              lastErr = new Error('Readback on ' + tk + ' was ' + JSON.stringify(actual));
+            } catch (e) {
+              lastErr = e;
+            }
+          }
+          if (!wrote && lastErr) throw lastErr;
+        });
       }
 
       if (isPath || isText) {
