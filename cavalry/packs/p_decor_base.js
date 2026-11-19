@@ -41,7 +41,7 @@ reg('grid', 'back', function (c) {
   return { layer: id };
 });
 
-/* 2. stripes (back) */
+/* 2. stripes (back) — Cavalry linearDistribution Duplicator (fallback: 13 stripe shapes) */
 reg('stripes', 'back', function (c) {
   var P = c.preset.params || {}, W = c.comp.width, Hh = c.comp.height, sc = c.sc;
   var px = P.corner ? W * 0.85 : W * 0.15, py = P.corner ? Hh * 0.15 : Hh * 0.85;
@@ -50,7 +50,26 @@ reg('stripes', 'back', function (c) {
     position: sp, rotation: 35
   });
   var w = Hh * 0.04, col = P.accent ? sc.accent : (sc.dim || sc.sub);
-  var stripH = Hh * 0.36;
+  var stripH = Hh * 0.36, count = 13, span = (count - 1) * w * 2;
+  var profile = (c.options && c.options.hostProfile) || {};
+  if (profile.duplicator !== false && typeof C.duplicator === 'function') {
+    var src = C.shape(c.graph, c.cut, c.cut.id + ' / Stripe source', rig, G.rect(-w / 2, -stripH / 2, w, stripH), { fill: col, alpha: 0.9 });
+    c.graph.byId[src].attrs.hidden = true;
+    var dup = C.duplicator(c.graph, c.cut, c.cut.id + ' / Decor stripes duplicator', rig, src, 'linearDistribution', {
+      'generator.count': count,
+      'generator.size': span,
+      alpha: 0.9
+    });
+    C.sample(c.graph, dup, c.cut.start, c.cut.end, function (f) {
+      var env = R.env(c, f), e = inOut(c, f);
+      return {
+        'position.x': (env.ltb * 40) % (w * 2),
+        'scale.y': Math.max(0.001, e),
+        alpha: 0.9 * (e > 0.005 ? 1 : 0)
+      };
+    });
+    return { rig: rig, duplicator: dup, count: count };
+  }
   var ids = [];
   for (var i = -6; i <= 6; i++) {
     (function (idx) {
@@ -64,7 +83,7 @@ reg('stripes', 'back', function (c) {
     })(i);
   }
   return { rig: rig, count: ids.length };
-});
+}, ['Uses a Cavalry linearDistribution Duplicator for the 13 stripes instead of 13 separate shape layers.']);
 
 /* 3. blobs (back) */
 reg('blobs', 'back', function (c) {
@@ -273,7 +292,7 @@ reg('rings', 'front', function (c) {
   return { count: n };
 });
 
-/* 9. dots (front) */
+/* 9. dots (front) — Cavalry circleDistribution Duplicator (fallback: 36 dot shapes) */
 reg('dots', 'front', function (c) {
   var sc = c.sc, bb = H.decBB(c), Hh = c.comp.height;
   var R0 = Math.max(bb.w, bb.h) * 0.62 + Hh * 0.04, m = 36;
@@ -282,6 +301,20 @@ reg('dots', 'front', function (c) {
   C.sample(c.graph, rig, c.cut.start, c.cut.end, function (f) {
     return { rotation: -(R.env(c, f).ltb * 20) };
   });
+  var profile = (c.options && c.options.hostProfile) || {};
+  if (profile.duplicator !== false && typeof C.duplicator === 'function') {
+    var baseDot = C.shape(c.graph, c.cut, c.cut.id + ' / Ring dot source', rig, G.ellipse(0, 0, 2.5, 2.5), { fill: sc.fg, alpha: 0.85 });
+    c.graph.byId[baseDot].attrs.hidden = true;
+    var dup = C.duplicator(c.graph, c.cut, c.cut.id + ' / Dots ring duplicator', rig, baseDot, 'circleDistribution', {
+      'generator.count': m,
+      'generator.radius': R0,
+      alpha: 0.85
+    });
+    C.sample(c.graph, dup, c.cut.start, c.cut.end, function (f) {
+      return { alpha: 0.85 * inOut(c, f) };
+    });
+    return { rig: rig, duplicator: dup, count: m };
+  }
   var ids = [];
   for (var i = 0; i < m; i++) {
     (function (idx) {
@@ -295,7 +328,7 @@ reg('dots', 'front', function (c) {
     })(i);
   }
   return { rig: rig, count: ids.length };
-});
+}, ['Uses a Cavalry circleDistribution Duplicator (3 layers total) instead of 36 separate dot layers.']);
 
 /* 10. arrows (front) */
 reg('arrows', 'front', function (c) {
