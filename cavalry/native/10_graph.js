@@ -64,12 +64,21 @@ Graph.prototype.emit=function(options) {
   }
   try { api.set(compId,{'resolution.x':this.comp.width,'resolution.y':this.comp.height}); }
   catch(error) { errors.push({kind:'composition',label:'resolution',message:String(error&&error.message||error)}); }
-  if(options.timingPaths) {
-    try {
-      var t=options.timingPaths, a={};
-      if(!t.fps||!t.end) throw new Error('Incomplete timing profile');
-      a[t.fps]=this.comp.fps; a[t.end]=this.comp.frameCount-1; if(t.start)a[t.start]=0; api.set(compId,a);
-    } catch(error) { errors.push({kind:'composition',label:'timing',message:String(error&&error.message||error)}); }
+  var timing=options.timingPaths||{fps:'fps',start:'startFrame',end:'endFrame'};
+  if(timing) {
+    [
+      [timing.fps,this.comp.fps],
+      [timing.start,0],
+      [timing.end,this.comp.frameCount-1]
+    ].forEach(function(pair){
+      var key=pair[0], value=pair[1];
+      if(!key)return;
+      try{
+        if(typeof api.hasAttribute==='function'&&!api.hasAttribute(compId,key))throw new Error('Attribute unavailable: '+key);
+        var data={}; data[key]=value; api.set(compId,data);
+        if(typeof api.hasAttribute==='function'&&api.get(compId,key)!==value)throw new Error('Readback differs from requested value '+value);
+      }catch(error){errors.push({kind:'composition',label:key,message:String(error)});}
+    });
   }
 
   this.layers.forEach(function(n){
@@ -81,25 +90,94 @@ Graph.prototype.emit=function(options) {
     var id=null;
     try {
       id=n.type==='path'?api.createEditable(path(n.commands),n.name):api.create(n.type,n.name);
+      var attrs = Object.assign({}, n.attrs);
+      var isText = n.type === 'textShape';
+      var isPath = n.type === 'path';
+      if (!id) throw new Error('Cavalry did not create ' + n.type);
       map[n.id]=id; created.push(id);
       if(n.parent)api.parent(id,map[n.parent]); api.setInFrame(id,n.start); api.setOutFrame(id,n.end-1);
-      var attrs=Object.assign({},n.attrs); delete attrs.fill; delete attrs.stroke; delete attrs.alpha;
-      if(n.type==='path'||n.type==='textShape') {
-        api.setFill(id,n.attrs.fill!==false); api.setStroke(id,!!n.attrs.stroke);
+
+      delete attrs.fill;
+      delete attrs.stroke;
+      delete attrs.alpha;
+
+      /* Writing and reading back the string is the only mandatory step. Font, colour and animation
+         failures are recorded; they must never delete a lyric that was created successfully. */
+      function checkAttr(key) {
+        if (typeof api.hasAttribute === 'function' && !api.hasAttribute(id, key)) {
+          throw new Error('Attribute unavailable: ' + key);
+        }
       }
-      api.set(id,attrs);
-      /* Deformers and filters have no opacity channel; reading it would fail after creating them. */
-      var full=1;
-      if(n.type==='path'||n.type==='textShape'||n.type==='null') {
-        full=api.get(id,'opacity'); N.finite(full,'native opacity');
-        if(!(full>0))throw new Error('Invalid native opacity range');
-        if(n.attrs.alpha!=null)api.set(id,{opacity:full*n.attrs.alpha});
+      function put(key, value) {
+        checkAttr(key);
+        var data = {};
+        data[key] = value;
+        api.set(id, data);
       }
-      if(n.type==='textShape'&&api.get(id,'text')!==n.attrs.text) throw new Error('Unicode readback mismatch '+n.name+' expected '+codepoints(n.attrs.text)+' got '+codepoints(api.get(id,'text')));
-      Object.keys(n.keys).forEach(function(attr){
-        Object.keys(n.keys[attr]).map(Number).sort(function(a,b){return a-b;}).forEach(function(f){
-          var k=n.keys[attr][f], data={}, meta={}; data[attr==='alpha'?'opacity':attr]=attr==='alpha'?full*k.value:k.value;
-          api.keyframe(id,f,data); meta[attr==='alpha'?'opacity':attr]={frame:f,type:k.type}; api.modifyKeyframe(id,meta);
+      function attempt(stage, fn) {
+        if (!isText) { fn(); return; }
+        try { fn(); }
+        catch (error) {
+          errors.push({
+            kind: 'text-attribute', label: n.name + ' / ' + stage,
+            message: String(error && error.message || error)
+          });
+        }
+      }
+
+      if (isText) {
+        put('text', attrs.text);
+        var actual = api.get(id, 'text');
+        if (actual !== attrs.text) {
+          throw new Error('Unicode readback mismatch: expected ' +
+            codepoints(attrs.text) + '; got ' + codepoints(actual));
+        }
+        delete attrs.text;
+      }
+
+      if (isPath || isText) {
+        attempt('fill', function () { api.setFill(id, n.attrs.fill !== false); });
+        attempt('stroke', function () { api.setStroke(id, !!n.attrs.stroke); });
+      }
+      if (isText) {
+        Object.keys(attrs).forEach(function (key) {
+          attempt(key, function () { put(key, attrs[key]); });
+        });
+      } else if (Object.keys(attrs).length) {
+        api.set(id, attrs);
+      }
+
+      var full = 100;
+      if (n.attrs.alpha != null || n.keys.alpha) {
+        attempt('opacity range', function () {
+          checkAttr('opacity');
+          var value = api.get(id, 'opacity');
+          if (typeof value === 'number' && isFinite(value) && value > 0) full = value;
+        });
+        if (n.attrs.alpha != null) {
+          attempt('opacity', function () { put('opacity', full * n.attrs.alpha); });
+        }
+      }
+
+      Object.keys(n.keys).forEach(function (attr) {
+        var key = attr === 'alpha' ? 'opacity' : attr;
+        var track = n.keys[attr];
+        var frames = Object.keys(track).map(Number).sort(function (a, b) { return a - b; });
+
+        attempt(key + ' animation', function () {
+          checkAttr(key);
+          if (frames.length === 1 && track[frames[0]].type === 1) {
+            var value = track[frames[0]].value;
+            put(key, attr === 'alpha' ? full * value : value);
+            return;
+          }
+          frames.forEach(function (frame) {
+            var k = track[frame], data = {}, meta = {};
+            data[key] = attr === 'alpha' ? full * k.value : k.value;
+            api.keyframe(id, frame, data);
+            meta[key] = { frame: frame, type: k.type };
+            api.modifyKeyframe(id, meta);
+          });
         });
       });
     } catch(error) {
@@ -120,9 +198,24 @@ Graph.prototype.emit=function(options) {
     try { if(!api.writeToFile(options.componentPath,api.serialise(ids,true),false)) throw new Error('Component write failed'); }
     catch(error) { errors.push({kind:'component',label:options.componentPath,message:String(error&&error.message||error)}); }
   }
-  try { api.setFrame(0); if(ids.length)api.select([ids[0]]); }
-  catch(error) { errors.push({kind:'selection',label:'composition',message:String(error&&error.message||error)}); }
-  return {compositionId:compId,rootId:ids[0],layerIds:ids,errors:errors};
+  var texts = this.layers.filter(function (n) {
+    return n.type === 'textShape' && map[n.id] && /\S/.test(n.attrs.text);
+  });
+  var first = texts.reduce(function (frame, n) {
+    return Math.min(frame, n.start);
+  }, Infinity);
+  try {
+    api.setFrame(isFinite(first) ? first : 0);
+    if (texts.length) api.select([map[texts[0].id]]);
+    else if (ids.length) api.select([ids[0]]);
+  } catch (error) {
+    errors.push({ kind: 'selection', label: 'composition', message: String(error) });
+  }
+  return {
+    compositionId: compId, rootId: ids[0], layerIds: ids,
+    textLayerIds: texts.map(function (n) { return map[n.id]; }),
+    errors: errors
+  };
 };
 function codepoints(s) {return Array.from(String(s)).map(function(c){return 'U+'+c.codePointAt(0).toString(16).toUpperCase();}).join(' ');}
 return {Graph:Graph,rect:rect,ellipse:ellipse,codepoints:codepoints};

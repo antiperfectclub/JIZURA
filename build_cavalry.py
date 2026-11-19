@@ -1,4 +1,4 @@
-"""Build the standalone Cavalry plugin and identical web payload; AE is read-only."""
+"""Build dist/JIZURA_Cavalry.js; the web payload is assembled in memory on request. AE is read-only."""
 from __future__ import annotations
 import argparse
 import hashlib
@@ -52,18 +52,15 @@ def run_node(node,source,label,check=False):
     if p.returncode: raise ValueError(label+'\n'+p.stderr)
     return p.stdout
 
-def catalog_summary(root):
-    path=root/'cavalry/catalog/ae-presets.json'
-    if not path.is_file(): return None
-    data=json.loads(path.read_text(encoding='utf-8'))
-    if data.get('format')!='jizura.cavalry.ae-source-catalog' or not isinstance(data.get('entries'),list):
+def catalog_summary(root,data):
+    if not isinstance(data,dict) or data.get('format')!='jizura.cavalry.ae-source-catalog' or not isinstance(data.get('entries'),list):
         raise ValueError('Invalid AE catalog')
     groups={}
     for entry in data['entries']:
         group,name=entry.get('group'),entry.get('name')
         if group not in GROUPS or not isinstance(name,str) or not name: raise ValueError('Invalid AE catalog entry')
         groups.setdefault(group,set()).add(name)
-    return {'source':'cavalry/catalog/ae-presets.json','total':len(data['entries']),
+    return {'source':(root/'ae').relative_to(root).as_posix()+' (extract_ae_catalog.js --stdout)','total':len(data['entries']),
             'counts':data.get('counts') or {g:len(v) for g,v in groups.items()},
             'groups':{g:sorted(groups.get(g,[])) for g in GROUPS},
             'implementationStatus':'not-ported'}
@@ -85,15 +82,14 @@ def coverage(manifest,refs,catalog):
         out[g]=row
     return out
 
-def assemble(root,release=False):
+def assemble(root,release=False,*,web=False):
     root=root.resolve(); before=protected(root); node=shutil.which('node')
     if not node: raise ValueError('Node.js is required')
     modules=module_order(root)
     runtime_names=['cavalry/'+m for m in modules]
     names=runtime_names+['cavalry/browser.js','cavalry/native/browser_adapter.js','cavalry/panel.js','VERSION','build_cavalry.py','ae/data.json']
     names+=sorted(p.relative_to(root).as_posix() for pattern in ('src/11p_*.js','ae/p_*.jsx') for p in root.glob(pattern))
-    for n in ('cavalry/build.json','cavalry/bridge.js','cavalry/loader.js'):
-        if (root/n).exists(): names.append(n)
+    if (root/'cavalry/build.json').exists(): names.append('cavalry/build.json')
     names.append('cavalry/tools/test_requested_native.js')
     raw={}
     for n in dict.fromkeys(names):
@@ -113,15 +109,14 @@ def assemble(root,release=False):
               'trans':['xqPolyIris']}
     probe=body+'\n(function(){var R='+literal(required)+';Object.keys(R).forEach(function(g){R[g].forEach(function(k){var d=JZNative.get(g,k);if(!d||typeof d.build!=="function")throw new Error("Missing executable recipe: "+g+":"+k);if(JZPresets.get(g,k)!==d)throw new Error("Registry divergence: "+g+":"+k);});});process.stdout.write(JSON.stringify(JZNative.manifest()));})();'
     manifest=json.loads(run_node(node,probe+'\nif(JZPresets!==JZNative)throw new Error("Registry identity mismatch");','Native registration'))
-    regression=subprocess.run([node,str(root/'cavalry/tools/test_requested_native.js')],cwd=root,text=True,encoding='utf-8',capture_output=True,timeout=120)
-    if regression.returncode: raise ValueError('Recipe graph regression failed\n'+regression.stderr)
-    graph_tests=json.loads(regression.stdout)
-    if graph_tests.get('requestedRecipeGraphCompilation')!='passed': raise ValueError('Recipe graph regression did not pass')
     absent=['%s:%s'%(g,k) for g,names in required.items() for k in names if k not in manifest[g]]
     if absent: raise ValueError('Requested native recipes missing: '+', '.join(absent))
     refs=json.loads(text['ae/data.json']).get('names')
     if not isinstance(refs,dict) or any(g not in refs for g in GROUPS): raise ValueError('Invalid reference vocabulary')
-    catalog=catalog_summary(root)
+    scan=subprocess.run([node,str(root/'cavalry/tools/extract_ae_catalog.js'),'--stdout'],cwd=root,text=True,encoding='utf-8',capture_output=True,timeout=120)
+    if scan.returncode: raise ValueError('AE registry audit failed\n'+scan.stderr)
+    catalog=catalog_summary(root,json.loads(scan.stdout))
+    refs={g:sorted(set(refs[g])|set(catalog['groups'][g])) for g in GROUPS}
     cov=coverage(manifest,refs,catalog)
     blocking=sum(len(v['blockingMissing']) for v in cov.values())
     if release and blocking: raise ValueError('Release refused: '+str(blocking)+' recipes still lack native implementations')
@@ -130,33 +125,59 @@ def assemble(root,release=False):
           'catalog':None if not catalog else {'source':catalog['source'],'total':catalog['total'],'counts':catalog['counts'],
             'groups':{g:{k:v for k,v in cov[g]['catalog'].items() if k!='notPorted' and k!='registeredNotInCatalog'} for g in GROUPS}},
           'blockingMissing':blocking,'status':'preview' if blocking else 'implementation-coverage-only','hostVerified':False,'renderVerified':False,
-          'inventoryBasis':'ae/data.json names snapshot; cavalry/catalog/ae-presets.json when present; source files hashed, dynamic registrations not independently audited'}
-    runtime='/* GENERATED: host/render verification pending. */\nvar JZCavalryBuild='+literal(info)+';\n'+body
-    panel=text.get('cavalry/bridge.js','')+'\n'+text['cavalry/panel.js']
-    standalone=runtime+'\n'+panel+'\n'
-    browser='var JZFamilies=(function(M){return {built:function(g){return Object.keys(M[g]||{}).sort();},resolve:function(g,k){return {state:M[g]&&M[g][k]?"exact":"missing",as:M[g]&&M[g][k]?k:null};}};})('+literal(manifest)+');\n'+text['cavalry/browser.js']+'\n;\n'
-    loader=text.get('cavalry/bridge.js','')+'\n'+text.get('cavalry/loader.js','')
-    for key,value in [('runtimeSource',runtime),('panelSource',panel),('buildInfo',info),('loaderSource',loader)]:
+          'inventoryBasis':'ae/data.json names snapshot plus the live AE registry audit (extract_ae_catalog.js --stdout); source files hashed, dynamic registrations not independently audited'}
+    runtime=(
+        '/* JIZURA Cavalry | Host/render verification pending. */\n'
+        'var JZCavalryBuild='+literal(info)+';\n'+body
+    )
+    artifact='dist/JIZURA_Cavalry.js'
+    panel=text['cavalry/panel.js']
+    standalone=runtime+'\n;\n'+panel+'\n'
+
+    run_node(node,standalone,artifact,check=True)
+    regression=subprocess.run([node,str(root/'cavalry/tools/test_requested_native.js'),'--stdin'],cwd=root,input=standalone,text=True,encoding='utf-8',capture_output=True,timeout=120)
+    if regression.returncode: raise ValueError('Recipe graph regression failed\n'+regression.stderr)
+    if json.loads(regression.stdout).get('requestedRecipeGraphCompilation')!='passed': raise ValueError('Recipe graph regression did not pass')
+    if protected(root)!=before or any(
+        (root/name).read_bytes()!=contents
+        for name,contents in raw.items()
+    ):
+        raise ValueError('Build inputs changed')
+
+    if not web:
+        return {artifact:standalone},before
+
+    vocabulary=(
+        'var JZFamilies=(function(M){return {'
+        'built:function(g){return Object.keys(M[g]||{}).sort();},'
+        'resolve:function(g,k){var ok=M[g]&&'
+        'Object.prototype.hasOwnProperty.call(M[g],k);'
+        'return {state:ok?"exact":"missing",as:ok?k:null};}'
+        '};})('+literal(manifest)+');\n'
+    )
+    browser=vocabulary+text['cavalry/browser.js']+'\n;\n'
+    for key,value in (
+        ('runtimeSource',runtime),
+        ('panelSource',panel),
+        ('standaloneSource',standalone),
+        ('buildInfo',info),
+    ):
         browser+='J.Cavalry.'+key+'='+literal(value)+';\n'
-    browser+=body+'\n'+text['cavalry/native/browser_adapter.js']+'\n'
-    browser+='J.Cavalry.standaloneSource=J.Cavalry.runtimeSource+"\\n"+J.Cavalry.panelSource+"\\n";\nJ.Cavalry.downloadPanel=function(name){return J.saveFile(String(name||"JIZURA_CV").replace(/[\\\\/:*?"<>|]/g,"_")+".js",new Blob([J.Cavalry.standaloneSource],{type:"text/javascript;charset=utf-8"}));};\nJ.Cavalry.downloadLoader=function(name){return J.saveFile(String(name||"JIZURA_CV_Loader").replace(/[\\\\/:*?"<>|]/g,"_")+".js",new Blob([J.Cavalry.loaderSource],{type:"text/javascript;charset=utf-8"}));};\n'
-    outputs={n:standalone for n in ('JIZURA_CV.js','dist/cavalry/JIZURA_CV.js')}
-    outputs['dist/cavalry/JIZURA_CV_Loader.js']=runtime+'\n'+loader+'\n'
-    outputs['src/11r_cavalry.js']=browser
-    build_manifest={'format':'jizura.cavalry.build-manifest','version':info['version'],'buildId':info['buildId'],
-        'modules':modules,'recipes':manifest,'coverage':{g:{k:cov[g][k] for k in ('registered','referenceCount','method','blockingMissing')} for g in GROUPS},
-        'catalog':None if not catalog else {'total':catalog['total'],'counts':catalog['counts'],
-            'groups':{g:cov[g]['catalog'] for g in GROUPS}},
-        'blockingMissing':blocking,'status':info['status'],'hostVerified':False,'renderVerified':False}
-    for n,s in outputs.items(): run_node(node,s,n,check=True)
-    report=dict(info,recipeGraphTests=graph_tests,protectedHashes=before,syntaxCheck='passed',outputHashes={n:sha(s.encode()) for n,s in outputs.items()})
-    outputs['dist/cavalry/build-report.json']=json.dumps(report,ensure_ascii=True,sort_keys=True,indent=2)+'\n'
-    outputs['dist/cavalry/build-manifest.json']=json.dumps(build_manifest,ensure_ascii=True,sort_keys=True,indent=2)+'\n'
-    if protected(root)!=before or any((root/n).read_bytes()!=b for n,b in raw.items()): raise ValueError('Build inputs changed')
-    return outputs,before
+
+    browser+=body+'\n;\n'+text['cavalry/native/browser_adapter.js']+'\n;\n'
+    # The existing web UI may still call this hook; it does not create a loader or a project-specific JS file.
+    browser+=(
+        'J.Cavalry.downloadLoader=function(){'
+        'return J.Cavalry.downloadPanel("JIZURA_Cavalry");};\n'
+        'J.Cavalry.download=J.Cavalry.downloadJson;\n'
+    )
+    run_node(node,browser,'in-memory Cavalry web module',check=True)
+    return browser,before
 
 def write_outputs(root,outputs,check=False):
-    root=root.resolve(); stale=[n for n,s in outputs.items() if not (root/n).is_file() or (root/n).read_bytes()!=s.encode()]
+    root=root.resolve()
+    files={n:s for n,s in outputs.items() if not n.startswith('@')}
+    stale=[n for n,s in files.items() if not (root/n).is_file() or (root/n).read_bytes()!=s.encode()]
     if check:
         if stale: raise ValueError('Stale outputs: '+', '.join(stale))
         return []
@@ -166,7 +187,7 @@ def write_outputs(root,outputs,check=False):
         p.parent.mkdir(parents=True,exist_ok=True); temp=None
         try:
             with tempfile.NamedTemporaryFile(dir=p.parent,delete=False) as f:
-                temp=Path(f.name);f.write(outputs[n].encode())
+                temp=Path(f.name);f.write(files[n].encode())
             os.replace(temp,p)
         finally:
             if temp: temp.unlink(missing_ok=True)
@@ -181,5 +202,5 @@ def main(argv=None):
     except (OSError,ValueError,UnicodeError,subprocess.SubprocessError) as error:
         print('Cavalry build failed: '+str(error),file=sys.stderr);return 1
     print('Cavalry outputs verified' if a.check else 'Cavalry outputs updated: '+str(len(changed)))
-    print('Host/render verification pending; coverage is in build-report.json');return 0
+    print('Artifact: dist/JIZURA_Cavalry.js — the web module is assembled in memory by build.py when needed. Host/render verification pending.');return 0
 if __name__=='__main__': raise SystemExit(main())

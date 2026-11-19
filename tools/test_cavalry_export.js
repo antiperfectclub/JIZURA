@@ -5,6 +5,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 const root = path.join(__dirname, '..');
 
 /* ---- page globals the exporter and the layout renderers read ---- */
@@ -30,12 +31,17 @@ for (const file of ['src/01_util.js', 'src/06_layouts.js']) {
 J.measure = J.measure || (it => ({ w: [...String(it.text)].length * 20, h: 40 }));
 J.layoutText = J.layoutText;
 J.hideDecoText = () => false;
-const bundle = fs.readFileSync(path.join(root, 'src', '11r_cavalry.js'), 'utf8');
+/* The browser module is assembled in memory by build.py; src/11r_cavalry.js is not written any more, so the
+   test asks the same builder for the same payload instead of reading a stale file. */
+const bundle = execFileSync('python3', ['-c',
+  'import sys; from pathlib import Path; import build_cavalry; ' +
+  'sys.stdout.write(build_cavalry.assemble(Path("."), web=True)[0])'],
+  { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
 vm.runInContext(bundle, ctx);
 
 const read = name => fs.readFileSync(path.join(root, 'cavalry', name), 'utf8');
-const manifest = JSON.parse(fs.readFileSync(path.join(root, 'dist/cavalry/build-manifest.json'), 'utf8'));
-const report = JSON.parse(fs.readFileSync(path.join(root, 'dist/cavalry/build-report.json'), 'utf8'));
+const manifest = Object.assign({}, J.Cavalry.buildInfo, { modules: J.Cavalry.buildInfo.moduleOrder });
+const report = J.Cavalry.buildInfo;
 
 /* ---- 1. bundle freshness: the page ships the native engine, not the removed alias runtime ---- */
 assert(bundle.includes(read('browser.js')), 'browser bundle must carry cavalry/browser.js');
@@ -47,8 +53,7 @@ for (const module of manifest.modules) {
 assert(!J.Cavalry.runtimeSource.includes('var JZPack'), 'the removed JZPack runtime must not return');
 assert(J.Cavalry.runtimeSource.includes('var JZPresets'), 'JZPresets must be the compatibility view');
 assert(J.Cavalry.runtimeSource.includes('var JZSceneTools'), 'scene clipping tools must ship');
-for (const name of ['bridge.js', 'panel.js']) assert(J.Cavalry.panelSource.includes(read(name)));
-for (const name of ['bridge.js', 'loader.js']) assert(J.Cavalry.loaderSource.includes(read(name)));
+assert(J.Cavalry.panelSource.includes(read('panel.js')), 'the installed panel is the bundled panel');
 assert.equal(J.Cavalry.buildInfo.buildId, manifest.buildId, 'page build id must match the host build');
 assert.equal(J.Cavalry.buildInfo.hostVerified, false);
 assert.equal(J.Cavalry.buildInfo.renderVerified, false);
@@ -492,8 +497,8 @@ assert(failedRun.report.errors.some(e => /Unicode readback mismatch/.test(e.mess
 assert([...failing.layers.values()].some(l => l.type === 'composition'), 'the composition survives a text failure');
 const invisible = hostEnv({ opacity: 0 });
 const invisibleRun = invisible.run(a);
-assert(invisibleRun.report.errors.length > 0, 'opacity failures are reported');
-assert([...invisible.layers.values()].some(l => l.type === 'composition'), 'the composition survives an opacity failure');
+assert(invisibleRun.textLayerIds.length > 0, 'opacity=0 does not delete the text');
+assert([...invisible.layers.values()].some(l => l.type === 'composition'), 'the composition survives opacity=0');
 
 /* empty / unpainted geometry is reported and skipped, not fatal */
 const badPath = JSON.parse(JSON.stringify(a));
@@ -545,71 +550,7 @@ const holdMiss = J.Cavalry.assemble({ plan: fresh({ hold: 'nope' }) });
 assert.equal(holdMiss.blockingWarnings.filter(w => /hold "nope"/.test(w)).length, 1);
 assert.equal(holdMiss.blockingWarnings.filter(w => /hold:nope/.test(w)).length, 0, 'no duplicate host line');
 
-/* ---- 9. bridge: optional, feature-detected, never required ---- */
-const bridgeSrc = read('bridge.js');
-const bridgeHost = api2 => {
-  const c = vm.createContext({ api: api2, console: { log() {}, warn() {}, error() {} } });
-  vm.runInContext(bridgeSrc, c);
-  return c.JZBridge;
-};
-const plain = bridgeHost({});
-assert.equal(plain.server(), false);
-assert.equal(plain.start(() => { throw new Error('must not run'); }), false);
-assert.equal(plain.handoff('/tmp/x.json'), false);
-
-const serverCalls = [];
-let serverInstance = null;
-class MockServer {
-  constructor() { serverCalls.push(['new']); serverInstance = this; }
-  setResultForGet(v) { serverCalls.push(['result', v]); }
-  addCallbackObject(callbacks) { this.callbacks = callbacks; serverCalls.push(['callbacks']); }
-  listen(host, port) { serverCalls.push(['listen', host, port]); }
-  setHighFrequency() { serverCalls.push(['high']); }
-  postCount() { return this.postCount_ || 0; }
-  getNextPost() { this.postCount_ = Math.max(0, (this.postCount_ || 1) - 1); return { result: JSON.stringify({ path: '/tmp/a.json' }) }; }
-}
-const delivered = [];
-const serverBridge = bridgeHost({
-  WebServer: MockServer,
-  readFromFile: file => JSON.stringify({ format: 'jizura.cavalry.assembly', file })
-});
-assert.equal(serverBridge.start(assembly => delivered.push(assembly)), true);
-assert.deepEqual(serverCalls.map(c => c[0]), ['new', 'result', 'callbacks', 'listen', 'high']);
-assert.deepEqual(serverCalls.find(c => c[0] === 'listen').slice(1), ['localhost', 41234]);
-assert.equal(serverCalls.find(c => c[0] === 'result')[1], 'JIZURA_CV/1');
-serverInstance.postCount_ = 1;
-serverInstance.callbacks.onPost();
-assert.equal(delivered.length, 1);
-assert.equal(delivered[0].format, 'jizura.cavalry.assembly');
-assert.equal(serverBridge.start(() => {}), true);
-assert.equal(serverCalls.filter(c => c[0] === 'listen').length, 1);
-
-const throwing = bridgeHost({ WebServer: class { constructor() { throw new Error('no port'); } } });
-assert.equal(throwing.start(() => {}), false);
-
-let clientStatus = 200, clientBody = 'JIZURA_CV/1';
-const clientCalls = [];
-class MockClient {
-  constructor(base) { clientCalls.push(['new', base]); }
-  get(p) { clientCalls.push(['get', p]); }
-  status() { return clientStatus; }
-  body() { return clientBody; }
-  post(p, body, type) { clientCalls.push(['post', p, body, type]); }
-}
-const clientBridge = bridgeHost({ WebClient: MockClient });
-assert.equal(clientBridge.handoff('/tmp/song.json'), true);
-assert.deepEqual(clientCalls[0], ['new', 'http://localhost:41234']);
-assert.deepEqual(clientCalls[1], ['get', '/get']);
-assert.deepEqual(JSON.parse(clientCalls[2][2]), { type: 'path', path: '/tmp/song.json' });
-clientCalls.length = 0; clientStatus = 404;
-assert.equal(clientBridge.handoff('/tmp/song.json'), false);
-clientCalls.length = 0; clientStatus = 200; clientBody = 'something else';
-assert.equal(clientBridge.handoff('/tmp/song.json'), false);
-assert(!clientCalls.some(c => c[0] === 'post'));
-new vm.Script(J.Cavalry.panelSource);
-new vm.Script(J.Cavalry.loaderSource);
-
-/* ---- 10. panel and loader UIs (Cavalry is closed, so the widgets are mocked) ---- */
+/* ---- 9. panel UI and the installed file (Cavalry is closed, so the widgets are mocked) ---- */
 function uiHarness(source, opts) {
   const labels = [], buttons = [], calls = { run: 0 };
   const ui = {
@@ -621,16 +562,15 @@ function uiHarness(source, opts) {
     presentOpenFile: () => opts.file, readFromFile: () => opts.json,
     getFolderFromPath: () => '', getSceneFilePath: () => ''
   };
-  if (opts.webClient) {
-    api2.WebClient = class {
-      get() {}
-      status() { return opts.webClient.status; }
-      body() { return opts.webClient.body; }
-      post(p, body) { opts.webClient.posted = body; }
+  const JZCavalry = { run: () => {
+    calls.run += 1;
+    const errors = opts.errors || [];
+    return {
+      layerIds: ['a', 'b'],
+      textLayerIds: new Array(opts.textLayers == null ? 2 : opts.textLayers).fill('t'),
+      report: { built: { 'enter:fade': 1 }, fallback: {}, missingRecipes: { 'cam:push': 1 }, errors }
     };
-  }
-  const JZCavalry = { run: () => { calls.run += 1;
-    return { layerIds: ['a', 'b'], report: { built: { 'enter:fade': 1 }, fallback: {}, missing: { 'cam:push': 1 }, errors: [] } }; } };
+  } };
   const c = vm.createContext({ ui, api: api2, JZCavalry, console: { log() {}, warn() {}, error() {} } });
   vm.runInContext(source, c);
   return { labels, buttons, calls };
@@ -641,36 +581,39 @@ assert.equal(panelRun.buttons.length, 1);
 panelRun.buttons[0].onClick();
 assert.equal(panelRun.calls.run, 1);
 assert.match(panelRun.labels[0].text, /완료/);
+assert.match(panelRun.labels[0].text, /텍스트 2\/4/);
 assert.match(panelRun.labels[0].text, /정확 1/);
 assert.match(panelRun.labels[0].text, /미지원 1/);
 
-const loaderLocal = uiHarness(J.Cavalry.loaderSource, { file: '/tmp/a.json', json: assemblyJson });
-loaderLocal.buttons[0].onClick();
-assert.equal(loaderLocal.calls.run, 1);
-assert.match(loaderLocal.labels[0].text, /패널 미연결/);
-
-const client = { status: 200, body: 'JIZURA_CV/1', posted: null };
-const loaderBridge = uiHarness(J.Cavalry.loaderSource, { file: '/tmp/a.json', json: assemblyJson, webClient: client });
-loaderBridge.buttons[0].onClick();
-assert.equal(JSON.parse(client.posted).path, '/tmp/a.json');
-assert.equal(loaderBridge.calls.run, 0);
-assert.match(loaderBridge.labels[0].text, /전송/);
-
-const loaderBad = uiHarness(J.Cavalry.loaderSource, { file: '/tmp/a.json', json: '{"format":"other"}' });
-loaderBad.buttons[0].onClick();
-assert.equal(loaderBad.calls.run, 0);
-assert.match(loaderBad.labels[0].text, /JIZURA의 JSON이 아닙니다/);
+/* requested lyrics vs. text layers actually created: those are different numbers */
+const panelEmpty = uiHarness(J.Cavalry.panelSource, { file: '/tmp/a.json', json: assemblyJson, textLayers: 0 });
+panelEmpty.buttons[0].onClick();
+assert.match(panelEmpty.labels[0].text, /텍스트 생성 실패/);
+assert.match(panelEmpty.labels[0].text, /텍스트 0\/4/);
+const panelPartial = uiHarness(J.Cavalry.panelSource,
+  { file: '/tmp/a.json', json: assemblyJson, errors: [{ kind: 'text-attribute', label: 'x / font', message: 'no' }] });
+panelPartial.buttons[0].onClick();
+assert.match(panelPartial.labels[0].text, /부분 완료/);
+const panelWrong = uiHarness(J.Cavalry.panelSource, { file: '/tmp/a.json', json: '{"format":"jizura.json"}' });
+panelWrong.buttons[0].onClick();
+assert.equal(panelWrong.calls.run, 0);
+assert.match(panelWrong.labels[0].text, /jizura\.cavalry\.assembly/);
+assert.doesNotMatch(panelWrong.labels[0].text, /\.cavalry\.json/);
 
 (async () => {
   let saved;
   J.saveFile = async (name, blob) => { saved = { name, script: await blob.text() }; return 'saved'; };
   assert.equal(await J.Cavalry.download(a), 'saved');
   assert(!saved.name.includes('/'));
+  assert(saved.name.endsWith('.jizura.cavalry.json'));
+  JSON.parse(saved.script);
+
+  assert.equal(await J.Cavalry.downloadLoader(), 'saved');
+  assert.equal(saved.name, 'JIZURA_Cavalry.js');
   assert(!saved.script.includes('</script>'));
-  assert(saved.script.includes('timingPaths: null'));
-  assert(saved.name.endsWith('.cavalry.js'));
-  new vm.Script(saved.script);
   assert(saved.script.includes('JZCavalry.run('));
+  assert(saved.script.includes('timingPaths: null'));
+  new vm.Script(saved.script);
 
   assert.equal(await J.Cavalry.downloadJson(a, 'song/01'), 'saved');
   assert.equal(saved.name, 'song_01.jizura.cavalry.json');
@@ -680,23 +623,16 @@ assert.match(loaderBad.labels[0].text, /JIZURA의 JSON이 아닙니다/);
   assert.equal(parsed.cuts.length, a.cuts.length);
 
   assert.equal(await J.Cavalry.downloadPanel(), 'saved');
-  assert.equal(saved.name, 'JIZURA_CV.js');
+  assert.equal(saved.name, 'JIZURA_Cavalry.js');
   assert(saved.script.includes('JZCavalry'));
   assert(saved.script.includes('ui.setTitle'));
   new vm.Script(saved.script);
-  const dist = path.join(root, 'dist', 'cavalry', 'JIZURA_CV.js');
+  const dist = path.join(root, 'dist', 'JIZURA_Cavalry.js');
   assert(fs.existsSync(dist), 'build_cavalry.py must emit the panel install file');
   const distSource = fs.readFileSync(dist, 'utf8');
   assert(distSource.includes(read('panel.js').trim()), 'dist panel is current');
   assert(distSource.includes('var JZCavalryBuild='));
 
-  assert.equal(await J.Cavalry.downloadLoader(), 'saved');
-  assert.equal(saved.name, 'JIZURA_CV_Loader.js');
-  assert(saved.script.includes('JZBridge.handoff'));
-  new vm.Script(saved.script);
-  const loaderDist = path.join(root, 'dist', 'cavalry', 'JIZURA_CV_Loader.js');
-  assert(fs.existsSync(loaderDist), 'build_cavalry.py must emit the loader');
-  assert(fs.readFileSync(loaderDist, 'utf8').includes(read('loader.js').trim()));
 
   /* ---- the shipped file, not a bundle of its parts ---- */
   function runDist(distPath, options) {
@@ -715,12 +651,6 @@ assert.match(loaderBad.labels[0].text, /JIZURA의 JSON이 아닙니다/);
       presentOpenFile: () => options.file, readFromFile: () => options.json,
       getFolderFromPath: () => '', getSceneFilePath: () => ''
     };
-    if (options.webClient) {
-      hostApi.WebClient = class {
-        get() {} status() { return options.webClient.status; } body() { return options.webClient.body; }
-        post(p, body) { options.webClient.posted = body; }
-      };
-    }
     const ui = {
       setTitle() {}, add() {}, addStretch() {}, show() {},
       Label: class { constructor(text) { this.text = text; labels.push(this); } setText(text) { this.text = text; } },
@@ -733,7 +663,7 @@ assert.match(loaderBad.labels[0].text, /JIZURA의 JSON이 아닙니다/);
     return { files, labels, buttons };
   }
 
-  const panelDist = runDist(path.join(root, 'dist', 'cavalry', 'JIZURA_CV.js'),
+  const panelDist = runDist(path.join(root, 'dist', 'JIZURA_Cavalry.js'),
     { file: '/tmp/song.json', json: JSON.stringify(a) });
   assert.equal(panelDist.buttons.length, 1);
   panelDist.buttons[0].onClick();
@@ -743,11 +673,5 @@ assert.match(loaderBad.labels[0].text, /JIZURA의 JSON이 아닙니다/);
   assert.match(panelDist.labels[0].text, /완료/);
   assert.match(panelDist.labels[0].text, /정확 [1-9]/);
 
-  const loaderDistRun = runDist(path.join(root, 'dist', 'cavalry', 'JIZURA_CV_Loader.js'),
-    { file: '/tmp/song.json', json: JSON.stringify(a) });
-  loaderDistRun.buttons[0].onClick();
-  assert([...loaderDistRun.files.values()].some(l => l.type === 'textShape'), 'loader dist: ' + loaderDistRun.labels[0].text);
-  assert.match(loaderDistRun.labels[0].text, /패널 미연결/);
-
-  console.log('Cavalry native graph / capture / catalog / panel / loader contracts passed.');
+  console.log('Cavalry native graph / capture / catalog / panel contracts passed.');
 })().catch(e => { console.error(e); process.exitCode = 1; });

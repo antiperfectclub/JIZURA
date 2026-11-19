@@ -19,11 +19,10 @@ function param(c, key, fallback) {
   return p[key] == null ? fallback : p[key];
 }
 
+/* One resolver for every recipe: options.fontOverrides, host availability, and fallback are handled by
+ * C.font. Recipes must not re-implement (or disagree with) that substitution order. */
 function font(c, node) {
-  var overrides = c.options && c.options.fontOverrides || {};
-  var f = overrides[node.font.key] || node.font;
-  if (!f || !f.family || !f.style) throw new Error('Invalid font: ' + node.id);
-  return f;
+  return C.font(node, c.options || {});
 }
 
 function glyphs(c, node) { return C.glyphs(node, font(c, node)); }
@@ -195,6 +194,7 @@ var originalEmit = G.Graph.prototype.emit;
 G.Graph.prototype.emit = function (options) {
   options = options || {};
   var profile = (options.hostProfile || {}).gaussianBlur, saved = [], graph = this;
+  var layersBefore = this.layers, edgesBefore = this.edges;
   var dropped = Object.create(null);
   this.layers.forEach(function (n) {
     if (n.type !== '$gaussianBlur') return;
@@ -225,6 +225,9 @@ G.Graph.prototype.emit = function (options) {
   } finally {
     saved.forEach(function (s) { s.node.type = s.type; s.node.attrs = s.attrs; s.node.keys = s.keys; });
     edgeSaved.forEach(function (s) { s.edge.input = s.input; });
+    /* emit() mutates only its temporary view: dropped blur nodes stay in the editable graph so the
+       report and a later host-profile retry still see them. */
+    graph.layers = layersBefore; graph.edges = edgesBefore;
   }
 };
 

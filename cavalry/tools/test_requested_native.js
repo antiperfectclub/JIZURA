@@ -7,16 +7,8 @@ const vm = require('vm');
 
 const root = process.cwd();
 const base = path.join(root, 'cavalry');
-
-const natives = fs.readdirSync(path.join(base, 'native'))
-  .filter(name => name.endsWith('.js') && name !== '30_assembly.js' && name !== 'browser_adapter.js')
-  .sort()
-  .map(name => path.join(base, 'native', name));
-
-const packs = fs.readdirSync(path.join(base, 'packs'))
-  .filter(name => /^p_.*\.js$/.test(name))
-  .sort()
-  .map(name => path.join(base, 'packs', name));
+const fromStdin = process.argv.includes('--stdin');
+const bundleArg = process.argv.slice(2).find(arg => !arg.startsWith('--')) || null;
 
 const sandbox = {
   console,
@@ -31,16 +23,33 @@ const sandbox = {
 
 vm.createContext(sandbox);
 
-for (const file of natives.concat(packs, [path.join(base, 'native', '30_assembly.js')])) {
-  vm.runInContext(fs.readFileSync(file, 'utf8'), sandbox, { filename: file, timeout: 10000 });
+/* Test the actual bundle when one is supplied (build_cavalry.py pipes dist/JIZURA_Cavalry.js to --stdin);
+   the module list stays as a development fallback for a repository checkout. */
+if (fromStdin) {
+  vm.runInContext(fs.readFileSync(0, 'utf8'), sandbox, { filename: 'JIZURA_Cavalry.js', timeout: 20000 });
+} else if (bundleArg) {
+  const file = path.resolve(root, bundleArg);
+  vm.runInContext(fs.readFileSync(file, 'utf8'), sandbox, { filename: file, timeout: 20000 });
+} else {
+  const natives = fs.readdirSync(path.join(base, 'native'))
+    .filter(name => name.endsWith('.js') && name !== '30_assembly.js' && name !== 'browser_adapter.js')
+    .sort()
+    .map(name => path.join(base, 'native', name));
+  const packs = fs.readdirSync(path.join(base, 'packs'))
+    .filter(name => /^p_.*\.js$/.test(name))
+    .sort()
+    .map(name => path.join(base, 'packs', name));
+  for (const file of natives.concat(packs, [path.join(base, 'native', '30_assembly.js')])) {
+    vm.runInContext(fs.readFileSync(file, 'utf8'), sandbox, { filename: file, timeout: 10000 });
+  }
 }
 
 const required = {
   layout: ['center', 'vcols', 'dictionary', 'xbTwistFrames'],
-  enter: ['xgComet', 'tyKeyFirst'],
+  enter: ['xgComet', 'tyKeyFirst', 'clockWipe'],
   exit: ['xjFocusPull', 'xiPlateCarry', 'knCloseGap'],
   hold: ['tzKernNudge', 'tzCounterRules'],
-  bg: ['skyline', 'xpRingDots'],
+  bg: ['skyline', 'xpRingDots', 'concentric'],
   treat: ['inline', 'outlineOffset', 'xoDoublePrint'],
   decor: ['xlLadder', 'romajiLine', 'tyGlyphBody'],
   fx: ['shake', 'slice', 'invert', 'flash', 'zoom', 'chroma', 'xrDropBounce'],
@@ -184,14 +193,16 @@ assert(Math.abs(roundtrip[1] - input[1]) < 1e-8);
 checks++;
 
 
-/* Partial-import contract: missing fonts and single layer failures must not abort the whole import. */
+/* Partial-import contract: missing fonts, rejected font writes, and a failed first glyph must not abort
+   the whole import, and must not silently drop the lyric text. */
 class MockPath {
   constructor() { this.used = 0; }
   moveTo() { this.used++; } lineTo() { this.used++; } quadTo() { this.used++; } cubicTo() { this.used++; }
   close() {} append() {} empty() { return this.used === 0; }
 }
-function hostApi(failText) {
-  const layers = new Map(); let n = 0, active = null;
+function hostApi(options) {
+  options = options || {};
+  const layers = new Map(); let n = 0, active = null, textCreates = 0;
   const mk = (type, name) => { const id = type + '#' + n++; layers.set(id, { type, name, attrs: {} }); return id; };
   return {
     layers,
@@ -199,10 +210,21 @@ function hostApi(failText) {
       createComp(name) { active = mk('composition', name); return active; },
       getActiveComp: () => active, setActiveComp(id) { active = id; },
       getFrame: () => 0, setFrame() {},
-      create(type, name) { if (failText && type === 'textShape') throw new Error('mock layer failure'); return mk(type, name); },
+      create(type, name) {
+        if (type === 'textShape') {
+          if (options.failText === 'all') throw new Error('mock layer failure');
+          if (options.failText === 'first' && textCreates++ === 0) throw new Error('mock first glyph failure');
+        }
+        return mk(type, name);
+      },
       createEditable(p, name) { const id = mk('editableShape', name); layers.get(id).path = p; return id; },
       parent(id, parent) { layers.get(id).parent = parent; },
-      set(id, values) { Object.assign(layers.get(id).attrs, values); },
+      set(id, values) {
+        if (options.rejectFontWrite && (Object.prototype.hasOwnProperty.call(values, 'font') ||
+            Object.prototype.hasOwnProperty.call(values, 'font.font') ||
+            Object.prototype.hasOwnProperty.call(values, 'font.style'))) throw new Error('mock font write rejected');
+        Object.assign(layers.get(id).attrs, values);
+      },
       get(id, attr) {
         const l = layers.get(id);
         return attr === 'opacity' ? 100 : attr === 'text' ? l.attrs.text : l.attrs[attr];
@@ -213,22 +235,46 @@ function hostApi(failText) {
     }
   };
 }
-function runWith(fontOk, failText) {
-  const host = hostApi(failText);
+function textOf(layers) {
+  return Array.from(layers.values()).filter(l => l.type === 'textShape')
+    .map(l => l.attrs.text == null ? '' : String(l.attrs.text)).join('');
+}
+function runWith(options) {
+  options = options || {};
+  const host = hostApi(options);
   const previousApi = sandbox.api, previousCavalry = sandbox.cavalry, previousConsole = sandbox.console;
   sandbox.api = host.api; sandbox.console = { log() {}, warn() {}, error() {} };
-  sandbox.cavalry = Object.assign({}, previousCavalry, { Path: MockPath, fontExists: fontOk });
-  try { return sandbox.JZCavalry.run(assembly(), {}); }
+  sandbox.cavalry = Object.assign({}, previousCavalry, { Path: MockPath, fontExists: () => options.fontOk !== false });
+  const a = assembly();
+  if (options.breakGlyphs) a.cuts[0].nodes[0].glyphs = [{ ch: 'X', i: 0, li: 0, ci: 0, n: 1, x: 0, y: 0, w: 10, h: 10 }];
+  try { return { scene: sandbox.JZCavalry.run(a, {}), host }; }
   finally { sandbox.api = previousApi; sandbox.cavalry = previousCavalry; sandbox.console = previousConsole; }
 }
-const fontFallback = runWith(() => false, false);
-assert(fontFallback.report.fontFallbacks.length > 0, 'missing font is reported');
-assert.strictEqual(fontFallback.report.errors.length, 0, 'missing font does not fail the import');
-assert(fontFallback.layerIds.length > 0, 'composition survives a missing font');
-const layerFailure = runWith(() => true, true);
-assert(layerFailure.report.errors.some(e => e.kind === 'layer'), 'layer failure is recorded');
-assert(layerFailure.layerIds.length > 0, 'composition survives a layer failure');
-checks += 5;
+const fullLyrics = '透明なまま'.repeat(2);
+const fontFallback = runWith({ fontOk: false });
+assert(fontFallback.scene.report.fontFallbacks.length > 0, 'missing font is reported');
+assert.strictEqual(fontFallback.scene.report.errors.length, 0, 'missing font does not fail the import');
+assert.strictEqual(textOf(fontFallback.host.layers), fullLyrics, 'missing font keeps the lyric text');
+assert(fontFallback.scene.textLayerIds.length > 0, 'missing font keeps actual text layers');
+assert(fontFallback.scene.layerIds.length > 0, 'composition survives a missing font');
+const fontRejected = runWith({ rejectFontWrite: true });
+assert(fontRejected.scene.report.errors.some(e => e.kind === 'text-attribute' && /\/ font$/.test(e.label)),
+  'font write rejection is recorded without killing the layer');
+assert.strictEqual(textOf(fontRejected.host.layers), fullLyrics, 'rejected font write keeps the lyric text');
+assert(fontRejected.scene.textLayerIds.length > 0, 'rejected font write keeps actual text layers');
+const brokenGlyphs = runWith({ breakGlyphs: true });
+assert(brokenGlyphs.scene.report.errors.some(e => e.kind === 'text'), 'failed text rebuild is recorded');
+assert.strictEqual(textOf(brokenGlyphs.host.layers), fullLyrics, 'failed text rebuild keeps the lyric text');
+const firstGlyphFailed = runWith({ failText: 'first' });
+assert(firstGlyphFailed.scene.report.errors.some(e => e.kind === 'layer'), 'first glyph failure is recorded');
+assert.strictEqual(textOf(firstGlyphFailed.host.layers), fullLyrics.slice(1), 'remaining glyphs keep their text');
+assert(firstGlyphFailed.scene.textLayerIds.length > 0, 'remaining glyphs are real text layers');
+const layerFailure = runWith({ failText: 'all' });
+assert(layerFailure.scene.report.errors.some(e => e.kind === 'layer'), 'layer failure is recorded');
+assert.strictEqual(textOf(layerFailure.host.layers), '', 'no text layer is faked when every glyph fails');
+assert.strictEqual(layerFailure.scene.textLayerIds.length, 0, 'a total text failure reports zero text layers');
+assert(layerFailure.scene.layerIds.length > 0, 'composition survives a layer failure');
+checks += 14;
 
 const report = {
   checks,

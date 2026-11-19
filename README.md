@@ -172,7 +172,7 @@
 
 7. **AE用に書き出し**：今の構成（タイミング・レイアウト・演出・配色）を JSON に書き出します。AE パネルで読み込むと、同じ構成のまま編集できるコンポになります。
 
-8. **Cavalry用に書き出し（実験的）**：今の構成を Cavalry で編集できるデータ（`.jizura.cavalry.json`）に書き出します。Cavalry の Scripts フォルダに読み込みパネル（初回のみ）を入れておけば、JSON を選ぶだけでカットごとの null・背景・テキスト・カメラ・プリセットが組み上がります。パネルを入れずに一度だけ使う「ローダー」と、データを埋め込んだ `.cavalry.js` もあります。未対応の機能は書き出す前の一覧に出て、「対応できる項目だけで書き出す」で止められます。詳しくは [docs/CAVALRY_EXPORT.md](docs/CAVALRY_EXPORT.md)。
+8. **Cavalry用に書き出し（実験的）**：今の構成を Cavalry で編集できるデータ（`.jizura.cavalry.json`）に書き出します。Cavalry の Scripts フォルダに読み込みパネル（初回のみ、`dist/JIZURA_Cavalry.js`）を入れておけば、JSON を選ぶだけでカットごとの null・背景・テキスト・カメラ・プリセットが組み上がります。旧ローダーや `.cavalry.js` のダウンロードも同じスクリプトを保存します。未対応の機能は書き出す前の一覧に出て、「対応できる項目だけで書き出す」で止められます。詳しくは [docs/CAVALRY_EXPORT.md](docs/CAVALRY_EXPORT.md)。
 
 <details>
 <summary><h3>はじめての案内（かんたんモード）</h3></summary>

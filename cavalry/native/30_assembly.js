@@ -18,7 +18,7 @@ function preflight(a){
     if(c.start<0||c.end<=c.start||c.end>comp.frameCount||c.sourceEnd<c.end||c.origin>c.start||c.inFrames<1||c.outFrames<1||!Array.isArray(c.nodes))throw new Error('Invalid cut range');
     c.nodes.forEach(function(n){if(!n.id||ids[n.id])throw new Error('Duplicate/empty node id');ids[n.id]=true;
       if(n.kind&&n.kind!=='text')throw new Error('Use explicit graphics commands for non-text nodes');
-      if(typeof n.text!=='string'||!n.font)throw new Error('Invalid text node');
+      if(typeof n.text!=='string')throw new Error('Invalid text node');
       ['x','y','size','sx','rotation','delayFrames'].forEach(function(k){N.finite(n[k],n.id+'.'+k);});
       if(n.size<=0||!Number.isInteger(n.delayFrames))throw new Error('Invalid text size/delay');
     });
@@ -232,10 +232,10 @@ function compile(a,options){
         record(report,'text',node.id,error,cut.id);
         try{
           var fallback=JSON.parse(JSON.stringify(node));
-          delete fallback.glyphs;fallback.font=null;
-          ids=C.text(graph,cut,fallback,cam,options,animate);
+          delete fallback.glyphs;delete fallback._jzFont;
+          ids=C.text(graph,cut,fallback,cam,options,function(){});
           ctx.texts=ctx.texts.concat(ids);
-          notices.push(node.id+': failed text rebuilt with default glyph placement');
+          notices.push(node.id+': failed text rebuilt with host glyph placement and without the failing motion');
           fontNotice(report,fallback,cut,options);
         }catch(error2){
           truncate(graph,layerCount,edgeCount);
@@ -276,7 +276,6 @@ function run(a,o){o=o||{};var result=compile(a,o),scene=result.graph.emit(Object
   console.log('JIZURA native build report: '+JSON.stringify(result.report));
   var missKeys=Object.keys(result.report.missingRecipes||{});
   if(missKeys.length)console.warn('JIZURA: unimplemented native recipes skipped (composition still built): '+missKeys.join(', '));
-  if(!o.timingPaths)console.warn('Set composition timing manually: '+a.composition.fps+' fps, 0-'+(a.composition.frameCount-1));
   return scene;
 }
 return {run:run,compile:compile,preflight:preflight};

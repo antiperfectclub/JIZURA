@@ -6,33 +6,26 @@ The AE exporter (`ae/`, `JIZURA_AE*`) is not involved and is not rebuilt.
 | button | file | when |
 | --- | --- | --- |
 | **JSONを書き出す** (primary) | `*.jizura.cavalry.json` | the data; re-import it any time, with no new script |
-| **パネル（初回のみ）** | `JIZURA_CV.js` | install once in Cavalry's Scripts folder; stays docked |
-| **ローダー** | `JIZURA_CV_Loader.js` | no install: pick a JSON once and build (or hand it to the open panel) |
-| **スクリプト** | `*.cavalry.js` | no install: the assembly is embedded and built on run |
+| **パネル（初回のみ）** | `dist/JIZURA_Cavalry.js` | install once in Cavalry's Scripts folder; stays docked. The older loader/script buttons save this same file. |
 
 Cavalry cannot build a composition from JSON on its own — `api.importScene()` reads `.cv` / `.cvc` scenes and
 the Presets folder holds attribute presets, not scenes. The JSON is therefore always read by a script:
 
-1. **Help → Show Scripts Folder**, save `JIZURA_CV.js` there.
+1. **Help → Show Scripts Folder**, save `JIZURA_Cavalry.js` there (built at `dist/JIZURA_Cavalry.js`).
 2. **Window → Scripts → JIZURA CV** (scripts are hot-loaded; no restart).
 3. Press the button, pick a `.jizura.cavalry.json`.
 
-`JIZURA_CV_Loader.js` carries the same runtime and the optional `WebClient` handoff. It posts the path to an
-open panel when Cavalry answers on `localhost:41234`; otherwise it builds the composition itself.
+`JIZURA_Cavalry.js` carries both the runtime and the panel. The panel has no network listener: every build starts
+from the file picker. The legacy loader and per-cut script files are not generated any more; those download
+buttons return the same `JIZURA_Cavalry.js`, and the JSON is the payload.
 
 The new composition is named after the song. Each cut becomes a null group with its background, a three-node
 camera rig, one editable path per captured graphic, and one null + text shape per glyph. The currently open
 Scene and its save path are not touched.
 
-After running, set **Composition Settings** by hand:
-
-```
-Frame Rate:   assembly.composition.fps
-Frame Range:  0 … frameCount - 1
-```
-
-The scripting paths for frame rate and range are version specific, so the exporter does not guess them. Pass
-them only after checking with **Copy Scripting Path**:
+Frame rate and frame range are written on import with the default paths (`fps`, `startFrame`, `endFrame`). If
+the host rejects or ignores a path, the panel reports it instead of aborting the import; confirm the values in
+**Composition Settings** and pass explicit paths only after checking them with **Copy Scripting Path**:
 
 ```js
 JZCavalry.run(assembly, {
@@ -41,6 +34,9 @@ JZCavalry.run(assembly, {
   timingPaths: { fps: '…', start: '…', end: '…' }
 });
 ```
+
+`timingPaths: null` (what the panel passes) applies the same defaults. Text creation and its string readback
+are the only mandatory steps: a rejected font, colour or keyframe is recorded, the lyric layer stays.
 
 Audio is not embedded. Import the song and trim it by `audioOffset` seconds.
 
@@ -220,26 +216,28 @@ can be called verified.
 | `cavalry/native/30_assembly.js` | preflight, cut assembly, deferred cut-pair transitions, camera rig, partial-import report |
 | `cavalry/native/browser_adapter.js` | browser assembly → v3 native payload + glyphs + words |
 | `cavalry/packs/*.js` | native recipes: core scalar (`blur`/`zoom`/`wipe`/`shrink`), geometry, motion, hold, camera, x2 packs, requested packs |
-| `cavalry/bridge.js` | optional `WebServer`/`WebClient` handoff |
-| `cavalry/panel.js`, `cavalry/loader.js` | dockable panel and one-shot loader UI |
+| `cavalry/bridge.js` | legacy `WebServer`/`WebClient` handoff; not a build input and not initialised by the panel |
+| `cavalry/panel.js`, `cavalry/loader.js` | dockable JSON panel (panel is bundled); legacy one-shot loader (not bundled) |
 
 The old `presets.js`, `runtime.js`, `families.js`, `host-values.js` and `procedural.js` files are removed.
 `JZPresets` is now the same object as `JZNative` (same registry, no copy), so a second registry cannot drift. `10_graph.js` validates finite host values, empty paths and Unicode round-trips, and
 `25_recipe_tools.js` owns deterministic seeded math.
 
-`build_cavalry.py` writes `src/11r_cavalry.js` (page bundle), `JIZURA_CV.js` / `dist/cavalry/JIZURA_CV.js`
-(panel), `JIZURA_CV_Loader.js` / `dist/cavalry/JIZURA_CV_Loader.js` (loader), `dist/cavalry/build-report.json`
-and `dist/cavalry/build-manifest.json`. Each dist file is self-contained.
+`build_cavalry.py` writes `dist/JIZURA_Cavalry.js` only (runtime + panel). It does not rewrite `src/11r_cavalry.js`:
+`build.py` asks the builder for the browser module in memory (`assemble(..., web=True)`) and inserts it at the same
+position. Older artifacts such as a root `JIZURA_CV.js` or `dist/cavalry/*` are not updated or deleted by the build;
+install the new file once and remove the old script from the Scripts folder yourself.
 
-## Build manifest and coverage
+## Build info and coverage
 
-`dist/cavalry/build-manifest.json` is the machine-readable contract:
+The build info is embedded in `dist/JIZURA_Cavalry.js` as `JZCavalryBuild`; the browser module exposes the same object as
+`J.Cavalry.buildInfo`, and every browser assembly carries its `buildId`:
 
 ```json
 {
-  "format": "jizura.cavalry.build-manifest",
+  "format": "jizura.cavalry.native-build",
   "buildId": "…",
-  "modules": ["native/00_registry.js", "…", "native/30_assembly.js"],
+  "moduleOrder": ["native/00_registry.js", "…", "native/30_assembly.js"],
   "recipes": { "cam": { "panL": { "exact": false, "hostVerified": false, "source": "…", "scope": "cut-camera" } } },
   "coverage": { "layout": { "method": "native", "registered": ["graphics", "center", "…"], "blockingMissing": ["accordion", "…"] } },
   "catalog": { "total": 1717, "groups": { "layout": { "count": 366, "notPorted": 366 } } },
@@ -258,28 +256,32 @@ and `dist/cavalry/build-manifest.json`. Each dist file is self-contained.
 ### AE catalog
 
 ```sh
-node cavalry/tools/extract_ae_catalog.js
+node cavalry/tools/extract_ae_catalog.js            # write cavalry/catalog/ae-presets.json + .csv
+node cavalry/tools/extract_ae_catalog.js --stdout   # print the catalog, write nothing
 ```
 
-Instruments `jzReg` in the real jsx sources and records 1,717 registrations (layout 366, enter 251, hold 102,
+`build_cavalry.py` uses the `--stdout` form to audit the live AE registry against `ae/data.json` without keeping a
+second copy on disk. Sources are evaluated in `build_ae.py` order (`00_core`…`45_core` → every `p_*.jsx` →
+`50_build`/`55_diag`); `90_ui` is UI-only and excluded. Instruments `jzReg` in the real jsx sources and records 1,717 registrations (layout 366, enter 251, hold 102,
 exit 221, decor 260, treat 122, bg 130, cam 71, fx 138, trans 56), their source file, flags and function
 bodies. Every entry says `implementationStatus: "not-ported"`: the catalog is evidence of what the AE recipe
-does, not a claim that Cavalry implements it. Outputs `cavalry/catalog/ae-presets.json` and `.csv`
-(git-ignored; regenerate on demand).
+does, not a claim that Cavalry implements it. File output is git-ignored; regenerate on demand.
 
 ## Build and test
 
 ```sh
-python3 build_cavalry.py          # bundles + build-report.json + build-manifest.json
-python3 build_cavalry.py --check  # fail if any generated file is stale
-node tools/test_cavalry_export.js # contracts: capture, graph, packs, catalog, panel, loader
-node cavalry/tools/test_requested_native.js # registry identity, 86 recipe/graph checks
-python3 build.py --dev            # page HTML with the regenerated src/11r_cavalry.js
+python3 build_cavalry.py          # dist/JIZURA_Cavalry.js only
+python3 build_cavalry.py --check  # fail if dist/JIZURA_Cavalry.js is stale
+node cavalry/tools/test_requested_native.js dist/JIZURA_Cavalry.js # inspect the actual bundle
+node cavalry/tools/test_requested_native.js # registry identity, recipe/graph checks from source modules
+python3 build.py --dev            # page HTML with the in-memory browser module
 ```
 
 The build also proves every requested recipe is executable, present in the manifest, and the same definition
 via `JZPresets` before writing outputs, and runs the recipe graph regression during the build. The tests run each
-new recipe at least once against a mock host. They do not replace rendering the file in Cavalry: `hostVerified` and `renderVerified` stay false.
+new recipe at least once against a mock host, and assert that text layers survive a rejected font write while a
+total text failure reports `textLayerIds.length === 0`. They do not replace rendering the file in Cavalry:
+`hostVerified` and `renderVerified` stay false.
 
 ## Deliberately not built yet
 

@@ -56,9 +56,17 @@ reg('bounceBig', function (p, g, gs, e) {
   return q <= 0 ? { hide: true } : { s: mix(0.15, 1, k), a: cl(q * 4) };
 });
 reg('clockWipe', function (p, g, gs, e) {
-  var q = st(p, lr(g, gs), 0.55);
-  return { rot: (1 - E.outCubic(q)) * 90, s: mix(0.4, 1, E.outCubic(q)), a: cl(q * 3) };
-});
+  if (p >= 1) return null;
+  if (p <= 0) return { hide: true };
+  var b = V.bounds(gs), cx = b.cx, cy = b.cy;
+  var r = Math.hypot(b.w, b.h) + e.size * 2, q = E.outCubic(p), steps = Math.max(1, Math.ceil(q * 48));
+  var points = [[cx, cy]];
+  for (var i = 0; i <= steps; i++) {
+    var a = -PI / 2 + q * TAU * i / steps;
+    points.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]);
+  }
+  return { clipPolygon: points, a: cl(p * 8) };
+}, ['Reveals the item with a clockwise sector via a Cavalry JavaScript Deformer; requires host clipping support.']);
 reg('crtOn', function (p, g, gs, e) {
   if (p <= 0) return { hide: true };
   if (p < 0.45) { var u = E.outExpo(p / 0.45); return { sx: u, sy: 0.04, a: 1 }; }

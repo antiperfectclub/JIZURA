@@ -128,22 +128,26 @@ register('concentric', 'src/11p_looks.js', function (c) {
   var gap = U * H.p(P, 'gap', 0.09), spd = H.p(P, 'spd', 0.2), k = H.p(P, 'k', 0.1);
   var cy = Hh * H.p(P, 'cy', 0.5), Rm = Math.hypot(W, Hh) * 0.62;
   var count = Math.min(20, Math.max(4, Math.ceil(Rm / gap) + 1));
+  var start = c.cut.start, end = c.cut.end, fps = c.comp.fps;
   var p0 = H.toScene(c, W / 2, cy);
-  for (var i = 0; i < count; i++) {
-    (function (idx) {
-      var id = C.shape(c.graph, c.cut, c.cut.id + ' / Concentric ring ' + idx, c.parent,
-        G.ellipse(0, 0, Rm, Rm), { stroke: H.layC(c.sc, k), width: Math.max(1.5, gap * 0.18), alpha: 1 });
-      c.graph.byId[id].attrs.position = p0;
-      V.animate(c, id, function (e, f) {
-        var t = clk.absTime(f), q = clk.enter(f, 0.6), ph = wrap(t * spd, 1);
-        var rad = (idx + ph) * gap;
-        var vis = rad >= 2 && rad < Rm * q;
-        var pulse = Math.exp(-e.beat(0.5).since * 5);
-        var sc = Math.max(0.005, rad / Rm);
-        return { 'scale.x': sc, 'scale.y': sc, alpha: vis ? cl(0.75 + 0.35 * pulse) * q : 0 };
-      });
-    })(i);
-  }
+  var id = C.shape(c.graph, c.cut, c.cut.id + ' / Concentric rings', c.parent,
+    G.ellipse(0, 0, Rm, Rm), { stroke: H.layC(c.sc, k), width: Math.max(1.5, gap * 0.18), alpha: 1 });
+  c.graph.byId[id].attrs.position = p0;
+  var profile = (c.options || {}).hostProfile || {};
+  if (profile.javaScriptDeformer === false) return id;
+  var data = [clk.absTime(start), clk.time(start), fps, gap, spd, Rm, count];
+  var expression = '(function(){var p=' + JSON.stringify(data) + ', f=(n0-' + start + ')/p[2];' +
+    'var phase=((p[0]+f)*p[4]%1+1)%1, u=Math.max(0,Math.min(1,(p[1]+f)/0.6));' +
+    'var extent=p[5]*(1-Math.pow(1-u,3)), path=new cavalry.Path();' +
+    'for(var i=0;i<p[6];i++){var r=(i+phase)*p[3];if(r>=2&&r<extent)path.addEllipse(0,0,r*2,r*2);}' +
+    'var d=def.highestDepthWithPath();if(d<0)return;var ms=def.getMeshesAtDepth(d);' +
+    'if(ms.length){ms[0].setPathAtIndex(0,path);def.setMeshesAtDepth(d,ms);}})();';
+  var type = (profile.javaScriptDeformer || {}).layerType || 'javaScriptDeformer';
+  var driver = c.graph.add(type, c.cut.id + ' / Concentric clock', id, start, end, { expression: expression, 'array.0': start });
+  c.graph.key(driver, 'array.0', start, start, 1);
+  if (end - start > 1) c.graph.key(driver, 'array.0', end - 1, end - 1, 1);
+  c.graph.connect(driver, 'id', id, 'deformers');
+  return id;
 });
 
 /* 3. halftoneFade */

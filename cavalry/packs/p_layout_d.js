@@ -382,29 +382,64 @@ reg('crossword', function (c) {
   H.laySetNodes(c, specs);
 });
 
-/* 18. wordSearch: square letter-search grid highlighting the lyric capsule inside */
+/* 18. wordSearch — AE p_layoutsD2: directed path, seeded decoys and a sweeping capsule. */
 reg('wordSearch', function (c) {
-  var W = c.comp.width, Hh = c.comp.height, sc = c.sc, u = uMin(c), seed = H.laySeed(c);
-  var chars = H.layChars(H.layText(c)), cols = Math.max(chars.length + 2, 6), rows = 5;
-  var cell = Math.min(W * 0.84 / cols, Hh * 0.72 / rows, u * 0.11);
-  var gw = cols * cell, gh = rows * cell, x0 = (W - gw) / 2, y0 = (Hh - gh) / 2;
-  var targetRow = Math.floor(rows / 2), startCol = Math.floor((cols - chars.length) / 2);
-  var pool = fillPool(c), specs = [];
-  H.layRRect(c, 'WS pill', x0 + startCol * cell + cell * 0.06, y0 + targetRow * cell + cell * 0.06, chars.length * cell - cell * 0.12, cell * 0.88, cell * 0.42, { fill: sc.accent, alpha: 0.92 }, envAlpha(c, 0.12, 0.35, 0.92));
-  for (var r = 0; r < rows; r++) {
-    for (var col = 0; col < cols; col++) {
-      var x = x0 + (col + 0.5) * cell, y = y0 + (r + 0.5) * cell;
-      var inWord = r === targetRow && col >= startCol && col < startCol + chars.length;
-      if (inWord) {
-        specs.push({ text: chars[col - startCol], size: cell * 0.62, x: x, y: y, color: H.textOn(sc.accent, sc.bg, sc), mi: col - startCol });
-      } else {
-        var dec = pool[(R.hash(seed, r * 13 + col, 4)) % pool.length];
-        H.addText(c, 'WS dec ' + r + '_' + col, dec, x, y, cell * 0.48, { color: sc.sub, alpha: 0.35 }, envAlpha(c, 0.04, 0.3, 0.35));
-      }
-    }
+  var W=c.comp.width, HH=c.comp.height, sc=c.sc, U=uMin(c), seed=H.laySeed(c);
+  var p=(c.preset||{}).params||{}, chars=H.layChars(H.layText(c)).filter(function(ch){return ch.trim();});
+  var n=chars.length;if(!n)return null;
+  var dir=p.dir==='v'||p.dir==='d'?p.dir:'h', port=isPort(c);
+  if((dir==='v'&&n>14)||(dir==='d'&&n>9))dir='h';
+  var pad=Math.min(3,Math.max(1,Number.isFinite(p.pad)?Math.round(p.pad):2));
+  var decoys=Math.min(3,Math.max(0,Number.isFinite(p.decoys)?Math.round(p.decoys):2));
+  var dr=dir==='h'?0:1, dc=dir==='v'?0:1, rows, cols;
+  if(dir==='v'){rows=n+2*pad;cols=Math.max(5,Math.round(rows*W/HH*1.1));}
+  else if(dir==='d'){rows=cols=n+2;}
+  else {cols=n+2*pad;rows=port?Math.max(7,Math.round(cols*1.4)):Math.max(5,Math.round(cols*.5));if(port&&cols>9)cols=n+1;}
+  cols=Math.max(dc?n:1,Math.min(cols,18));
+  rows=Math.max(dr?n:1,Math.min(rows,18,Math.max(dir==='v'?n+1:dir==='d'?n:5,Math.floor(150/cols))));
+  if(dir==='v')cols=Math.min(cols,Math.max(5,Math.floor(150/rows)));
+  var cell=Math.min(W*.86/cols,HH*.8/rows,U*.16), x0=(W-cols*cell)/2,y0=(HH-rows*cell)/2;
+  var row=Math.floor((rows-(dr?n:1))/2), col=Math.floor((cols-(dc?n:1))/2);
+  var wobble=Math.floor(N.random(seed,1)*3)-1;
+  if(!dr)row=Math.max(0,Math.min(rows-1,row+wobble));
+  if(!dc)col=Math.max(0,Math.min(cols-1,col+wobble));
+  var marks=Object.create(null), specs=[], pool=fillPool(c), fs=cell*.56, rr=cell*.42;
+  var body=H.layFontObj(c,'body'), ink=sc.accent||sc.fg, sub=sc.sub||sc.fg;
+  function cellX(i){return x0+(i+.5)*cell;}
+  function cellY(i){return y0+(i+.5)*cell;}
+  function reveal(f){var t=(f-c.cut.origin)/c.comp.fps, dur=(c.cut.sourceEnd-c.cut.origin)/c.comp.fps;
+    return E.inOutCubic(cl((t-.35)/Math.max(.35,Math.min(.8,dur*.3))))*H.layTout(c,f);}
+  for(var i=0;i<n;i++)marks[(row+dr*i)+':'+(col+dc*i)]=i;
+  H.layRRect(c,'Word search panel',x0-cell*.35,y0-cell*.35,cols*cell+cell*.7,rows*cell+cell*.7,cell*.3,
+    {fill:H.mixHex(sc.bg,sc.fg,.06),stroke:H.mixHex(sc.bg,sc.fg,.2),width:Math.max(1,U*.0018),alpha:1},envAlpha(c,0,.4));
+  var decoyPath=[];
+  for(var d=0;d<decoys;d++){
+    var r=Math.floor(N.random(seed,d,21)*rows), len=Math.min(cols,3+Math.floor(N.random(seed,d,22)*2));
+    var start=Math.floor(N.random(seed,d,23)*(cols-len+1)), hit=false;
+    for(var j=0;j<len;j++)if(marks[r+':'+(start+j)]!=null)hit=true;
+    if(!hit)decoyPath=decoyPath.concat(H.roundRectCmds(cellX(start)+(len-1)*cell/2-W/2,HH/2-cellY(r),(len-1)*cell+rr*2,rr*2,rr));
   }
-  H.laySetNodes(c, specs);
-});
+  if(decoyPath.length)C.shape(c.graph,c.cut,c.cut.id+' / Found decoys',c.parent,decoyPath,{stroke:sub,width:Math.max(1.5,cell*.06),alpha:.5});
+  // One editable text layer per grid column; ideographic space leaves room for the foreground lyric.
+  for(var k=0;k<cols;k++){
+    var stack=[];
+    for(var l=0;l<rows;l++)stack.push(marks[l+':'+k]!=null?'　':pool[Math.floor(N.random(seed,l,k,9)*pool.length)]||'　');
+    H.addText(c,'Word search grid '+k,stack.join('\n'),cellX(k),HH/2,fs,
+      {font:body,color:sub,lead:cell/fs,alpha:.75},envAlpha(c,0,.4,.75));
+  }
+  var length=(n-1)*cell*Math.hypot(dr,dc), width=length+2*rr;
+  var pill=C.shape(c.graph,c.cut,c.cut.id+' / Find capsule',c.parent,H.roundRectCmds(length/2,0,width,2*rr,rr),
+    {fill:H.mixHex(sc.bg,ink,.3),stroke:ink,width:Math.max(1.5,cell*.06),alpha:1});
+  var node=c.graph.byId[pill], angle=Math.atan2(dr,dc);
+  node.attrs.rotation=-angle*180/Math.PI;
+  C.sample(c.graph,pill,c.cut.start,c.cut.end,function(f){
+    var q=reveal(f), s=(length*q+2*rr)/width, offset=rr*(s-1);
+    return {'scale.x':s,'position.x':cellX(col)-W/2+offset*dc/Math.hypot(dr,dc),
+      'position.y':HH/2-cellY(row)-offset*dr/Math.hypot(dr,dc),alpha:q>0?1:0};
+  });
+  for(var m=0;m<n;m++)specs.push({text:chars[m],size:fs,x:cellX(col+dc*m),y:cellY(row+dr*m),color:sc.fg,mi:m});
+  H.laySetNodes(c,specs);
+}, ['Targets the AE directed grid and sweep; column text uses host leading and the capsule scales its rounded ends. Per-glyph search highlight colour is not animated.']);
 
 /* 19. puzzle: interlocking jigsaw tile grid centering the key glyph pieces */
 reg('puzzle', function (c) {

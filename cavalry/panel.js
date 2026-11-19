@@ -1,7 +1,7 @@
 /* JIZURA CV panel for Cavalry. Install once: Help > Show Scripts Folder, then Window > Scripts > JIZURA CV.
    Picks a .jizura.cavalry.json assembly (written by the JIZURA page) and builds the composition. The JSON
-   carries every preset name, so a newer file needs no new script. When Cavalry exposes WebServer the panel
-   also accepts a file from JIZURA_CV_Loader.js; when it does not, the button below is the whole workflow. */
+   carries every preset name, so a newer file needs no new script. The panel has no network listener: the
+   file picker below is the whole workflow. */
 (function () {
   if (typeof ui === 'undefined' || typeof api === 'undefined' || typeof JZCavalry === 'undefined') return;
 
@@ -10,13 +10,24 @@
   }
 
   function build(assembly, source) {
-    if (!assembly || assembly.format !== 'jizura.cavalry.assembly') throw new Error('JIZURA의 JSON이 아닙니다');
+    if (!assembly || assembly.format !== 'jizura.cavalry.assembly') {
+      throw new Error('Cavalry 형식이 아닙니다. 파일 확장자가 아니라 format: "jizura.cavalry.assembly"인 JSON이 필요합니다. 일반 프로젝트 저장 JSON과는 호환되지 않습니다.');
+    }
     var result = JZCavalry.run(assembly, { componentPath: null, fontOverrides: {}, timingPaths: null });
-    var r = result.report || { built: {}, fallback: {}, missing: {}, errors: [] };
-    var line = '완료: 텍스트 ' + (assembly.nodeCount || 0) + ' 항목 / 레이어 ' + result.layerIds.length +
-      ' / 정확 ' + Object.keys(r.built).length + ' · 근사 ' + Object.keys(r.fallback).length +
+    var r = result.report || { built: {}, fallback: {}, missingRecipes: {}, errors: [] };
+    /* assembly.nodeCount is what the page asked for; textLayerIds is what Cavalry actually kept. */
+    var expected = assembly.nodeCount || 0;
+    var texts = (result.textLayerIds || []).length;
+    var report = r.build || null;
+    var drift = !!(assembly.buildId && report && report.buildId && assembly.buildId !== report.buildId);
+    var missingText = expected > 0 && texts === 0;
+    var errors = (r.errors || []).length;
+    var state = missingText ? '텍스트 생성 실패' : (errors || drift) ? '부분 완료' : '완료';
+    var line = state + ': 텍스트 ' + texts + '/' + expected + ' 항목 / 레이어 ' + result.layerIds.length +
+      ' / 정확 ' + Object.keys(r.built || {}).length + ' · 근사 ' + Object.keys(r.fallback || {}).length +
       ' · 대체 ' + (r.fontFallbacks || []).length +
-      ' · 미지원 ' + Object.keys(r.missing).length + ' · 오류 ' + r.errors.length;
+      ' · 미지원 ' + Object.keys(r.missingRecipes || {}).length + ' · 오류 ' + errors +
+      (drift ? ' / 빌드 불일치' : '');
     status.setText(line + (source ? ' (' + source + ')' : ''));
     console.log('JIZURA report:\n' + JSON.stringify(r, null, 2));
     return result;
@@ -29,21 +40,12 @@
   button.onClick = function () {
     var file = api.presentOpenFile(folder(), 'JIZURA Cavalry JSON', 'JIZURA Assembly (*.json)');
     if (!file) return;
-    try { build(JSON.parse(api.readFromFile(file))); }
+    try { build(JSON.parse(api.readFromFile(file)), file); }
     catch (error) {
       status.setText('실패: ' + (error && error.message || error));
       console.error('JIZURA: ' + (error && error.stack || error));
     }
   };
-
-  var bridged = typeof JZBridge !== 'undefined' && JZBridge.start(function (assembly) {
-    try { build(assembly, '로더에서 수신'); }
-    catch (error) {
-      status.setText('실패: ' + (error && error.message || error));
-      console.error('JIZURA: ' + (error && error.stack || error));
-    }
-  });
-  if (bridged) status.setText('패널 수신 대기 중 (localhost:' + JZBridge.port + '). JSON을 선택할 수도 있습니다.');
 
   ui.add(status);
   ui.add(button);

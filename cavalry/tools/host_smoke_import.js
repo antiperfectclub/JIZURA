@@ -1,13 +1,14 @@
 /* Cavalry Host Smoke Import Script.
- * Run inside Cavalry's Script Editor after installing JIZURA_CV.js (or with JZCavalry in scope).
- * Verifies: comp creation, Unicode Japanese text readback, finite bounding boxes, and layer serialisation. */
+ * Run inside Cavalry's Script Editor after installing dist/JIZURA_Cavalry.js (or with JZCavalry in scope).
+ * Verifies: comp creation, that real textShape layers were created, Unicode text readback, finite bounding
+ * boxes, and layer serialisation. */
 (function () {
 'use strict';
 if (typeof api === 'undefined' || typeof cavalry === 'undefined') {
   throw new Error('Run this smoke script inside Cavalry.');
 }
 if (typeof JZCavalry === 'undefined' || typeof JZCavalry.run !== 'function') {
-  throw new Error('Load JIZURA_CV.js before running host_smoke_import.js.');
+  throw new Error('Load dist/JIZURA_Cavalry.js before running host_smoke_import.js.');
 }
 var sample = {
   format: 'jizura.cavalry.assembly',
@@ -43,10 +44,26 @@ var sample = {
   events: [{ t: 0.5, type: 'shake', amp: 0.6, dur: 0.25 }]
 };
 var result = JZCavalry.run(sample, {});
+/* Only textShape layers expose `text`; asking other layer types for it throws on some hosts.
+   The count is also the real answer to "did the lyrics survive import?" — group layers alone are not. */
+var reported = result.textLayerIds || [];
+var textIds = reported.filter(function (id) {
+  return typeof api.getLayerType !== 'function' || api.getLayerType(id) === 'textShape';
+});
+if (!textIds.length) {
+  var types = reported.map(function (id) {
+    return typeof api.getLayerType === 'function' ? api.getLayerType(id) : 'unknown';
+  });
+  throw new Error('JIZURA host smoke failed: no textShape layer was created' +
+    (reported.length ? ' (reported ' + reported.length + ' text ids, layer types: ' + types.join(', ') + ')' :
+      ' (textLayerIds is empty)'));
+}
 var textMismatch = [], badBounds = [];
-result.layerIds.forEach(function (id) {
+textIds.forEach(function (id) {
   var t = api.get(id, 'text');
-  if (typeof t === 'string' && t.indexOf('?') >= 0) textMismatch.push(id + ':' + t);
+  if (typeof t !== 'string' || t.indexOf('?') >= 0) textMismatch.push(id + ':' + t);
+});
+result.layerIds.forEach(function (id) {
   var b = api.getBoundingBox(id, false);
   if (b && (!isFinite(b.width) || !isFinite(b.height))) badBounds.push(id);
 });
@@ -54,6 +71,7 @@ var serialised = api.serialise(result.layerIds, true);
 console.log('JIZURA host smoke summary:', JSON.stringify({
   comp: result.compositionId,
   layers: result.layerIds.length,
+  textLayers: textIds.length,
   serialisedBytes: serialised ? serialised.length : 0,
   textMismatch: textMismatch,
   badBounds: badBounds,

@@ -1,4 +1,5 @@
-/* Extract the real AE recipe registry into cavalry/catalog/. AE sources are read, never written.
+/* Extract the real AE recipe registry. Without arguments the catalog is written to cavalry/catalog/;
+   with --stdout it is printed and no file is created. AE sources are read, never written.
    Registrations are recorded by instrumenting jzReg (and therefore every wrapper such as axl_reg that
    eventually calls it), not by counting text with a regex. The extracted functions are evidence of what the
    AE recipe does; they are not a Cavalry implementation. `implementationStatus` therefore stays
@@ -14,7 +15,9 @@ const ROOT = path.resolve(__dirname, "../..");
 const AE = path.join(ROOT, "ae");
 const OUTPUT = path.join(ROOT, "cavalry/catalog");
 
-const CORE_FILES = [
+/* Same evaluation order as build_ae.py: the shared runtime first, then every recipe pack, then the
+   build/diagnostic sources. UI definitions are not part of the recipe registry. */
+const BRIDGE_FILES = [
   "00_core.jsx",
   "05_reg.jsx",
   "10_helpers.jsx",
@@ -23,11 +26,9 @@ const CORE_FILES = [
   "20_motion.jsx",
   "30_layouts.jsx",
   "40_decor.jsx",
-  "45_core.jsx",
-  "50_build.jsx",
-  "55_diag.jsx",
-  "90_ui.jsx"
+  "45_core.jsx"
 ];
+const TAIL_FILES = ["50_build.jsx", "55_diag.jsx"];
 
 const GROUPS = ["layout", "enter", "hold", "exit", "decor", "treat", "bg", "cam", "fx", "trans"];
 
@@ -40,10 +41,12 @@ function read(name) {
 }
 
 const packs = fs.readdirSync(AE).filter(name => /^p_.*\.jsx$/.test(name)).sort();
-const files = [...CORE_FILES.filter(name => fs.existsSync(path.join(AE, name))), ...packs];
+const order = [...BRIDGE_FILES, ...packs, ...TAIL_FILES];
+const files = order.filter(name => fs.existsSync(path.join(AE, name)));
 
 const sourceHashes = {};
 const registrations = [];
+const parseErrors = [];
 
 const sandbox = {
   console: { log() {}, info() {}, warn() {}, error() {} },
@@ -61,7 +64,13 @@ function evaluate(filename) {
   const source = read(filename);
   sourceHashes[`ae/${filename}`] = sha256(source);
   sandbox.__sourceFile = `ae/${filename}`;
-  vm.runInContext(source, context, { filename: `ae/${filename}`, timeout: 5000 });
+  try {
+    vm.runInContext(source, context, { filename: `ae/${filename}`, timeout: 5000 });
+  } catch (error) {
+    /* A UI-only or otherwise unparsable source must not hide the recipe registry in the other files.
+       The audit records it so a broken source is visible instead of being silently skipped. */
+    parseErrors.push({ file: `ae/${filename}`, message: String(error && error.message || error) });
+  }
 }
 
 for (const filename of files) {
@@ -125,24 +134,31 @@ const catalog = {
   counts,
   total: entries.length,
   sourceHashes,
+  parseErrors,
   entries
 };
 
-fs.mkdirSync(OUTPUT, { recursive: true });
-fs.writeFileSync(path.join(OUTPUT, "ae-presets.json"), JSON.stringify(catalog, null, 2), "utf8");
+/* With --stdout the catalog is returned as JSON and no file is written; build_cavalry.py audits the
+   registry in memory instead of keeping a second copy of the AE names on disk. */
+if (process.argv.includes("--stdout")) {
+  process.stdout.write(JSON.stringify(catalog) + "\n");
+} else {
+  fs.mkdirSync(OUTPUT, { recursive: true });
+  fs.writeFileSync(path.join(OUTPUT, "ae-presets.json"), JSON.stringify(catalog, null, 2), "utf8");
 
-const csv = [
-  ["group", "name", "label", "sourceFile", "implementationStatus", "sourceHash"],
-  ...entries.map(entry => [
-    entry.group,
-    entry.name,
-    entry.metadata.name || entry.name,
-    entry.sourceFile || "",
-    entry.implementationStatus,
-    entry.sourceHash
-  ])
-].map(row => row.map(value => `"${String(value).replace(/"/g, '""')}"`).join(",")).join("\n");
+  const csv = [
+    ["group", "name", "label", "sourceFile", "implementationStatus", "sourceHash"],
+    ...entries.map(entry => [
+      entry.group,
+      entry.name,
+      entry.metadata.name || entry.name,
+      entry.sourceFile || "",
+      entry.implementationStatus,
+      entry.sourceHash
+    ])
+  ].map(row => row.map(value => `"${String(value).replace(/"/g, '""')}"`).join(",")).join("\n");
 
-fs.writeFileSync(path.join(OUTPUT, "ae-presets.csv"), csv, "utf8");
+  fs.writeFileSync(path.join(OUTPUT, "ae-presets.csv"), csv, "utf8");
 
-console.log(JSON.stringify({ total: entries.length, counts, output: "cavalry/catalog/ae-presets.json" }, null, 2));
+  console.log(JSON.stringify({ total: entries.length, counts, output: "cavalry/catalog/ae-presets.json" }, null, 2));
+}

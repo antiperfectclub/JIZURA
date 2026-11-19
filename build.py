@@ -2,14 +2,27 @@
 usage: python3 build.py            -> index.html, en/, zh-hant/, zh-hans/, ko/, id/, vi/ index.html (GitHub Pages)
        python3 build.py --dev      -> also dev/www/jizura.js + dev/www/test.html for the test tools"""
 import glob, os, sys
+from pathlib import Path
+from build_cavalry import assemble
 from app.english import localize_body, localize_js
 from app import i18n
 ROOT = os.path.dirname(os.path.abspath(__file__))
 os.chdir(ROOT)
-read = lambda p: open(p, encoding='utf-8').read()
+
+# src/11r_cavalry.js is generated, never written to disk: build_cavalry.py assembles it in memory when the
+# page needs it. This keeps the browser bundle and dist/JIZURA_Cavalry.js from drifting into two different files.
+CAVALRY_SLOT = 'src/11r_cavalry.js'
+cavalry_source, _ = assemble(Path(ROOT), web=True)
+
+def read(p):
+    if str(p).replace(os.sep, '/') == CAVALRY_SLOT:
+        return cavalry_source
+    return Path(p).read_text(encoding='utf-8')
+
 VERSION = read('VERSION').strip()
-sources = sorted(glob.glob('src/*.js'))
-js = '\n'.join(read(f) for f in sources)
+sources = sorted(set(glob.glob('src/*.js')) | {os.path.normpath(CAVALRY_SLOT)})
+texts = [(f, read(f)) for f in sources]
+js = '\n'.join(text for _, text in texts)
 mux = '/*! mp4-muxer v5.2.2 | MIT License | (c) 2023 Vanilagy | see THIRD_PARTY_NOTICES.md */\n' + read('vendor/mp4-muxer.min.js')
 def build(lang):
     english = lang == 'en'
@@ -23,8 +36,8 @@ def build(lang):
     body = read('app/body.html').replace('@VERSION@', VERSION).replace('    <div class="acts">', '    ' + language_nav + '\n    <div class="acts">', 1)
     if english: body = localize_body(body)
     elif local: body = i18n.localize_body(lang, body)
-    if english: script = '\n'.join(localize_js(read(f), f) for f in sources)
-    elif local: script = '\n'.join(i18n.localize_js(lang, read(f), f) for f in sources)
+    if english: script = '\n'.join(localize_js(text, f) for f, text in texts)
+    elif local: script = '\n'.join(i18n.localize_js(lang, text, f) for f, text in texts)
     else: script = js
     script = script.replace('@VERSION@', VERSION)
     if english or local:
